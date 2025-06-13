@@ -1,0 +1,135 @@
+@use "../mixin" as *;
+
+/*! 스위치 */
+.krds-form-toggle-switch {
+  display: flex;
+  position: relative;
+
+  input[type=checkbox] {
+    + label {      
+      position: relative;
+
+      &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        transform: translateY(-50%);
+      }
+
+      &:before {
+        left: 0;
+        top: 50%;
+        padding: 2px;
+        background-color: #b4c4d6;
+        border-radius: 40px;
+      }
+
+      &:after {
+        top: 50%;
+        left: 2px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+    }
+
+    &:checked + label {
+      &:after {
+        left: 18px;
+      }
+
+      &:before {
+        background-color: #246beb;
+      }
+    }
+
+    &:disabled + label {
+      &:before {
+        background-color: #e4e4e4;
+      }
+
+      &:after {
+        background-color: #c6c6c6;
+      }
+    }
+  }
+
+  &.large input[type=checkbox] + {
+    label {
+      font-size: 19px;
+      padding-left: 48px;
+
+      &:before {
+        width: 36px;
+        height: 20px;
+      }
+
+      &:after {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    input[type=checkbox]:checked + label:after {
+      left: 18px;
+    }
+  }
+
+  &.medium input[type=checkbox] {
+    + label {
+      font-size: 17px;
+      padding-left: 40px;
+
+      &:before {
+        width: 28px;
+        height: 16px;
+      }
+
+      &:after {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &:checked + label:after {
+      left: 14px;
+    }
+  }
+
+  &.language-switch {
+    width: 112px;
+    height: 32px;
+    padding: 0 4px;
+    border-radius: 40px;
+    background-color: #cdd7e4;
+
+    input[type=radio] {
+      + label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 15px;        
+        height: 24px;
+        border-radius: 16px;
+        text-align: center;
+        padding: 0 7px;
+        color: #58616a;
+
+        &.kr {
+          left: 2px;
+        }
+
+        &.en {
+          right: 2px;
+        }
+      }
+
+      &:checked + label {
+        background-color: #fff;
+        font-weight: 700;
+        color: #003675;
+      }
+    }
+  }
+}
+/*! 스위치 */

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p><p>기본페이지</p>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

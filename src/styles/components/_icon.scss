@@ -1,0 +1,192 @@
+@use "../mixin" as *;
+
+/*! 아이콘 */
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    &.large {
+        width: 24px;
+        height: 24px;
+    }
+    &.x-large {
+        width: 24px;
+        height: 24px;
+    }
+    &.xx-large {
+        width: 32px;
+        height: 32px;
+    }
+    &.xxx-large {
+        width: 40px;
+        height: 40px;
+    }
+    &.small {
+        width: 16px;
+        height: 16px;
+    }
+    &.x-small {
+        width: 12px;
+        height: 12px;
+    }
+    &.check {
+        background-image: url('/assets/icons/check.svg');
+    }
+    &.arrow-right {
+        background-image: url('/assets/icons/arrow-right.svg');
+    }
+    &.close {
+        background-image: url('/assets/icons/close.svg');
+    }
+    &.btn-more {
+        background-image: url('/assets/icons/btn-more.svg');
+    }
+    &.btn-arrow-down {
+        background-image: url('/assets/icons/btn-arrow-down.svg');
+    }
+    &.btn-arrow-top {
+        background-image: url('/assets/icons/btn-arrow-top.svg');
+    }
+    &.btn-arrow-left {
+        background-image: url('/assets/icons/btn-arrow-left.svg');
+    }
+    &.btn-arrow-right {
+        background-image: url('/assets/icons/btn-arrow-right.svg');
+    }
+    &.front {
+        background-image: url('/assets/icons/front.svg');
+    }
+    &.back {
+        background-image: url('/assets/icons/back.svg');
+    }
+    &.stop {
+        background-image: url('/assets/icons/stop.svg');
+    }
+    &.plus {
+        background-image: url('/assets/icons/plus.svg');
+    }
+    &.minus {
+        background-image: url('/assets/icons/minus.svg');
+    }
+    &.close {
+        background-image: url('/assets/icons/close.svg');
+    }
+    &.ellipsis {
+        background-image: url('/assets/icons/ellipsis.svg');
+    }
+    &.search {
+        background-image: url('/assets/icons/search.svg');
+    }
+    &.heart {
+        background-image: url('/assets/icons/heart.svg');
+    }
+    &.lock {
+        background-image: url('/assets/icons/lock.svg');
+    }
+    &.calendar {
+        background-image: url('/assets/icons/calendar.svg');
+    }
+    &.delete {
+        background-image: url('/assets/icons/delete.svg');
+    }
+    &.delete-circle {
+        background-image: url('/assets/icons/delete-circle.svg');
+    }
+    &.exclamation {
+        background-image: url('/assets/icons/exclamation.svg');
+    }
+    &.open-new-window {
+        background-image: url('/assets/icons/open-new-window.svg');
+    }
+    &.upload {
+        background-image: url('/assets/icons/upload.svg');
+    }
+    &.download {
+        background-image: url('/assets/icons/download.svg');
+    }
+    &.refresh {
+        background-image: url('/assets/icons/refresh.svg');
+    }
+    &.filter {
+        background-image: url('/assets/icons/filter.svg');
+    }
+    &.multi {
+        background-image: url('/assets/icons/multi.svg');
+    }
+    &.share {
+        background-image: url('/assets/icons/share.svg');
+    }
+    &.visibility {
+        background-image: url('/assets/icons/visibility.svg');
+    }
+    &.visibility-off {
+        background-image: url('/assets/icons/visibility-off.svg');
+    }
+    &.setting {
+        background-image: url('/assets/icons/setting.svg');
+    }
+    &.check-circle {
+        background-image: url('/assets/icons/check-circle.svg');
+    }
+    &.info-fill {
+        background-image: url('/assets/icons/info-fill.svg');
+    }
+    &.annotation {
+        background-image: url('/assets/icons/annotation.svg');
+    }
+    &.login {
+        background-image: url('/assets/icons/login.svg');
+    }
+    &.logout {
+        background-image: url('/assets/icons/logout.svg');
+    }
+    &.join {
+        background-image: url('/assets/icons/join.svg');
+    }
+    &.mypage {
+        background-image: url('/assets/icons/mypage.svg');
+    }
+    &.time {
+        background-image: url('/assets/icons/time.svg');
+    }
+    &.expand-less {
+        background-image: url('/assets/icons/expand-less.svg');
+    }
+    &.expand-more {
+        background-image: url('/assets/icons/expand-more.svg');
+    }
+    &.scrap {
+        background-image: url('/assets/icons/scrap.svg');
+    }
+    &.menu {
+        background-image: url('/assets/icons/menu.svg');
+    }
+    &.printer {
+        background-image: url('/assets/icons/printer.svg');
+    }
+    &.mail {
+        background-image: url('/assets/icons/mail.svg');
+    }
+    &.library {
+        background-image: url('/assets/icons/library.svg');
+    }
+    &.basket {
+        background-image: url('/assets/icons/basket.svg');
+    }
+    &.view-all {
+        background-image: url('/assets/icons/view-all.svg');
+    }
+    &.face-smile {
+        background-image: url('/assets/icons/face-smile.svg');
+    }
+    &.face-sad {
+        background-image: url('/assets/icons/face-sad.svg');
+    }
+    &.danger {
+        background-image: url('/assets/icons/danger.svg');
+    }    
+}
+/*! 아이콘 */

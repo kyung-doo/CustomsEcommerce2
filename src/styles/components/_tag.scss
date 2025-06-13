@@ -1,0 +1,65 @@
+@use "../mixin" as *;
+
+/*! 태그 */
+.krds-tag-wrap {
+  [class*="krds-btn-"] {
+    display: inline-flex;
+    border-radius: 100px;
+    border: 1px solid #C6C6C6;    
+    align-items: center;    
+    padding: 8px 12px;
+    color: #1D1D1D;
+  }
+
+  .krds-btn-tag .btn-delete {
+    background-image: url("/assets/icons/delete.svg");
+  }
+
+  .btn-delete {
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &.large .krds-btn-tag {
+    min-width: 48px;
+    height: 20px;
+    font-size: 17px;
+
+    .btn-delete {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.small .krds-btn-tag {
+    min-width: 40px;
+    height: 16px;
+    font-size: 15px;
+
+    .btn-delete {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .krds-btn-tag {
+    &:hover {
+      background-color: #EDF1F5;
+    }
+
+    &:active {
+      background-color: #CDD7E4;
+    }
+
+    &.disabled {
+      background-color: #D8D8D8;
+      border-color: #C6C6C6;
+      color: #717171;
+
+      .btn-delete {
+        pointer-events: none;
+      }
+    }
+  }
+}
+/*! 태그 */

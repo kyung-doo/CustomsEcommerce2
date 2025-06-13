@@ -1,0 +1,87 @@
+@use "./mixin";
+@use "./utils";
+@use "./font";
+@use "./variable";
+
+@use "./components/icon";
+@use "./components/button";
+@use "./components/tabmenu";
+@use "./components/modal";
+@use "./components/breadcrumb";
+@use "./components/link";
+@use "./components/tag";
+@use "./components/_radio_check";
+@use "./components/switch";
+@use "./components/input";
+@use "./components/pagination";
+@use "./components/step";
+
+@use "./layouts/header";
+@use "./layouts/footer";
+@use "./layouts/navigation";
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button, a {
+	cursor: pointer;
+}
+
+
+html, body {
+	overflow-y: auto;
+	height: 100%;	
+	font-weight: 400;
+}
+
+html *, body * {
+	font-family: 'Pretendard';	
+}
+
+#wrap {
+	position: relative;
+	height: 100%;
+	background-color: #fff;
+}

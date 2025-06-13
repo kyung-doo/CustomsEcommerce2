@@ -1,0 +1,31 @@
+@use "../mixin" as *;
+
+/*! 링크 */
+.link {    
+  color: #246BEB;
+
+  &:hover {
+    color: #1D56BC;
+  }
+
+  &:active {
+    color: #16408D;
+  }
+
+  &:visited {
+    color: #5917B8;
+  }
+
+  &.large {
+    font-size: 19px;
+  }
+
+  &.medium {
+    font-size: 17px;
+  }
+
+  &.small {
+    font-size: 15px;
+  }
+}
+/*! 링크 */

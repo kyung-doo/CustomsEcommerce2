@@ -1,0 +1,26 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_77_19511" fill="white">
+<rect x="2" y="2" width="7" height="7" rx="1"/>
+</mask>
+<rect x="2" y="2" width="7" height="7" rx="1" stroke="#2D2D2D" stroke-width="2.8" mask="url(#path-1-inside-1_77_19511)"/>
+<rect x="2" y="2" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-1-inside-1_77_19511)"/>
+<rect x="2" y="2" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-1-inside-1_77_19511)"/>
+<mask id="path-2-inside-2_77_19511" fill="white">
+<rect x="2" y="11" width="7" height="7" rx="1"/>
+</mask>
+<rect x="2" y="11" width="7" height="7" rx="1" stroke="#2D2D2D" stroke-width="2.8" mask="url(#path-2-inside-2_77_19511)"/>
+<rect x="2" y="11" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-2-inside-2_77_19511)"/>
+<rect x="2" y="11" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-2-inside-2_77_19511)"/>
+<mask id="path-3-inside-3_77_19511" fill="white">
+<rect x="11" y="2" width="7" height="7" rx="1"/>
+</mask>
+<rect x="11" y="2" width="7" height="7" rx="1" stroke="#2D2D2D" stroke-width="2.8" mask="url(#path-3-inside-3_77_19511)"/>
+<rect x="11" y="2" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-3-inside-3_77_19511)"/>
+<rect x="11" y="2" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-3-inside-3_77_19511)"/>
+<mask id="path-4-inside-4_77_19511" fill="white">
+<rect x="11" y="11" width="7" height="7" rx="1"/>
+</mask>
+<rect x="11" y="11" width="7" height="7" rx="1" stroke="#2D2D2D" stroke-width="2.8" mask="url(#path-4-inside-4_77_19511)"/>
+<rect x="11" y="11" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-4-inside-4_77_19511)"/>
+<rect x="11" y="11" width="7" height="7" rx="1" stroke="black" stroke-opacity="0.2" stroke-width="2.8" mask="url(#path-4-inside-4_77_19511)"/>
+</svg>

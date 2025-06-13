@@ -1,0 +1,32 @@
+@use "./variable" as *;
+
+@mixin flex ($direction : column, $alignItems : center , $justifyContents : center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContents;
+    align-items: $alignItems;
+}
+
+@mixin absolute ($left : 0, $top : 0) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
