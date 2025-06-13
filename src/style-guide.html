@@ -14,6 +14,7 @@
    <style>
       body {
          line-height: 1.5;
+         overflow-x: hidden;
       }
 
       h1 {
@@ -29,6 +30,7 @@
          margin-top: 20px;
          border: solid 1px #ccc;
          padding: 30px;
+         overflow-x: auto;
       }
 
       .guide-wrap {
@@ -90,7 +92,7 @@
       
       <div class="lnb">
          <ul>
-            <li data-id="ICON">아이콘1</li>
+            <li data-id="ICON">아이콘</li>
             <li data-id="TABMENU">탭메뉴</li>
             <li data-id="MODAL">모달</li>
             <li data-id="BUTTON">버튼</li>
@@ -105,6 +107,8 @@
             <li data-id="SELECT">셀렉트박스</li>  
             <li data-id="PAGINATION">페이지네이션</li>  
             <li data-id="STEP">단계표시기</li>  
+            <li data-id="CONTEXTUAL">맥락적 도움말</li>  
+            <li data-id="TABLE">테이블</li>
          </ul>
       </div>
 
@@ -2015,6 +2019,399 @@
             </code>
          </pre>
          <!-- 단계표시기 -->
+
+         <!-- 맥락적 도움말 class tooltip-action에 active가 추가되면 툴팁 열림-->
+         <h2 class="mt-50" id="CONTEXTUAL">맥락적 도움말</h2>  
+         <div class="guide-content" style="display: flex;gap: 20px;padding-bottom: 8%;padding: 16% 0 16% 20%;">                                    
+            <div class="krds-contextual-help top left">
+               <p class="tooltip-txt">예시이미지(상단 왼쪽)</p>
+               <div class="tooltip-btn-area">
+                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <div class="tooltip-action active">                  
+                     <div class="tooltip-popover">
+                        <h4 class="tooltip-title">도움말 제목</h4>
+                        <div class="tooltip-contents">
+                           <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
+                           <div class="btn-wrap">
+                              <a href="#;" class="krds-btn link">바로가기</a>
+                           </div>
+                        </div>
+                        <button type="button" class="krds-btn tooltip-close">
+                           <span class="sr-only">닫기</span>                        
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="krds-contextual-help top center">
+               <p class="tooltip-txt">예시이미지(상단 중앙)</p>
+               <div class="tooltip-btn-area">
+                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <div class="tooltip-action active">                  
+                     <div class="tooltip-popover">
+                        <h4 class="tooltip-title">도움말 제목</h4>
+                        <div class="tooltip-contents">
+                           <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
+                           <div class="btn-wrap">
+                              <a href="#;" class="krds-btn link">바로가기</a>
+                           </div>
+                        </div>
+                        <button type="button" class="krds-btn tooltip-close">
+                           <span class="sr-only">닫기</span>                        
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="krds-contextual-help top right">
+               <p class="tooltip-txt">예시이미지(상단 오른쪽)</p>
+               <div class="tooltip-btn-area">
+                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <div class="tooltip-action active">                  
+                     <div class="tooltip-popover">
+                        <h4 class="tooltip-title">도움말 제목</h4>
+                        <div class="tooltip-contents">
+                           <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
+                           <div class="btn-wrap">
+                              <a href="#;" class="krds-btn link">바로가기</a>
+                           </div>
+                        </div>
+                        <button type="button" class="krds-btn tooltip-close">
+                           <span class="sr-only">닫기</span>                        
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="krds-contextual-help bottom left">
+               <p class="tooltip-txt">예시이미지(하단 왼쪽)</p>
+               <div class="tooltip-btn-area">
+                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <div class="tooltip-action active">                  
+                     <div class="tooltip-popover">
+                        <h4 class="tooltip-title">도움말 제목</h4>
+                        <div class="tooltip-contents">
+                           <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
+                           <div class="btn-wrap">
+                              <a href="#;" class="krds-btn link">바로가기</a>
+                           </div>
+                        </div>
+                        <button type="button" class="krds-btn tooltip-close">
+                           <span class="sr-only">닫기</span>                        
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="krds-contextual-help bottom center">
+               <p class="tooltip-txt">예시이미지(하단 중앙)</p>
+               <div class="tooltip-btn-area">
+                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <div class="tooltip-action active">                  
+                     <div class="tooltip-popover">
+                        <h4 class="tooltip-title">도움말 제목</h4>
+                        <div class="tooltip-contents">
+                           <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
+                           <div class="btn-wrap">
+                              <a href="#;" class="krds-btn link">바로가기</a>
+                           </div>
+                        </div>
+                        <button type="button" class="krds-btn tooltip-close">
+                           <span class="sr-only">닫기</span>                        
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="krds-contextual-help bottom right">
+               <p class="tooltip-txt">예시이미지(하단 오른쪽)</p>
+               <div class="tooltip-btn-area">
+                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <div class="tooltip-action active">                  
+                     <div class="tooltip-popover">
+                        <h4 class="tooltip-title">도움말 제목</h4>
+                        <div class="tooltip-contents">
+                           <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
+                           <div class="btn-wrap">
+                              <a href="#;" class="krds-btn link">바로가기</a>
+                           </div>
+                        </div>
+                        <button type="button" class="krds-btn tooltip-close">
+                           <span class="sr-only">닫기</span>                        
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <pre>
+            <code class="html"> 
+               - 예) class krds-contextual-help 같은 라인에 class bottom left를 추가하면 하단 좌측에 툴팁이 열림
+               &lt;div class="krds-contextual-help bottom left"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(하단 왼쪽)&lt;/p&gt;
+                  &lt;div class="tooltip-btn-area"&gt;
+                     &lt;button type="button" class="krds-btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;div class="tooltip-action active"&gt;                  
+                           &lt;div class="tooltip-popover"&gt;
+                           &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
+                           &lt;div class="tooltip-contents"&gt;
+                              &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
+                              &lt;div class="btn-wrap"&gt;
+                                 &lt;a href="#;" class="krds-btn link"&gt;바로가기&lt;/a&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                           &lt;button type="button" class="krds-btn tooltip-close"&gt;
+                              &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
+                           &lt;/button&gt;
+                           &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            </code>
+         </pre>
+         <!-- 맥락적 도움말 -->
+
+         <!-- 테이블 -->
+         <h2 class="mt-50" id="TABLE">테이블</h2>           `
+         <div class="guide-content">    
+            <h2>Table (CRUD형)</h2>            
+            <div class="board-top">
+               <div class="left-box">
+                  <strong class="tit top-txt">총<span>10건</span>의 게시물</strong>
+                  <div class="top-txt">
+                     <select class="krds-form-select-sort large" title="정보 구분 선택">
+                        <option value="">10개씩 보기</option>               
+                        <option value="">10개씩 보기</option>               
+                        <option value="">10개씩 보기</option>               
+                        <option value="">10개씩 보기</option>               
+                     </select>
+                  </div>
+                  <p class="top-txt choice"><span>10</span>개중 <span>2</span>개 선택</p>
+                  <button type="button" class="krds-btn tertiary medium">수정</button>
+                  <button type="button" class="krds-btn tertiary medium">삭제</button>
+               </div>
+               <div class="right-box">
+                  <button type="button" class="krds-btn tertiary medium">엑셀파일 다운로드</button>
+                  <button type="button" class="krds-btn tertiary medium">인쇄</button>
+               </div>
+            </div>         
+            <div class="krds-table-wrap">
+               <table class="tbl col data">
+                  <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
+                  <colgroup>
+                     <col style="width: 52px;">
+                     <col style="width: 80px;">
+                     <col>                     
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th scope="col">
+                           <div class="krds-form-check">
+                              <input type="checkbox" id="all_chk_1">
+                              <label for="all_chk_1"><span class="sr-only">전체선택</span></label>
+                           </div>
+                        </th>
+                        <th scope="col"><span class="number">No <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                        <th scope="col">항목명</th>
+                        <th scope="col">항목명</th>
+                        <th scope="col">항목명</th>
+                        <th scope="col">항목명</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td scope="row">
+                           <div class="krds-form-check">
+                              <input type="checkbox" id="tb_2">
+                              <label for="tb_2"><span class="sr-only">행선택</span></label>
+                           </div>
+                        </td>
+                        <td>999</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                     </tr>
+                     <tr>
+                        <td scope="row">
+                           <div class="krds-form-check">
+                              <input type="checkbox" id="tb_3">
+                              <label for="tb_3"><span class="sr-only">행선택</span></label>
+                           </div>
+                        </td>
+                        <td>999</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                     </tr>
+                     <tr>
+                        <td scope="row">
+                           <div class="krds-form-check">
+                              <input type="checkbox" id="tb_4">
+                              <label for="tb_4"><span class="sr-only">행선택</span></label>
+                           </div>
+                        </td>
+                        <td>999</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                     </tr>                     
+                  </tbody>
+               </table>
+            </div>   
+            
+            <h2 class="mt-20">Table (조회형)</h2>    
+            <div class="board-top">
+               <div class="left-box">
+                  <strong class="tit top-txt">총<span>10건</span>의 게시물</strong>
+                  <div class="top-txt">
+                     <select class="krds-form-select-sort large" title="정보 구분 선택">
+                        <option value="">10개씩 보기</option>               
+                        <option value="">10개씩 보기</option>               
+                        <option value="">10개씩 보기</option>               
+                        <option value="">10개씩 보기</option>               
+                     </select>
+                  </div>
+               </div>               
+            </div>   
+            <div class="krds-table-wrap">
+               <table class="tbl col data">
+                  <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
+                  <colgroup>
+                     <col style="width: 100px;">
+                     <col>
+                     <col style="width: 131px;">                     
+                     <col style="width: 166px;">                     
+                     <col style="width: 96px;">                     
+                  </colgroup>
+                  <thead>
+                     <tr>                                                
+                        <th scope="col">No</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">업무구분</th>
+                        <th scope="col">등록일자</th>
+                        <th scope="col">첨부파일</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>999</td>
+                        <td><a href="#" class="txt">공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다. 들어갑니다.</a></td>
+                        <td>수입통관</td>
+                        <td>2025-01-01</td>                        
+                        <td><button class="file-down">첨부파일 다운로드</button></td>                        
+                     </tr>
+                     <tr>
+                        <td>999</td>
+                        <td><a href="#" class="txt">공지사항 제목이 들어갑니다.</a></td>
+                        <td>수입통관</td>
+                        <td>2025-01-01</td>                        
+                        <td><button class="file-down">첨부파일 다운로드</button></td>                        
+                     </tr>
+                     <tr>
+                        <td>999</td>
+                        <td><a href="#" class="txt">공지사항 제목이 들어갑니다.</a></td>
+                        <td>수입통관</td>
+                        <td>2025-01-01</td>                        
+                        <td><button class="file-down">첨부파일 다운로드</button></td>                        
+                     </tr>                     
+                  </tbody>
+               </table>
+            </div>   
+            <div class="krds-pagination pagination=type1">               
+               <a class="page-navi prev disabled" href="#">이전</a>
+               <div class="page-links">
+                  <a class="page-link mobile-link" href="#">1</a>
+                  <span class="page-link link-dot mobile-dot"></span>
+                  <a class="page-link" href="#">2</a>
+                  <a class="page-link" href="#">3</a>
+                  <a class="page-link" href="#">4</a>
+                  <a class="page-link mobile-link" href="#">5</a>
+                  <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                  <a class="page-link mobile-link" href="#">7</a>
+                  <a class="page-link" href="#">8</a>
+                  <a class="page-link" href="#">9</a>
+                  <span class="page-link link-dot"></span>
+                  <a class="page-link mobile-link" href="#">120</a>
+               </div>
+               <a class="page-navi next" href="#">다음</a>
+            </div>   
+            
+            <h2 class="mt-20">Table (단순형)</h2>    
+            <strong class="table-title">테이블 제목</strong>
+            <div class="krds-table-wrap">
+               <table class="tbl col cont">
+                  <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
+                  <colgroup>
+                     <col>                     
+                  </colgroup>
+                  <thead>
+                     <tr class="line1">                                                
+                        <th scope="col" colspan="2">항목1</th>                        
+                        <th scope="col" colspan="2">항목1</th>                        
+                        <th scope="col" colspan="2">항목1</th>                        
+                        <th scope="col" colspan="2">항목1</th>                        
+                     </tr>
+                     <tr class="line2">                                                
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                        <th scope="col">항목1_01</th>                        
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                     </tr>  
+                     <tr>
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                     </tr>
+                     <tr>
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                        <td>내용</td>              
+                     </tr>                                     
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
+         <pre>
+            <code class="html"> 
+
+            </code>
+         </pre>
+         <!-- 테이블 -->
 
          <div class="description">
             <h4></h4>
