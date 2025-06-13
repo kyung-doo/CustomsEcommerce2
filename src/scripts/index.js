@@ -3,6 +3,7 @@ import '@/styles/index.scss';
 import styleToJson from './utils/styleToJson';
 import './components/Tabmenu';
 import './components/Modal';
+import './layouts/header';
 
 
 // 전역변수
