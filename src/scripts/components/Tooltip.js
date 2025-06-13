@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import gsap, { Cubic } from 'gsap';
 
 class Tooltip {
 
@@ -14,15 +15,18 @@ class Tooltip {
 
     init () {
         const owner = this;
+        const tooltipAct = owner.ele.find(".tooltip-action");
+        const startY = owner.ele.hasClass('top') ? 20 : -20;
         this.ele.find(".tooltip-btn-area button").on("click", function () {
-            if(!owner.ele.find(".tooltip-action").hasClass("active")) {
-                owner.ele.find(".tooltip-action").addClass("active");
+            if(!tooltipAct.hasClass("active")) {
+                tooltipAct.addClass("active");
+                gsap.from(owner.ele.find(".tooltip-action"), {y: startY, opacity: 0, ease: Cubic.easeOut})
             } else {
-                owner.ele.find(".tooltip-action").removeClass("active");
+                tooltipAct.removeClass("active");
             }
         });
         this.ele.find(".tooltip-close").on("click", function () {
-            owner.ele.find(".tooltip-action").removeClass("active");
+            tooltipAct.removeClass("active");
         });
     }
 }

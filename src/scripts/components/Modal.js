@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import gsap, { Back } from 'gsap';
 
 class Modal {
 
@@ -18,6 +19,7 @@ class Modal {
 
     show () {
         this.ele.removeClass('d-none');
+        gsap.from(this.ele.find('.modal-wrap'), {scale: 0.9, opacity: 0, ease: Back.easeOut.config(1)});
     }
     
     hide () {
