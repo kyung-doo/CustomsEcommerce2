@@ -4,7 +4,6 @@ import $ from 'jquery';
 $(() => {
     let moveArrow = '';
     let oldTop = 0;
-    let timer = null;
 
     $("#wrap").append('<div class="blind d-none"></div>');
 
@@ -15,15 +14,15 @@ $(() => {
             $(".gnb-menu li").removeClass('active');
             $(this).parent().addClass('active');
             $("#wrap > .blind").show();
-            clearTimeout(timer);
-            $(".krds-main-menu").off('mouseleave').on('mouseleave', function () {
-                timer = setTimeout(() => {
-                    $(".gnb-menu li").removeClass('active');
-                    $(".krds-main-menu").off('mouseleave');
-                    $("#wrap > .blind").hide();
-                }, 600);
-            });
+            $('body').css({'overflow': 'hidden'});
         });
+    });
+
+
+    $("#wrap > .blind").on('click', function () {
+        $(".gnb-menu li").removeClass('active');
+        $("#wrap > .blind").hide();
+        $('body').css({'overflow': ''});
     });
 
     $("html, body").on("scroll", (e) => {
@@ -36,14 +35,10 @@ $(() => {
         if(moveArrow === 'down' && top > 200) {
             if(!$("#header").hasClass('hide')) {
                 $("#header").addClass('hide');
-                $(".gnb-menu li").removeClass('active');
-                $("#wrap > .blind").hide();
             }
         } else if(moveArrow === 'up') {
             if($("#header").hasClass('hide')) {
                 $("#header").removeClass('hide');
-                $(".gnb-menu li").removeClass('active');
-                $("#wrap > .blind").hide();
             }
         }
         oldTop = top;
