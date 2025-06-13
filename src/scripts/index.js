@@ -3,6 +3,7 @@ import '@/styles/index.scss';
 import styleToJson from './utils/styleToJson';
 import './components/Tabmenu';
 import './components/Modal';
+import './components/Tooltip';
 import './layouts/header';
 
 
@@ -38,6 +39,12 @@ $(() => {
     $(`*[data-ui="modal"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).modal(props);
+    });
+
+    // 툴팁
+    $(`*[data-ui="tooltip"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).tooltip(props);
     });
     
 });
