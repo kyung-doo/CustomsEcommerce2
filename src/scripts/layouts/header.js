@@ -34,7 +34,6 @@ $(() => {
             moveArrow = 'up';
         }
         if(moveArrow === 'down' && top > 200) {
-            console.log(moveArrow, top)
             if(!$("#header").hasClass('hide')) {
                 $("#header").addClass('hide');
                 $(".gnb-menu li").removeClass('active');
