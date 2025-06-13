@@ -37,7 +37,9 @@ button {
 }
 
 #krds-masthead {
+  position: relative;
   background-color: #4f6280;
+  z-index: 10;
 
   .toggle-wrap {
     max-width: 1280px;
@@ -70,6 +72,17 @@ button {
 }
 
 #header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: #fff;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.hide {
+    transform: translateY(-150px);
+  }
+
   .header-container {
     border-bottom: 1px solid #d8d8d8;
 
@@ -104,6 +117,8 @@ button {
   .header-actions {
     display: flex;
     align-items: center;
+
+    
 
     .name-box.login {
       display: flex;
