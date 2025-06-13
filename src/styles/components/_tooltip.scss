@@ -1,0 +1,169 @@
+/*! 툴팁 */
+.krds-contextual-help {
+  position: relative;
+
+  .tooltip-btn-area {
+    display: inline-block;
+    position: relative;
+  }
+
+  .tooltip-action {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &.bottom .tooltip-action:before {
+    top: -12px;
+    transform: rotate(180deg);
+  }
+
+  &.top .tooltip-action:before {
+    bottom: -12px;
+  }
+
+  &.bottom {
+    &.left .tooltip-action:before {
+      right: 24px;
+    }
+
+    &.center .tooltip-action:before {
+      left: 50%;
+    }
+
+    &.right .tooltip-action:before {
+      left: 24px;
+    }
+  }
+
+  &.top {
+    &.left .tooltip-action:before {
+      right: 24px;
+    }
+
+    &.center .tooltip-action:before {
+      right: 47.0%;
+    }
+
+    &.right .tooltip-action:before {
+      left: 24px;
+    }
+
+    .tooltip-action {
+      bottom: 70px;
+    }
+  }
+
+  &.bottom .tooltip-action {
+    top: 70px;
+  }
+
+  &.top {
+    &.right .tooltip-action {
+      left: -6px;
+    }
+
+    &.center .tooltip-action {
+      right: -150px;
+    }
+
+    &.left .tooltip-action {
+      right: -6px;
+    }
+  }
+
+  &.bottom {
+    &.right .tooltip-action {
+      left: -6px;
+    }
+
+    &.center .tooltip-action {
+      right: -139px;
+    }
+
+    &.left .tooltip-action {
+      right: -6px;
+    }
+  }
+}
+
+.tooltip-action {
+  padding: 20px 24px;
+  width: 310px;
+  border: 1px solid #C6C6C6;
+  position: relative;
+  border-radius: 12px;
+  background-color: #FFF;
+  position: absolute;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 12px;
+    background-image: url('/assets/icons/tooltip-arr.svg');
+  }
+
+  .tooltip-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1D1D1D;
+  }
+
+  .tooltip-contents {
+    margin-top: 6px;
+
+    p {
+      font-size: 15px;
+      color: #1D1D1D;
+    }
+
+    .krds-btn.link {
+      font-size: 15px;
+      color: #1D1D1D;
+      text-decoration: none;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        background-image: url('/assets/icons/btn-arrow-right.svg');
+        background-position: center;
+        background-size: 16px;
+      }
+    }
+  }
+
+  .tooltip-btn-area {
+    display: inline-block;
+  }
+
+  .btn-wrap {
+    margin-top: 17px;
+  }
+
+  .tooltip-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+    background-image: url('/assets/icons/close.svg');
+    background-position: center;
+    background-size: 16px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+  }
+}
+/*! 툴팁 */

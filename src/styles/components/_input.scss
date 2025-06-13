@@ -1,5 +1,4 @@
 @use "../mixin" as *;
-
 /*! 입력박스,긴 텍스트 입력 서식,셀렉트박스 */
 .form-group {
   input[type="text"], select {
@@ -287,20 +286,19 @@
   background-image: url('/assets/icons/btn-arrow-down.svg');
   background-repeat: no-repeat;
   border: 0;
-  color: #1D1D1D;  
-  padding-left: 5px;
+  color: #1D1D1D;    
 
   &.large {
     font-size: 17px;
-    width: 75px;
+    padding: 0 23px 0 0;
     height: 27px;
     background-position: center right 3px;
     background-size: 18px;
   }
 
   &.medium {
-    font-size: 15px;
-    width: 64px;
+    font-size: 15px;    
+    padding: 0 17px 0 0;
     height: 27px;
     background-position: center right 3px;
     background-size: 14px;
