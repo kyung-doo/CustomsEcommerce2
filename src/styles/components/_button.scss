@@ -146,5 +146,9 @@ button.btn {
         border-color:#fff;
         color: #8E8E8E;
     } 
+
+    &:focus {
+        outline: 1px solid #000;
+    }
 }
 /*!버튼*/
