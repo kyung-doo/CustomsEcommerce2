@@ -35,6 +35,9 @@
             margin-bottom: 32px;
             padding: 18px 24px;
         }
+        &:focus {
+            outline: solid 1px #000;
+        }
         
     }
 

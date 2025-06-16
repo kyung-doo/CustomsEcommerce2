@@ -39,9 +39,29 @@ class Modal {
         });
         $("#wrap, .guide-wrap").attr('inert', ' ');
         $("body").css({'overflow': 'hidden'});
-        setTimeout(() => {
-            this.ele.find(".modal-body").attr("tabindex", 0).focus();
-        }, 50);
+        this.ele.find(".btn-close").on("focusin", e => {
+            $(document).on('keydown', (e) => {
+                if(e.key === 'Tab' && !e.shiftKey) {
+                    this.ele.find(".modal-body").focus();
+                    e.preventDefault();
+                }
+            });
+        });
+        this.ele.find(".modal-body").on("focusin", e => {
+            $(document).on('keydown', (e) => {
+                if(e.key === 'Tab' && e.shiftKey) {
+                    this.ele.find(".btn-close").focus();
+                    e.preventDefault();
+                }
+            });
+        });
+        this.ele.find(".btn-close").on("focusout", e => {
+            $(document).off('keydown');
+        });
+        this.ele.find(".modal-body").on("focusout", e => {
+            $(document).off('keydown');
+        });
+        this.ele.find(".modal-body").attr("tabindex", 0).focus();
     }
     
     hide () {
@@ -50,10 +70,9 @@ class Modal {
         this.ele.find(".modal-close").off("click");
         $("#wrap, .guide-wrap").removeAttr('inert');
         $("body").css({'overflow': ''});
+        $(document).off('keydown');
         this.ele.empty();
-        setTimeout(() => {
-            $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();
-        }, 50);
+        $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();
     }
 
 }
