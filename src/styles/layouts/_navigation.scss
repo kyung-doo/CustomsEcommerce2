@@ -387,6 +387,11 @@
     position: absolute;
     left: 0;
     width: 100%;
+    overflow-y: scroll;
+    height: calc(100vh - 178px);
+    &.large {
+      height: calc(100vh - 146px);
+    }
   }
 
   .allmenu.active {

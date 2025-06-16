@@ -18,7 +18,19 @@ $(() => {
         });
     });
 
+    $("#header .allmenu").on("click", function () {
+        if(!$(".main-allmenu").is(":visible")) {
+            $(".main-allmenu").show();
+            $(".gnb-menu li").removeClass('active');
+            $("#wrap > .blind").hide();
+            $('body').css({'overflow': 'hidden'});
+        } else {
+            $(".main-allmenu").hide();
+            $('body').css({'overflow': ''});
+        }
+    });
 
+    
     $("#wrap > .blind").on('click', function () {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
@@ -39,6 +51,16 @@ $(() => {
         } else if(moveArrow === 'up') {
             if($("#header").hasClass('hide')) {
                 $("#header").removeClass('hide');
+            }
+        }
+
+        if(top >= 32) {
+            if(!$(".main-allmenu").hasClass("large")) {
+                $(".main-allmenu").addClass("large");
+            }
+        } else {
+            if($(".main-allmenu").hasClass("large")) {
+                $(".main-allmenu").removeClass("large");
             }
         }
         oldTop = top;
