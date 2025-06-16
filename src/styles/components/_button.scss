@@ -9,8 +9,9 @@ button.krds-btn {
     align-items: center;
     border-radius: 4px;
 
-    &.disabled{
-        cursor: auto;
+    &:disabled{
+        cursor:default;
+        pointer-events: none; 
     }
 
     &.xlarge{
@@ -76,7 +77,7 @@ button.krds-btn {
         background-color: #16408D;
         border-color:#16408D;
     }
-    &.primary.disabled {
+    &.primary:disabled {
         background-color: #D8D8D8;
         border-color:#D8D8D8;
         color: #717171;
@@ -97,7 +98,7 @@ button.krds-btn {
         border-color:#246BEB;
         color:#16408D;
     }
-    &.secondary.disabled {
+    &.secondary:disabled {
         background-color: #D8D8D8;
         border-color:#C6C6C6;
         color:#717171;
@@ -118,7 +119,7 @@ button.krds-btn {
         border-color:#1D1D1D;
         color: #1D1D1D;
     }
-    &.tertiary.disabled {
+    &.tertiary:disabled {
         background-color: #D8D8D8;
         border-color:#C6C6C6;
         color: #717171;
@@ -140,7 +141,7 @@ button.krds-btn {
         border-color:#CDD7E4;
         color: #1D1D1D;
     }
-    &.text.disabled {
+    &.text:disabled {
         background-color: #fff;
         border-color:#fff;
         color: #8E8E8E;
