@@ -1,5 +1,7 @@
-/*! 툴팁 */
-.krds-contextual-help {
+@use "../mixin" as *;
+
+/*!맥락적 도움말*/
+.contextual-help {
   position: relative;
 
   .tooltip-btn-area {
@@ -122,7 +124,7 @@
       color: #1D1D1D;
     }
 
-    .krds-btn.link {
+    .btn.link {
       font-size: 15px;
       color: #1D1D1D;
       text-decoration: none;
@@ -166,4 +168,4 @@
     border: 0;
   }
 }
-/*! 툴팁 */
+/*!맥락적 도움말*/

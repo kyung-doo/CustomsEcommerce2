@@ -1,12 +1,14 @@
+@use "../mixin" as *;
+
 /*!레이아웃1*/
 .view-list {
   padding: 32px;
   display: flex;
   flex-wrap: wrap;
+  gap:13px 0;
 
   li {
-    width: calc(50% - 40px);
-    margin-top: 13px;
+    width: calc(50% - 40px);    
     display: flex;
 
     &:nth-child(odd) {

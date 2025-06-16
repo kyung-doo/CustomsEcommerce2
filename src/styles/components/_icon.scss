@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/*! 아이콘 */
+/*!아이콘*/
 .icon {
     display: inline-block;
     width: 20px;
@@ -188,5 +188,43 @@
     &.danger {
         background-image: url('/assets/icons/danger.svg');
     }    
+    &.home {
+        background-image: url('/assets/icons/home.svg');
+    }    
+    &.chips {
+        background-image: url('/assets/icons/chips.svg');
+    }    
+    &.chips-chk {
+        background-image: url('/assets/icons/chips-chk.svg');
+    }        
+    &.check-a {
+        background-image: url('/assets/icons/check-a.svg');
+        background-color: #246BEB;
+    }        
+    &.check-d {
+        background-image: url('/assets/icons/check-d.svg');        
+        border-color: #C6C6C6;
+        background-color: #D8D8D8;
+    }        
+    &.check-m {
+        background-image: url('/assets/icons/check-m.svg');
+        background-color: #246BEB;
+    }        
+    &.check-d-m {
+        background-image: url('/assets/icons/check-d-m.svg');
+        background-color: #246BEB;
+        border-color: #C6C6C6;
+        background-color: #D8D8D8;
+    }        
+    &.inp-title {
+        background-image: url('/assets/icons/inp-title.svg');
+    }            
+    &.step {
+        background-image: url('/assets/icons/step.svg');
+        background-color: #003675;
+    }            
+    &.tb-turn {
+        background-image: url('/assets/icons/tb-turn.svg'); 
+    }            
 }
-/*! 아이콘 */
+/*!아이콘*/

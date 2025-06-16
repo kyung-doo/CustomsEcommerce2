@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/*! 라디오,체크박스 */
+/*!라디오*/
 input {
   &[type=radio], &[type=checkbox] {
     width: 0;
@@ -14,7 +14,7 @@ input {
   }
 }
 
-.krds-form-check {
+.form-check {
   position: relative;  
 
   label {
@@ -96,7 +96,7 @@ input {
   }
 }
 
-.krds-form-chip {
+.form-chip {
   position: relative;
 
   label {    
@@ -201,7 +201,7 @@ input {
   }
 }
 
-.krds-form-check {
+.form-check {
   input[type="checkbox"] {
     + label {
       padding-left: 28px;
@@ -253,7 +253,7 @@ input {
   }
 }
 
-.krds-form-chip {
+.form-chip {
   input[type="checkbox"] + label:before {
     background-image: url(/assets/icons/chips-chk.svg);
     content: "";
@@ -304,4 +304,4 @@ input {
     }
   }
 }
-/*! 라디오,체크박스 */
+/*!라디오*/

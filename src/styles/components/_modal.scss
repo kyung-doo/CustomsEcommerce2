@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/*! 모달 */
+/*!모달*/
 .modal {
     @include absolute($left: 0, $top: 0);
     width: 100%;
@@ -54,4 +54,4 @@
     }
 
 }
-/*! 모달 */
+/*!모달*/

@@ -135,7 +135,7 @@
                   <dd>small</dd>
                </dl>
                <dl class="text-center ml-10">
-                  <dt><i class="icon check small"></i></dt>
+                  <dt><i class="icon check medium"></i></dt>
                   <dd>medium</dd>
                </dl>
                <dl class="text-center ml-10">
@@ -361,6 +361,46 @@
                   <dt><i class="icon danger"></i></dt>
                   <dd>danger</dd>
                </dl>
+               <dl class="text-center ml-10">
+                  <dt><i class="icon home"></i></dt>
+                  <dd>home</dd>
+               </dl>
+               <dl class="text-center ml-10">
+                  <dt><i class="icon chips"></i></dt>
+                  <dd>chips-check</dd>
+               </dl>               
+               <dl class="text-center ml-10">
+                  <dt><i class="icon chips-chk"></i></dt>
+                  <dd>chips</dd>
+               </dl>               
+               <dl class="text-center ml-10">
+                  <dt><i class="icon check-a"></i></dt>
+                  <dd>check-a</dd>
+               </dl>               
+               <dl class="text-center ml-10">
+                  <dt><i class="icon check-d"></i></dt>
+                  <dd>check-d</dd>
+               </dl>                              
+               <dl class="text-center ml-10">
+                  <dt><i class="icon check-m"></i></dt>
+                  <dd>check-m</dd>
+               </dl>               
+               <dl class="text-center ml-10">
+                  <dt><i class="icon check-d-m"></i></dt>
+                  <dd>check-d-m</dd>
+               </dl>               
+               <dl class="text-center ml-10">
+                  <dt><i class="icon inp-title"></i></dt>
+                  <dd>inp-title</dd>
+               </dl>     
+               <dl class="text-center ml-10">
+                  <dt><i class="icon step"></i></dt>
+                  <dd>step</dd>
+               </dl>     
+               <dl class="text-center ml-10">
+                  <dt><i class="icon tb-turn"></i></dt>
+                  <dd>tb-turn</dd>
+               </dl>     
             </div>
          </div>
 
@@ -462,7 +502,7 @@
          <div class="guide-content">
 
             <div class="d-flex">
-               <button type="button" class="krds-btn secondary medium" onclick="openModal('#modal1')">모달 오픈</button>
+               <button type="button" class="btn secondary medium" onclick="openModal('#modal1')">모달 오픈</button>
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal" data-props="">
@@ -474,8 +514,8 @@
                      모달 내용
                   </div>
                   <div class="modal-footer">
-                     <button type="button" class="krds-btn tertiary medium" onclick="closeModal('#modal1')">닫기</button>
-                     <button type="button" class="krds-btn primary medium">확인</button>
+                     <button type="button" class="btn tertiary medium" onclick="closeModal('#modal1')">닫기</button>
+                     <button type="button" class="btn primary medium">확인</button>
                   </div>
                   <button type="button" class="btn-close" onclick="closeModal('#modal1')">
                      <i class="icon close"></i>
@@ -489,23 +529,26 @@
          <pre>
             <code class="html">         
                
-               &lt;button type="button" class="krds-btn secondary medium" onclick="openModal('#modal1')"&gt;모달 오픈&lt;/button&gt;
+               &lt;div class="d-flex"&gt;
+                  &lt;button type="button" class="btn secondary medium" onclick="openModal('#modal1')"&gt;모달 오픈&lt;/button&gt;
+               &lt;/div&gt; 
 
                &lt;div id="modal1" class="modal d-none" data-ui="modal" data-props=""&gt;
                   &lt;div class="modal-wrap"&gt;
                      &lt;div class="modal-header"&gt;
-                        &lt;h4&gt;모달 타이틀&lt;/h4&gt;
-                        &lt;butotn class="btn-close" onclick="closeModal('#modal1')"&gt;
-                           &lt;i class="icon close"&gt;&lt;/i&gt;
-                        &lt;/butotn&gt;
+                        &lt;h4&gt;모달 타이틀&lt;/h4&gt;                     
                      &lt;/div&gt;
-                     &lt;div class="modal-body"&gt;
+                     &lt;div class="modal-body" tabindex="0"&gt;
                         모달 내용
                      &lt;/div&gt;
                      &lt;div class="modal-footer"&gt;
-                        &lt;button type="button" class="krds-btn tertiary medium" onclick="closeModal('#modal1')"&gt;닫기&lt;/button&gt;
-                        &lt;button type="button" class="krds-btn primary medium"&gt;확인&lt;/button&gt;
+                        &lt;button type="button" class="btn tertiary medium" onclick="closeModal('#modal1')"&gt;닫기&lt;/button&gt;
+                        &lt;button type="button" class="btn primary medium"&gt;확인&lt;/button&gt;
                      &lt;/div&gt;
+                     &lt;button type="button" class="btn-close" onclick="closeModal('#modal1')"&gt;
+                        &lt;i class="icon close"&gt;&lt;/i&gt;
+                        &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                     
+                     &lt;/button&gt;
                   &lt;/div&gt;
                &lt;/div&gt;
 
@@ -517,60 +560,62 @@
          <h2 class="mt-50" id="BUTTON">버튼</h2>
          <div class="guide-content" style="display: flex;">
             <div class="mt-10 ml-10">
-               <button type="button" class="krds-btn primary xlarge">버튼</button><br>
-               <button type="button" class="krds-btn primary large">버튼</button><br>
-               <button type="button" class="krds-btn primary medium">버튼</button><br>
-               <button type="button" class="krds-btn primary small">버튼</button><br>
-               <button type="button" class="krds-btn primary xsmall" disabled>버튼</button>
+               <button type="button" class="btn primary xlarge">버튼</button><br>
+               <button type="button" class="btn primary large">버튼</button><br>
+               <button type="button" class="btn primary medium">버튼</button><br>
+               <button type="button" class="btn primary small">버튼</button><br>
+               <button type="button" class="btn primary xsmall" disabled>버튼</button>
             </div>
             <div class="mt-10 ml-10">
-               <button type="button" class="krds-btn secondary xlarge">버튼</button><br>
-               <button type="button" class="krds-btn secondary large">버튼</button><br>
-               <button type="button" class="krds-btn secondary medium">버튼</button><br>
-               <button type="button" class="krds-btn secondary small">버튼</button><br>
-               <button type="button" class="krds-btn secondary xsmall" disabled>버튼</button>
+               <button type="button" class="btn secondary xlarge">버튼</button><br>
+               <button type="button" class="btn secondary large">버튼</button><br>
+               <button type="button" class="btn secondary medium">버튼</button><br>
+               <button type="button" class="btn secondary small">버튼</button><br>
+               <button type="button" class="btn secondary xsmall" disabled>버튼</button>
             </div>
             <div class="mt-10 ml-10">
-               <button type="button" class="krds-btn tertiary xlarge">버튼</button><br>
-               <button type="button" class="krds-btn tertiary large">버튼</button><br>
-               <button type="button" class="krds-btn tertiary medium">버튼</button><br>
-               <button type="button" class="krds-btn tertiary small">버튼</button><br>
-               <button type="button" class="krds-btn tertiary xsmall" disabled>버튼</button>
+               <button type="button" class="btn tertiary xlarge">버튼</button><br>
+               <button type="button" class="btn tertiary large">버튼</button><br>
+               <button type="button" class="btn tertiary medium">버튼</button><br>
+               <button type="button" class="btn tertiary small">버튼</button><br>
+               <button type="button" class="btn tertiary xsmall" disabled>버튼</button>
             </div>
             <div class="mt-10 ml-10">
-               <button type="button" class="krds-btn text xlarge">버튼</button><br>
-               <button type="button" class="krds-btn text large">버튼</button><br>
-               <button type="button" class="krds-btn text medium">버튼</button><br>
-               <button type="button" class="krds-btn text small">버튼</button><br>
-               <button type="button" class="krds-btn text xsmall" disabled>버튼</button>
+               <button type="button" class="btn text xlarge">버튼</button><br>
+               <button type="button" class="btn text large">버튼</button><br>
+               <button type="button" class="btn text medium">버튼</button><br>
+               <button type="button" class="btn text small">버튼</button><br>
+               <button type="button" class="btn text xsmall" disabled>버튼</button>
             </div>
          </div> 
 
          <pre>
             <code class="html">
-               &lt;button type="button" class="krds-btn primary xlarge"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn primary large"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn primary medium"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn primary small"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn primary xsmall disabled"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn primary xlarge"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn primary large"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn primary small"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn primary xsmall" disabled&gt;버튼&lt;/button&gt;
 
-               &lt;button type="button" class="krds-btn secondary xlarge"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn secondary large"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn secondary medium"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn secondary small"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn secondary xsmall disabled"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn secondary xlarge"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn secondary large"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn secondary small"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn secondary xsmall" disabled&gt;버튼&lt;/button&gt;
 
-               &lt;button type="button" class="krds-btn tertiary xlarge"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn tertiary large"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn tertiary medium"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn tertiary small"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn tertiary xsmall disabled"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn tertiary xlarge"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn tertiary large"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn tertiary medium"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn tertiary small"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn tertiary xsmall" disabled&gt;버튼&lt;/button&gt;
 
-               &lt;button type="button" class="krds-btn text xlarge"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn text large"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn text medium"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn text small"&gt;버튼&lt;/button&gt;
-               &lt;button type="button" class="krds-btn text xsmall disabled"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn text xlarge"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn text large"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn text medium"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn text small"&gt;버튼&lt;/button&gt;
+               &lt;button type="button" class="btn text xsmall" disabled&gt;버튼&lt;/button&gt;
+
+
             </code>
          </pre>
          <!-- 버튼 -->
@@ -579,7 +624,7 @@
          <!-- 브레드크럼 -->
          <h2 class="mt-50" id="BREADCRUMB">브레드크럼(768이하일때 모바일디자인 반영)</h2>
          <div class="guide-content">                        
-            <nav class="krds-breadcrumb-wrap">
+            <nav class="breadcrumb-wrap">
                <ol class="breadcrumb">
                   <li class="home"><a href="#" class="txt">홈</a></li>
                   <li><a href="#" class="txt">Depth1</a></li>
@@ -592,7 +637,7 @@
          </div>
          <pre>
             <code class="html">      
-               &lt;nav class="krds-breadcrumb-wrap"&gt;
+               &lt;nav class="breadcrumb-wrap"&gt;
                   &lt;ol class="breadcrumb"&gt;
                      &lt;li class="home"&gt;&lt;a href="#" class="txt"&gt;홈&lt;/a&gt;&lt;/li&gt;
                      &lt;li&gt;&lt;a href="#" class="txt"&gt;Depth1&lt;/a&gt;&lt;/li&gt;
@@ -601,7 +646,7 @@
                      &lt;li&gt;&lt;a href="#" class="txt"&gt;Depth4&lt;/a&gt;&lt;/li&gt;                  
                      &lt;li&gt;&lt;a href="#" class="txt"&gt;Depth5&lt;/a&gt;&lt;/li&gt;                  
                   &lt;/ol&gt;
-               &lt;/nav&gt;     
+               &lt;/nav&gt;            
             </code>
          </pre>
          <!-- 브레드크럼 -->
@@ -609,65 +654,57 @@
          <!-- 링크 -->
          <h2 class="mt-50" id="LINK">링크</h2>
          <div class="guide-content">                        
-            <a href="#!" class="krds-btn large link">링크</a><br><br>
-            <a href="#!" class="krds-btn medium link">링크</a><br><br>
-            <a href="#!" class="krds-btn small link">링크</a>
+            <a href="#!" class="btn large link">링크 large</a><br><br>
+            <a href="#!" class="btn medium link">링크 medium</a><br><br>
+            <a href="#!" class="btn small link">링크 small</a>
          </div>
          <pre>
             <code class="html"> 
-               - 링크 large
-               &lt;a href="#!" class="krds-btn large link"&gt;링크&lt;/a&gt;
-               - 링크 medium
-               &lt;a href="#!" class="krds-btn medium link"&gt;링크&lt;/a&gt;
-               - 링크 small
-               &lt;a href="#!" class="krds-btn small link"&gt;링크&lt;/a&gt;               
+               &lt;a href="#!" class="btn large link"&gt;링크&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+               &lt;a href="#!" class="btn medium link"&gt;링크&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+               &lt;a href="#!" class="btn small link"&gt;링크&lt;/a&gt;
             </code>
          </pre>
          <!-- 링크 -->
 
          <!-- 태그 -->
          <h2 class="mt-50" id="TAG">태그</h2>
-         <div class="guide-content">                        
-            <!-- tag -->
-            <div class="krds-tag-wrap large">
-               <span class="krds-btn-tag">
-                  태그
+         <div class="guide-content">                                    
+            <div class="tag-wrap large">
+               <span class="btn-tag">
+                  태그 large
                   <button type="button" class="btn-delete">
                      <span class="sr-only">삭제</span>
                   </button>
                </span>               
             </div><br>                      
-            <div class="krds-tag-wrap small">
-               <span class="krds-btn-tag disabled">
-                  태그
+            <div class="tag-wrap small">
+               <span class="btn-tag disabled">
+                  태그 small
                   <button type="button" class="btn-delete" disabled>
                      <span class="sr-only">삭제</span>
                   </button>
                </span>               
-            </div>
-            <!-- //tag -->
+            </div>            
          </div>
          <pre>
             <code class="html">  
-               - 태그 large              
-               &lt;div class="krds-tag-wrap large"&gt;
-                  &lt;span class="krds-btn-tag"&gt;
-                     태그
+               &lt;div class="tag-wrap large"&gt;
+                  &lt;span class="btn-tag"&gt;
+                     태그 large
                      &lt;button type="button" class="btn-delete"&gt;
                         &lt;span class="sr-only"&gt;삭제&lt;/span&gt;
                      &lt;/button&gt;
                   &lt;/span&gt;               
-               &lt;/div&gt;
-
-               - 태그 small              
-               &lt;div class="krds-tag-wrap small"&gt;
-                  &lt;span class="krds-btn-tag disabled"&gt;
-                     태그
-                     &lt;button type="button" class="btn-delete"&gt;
+               &lt;/div&gt;&lt;br&gt;                      
+               &lt;div class="tag-wrap small"&gt;
+                  &lt;span class="btn-tag disabled"&gt;
+                     태그 small
+                     &lt;button type="button" class="btn-delete" disabled&gt;
                         &lt;span class="sr-only"&gt;삭제&lt;/span&gt;
                      &lt;/button&gt;
                   &lt;/span&gt;               
-               &lt;/div&gt;
+               &lt;/div&gt;  
             </code>
          </pre>
          <!-- 태그 -->
@@ -678,121 +715,169 @@
             <div class="fieldset">
                <div class="form-group">
                   <div class="form-conts" style="display: flex;gap: 20px;">
-                     <div class="krds-check-area">
-                        <div class="krds-form-check large">
+                     <div class="check-area">
+                        <div class="form-check large">
                            <input type="radio" name="rdo_1" id="rdo_1">
-                           <label for="rdo_1">Radio</label>
+                           <label for="rdo_1">large</label>
                         </div><br>
-                        <div class="krds-form-check large">
+                        <div class="form-check large">
                            <input type="radio" name="rdo_1" id="rdo_2" checked>
-                           <label for="rdo_2">Radio</label>
+                           <label for="rdo_2">large checked</label>
                         </div><br>
-                        <div class="krds-form-check large">
+                        <div class="form-check large">
                            <input type="radio" name="rdo_1" id="rdo_3" disabled>
-                           <label for="rdo_3">Radio</label>
+                           <label for="rdo_3">large disabled</label>
                         </div><br>
-                        <div class="krds-form-check large">
+                        <div class="form-check large">
                            <input type="radio" name="rdo_1a" id="rdo_4" disabled checked>
-                           <label for="rdo_4">Radio</label>
+                           <label for="rdo_4">large disabled checked</label>
                         </div><br>
                      </div>
-                     <div class="krds-check-area">
-                        <div class="krds-form-check medium">
+                     <div class="check-area">
+                        <div class="form-check medium">
                            <input type="radio" name="rdo_11" id="rdo_11">
-                           <label for="rdo_11">Radio</label>
+                           <label for="rdo_11">medium</label>
                         </div><br>
-                        <div class="krds-form-check medium">
+                        <div class="form-check medium">
                            <input type="radio" name="rdo_11" id="rdo_22" checked>
-                           <label for="rdo_22">Radio</label>
+                           <label for="rdo_22">medium checked</label>
                         </div><br>
-                        <div class="krds-form-check medium">
+                        <div class="form-check medium">
                            <input type="radio" name="rdo_11" id="rdo_33" disabled>
-                           <label for="rdo_33">Radio</label>
+                           <label for="rdo_33">medium disabled</label>
                         </div><br>
-                        <div class="krds-form-check medium">
+                        <div class="form-check medium">
                            <input type="radio" name="rdo_11a" id="rdo_44" disabled checked>
-                           <label for="rdo_44">Radio</label>
+                           <label for="rdo_44">medium disabled checked</label>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
             
-            <div class="krds-check-area mt-20" style="display: flex;gap: 20px;">
-               <div class="krds-form-chip large">
+            <div class="check-area mt-20" style="display: flex;gap: 20px;">
+               <div class="form-chip large">
                   <input type="radio" class="radio" name="rdo_chip" id="rdo_chip_1">
-                  <label class="krds-form-chip-outline" for="rdo_chip_1">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_1">large-chips</label>
                </div><br>
-               <div class="krds-form-chip large">
+               <div class="form-chip large">
                   <input type="radio" class="radio" name="rdo_chip" id="rdo_chip_2" checked>
-                  <label class="krds-form-chip-outline" for="rdo_chip_2">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_2">large-chips checked</label>
                </div><br>
-               <div class="krds-form-chip large">
+               <div class="form-chip large">
                   <input type="radio" class="radio" name="rdo_chip" id="rdo_chip_3" disabled>
-                  <label class="krds-form-chip-outline" for="rdo_chip_3">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_3">large-chips disabled</label>
                </div>
             </div>  
             
-            <div class="krds-check-area mt-20" style="display: flex;gap: 20px;">
-               <div class="krds-form-chip medium">
+            <div class="check-area mt-20" style="display: flex;gap: 20px;">
+               <div class="form-chip medium">
                   <input type="radio" class="radio" name="rdo_chip1" id="rdo_chip_11">
-                  <label class="krds-form-chip-outline" for="rdo_chip_11">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_11">medium-chips</label>
                </div><br>
-               <div class="krds-form-chip medium">
+               <div class="form-chip medium">
                   <input type="radio" class="radio" name="rdo_chip1" id="rdo_chip_21" checked>
-                  <label class="krds-form-chip-outline" for="rdo_chip_21">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_21">medium-chips checked</label>
                </div><br>
-               <div class="krds-form-chip medium">
+               <div class="form-chip medium">
                   <input type="radio" class="radio" name="rdo_chip1" id="rdo_chip_31" disabled>
-                  <label class="krds-form-chip-outline" for="rdo_chip_31">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_31">medium-chips disabled</label>
                </div>
             </div>
 
-            <div class="krds-check-area mt-20" style="display: flex;gap: 20px;">
-               <div class="krds-form-chip small">
+            <div class="check-area mt-20" style="display: flex;gap: 20px;">
+               <div class="form-chip small">
                   <input type="radio" class="radio" name="rdo_chip2" id="rdo_chip_12">
-                  <label class="krds-form-chip-outline" for="rdo_chip_12">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_12">small-chips</label>
                </div><br>
-               <div class="krds-form-chip small">
+               <div class="form-chip small">
                   <input type="radio" class="radio" name="rdo_chip2" id="rdo_chip_22" checked>
-                  <label class="krds-form-chip-outline" for="rdo_chip_22">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_22">small-chips checked</label>
                </div><br>
-               <div class="krds-form-chip small">
+               <div class="form-chip small">
                   <input type="radio" class="radio" name="rdo_chip2" id="rdo_chip_32" disabled>
-                  <label class="krds-form-chip-outline" for="rdo_chip_32">Single-chips</label>
+                  <label class="form-chip-outline" for="rdo_chip_32">small-chips disabled</label>
                </div>
             </div>            
          </div>
          <pre>
             <code class="html">       
-               - 라디오박스 large
-               &lt;div class="krds-form-check large"&gt;
+               - large
+               &lt;div class="form-check large"&gt;
                   &lt;input type="radio" name="rdo_1" id="rdo_1"&gt;
-                  &lt;label for="rdo_1"&gt;Radio&lt;/label&gt;
+                  &lt;label for="rdo_1"&gt;large&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check large"&gt;
+                  &lt;input type="radio" name="rdo_1" id="rdo_2" checked&gt;
+                  &lt;label for="rdo_2"&gt;large checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check large"&gt;
+                  &lt;input type="radio" name="rdo_1" id="rdo_3" disabled&gt;
+                  &lt;label for="rdo_3"&gt;large disabled&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check large"&gt;
+                  &lt;input type="radio" name="rdo_1a" id="rdo_4" disabled checked&gt;
+                  &lt;label for="rdo_4"&gt;large disabled checked&lt;/label&gt;
                &lt;/div&gt;
 
-               - 라디오박스 medium
-               &lt;div class="krds-form-check medium"&gt;
+               - medium
+               &lt;div class="form-check medium"&gt;
                   &lt;input type="radio" name="rdo_11" id="rdo_11"&gt;
-                  &lt;label for="rdo_11"&gt;Radio&lt;/label&gt;
+                  &lt;label for="rdo_11"&gt;medium&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check medium"&gt;
+                  &lt;input type="radio" name="rdo_11" id="rdo_22" checked&gt;
+                  &lt;label for="rdo_22"&gt;medium checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check medium"&gt;
+                  &lt;input type="radio" name="rdo_11" id="rdo_33" disabled&gt;
+                  &lt;label for="rdo_33"&gt;medium disabled&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check medium"&gt;
+                  &lt;input type="radio" name="rdo_11a" id="rdo_44" disabled checked&gt;
+                  &lt;label for="rdo_44"&gt;medium disabled checked&lt;/label&gt;
                &lt;/div&gt;
 
-               - 라디오박스 chips타입입 large
-               &lt;div class="krds-form-chip large"&gt;
+               - chip large
+               &lt;div class="form-chip large"&gt;
                   &lt;input type="radio" class="radio" name="rdo_chip" id="rdo_chip_1"&gt;
-                  &lt;label class="krds-form-chip-outline" for="rdo_chip_1"&gt;Single-chips&lt;/label&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_1"&gt;large-chips&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip large"&gt;
+                  &lt;input type="radio" class="radio" name="rdo_chip" id="rdo_chip_2" checked&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_2"&gt;large-chips checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip large"&gt;
+                  &lt;input type="radio" class="radio" name="rdo_chip" id="rdo_chip_3" disabled&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_3"&gt;large-chips disabled&lt;/label&gt;
                &lt;/div&gt;
 
-               - 라디오박스 chips타입입 medium
-               &lt;div class="krds-form-chip medium"&gt;
+               - chip medium
+               &lt;div class="form-chip medium"&gt;
                   &lt;input type="radio" class="radio" name="rdo_chip1" id="rdo_chip_11"&gt;
-                  &lt;label class="krds-form-chip-outline" for="rdo_chip_11"&gt;Single-chips&lt;/label&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_11"&gt;medium-chips&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip medium"&gt;
+                  &lt;input type="radio" class="radio" name="rdo_chip1" id="rdo_chip_21" checked&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_21"&gt;medium-chips checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip medium"&gt;
+                  &lt;input type="radio" class="radio" name="rdo_chip1" id="rdo_chip_31" disabled&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_31"&gt;medium-chips disabled&lt;/label&gt;
                &lt;/div&gt;
 
-               - 라디오박스 chips타입입 small
-               &lt;div class="krds-form-chip small"&gt;
+               - chip small
+               &lt;div class="form-chip small"&gt;
                   &lt;input type="radio" class="radio" name="rdo_chip2" id="rdo_chip_12"&gt;
-                  &lt;label class="krds-form-chip-outline" for="rdo_chip_12"&gt;Single-chips&lt;/label&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_12"&gt;small-chips&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip small"&gt;
+                  &lt;input type="radio" class="radio" name="rdo_chip2" id="rdo_chip_22" checked&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_22"&gt;small-chips checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip small"&gt;
+                  &lt;input type="radio" class="radio" name="rdo_chip2" id="rdo_chip_32" disabled&gt;
+                  &lt;label class="form-chip-outline" for="rdo_chip_32"&gt;small-chips disabled&lt;/label&gt;
                &lt;/div&gt;
 
             </code>
@@ -805,32 +890,32 @@
             <div class="fieldset">
                <div class="form-group">
                   <div class="form-conts" style="display: flex;gap: 20px;">
-                     <div class="krds-check-area">
-                        <div class="krds-form-check">
+                     <div class="check-area">
+                        <div class="form-check">
                            <input type="checkbox" name="chk_1" id="chk_1">
                            <label for="chk_1">Checkbox</label>
                         </div><br>
-                        <div class="krds-form-check">
+                        <div class="form-check">
                            <input type="checkbox" name="chk_1" id="chk_2" checked>
-                           <label for="chk_2">Checkbox</label>
+                           <label for="chk_2">Checkbox checked</label>
                         </div><br>
-                        <div class="krds-form-check check-type1">
+                        <div class="form-check check-type1">
                            <input type="checkbox" name="chk_1" id="chk_3" checked>
-                           <label for="chk_3">Checkbox</label>
+                           <label for="chk_3">Checkbox checked</label>
                         </div>                        
                      </div>
-                     <div class="krds-check-area">                        
-                        <div class="krds-form-check">
+                     <div class="check-area">                        
+                        <div class="form-check">
                            <input type="checkbox" name="chk_1" id="chk_4" disabled>
-                           <label for="chk_4">Checkbox</label>
+                           <label for="chk_4">Checkbox disabled</label>
                         </div><br>
-                        <div class="krds-form-check">
+                        <div class="form-check">
                            <input type="checkbox" name="chk_1" id="chk_5" disabled checked>
-                           <label for="chk_5">Checkbox</label>
+                           <label for="chk_5">Checkbox disabled checked</label>
                         </div><br>
-                        <div class="krds-form-check check-type1">
+                        <div class="form-check check-type1">
                            <input type="checkbox" name="chk_1" id="chk_6" disabled checked>
-                           <label for="chk_6">Checkbox</label>
+                           <label for="chk_6">Checkbox disabled checked</label>
                         </div>
                      </div>
                   </div>
@@ -838,79 +923,120 @@
             </div>            
          </div>
 
-         <div class="krds-check-area mt-20" style="display: flex;gap: 20px;">
-            <div class="krds-form-chip large">
+         <div class="check-area mt-20" style="display: flex;gap: 20px;">
+            <div class="form-chip large">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_1">
-               <label class="krds-form-chip-outline" for="chk_chip_1">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_1">large-chips</label>
             </div>
-            <div class="krds-form-chip large">
+            <div class="form-chip large">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_2" checked>
-               <label class="krds-form-chip-outline" for="chk_chip_2">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_2">large-chips checked</label>
             </div>
-            <div class="krds-form-chip large">
+            <div class="form-chip large">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_3" disabled>
-               <label class="krds-form-chip-outline" for="chk_chip_3">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_3">large-chips disabled</label>
             </div>
          </div>
-          <div class="krds-check-area mt-20" style="display: flex;gap: 20px;">
-            <div class="krds-form-chip medium">
+          <div class="check-area mt-20" style="display: flex;gap: 20px;">
+            <div class="form-chip medium">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_11">
-               <label class="krds-form-chip-outline" for="chk_chip_11">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_11">medium-chips</label>
             </div>
-            <div class="krds-form-chip medium">
+            <div class="form-chip medium">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_21" checked>
-               <label class="krds-form-chip-outline" for="chk_chip_21">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_21">medium-chips checked</label>
             </div>
-            <div class="krds-form-chip medium">
+            <div class="form-chip medium">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_31" disabled>
-               <label class="krds-form-chip-outline" for="chk_chip_31">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_31">medium-chips disabled</label>
             </div>
          </div>
-          <div class="krds-check-area mt-20" style="display: flex;gap: 20px;">
-            <div class="krds-form-chip small">
+          <div class="check-area mt-20" style="display: flex;gap: 20px;">
+            <div class="form-chip small">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_12">
-               <label class="krds-form-chip-outline" for="chk_chip_12">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_12">small-chips</label>
             </div>
-            <div class="krds-form-chip small">
+            <div class="form-chip small">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_22" checked>
-               <label class="krds-form-chip-outline" for="chk_chip_22">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_22">small-chips checked</label>
             </div>
-            <div class="krds-form-chip small">
+            <div class="form-chip small">
                <input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_32" disabled>
-               <label class="krds-form-chip-outline" for="chk_chip_32">Multi-chips</label>
+               <label class="form-chip-outline" for="chk_chip_32">small-chips disabled</label>
             </div>
          </div>
          
          <pre>
             <code class="html">    
-               - 체크박스 기본타입
-               &lt;div class="krds-form-check"&gt;
+               -일반타입
+               &lt;div class="form-check"&gt;
                   &lt;input type="checkbox" name="chk_1" id="chk_1"&gt;
                   &lt;label for="chk_1"&gt;Checkbox&lt;/label&gt;
                &lt;/div&gt;
+               &lt;div class="form-check"&gt;
+                  &lt;input type="checkbox" name="chk_1" id="chk_2" checked&gt;
+                  &lt;label for="chk_2"&gt;Checkbox checked&lt;/label&gt;
+               &lt;/div&gt;
 
-               - 체크박스 마이너스 모양(-) 타입
-               &lt;div class="krds-form-check check-type1"&gt;
-                  &lt;input type="checkbox" name="chk_1" id="chk_3"&gt;
-                  &lt;label for="chk_3"&gt;Checkbox&lt;/label&gt;
-               &lt;/div&gt;                
+               - 체크했을떄 -(마이너스 모양) type
+               &lt;div class="form-check check-type1"&gt;
+                  &lt;input type="checkbox" name="chk_1" id="chk_3" checked&gt;
+                  &lt;label for="chk_3"&gt;Checkbox checked&lt;/label&gt;
+               &lt;/div&gt;        
+               
+               &lt;div class="form-check"&gt;
+                  &lt;input type="checkbox" name="chk_1" id="chk_4" disabled&gt;
+                  &lt;label for="chk_4"&gt;Checkbox disabled&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check"&gt;
+                  &lt;input type="checkbox" name="chk_1" id="chk_5" disabled checked&gt;
+                  &lt;label for="chk_5"&gt;Checkbox disabled checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-check check-type1"&gt;
+                  &lt;input type="checkbox" name="chk_1" id="chk_6" disabled checked&gt;
+                  &lt;label for="chk_6"&gt;Checkbox disabled checked&lt;/label&gt;
+               &lt;/div&gt;
 
-               - 체크박스 chips타입 large
-               &lt;div class="krds-form-chip large"&gt;
+               - chip large
+               &lt;div class="form-chip large"&gt;
                   &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_1"&gt;
-                  &lt;label class="krds-form-chip-outline" for="chk_chip_1"&gt;Multi-chips&lt;/label&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_1"&gt;large-chips&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip large"&gt;
+                  &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_2" checked&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_2"&gt;large-chips checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip large"&gt;
+                  &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_3" disabled&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_3"&gt;large-chips disabled&lt;/label&gt;
                &lt;/div&gt;
 
-               - 체크박스 chips타입 medium
-               &lt;div class="krds-form-chip medium"&gt;
+               - chip medium
+               &lt;div class="form-chip medium"&gt;
                   &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_11"&gt;
-                  &lt;label class="krds-form-chip-outline" for="chk_chip_11"&gt;Multi-chips&lt;/label&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_11"&gt;medium-chips&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip medium"&gt;
+                  &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_21" checked&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_21"&gt;medium-chips checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip medium"&gt;
+                  &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_31" disabled&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_31"&gt;medium-chips disabled&lt;/label&gt;
                &lt;/div&gt;
 
-               - 체크박스 chips타입 small
-               &lt;div class="krds-form-chip small"&gt;
+               - chip small
+               &lt;div class="form-chip small"&gt;
                   &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_12"&gt;
-                  &lt;label class="krds-form-chip-outline" for="chk_chip_12"&gt;Multi-chips&lt;/label&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_12"&gt;small-chips&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip small"&gt;
+                  &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_22" checked&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_22"&gt;small-chips checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-chip small"&gt;
+                  &lt;input type="checkbox" class="checkbox" name="chk_1" id="chk_chip_32" disabled&gt;
+                  &lt;label class="form-chip-outline" for="chk_chip_32"&gt;small-chips disabled&lt;/label&gt;
                &lt;/div&gt;
             </code>
          </pre>
@@ -921,56 +1047,56 @@
          <div class="guide-content">   
              <div style="display: flex;gap: 20px;">
                <div>
-                  <div class="krds-form-toggle-switch large">
+                  <div class="form-toggle-switch large">
                      <input type="checkbox" id="switch1">
                      <label for="switch1">Switch</label>
                   </div>
-                  <div class="krds-form-toggle-switch large">
+                  <div class="form-toggle-switch large">
                      <input type="checkbox" id="switch2" checked>
-                     <label for="switch2">Switch</label>
+                     <label for="switch2">Switch checked</label>
                   </div>
                </div>
                <div>
-                  <div class="krds-form-toggle-switch large">
+                  <div class="form-toggle-switch large">
                      <input type="checkbox" id="switch3" disabled>
-                     <label for="switch3">Switch</label>
+                     <label for="switch3">Switch disabled</label>
                   </div>
-                  <div class="krds-form-toggle-switch large">
+                  <div class="form-toggle-switch large">
                      <input type="checkbox" id="switch4" checked disabled>
-                     <label for="switch4">Switch</label>
+                     <label for="switch4">Switch disabled checked</label>
                   </div>
                </div>
              </div>
              <div style="display: flex;gap: 20px;">
                <div>
-                  <div class="krds-form-toggle-switch medium">
+                  <div class="form-toggle-switch medium">
                      <input type="checkbox" id="switch5">
                      <label for="switch5">Switch</label>
                   </div>
-                  <div class="krds-form-toggle-switch medium">
+                  <div class="form-toggle-switch medium">
                      <input type="checkbox" id="switch6" checked>
-                     <label for="switch6">Switch</label>
+                     <label for="switch6">Switch checked</label>
                   </div>
                </div>
                <div>
-                  <div class="krds-form-toggle-switch medium">
+                  <div class="form-toggle-switch medium">
                      <input type="checkbox" id="switch7" disabled>
-                     <label for="switch7">Switch</label>
+                     <label for="switch7">Switch disabled</label>
                   </div>
-                  <div class="krds-form-toggle-switch medium">
+                  <div class="form-toggle-switch medium">
                      <input type="checkbox" id="switch8" checked disabled>
-                     <label for="switch8">Switch</label>
+                     <label for="switch8">Switch disabled checked</label>
                   </div>
                </div>
              </div>
              <div style="display: flex;gap: 20px;">
-               <div class="krds-form-toggle-switch language-switch">
+               <div class="form-toggle-switch language-switch">
                   <input type="radio" id="switch9" name="radio-switch1" checked>
                   <label for="switch9" class="kr">한글</label>
                   <input type="radio" id="switch10" name="radio-switch1">
                   <label for="switch10" class="en">English</label>
                </div>
-               <div class="krds-form-toggle-switch language-switch">
+               <div class="form-toggle-switch language-switch">
                   <input type="radio" id="switch11" name="radio-switch2">
                   <label for="switch11" class="kr">한글</label>
                   <input type="radio" id="switch12" name="radio-switch2" checked>
@@ -980,47 +1106,53 @@
          </div>
          <pre>
             <code class="html"> 
-               - 기본타입 large
-               &lt;div class="krds-form-toggle-switch large"&gt;
+               - large
+               &lt;div class="form-toggle-switch large"&gt;
                   &lt;input type="checkbox" id="switch1"&gt;
                   &lt;label for="switch1"&gt;Switch&lt;/label&gt;
                &lt;/div&gt;
-               &lt;div class="krds-form-toggle-switch large"&gt;
+               &lt;div class="form-toggle-switch large"&gt;
                   &lt;input type="checkbox" id="switch2" checked&gt;
-                  &lt;label for="switch2"&gt;Switch&lt;/label&gt;
+                  &lt;label for="switch2"&gt;Switch checked&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-toggle-switch large"&gt;
+                  &lt;input type="checkbox" id="switch3" disabled&gt;
+                  &lt;label for="switch3"&gt;Switch disabled&lt;/label&gt;
+               &lt;/div&gt;
+               &lt;div class="form-toggle-switch large"&gt;
+                  &lt;input type="checkbox" id="switch4" checked disabled&gt;
+                  &lt;label for="switch4"&gt;Switch disabled checked&lt;/label&gt;
                &lt;/div&gt;
 
-               - 기본타입 medium
-               &lt;div class="krds-form-toggle-switch medium"&gt;
+               - medium
+               &lt;div class="form-toggle-switch medium"&gt;
                   &lt;input type="checkbox" id="switch5"&gt;
                   &lt;label for="switch5"&gt;Switch&lt;/label&gt;
                &lt;/div&gt;
-               &lt;div class="krds-form-toggle-switch medium"&gt;
+               &lt;div class="form-toggle-switch medium"&gt;
                   &lt;input type="checkbox" id="switch6" checked&gt;
-                  &lt;label for="switch6"&gt;Switch&lt;/label&gt;
+                  &lt;label for="switch6"&gt;Switch checked&lt;/label&gt;
                &lt;/div&gt;
-
-               - 비활성화
-               &lt;div class="krds-form-toggle-switch large"&gt;
+               &lt;div class="form-toggle-switch medium"&gt;
                   &lt;input type="checkbox" id="switch7" disabled&gt;
-                  &lt;label for="switch7"&gt;Switch&lt;/label&gt;
+                  &lt;label for="switch7"&gt;Switch disabled&lt;/label&gt;
                &lt;/div&gt;
-               &lt;div class="krds-form-toggle-switch large"&gt;
+               &lt;div class="form-toggle-switch medium"&gt;
                   &lt;input type="checkbox" id="switch8" checked disabled&gt;
-                  &lt;label for="switch8"&gt;Switch&lt;/label&gt;
+                  &lt;label for="switch8"&gt;Switch disabled checked&lt;/label&gt;
                &lt;/div&gt;
 
-               - 언어타입
-               &lt;div class="krds-form-toggle-switch language-switch"&gt;
-                  &lt;input type="radio" id="switch9" name="radio-switch1"&gt;
+               - 언어
+               &lt;div class="form-toggle-switch language-switch"&gt;
+                  &lt;input type="radio" id="switch9" name="radio-switch1" checked&gt;
                   &lt;label for="switch9" class="kr"&gt;한글&lt;/label&gt;
                   &lt;input type="radio" id="switch10" name="radio-switch1"&gt;
                   &lt;label for="switch10" class="en"&gt;English&lt;/label&gt;
                &lt;/div&gt;
-               &lt;div class="krds-form-toggle-switch language-switch"&gt;
+               &lt;div class="form-toggle-switch language-switch"&gt;
                   &lt;input type="radio" id="switch11" name="radio-switch2"&gt;
                   &lt;label for="switch11" class="kr"&gt;한글&lt;/label&gt;
-                  &lt;input type="radio" id="switch12" name="radio-switch2"&gt;
+                  &lt;input type="radio" id="switch12" name="radio-switch2" checked&gt;
                   &lt;label for="switch12" class="en"&gt;English&lt;/label&gt;
                &lt;/div&gt;
             </code>
@@ -1034,37 +1166,37 @@
                <div class="fieldset" style="display: flex;gap: 50px;">   
                   <div class="form-group large">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name1" class="input" placeholder="기본입력" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group large">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name2" class="krds-input" placeholder="성공적으로 입력중..." title="정보를 입력해주세요">
+                        <input type="text" id="consult_name2" class="input" placeholder="성공적으로 입력중..." title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group large">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name3" class="krds-input" placeholder="입력완료" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name3" class="input" placeholder="입력완료" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group large">                     
                      <div class="form-conts is-error">
-                        <input type="text" id="consult_name4" class="krds-input" placeholder="입력중 에러" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name4" class="input" placeholder="입력중 에러" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid txt-error">메시지 내용</p>
                   </div> 
                   <div class="form-group large">                     
                      <div class="form-conts disabled-type1">
-                        <input type="text" id="consult_name5" class="krds-input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다">
+                        <input type="text" id="consult_name5" class="input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div> 
                   <div class="form-group large">                     
                      <div class="form-conts disabled-type2">
-                        <input type="text" id="consult_name23" class="krds-input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다">
+                        <input type="text" id="consult_name23" class="input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                   
@@ -1073,37 +1205,37 @@
                <div class="fieldset mt-20" style="display: flex;gap: 50px;">   
                   <div class="form-group medium">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name1" class="input" placeholder="기본입력" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group medium">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name2" class="krds-input" placeholder="성공적으로 입력중..." title="정보를 입력해주세요">
+                        <input type="text" id="consult_name2" class="input" placeholder="성공적으로 입력중..." title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group medium">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name3" class="krds-input" placeholder="입력완료" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name3" class="input" placeholder="입력완료" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group medium">                     
                      <div class="form-conts is-error">
-                        <input type="text" id="consult_name4" class="krds-input" placeholder="입력중 에러" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name4" class="input" placeholder="입력중 에러" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid txt-error">메시지 내용</p>
                   </div> 
                   <div class="form-group medium">                     
                      <div class="form-conts disabled-type1">
-                        <input type="text" id="consult_name5" class="krds-input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다">
+                        <input type="text" id="consult_name5" class="input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div> 
                   <div class="form-group medium">                     
                      <div class="form-conts disabled-type2">
-                        <input type="text" id="consult_name23" class="krds-input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다">
+                        <input type="text" id="consult_name23" class="input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                   
@@ -1112,37 +1244,37 @@
                <div class="fieldset mt-20" style="display: flex;gap: 50px;">   
                   <div class="form-group small">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name1" class="input" placeholder="기본입력" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group small">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name2" class="krds-input" placeholder="성공적으로 입력중..." title="정보를 입력해주세요">
+                        <input type="text" id="consult_name2" class="input" placeholder="성공적으로 입력중..." title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group small">                     
                      <div class="form-conts">
-                        <input type="text" id="consult_name3" class="krds-input" placeholder="입력완료" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name3" class="input" placeholder="입력완료" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                  
                   <div class="form-group small">                     
                      <div class="form-conts is-error">
-                        <input type="text" id="consult_name4" class="krds-input" placeholder="입력중 에러" title="정보를 입력해주세요">
+                        <input type="text" id="consult_name4" class="input" placeholder="입력중 에러" title="정보를 입력해주세요">
                      </div>
                      <p class="form-hint-invalid txt-error">메시지 내용</p>
                   </div> 
                   <div class="form-group small">                     
                      <div class="form-conts disabled-type1">
-                        <input type="text" id="consult_name5" class="krds-input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다">
+                        <input type="text" id="consult_name5" class="input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div> 
                   <div class="form-group small">                     
                      <div class="form-conts disabled-type2">
-                        <input type="text" id="consult_name23" class="krds-input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다">
+                        <input type="text" id="consult_name23" class="input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다">
                      </div>
                      <p class="form-hint-invalid">힌트 메시지</p>
                   </div>                   
@@ -1151,9 +1283,9 @@
                <div class="fieldset mt-20" style="display: flex;gap: 50px;">   
                   <div class="wrap-form-group">
                      <div class="form-group form-tit-group">  
-                        <label for="consult_name11" class="form-title">성</label>                   
+                        <label for="consult_name11" class="form-title">성성성</label>                   
                         <div class="form-conts">
-                           <input type="text" id="consult_name11" class="krds-input" placeholder="성을 입력해주세요" title="성을 입력해주세요">
+                           <input type="text" id="consult_name11" class="input" placeholder="성을 입력해주세요" title="성을 입력해주세요">
                         </div>                     
                      </div>                  
                   </div>
@@ -1161,7 +1293,7 @@
                      <div class="form-group form-tit-group">  
                         <label for="consult_name21" class="form-title">성</label>                                         
                         <div class="form-conts">
-                           <input type="text" id="consult_name21" class="krds-input" placeholder="입력중" title="성을 입력해주세요">
+                           <input type="text" id="consult_name21" class="input" placeholder="입력중" title="성을 입력해주세요">
                         </div>                     
                      </div>                  
                   </div>                  
@@ -1169,7 +1301,7 @@
                      <div class="form-group form-tit-group is-error">
                         <label for="consult_name41" class="form-title">성</label>                                      
                         <div class="form-conts">
-                           <input type="text" id="consult_name41" class="krds-input" placeholder="입력중" title="성을 입력해주세요">
+                           <input type="text" id="consult_name41" class="input" placeholder="입력중" title="성을 입력해주세요">
                         </div>                        
                      </div> 
                      <p class="form-hint-invalid txt-error">힌트 메시지</p>
@@ -1178,7 +1310,7 @@
                      <div class="form-group form-tit-group disabled"> 
                         <label for="consult_name51" class="form-title">성</label>                                      
                         <div class="form-conts disabled-type1">
-                           <input type="text" id="consult_name51" class="krds-input" placeholder="입력완료료" disabled title="성을 확인가능합니다">
+                           <input type="text" id="consult_name51" class="input" placeholder="입력완료료" disabled title="성을 확인가능합니다">
                         </div>                     
                      </div> 
                   </div>
@@ -1186,7 +1318,7 @@
                      <div class="form-group form-tit-group disabled"> 
                         <label for="consult_name61" class="form-title">성</label>                                    
                         <div class="form-conts disabled-type2">
-                           <input type="text" id="consult_name61" class="krds-input" placeholder="입력완료" disabled title="성을 확인가능합니다">
+                           <input type="text" id="consult_name61" class="input" placeholder="입력완료" disabled title="성을 확인가능합니다">
                         </div>                     
                      </div>                  
                   </div> 
@@ -1195,94 +1327,94 @@
          </div>
          <pre>
             <code class="html"> 
-               - 입력박스 기본타입 large
+               - large
                &lt;div class="form-group large"&gt;                     
                   &lt;div class="form-conts"&gt;
-                  &lt;input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="정보를 입력해주세요"&gt;
+                     &lt;input type="text" id="consult_name1" class="input" placeholder="기본입력" title="정보를 입력해주세요"&gt;
                   &lt;/div&gt;
                   &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt;             
+               &lt;/div&gt;  
 
-               - 입력박스 기본타입 medium
+               -medium
                &lt;div class="form-group medium"&gt;                     
                   &lt;div class="form-conts"&gt;
-                  &lt;input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="정보를 입력해주세요"&gt;
+                     &lt;input type="text" id="consult_name1" class="input" placeholder="기본입력" title="정보를 입력해주세요"&gt;
                   &lt;/div&gt;
                   &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt;    
+               &lt;/div&gt;
 
-               - 입력박스 기본타입 small
+               -small
                &lt;div class="form-group small"&gt;                     
                   &lt;div class="form-conts"&gt;
-                  &lt;input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="정보를 입력해주세요"&gt;
+                     &lt;input type="text" id="consult_name1" class="input" placeholder="기본입력" title="정보를 입력해주세요"&gt;
                   &lt;/div&gt;
                   &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt;  
+               &lt;/div&gt;
 
-               - 입력박스 errpr타입
-               &lt;div class="form-group medium"&gt;                     
+               -error
+               &lt;div class="form-group small"&gt;                     
                   &lt;div class="form-conts is-error"&gt;
-                  &lt;input type="text" id="consult_name4" class="krds-input" placeholder="입력중 에러" title="정보를 입력해주세요"&gt;
+                     &lt;input type="text" id="consult_name4" class="input" placeholder="입력중 에러" title="정보를 입력해주세요"&gt;
                   &lt;/div&gt;
                   &lt;p class="form-hint-invalid txt-error"&gt;메시지 내용&lt;/p&gt;
-               &lt;/div&gt; 
+               &lt;/div&gt;
 
-               - 비활성화 타입1
-               &lt;div class="form-group medium"&gt;                     
+               -disabled-type1
+               &lt;div class="form-group small"&gt;                     
                   &lt;div class="form-conts disabled-type1"&gt;
-                  &lt;input type="text" id="consult_name5" class="krds-input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다"&gt;
+                     &lt;input type="text" id="consult_name5" class="input" placeholder="비활성화 타입1" disabled title="정보를 확인가능합니다"&gt;
                   &lt;/div&gt;
                   &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
                &lt;/div&gt; 
 
-               - 비활성화 타입2
-               &lt;div class="form-group medium"&gt;                     
+               -disabled-type2
+               &lt;div class="form-group small"&gt;                     
                   &lt;div class="form-conts disabled-type2"&gt;
-                  &lt;input type="text" id="consult_name23" class="krds-input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다"&gt;
+                     &lt;input type="text" id="consult_name23" class="input" placeholder="비활성화 타입2" disabled title="정보를 확인가능합니다"&gt;
                   &lt;/div&gt;
                   &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt;  
+               &lt;/div&gt;
 
-               - 제목 일반타입
+               -title
                &lt;div class="wrap-form-group"&gt;
                   &lt;div class="form-group form-tit-group"&gt;  
-                  &lt;label for="consult_name11" class="form-title"&gt;성&lt;/label&gt;                   
-                  &lt;div class="form-conts"&gt;
-                     &lt;input type="text" id="consult_name11" class="krds-input" placeholder="성을 입력해주세요" title="성을 입력해주세요"&gt;
-                  &lt;/div&gt;                     
+                     &lt;label for="consult_name11" class="form-title"&gt;성성성&lt;/label&gt;                   
+                     &lt;div class="form-conts"&gt;
+                        &lt;input type="text" id="consult_name11" class="input" placeholder="성을 입력해주세요" title="성을 입력해주세요"&gt;
+                     &lt;/div&gt;                     
                   &lt;/div&gt;                  
                &lt;/div&gt;
 
-               - 제목 error타입
+               -title error
                &lt;div class="wrap-form-group"&gt;
                   &lt;div class="form-group form-tit-group is-error"&gt;
-                  &lt;label for="consult_name41" class="form-title"&gt;성&lt;/label&gt;                                      
-                  &lt;div class="form-conts"&gt;
-                     &lt;input type="text" id="consult_name41" class="krds-input" placeholder="입력중" title="성을 입력해주세요"&gt;
-                  &lt;/div&gt;                        
+                     &lt;label for="consult_name41" class="form-title"&gt;성&lt;/label&gt;                                      
+                     &lt;div class="form-conts"&gt;
+                        &lt;input type="text" id="consult_name41" class="input" placeholder="입력중" title="성을 입력해주세요"&gt;
+                     &lt;/div&gt;                        
                   &lt;/div&gt; 
                   &lt;p class="form-hint-invalid txt-error"&gt;힌트 메시지&lt;/p&gt;
                &lt;/div&gt;
 
-               - 제목 비활성화 타입1
+               -title disabled-type1
                &lt;div class="wrap-form-group"&gt;
                   &lt;div class="form-group form-tit-group disabled"&gt; 
-                  &lt;label for="consult_name51" class="form-title"&gt;성&lt;/label&gt;                                      
-                  &lt;div class="form-conts disabled-type1"&gt;
-                     &lt;input type="text" id="consult_name51" class="krds-input" placeholder="입력완료료" disabled title="성을 확인가능합니다"&gt;
-                  &lt;/div&gt;                     
+                     &lt;label for="consult_name51" class="form-title"&gt;성&lt;/label&gt;                                      
+                     &lt;div class="form-conts disabled-type1"&gt;
+                        &lt;input type="text" id="consult_name51" class="input" placeholder="입력완료료" disabled title="성을 확인가능합니다"&gt;
+                     &lt;/div&gt;                     
                   &lt;/div&gt; 
                &lt;/div&gt;
 
-               - 제목 비활성화 타입2
+               -title disabled-type2
                &lt;div class="wrap-group"&gt;
                   &lt;div class="form-group form-tit-group disabled"&gt; 
-                  &lt;label for="consult_name61" class="form-title"&gt;성&lt;/label&gt;                                    
-                  &lt;div class="form-conts disabled-type2"&gt;
-                     &lt;input type="text" id="consult_name61" class="krds-input" placeholder="입력완료" disabled title="성을 확인가능합니다"&gt;
-                  &lt;/div&gt;                     
+                     &lt;label for="consult_name61" class="form-title"&gt;성&lt;/label&gt;                                    
+                     &lt;div class="form-conts disabled-type2"&gt;
+                        &lt;input type="text" id="consult_name61" class="input" placeholder="입력완료" disabled title="성을 확인가능합니다"&gt;
+                     &lt;/div&gt;                     
                   &lt;/div&gt;                  
-               &lt;/div&gt; 
+               &lt;/div&gt;
             </code>
          </pre>
          <!-- 입력박스 -->
@@ -1296,7 +1428,7 @@
                </div>
                <div class="form-conts">
                   <div class="textarea-wrap">
-                     <textarea class="krds-input" placeholder="플레이스홀더" id="textarea1" title="정보를 입력해주세요"></textarea>
+                     <textarea class="input" placeholder="플레이스홀더" id="textarea1" title="정보를 입력해주세요"></textarea>
                      <p class="textarea-count"><span class="count-now">0</span><span class="count-total">/100</span></p>
                   </div>
                </div>
@@ -1307,7 +1439,7 @@
                </div>
                <div class="form-conts">
                   <div class="textarea-wrap">
-                     <textarea class="krds-input" placeholder="플레이스홀더" id="textarea2" title="정보를 입력해주세요"></textarea>
+                     <textarea class="input" placeholder="플레이스홀더" id="textarea2" title="정보를 입력해주세요"></textarea>
                      <p class="textarea-count"><span class="count-now">100</span><span class="count-total">/100</span></p>
                   </div>
                </div>
@@ -1318,7 +1450,7 @@
                </div>
                <div class="form-conts">
                   <div class="textarea-wrap">
-                     <textarea class="krds-input" placeholder="플레이스홀더" id="textarea3" title="정보를 입력해주세요"></textarea>                     
+                     <textarea class="input" placeholder="플레이스홀더" id="textarea3" title="정보를 입력해주세요"></textarea>                     
                      <p class="textarea-count"><span class="count-now">10</span><span class="count-total">/100</span></p>
                   </div>
                </div>
@@ -1329,7 +1461,7 @@
                </div>
                <div class="form-conts is-error">
                   <div class="textarea-wrap">
-                     <textarea class="krds-input" placeholder="error" id="textarea4" title="정보를 입력해주세요"></textarea>
+                     <textarea class="input" placeholder="error" id="textarea4" title="정보를 입력해주세요"></textarea>
                      <div class="wrap-textarea-count">
                         <p class="form-hint-invalid txt-error">메시지 내용</p>
                         <p class="textarea-count"><span class="count-now is-error">100</span><span class="count-total">/100</span></p>
@@ -1343,7 +1475,7 @@
                </div>
                <div class="form-conts disabled-type1">
                   <div class="textarea-wrap">
-                     <textarea class="krds-input" placeholder="플레이스홀더" id="textarea5" title="정보를 확인해주세요" disabled></textarea>
+                     <textarea class="input" placeholder="플레이스홀더" id="textarea5" title="정보를 확인해주세요" disabled></textarea>
                      <p class="textarea-count"><span class="count-now">0</span><span class="count-total">/100</span></p>
                   </div>
                </div>
@@ -1354,7 +1486,7 @@
                </div>
                <div class="form-conts disabled-type2">
                   <div class="textarea-wrap">
-                     <textarea class="krds-input" placeholder="플레이스홀더" id="textarea6" title="정보를 확인해주세요" disabled></textarea>
+                     <textarea class="input" placeholder="플레이스홀더" id="textarea6" title="정보를 확인해주세요" disabled></textarea>
                      <p class="textarea-count"><span class="count-now">0</span><span class="count-total">/100</span></p>
                   </div>
                </div>
@@ -1363,60 +1495,60 @@
 
          <pre>
             <code class="html"> 
-               - 기본타입
+               -일반
                &lt;div class="form-group"&gt;
                   &lt;div class="form-tit-txt"&gt;
                      &lt;label for="textarea1"&gt;레이블&lt;/label&gt;
                   &lt;/div&gt;
                   &lt;div class="form-conts"&gt;
                      &lt;div class="textarea-wrap"&gt;
-                           &lt;textarea class="krds-input" placeholder="플레이스홀더" id="textarea1" title="정보를 입력해주세요"&gt;&lt;/textarea&gt;
-                           &lt;p class="textarea-count"&gt;&lt;span class="count-now"&gt;0&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
+                        &lt;textarea class="input" placeholder="플레이스홀더" id="textarea1" title="정보를 입력해주세요"&gt;&lt;/textarea&gt;
+                        &lt;p class="textarea-count"&gt;&lt;span class="count-now"&gt;0&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
                      &lt;/div&gt;
                   &lt;/div&gt;
                &lt;/div&gt;
 
-               - errpr타입
+               -error
                &lt;div class="form-group"&gt;
                   &lt;div class="form-tit-txt"&gt;
                      &lt;label for="textarea4"&gt;레이블&lt;/label&gt;
                   &lt;/div&gt;
                   &lt;div class="form-conts is-error"&gt;
                      &lt;div class="textarea-wrap"&gt;
-                           &lt;textarea class="krds-input" placeholder="error" id="textarea4" title="정보를 입력해주세요"&gt;&lt;/textarea&gt;
-                           &lt;div class="wrap-textarea-count"&gt;
+                        &lt;textarea class="input" placeholder="error" id="textarea4" title="정보를 입력해주세요"&gt;&lt;/textarea&gt;
+                        &lt;div class="wrap-textarea-count"&gt;
                            &lt;p class="form-hint-invalid txt-error"&gt;메시지 내용&lt;/p&gt;
                            &lt;p class="textarea-count"&gt;&lt;span class="count-now is-error"&gt;100&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
-                           &lt;/div&gt;                                          
+                        &lt;/div&gt;                                          
                      &lt;/div&gt;
                   &lt;/div&gt;
                &lt;/div&gt;
 
-               - 비활성화 타입1
+               -disabled-type1
                &lt;div class="form-group"&gt;
                   &lt;div class="form-tit-txt"&gt;
                      &lt;label for="textarea5"&gt;레이블&lt;/label&gt;
                   &lt;/div&gt;
                   &lt;div class="form-conts disabled-type1"&gt;
                      &lt;div class="textarea-wrap"&gt;
-                           &lt;textarea class="krds-input" placeholder="플레이스홀더" id="textarea5" title="정보를 확인해주세요" disabled&gt;&lt;/textarea&gt;
-                           &lt;p class="textarea-count"&gt;&lt;span class="count-now"&gt;0&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
+                        &lt;textarea class="input" placeholder="플레이스홀더" id="textarea5" title="정보를 확인해주세요" disabled&gt;&lt;/textarea&gt;
+                        &lt;p class="textarea-count"&gt;&lt;span class="count-now"&gt;0&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
                      &lt;/div&gt;
                   &lt;/div&gt;
                &lt;/div&gt;
 
-               - 비활성화 타입2
+               -disabled-type2
                &lt;div class="form-group"&gt;
                   &lt;div class="form-tit-txt"&gt;
                      &lt;label for="textarea6"&gt;레이블&lt;/label&gt;
                   &lt;/div&gt;
                   &lt;div class="form-conts disabled-type2"&gt;
                      &lt;div class="textarea-wrap"&gt;
-                           &lt;textarea class="krds-input" placeholder="플레이스홀더" id="textarea6" title="정보를 확인해주세요" disabled&gt;&lt;/textarea&gt;
-                           &lt;p class="textarea-count"&gt;&lt;span class="count-now"&gt;0&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
+                        &lt;textarea class="input" placeholder="플레이스홀더" id="textarea6" title="정보를 확인해주세요" disabled&gt;&lt;/textarea&gt;
+                        &lt;p class="textarea-count"&gt;&lt;span class="count-now"&gt;0&lt;/span&gt;&lt;span class="count-total"&gt;/100&lt;/span&gt;&lt;/p&gt;
                      &lt;/div&gt;
                   &lt;/div&gt;
-               &lt;/div&gt;
+               &lt;/div&gt; 
             </code>
          </pre>
          <!-- 긴 텍스트 입력 서식 -->
@@ -1427,7 +1559,18 @@
             <div class="fieldset" style="display: flex;gap: 20px;">            
                <div class="form-group large">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
+                        <option value="" selected disabled hidden>조건을 선택해주세dddddd요</option>
+                        <option value="항목1">항목1</option>
+                        <option value="항목2">항목2</option>
+                        <option value="항목3">항목3</option>
+                     </select>
+                  </div>
+                   <p class="form-hint-invalid">힌트 메시지</p>
+               </div>               
+               <div class="form-group large">                  
+                  <div class="form-conts">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1438,18 +1581,7 @@
                </div>               
                <div class="form-group large">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
-                        <option value="" selected disabled hidden>조건을 선택해주세요</option>
-                        <option value="항목1">항목1</option>
-                        <option value="항목2">항목2</option>
-                        <option value="항목3">항목3</option>
-                     </select>
-                  </div>
-                   <p class="form-hint-invalid">힌트 메시지</p>
-               </div>               
-               <div class="form-group large">                  
-                  <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1460,7 +1592,7 @@
                </div>               
                <div class="form-group large">                  
                   <div class="form-conts is-error">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1471,7 +1603,7 @@
                </div>    
                <div class="form-group large">                  
                   <div class="form-conts disabled-type1">
-                     <select class="krds-form-select" required disabled title="조건을 확인해주세요">
+                     <select class="form-select" required disabled title="조건을 확인해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1482,7 +1614,7 @@
                </div>
                <div class="form-group large">                  
                   <div class="form-conts disabled-type2">
-                     <select class="krds-form-select" required disabled title="조건을 확인해주세요">
+                     <select class="form-select" required disabled title="조건을 확인해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1496,7 +1628,7 @@
             <div class="fieldset mt-20" style="display: flex;gap: 20px;">            
                <div class="form-group medium">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1507,7 +1639,7 @@
                </div>               
                <div class="form-group medium">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1518,7 +1650,7 @@
                </div>               
                <div class="form-group medium">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1529,7 +1661,7 @@
                </div>               
                <div class="form-group medium">                  
                   <div class="form-conts is-error">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1540,7 +1672,7 @@
                </div>    
                <div class="form-group medium">                  
                   <div class="form-conts disabled-type1">
-                     <select class="krds-form-select" required disabled title="조건을 확인해주세요">
+                     <select class="form-select" required disabled title="조건을 확인해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1551,7 +1683,7 @@
                </div>
                <div class="form-group medium">                  
                   <div class="form-conts disabled-type2">
-                     <select class="krds-form-select" required disabled title="조건을 확인해주세요">
+                     <select class="form-select" required disabled title="조건을 확인해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1565,7 +1697,7 @@
             <div class="fieldset mt-20" style="display: flex;gap: 20px;">            
                <div class="form-group small">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1576,7 +1708,7 @@
                </div>               
                <div class="form-group small">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1587,7 +1719,7 @@
                </div>               
                <div class="form-group small">                  
                   <div class="form-conts">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1598,7 +1730,7 @@
                </div>               
                <div class="form-group small">                  
                   <div class="form-conts is-error">
-                     <select class="krds-form-select" required title="조건을 선택해주세요">
+                     <select class="form-select" required title="조건을 선택해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1609,7 +1741,7 @@
                </div>    
                <div class="form-group small">                  
                   <div class="form-conts disabled-type1">
-                     <select class="krds-form-select" required disabled title="조건을 확인해주세요">
+                     <select class="form-select" required disabled title="조건을 확인해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1620,7 +1752,7 @@
                </div>
                <div class="form-group small">                  
                   <div class="form-conts disabled-type2">
-                     <select class="krds-form-select" required disabled title="조건을 확인해주세요">
+                     <select class="form-select" required disabled title="조건을 확인해주세요">
                         <option value="" selected disabled hidden>조건을 선택해주세요</option>
                         <option value="항목1">항목1</option>
                         <option value="항목2">항목2</option>
@@ -1632,14 +1764,14 @@
             </div> 
             <br>
             <br>
-            <select id="select_sorting" class="krds-form-select-sort large" title="조건을 선택해주세요">
-               <option value="">레이블</option>
+            <select id="select_sorting" class="form-select-sort large" title="조건을 선택해주세요">
+               <option value="">레이블1</option>
                <option value="">레이블</option>
                <option value="">레이블</option>
                <option value="">레이블</option>
             </select><br><br>
-            <select id="select_sorting" class="krds-form-select-sort medium" title="조건을 선택해주세요">
-               <option value="">레이블</option>
+            <select id="select_sorting" class="form-select-sort medium" title="조건을 선택해주세요">
+               <option value="">레이블1</option>
                <option value="">레이블</option>
                <option value="">레이블</option>
                <option value="">레이블</option>
@@ -1648,99 +1780,99 @@
 
          <pre>
             <code class="html"> 
-               -기본타입 large
+               -large
                &lt;div class="form-group large"&gt;                  
                   &lt;div class="form-conts"&gt;
-                     &lt;select class="krds-form-select" required title="조건을 선택해주세요"&gt;
-                     &lt;option value="" selected disabled hidden&gt;조건을 선택해주세요&lt;/option&gt;
-                     &lt;option value="항목1"&gt;항목1&lt;/option&gt;
-                     &lt;option value="항목2"&gt;항목2&lt;/option&gt;
-                     &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                     &lt;select class="form-select" required title="조건을 선택해주세요"&gt;
+                        &lt;option value="" selected disabled hidden&gt;조건을 선택해주세dddddd요&lt;/option&gt;
+                        &lt;option value="항목1"&gt;항목1&lt;/option&gt;
+                        &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                        &lt;option value="항목3"&gt;항목3&lt;/option&gt;
                      &lt;/select&gt;
                   &lt;/div&gt;
-                  &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt;      
+                     &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
+               &lt;/div&gt; 
 
-               -기본타입 medium
+               -medium
                &lt;div class="form-group medium"&gt;                  
                   &lt;div class="form-conts"&gt;
-                     &lt;select class="krds-form-select" required title="조건을 선택해주세요"&gt;
-                     &lt;option value="" selected disabled hidden&gt;조건을 선택해주세요&lt;/option&gt;
-                     &lt;option value="항목1"&gt;항목1&lt;/option&gt;
-                     &lt;option value="항목2"&gt;항목2&lt;/option&gt;
-                     &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                     &lt;select class="form-select" required="" title="조건을 선택해주세요"&gt;
+                        &lt;option value="" selected="" disabled="" hidden=""&gt;조건을 선택해주세요&lt;/option&gt;
+                        &lt;option value="항목1"&gt;항목1&lt;/option&gt;
+                        &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                        &lt;option value="항목3"&gt;항목3&lt;/option&gt;
                      &lt;/select&gt;
                   &lt;/div&gt;
-                  &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt; 
+                     &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
+               &lt;/div&gt;
 
-               -기본타입 small
+               -small
                &lt;div class="form-group small"&gt;                  
                   &lt;div class="form-conts"&gt;
-                     &lt;select class="krds-form-select" required title="조건을 선택해주세요"&gt;
-                     &lt;option value="" selected disabled hidden&gt;조건을 선택해주세요&lt;/option&gt;
-                     &lt;option value="항목1"&gt;항목1&lt;/option&gt;
-                     &lt;option value="항목2"&gt;항목2&lt;/option&gt;
-                     &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                     &lt;select class="form-select" required="" title="조건을 선택해주세요"&gt;
+                        &lt;option value="" selected="" disabled="" hidden=""&gt;조건을 선택해주세요&lt;/option&gt;
+                        &lt;option value="항목1"&gt;항목1&lt;/option&gt;
+                        &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                        &lt;option value="항목3"&gt;항목3&lt;/option&gt;
                      &lt;/select&gt;
                   &lt;/div&gt;
-                  &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt; 
+                     &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
+               &lt;/div&gt;
 
-               -error타입
-               &lt;div class="form-group small"&gt;                  
+               -is-error
+               &lt;div class="form-group large"&gt;                  
                   &lt;div class="form-conts is-error"&gt;
-                     &lt;select class="krds-form-select" required title="조건을 선택해주세요"&gt;
-                     &lt;option value="" selected disabled hidden&gt;조건을 선택해주세요&lt;/option&gt;
-                     &lt;option value="항목1"&gt;항목1&lt;/option&gt;
-                     &lt;option value="항목2"&gt;항목2&lt;/option&gt;
-                     &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                     &lt;select class="form-select" required="" title="조건을 선택해주세요"&gt;
+                        &lt;option value="" selected="" disabled="" hidden=""&gt;조건을 선택해주세요&lt;/option&gt;
+                        &lt;option value="항목1"&gt;항목1&lt;/option&gt;
+                        &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                        &lt;option value="항목3"&gt;항목3&lt;/option&gt;
                      &lt;/select&gt;
                   &lt;/div&gt;
-                  &lt;p class="form-hint-invalid txt-error"&gt;힌트 메시지&lt;/p&gt;
+                     &lt;p class="form-hint-invalid txt-error"&gt;힌트 메시지&lt;/p&gt;
                &lt;/div&gt;
 
-               -비활성화 타입1
-               &lt;div class="form-group small"&gt;                  
+               - disabled-type1
+               &lt;div class="form-group large"&gt;                  
                   &lt;div class="form-conts disabled-type1"&gt;
-                     &lt;select class="krds-form-select" required disabled title="조건을 확인해주세요"&gt;
-                     &lt;option value="" selected disabled hidden&gt;조건을 선택해주세요&lt;/option&gt;
-                     &lt;option value="항목1"&gt;항목1&lt;/option&gt;
-                     &lt;option value="항목2"&gt;항목2&lt;/option&gt;
-                     &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                     &lt;select class="form-select" required="" disabled="" title="조건을 확인해주세요"&gt;
+                        &lt;option value="" selected="" disabled="" hidden=""&gt;조건을 선택해주세요&lt;/option&gt;
+                        &lt;option value="항목1"&gt;항목1&lt;/option&gt;
+                        &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                        &lt;option value="항목3"&gt;항목3&lt;/option&gt;
                      &lt;/select&gt;
                   &lt;/div&gt;
-                  &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
+                     &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
                &lt;/div&gt;
 
-               -비활성화 타입2
-               &lt;div class="form-group small"&gt;                  
+               - disabled-type2
+               &lt;div class="form-group large"&gt;                  
                   &lt;div class="form-conts disabled-type2"&gt;
-                     &lt;select class="krds-form-select" required disabled title="조건을 확인해주세요"&gt;
-                     &lt;option value="" selected disabled hidden&gt;조건을 선택해주세요&lt;/option&gt;
-                     &lt;option value="항목1"&gt;항목1&lt;/option&gt;
-                     &lt;option value="항목2"&gt;항목2&lt;/option&gt;
-                     &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                     &lt;select class="form-select" required="" disabled="" title="조건을 확인해주세요"&gt;
+                        &lt;option value="" selected="" disabled="" hidden=""&gt;조건을 선택해주세요&lt;/option&gt;
+                        &lt;option value="항목1"&gt;항목1&lt;/option&gt;
+                        &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                        &lt;option value="항목3"&gt;항목3&lt;/option&gt;
                      &lt;/select&gt;
                   &lt;/div&gt;
-                  &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
-               &lt;/div&gt;  
+                     &lt;p class="form-hint-invalid"&gt;힌트 메시지&lt;/p&gt;
+               &lt;/div&gt;
 
-               -레이블 large 타입
-               &lt;select id="select_sorting" class="krds-form-select-sort large" title="조건을 선택해주세요"&gt;
-                  &lt;option value=""&gt;레이블&lt;/option&gt;
+               -레이블 large
+               &lt;select id="select_sorting" class="form-select-sort large" title="조건을 선택해주세요"&gt;
+                  &lt;option value=""&gt;레이블1&lt;/option&gt;
                   &lt;option value=""&gt;레이블&lt;/option&gt;
                   &lt;option value=""&gt;레이블&lt;/option&gt;
                   &lt;option value=""&gt;레이블&lt;/option&gt;
                &lt;/select&gt;
 
-               -레이블 medium 타입
-               &lt;select id="select_sorting" class="krds-form-select-sort medium" title="조건을 선택해주세요"&gt;
+               -레이블 medium
+               &lt;select id="select_sorting" class="form-select-sort medium" title="조건을 선택해주세요"&gt;
+                  &lt;option value=""&gt;레이블1&lt;/option&gt;
                   &lt;option value=""&gt;레이블&lt;/option&gt;
                   &lt;option value=""&gt;레이블&lt;/option&gt;
                   &lt;option value=""&gt;레이블&lt;/option&gt;
-                  &lt;option value=""&gt;레이블&lt;/option&gt;
-               &lt;/select&gt; 
+               &lt;/select&gt;
             </code>
          </pre>
          <!-- 셀렉트박스 -->
@@ -1748,7 +1880,7 @@
          <!-- 페이지네이션 -->
          <h2 class="mt-50" id="PAGINATION">페이지네이션(768이하일때 모바일디자인 반영)</h2>           
          <div class="guide-content">                        
-            <div class="krds-pagination pagination=type1">               
+            <div class="pagination pagination=type1">               
                <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>
@@ -1767,8 +1899,8 @@
                <button class="page-navi next" >다음</button>
             </div>
             <br><br>
-            <div class="wrap-krds-pagination pagination=type2">
-               <div class="krds-pagination">                  
+            <div class="wrap-pagination pagination=type2">
+               <div class="pagination">                  
                   <button class="page-navi prev" disabled>이전</button>
                   <div class="page-links">
                      <a class="page-link active" href="#"><span class="sr-only">현재페이지 </span>1</a>
@@ -1788,16 +1920,16 @@
                <div class="pagination-btn-area">
                   <input type="text" value="5" title="이동하고 싶은 페이지 숫자를 입력해주세요">
                   <span class="page-num">/22</span>
-                  <button type="button" class="krds-btn secondary small">이동</button>
+                  <button type="button" class="btn secondary small">이동</button>
                </div>   
             </div>            
          </div>
 
          <pre>
             <code class="html"> 
-               - 기본타입
-               &lt;div class="krds-pagination pagination=type1"&gt;               
-                  &lt;a class="page-navi prev disabled" href="#"&gt;이전&lt;/a&gt;
+               -일반타입
+               &lt;div class="pagination pagination=type1"&gt;               
+                  &lt;button class="page-navi prev" disabled&gt;이전&lt;/button&gt;
                   &lt;div class="page-links"&gt;
                      &lt;a class="page-link mobile-link" href="#"&gt;1&lt;/a&gt;
                      &lt;span class="page-link link-dot mobile-dot"&gt;&lt;/span&gt;
@@ -1812,34 +1944,34 @@
                      &lt;span class="page-link link-dot"&gt;&lt;/span&gt;
                      &lt;a class="page-link mobile-link" href="#"&gt;120&lt;/a&gt;
                   &lt;/div&gt;
-                  &lt;a class="page-navi next" href="#"&gt;다음&lt;/a&gt;
+                  &lt;button class="page-navi next" &gt;다음&lt;/button&gt;
                &lt;/div&gt;
 
-               - 하단에 이동버튼이 있는 타입
-               &lt;div class="wrap-krds-pagination pagination=type2"&gt;
-                  &lt;div class="krds-pagination"&gt;                  
-                     &lt;a class="page-navi prev disabled" href="#"&gt;이전&lt;/a&gt;
+               -하단 버튼타입
+               &lt;div class="wrap-pagination pagination=type2"&gt;
+                  &lt;div class="pagination"&gt;                  
+                     &lt;button class="page-navi prev" disabled&gt;이전&lt;/button&gt;
                      &lt;div class="page-links"&gt;
-                           &lt;a class="page-link active" href="#"&gt;&lt;span class="sr-only"&gt;현재페이지 &lt;/span&gt;1&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;5&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;6&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;7&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;8&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;9&lt;/a&gt;
-                           &lt;span class="page-link link-dot"&gt;&lt;/span&gt;
-                           &lt;a class="page-link" href="#"&gt;120&lt;/a&gt;
+                        &lt;a class="page-link active" href="#"&gt;&lt;span class="sr-only"&gt;현재페이지 &lt;/span&gt;1&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;5&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;6&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;7&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;8&lt;/a&gt;
+                        &lt;a class="page-link" href="#"&gt;9&lt;/a&gt;
+                        &lt;span class="page-link link-dot"&gt;&lt;/span&gt;
+                        &lt;a class="page-link" href="#"&gt;120&lt;/a&gt;
                      &lt;/div&gt;
-                     &lt;a class="page-navi next" href="#"&gt;다음&lt;/a&gt;
+                     &lt;button class="page-navi next" href="#"&gt;다음&lt;/button&gt;
                   &lt;/div&gt;
                   &lt;div class="pagination-btn-area"&gt;
                      &lt;input type="text" value="5" title="이동하고 싶은 페이지 숫자를 입력해주세요"&gt;
                      &lt;span class="page-num"&gt;/22&lt;/span&gt;
-                     &lt;button type="button" class="krds-btn secondary small"&gt;이동&lt;/button&gt;
+                     &lt;button type="button" class="btn secondary small"&gt;이동&lt;/button&gt;
                   &lt;/div&gt;   
-               &lt;/div&gt; 
+               &lt;/div&gt;
             </code>
          </pre>
          <!-- 페이지네이션 -->
@@ -1847,7 +1979,7 @@
          <!-- 단계표시기 -->
          <h2 class="mt-50" id="STEP">단계표시기</h2>           
          <div class="guide-content">                        
-            <ol class="krds-step-wrap step-type1">
+            <ol class="step-wrap step-type1">
                <li class="done">
                   <span>
                      <i class="step">0단계</i>
@@ -1893,7 +2025,7 @@
                </li>
             </ol> 
             <br><br>
-            <ol class="krds-step-wrap step-type2">
+            <ol class="step-wrap step-type2">
                <li class="done">
                   <span>
                      <i class="step">0단계</i>
@@ -1921,7 +2053,7 @@
                </li>               
             </ol>
             <br><br>
-            <ol class="krds-step-wrap step-type3">
+            <ol class="step-wrap step-type3">
                <li class="done"></li>
                <li class="done"></li>
                <li class="active"></li>
@@ -1935,83 +2067,83 @@
          <pre>
             <code class="html"> 
                - 타입1
-               &lt;ol class="krds-step-wrap step-type1"&gt;
+               &lt;ol class="step-wrap step-type1"&gt;
                   &lt;li class="done"&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li class="done"&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li class="active"&gt;
                      &lt;span&gt;
-                           &lt;em class="sr-only"&gt;현재단계&lt;/em&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;em class="sr-only"&gt;현재단계&lt;/em&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                      &lt;span&gt;                     
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                &lt;/ol&gt;
 
                -타입2
-               &lt;ol class="krds-step-wrap step-type2"&gt;
+               &lt;ol class="step-wrap step-type2"&gt;
                   &lt;li class="done"&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li class="done"&gt;
                      &lt;span&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li class="active"&gt;
                      &lt;span&gt;
-                           &lt;em class="sr-only"&gt;현재단계&lt;/em&gt;
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;em class="sr-only"&gt;현재단계&lt;/em&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                      &lt;span&gt;                     
-                           &lt;i class="step"&gt;0단계&lt;/i&gt;
-                           &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
+                        &lt;i class="step"&gt;0단계&lt;/i&gt;
+                        &lt;span class="step-tit"&gt;스텝타이틀&lt;/span&gt;
                      &lt;/span&gt;
                   &lt;/li&gt;               
                &lt;/ol&gt;
 
                -타입3
-               &lt;ol class="krds-step-wrap step-type3"&gt;
+               &lt;ol class="step-wrap step-type3"&gt;
                   &lt;li class="done"&gt;&lt;/li&gt;
                   &lt;li class="done"&gt;&lt;/li&gt;
                   &lt;li class="active"&gt;&lt;/li&gt;
@@ -2028,20 +2160,20 @@
          <h2 class="mt-50" id="CONTEXTUAL">맥락적 도움말</h2>  
          <div class="guide-content" style="display: flex;gap: 20px;padding-bottom: 8%;padding: 16% 0 16% 20%;">                                    
 
-            <div class="krds-contextual-help top left" data-ui="tooltip">
+            <div class="contextual-help top left" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(상단 왼쪽)</p>
                <div class="tooltip-btn-area">
-                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <button type="button" class="btn secondary medium">버튼</button>
                   <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
                            <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
                            <div class="btn-wrap">
-                              <a href="#;" class="krds-btn link">바로가기</a>
+                              <a href="#;" class="btn link">바로가기</a>
                            </div>
                         </div>
-                        <button type="button" class="krds-btn tooltip-close">
+                        <button type="button" class="btn tooltip-close">
                            <span class="sr-only">닫기</span>                        
                         </button>
                      </div>
@@ -2049,20 +2181,20 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help top center" data-ui="tooltip">
+            <div class="contextual-help top center" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(상단 중앙)</p>
                <div class="tooltip-btn-area">
-                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <button type="button" class="btn secondary medium">버튼</button>
                   <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
                            <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
                            <div class="btn-wrap">
-                              <a href="#;" class="krds-btn link">바로가기</a>
+                              <a href="#;" class="btn link">바로가기</a>
                            </div>
                         </div>
-                        <button type="button" class="krds-btn tooltip-close">
+                        <button type="button" class="btn tooltip-close">
                            <span class="sr-only">닫기</span>                        
                         </button>
                      </div>
@@ -2070,20 +2202,20 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help top right" data-ui="tooltip">
+            <div class="contextual-help top right" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(상단 오른쪽)</p>
                <div class="tooltip-btn-area">
-                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <button type="button" class="btn secondary medium">버튼</button>
                   <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
                            <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
                            <div class="btn-wrap">
-                              <a href="#;" class="krds-btn link">바로가기</a>
+                              <a href="#;" class="btn link">바로가기</a>
                            </div>
                         </div>
-                        <button type="button" class="krds-btn tooltip-close">
+                        <button type="button" class="btn tooltip-close">
                            <span class="sr-only">닫기</span>                        
                         </button>
                      </div>
@@ -2091,20 +2223,20 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help bottom left" data-ui="tooltip">
+            <div class="contextual-help bottom left" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(하단 왼쪽)</p>
                <div class="tooltip-btn-area">
-                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <button type="button" class="btn secondary medium">버튼</button>
                   <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
                            <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
                            <div class="btn-wrap">
-                              <a href="#;" class="krds-btn link">바로가기</a>
+                              <a href="#;" class="btn link">바로가기</a>
                            </div>
                         </div>
-                        <button type="button" class="krds-btn tooltip-close">
+                        <button type="button" class="btn tooltip-close">
                            <span class="sr-only">닫기</span>                        
                         </button>
                      </div>
@@ -2112,20 +2244,20 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help bottom center" data-ui="tooltip">
+            <div class="contextual-help bottom center" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(하단 중앙)</p>
                <div class="tooltip-btn-area">
-                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <button type="button" class="btn secondary medium">버튼</button>
                   <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
                            <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
                            <div class="btn-wrap">
-                              <a href="#;" class="krds-btn link">바로가기</a>
+                              <a href="#;" class="btn link">바로가기</a>
                            </div>
                         </div>
-                        <button type="button" class="krds-btn tooltip-close">
+                        <button type="button" class="btn tooltip-close">
                            <span class="sr-only">닫기</span>                        
                         </button>
                      </div>
@@ -2133,20 +2265,20 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help bottom right" data-ui="tooltip">
+            <div class="contextual-help bottom right" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(하단 오른쪽)</p>
                <div class="tooltip-btn-area">
-                  <button type="button" class="krds-btn secondary medium">버튼</button>
+                  <button type="button" class="btn secondary medium">버튼</button>
                   <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
                            <p>컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.</p>
                            <div class="btn-wrap">
-                              <a href="#;" class="krds-btn link">바로가기</a>
+                              <a href="#;" class="btn link">바로가기</a>
                            </div>
                         </div>
-                        <button type="button" class="krds-btn tooltip-close">
+                        <button type="button" class="btn tooltip-close">
                            <span class="sr-only">닫기</span>                        
                         </button>
                      </div>
@@ -2156,23 +2288,134 @@
          </div>
          <pre>
             <code class="html"> 
-               &lt;div class="krds-contextual-help bottom left" data-ui="tooltip"&gt;
-                  &lt;p class="tooltip-txt"&gt;예시이미지(하단 왼쪽)&lt;/p&gt;
+               - 예시이미지(상단 왼쪽)
+               &lt;div class="contextual-help top left" data-ui="tooltip"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(상단 왼쪽)&lt;/p&gt;
                   &lt;div class="tooltip-btn-area"&gt;
-                     &lt;button type="button" class="krds-btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
                      &lt;div class="tooltip-action"&gt;                  
-                           &lt;div class="tooltip-popover"&gt;
+                        &lt;div class="tooltip-popover"&gt;
                            &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
                            &lt;div class="tooltip-contents"&gt;
                               &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
                               &lt;div class="btn-wrap"&gt;
-                                 &lt;a href="#;" class="krds-btn link"&gt;바로가기&lt;/a&gt;
+                                 &lt;a href="#;" class="btn link"&gt;바로가기&lt;/a&gt;
                               &lt;/div&gt;
                            &lt;/div&gt;
-                           &lt;button type="button" class="krds-btn tooltip-close"&gt;
+                           &lt;button type="button" class="btn tooltip-close"&gt;
                               &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
                            &lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+
+               -예시이미지(상단 중앙)
+               &lt;div class="contextual-help top center" data-ui="tooltip"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(상단 중앙)&lt;/p&gt;
+                  &lt;div class="tooltip-btn-area"&gt;
+                     &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;div class="tooltip-action"&gt;                  
+                        &lt;div class="tooltip-popover"&gt;
+                           &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
+                           &lt;div class="tooltip-contents"&gt;
+                              &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
+                              &lt;div class="btn-wrap"&gt;
+                                 &lt;a href="#;" class="btn link"&gt;바로가기&lt;/a&gt;
+                              &lt;/div&gt;
                            &lt;/div&gt;
+                           &lt;button type="button" class="btn tooltip-close"&gt;
+                              &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
+                           &lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+
+               -예시이미지(상단 오른쪽)
+               &lt;div class="contextual-help top right" data-ui="tooltip"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(상단 오른쪽)&lt;/p&gt;
+                  &lt;div class="tooltip-btn-area"&gt;
+                     &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;div class="tooltip-action"&gt;                  
+                        &lt;div class="tooltip-popover"&gt;
+                           &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
+                           &lt;div class="tooltip-contents"&gt;
+                              &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
+                              &lt;div class="btn-wrap"&gt;
+                                 &lt;a href="#;" class="btn link"&gt;바로가기&lt;/a&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                           &lt;button type="button" class="btn tooltip-close"&gt;
+                              &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
+                           &lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+
+               -예시이미지(하단 왼쪽)
+               &lt;div class="contextual-help bottom left" data-ui="tooltip"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(하단 왼쪽)&lt;/p&gt;
+                  &lt;div class="tooltip-btn-area"&gt;
+                     &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;div class="tooltip-action"&gt;                  
+                        &lt;div class="tooltip-popover"&gt;
+                           &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
+                           &lt;div class="tooltip-contents"&gt;
+                              &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
+                              &lt;div class="btn-wrap"&gt;
+                                 &lt;a href="#;" class="btn link"&gt;바로가기&lt;/a&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                           &lt;button type="button" class="btn tooltip-close"&gt;
+                              &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
+                           &lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+
+               -예시이미지(하단 중앙)
+               &lt;div class="contextual-help bottom center" data-ui="tooltip"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(하단 중앙)&lt;/p&gt;
+                  &lt;div class="tooltip-btn-area"&gt;
+                     &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;div class="tooltip-action"&gt;                  
+                        &lt;div class="tooltip-popover"&gt;
+                           &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
+                           &lt;div class="tooltip-contents"&gt;
+                              &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
+                              &lt;div class="btn-wrap"&gt;
+                                 &lt;a href="#;" class="btn link"&gt;바로가기&lt;/a&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                           &lt;button type="button" class="btn tooltip-close"&gt;
+                              &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
+                           &lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+
+               -예시이미지(하단 오른쪽)
+               &lt;div class="contextual-help bottom right" data-ui="tooltip"&gt;
+                  &lt;p class="tooltip-txt"&gt;예시이미지(하단 오른쪽)&lt;/p&gt;
+                  &lt;div class="tooltip-btn-area"&gt;
+                     &lt;button type="button" class="btn secondary medium"&gt;버튼&lt;/button&gt;
+                     &lt;div class="tooltip-action"&gt;                  
+                        &lt;div class="tooltip-popover"&gt;
+                           &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
+                           &lt;div class="tooltip-contents"&gt;
+                              &lt;p&gt;컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세 정보를 제공하는 컴포넌트이다.&lt;/p&gt;
+                              &lt;div class="btn-wrap"&gt;
+                                 &lt;a href="#;" class="btn link"&gt;바로가기&lt;/a&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                           &lt;button type="button" class="btn tooltip-close"&gt;
+                              &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                        
+                           &lt;/button&gt;
+                        &lt;/div&gt;
                      &lt;/div&gt;
                   &lt;/div&gt;
                &lt;/div&gt;
@@ -2188,7 +2431,7 @@
                <div class="left-box">
                   <strong class="tit top-txt">총<span>10건</span>의 게시물</strong>
                   <div class="top-txt">
-                     <select class="krds-form-select-sort large" title="정보 구분 선택">
+                     <select class="form-select-sort large" title="정보 구분 선택">
                         <option value="">10개씩 보기</option>               
                         <option value="">10개씩 보기</option>               
                         <option value="">10개씩 보기</option>               
@@ -2196,15 +2439,15 @@
                      </select>
                   </div>
                   <p class="top-txt choice"><span>10</span>개중 <span>2</span>개 선택</p>
-                  <button type="button" class="krds-btn tertiary medium">수정</button>
-                  <button type="button" class="krds-btn tertiary medium">삭제</button>
+                  <button type="button" class="btn tertiary medium">수정</button>
+                  <button type="button" class="btn tertiary medium">삭제</button>
                </div>
                <div class="right-box">
-                  <button type="button" class="krds-btn tertiary medium">엑셀파일 다운로드</button>
-                  <button type="button" class="krds-btn tertiary medium">인쇄</button>
+                  <button type="button" class="btn tertiary medium">엑셀파일 다운로드</button>
+                  <button type="button" class="btn tertiary medium">인쇄</button>
                </div>
             </div>         
-            <div class="krds-table-wrap">
+            <div class="table-wrap">
                <table class="tbl col crud">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
@@ -2215,7 +2458,7 @@
                   <thead>
                      <tr>
                         <th scope="col">
-                           <div class="krds-form-check">
+                           <div class="form-check">
                               <input type="checkbox" id="all_chk_1">
                               <label for="all_chk_1"><span class="sr-only">전체선택</span></label>
                            </div>
@@ -2230,7 +2473,7 @@
                   <tbody>
                      <tr>
                         <td scope="row">
-                           <div class="krds-form-check">
+                           <div class="form-check">
                               <input type="checkbox" id="tb_2">
                               <label for="tb_2"><span class="sr-only">행선택</span></label>
                            </div>
@@ -2243,7 +2486,7 @@
                      </tr>
                      <tr>
                         <td scope="row">
-                           <div class="krds-form-check">
+                           <div class="form-check">
                               <input type="checkbox" id="tb_3">
                               <label for="tb_3"><span class="sr-only">행선택</span></label>
                            </div>
@@ -2256,7 +2499,7 @@
                      </tr>
                      <tr>
                         <td scope="row">
-                           <div class="krds-form-check">
+                           <div class="form-check">
                               <input type="checkbox" id="tb_4">
                               <label for="tb_4"><span class="sr-only">행선택</span></label>
                            </div>
@@ -2276,7 +2519,7 @@
                <div class="left-box">
                   <strong class="tit top-txt">총<span>10건</span>의 게시물</strong>
                   <div class="top-txt">
-                     <select class="krds-form-select-sort large" title="정보 구분 선택">
+                     <select class="form-select-sort large" title="정보 구분 선택">
                         <option value="">10개씩 보기</option>               
                         <option value="">10개씩 보기</option>               
                         <option value="">10개씩 보기</option>               
@@ -2285,7 +2528,7 @@
                   </div>
                </div>               
             </div>   
-            <div class="krds-table-wrap">
+            <div class="table-wrap">
                <table class="tbl col check">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
@@ -2329,7 +2572,7 @@
                   </tbody>
                </table>
             </div>   
-            <div class="krds-pagination pagination=type1">               
+            <div class="pagination pagination=type1">               
                <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>
@@ -2350,7 +2593,7 @@
             
             <h2 class="mt-20">Table (단순형)</h2>    
             <strong class="table-title">테이블 제목</strong>
-            <div class="krds-table-wrap">
+            <div class="table-wrap">
                <table class="tbl col cont">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
@@ -2412,7 +2655,233 @@
 
          <pre>
             <code class="html"> 
+               -Table (CRUD형)
+               &lt;div class="board-top"&gt;
+                  &lt;div class="left-box"&gt;
+                     &lt;strong class="tit top-txt"&gt;총&lt;span&gt;10건&lt;/span&gt;의 게시물&lt;/strong&gt;
+                     &lt;div class="top-txt"&gt;
+                        &lt;select class="form-select-sort large" title="정보 구분 선택"&gt;
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                        &lt;/select&gt;
+                     &lt;/div&gt;
+                     &lt;p class="top-txt choice"&gt;&lt;span&gt;10&lt;/span&gt;개중 &lt;span&gt;2&lt;/span&gt;개 선택&lt;/p&gt;
+                     &lt;button type="button" class="btn tertiary medium"&gt;수정&lt;/button&gt;
+                     &lt;button type="button" class="btn tertiary medium"&gt;삭제&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class="right-box"&gt;
+                     &lt;button type="button" class="btn tertiary medium"&gt;엑셀파일 다운로드&lt;/button&gt;
+                     &lt;button type="button" class="btn tertiary medium"&gt;인쇄&lt;/button&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;         
+               &lt;div class="table-wrap"&gt;
+                  &lt;table class="tbl col crud"&gt;
+                     &lt;caption&gt;000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.&lt;/caption&gt;
+                     &lt;colgroup&gt;
+                        &lt;col style="width: 52px;"&gt;
+                        &lt;col style="width: 80px;"&gt;
+                        &lt;col&gt;                     
+                     &lt;/colgroup&gt;
+                     &lt;thead&gt;
+                        &lt;tr&gt;
+                           &lt;th scope="col"&gt;
+                              &lt;div class="form-check"&gt;
+                                 &lt;input type="checkbox" id="all_chk_1"&gt;
+                                 &lt;label for="all_chk_1"&gt;&lt;span class="sr-only"&gt;전체선택&lt;/span&gt;&lt;/label&gt;
+                              &lt;/div&gt;
+                           &lt;/th&gt;
+                           &lt;th scope="col"&gt;&lt;span class="number"&gt;No &lt;button class="th-turn"&gt;&lt;i class="sr-only"&gt;내림차순&lt;/i&gt;&lt;/button&gt;&lt;/span&gt;&lt;/th&gt;
+                           &lt;th scope="col"&gt;항목명&lt;/th&gt;
+                           &lt;th scope="col"&gt;항목명&lt;/th&gt;
+                           &lt;th scope="col"&gt;항목명&lt;/th&gt;
+                           &lt;th scope="col"&gt;항목명&lt;/th&gt;
+                        &lt;/tr&gt;
+                     &lt;/thead&gt;
+                     &lt;tbody&gt;
+                        &lt;tr&gt;
+                           &lt;td scope="row"&gt;
+                              &lt;div class="form-check"&gt;
+                                 &lt;input type="checkbox" id="tb_2"&gt;
+                                 &lt;label for="tb_2"&gt;&lt;span class="sr-only"&gt;행선택&lt;/span&gt;&lt;/label&gt;
+                              &lt;/div&gt;
+                           &lt;/td&gt;
+                           &lt;td&gt;999&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                           &lt;td scope="row"&gt;
+                              &lt;div class="form-check"&gt;
+                                 &lt;input type="checkbox" id="tb_3"&gt;
+                                 &lt;label for="tb_3"&gt;&lt;span class="sr-only"&gt;행선택&lt;/span&gt;&lt;/label&gt;
+                              &lt;/div&gt;
+                           &lt;/td&gt;
+                           &lt;td&gt;999&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                           &lt;td scope="row"&gt;
+                              &lt;div class="form-check"&gt;
+                                 &lt;input type="checkbox" id="tb_4"&gt;
+                                 &lt;label for="tb_4"&gt;&lt;span class="sr-only"&gt;행선택&lt;/span&gt;&lt;/label&gt;
+                              &lt;/div&gt;
+                           &lt;/td&gt;
+                           &lt;td&gt;999&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                           &lt;td&gt;내용이 들어갑니다&lt;/td&gt;
+                        &lt;/tr&gt;                     
+                     &lt;/tbody&gt;
+                  &lt;/table&gt;
+               &lt;/div&gt;  
 
+               - Table (조회형)
+               &lt;div class="board-top"&gt;
+                  &lt;div class="left-box"&gt;
+                     &lt;strong class="tit top-txt"&gt;총&lt;span&gt;10건&lt;/span&gt;의 게시물&lt;/strong&gt;
+                     &lt;div class="top-txt"&gt;
+                        &lt;select class="form-select-sort large" title="정보 구분 선택"&gt;
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                           &lt;option value=""&gt;10개씩 보기&lt;/option&gt;               
+                        &lt;/select&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;               
+               &lt;/div&gt;   
+               &lt;div class="table-wrap"&gt;
+                  &lt;table class="tbl col check"&gt;
+                     &lt;caption&gt;000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.&lt;/caption&gt;
+                     &lt;colgroup&gt;
+                        &lt;col style="width: 100px;"&gt;
+                        &lt;col&gt;
+                        &lt;col style="width: 131px;"&gt;                     
+                        &lt;col style="width: 166px;"&gt;                     
+                        &lt;col style="width: 96px;"&gt;                     
+                     &lt;/colgroup&gt;
+                     &lt;thead&gt;
+                        &lt;tr&gt;                                                
+                           &lt;th scope="col"&gt;No&lt;/th&gt;
+                           &lt;th scope="col"&gt;제목&lt;/th&gt;
+                           &lt;th scope="col"&gt;업무구분&lt;/th&gt;
+                           &lt;th scope="col"&gt;등록일자&lt;/th&gt;
+                           &lt;th scope="col"&gt;첨부파일&lt;/th&gt;
+                        &lt;/tr&gt;
+                     &lt;/thead&gt;
+                     &lt;tbody&gt;
+                        &lt;tr&gt;
+                           &lt;td&gt;999&lt;/td&gt;
+                           &lt;td&gt;&lt;a href="#" class="txt"&gt;공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항 제목이니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.니다.공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다. 들어갑니다.&lt;/a&gt;&lt;/td&gt;
+                           &lt;td&gt;수입통관&lt;/td&gt;
+                           &lt;td&gt;2025-01-01&lt;/td&gt;                        
+                           &lt;td&gt;&lt;button class="file-down"&gt;첨부파일 다운로드&lt;/button&gt;&lt;/td&gt;                        
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                           &lt;td&gt;999&lt;/td&gt;
+                           &lt;td&gt;&lt;a href="#" class="txt"&gt;공지사항 제목이 들어갑니다.&lt;/a&gt;&lt;/td&gt;
+                           &lt;td&gt;수입통관&lt;/td&gt;
+                           &lt;td&gt;2025-01-01&lt;/td&gt;                        
+                           &lt;td&gt;&lt;button class="file-down"&gt;첨부파일 다운로드&lt;/button&gt;&lt;/td&gt;                        
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                           &lt;td&gt;999&lt;/td&gt;
+                           &lt;td&gt;&lt;a href="#" class="txt"&gt;공지사항 제목이 들어갑니다.&lt;/a&gt;&lt;/td&gt;
+                           &lt;td&gt;수입통관&lt;/td&gt;
+                           &lt;td&gt;2025-01-01&lt;/td&gt;                        
+                           &lt;td&gt;&lt;button class="file-down"&gt;첨부파일 다운로드&lt;/button&gt;&lt;/td&gt;                        
+                        &lt;/tr&gt;                     
+                     &lt;/tbody&gt;
+                  &lt;/table&gt;
+               &lt;/div&gt; 
+
+               &lt;div class="pagination pagination=type1"&gt;               
+                  &lt;button class="page-navi prev" disabled&gt;이전&lt;/button&gt;
+                  &lt;div class="page-links"&gt;
+                     &lt;a class="page-link mobile-link" href="#"&gt;1&lt;/a&gt;
+                     &lt;span class="page-link link-dot mobile-dot"&gt;&lt;/span&gt;
+                     &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+                     &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+                     &lt;a class="page-link" href="#"&gt;4&lt;/a&gt;
+                     &lt;a class="page-link mobile-link" href="#"&gt;5&lt;/a&gt;
+                     &lt;a class="page-link active mobile-link" href="#"&gt;&lt;span class="sr-only"&gt;현재페이지 &lt;/span&gt;6&lt;/a&gt;                  
+                     &lt;a class="page-link mobile-link" href="#"&gt;7&lt;/a&gt;
+                     &lt;a class="page-link" href="#"&gt;8&lt;/a&gt;
+                     &lt;a class="page-link" href="#"&gt;9&lt;/a&gt;
+                     &lt;span class="page-link link-dot"&gt;&lt;/span&gt;
+                     &lt;a class="page-link mobile-link" href="#"&gt;120&lt;/a&gt;
+                  &lt;/div&gt;
+                  &lt;button class="page-navi next" &gt;다음&lt;/button&gt;
+               &lt;/div&gt;
+
+               - Table (단순형)
+               &lt;strong class="table-title"&gt;테이블 제목&lt;/strong&gt;
+                  &lt;div class="table-wrap"&gt;
+                     &lt;table class="tbl col cont"&gt;
+                        &lt;caption&gt;000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.&lt;/caption&gt;
+                        &lt;colgroup&gt;
+                           &lt;col span="8"&gt;                     
+                        &lt;/colgroup&gt;
+                        &lt;thead&gt;
+                           &lt;tr class="line1"&gt;                                                
+                              &lt;th scope="col" colspan="2"&gt;항목1&lt;/th&gt;                        
+                              &lt;th scope="col" colspan="2"&gt;항목1&lt;/th&gt;                        
+                              &lt;th scope="col" colspan="2"&gt;항목1&lt;/th&gt;                        
+                              &lt;th scope="col" colspan="2"&gt;항목1&lt;/th&gt;                        
+                           &lt;/tr&gt;
+                           &lt;tr class="line2"&gt;                                                
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                              &lt;th scope="col"&gt;항목1_01&lt;/th&gt;                        
+                           &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                           &lt;tr&gt;
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                           &lt;/tr&gt;  
+                           &lt;tr&gt;
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                           &lt;/tr&gt;
+                           &lt;tr&gt;
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                              &lt;td&gt;내용&lt;/td&gt;              
+                           &lt;/tr&gt;                                     
+                        &lt;/tbody&gt;
+                     &lt;/table&gt;
+                  &lt;/div&gt;
+                  
             </code>
          </pre>
          <!-- 테이블 -->
@@ -2427,7 +2896,7 @@
                   <label for="ex1" class="tit">국적</label>
                   <div class="form-group medium">                     
                      <div class="form-conts disabled-type1">
-                        <input type="text" id="ex1" class="krds-input" value="대한민국" disabled="" title="국적을 확인가능합니다">
+                        <input type="text" id="ex1" class="input" value="대한민국" disabled="" title="국적을 확인가능합니다">
                      </div>                     
                   </div>
                </li>
@@ -2435,11 +2904,11 @@
                   <label for="ex2" class="tit">주민등록번호</label>
                   <div class="form-group medium">                     
                      <div class="form-conts disabled-type1">
-                        <input type="text" id="ex2" class="krds-input" value="991231" disabled="" title="주민등록번호 확인가능합니다">
+                        <input type="text" id="ex2" class="input" value="991231" disabled="" title="주민등록번호 확인가능합니다">
                      </div>          
                      <span class="min">-</span>           
                      <div class="form-conts disabled-type1">
-                        <input type="text" class="krds-input" value="1XXXXXX" disabled="" title="주민등록번호 확인가능합니다">
+                        <input type="text" class="input" value="1XXXXXX" disabled="" title="주민등록번호 확인가능합니다">
                      </div>                     
                   </div>
                </li>
@@ -2449,13 +2918,13 @@
                      <div class="form-group form-tit-group">  
                         <label for="kr-name-li1" class="form-title">성</label>                   
                         <div class="form-conts">
-                           <input type="text" id="kr-name-li1" class="krds-input" placeholder="홍" title="성을 입력해주세요">
+                           <input type="text" id="kr-name-li1" class="input" placeholder="홍" title="성을 입력해주세요">
                         </div>                     
                      </div>
                      <div class="form-group form-tit-group">  
                         <label for="kr-name-li2" class="form-title">이름</label>                   
                         <div class="form-conts">
-                           <input type="text" id="kr-name-li2" class="krds-input" placeholder="길동" title="이름을 입력해주세요">
+                           <input type="text" id="kr-name-li2" class="input" placeholder="길동" title="이름을 입력해주세요">
                         </div>                     
                      </div>
                   </div>
@@ -2466,19 +2935,19 @@
                      <div class="form-group form-tit-group">  
                         <label for="en-name-li1" class="form-title">Last</label>                   
                         <div class="form-conts">
-                           <input type="text" id="en-name-li1" class="krds-input" placeholder="GilDong" title="영문성명을 입력해주세요">
+                           <input type="text" id="en-name-li1" class="input" placeholder="GilDong" title="영문성명을 입력해주세요">
                         </div>                     
                      </div>
                      <div class="form-group form-tit-group disabled"> 
                         <label for="en-name-li2" class="form-title">Middle</label>                                      
                         <div class="form-conts disabled-type1">
-                           <input type="text" id="en-name-li2" class="krds-input" disabled="" title="영문성명을 확인해주세요">
+                           <input type="text" id="en-name-li2" class="input" disabled="" title="영문성명을 확인해주세요">
                         </div>                     
                      </div>
                      <div class="form-group form-tit-group">  
                         <label for="en-name-li3" class="form-title">이름</label>                   
                         <div class="form-conts">
-                           <input type="text" id="en-name-li3" class="krds-input" placeholder="Hong" title="영문성명을 입력해주세요">
+                           <input type="text" id="en-name-li3" class="input" placeholder="Hong" title="영문성명을 입력해주세요">
                         </div>                     
                      </div>
                   </div>
@@ -2487,7 +2956,7 @@
                   <label for="ph-li" class="tit">전화번호</label>
                   <div class="form-group medium">                  
                      <div class="form-conts">
-                        <select class="krds-form-select" id="ph-li" required="" title="첫번쨰 번호를 선택해주세요">
+                        <select class="form-select" id="ph-li" required="" title="첫번쨰 번호를 선택해주세요">
                            <option value="" disabled="" hidden="">전화번호를 선택해주세요</option>
                            <option value="항목1" selected>02</option>
                            <option value="항목2">항목2</option>
@@ -2496,11 +2965,11 @@
                      </div>  
                      <span class="min">-</span>
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="두번쨰 번호를 입력해주세요">
+                        <input type="text" id="consult_name1" class="input" placeholder="기본입력" title="두번쨰 번호를 입력해주세요">
                      </div>    
                      <span class="min">-</span>
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="세번쨰 번호를  입력해주세요">
+                        <input type="text" id="consult_name1" class="input" placeholder="기본입력" title="세번쨰 번호를  입력해주세요">
                      </div>                                                         
                   </div>
                </li>
@@ -2508,7 +2977,7 @@
                   <label for="cell-li" class="tit">휴대전화번호</label>
                   <div class="form-group medium">                  
                      <div class="form-conts">
-                        <select class="krds-form-select" id="cell-li" required="" title="첫번째 번호를 선택해주세요">
+                        <select class="form-select" id="cell-li" required="" title="첫번째 번호를 선택해주세요">
                            <option value="" disabled="" hidden="">휴대전화번호 선택해주세요</option>
                            <option value="항목1" selected>010</option>
                            <option value="항목2">항목2</option>
@@ -2517,11 +2986,11 @@
                      </div>                     
                      <span class="min">-</span>
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" value="1234" title="두번쨰 번호를 입력해주세요">
+                        <input type="text" id="consult_name1" class="input" value="1234" title="두번쨰 번호를 입력해주세요">
                      </div>        
                      <span class="min">-</span> 
                      <div class="form-conts">
-                        <input type="text" id="consult_name1" class="krds-input" value="1234" title="세번쨰 번호를 입력해주세요">
+                        <input type="text" id="consult_name1" class="input" value="1234" title="세번쨰 번호를 입력해주세요">
                      </div>                     
                   </div>
                </li>
@@ -2530,7 +2999,110 @@
 
          <pre>
          <code class="html"> 
-
+            &lt;ul class="inp-form"&gt;
+               &lt;li class="col2 nat-li"&gt;
+                  &lt;label for="ex1" class="tit"&gt;국적&lt;/label&gt;
+                  &lt;div class="form-group medium"&gt;                     
+                     &lt;div class="form-conts disabled-type1"&gt;
+                        &lt;input type="text" id="ex1" class="input" value="대한민국" disabled="" title="국적을 확인가능합니다"&gt;
+                     &lt;/div&gt;                     
+                  &lt;/div&gt;
+               &lt;/li&gt;
+               &lt;li class="col2 resident-li"&gt;
+                  &lt;label for="ex2" class="tit"&gt;주민등록번호&lt;/label&gt;
+                  &lt;div class="form-group medium"&gt;                     
+                     &lt;div class="form-conts disabled-type1"&gt;
+                        &lt;input type="text" id="ex2" class="input" value="991231" disabled="" title="주민등록번호 확인가능합니다"&gt;
+                     &lt;/div&gt;          
+                     &lt;span class="min"&gt;-&lt;/span&gt;           
+                     &lt;div class="form-conts disabled-type1"&gt;
+                        &lt;input type="text" class="input" value="1XXXXXX" disabled="" title="주민등록번호 확인가능합니다"&gt;
+                     &lt;/div&gt;                     
+                  &lt;/div&gt;
+               &lt;/li&gt;
+               &lt;li class="col2 kr-name-li"&gt;
+                  &lt;span class="tit"&gt;한글성명&lt;/span&gt;                  
+                  &lt;div class="form-group medium"&gt;                     
+                     &lt;div class="form-group form-tit-group"&gt;  
+                        &lt;label for="kr-name-li1" class="form-title"&gt;성&lt;/label&gt;                   
+                        &lt;div class="form-conts"&gt;
+                           &lt;input type="text" id="kr-name-li1" class="input" placeholder="홍" title="성을 입력해주세요"&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;
+                     &lt;div class="form-group form-tit-group"&gt;  
+                        &lt;label for="kr-name-li2" class="form-title"&gt;이름&lt;/label&gt;                   
+                        &lt;div class="form-conts"&gt;
+                           &lt;input type="text" id="kr-name-li2" class="input" placeholder="길동" title="이름을 입력해주세요"&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/li&gt;
+               &lt;li class="col2 en-name-li"&gt;
+                  &lt;span class="tit"&gt;영문성명&lt;/span&gt;                  
+                  &lt;div class="form-group medium"&gt;                     
+                     &lt;div class="form-group form-tit-group"&gt;  
+                        &lt;label for="en-name-li1" class="form-title"&gt;Last&lt;/label&gt;                   
+                        &lt;div class="form-conts"&gt;
+                           &lt;input type="text" id="en-name-li1" class="input" placeholder="GilDong" title="영문성명을 입력해주세요"&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;
+                     &lt;div class="form-group form-tit-group disabled"&gt; 
+                        &lt;label for="en-name-li2" class="form-title"&gt;Middle&lt;/label&gt;                                      
+                        &lt;div class="form-conts disabled-type1"&gt;
+                           &lt;input type="text" id="en-name-li2" class="input" disabled="" title="영문성명을 확인해주세요"&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;
+                     &lt;div class="form-group form-tit-group"&gt;  
+                        &lt;label for="en-name-li3" class="form-title"&gt;이름&lt;/label&gt;                   
+                        &lt;div class="form-conts"&gt;
+                           &lt;input type="text" id="en-name-li3" class="input" placeholder="Hong" title="영문성명을 입력해주세요"&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/li&gt;
+               &lt;li class="col2 ph-li"&gt;
+                  &lt;label for="ph-li" class="tit"&gt;전화번호&lt;/label&gt;
+                  &lt;div class="form-group medium"&gt;                  
+                     &lt;div class="form-conts"&gt;
+                        &lt;select class="form-select" id="ph-li" required="" title="첫번쨰 번호를 선택해주세요"&gt;
+                           &lt;option value="" disabled="" hidden=""&gt;전화번호를 선택해주세요&lt;/option&gt;
+                           &lt;option value="항목1" selected&gt;02&lt;/option&gt;
+                           &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                           &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                        &lt;/select&gt;
+                     &lt;/div&gt;  
+                     &lt;span class="min"&gt;-&lt;/span&gt;
+                     &lt;div class="form-conts"&gt;
+                        &lt;input type="text" id="consult_name1" class="input" placeholder="기본입력" title="두번쨰 번호를 입력해주세요"&gt;
+                     &lt;/div&gt;    
+                     &lt;span class="min"&gt;-&lt;/span&gt;
+                     &lt;div class="form-conts"&gt;
+                        &lt;input type="text" id="consult_name1" class="input" placeholder="기본입력" title="세번쨰 번호를  입력해주세요"&gt;
+                     &lt;/div&gt;                                                         
+                  &lt;/div&gt;
+               &lt;/li&gt;
+               &lt;li class="col2 cell-li"&gt;
+                  &lt;label for="cell-li" class="tit"&gt;휴대전화번호&lt;/label&gt;
+                  &lt;div class="form-group medium"&gt;                  
+                     &lt;div class="form-conts"&gt;
+                        &lt;select class="form-select" id="cell-li" required="" title="첫번째 번호를 선택해주세요"&gt;
+                           &lt;option value="" disabled="" hidden=""&gt;휴대전화번호 선택해주세요&lt;/option&gt;
+                           &lt;option value="항목1" selected&gt;010&lt;/option&gt;
+                           &lt;option value="항목2"&gt;항목2&lt;/option&gt;
+                           &lt;option value="항목3"&gt;항목3&lt;/option&gt;
+                        &lt;/select&gt;
+                     &lt;/div&gt;                     
+                     &lt;span class="min"&gt;-&lt;/span&gt;
+                     &lt;div class="form-conts"&gt;
+                        &lt;input type="text" id="consult_name1" class="input" value="1234" title="두번쨰 번호를 입력해주세요"&gt;
+                     &lt;/div&gt;        
+                     &lt;span class="min"&gt;-&lt;/span&gt; 
+                     &lt;div class="form-conts"&gt;
+                        &lt;input type="text" id="consult_name1" class="input" value="1234" title="세번쨰 번호를 입력해주세요"&gt;
+                     &lt;/div&gt;                     
+                  &lt;/div&gt;
+               &lt;/li&gt;
+            &lt;/ul&gt;
          </code>
          </pre>
          <!-- 레이아웃3 -->
@@ -2568,7 +3140,32 @@
 
          <pre>
          <code class="html"> 
-
+            &lt;ul class="view-list"&gt;
+               &lt;li&gt;
+                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+               &lt;/li&gt;
+               &lt;li&gt;
+                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+               &lt;/li&gt;
+               &lt;li&gt;
+                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+               &lt;/li&gt;
+               &lt;li&gt;
+                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+               &lt;/li&gt;
+               &lt;li&gt;
+                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+               &lt;/li&gt;
+               &lt;li&gt;
+                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+               &lt;/li&gt;
+            &lt;/ul&gt;
          </code>
          </pre>
          <!-- 레이아웃1 -->
@@ -2589,7 +3186,7 @@
                   <div class="file-upload-btn-wrap">
                      <input type="file" name="myFile" id="fileu-upload" hidden>
                      <label for="fileu-upload">
-                        <button type="button" class="krds-btn secondary medium">파일선택</button>
+                        <button type="button" class="btn secondary medium">파일선택</button>
                      </label>
                   </div>
                </div>
@@ -2621,7 +3218,7 @@
                      <div class="file-info">
                         <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
                         <div class="btn-wrap">
-                           <button type="button" class="btn medium text"><i class="icon delete medium"></i> 삭제</button>
+                           <button type="button" class="text"><i class="icon delete medium"></i> 삭제</button>
                         </div>
                      </div>
                      </li>
@@ -2629,7 +3226,7 @@
                      <div class="file-info">
                         <div class="file-name">전입재등록신고서 [주민등록법 시행령 : 별지서식 15, 15호의2호] [hwp, 17KB]</div>
                         <div class="btn-wrap">
-                           <button type="button" class="btn medium text"><i class="icon delete medium"></i> 삭제</button>
+                           <button type="button" class="text"><i class="icon delete medium"></i> 삭제</button>
                         </div>
                      </div>
                      <p class="file-hint-invalid">
@@ -2644,8 +3241,8 @@
                         <div class="file-info m-column file-down">
                            <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
                            <div class="btn-wrap">
-                              <button type="button" class="btn medium text">다운로드 <i class="icon download medium"></i></button>
-                              <a href="#" target="_blank" class="btn medium text" title="pdf파일로 바로보기">바로보기 <i class="icon open-new-window medium"></i></a>
+                              <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>
+                              <a href="#" target="_blank" class="text" title="pdf파일로 새창 바로보기">바로보기 <i class="icon open-new-window medium"></i></a>
                            </div>
                         </div>
                      </li>
@@ -2659,7 +3256,85 @@
 
          <pre>
          <code class="html"> 
-
+            &lt;div class="file-upload line"&gt;            
+               &lt;div class="file-head"&gt;
+                  &lt;h3 class="tit"&gt;타이틀영역&lt;/h3&gt;
+                  &lt;div&gt;
+                     &lt;p&gt;컨텐츠 영역&lt;/p&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+               
+               &lt;div class="file-upload"&gt;
+                  &lt;p class="txt"&gt;첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.&lt;/p&gt;
+                  &lt;div class="file-upload-btn-wrap"&gt;
+                     &lt;input type="file" name="myFile" id="fileu-upload" hidden&gt;
+                     &lt;label for="fileu-upload"&gt;
+                        &lt;button type="button" class="btn secondary medium"&gt;파일선택&lt;/button&gt;
+                     &lt;/label&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+               
+               &lt;div class="file-list"&gt;
+                  &lt;div class="total"&gt;&lt;span class="current"&gt;3개&lt;/span&gt; / 10개&lt;/div&gt;
+                  &lt;ul class="upload-list"&gt;
+                     &lt;li&gt;
+                     &lt;div class="file-info"&gt;
+                        &lt;div class="file-name"&gt;위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] &lt;/div&gt;
+                        &lt;div class="btn-wrap"&gt;
+                           &lt;span class="spinner" role="status"&gt;
+                           &lt;span class="sr-only"&gt;업로드 중&lt;/span&gt;
+                           &lt;/span&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                     &lt;/li&gt;
+                     &lt;li&gt;
+                     &lt;div class="file-info"&gt;
+                        &lt;div class="file-name"&gt;위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] &lt;/div&gt;
+                        &lt;div class="btn-wrap"&gt;
+                           &lt;span class="ico-invalid complete"&gt;
+                           &lt;em class="sr-only"&gt;업로드 완료&lt;/em&gt;
+                           &lt;/span&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                     &lt;/li&gt;
+                     &lt;li&gt;
+                     &lt;div class="file-info"&gt;
+                        &lt;div class="file-name"&gt;위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] &lt;/div&gt;
+                        &lt;div class="btn-wrap"&gt;
+                           &lt;button type="button" class="text"&gt;&lt;i class="icon delete medium"&gt;&lt;/i&gt; 삭제&lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                     &lt;/li&gt;
+                     &lt;li class="is-error"&gt;
+                     &lt;div class="file-info"&gt;
+                        &lt;div class="file-name"&gt;전입재등록신고서 [주민등록법 시행령 : 별지서식 15, 15호의2호] [hwp, 17KB]&lt;/div&gt;
+                        &lt;div class="btn-wrap"&gt;
+                           &lt;button type="button" class="text"&gt;&lt;i class="icon delete medium"&gt;&lt;/i&gt; 삭제&lt;/button&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                     &lt;p class="file-hint-invalid"&gt;
+                        &lt;i class="icon danger medium"&gt;&lt;/i&gt;
+                        &lt;span class="txt"&gt;
+                           등록 가능한 파일 용량을 초과하였습니다.&lt;br&gt;
+                           20MB 미만의 파일만 등록할 수 있습니다.
+                        &lt;/span&gt;
+                     &lt;/p&gt;
+                     &lt;/li&gt;
+                     &lt;li&gt;
+                        &lt;div class="file-info m-column file-down"&gt;
+                           &lt;div class="file-name"&gt;위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] &lt;/div&gt;
+                           &lt;div class="btn-wrap"&gt;
+                              &lt;button type="button" class="text"&gt;다운로드 &lt;i class="icon download medium"&gt;&lt;/i&gt;&lt;/button&gt;
+                              &lt;a href="#" target="_blank" class="text" title="pdf파일로 새창 바로보기"&gt;바로보기 &lt;i class="icon open-new-window medium"&gt;&lt;/i&gt;&lt;/a&gt;
+                           &lt;/div&gt;
+                        &lt;/div&gt;
+                     &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;div class="upload-delete-btn"&gt;
+                     &lt;button type="button" class="btn xsmall tertiary"&gt; &lt;i class="icon delete medium"&gt;&lt;/i&gt; 전체 파일 삭제&lt;/button&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;            
+            &lt;/div&gt;
          </code>
          </pre>
          <!-- 첨부파일 -->

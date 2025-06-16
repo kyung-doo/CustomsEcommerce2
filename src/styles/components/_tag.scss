@@ -1,8 +1,8 @@
 @use "../mixin" as *;
 
-/*! 태그 */
-.krds-tag-wrap {
-  [class*="krds-btn-"] {
+/*!태그*/
+.tag-wrap {
+  [class*="btn-"] {
     display: inline-flex;
     border-radius: 100px;
     border: 1px solid #C6C6C6;    
@@ -11,16 +11,17 @@
     color: #1D1D1D;
   }
 
-  .krds-btn-tag .btn-delete {
+  .btn-tag .btn-delete {
     background-image: url("/assets/icons/delete.svg");
   }
 
   .btn-delete {
     background-position: center;
     background-color: rgba(0, 0, 0, 0);
+    border:0;
   }
 
-  &.large .krds-btn-tag {
+  &.large .btn-tag {
     min-width: 48px;
     height: 20px;
     font-size: 17px;
@@ -31,7 +32,7 @@
     }
   }
 
-  &.small .krds-btn-tag {
+  &.small .btn-tag {
     min-width: 40px;
     height: 16px;
     font-size: 15px;
@@ -42,7 +43,7 @@
     }
   }
 
-  .krds-btn-tag {
+  .btn-tag {
     &:hover {
       background-color: #EDF1F5;
     }
@@ -62,4 +63,4 @@
     }
   }
 }
-/*! 태그 */
+/*!태그*/

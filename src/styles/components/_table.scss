@@ -1,4 +1,6 @@
 @use "../mixin" as *;
+
+/*!테이블*/
 .board-top {
   display: flex;
   justify-content: space-between;
@@ -45,7 +47,7 @@
   }
 }
 
-.krds-table-wrap {
+.table-wrap {
   margin: 22px 0 0 0;
   display: table;
   table-layout: fixed;
@@ -173,7 +175,7 @@
   color: #1D1D1D;
 }
 
-.krds-table-wrap table.cont {
+.table-wrap table.cont {
   th {
     text-align: center;
   }
@@ -211,3 +213,4 @@
     border-top: none;
   }
 }
+/*!테이블*/

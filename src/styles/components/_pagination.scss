@@ -1,11 +1,11 @@
 @use "../mixin" as *;
 
-/*! 페이지네이션 */
-[class*=-pagination] {
+/*!페이지네이션*/
+[class*=pagination] {
   margin-top: 40px;
 }
 
-.krds-pagination {
+.pagination {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -120,7 +120,7 @@
   }
 }
 
-.wrap-krds-pagination {
+.wrap-pagination {
   display: flex;
   flex-direction: column;
 
@@ -153,7 +153,7 @@
 }
 
 @media (max-width: 768px) {
-  .krds-pagination {
+  .pagination {
     min-width: 100px;
     position: relative;
     padding-top: 63px;
@@ -180,11 +180,11 @@
     }
   }
 
-  .wrap-krds-pagination {
+  .wrap-pagination {
     position: relative;
     padding-top: 64px;
 
-    .krds-pagination {
+    .pagination {
       position: initial;
       padding-top: 0;
     }
@@ -193,7 +193,7 @@
       display: none;
     }
 
-    .krds-pagination {
+    .pagination {
       .next {
         right: 12px;
       }
@@ -208,4 +208,4 @@
     }
   }
 }
-/*! 페이지네이션 */
+/*!페이지네이션*/

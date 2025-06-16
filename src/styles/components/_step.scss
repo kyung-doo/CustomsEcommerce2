@@ -1,7 +1,7 @@
 @use "../mixin" as *;
 
-/*! 단계표시기 */
-.krds-step-wrap {
+/*!단계표시기*/
+.step-wrap {
   display: flex;
 
   li > span {
@@ -96,4 +96,4 @@
     min-width: 191px;
   }
 }
-/*! 단계표시기 */
+/*!단계표시기*/
