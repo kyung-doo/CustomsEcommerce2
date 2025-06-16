@@ -373,14 +373,14 @@
             </code>
          </pre>
 
-         <div class="description">
+         <!-- <div class="description">
             <p>
                fontagon svg를 폰트로 만들어주는 라이브러리 <a href="https://www.npmjs.com/package/fontagon" target="_blank">https://www.npmjs.com/package/fontagon</a><br />
                frontend 프로젝트에서 public/icons/ 안에 svg 파일을 넣은후 <br />
                <strong>npm run fontagon</strong> 명령어를 쓰면 css 및 font파일 생성된다.<br />
                icon함수안에 svg 파일명을 넣음 된다.<br />
             </p>
-         </div>
+         </div> -->
          <!-- //아이콘 -->
 
 
@@ -459,7 +459,7 @@
          <div class="guide-content">
 
             <div class="d-flex">
-               <button class="btn1" onclick="openModal('#modal1')">모달 오픈</button>
+               <button type="button" class="krds-btn secondary medium" onclick="openModal('#modal1')">모달 오픈</button>
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal" data-props="">
@@ -485,7 +485,7 @@
          <pre>
             <code class="html">         
                
-               &lt;button class="btn1" onclick="openModal('#modal1')"&gt;모달 오픈&lt;/button&gt;
+               &lt;button type="button" class="krds-btn secondary medium" onclick="openModal('#modal1')"&gt;모달 오픈&lt;/button&gt;
 
                &lt;div id="modal1" class="modal d-none" data-ui="modal" data-props=""&gt;
                   &lt;div class="modal-wrap"&gt;
@@ -2023,11 +2023,12 @@
          <!-- 맥락적 도움말 class tooltip-action에 active가 추가되면 툴팁 열림-->
          <h2 class="mt-50" id="CONTEXTUAL">맥락적 도움말</h2>  
          <div class="guide-content" style="display: flex;gap: 20px;padding-bottom: 8%;padding: 16% 0 16% 20%;">                                    
-            <div class="krds-contextual-help top left">
+
+            <div class="krds-contextual-help top left" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(상단 왼쪽)</p>
                <div class="tooltip-btn-area">
                   <button type="button" class="krds-btn secondary medium">버튼</button>
-                  <div class="tooltip-action active">                  
+                  <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
@@ -2044,11 +2045,11 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help top center">
+            <div class="krds-contextual-help top center" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(상단 중앙)</p>
                <div class="tooltip-btn-area">
                   <button type="button" class="krds-btn secondary medium">버튼</button>
-                  <div class="tooltip-action active">                  
+                  <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
@@ -2065,11 +2066,11 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help top right">
+            <div class="krds-contextual-help top right" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(상단 오른쪽)</p>
                <div class="tooltip-btn-area">
                   <button type="button" class="krds-btn secondary medium">버튼</button>
-                  <div class="tooltip-action active">                  
+                  <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
@@ -2086,11 +2087,11 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help bottom left">
+            <div class="krds-contextual-help bottom left" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(하단 왼쪽)</p>
                <div class="tooltip-btn-area">
                   <button type="button" class="krds-btn secondary medium">버튼</button>
-                  <div class="tooltip-action active">                  
+                  <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
@@ -2107,11 +2108,11 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help bottom center">
+            <div class="krds-contextual-help bottom center" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(하단 중앙)</p>
                <div class="tooltip-btn-area">
                   <button type="button" class="krds-btn secondary medium">버튼</button>
-                  <div class="tooltip-action active">                  
+                  <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
@@ -2128,11 +2129,11 @@
                </div>
             </div>
             
-            <div class="krds-contextual-help bottom right">
+            <div class="krds-contextual-help bottom right" data-ui="tooltip">
                <p class="tooltip-txt">예시이미지(하단 오른쪽)</p>
                <div class="tooltip-btn-area">
                   <button type="button" class="krds-btn secondary medium">버튼</button>
-                  <div class="tooltip-action active">                  
+                  <div class="tooltip-action">                  
                      <div class="tooltip-popover">
                         <h4 class="tooltip-title">도움말 제목</h4>
                         <div class="tooltip-contents">
@@ -2151,12 +2152,11 @@
          </div>
          <pre>
             <code class="html"> 
-               - 예) class krds-contextual-help 같은 라인에 class bottom left를 추가하면 하단 좌측에 툴팁이 열림
-               &lt;div class="krds-contextual-help bottom left"&gt;
+               &lt;div class="krds-contextual-help bottom left" data-ui="tooltip"&gt;
                   &lt;p class="tooltip-txt"&gt;예시이미지(하단 왼쪽)&lt;/p&gt;
                   &lt;div class="tooltip-btn-area"&gt;
                      &lt;button type="button" class="krds-btn secondary medium"&gt;버튼&lt;/button&gt;
-                     &lt;div class="tooltip-action active"&gt;                  
+                     &lt;div class="tooltip-action"&gt;                  
                            &lt;div class="tooltip-popover"&gt;
                            &lt;h4 class="tooltip-title"&gt;도움말 제목&lt;/h4&gt;
                            &lt;div class="tooltip-contents"&gt;

@@ -9,6 +9,7 @@ class Modal {
     constructor( ele, props ) {
         this.ele = ele;
         this.props = props;
+        this.copyHtml = this.ele.html();
         this.init();
     }
 
@@ -17,6 +18,7 @@ class Modal {
     }
 
     show () {
+        this.ele.empty().append(this.copyHtml);
         this.ele.removeClass('d-none');
     }
     
