@@ -1872,7 +1872,7 @@
          <!-- 페이지네이션 -->
          <h2 class="mt-50" id="PAGINATION">페이지네이션(768이하일때 모바일디자인 반영)</h2>           
          <div class="guide-content">                        
-            <div class="pagination pagination=type1">               
+            <div class="pagination pagination-type1">               
                <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>
@@ -1891,7 +1891,7 @@
                <button class="page-navi next" >다음</button>
             </div>
             <br><br>
-            <div class="wrap-pagination pagination=type2">
+            <div class="wrap-pagination pagination-type2">
                <div class="pagination">                  
                   <button class="page-navi prev" disabled>이전</button>
                   <div class="page-links">
@@ -2440,7 +2440,7 @@
                </div>
             </div>         
             <div class="table-wrap">
-               <table class="tbl col crud">
+               <table class="tbl col crud pc">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
                      <col style="width: 52px;">
@@ -2504,7 +2504,75 @@
                      </tr>                     
                   </tbody>
                </table>
-            </div>   
+            </div>  
+            
+            
+            <div class="table-wrap">
+               <table class="tbl col crud mobile">
+                  <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
+                  <colgroup>
+                     <col style="width: 52px;">
+                     <col style="width: 80px;">
+                     <col>                     
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th scope="col">
+                           <div class="form-check">
+                              <input type="checkbox" id="all_chk_1">
+                              <label for="all_chk_1"><span class="sr-only">전체선택</span></label>
+                           </div>
+                        </th>
+                        <th scope="col"><span class="number">No <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                        <th scope="col">항목명</th>
+                        <th scope="col">항목명</th>
+                        <th scope="col">항목명</th>
+                        <th scope="col">항목명</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td scope="row">
+                           <div class="form-check">
+                              <input type="checkbox" id="tb_2">
+                              <label for="tb_2"><span class="sr-only">행선택</span></label>
+                           </div>
+                        </td>
+                        <td>999</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                     </tr>
+                     <tr>
+                        <td scope="row">
+                           <div class="form-check">
+                              <input type="checkbox" id="tb_3">
+                              <label for="tb_3"><span class="sr-only">행선택</span></label>
+                           </div>
+                        </td>
+                        <td>999</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                     </tr>
+                     <tr>
+                        <td scope="row">
+                           <div class="form-check">
+                              <input type="checkbox" id="tb_4">
+                              <label for="tb_4"><span class="sr-only">행선택</span></label>
+                           </div>
+                        </td>
+                        <td>999</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                        <td>내용이 들어갑니다</td>
+                     </tr>                     
+                  </tbody>
+               </table>
+            </div>
             
             <h2 class="mt-20">Table (조회형)</h2>    
             <div class="board-top">
@@ -2564,7 +2632,7 @@
                   </tbody>
                </table>
             </div>   
-            <div class="pagination pagination=type1">               
+            <div class="pagination pagination-type1">               
                <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>

@@ -9,7 +9,7 @@ button {
   display: none;
 }
 
-#krds-skip-link {
+#skip-link {
   position: absolute;
   top: 0;
   right: 0;
@@ -37,7 +37,7 @@ button {
   }
 }
 
-#krds-masthead {
+#masthead {
   position: relative;
   background-color: #4f6280;
   z-index: 8;
@@ -244,7 +244,7 @@ button {
   .popup-box {
     position: relative;
 
-    .krds-modal {
+    .modal {
       position: absolute;
       top: 43px;
       left: -779px;

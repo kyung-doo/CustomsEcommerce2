@@ -1,7 +1,7 @@
 @use "../mixin" as *;
 
 /*!페이지네이션*/
-[class*=pagination] {
+[class*=pagination-] {
   margin-top: 40px;
 }
 
@@ -21,7 +21,7 @@
 
   .page-navi {
     display: flex;
-    width: 62px;
+    min-width: 62px;
     height: 40px;
     align-items: center;
     position: relative;
@@ -172,11 +172,11 @@
     }
 
     .next {
-      right: 95px;
+      margin-left: 66px;
     }
 
     .prev {
-      left: 100px;
+      margin-right: 66px;
     }
   }
 
@@ -195,11 +195,11 @@
 
     .pagination {
       .next {
-        right: 12px;
+        margin-left: 66px;
       }
 
       .prev {
-        left: 12px;
+        margin-right: 66px;
       }
     }
 
