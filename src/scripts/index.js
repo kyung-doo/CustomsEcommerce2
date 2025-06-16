@@ -15,16 +15,6 @@ if('ontouchstart' in window){
 window.$ = $;
 
 
-// 모달 오픈
-window.openModal = ( selector ) => {
-    $(selector).modal('show');
-}
-
-// 모달 닫기
-window.closeModal = ( selector ) => {
-    $(selector).modal('hide');
-}
-
 
 // 컴포넌트 UI 생성
 $(() => {
@@ -45,6 +35,13 @@ $(() => {
     $(`*[data-ui="tooltip"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).tooltip(props);
+    });
+
+    $(`*[data-modal-target]`).each(function () {
+        const modalSelector = $(this).data('modal-target');
+        $(this).on("click", function () {
+            $(modalSelector).modal('show');
+        });
     });
     
 });

@@ -502,14 +502,23 @@
          <div class="guide-content">
 
             <div class="d-flex">
+<<<<<<< HEAD
                <button type="button" class="btn secondary medium" onclick="openModal('#modal1')">모달 760</button>
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal" data-props="">
                <div class="modal-wrap" style="min-width:696px">
+=======
+               <button type="button" class="btn secondary medium" data-modal-target="#modal1">모달 오픈</button>
+            </div> 
+
+            <div id="modal1" class="modal d-none" data-ui="modal">
+               <div class="modal-wrap">
+>>>>>>> 7cfb0c3de5ecf3a5f11be3457fc77db552c0fd21
                   <div class="modal-header">
                      <h4>모달 760</h4>                     
                   </div>
+<<<<<<< HEAD
                   <div class="modal-body" tabindex="0">
                      <div class="modal-cont">
                         콘텐츠 영역
@@ -521,11 +530,15 @@
                   <div class="modal-footer">
                      <button type="button" class="btn tertiary medium" onclick="closeModal('#modal1')">닫기</button>
                      <button type="button" class="btn primary medium">사용정지</button>
+=======
+                  <div class="modal-body">
+                     모달 내용
                   </div>
-                  <button type="button" class="btn-close" onclick="closeModal('#modal1')">
-                     <i class="icon close"></i>
-                     <span class="sr-only">닫기</span>                     
-                  </button>
+                  <div class="modal-footer">
+                     <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                     <button type="button" class="btn modal-enter primary medium">확인</button>
+>>>>>>> 7cfb0c3de5ecf3a5f11be3457fc77db552c0fd21
+                  </div>
                </div>
             </div>
          </div>
@@ -533,26 +546,22 @@
          <pre>
             <code class="html">         
                
-               &lt;div class="d-flex"&gt;
-                  &lt;button type="button" class="btn secondary medium" onclick="openModal('#modal1')"&gt;모달 오픈&lt;/button&gt;
-               &lt;/div&gt; 
+               
+               &lt;button type="button" class="btn secondary medium" data-modal-target="#modal1"&gt;모달 오픈&lt;/button&gt;
+               
 
-               &lt;div id="modal1" class="modal d-none" data-ui="modal" data-props=""&gt;
+               &lt;div id="modal1" class="modal d-none" data-ui="modal"&gt;
                   &lt;div class="modal-wrap"&gt;
                      &lt;div class="modal-header"&gt;
-                        &lt;h4&gt;모달 타이틀&lt;/h4&gt;                     
+                        &lt;h4&gt;모달 타이틀&lt;/h4&gt;
                      &lt;/div&gt;
-                     &lt;div class="modal-body" tabindex="0"&gt;
+                     &lt;div class="modal-body"&gt;
                         모달 내용
                      &lt;/div&gt;
                      &lt;div class="modal-footer"&gt;
-                        &lt;button type="button" class="btn tertiary medium" onclick="closeModal('#modal1')"&gt;닫기&lt;/button&gt;
-                        &lt;button type="button" class="btn primary medium"&gt;확인&lt;/button&gt;
+                        &lt;button type="button" class="btn modal-close tertiary medium"&gt;닫기&lt;/button&gt;
+                        &lt;button type="button" class="btn modal-enter primary medium"&gt;확인&lt;/button&gt;
                      &lt;/div&gt;
-                     &lt;button type="button" class="btn-close" onclick="closeModal('#modal1')"&gt;
-                        &lt;i class="icon close"&gt;&lt;/i&gt;
-                        &lt;span class="sr-only"&gt;닫기&lt;/span&gt;                     
-                     &lt;/button&gt;
                   &lt;/div&gt;
                &lt;/div&gt;
 

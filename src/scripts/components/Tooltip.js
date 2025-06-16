@@ -20,7 +20,7 @@ class Tooltip {
         this.ele.find(".tooltip-btn-area button").on("click", function () {
             if(!tooltipAct.hasClass("active")) {
                 tooltipAct.addClass("active");
-                gsap.from(owner.ele.find(".tooltip-action"), {y: startY, opacity: 0, ease: Cubic.easeOut})
+                gsap.from(owner.ele.find(".tooltip-action"), 0.6, {y: startY, opacity: 0, ease: Cubic.easeOut})
             } else {
                 tooltipAct.removeClass("active");
             }
