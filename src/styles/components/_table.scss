@@ -4,6 +4,7 @@
 .board-top {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   > div {
     display: flex;
@@ -212,5 +213,93 @@
     border: 1px solid #E4E4E4;
     border-top: none;
   }
+}
+
+.table-wrap.mobile {
+  .header {
+    background-color: #E6E8EA;
+    padding: 16px;
+    border-bottom: 1px solid #58616A;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 8px 0;
+    border-bottom: 1px solid #E4E4E4;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 10px 8px;
+      justify-content: space-between;
+    }
+  }
+
+  .title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1D1D1D;
+
+    * {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1D1D1D;
+    }
+  }
+
+  .txt {
+    font-size: 17px;
+    font-weight: 400;
+    color: #1D1D1D;
+
+    * {
+      font-size: 17px;
+      font-weight: 400;
+      color: #1D1D1D;
+    }
+  }
+
+  .number {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1D1D1D;
+  }
+}
+
+
+@include tablet {
+    .table-wrap {
+      display: block;
+      overflow-x: auto;
+    }
+
+    .tbl {
+      &.check, &.cont {
+        width: 768px;
+      }
+    }
+
+    .board-top {
+      .choice {
+        display: none;
+      }
+
+      flex-direction: column;
+
+      button {
+        width: calc(50% - 4px);
+      }
+
+      > div {
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .top-txt {
+        margin-bottom: 10px;
+      }
+    }
+
 }
 /*!테이블*/

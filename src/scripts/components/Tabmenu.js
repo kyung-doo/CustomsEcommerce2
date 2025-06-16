@@ -19,7 +19,9 @@ class Tabmenu {
             $(this).on('click', () => {
                 if(!owner.props.vote) {
                     owner.ele.find('.tab-menu').removeClass('active');
+                    owner.ele.find('.tab-menu').removeAttr('title');
                     $(this).addClass('active');
+                    $(this).attr('title','선택됨')
                     owner.ele.trigger('change', [i]);
                 } else {
                     owner.clickVote(i);

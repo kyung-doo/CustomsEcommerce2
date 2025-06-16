@@ -435,7 +435,7 @@
          <div class="guide-content">            
             <div>
                <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">
-                  <button class="tab-menu active">Title1</button>
+                  <button class="tab-menu active" title="선택됨">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
@@ -444,7 +444,7 @@
             </div>            
             <div class="mt-20">
                <div class="tabmenu tabmenu-line2" data-ui="tabmenu" data-props="">
-                  <button class="tab-menu active">Title1</button>
+                  <button class="tab-menu active" title="선택됨">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
@@ -453,7 +453,7 @@
             </div>            
             <div class="mt-20">
                <div class="tabmenu tabmenu-bg1" data-ui="tabmenu" data-props="">
-                  <button class="tab-menu active">Title1</button>
+                  <button class="tab-menu active" title="선택됨">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
@@ -502,20 +502,25 @@
          <div class="guide-content">
 
             <div class="d-flex">
-               <button type="button" class="btn secondary medium" onclick="openModal('#modal1')">모달 오픈</button>
+               <button type="button" class="btn secondary medium" onclick="openModal('#modal1')">모달 760</button>
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal" data-props="">
-               <div class="modal-wrap">
+               <div class="modal-wrap" style="min-width:696px">
                   <div class="modal-header">
-                     <h4>모달 타이틀</h4>                     
+                     <h4>모달 760</h4>                     
                   </div>
                   <div class="modal-body" tabindex="0">
-                     모달 내용
+                     <div class="modal-cont">
+                        콘텐츠 영역
+                     </div>
+                     <div class="modal-cont">
+                        콘텐츠 영역
+                     </div>
                   </div>
                   <div class="modal-footer">
                      <button type="button" class="btn tertiary medium" onclick="closeModal('#modal1')">닫기</button>
-                     <button type="button" class="btn primary medium">확인</button>
+                     <button type="button" class="btn primary medium">사용정지</button>
                   </div>
                   <button type="button" class="btn-close" onclick="closeModal('#modal1')">
                      <i class="icon close"></i>
@@ -523,7 +528,6 @@
                   </button>
                </div>
             </div>
-
          </div>
          
          <pre>
@@ -626,12 +630,12 @@
          <div class="guide-content">                        
             <nav class="breadcrumb-wrap">
                <ol class="breadcrumb">
-                  <li class="home"><a href="#" class="txt">홈</a></li>
+                  <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
                   <li><a href="#" class="txt">Depth1</a></li>
                   <li><a href="#" class="txt">Depth2</a></li>
                   <li><a href="#" class="txt">Depth3</a></li>                  
                   <li><a href="#" class="txt">Depth4</a></li>                  
-                  <li><a href="#" class="txt">Depth5</a></li>                  
+                  <li><a href="#" class="txt" title="현재페이지">Depth5</a></li>                  
                </ol>
             </nav>            
          </div>
@@ -2514,72 +2518,112 @@
                </table>
             </div>  
             
-            
-            <div class="table-wrap">
-               <table class="tbl col crud mobile">
-                  <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
-                  <colgroup>
-                     <col style="width: 52px;">
-                     <col style="width: 80px;">
-                     <col>                     
-                  </colgroup>
-                  <thead>
-                     <tr>
-                        <th scope="col">
-                           <div class="form-check">
-                              <input type="checkbox" id="all_chk_1">
-                              <label for="all_chk_1"><span class="sr-only">전체선택</span></label>
+            <h2>Table (CRUD형 반응형)</h2>  
+            <div class="table-wrap mobile">
+               <div class="header">
+                  <div class="form-check">
+                     <input type="checkbox" id="all_chk_1">
+                     <label for="all_chk_1"><span class="sr-only">전체선택</span></label>
+                  </div>
+               </div>
+               <ul class="wrap-body">
+                  <li>
+                     <ul class="body">
+                        <li>
+                           <div class="title">
+                              <div class="form-check">
+                                 <input type="checkbox" id="tb_3">
+                                 <label for="tb_3"><span class="sr-only">행선택</span></label>
+                              </div>
                            </div>
-                        </th>
-                        <th scope="col"><span class="number">No <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
-                        <th scope="col">항목명</th>
-                        <th scope="col">항목명</th>
-                        <th scope="col">항목명</th>
-                        <th scope="col">항목명</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td scope="row">
-                           <div class="form-check">
-                              <input type="checkbox" id="tb_2">
-                              <label for="tb_2"><span class="sr-only">행선택</span></label>
+                           <span class="number">
+                              <strong>No</strong>
+                              <span class="txt">999</span>
+                           </span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <ul class="body">
+                        <li>
+                           <div class="title">
+                              <div class="form-check">
+                                 <input type="checkbox" id="tb_3" checked>
+                                 <label for="tb_3"><span class="sr-only">행선택</span></label>
+                              </div>
                            </div>
-                        </td>
-                        <td>999</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                     </tr>
-                     <tr>
-                        <td scope="row">
-                           <div class="form-check">
-                              <input type="checkbox" id="tb_3">
-                              <label for="tb_3"><span class="sr-only">행선택</span></label>
+                           <span class="number">
+                              <strong>No</strong>
+                              <span class="txt">999</span>
+                           </span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <ul class="body">
+                        <li>
+                           <div class="title">
+                              <div class="form-check">
+                                 <input type="checkbox" id="tb_3">
+                                 <label for="tb_3"><span class="sr-only">행선택</span></label>
+                              </div>
                            </div>
-                        </td>
-                        <td>999</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                     </tr>
-                     <tr>
-                        <td scope="row">
-                           <div class="form-check">
-                              <input type="checkbox" id="tb_4">
-                              <label for="tb_4"><span class="sr-only">행선택</span></label>
-                           </div>
-                        </td>
-                        <td>999</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                        <td>내용이 들어갑니다</td>
-                     </tr>                     
-                  </tbody>
-               </table>
+                           <span class="number">
+                              <strong>No</strong>
+                              <span class="txt">999</span>
+                           </span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                        <li>
+                           <strong class="title">항목명</strong>
+                           <span class="txt">내용이 들어갑니다</span>
+                        </li>
+                     </ul>
+                  </li>                  
+               </ul>
             </div>
             
             <h2 class="mt-20">Table (조회형)</h2>    

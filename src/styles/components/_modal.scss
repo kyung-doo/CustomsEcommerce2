@@ -9,44 +9,48 @@
     background-color: rgba(0,0,0,0.5);
     &-wrap {
         @include absolute($left: 50%, $top: 50%);
-        transform: translate(-50%, -50%);
-        min-width: 480px;
-        border-radius: 16px;
+        transform: translate(-50%, -50%);        
+        border-radius: 8px;
         background-color: #fff;
+        padding: 32px;
     }
 
     &-header {
         @include flex($alignItems: flex-start, $justifyContents: center);
-        position: relative;
-        height: 52px;
-        padding: 16px 24px;
-        border-bottom: 1px solid #E4E4E4;
+        position: relative;                        
         box-sizing: border-box;
+        margin-bottom: 27px;
         > h4 {
             font-weight: 700;
             font-size: 17px;
+            color:#1D1D1D;
+            margin-top: 15px;
         }        
     }
 
     &-body {
-        box-sizing: border-box;
-        padding: 30px;
+        box-sizing: border-box;    
+        
+        .modal-cont{
+            margin-bottom: 32px;
+            padding: 18px 24px;
+        }
+        
     }
 
     &-footer {
         @include flex($alignItems: center, $justifyContents: flex-end, $direction: row);
-        button {
-            margin: 0 5px;
-        }
-        height: 64px;
+
+        margin-top: 24px;
+        gap:8px;
         border-top: 1px solid #E4E4E4;
-        padding-right: 15px;
+        padding-top: 24px;
     }
 
     .btn-close{
         position: absolute;
-        right: 24px;
-        top: 15px;
+        right: 32px;
+        top: 32px;
         width: 20px;
         height: 20px;
         background-color: rgba(0, 0, 0, 0.0);
