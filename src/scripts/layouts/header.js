@@ -15,12 +15,13 @@ $(() => {
             $(this).parent().addClass('active');
             $("#wrap > .blind").show();
             $('body').css({'overflow': 'hidden'});
+            $(".main-allmenu").hide();
         });
     });
 
     $("#header .allmenu").on("click", function () {
         if(!$(".main-allmenu").is(":visible")) {
-            $(".main-allmenu").show();
+            $(".main-allmenu").show().scrollTop(0);
             $(".gnb-menu li").removeClass('active');
             $("#wrap > .blind").hide();
             $('body').css({'overflow': 'hidden'});
