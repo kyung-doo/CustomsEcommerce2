@@ -396,7 +396,7 @@
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
-                  <button class="tab-menu disabled">Title1</button>
+                  <button class="tab-menu" disabled>Title1</button>
                </div>
             </div>            
             <div class="mt-20">
@@ -405,7 +405,7 @@
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
-                  <button class="tab-menu disabled">Title1</button>
+                  <button class="tab-menu" disabled>Title1</button>
                </div>
             </div>            
             <div class="mt-20">
@@ -414,7 +414,7 @@
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
                   <button class="tab-menu">Title1</button>
-                  <button class="tab-menu disabled">Title1</button>
+                  <button class="tab-menu" disabled>Title1</button>
                </div>
             </div>            
          </div>
@@ -517,28 +517,28 @@
                <button type="button" class="krds-btn primary large">버튼</button><br>
                <button type="button" class="krds-btn primary medium">버튼</button><br>
                <button type="button" class="krds-btn primary small">버튼</button><br>
-               <button type="button" class="krds-btn primary xsmall disabled">버튼</button>
+               <button type="button" class="krds-btn primary xsmall" disabled>버튼</button>
             </div>
             <div class="mt-10 ml-10">
                <button type="button" class="krds-btn secondary xlarge">버튼</button><br>
                <button type="button" class="krds-btn secondary large">버튼</button><br>
                <button type="button" class="krds-btn secondary medium">버튼</button><br>
                <button type="button" class="krds-btn secondary small">버튼</button><br>
-               <button type="button" class="krds-btn secondary xsmall disabled">버튼</button>
+               <button type="button" class="krds-btn secondary xsmall" disabled>버튼</button>
             </div>
             <div class="mt-10 ml-10">
                <button type="button" class="krds-btn tertiary xlarge">버튼</button><br>
                <button type="button" class="krds-btn tertiary large">버튼</button><br>
                <button type="button" class="krds-btn tertiary medium">버튼</button><br>
                <button type="button" class="krds-btn tertiary small">버튼</button><br>
-               <button type="button" class="krds-btn tertiary xsmall disabled">버튼</button>
+               <button type="button" class="krds-btn tertiary xsmall" disabled>버튼</button>
             </div>
             <div class="mt-10 ml-10">
                <button type="button" class="krds-btn text xlarge">버튼</button><br>
                <button type="button" class="krds-btn text large">버튼</button><br>
                <button type="button" class="krds-btn text medium">버튼</button><br>
                <button type="button" class="krds-btn text small">버튼</button><br>
-               <button type="button" class="krds-btn text xsmall disabled">버튼</button>
+               <button type="button" class="krds-btn text xsmall" disabled>버튼</button>
             </div>
          </div> 
 
@@ -636,7 +636,7 @@
             <div class="krds-tag-wrap small">
                <span class="krds-btn-tag disabled">
                   태그
-                  <button type="button" class="btn-delete">
+                  <button type="button" class="btn-delete" disabled>
                      <span class="sr-only">삭제</span>
                   </button>
                </span>               
@@ -1745,7 +1745,7 @@
          <h2 class="mt-50" id="PAGINATION">페이지네이션(768이하일때 모바일디자인 반영)</h2>           
          <div class="guide-content">                        
             <div class="krds-pagination pagination=type1">               
-               <a class="page-navi prev disabled" href="#">이전</a>
+               <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>
                   <span class="page-link link-dot mobile-dot"></span>
@@ -1760,12 +1760,12 @@
                   <span class="page-link link-dot"></span>
                   <a class="page-link mobile-link" href="#">120</a>
                </div>
-               <a class="page-navi next" href="#">다음</a>
+               <button class="page-navi next" >다음</button>
             </div>
             <br><br>
             <div class="wrap-krds-pagination pagination=type2">
                <div class="krds-pagination">                  
-                  <a class="page-navi prev disabled" href="#">이전</a>
+                  <button class="page-navi prev" disabled>이전</button>
                   <div class="page-links">
                      <a class="page-link active" href="#"><span class="sr-only">현재페이지 </span>1</a>
                      <a class="page-link" href="#">2</a>
@@ -1779,7 +1779,7 @@
                      <span class="page-link link-dot"></span>
                      <a class="page-link" href="#">120</a>
                   </div>
-                  <a class="page-navi next" href="#">다음</a>
+                  <button class="page-navi next" href="#">다음</button>
                </div>
                <div class="pagination-btn-area">
                   <input type="text" value="5" title="이동하고 싶은 페이지 숫자를 입력해주세요">
@@ -2201,7 +2201,7 @@
                </div>
             </div>         
             <div class="krds-table-wrap">
-               <table class="tbl col data">
+               <table class="tbl col crud">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
                      <col style="width: 52px;">
@@ -2282,7 +2282,7 @@
                </div>               
             </div>   
             <div class="krds-table-wrap">
-               <table class="tbl col data">
+               <table class="tbl col check">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
                      <col style="width: 100px;">
@@ -2326,7 +2326,7 @@
                </table>
             </div>   
             <div class="krds-pagination pagination=type1">               
-               <a class="page-navi prev disabled" href="#">이전</a>
+               <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>
                   <span class="page-link link-dot mobile-dot"></span>
@@ -2341,8 +2341,8 @@
                   <span class="page-link link-dot"></span>
                   <a class="page-link mobile-link" href="#">120</a>
                </div>
-               <a class="page-navi next" href="#">다음</a>
-            </div>   
+               <button class="page-navi next" >다음</button>
+            </div>
             
             <h2 class="mt-20">Table (단순형)</h2>    
             <strong class="table-title">테이블 제목</strong>
