@@ -1,7 +1,7 @@
 @use "../mixin" as *;
 
 /*!버튼*/
-button.btn {        
+button.btn,label.btn {            
     cursor: pointer;    
     border:1px solid #f1f1f1f1;
     color:#000;

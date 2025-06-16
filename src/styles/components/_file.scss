@@ -26,11 +26,15 @@
     padding: 23px 20px;
     margin: 24px 0;
     border-radius: 8px;
+  }
 
-    .txt {
-      font-size: 19px;
-      color: #1D1D1D;
-    }
+  .file-upload-btn-wrap label {
+    height: 36px;
+  }
+
+  .file-upload .txt {
+    font-size: 19px;
+    color: #1D1D1D;
   }
 
   .file-list {
@@ -48,15 +52,15 @@
   }
 
   .upload-list {
-    .file-name {
-      font-size: 17px;
-      color: #1D1D1D;
-    }
-
     display: flex;
     flex-direction: column;
     gap: 16px;
     margin-top: 23px;
+
+    .file-name {
+      font-size: 17px;
+      color: #1D1D1D;
+    }
 
     .file-info {
       border: 1px solid #D8D8D8;
@@ -83,14 +87,14 @@
       display: block;
       width: 20px;
       height: 20px;
-      background-image: url('/assets/icons/spinner.svg');
+      background-image: url("/assets/icons/spinner.svg");
     }
 
     .complete {
       display: block;
       width: 20px;
       height: 20px;
-      background-image: url('/assets/icons/check-circle.svg');
+      background-image: url("/assets/icons/check-circle.svg");
     }
 
     .is-error {
@@ -153,7 +157,7 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      border:0;
+      border: 0;
     }
   }
 }
