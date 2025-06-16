@@ -3692,6 +3692,9 @@ button.btn:focus, label.btn:focus {
   margin-bottom: 32px;
   padding: 18px 24px;
 }
+.modal-body:focus {
+  outline: solid 1px #000;
+}
 .modal-footer {
   display: flex;
   flex-direction: row;
@@ -4336,11 +4339,17 @@ input[type=radio]:focus + label, input[type=checkbox]:focus + label {
 .form-group select:invalid {
   color: #8E8E8E;
 }
-.form-group .form-conts input[type=text]:focus, .form-group textarea:focus, .form-group select:focus {
+.form-group .form-conts.is-success input[type=text] {
   outline: 2px solid #246BEB;
   border-color: #246BEB;
 }
-.form-group.form-tit-group:focus-within {
+
+.form-conts.is-success textarea, .form-conts.is-success select {
+  outline: 2px solid #246BEB;
+  border-color: #246BEB;
+}
+
+.form-group.form-tit-group.is-success {
   outline: 2px solid #246BEB;
   border-color: #246BEB;
 }
@@ -5262,6 +5271,10 @@ input[type=radio]:focus + label, input[type=checkbox]:focus + label {
   width: 20px;
   height: 20px;
   background-image: url("/assets/icons/spinner.svg");
+  animation: spin 1s infinite linear;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .file-upload.line .upload-list .complete {
   display: block;
@@ -5322,6 +5335,14 @@ input[type=radio]:focus + label, input[type=checkbox]:focus + label {
   border: 0;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 /*!첨부파일*/
 button {
   border: 0;

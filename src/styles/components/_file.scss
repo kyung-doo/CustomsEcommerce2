@@ -88,6 +88,10 @@
       width: 20px;
       height: 20px;
       background-image: url("/assets/icons/spinner.svg");
+      animation: spin 1s infinite linear;
+      position: absolute;
+      top:0;
+      right:0;
     }
 
     .complete {
@@ -159,6 +163,16 @@
       gap: 4px;
       border: 0;
     }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
   }
 }
 /*!첨부파일*/

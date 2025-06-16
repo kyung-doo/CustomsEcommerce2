@@ -1,6 +1,7 @@
 @use "../mixin" as *;
 
 /*!입력박스*/
+
 .form-group {
   input[type=text] {
     border-radius: 4px;
@@ -8,7 +9,7 @@
     border-width: 0;
     border-style: none;
     border: 1px solid #C6C6C6;
-    color: #1D1D1D;    
+    color: #1D1D1D;
     padding: 0px 16px;
   }
 
@@ -44,7 +45,7 @@
 .form-group {
   &.form-tit-group {
     border: 1px solid #C6C6C6;
-    display: flex;    
+    display: flex;
     height: 46px;
     padding: 0 16px;
     align-items: center;
@@ -56,7 +57,7 @@
       background-color: rgba(0, 0, 0, 0);
       font-size: 17px;
       color: #1D1D1D;
-      padding: 0;            
+      padding: 0;
       height: 100%;
       padding-left: 15px;
     }
@@ -84,7 +85,7 @@
     }
   }
 
-  textarea {    
+  textarea {
     height: 110px;
     padding: 16px;
     border-radius: 4px;
@@ -126,14 +127,14 @@
     margin-top: 1px;
   }
 
-  select {    
+  select {
     border-color: #C6C6C6;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-image: url("/assets/icons/btn-arrow-down.svg");
     background-repeat: no-repeat;
-    background-position: center right 14px;    
+    background-position: center right 14px;
     background-color: #fff;
     color: #1D1D1D;
     padding: 0px 45px 0 16px;
@@ -144,13 +145,22 @@
     }
   }
 
-  .form-conts input[type=text]:focus, textarea:focus, select:focus {
+  .form-conts.is-success input[type=text] {
     outline: 2px solid #246BEB;
     border-color: #246BEB;
   }
+}
 
+.form-conts.is-success {
+  textarea, select {
+    outline: 2px solid #246BEB;
+    border-color: #246BEB;
+  }
+}
+
+.form-group {
   &.form-tit-group {
-    &:focus-within {
+    &.is-success {
       outline: 2px solid #246BEB;
       border-color: #246BEB;
     }
@@ -299,4 +309,5 @@
     background-size: 14px;
   }
 }
+
 /*!입력박스*/
