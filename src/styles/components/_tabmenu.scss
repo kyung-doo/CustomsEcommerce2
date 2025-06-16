@@ -15,7 +15,7 @@
       background-color: #EDF1F5;
     }
 
-    &.disabled {
+    &:disabled {
       color: #8E8E8E;
       pointer-events: none;
     }

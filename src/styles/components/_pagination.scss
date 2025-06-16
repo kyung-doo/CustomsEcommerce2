@@ -1,4 +1,7 @@
-[class*="-pagination"] {
+@use "../mixin" as *;
+
+/*! 페이지네이션 */
+[class*=-pagination] {
   margin-top: 40px;
 }
 
@@ -18,8 +21,8 @@
 
   .page-navi {
     display: flex;
-    width: 50px;
-    height: 28px;
+    width: 62px;
+    height: 40px;
     align-items: center;
     position: relative;
     font-size: 17px;
@@ -74,21 +77,29 @@
     background-color: #EDF1F5;
   }
 
-  a.page-link:active, .page-navi:active {
+  a.page-link:active {
     background-color: #CDD7E4;
   }
 
-  .disabled {
-    color: #8E8E8E;
-    pointer-events: none;
-
-    &.prev:before {
-      background-image: url("/assets/icons/btn-arrow-left-d.svg");
+  .page-navi {
+    &:active {
+      background-color: #CDD7E4;
     }
 
-    &.ext:before {
-      background-image: url("/assets/icons/btn-arrow-right-d.svg");
+    background-color: #fff;
+
+    &:disabled {
+      color: #8E8E8E;
+      pointer-events: none;
     }
+  }
+
+  .prev:disabled:before {
+    background-image: url("/assets/icons/btn-arrow-left-d.svg");
+  }
+
+  .next:disabled:before {
+    background-image: url("/assets/icons/btn-arrow-right-d.svg");
   }
 
   .page-link.active {
@@ -197,3 +208,4 @@
     }
   }
 }
+/*! 페이지네이션 */

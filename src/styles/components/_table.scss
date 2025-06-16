@@ -1,1 +1,213 @@
 @use "../mixin" as *;
+.board-top {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tit {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1D1D1D;
+    margin: 0 20px 0 0;
+
+    span {
+      color: #1D56BC;
+    }
+  }
+
+  .choice {
+    margin: 0 5px 0 11px;
+    font-size: 17px;
+  }
+
+  .top-txt {
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 25%;
+      left: -12px;
+      width: 1px;
+      height: 16px;
+      background-color: #E4E4E4;
+    }
+  }
+
+  .tit:before {
+    display: none;
+  }
+}
+
+.krds-table-wrap {
+  margin: 22px 0 0 0;
+  display: table;
+  table-layout: fixed;
+  position: relative;
+  min-width: 100%;
+  width: 100%;
+  word-break: break-all;
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  th {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1D1D1D;
+    border-bottom: 1px solid #58616A;
+    vertical-align: middle;
+    background-color: #E6E8EA;
+    position: relative;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 1px solid #E4E4E4;
+    font-size: 17px;
+    color: #1D1D1D;
+    vertical-align: middle;
+
+    * {
+      color: #1D1D1D;
+    }
+  }
+
+  table {
+    &.crud {
+      th {
+        padding: 14.5px 16px;
+      }
+
+      td {
+        padding: 17px 16px;
+      }
+    }
+
+    &.check {
+      th {
+        padding: 10.5px 16px;
+      }
+
+      td {
+        padding: 21px 16px;
+      }
+    }
+
+    &.cont {
+      th {
+        padding: 10px 16px;
+      }
+
+      td {
+        padding: 17px 16px;
+      }
+    }
+  }
+
+  input[type=checkbox] + label {
+    padding-left: 0;
+
+    &:before {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translateY(0);
+      background-color: #fff;
+    }
+  }
+
+  .th-turn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: -25px;
+    background-image: url('/assets/icons/tb-turn.svg');
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all .3s;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  .number {
+    position: relative;
+  }
+
+  a.txt {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .file-down {
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-image: url('/assets/icons/file.svg');
+    background-position: center;
+    background-color: #fff;
+  }
+}
+
+.table-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #1D1D1D;
+}
+
+.krds-table-wrap table.cont {
+  th {
+    text-align: center;
+  }
+
+  tr {
+    &.line1 th {
+      background-color: #CDD1D5;
+      border-bottom: 0;
+      border-top: 1px solid #58616A;
+
+      &:first-child {
+        border-left: 1px solid #CDD1D5;
+      }
+
+      &:last-child {
+        border-right: 1px solid #CDD1D5;
+      }
+    }
+
+    &.line2 th {
+      border: 1px solid #B1B8BE;
+
+      &:first-child {
+        border-left: 1px solid #E6E8EA;
+      }
+
+      &:last-child {
+        border-right: 1px solid #E6E8EA;
+      }
+    }
+  }
+
+  td {
+    border: 1px solid #E4E4E4;
+    border-top: none;
+  }
+}
