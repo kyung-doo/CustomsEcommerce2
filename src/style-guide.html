@@ -109,6 +109,9 @@
             <li data-id="STEP">단계표시기</li>  
             <li data-id="CONTEXTUAL">맥락적 도움말</li>  
             <li data-id="TABLE">테이블</li>
+            <li data-id="LAYOUT3">레이아웃3</li>            
+            <li data-id="LAYOUT1">레이아웃1</li>          
+            <li data-id="FILE">첨부파일</li>                                     
          </ul>
       </div>
 
@@ -465,18 +468,19 @@
             <div id="modal1" class="modal d-none" data-ui="modal" data-props="">
                <div class="modal-wrap">
                   <div class="modal-header">
-                     <h4>모달 타이틀</h4>
-                     <butotn class="btn-close" onclick="closeModal('#modal1')">
-                        <i class="icon close"></i>
-                     </butotn>
+                     <h4>모달 타이틀</h4>                     
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" tabindex="0">
                      모달 내용
                   </div>
                   <div class="modal-footer">
                      <button type="button" class="krds-btn tertiary medium" onclick="closeModal('#modal1')">닫기</button>
                      <button type="button" class="krds-btn primary medium">확인</button>
                   </div>
+                  <button type="button" class="btn-close" onclick="closeModal('#modal1')">
+                     <i class="icon close"></i>
+                     <span class="sr-only">닫기</span>                     
+                  </button>
                </div>
             </div>
 
@@ -2350,7 +2354,7 @@
                <table class="tbl col cont">
                   <caption>000에 대한 표로 제목1,제목2에 대한 내용으로 구성되어 있으며 제목1은 제목1-1,제목1-2,제목1-3으로 구성되어있다.</caption>
                   <colgroup>
-                     <col>                     
+                     <col span="8">                     
                   </colgroup>
                   <thead>
                      <tr class="line1">                                                
@@ -2412,6 +2416,253 @@
             </code>
          </pre>
          <!-- 테이블 -->
+
+
+
+         <!-- 레이아웃3 -->
+         <h2 class="mt-50" id="LAYOUT3">레이아웃3</h2>  
+         <div class="guide-content">            
+            <ul class="inp-form">
+               <li class="col2 nat-li">
+                  <label for="ex1" class="tit">국적</label>
+                  <div class="form-group medium">                     
+                     <div class="form-conts disabled-type1">
+                        <input type="text" id="ex1" class="krds-input" value="대한민국" disabled="" title="국적을 확인가능합니다">
+                     </div>                     
+                  </div>
+               </li>
+               <li class="col2 resident-li">
+                  <label for="ex2" class="tit">주민등록번호</label>
+                  <div class="form-group medium">                     
+                     <div class="form-conts disabled-type1">
+                        <input type="text" id="ex2" class="krds-input" value="991231" disabled="" title="주민등록번호 확인가능합니다">
+                     </div>          
+                     <span class="min">-</span>           
+                     <div class="form-conts disabled-type1">
+                        <input type="text" class="krds-input" value="1XXXXXX" disabled="" title="주민등록번호 확인가능합니다">
+                     </div>                     
+                  </div>
+               </li>
+               <li class="col2 kr-name-li">
+                  <span class="tit">한글성명</span>                  
+                  <div class="form-group medium">                     
+                     <div class="form-group form-tit-group">  
+                        <label for="kr-name-li1" class="form-title">성</label>                   
+                        <div class="form-conts">
+                           <input type="text" id="kr-name-li1" class="krds-input" placeholder="홍" title="성을 입력해주세요">
+                        </div>                     
+                     </div>
+                     <div class="form-group form-tit-group">  
+                        <label for="kr-name-li2" class="form-title">이름</label>                   
+                        <div class="form-conts">
+                           <input type="text" id="kr-name-li2" class="krds-input" placeholder="길동" title="이름을 입력해주세요">
+                        </div>                     
+                     </div>
+                  </div>
+               </li>
+               <li class="col2 en-name-li">
+                  <span class="tit">영문성명</span>                  
+                  <div class="form-group medium">                     
+                     <div class="form-group form-tit-group">  
+                        <label for="en-name-li1" class="form-title">Last</label>                   
+                        <div class="form-conts">
+                           <input type="text" id="en-name-li1" class="krds-input" placeholder="GilDong" title="영문성명을 입력해주세요">
+                        </div>                     
+                     </div>
+                     <div class="form-group form-tit-group disabled"> 
+                        <label for="en-name-li2" class="form-title">Middle</label>                                      
+                        <div class="form-conts disabled-type1">
+                           <input type="text" id="en-name-li2" class="krds-input" disabled="" title="영문성명을 확인해주세요">
+                        </div>                     
+                     </div>
+                     <div class="form-group form-tit-group">  
+                        <label for="en-name-li3" class="form-title">이름</label>                   
+                        <div class="form-conts">
+                           <input type="text" id="en-name-li3" class="krds-input" placeholder="Hong" title="영문성명을 입력해주세요">
+                        </div>                     
+                     </div>
+                  </div>
+               </li>
+               <li class="col2 ph-li">
+                  <label for="ph-li" class="tit">전화번호</label>
+                  <div class="form-group medium">                  
+                     <div class="form-conts">
+                        <select class="krds-form-select" id="ph-li" required="" title="첫번쨰 번호를 선택해주세요">
+                           <option value="" disabled="" hidden="">전화번호를 선택해주세요</option>
+                           <option value="항목1" selected>02</option>
+                           <option value="항목2">항목2</option>
+                           <option value="항목3">항목3</option>
+                        </select>
+                     </div>  
+                     <span class="min">-</span>
+                     <div class="form-conts">
+                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="두번쨰 번호를 입력해주세요">
+                     </div>    
+                     <span class="min">-</span>
+                     <div class="form-conts">
+                        <input type="text" id="consult_name1" class="krds-input" placeholder="기본입력" title="세번쨰 번호를  입력해주세요">
+                     </div>                                                         
+                  </div>
+               </li>
+               <li class="col2 cell-li">
+                  <label for="cell-li" class="tit">휴대전화번호</label>
+                  <div class="form-group medium">                  
+                     <div class="form-conts">
+                        <select class="krds-form-select" id="cell-li" required="" title="첫번째 번호를 선택해주세요">
+                           <option value="" disabled="" hidden="">휴대전화번호 선택해주세요</option>
+                           <option value="항목1" selected>010</option>
+                           <option value="항목2">항목2</option>
+                           <option value="항목3">항목3</option>
+                        </select>
+                     </div>                     
+                     <span class="min">-</span>
+                     <div class="form-conts">
+                        <input type="text" id="consult_name1" class="krds-input" value="1234" title="두번쨰 번호를 입력해주세요">
+                     </div>        
+                     <span class="min">-</span> 
+                     <div class="form-conts">
+                        <input type="text" id="consult_name1" class="krds-input" value="1234" title="세번쨰 번호를 입력해주세요">
+                     </div>                     
+                  </div>
+               </li>
+            </ul>
+         </div>
+
+         <pre>
+         <code class="html"> 
+
+         </code>
+         </pre>
+         <!-- 레이아웃3 -->
+
+         <!-- 레이아웃1 -->
+         <h2 class="mt-50" id="LAYOUT1">레이아웃1</h2>  
+         <div class="guide-content">            
+            <ul class="view-list">
+               <li>
+                  <strong class="tit">타이틀이 들어갑니다.</strong>
+                  <span class="txt">내용이 들어갑니다.</span>
+               </li>
+               <li>
+                  <strong class="tit">타이틀이 들어갑니다.</strong>
+                  <span class="txt">내용이 들어갑니다.</span>
+               </li>
+               <li>
+                  <strong class="tit">타이틀이 들어갑니다.</strong>
+                  <span class="txt">내용이 들어갑니다.</span>
+               </li>
+               <li>
+                  <strong class="tit">타이틀이 들어갑니다.</strong>
+                  <span class="txt">내용이 들어갑니다.</span>
+               </li>
+               <li>
+                  <strong class="tit">타이틀이 들어갑니다.</strong>
+                  <span class="txt">내용이 들어갑니다.</span>
+               </li>
+               <li>
+                  <strong class="tit">타이틀이 들어갑니다.</strong>
+                  <span class="txt">내용이 들어갑니다.</span>
+               </li>
+            </ul>
+         </div>
+
+         <pre>
+         <code class="html"> 
+
+         </code>
+         </pre>
+         <!-- 레이아웃1 -->
+
+         <!-- 첨부파일 -->
+         <h2 class="mt-50" id="FILE">첨부파일</h2>  
+         <div class="guide-content">                        
+            <div class="file-upload line">            
+               <div class="file-head">
+                  <h3 class="tit">타이틀영역</h3>
+                  <div>
+                     <p>컨텐츠 영역</p>
+                  </div>
+               </div>
+               
+               <div class="file-upload">
+                  <p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p>
+                  <div class="file-upload-btn-wrap">
+                     <input type="file" name="myFile" id="fileu-upload" hidden>
+                     <label for="fileu-upload">
+                        <button type="button" class="krds-btn secondary medium">파일선택</button>
+                     </label>
+                  </div>
+               </div>
+               
+               <div class="file-list">
+                  <div class="total"><span class="current">3개</span> / 10개</div>
+                  <ul class="upload-list">
+                     <li>
+                     <div class="file-info">
+                        <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                        <div class="btn-wrap">
+                           <span class="spinner" role="status">
+                           <span class="sr-only">업로드 중</span>
+                           </span>
+                        </div>
+                     </div>
+                     </li>
+                     <li>
+                     <div class="file-info">
+                        <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                        <div class="btn-wrap">
+                           <span class="ico-invalid complete">
+                           <em class="sr-only">업로드 완료</em>
+                           </span>
+                        </div>
+                     </div>
+                     </li>
+                     <li>
+                     <div class="file-info">
+                        <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                        <div class="btn-wrap">
+                           <button type="button" class="btn medium text"><i class="icon delete medium"></i> 삭제</button>
+                        </div>
+                     </div>
+                     </li>
+                     <li class="is-error">
+                     <div class="file-info">
+                        <div class="file-name">전입재등록신고서 [주민등록법 시행령 : 별지서식 15, 15호의2호] [hwp, 17KB]</div>
+                        <div class="btn-wrap">
+                           <button type="button" class="btn medium text"><i class="icon delete medium"></i> 삭제</button>
+                        </div>
+                     </div>
+                     <p class="file-hint-invalid">
+                        <i class="icon danger medium"></i>
+                        <span class="txt">
+                           등록 가능한 파일 용량을 초과하였습니다.<br>
+                           20MB 미만의 파일만 등록할 수 있습니다.
+                        </span>
+                     </p>
+                     </li>
+                     <li>
+                        <div class="file-info m-column file-down">
+                           <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                           <div class="btn-wrap">
+                              <button type="button" class="btn medium text">다운로드 <i class="icon download medium"></i></button>
+                              <a href="#" target="_blank" class="btn medium text" title="pdf파일로 바로보기">바로보기 <i class="icon open-new-window medium"></i></a>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+                  <div class="upload-delete-btn">
+                     <button type="button" class="btn xsmall tertiary"> <i class="icon delete medium"></i> 전체 파일 삭제</button>
+                  </div>
+               </div>            
+            </div>            
+         </div>
+
+         <pre>
+         <code class="html"> 
+
+         </code>
+         </pre>
+         <!-- 첨부파일 -->
 
          <div class="description">
             <h4></h4>

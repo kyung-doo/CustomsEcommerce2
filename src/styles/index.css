@@ -3643,11 +3643,6 @@ button.krds-btn.text:disabled {
   font-weight: 700;
   font-size: 17px;
 }
-.modal-header .btn-close {
-  position: absolute;
-  right: 24px;
-  top: 15px;
-}
 .modal-body {
   box-sizing: border-box;
   padding: 30px;
@@ -3663,6 +3658,15 @@ button.krds-btn.text:disabled {
 }
 .modal-footer button {
   margin: 0 5px;
+}
+.modal .btn-close {
+  position: absolute;
+  right: 24px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
 }
 
 /*! 모달 */
@@ -4969,6 +4973,228 @@ input[type=radio]:focus + label, input[type=checkbox]:focus + label {
 .krds-table-wrap table.cont td {
   border: 1px solid #E4E4E4;
   border-top: none;
+}
+
+/*! 입력폼 */
+.inp-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 32px;
+  justify-content: space-between;
+  /** 국적 **/
+  /** 주민등록번호 **/
+  /** 한글성명 **/
+  /** 영문성명 **/
+  /** 전화번호,휴대전화번호 **/
+}
+.inp-form .tit {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1D1D1D;
+}
+.inp-form .tit + .form-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+}
+.inp-form .form-group input[type=text], .inp-form .form-group select {
+  width: auto;
+}
+.inp-form .min {
+  display: block;
+}
+.inp-form li:nth-child(odd) {
+  padding-right: 20px;
+}
+.inp-form li:nth-child(even) {
+  padding-left: 20px;
+}
+.inp-form li.col2 {
+  width: calc(50% - 40px);
+  margin-top: 19px;
+}
+.inp-form .nat-li [class*=form-] input[type=text] {
+  width: 355px;
+}
+.inp-form .resident-li [class*=form-] input[type=text] {
+  width: 151px;
+}
+.inp-form .kr-name-li [class*=form-] input[type=text] {
+  width: 118px;
+}
+.inp-form .en-name-li [class*=form-] input[type=text] {
+  width: 100px;
+}
+.inp-form .ph-li [class*=form-] select, .inp-form .cell-li [class*=form-] select {
+  width: 191px;
+}
+.inp-form .ph-li [class*=form-] input[type=text], .inp-form .cell-li [class*=form-] input[type=text] {
+  width: 138px;
+}
+
+/*! 입력폼 */
+/*!레이아웃1*/
+.view-list {
+  padding: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.view-list li {
+  width: calc(50% - 40px);
+  margin-top: 13px;
+  display: flex;
+}
+.view-list li:nth-child(odd) {
+  padding-right: 20px;
+}
+.view-list li:nth-child(even) {
+  padding-left: 20px;
+}
+.view-list li .tit {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1D1D1D;
+  width: 160px;
+  display: flex;
+  align-items: center;
+}
+.view-list li .txt {
+  font-size: 17px;
+  color: #1D1D1D;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+}
+
+/*!레이아웃1*/
+.file-upload.line .file-head .tit {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1D1D1D;
+}
+.file-upload.line .file-head p {
+  font-size: 17px;
+  color: #555;
+  margin-top: 28px;
+}
+.file-upload.line .file-upload {
+  display: flex;
+  border: 1px dashed #C6C6C6;
+  background-color: #F0F0F0;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 23px 20px;
+  margin: 24px 0;
+  border-radius: 8px;
+}
+.file-upload.line .file-upload .txt {
+  font-size: 19px;
+  color: #1D1D1D;
+}
+.file-upload.line .file-list {
+  position: relative;
+}
+.file-upload.line .file-list .total {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1D1D1D;
+}
+.file-upload.line .file-list .current {
+  color: #1D56BC;
+}
+.file-upload.line .upload-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+.file-upload.line .upload-list .file-name {
+  font-size: 17px;
+  color: #1D1D1D;
+}
+.file-upload.line .upload-list .file-info {
+  border: 1px solid #D8D8D8;
+  border-radius: 4px;
+  padding: 16px 16px;
+  position: relative;
+}
+.file-upload.line .upload-list .btn-wrap {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.file-upload.line .upload-list .btn-wrap button {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 17px;
+  color: #1D1D1D;
+  align-items: center;
+}
+.file-upload.line .upload-list .spinner {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/icons/spinner.svg");
+}
+.file-upload.line .upload-list .complete {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/icons/check-circle.svg");
+}
+.file-upload.line .upload-list .is-error {
+  padding: 16px;
+  border: 2px solid #EB003B;
+  border-radius: 4px;
+  background-color: #FDF2F3;
+  flex-direction: column;
+}
+.file-upload.line .upload-list .is-error .file-info {
+  padding: 0;
+  border: 0;
+  padding-bottom: 16px;
+}
+.file-upload.line .upload-list .file-hint-invalid {
+  display: flex;
+  border-top: 1px solid #D8D8D8;
+  padding-top: 12px;
+}
+.file-upload.line .upload-list .file-hint-invalid .txt {
+  font-size: 15px;
+  color: #D50136;
+  padding-left: 4px;
+}
+.file-upload.line .upload-list .is-error .btn-wrap {
+  top: 0;
+  right: 0;
+}
+.file-upload.line .upload-list .file-down button, .file-upload.line .upload-list .file-down a {
+  font-size: 17px;
+  color: #1D1D1D;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.file-upload.line .upload-list .file-down .btn-wrap {
+  display: flex;
+  gap: 16px;
+}
+.file-upload.line .upload-delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.file-upload.line .upload-delete-btn button {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 17px;
+  color: #1D1D1D;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 button {

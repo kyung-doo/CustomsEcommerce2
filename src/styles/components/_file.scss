@@ -1,0 +1,155 @@
+.file-upload.line {
+  .file-head {
+    .tit {
+      font-size: 25px;
+      font-weight: 700;
+      color: #1D1D1D;
+    }
+
+    p {
+      font-size: 17px;
+      color: #555;
+      margin-top: 28px;
+    }
+  }
+
+  .file-upload {
+    display: flex;
+    border: 1px dashed #C6C6C6;
+    background-color: #F0F0F0;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 23px 20px;
+    margin: 24px 0;
+    border-radius: 8px;
+
+    .txt {
+      font-size: 19px;
+      color: #1D1D1D;
+    }
+  }
+
+  .file-list {
+    position: relative;
+
+    .total {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1D1D1D;
+    }
+
+    .current {
+      color: #1D56BC;
+    }
+  }
+
+  .upload-list {
+    .file-name {
+      font-size: 17px;
+      color: #1D1D1D;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+
+    .file-info {
+      border: 1px solid #D8D8D8;
+      border-radius: 4px;
+      padding: 16px 16px;
+      position: relative;
+    }
+
+    .btn-wrap {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      button {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 17px;
+        color: #1D1D1D;
+        align-items: center;
+      }
+    }
+
+    .spinner {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url('/assets/icons/spinner.svg');
+    }
+
+    .complete {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url('/assets/icons/check-circle.svg');
+    }
+
+    .is-error {
+      padding: 16px;
+      border: 2px solid #EB003B;
+      border-radius: 4px;
+      background-color: #FDF2F3;
+      flex-direction: column;
+
+      .file-info {
+        padding: 0;
+        border: 0;
+        padding-bottom: 16px;
+      }
+    }
+
+    .file-hint-invalid {
+      display: flex;
+      border-top: 1px solid #D8D8D8;
+      padding-top: 12px;
+
+      .txt {
+        font-size: 15px;
+        color: #D50136;
+        padding-left: 4px;
+      }
+    }
+
+    .is-error .btn-wrap {
+      top: 0;
+      right: 0;
+    }
+
+    .file-down {
+      button, a {
+        font-size: 17px;
+        color: #1D1D1D;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .btn-wrap {
+        display: flex;
+        gap: 16px;
+      }
+    }
+  }
+
+  .upload-delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 17px;
+      color: #1D1D1D;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}

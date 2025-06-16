@@ -1,0 +1,90 @@
+/*! 입력폼 */
+.inp-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 32px;
+  justify-content: space-between;
+
+  .tit {
+    + .form-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    font-size: 15px;
+    font-weight: 700;
+    color: #1D1D1D;
+  }
+
+  .form-group {
+    input[type=text], select {
+      width: auto;
+    }
+  }
+
+  .min {
+    display: block;
+  }
+
+  li {
+    &:nth-child(odd) {
+      padding-right: 20px;
+    }
+
+    &:nth-child(even) {
+      padding-left: 20px;
+    }
+
+    &.col2 {
+      width: calc(50% - 40px);
+      margin-top: 19px;
+    }
+  }
+
+  /** 국적 **/
+  .nat-li [class*="form-"] input[type=text] {
+    width: 355px;
+  }
+
+  /** 주민등록번호 **/
+  .resident-li [class*="form-"] input[type=text] {
+    width: 151px;
+  }
+
+  /** 한글성명 **/
+  .kr-name-li [class*="form-"] input[type=text] {
+    width: 118px;
+  }
+
+  /** 영문성명 **/
+  .en-name-li [class*="form-"] input[type=text] {
+    width: 100px;
+  }
+
+  /** 전화번호,휴대전화번호 **/
+  .ph-li [class*="form-"], .cell-li [class*="form-"] {
+    select {
+      width: 191px;
+    }
+
+    input[type=text] {
+      width: 138px;
+    }
+  }
+}
+/*! 입력폼 */
+
+
+
+
+
+
+
+
+
+
+
+

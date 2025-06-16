@@ -1,0 +1,38 @@
+/*!레이아웃1*/
+.view-list {
+  padding: 32px;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: calc(50% - 40px);
+    margin-top: 13px;
+    display: flex;
+
+    &:nth-child(odd) {
+      padding-right: 20px;
+    }
+
+    &:nth-child(even) {
+      padding-left: 20px;
+    }
+
+    .tit {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1D1D1D;
+      width: 160px;
+      display: flex;
+      align-items: center;
+    }
+
+    .txt {
+      font-size: 17px;
+      color: #1D1D1D;
+      display: flex;
+      align-items: center;
+      padding-left: 24px;
+    }
+  }
+}
+/*!레이아웃1*/
