@@ -16,6 +16,7 @@ $(() => {
             $("#wrap > .blind").show();
             $('body').css({'overflow': 'hidden'});
             $(".main-allmenu").hide();
+            $("#header .allmenu").removeClass('active');
         });
     });
 
@@ -25,9 +26,11 @@ $(() => {
             $(".gnb-menu li").removeClass('active');
             $("#wrap > .blind").hide();
             $('body').css({'overflow': 'hidden'});
+            $("#header .allmenu").addClass('active');
         } else {
             $(".main-allmenu").hide();
             $('body').css({'overflow': ''});
+            $("#header .allmenu").removeClass('active');
         }
     });
 
