@@ -501,14 +501,12 @@
 
          <div class="guide-content">
 
-<<<<<<< HEAD
-            <div class="d-flex">              
-               <button type="button" class="btn secondary medium" onclick="openModal('#modal1')">모달 760</button>
+            <div class="d-flex">
+               <button type="button" class="btn secondary medium" data-modal-target="#modal1">모달 760</button>
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal">
-               <div class="modal-wrap"  style="min-width:696px">
-
+               <div class="modal-wrap" style="min-width: 696px;">
                   <div class="modal-header">
                      <h4>모달 760</h4>                     
                   </div>
@@ -521,30 +519,61 @@
                      </div>
                   </div>
                   <div class="modal-footer">
-                     <button type="button" class="btn tertiary medium" onclick="closeModal('#modal1')">닫기</button>
-                     <button type="button" class="btn primary medium">사용정지</button>
-                  
-=======
-            <div class="d-flex">
-               <button type="button" class="btn secondary medium" data-modal-target="#modal1">모달 오픈</button>
-            </div> 
-
-            <div id="modal1" class="modal d-none" data-ui="modal">
-               <div class="modal-wrap">
-                  <div class="modal-header">
-                     <h4>모달 760</h4>                     
-                  </div>
-                  <div class="modal-body">
-                     모달 내용
-                  </div>
->>>>>>> 98e256c813e5a713224fd0029fe959f6d23f1edb
-                  <div class="modal-footer">
                      <button type="button" class="btn modal-close tertiary medium">닫기</button>
-                     <button type="button" class="btn modal-enter primary medium">확인</button>
+                     <button type="button" class="btn modal-enter primary medium">사용정지</button>
                   </div>
                </div>
             </div>
-         </div>
+
+            <div class="d-flex mt-20">
+               <button type="button" class="btn secondary medium" data-modal-target="#modal2">모달 560</button>
+            </div> 
+
+            <div id="modal2" class="modal d-none" data-ui="modal">
+               <div class="modal-wrap" style="min-width: 496px;">
+                  <div class="modal-header">
+                     <h4>모달 560</h4>                     
+                  </div>
+                  <div class="modal-body" tabindex="0">
+                     <div class="modal-cont">
+                        콘텐츠 영역
+                     </div>
+                     <div class="modal-cont">
+                        콘텐츠 영역
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                     <button type="button" class="btn modal-enter primary medium">사용정지</button>
+                  </div>
+               </div>
+            </div>
+
+            <div class="d-flex mt-20">
+               <button type="button" class="btn secondary medium" data-modal-target="#modal3">모달 400</button>
+            </div> 
+
+            <div id="modal3" class="modal d-none type1" data-ui="modal">
+               <div class="modal-wrap" style="min-width: 336px;">
+                  <div class="modal-header">
+                     <h4>모달 400</h4>                     
+                  </div>
+                  <div class="modal-body" tabindex="0">
+                     <div class="modal-cont">
+                        콘텐츠 영역
+                     </div>
+                     <div class="modal-cont">
+                        콘텐츠 영역
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                     <button type="button" class="btn modal-enter primary medium">사용정지</button>
+                  </div>
+               </div>
+            </div>
+
+         </div>    
          
          <pre>
             <code class="html">         

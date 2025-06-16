@@ -3579,6 +3579,9 @@ button.btn.text:disabled {
   border-color: #fff;
   color: #8E8E8E;
 }
+button.btn:focus {
+  outline: 1px solid #000;
+}
 
 /*!버튼*/
 /*!탭메뉴*/
@@ -3706,6 +3709,11 @@ button.btn.text:disabled {
   width: 20px;
   height: 20px;
   background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+}
+
+.modal.type1 .modal-footer {
+  border-top: 0;
   padding: 0;
 }
 
