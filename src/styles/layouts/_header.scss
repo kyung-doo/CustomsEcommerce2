@@ -349,3 +349,9 @@ button {
     }
   }
 }
+
+@mixin media2000 {
+  @media (max-width: #{$breakpoint-2000}) {
+    body{border:10px solid red;}
+  }
+}

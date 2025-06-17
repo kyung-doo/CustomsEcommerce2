@@ -26,6 +26,9 @@
 @use "./layouts/navigation";
 @use "./layouts/content";
 
+@use "./pages/pages";
+@use "./pages/pages-modal";
+
 
 
 html, body, div, span, applet, object, iframe,

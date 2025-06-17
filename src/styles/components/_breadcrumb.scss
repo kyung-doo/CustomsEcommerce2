@@ -1,28 +1,32 @@
 @use "../mixin" as *;
+@use "../variable" as *;
 
 /*!브레드크럼*/
 .breadcrumb {
-  display: flex;  
+  display: flex;
 
   li {
     position: relative;
     margin: 0 8px;
 
-    a {
+    * {
       padding: 6px 6px 7px 6px;
       position: relative;
       display: flex;
       align-items: center;
-      font-size: 15px;      
+      font-size: 15px;
       color: #1d1d1d;
       height: 11px;
       gap: 8px;
       text-decoration: none;
+    }
 
+    a {
       &:hover {
         background-color: #EDF1F5;
         border-radius: 4px;
       }
+
       &:active {
         background-color: #CDD7E4;
         border-radius: 4px;
@@ -62,48 +66,54 @@
       height: 12px;
     }
 
-    &.home + li a:before {
-      display: none;
-    }
-  }
-
-  li.home,li.last-li{
-    text-decoration: underline;
-  }
-}
-
-@include tablet {
-  .breadcrumb {
-    display: flex;
-    gap: 10px;
-
-    li {
-      &:not(:last-child):not(.home) {
+    &.home {
+      + li a:before {
         display: none;
       }
 
-      &:last-child {
-        padding-left: 39px;
+      text-decoration: underline;
+    }
 
-        a:after {
-          content: "";
-          display: block;
-          width: 12px;
-          height: 2px;
-          background-image: url("/assets/icons/breadcrumb.svg");
-          position: absolute;
-          top: 50%;
-          left: -40px;
-          transform: translateY(-50%);          
+    &.last-li {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    .breadcrumb {
+      display: flex;
+      gap: 10px;
+
+      li {
+        &:not(:last-child):not(.home) {
+          display: none;
         }
-      }
 
-      &.home:after {
-        left: 27px;
-      }
+        &:last-child {
+          padding-left: 39px;
 
-      &:last-child:before {
-        left: 22px;
+          a:after {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 2px;
+            background-image: url("/assets/icons/breadcrumb.svg");
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+          }
+        }
+
+        &.home:after {
+          left: 27px;
+        }
+
+        &:last-child:before {
+          left: 22px;
+        }
       }
     }
   }

@@ -3,6 +3,7 @@
 
 #header .main-menu {
   border-bottom: 1px solid #d8d8d8;
+  padding: 0 16px;
 
   .inner {
     max-width: 1280px;
@@ -397,4 +398,8 @@
   .allmenu.active {
     background-image: url("/assets/icons/close.svg");
   }
+}
+
+@include desktop {
+  
 }
