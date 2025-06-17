@@ -1,5 +1,4 @@
 @use "../mixin" as *;
-@use "../variable" as *;
 
 /*!페이지네이션*/
 [class*=pagination-] {
@@ -153,26 +152,48 @@
   }
 }
 
-@mixin tablet {
-  @media (max-width: #{$breakpoint-tablet}) {
+@include tablet {
+  .pagination {
+    min-width: 100px;
+    position: relative;
+    padding-top: 63px;
+
+    .mobile-dot {
+      display: flex;
+    }
+
+    a.page-link:not(.mobile-link) {
+      display: none;
+    }
+
+    .page-navi {
+      position: absolute;
+      top: 0;
+    }
+
+    .next {
+      margin-left: 66px;
+    }
+
+    .prev {
+      margin-right: 66px;
+    }
+  }
+
+  .wrap-pagination {
+    position: relative;
+    padding-top: 64px;
+
     .pagination {
-      min-width: 100px;
-      position: relative;
-      padding-top: 63px;
+      position: initial;
+      padding-top: 0;
+    }
 
-      .mobile-dot {
-        display: flex;
-      }
+    .page-link {
+      display: none;
+    }
 
-      a.page-link:not(.mobile-link) {
-        display: none;
-      }
-
-      .page-navi {
-        position: absolute;
-        top: 0;
-      }
-
+    .pagination {
       .next {
         margin-left: 66px;
       }
@@ -182,32 +203,8 @@
       }
     }
 
-    .wrap-pagination {
-      position: relative;
-      padding-top: 64px;
-
-      .pagination {
-        position: initial;
-        padding-top: 0;
-      }
-
-      .page-link {
-        display: none;
-      }
-
-      .pagination {
-        .next {
-          margin-left: 66px;
-        }
-
-        .prev {
-          margin-right: 66px;
-        }
-      }
-
-      .pagination-btn-area {
-        margin-top: 0;
-      }
+    .pagination-btn-area {
+      margin-top: 0;
     }
   }
 }

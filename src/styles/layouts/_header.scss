@@ -41,7 +41,6 @@ button {
   position: relative;
   background-color: #4f6280;
   z-index: 8;
-  padding: 0 16px;
 
   .toggle-wrap {
     max-width: 1280px;
@@ -87,7 +86,6 @@ button {
 
   .header-container {
     border-bottom: 1px solid #d8d8d8;
-    padding: 0 16px;
 
     .inner {
       max-width: 1280px;
@@ -347,11 +345,5 @@ button {
         justify-content: flex-end;
       }
     }
-  }
-}
-
-@mixin media2000 {
-  @media (max-width: #{$breakpoint-2000}) {
-    body{border:10px solid red;}
   }
 }

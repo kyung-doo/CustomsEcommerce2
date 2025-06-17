@@ -13,29 +13,25 @@
     top: $top;
 }
 
-//480px
 @mixin mobile {
   @media (max-width: #{$breakpoint-mobile}) {
     @content;
   }
 }
 
-//767px
 @mixin tablet {
   @media (max-width: #{$breakpoint-tablet}) {
     @content;
   }
 }
 
-//1023px
 @mixin desktop {
   @media (max-width: #{$breakpoint-desktop}) {
     @content;
   }
 }
 
-//2000
-@mixin media2000 {
+@mixin media-2000 {
   @media (max-width: #{$breakpoint-2000}) {
     @content;
   }

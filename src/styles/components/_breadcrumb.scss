@@ -1,9 +1,8 @@
 @use "../mixin" as *;
-@use "../variable" as *;
 
 /*!브레드크럼*/
 .breadcrumb {
-  display: flex;
+  display: flex;  
 
   li {
     position: relative;
@@ -14,20 +13,16 @@
       position: relative;
       display: flex;
       align-items: center;
-      font-size: 15px;
+      font-size: 15px;      
       color: #1d1d1d;
       height: 11px;
       gap: 8px;
-      text-decoration: none;
-    }
 
-    a {
-      &:hover {
+      &:not(span):hover {
         background-color: #EDF1F5;
         border-radius: 4px;
       }
-
-      &:active {
+      &:not(span):active {
         background-color: #CDD7E4;
         border-radius: 4px;
       }
@@ -66,54 +61,44 @@
       height: 12px;
     }
 
-    &.home {
-      + li a:before {
-        display: none;
-      }
-
-      text-decoration: underline;
-    }
-
-    &.last-li {
-      text-decoration: underline;
+    &.home + li a:before {
+      display: none;
     }
   }
 }
 
-@mixin tablet {
-  @media (max-width: #{$breakpoint-tablet}) {
-    .breadcrumb {
-      display: flex;
-      gap: 10px;
+@include tablet {
+  .breadcrumb {
+    display: flex;
+    gap: 10px;
 
-      li {
-        &:not(:last-child):not(.home) {
-          display: none;
+    li {
+      &:not(:last-child):not(.home) {
+        display: none;
+      }
+
+      &:last-child {
+        padding-left: 39px;
+
+        a:after {
+          content: "";
+          display: block;
+          width: 12px;
+          height: 2px;
+          background-image: url("/assets/icons/breadcrumb.svg");
+          position: absolute;
+          top: 50%;
+          left: -40px;
+          transform: translateY(-50%);
         }
+      }
 
-        &:last-child {
-          padding-left: 39px;
+      &.home:after {
+        left: 27px;
+      }
 
-          a:after {
-            content: "";
-            display: block;
-            width: 12px;
-            height: 2px;
-            background-image: url("/assets/icons/breadcrumb.svg");
-            position: absolute;
-            top: 50%;
-            left: -40px;
-            transform: translateY(-50%);
-          }
-        }
-
-        &.home:after {
-          left: 27px;
-        }
-
-        &:last-child:before {
-          left: 22px;
-        }
+      &:last-child:before {
+        left: 22px;
       }
     }
   }
