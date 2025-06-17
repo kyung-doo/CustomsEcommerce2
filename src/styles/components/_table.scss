@@ -160,6 +160,10 @@
     text-decoration: none;
   }
 
+  a.txt:hover{
+    text-decoration: underline;
+  }
+
   .file-down {
     width: 24px;
     height: 24px;
@@ -220,7 +224,11 @@
     background-color: #E6E8EA;
     padding: 16px;
     border-bottom: 1px solid #58616A;
-  }
+
+    .form-check{
+      display:inline-flex;
+    }
+  }  
 
   .body {
     display: flex;

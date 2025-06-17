@@ -97,7 +97,7 @@
   }
 
   &.language-switch {
-    width: 112px;
+    width: 104px;
     height: 32px;
     padding: 0 4px;
     border-radius: 40px;
@@ -114,6 +114,8 @@
         text-align: center;
         padding: 0 7px;
         color: #58616a;
+        display: flex;
+        align-items: center;
 
         &.kr {
           left: 2px;
