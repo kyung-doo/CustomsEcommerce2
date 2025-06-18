@@ -1,25 +1,24 @@
-@use "../mixin" as *;
-
 /*! 레이아웃3 */
+
 .inp-form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 32px;
-  justify-content: space-between;
-  gap:19px 0;
+  gap: 19px 0;
+  margin-left: -40px;
 
   .tit {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1D1D1D;
+
     + .form-group {
       display: flex;
       align-items: center;
       gap: 8px;
       margin-top: 9px;
     }
-
-    font-size: 15px;
-    font-weight: 700;
-    color: #1D1D1D;
   }
 
   .form-group {
@@ -32,61 +31,49 @@
     display: block;
   }
 
-  li {
-    &:nth-child(odd) {
-      padding-right: 20px;
-    }
+  li {    
+    margin-left: 40px;
 
-    &:nth-child(even) {
-      padding-left: 20px;
+    &.col1 {
+      width: 100%;
     }
 
     &.col2 {
-      width: calc(50% - 40px);      
+      width: calc(50% - 40px);
+    }
+
+    &.col3 {
+      width: calc(33.333% - 40px);
+    }
+
+    &.col4 {
+      width: calc(25% - 40px);
     }
   }
 
-  /** 국적 **/
-  .nat-li [class*="form-"] input[type=text] {
+  .nat-li [class*=form-] input[type=text] {
     width: 355px;
   }
 
-  /** 주민등록번호 **/
-  .resident-li [class*="form-"] input[type=text] {
+  .resident-li [class*=form-] input[type=text] {
     width: 151px;
   }
 
-  /** 한글성명 **/
-  .kr-name-li [class*="form-"] input[type=text] {
+  .kr-name-li [class*=form-] input[type=text] {
     width: 128px;
   }
 
-  /** 영문성명 **/
-  .en-name-li [class*="form-"] input[type=text] {
+  .en-name-li [class*=form-] input[type=text] {
     width: 110px;
   }
 
-  /** 전화번호,휴대전화번호 **/
-  .ph-li [class*="form-"], .cell-li [class*="form-"] {
-    select {
-      width: 191px;
-    }
+  .ph-li [class*=form-] select, .cell-li [class*=form-] select {
+    width: 191px;
+  }
 
-    input[type=text] {
-      width: 138px;
-    }
+  .ph-li [class*=form-] input[type=text], .cell-li [class*=form-] input[type=text] {
+    width: 138px;
   }
 }
-/*! 레이아웃3 */
 
-
-
-
-
-
-
-
-
-
-
-
+/*! // 레이아웃3 */

@@ -2,29 +2,32 @@
 
 /*!브레드크럼*/
 .breadcrumb {
-  display: flex;  
+  display: flex;
 
   li {
     position: relative;
     margin: 0 8px;
 
     * {
-      padding: 6px 6px 7px 6px;
+      padding: 0 6px 0 6px;
       position: relative;
       display: flex;
       align-items: center;
-      font-size: 15px;      
+      font-size: 15px;
       color: #1d1d1d;
-      height: 11px;
+      height: 24px;
       gap: 8px;
 
-      &:not(span):hover {
-        background-color: #EDF1F5;
-        border-radius: 4px;
-      }
-      &:not(span):active {
-        background-color: #CDD7E4;
-        border-radius: 4px;
+      &:not(span) {
+        &:hover {
+          background-color: #EDF1F5;
+          border-radius: 4px;
+        }
+
+        &:active {
+          background-color: #CDD7E4;
+          border-radius: 4px;
+        }
       }
     }
 
@@ -67,7 +70,7 @@
   }
 }
 
-@include tablet {
+@media (max-width: 767px) {
   .breadcrumb {
     display: flex;
     gap: 10px;
@@ -103,4 +106,5 @@
     }
   }
 }
-/*!브레드크럼*/
+
+/*! // 브레드크럼*/

@@ -1,31 +1,42 @@
 @use "../mixin" as *;
 
 /*!레이아웃1*/
+
 .view-list {
   padding: 32px;
   display: flex;
   flex-wrap: wrap;
-  gap:13px 0;
+  gap: 13px 0;
+  margin-left: -40px;
 
   li {
-    width: calc(50% - 40px);    
-    display: flex;
+    display: flex;    
+    margin-left: 40px;
 
-    &:nth-child(odd) {
-      padding-right: 20px;
+    &.col1 {
+      width: 100%;
     }
 
-    &:nth-child(even) {
-      padding-left: 20px;
+    &.col2 {
+      width: calc(50% - 40px);
+    }
+
+    &.col3 {
+      width: calc(33.333% - 40px);
+    }
+
+    &.col4 {
+      width: calc(25% - 40px);
     }
 
     .tit {
       font-size: 15px;
       font-weight: 700;
       color: #1D1D1D;
-      width: 160px;
       display: flex;
       align-items: center;
+      min-width: 180px;
+      width:180px;
     }
 
     .txt {
@@ -37,4 +48,6 @@
     }
   }
 }
-/*!레이아웃1*/
+
+/*! //레이아웃1*/
+

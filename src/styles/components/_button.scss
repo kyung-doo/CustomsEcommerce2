@@ -1,151 +1,214 @@
 @use "../mixin" as *;
 
 /*!버튼*/
-button.btn,label.btn {            
-    cursor: pointer;    
-    border:1px solid #f1f1f1f1;
-    color:#000;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    justify-content: center;
 
-    &:disabled{
-        cursor:default;
-        pointer-events: none; 
-    }
-
-    &.xlarge{
-        padding: 5px 22.1px;
-        height:64px;
-        font-size:19px;
-    }
-
-    &.large{
-        padding: 5px 18.1px;
-        height: 56px;
-        font-size:19px;
-    }
-
-    &.medium{
-        padding: 5px 14.4px;
-        height: 48px;
-        font-size:17px;
-    }
-
-    &.small{
-        padding: 5px 10.3px;
-        height: 40px;
-        font-size:15px;
-    }
-
-    &.xsmall{
-        padding: 5px 8.3px;
-        height: 32px;
-        font-size:15px;
-    }    
-
-    &.text.xlarge,&.text.large{        
-        height: 40px;
-        font-size: 19px;
-    }
-
-    &.text.medium{        
-        height:32px;
-        font-size:17px;
-    }
-
-    &.text.small{        
-        height:24px;
-        font-size:17px;
-    }
-
-    &.text.xsmall{        
-        height: 20px;
-        font-size:15px;
-    }
-
-    &.primary {
-        background-color: #246BEB;
-        border-color: #246BEB;
-        color: #fff;
-    }
-    &.primary:hover {
-        background-color: #1D56BC;
-        border-color: #1D56BC;
-    }
-    &.primary:active {
-        background-color: #16408D;
-        border-color:#16408D;
-    }
-    &.primary:disabled {
-        background-color: #D8D8D8;
-        border-color:#D8D8D8;
-        color: #717171;
-    }    
-
-    &.secondary {
-        background-color: #EFF5FF;
-        border-color:#246BEB;
-        color: #1D56BC;
-    }
-    &.secondary:hover {
-        background-color: #D3E1FB;
-        border-color:#246BEB;
-        color:#1D56BC;
-    }
-    &.secondary:active {
-        background-color: #A7C4F7;
-        border-color:#246BEB;
-        color:#16408D;
-    }
-    &.secondary:disabled {
-        background-color: #D8D8D8;
-        border-color:#C6C6C6;
-        color:#717171;
-    }  
-
-    &.tertiary {
-        background-color: #FFFFFF;
-        border-color:#1D1D1D;
-        color: #1D1D1D;
-    }
-    &.tertiary:hover {
-        background-color: #F8F8F8;
-        border-color:#1D1D1D;
-        color: #1D1D1D;
-    }
-    &.tertiary:active {
-        background-color: #F0F0F0;
-        border-color:#1D1D1D;
-        color: #1D1D1D;
-    }
-    &.tertiary:disabled {
-        background-color: #D8D8D8;
-        border-color:#C6C6C6;
-        color: #717171;
-    } 
-    
-    &.text {        
-        padding: 0 0px;
-        background-color: #fff;
-        border-color:#fff;
-        color: #1D1D1D;
-    }
-    &.text:hover {
-        background-color: #EDF1F5;
-        border-color:#EDF1F5;
-        color: #1D1D1D;
-    }
-    &.text:active {
-        background-color: #CDD7E4;
-        border-color:#CDD7E4;
-        color: #1D1D1D;
-    }
-    &.text:disabled {
-        background-color: #fff;
-        border-color:#fff;
-        color: #8E8E8E;
-    }     
+button.btn, label.btn {
+  cursor: pointer;
+  border: 1px solid rgba(241, 241, 241, 0.9450980392);
+  color: #000;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  justify-content: center;
 }
-/*!버튼*/
+
+button.btn {
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.xlarge {
+    padding: 0 24px;
+    min-width: 81px;
+    height: 64px;
+    font-size: 19px;
+  }
+}
+
+label.btn.xlarge {
+  padding: 0 24px;
+  min-width: 81px;
+  height: 64px;
+  font-size: 19px;
+}
+
+button.btn.large, label.btn.large {
+  padding: 0 20px;
+  min-width: 73px;
+  height: 56px;
+  font-size: 19px;
+}
+
+button.btn.medium, label.btn.medium {
+  padding: 0 16px;
+  min-width: 62px;
+  height: 48px;
+  font-size: 17px;
+}
+
+button.btn.small, label.btn.small {
+  padding: 0 12px;
+  min-width: 50px;
+  height: 40px;
+  font-size: 15px;
+}
+
+button.btn.xsmall, label.btn.xsmall {
+  padding: 0 10px;
+  min-width: 46px;
+  height: 32px;
+  font-size: 15px;
+}
+
+button.btn.text {
+  &.xlarge, &.large {
+    min-width: 37px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  &.medium {
+    min-width: 34px;
+    height: 32px;
+    font-size: 17px;
+  }
+}
+
+label.btn.text.medium {
+  min-width: 34px;
+  height: 32px;
+  font-size: 17px;
+}
+
+button.btn.text.small, label.btn.text.small {
+  min-width: 34px;
+  height: 24px;
+  font-size: 17px;
+}
+
+button.btn.text.xsmall, label.btn.text.xsmall {
+  min-width: 30px;
+  height: 20px;
+  font-size: 15px;
+}
+
+button.btn.primary, label.btn.primary {
+  background-color: #246BEB;
+  border-color: #246BEB;
+  color: #fff;
+}
+
+button.btn.primary:hover, label.btn.primary:hover {
+  background-color: #1D56BC;
+  border-color: #1D56BC;
+}
+
+button.btn.primary:active, label.btn.primary:active {
+  background-color: #16408D;
+  border-color: #16408D;
+}
+
+button.btn.primary:disabled, label.btn.primary:disabled {
+  background-color: #D8D8D8;
+  border-color: #D8D8D8;
+  color: #717171;
+}
+
+button.btn.secondary, label.btn.secondary {
+  background-color: #EFF5FF;
+  border-color: #246BEB;
+  color: #1D56BC;
+}
+
+button.btn.secondary:hover, label.btn.secondary:hover {
+  background-color: #D3E1FB;
+  border-color: #246BEB;
+  color: #1D56BC;
+}
+
+button.btn.secondary:active, label.btn.secondary:active {
+  background-color: #A7C4F7;
+  border-color: #246BEB;
+  color: #16408D;
+}
+
+button.btn.secondary:disabled, label.btn.secondary:disabled {
+  background-color: #D8D8D8;
+  border-color: #C6C6C6;
+  color: #717171;
+}
+
+button.btn.tertiary, label.btn.tertiary {
+  background-color: #FFFFFF;
+  border-color: #1D1D1D;
+  color: #1D1D1D;
+}
+
+button.btn.tertiary:hover, label.btn.tertiary:hover {
+  background-color: #F8F8F8;
+  border-color: #1D1D1D;
+  color: #1D1D1D;
+}
+
+button.btn.tertiary:active, label.btn.tertiary:active {
+  background-color: #F0F0F0;
+  border-color: #1D1D1D;
+  color: #1D1D1D;
+}
+
+button.btn.tertiary:disabled, label.btn.tertiary:disabled {
+  background-color: #D8D8D8;
+  border-color: #C6C6C6;
+  color: #717171;
+}
+
+button.btn.text, label.btn.text {
+  padding: 0 0px;
+  background-color: #fff;
+  border-color: #fff;
+  color: #1D1D1D;
+}
+
+button.btn.text:hover, label.btn.text:hover {
+  background-color: #EDF1F5;
+  border-color: #EDF1F5;
+  color: #1D1D1D;
+}
+
+button.btn.text:active, label.btn.text:active {
+  background-color: #CDD7E4;
+  border-color: #CDD7E4;
+  color: #1D1D1D;
+}
+
+button.btn.text:disabled, label.btn.text:disabled {
+  background-color: #fff;
+  border-color: #fff;
+  color: #8E8E8E;
+}
+
+.btn-area {
+  display: flex;
+
+    &.btn-end {
+      justify-content: flex-end;
+    }
+
+    &.btn-center {
+      justify-content: center;
+    }
+
+    &.btn-between {
+      justify-content: space-between;
+    }
+
+  .align {
+    display: flex;
+    gap:8px
+  }
+}
+
+/*! //버튼*/
+
+

@@ -82,11 +82,11 @@
   }
 
   .page-navi {
+    background-color: #fff;
+
     &:active {
       background-color: #CDD7E4;
     }
-
-    background-color: #fff;
 
     &:disabled {
       color: #8E8E8E;
@@ -130,8 +130,8 @@
     margin-top: 24px;
 
     input[type=text] {
-      width: 32px;
-      height: 36px;
+      width: 48px;
+      height: 40px;
       text-align: center;
       font-size: 15px;
       color: #1D1D1D;
@@ -152,7 +152,7 @@
   }
 }
 
-@include tablet {
+@media (max-width: 767px) {
   .pagination {
     min-width: 100px;
     position: relative;
@@ -208,4 +208,5 @@
     }
   }
 }
-/*!페이지네이션*/
+
+/*! //페이지네이션*/

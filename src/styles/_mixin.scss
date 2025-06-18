@@ -31,8 +31,8 @@
   }
 }
 
-@mixin media-2000 {
-  @media (max-width: #{$breakpoint-2000}) {
+@mixin media-1200 {
+  @media (max-width: #{$breakpoint-1200}) {
     @content;
   }
 }

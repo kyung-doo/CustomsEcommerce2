@@ -6,7 +6,7 @@
   position: relative;
 
   input[type=checkbox] {
-    + label {      
+    + label {
       position: relative;
 
       &:before, &:after {
@@ -97,7 +97,7 @@
   }
 
   &.language-switch {
-    width: 104px;
+    width: 120px;
     height: 32px;
     padding: 0 4px;
     border-radius: 40px;
@@ -108,7 +108,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 15px;        
+        font-size: 15px;
         height: 24px;
         border-radius: 16px;
         text-align: center;
@@ -118,11 +118,11 @@
         align-items: center;
 
         &.kr {
-          left: 2px;
+          left: 4px;
         }
 
         &.en {
-          right: 2px;
+          right: 4px;
         }
       }
 
@@ -134,4 +134,5 @@
     }
   }
 }
-/*!스위치*/
+
+/*! //스위치*/

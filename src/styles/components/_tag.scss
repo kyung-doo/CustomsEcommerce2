@@ -2,11 +2,11 @@
 
 /*!태그*/
 .tag-wrap {
-  [class*="btn-"] {
+  [class*=btn-] {
     display: inline-flex;
     border-radius: 100px;
-    border: 1px solid #C6C6C6;    
-    align-items: center;    
+    border: 1px solid #C6C6C6;
+    align-items: center;
     padding: 8px 12px;
     color: #1D1D1D;
   }
@@ -18,12 +18,12 @@
   .btn-delete {
     background-position: center;
     background-color: rgba(0, 0, 0, 0);
-    border:0;
+    border: 0;
   }
 
   &.large .btn-tag {
-    min-width: 48px;
-    height: 20px;
+    min-width: 72px;
+    height: 36px;
     font-size: 17px;
 
     .btn-delete {
@@ -33,8 +33,8 @@
   }
 
   &.small .btn-tag {
-    min-width: 40px;
-    height: 16px;
+    min-width: 64px;
+    height: 32px;
     font-size: 15px;
 
     .btn-delete {
@@ -63,4 +63,5 @@
     }
   }
 }
-/*!태그*/
+
+/*! //태그*/

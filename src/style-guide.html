@@ -405,7 +405,7 @@
          </div>
 
          <pre>
-            <code class="html">
+            <code class="html">               
                &lt;i class="icon check x-small"&gt;&lt;/i&gt;
                &lt;i class="icon check small"&gt;&lt;/i&gt;
                &lt;i class="icon check medium"&gt;&lt;/i&gt;
@@ -505,7 +505,7 @@
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal">
-               <div class="modal-wrap" style="min-width: 696px;">
+               <div class="modal-wrap" style="width: 760px;">
                   <div class="modal-header">
                      <h4>모달 760</h4>                     
                   </div>
@@ -529,7 +529,7 @@
             </div> 
 
             <div id="modal2" class="modal d-none" data-ui="modal">
-               <div class="modal-wrap" style="min-width: 496px;">
+               <div class="modal-wrap" style="width: 560px;">
                   <div class="modal-header">
                      <h4>모달 560</h4>                     
                   </div>
@@ -553,7 +553,7 @@
             </div> 
 
             <div id="modal3" class="modal d-none type1" data-ui="modal">
-               <div class="modal-wrap" style="min-width: 336px;">
+               <div class="modal-wrap" style="width: 400px;">
                   <div class="modal-header">
                      <h4>모달 400</h4>                     
                   </div>
@@ -580,7 +580,7 @@
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal1"&gt;모달 760&lt;/button&gt;
 
                &lt;div id="modal1" class="modal d-none" data-ui="modal"&gt;
-                  &lt;div class="modal-wrap" style="min-width: 696px;"&gt;
+                  &lt;div class="modal-wrap" style="min-width: 760px;"&gt;
                      &lt;div class="modal-header"&gt;
                            &lt;h4&gt;모달 760&lt;/h4&gt;                     
                      &lt;/div&gt;
@@ -603,7 +603,7 @@
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal2"&gt;모달 560&lt;/button&gt;
 
                &lt;div id="modal2" class="modal d-none" data-ui="modal"&gt;
-                  &lt;div class="modal-wrap" style="min-width: 496px;"&gt;
+                  &lt;div class="modal-wrap" style="min-width: 560px;"&gt;
                      &lt;div class="modal-header"&gt;
                            &lt;h4&gt;모달 560&lt;/h4&gt;                     
                      &lt;/div&gt;
@@ -626,7 +626,7 @@
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal3"&gt;모달 400&lt;/button&gt;
 
                &lt;div id="modal3" class="modal d-none type1" data-ui="modal"&gt;
-                  &lt;div class="modal-wrap" style="min-width: 336px;"&gt;
+                  &lt;div class="modal-wrap" style="min-width: 400px;"&gt;
                      &lt;div class="modal-header"&gt;
                            &lt;h4&gt;모달 400&lt;/h4&gt;                     
                      &lt;/div&gt;
@@ -680,8 +680,44 @@
                <button type="button" class="btn text small">버튼</button><br>
                <button type="button" class="btn text xsmall" disabled>버튼</button>
             </div>
+            
+            
          </div> 
-
+         <div class="mt-10">
+            <div class="btn-area">
+               <div class="align">
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+               </div>
+            </div>
+            <div class="btn-area btn-end">
+               <div class="align">
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+               </div>
+            </div>
+            <div class="btn-area btn-center">
+               <div class="align">
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+               </div>
+            </div>
+            <div class="btn-area btn-between">
+               <div class="align">
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+               </div>
+               <div class="align">
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+                  <button type="button" class="btn primary medium">버튼</button>
+               </div>
+            </div>
+         </div>
          <pre>
             <code class="html">
                &lt;button type="button" class="btn primary xlarge"&gt;버튼&lt;/button&gt;
@@ -708,6 +744,44 @@
                &lt;button type="button" class="btn text small"&gt;버튼&lt;/button&gt;
                &lt;button type="button" class="btn text xsmall" disabled&gt;버튼&lt;/button&gt;
 
+
+               - 기본 좌측정렬
+               - btn-area btn-end 우측정렬
+               - btn-area btn-center 중앙정렬
+               - btn-area btn-between 좌우정렬               
+               &lt;div class="btn-area"&gt;
+                  &lt;div class="align"&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+               &lt;div class="btn-area btn-end"&gt;
+                  &lt;div class="align"&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+               &lt;div class="btn-area btn-center"&gt;
+                  &lt;div class="align"&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+               &lt;div class="btn-area btn-between"&gt;
+                  &lt;div class="align"&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class="align"&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                     &lt;button type="button" class="btn primary medium"&gt;버튼&lt;/button&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
 
             </code>
          </pre>
@@ -745,7 +819,7 @@
          <!-- 브레드크럼 -->
 
          <!-- 링크 -->
-         <h2 class="mt-50" id="LINK">링크(확인)</h2>
+         <h2 class="mt-50" id="LINK">링크</h2>
          <div class="guide-content">                        
             <a href="#!" class="btn large link">링크 large</a><br><br>
             <a href="#!" class="btn medium link">링크 medium</a><br><br>
@@ -754,10 +828,10 @@
          <pre>
             <code class="html"> 
                - large
-               &lt;a href="#!" class="btn large link"&gt;링크 large&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+               &lt;a href="#!" class="btn large link"&gt;링크 large&lt;/a&gt;
 
                - medium
-               &lt;a href="#!" class="btn medium link"&gt;링크 medium&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+               &lt;a href="#!" class="btn medium link"&gt;링크 medium&lt;/a&gt;
 
                - small
                &lt;a href="#!" class="btn small link"&gt;링크 small&lt;/a&gt;
@@ -3066,7 +3140,7 @@
          <!-- 테이블 -->
 
          <!-- 레이아웃3 -->
-         <h2 class="mt-50" id="LAYOUT3">레이아웃3(확인)</h2>  
+         <h2 class="mt-50" id="LAYOUT3">레이아웃3</h2>  
          <div class="guide-content">            
             <ul class="inp-form">
                <li class="col2 nat-li">
@@ -3170,12 +3244,17 @@
                         <input type="text" class="input" value="1234" title="세번쨰 번호를 입력해주세요">
                      </div>                     
                   </div>
-               </li>
+               </li>                 
             </ul>
          </div>
 
          <pre>
-         <code class="html"> 
+         <code class="html">  
+            - col1 : 100% 1칸
+            - col2 : 50% 2칸
+            - col3 : 33.333% 3칸
+            - col4 : 25% 4칸
+
             &lt;ul class="inp-form"&gt;
                &lt;li class="col2 nat-li"&gt;
                   &lt;label for="ex1" class="tit"&gt;국적&lt;/label&gt;
@@ -3288,57 +3367,61 @@
          <h2 class="mt-50" id="LAYOUT1">레이아웃1(확인)</h2>  
          <div class="guide-content">            
             <ul class="view-list">
-               <li>
+               <li class="col2">
                   <strong class="tit">타이틀이 들어갑니다.</strong>
                   <span class="txt">내용이 들어갑니다.</span>
                </li>
-               <li>
+               <li class="col2">
                   <strong class="tit">타이틀이 들어갑니다.</strong>
                   <span class="txt">내용이 들어갑니다.</span>
                </li>
-               <li>
+               <li class="col2">
                   <strong class="tit">타이틀이 들어갑니다.</strong>
                   <span class="txt">내용이 들어갑니다.</span>
                </li>
-               <li>
+               <li class="col2">
                   <strong class="tit">타이틀이 들어갑니다.</strong>
                   <span class="txt">내용이 들어갑니다.</span>
                </li>
-               <li>
+               <li class="col2">
                   <strong class="tit">타이틀이 들어갑니다.</strong>
                   <span class="txt">내용이 들어갑니다.</span>
                </li>
-               <li>
+               <li class="col2">
                   <strong class="tit">타이틀이 들어갑니다.</strong>
                   <span class="txt">내용이 들어갑니다.</span>
-               </li>
+               </li>               
             </ul>
          </div>
 
          <pre>
          <code class="html"> 
+            - col1 : 100% 1칸
+            - col2 : 50% 2칸
+            - col3 : 33.333% 3칸
+            - col4 : 25% 4칸
             &lt;ul class="view-list"&gt;
-               &lt;li&gt;
+               &lt;li class="col2"&gt;
                   &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
                   &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
                &lt;/li&gt;
-               &lt;li&gt;
+               &lt;li  class="col2"&gt;
                   &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
                   &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
                &lt;/li&gt;
-               &lt;li&gt;
+               &lt;li  class="col2"&gt;
                   &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
                   &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
                &lt;/li&gt;
-               &lt;li&gt;
+               &lt;li  class="col2"&gt;
                   &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
                   &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
                &lt;/li&gt;
-               &lt;li&gt;
+               &lt;li  class="col2"&gt;
                   &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
                   &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
                &lt;/li&gt;
-               &lt;li&gt;
+               &lt;li  class="col2"&gt;
                   &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
                   &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
                &lt;/li&gt;

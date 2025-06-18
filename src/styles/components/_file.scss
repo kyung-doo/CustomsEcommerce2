@@ -26,15 +26,11 @@
     padding: 23px 20px;
     margin: 24px 0;
     border-radius: 8px;
-  }
 
-  .file-upload-btn-wrap label {
-    height: 36px;
-  }
-
-  .file-upload .txt {
-    font-size: 19px;
-    color: #1D1D1D;
+    .txt {
+      font-size: 19px;
+      color: #1D1D1D;
+    }
   }
 
   .file-list {
@@ -90,8 +86,8 @@
       background-image: url("/assets/icons/spinner.svg");
       animation: spin 1s infinite linear;
       position: absolute;
-      top:0;
-      right:0;
+      top: 0;
+      right: 0;
     }
 
     .complete {
@@ -175,4 +171,5 @@
     transform: rotate(359deg);
   }
 }
-/*!첨부파일*/
+
+/*! //첨부파일*/
