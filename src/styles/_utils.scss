@@ -24,7 +24,6 @@
 .d-flex {
     display: flex;
 }
-
 @for $i from 1 to 100 {
     .mt-#{$i} {
         margin-top: #{$i}px;

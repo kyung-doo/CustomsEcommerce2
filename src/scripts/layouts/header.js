@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 $(() => {
     let moveArrow = '';
-    let oldTop = 0;
+    let oldTop = 0;        
 
     $("#wrap").append('<div class="blind d-none"></div>');
 
@@ -38,8 +38,14 @@ $(() => {
     $("#wrap > .blind").on('click', function () {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        $('body').css({'overflow': ''});
+        $('body').css({'overflow': ''});        
     });
+
+    $('#header .main-menu .allmenu').on('focus',function(){
+        $(".gnb-menu li").removeClass('active');
+        $("#wrap > .blind").hide();
+        $('body').css({'overflow': ''});        
+    })
 
     $("html, body").on("scroll", (e) => {
         const top = $('body').scrollTop();
