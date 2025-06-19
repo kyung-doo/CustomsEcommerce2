@@ -122,9 +122,11 @@ button {
 
   .header-actions {
     display: flex;
-    align-items: center;
-
+    align-items: center;   
     
+    &.mobile-top-area{
+      display: none;
+    }
 
     .name-box.login {
       display: flex;
@@ -176,11 +178,10 @@ button {
     }
 
     .btn-navi {
-      padding: 0 8px 0 36px;
+      padding: 13px 8px 13px 36px;
       background-color: rgba(0, 0, 0, 0);
       font-size: 17px;
-      font-weight: 700;
-      height: 28px;
+      font-weight: 700;      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -215,6 +216,29 @@ button {
     }
   }
 }
+
+ //로그인전
+#header.login .header-container {
+  .btn-navi {
+    &.login, &.join {
+      display: block;
+    }
+  }
+
+  .name-box.login, .btn-navi.loginout {
+    display: none;
+  }
+}
+
+  
+
+  //로그인후
+#header.logout .header-container .btn-navi {
+  &.login, &.join {
+    display: none;
+  }
+}
+
 
 .header-actions .btn-navi:focus {
   background-color: #cdd7e4;
@@ -368,7 +392,7 @@ button {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   #masthead .nuri-txt {
     font-size: 14px;
   }
@@ -385,9 +409,7 @@ button {
     }
 
     .header-actions .btn-navi {
-      margin-left: 8px;
-      width: 70px;
-      height: 48px;
+      margin-left: 8px;            
       padding: 34px 10px 10px 10px;
       text-align: center;
       font-size: 15px;
@@ -419,16 +441,22 @@ button {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 767px) {
+  #header .header-actions .btn-navi {
+    padding: 34px 10px 10px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
   #masthead .nuri-txt {
     font-size: 13px;
   }
 
   #header {
-    .header-actions .btn-navi {
-      font-size: 13px;
-      width: 50px;
+    .header-actions .btn-navi {          
       height: 42px;
+      margin-left: -5px;
 
       &:before {
         width: 16px;
