@@ -1,9 +1,11 @@
 import $ from 'jquery';
+import gsap, { Expo } from 'gsap';
 
 
 $(() => {
     let moveArrow = '';
-    let oldTop = 0;        
+    let oldTop = 0;
+          
 
     $("#wrap").append('<div class="blind d-none"></div>');
 
@@ -13,10 +15,13 @@ $(() => {
         btn.on('click', function (){
             $(".gnb-menu li").removeClass('active');
             $(this).parent().addClass('active');
-            $("#wrap > .blind").show();
             $('body').css({'overflow': 'hidden'});
             $(".main-allmenu").hide();
             $("#header .allmenu").removeClass('active');
+            $(".mobile-dep-menu").removeClass('mobile-active');
+            if($(window).width() >= 1023) {
+                $("#wrap > .blind").show();
+            }
         });
     });
 
@@ -33,7 +38,6 @@ $(() => {
             $("#header .allmenu").removeClass('active');
         }
     });
-
     
     $("#wrap > .blind").on('click', function () {
         $(".gnb-menu li").removeClass('active');
@@ -45,8 +49,33 @@ $(() => {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
         $('body').css({'overflow': ''});        
-    })
+    });
 
+
+    // 모바일 네비
+    $(".mobile-all-menu").on('click', function (e) {
+        $("#wrap").addClass('mobile-open');
+        gsap.set($("#header .main-menu"), {x: 390});
+        gsap.to($("#header .main-menu"), 0.6, {x: 0, ease: Expo.easeInOut});
+    });
+    $(".mobile-close").on('click', function (e) {
+        gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
+            $("#wrap").removeClass('mobile-open');
+        }});
+    });
+
+    $(".mobile-dep-menu").on('click', function () {
+        if(!$(this).parent().find('.depth2').is(':visible')) {
+            $(this).parent().find('.depth2').slideDown(300);
+            $(this).addClass('mobile-active');
+        } else {
+            $(this).parent().find('.depth2').slideUp(300);
+            $(this).removeClass('mobile-active');
+        }
+    })
+    
+
+    // 스크롤 이벤트
     $("html, body").on("scroll", (e) => {
         const top = $('body').scrollTop();
         if(oldTop < top) {
@@ -73,6 +102,31 @@ $(() => {
                 $(".main-allmenu").removeClass("large");
             }
         }
+    
         oldTop = top;
-    })
+    });
+
+    // 리사이즈 이벤트
+    $(window).on('resize', () => {
+        if($(window).width() < 1023) {
+            if($(".gnb-menu li.active").length > 0) {
+                $("#wrap > .blind").hide();
+                $('body').css({'overflow': ''});
+            }
+            if($(".main-allmenu").is(":visible")) {
+                $(".main-allmenu").hide();
+                $("#header .allmenu").removeClass('active');
+                $('body').css({'overflow': ''});
+                $("#wrap > .blind").hide();
+            }
+        } else {
+            $("#wrap").removeClass('mobile-open');
+            gsap.set($("#header .main-menu"), {x: 0});
+            $("#header .main-menu").css({transfrom: 'none'});
+            if($(".gnb-menu li.active").length > 0) {
+                $("#wrap > .blind").show();
+                $('body').css({'overflow': 'hidden'});
+            }
+        }
+    });
 });
