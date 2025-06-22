@@ -1,6 +1,5 @@
 @use "../mixin" as *;
 
-/*!단계표시기*/
 .step-wrap {
   display: flex;
 
@@ -22,7 +21,7 @@
   }
 
   li {
-    padding: 27px 0 0 0;
+    padding: 32px 0 0 0;
     position: relative;
 
     &:before, &:after {
@@ -96,4 +95,3 @@
     min-width: 191px;
   }
 }
-/*! //단계표시기*/

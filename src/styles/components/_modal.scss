@@ -1,71 +1,131 @@
 @use "../mixin" as *;
 
-/*!모달*/
 .modal {
-    @include absolute($left: 0, $top: 0);
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background-color: rgba(0,0,0,0.5);
-    &-wrap {
-        @include absolute($left: 50%, $top: 50%);
-        transform: translate(-50%, -50%);        
-        border-radius: 8px;
-        background-color: #fff;
-        padding: 32px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);  
+
+  *{
+    transition: all .3s;
+  }
+}
+
+.modal-wrap {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 32px;
+  width:95%;
+  min-width: 100px;  
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  padding-right: 40px;
+
+  > h5 {
+    font-weight: 700;
+    font-size: 17px;
+    color: #1D1D1D;
+    margin-top: 15px;
+  }
+}
+
+.modal-body {
+  box-sizing: border-box;  
+
+  .modal-cont {
+    margin-bottom: 32px;    
+    line-height: 150%;
+
+    .cer-txt{
+      margin-top: 12px;
     }
 
-    &-header {
-        @include flex($alignItems: flex-start, $justifyContents: center);
-        position: relative;                        
-        box-sizing: border-box;
-        margin-bottom: 27px;
-        > h4 {
-            font-weight: 700;
-            font-size: 17px;
-            color:#1D1D1D;
-            margin-top: 15px;
-        }        
+    [class*=-type]{
+      width:100%;
+      color: #1D1D1D;
+      line-height: 150%;
+
+      .em-type{
+        color:#246BEB;
+      }
+    }
+    .tit-type{
+      font-size: 21px;      
     }
 
-    &-body {
-        box-sizing: border-box;    
-        
-        .modal-cont{
-            margin-bottom: 32px;
-            padding: 18px 24px;
-        }
-        &:focus {
-            outline: solid 1px #000;
-        }
-        
+    .txt-type{
+      font-size:17px;            
     }
 
-    &-footer {
-        @include flex($alignItems: center, $justifyContents: flex-end, $direction: row);
-
-        margin-top: 24px;
-        gap:8px;
-        border-top: 1px solid #E4E4E4;
-        padding-top: 24px;
+    /** 첨부파일 초기화,삭제 버튼 위치 **/
+    .btn-form + .form-btn-area{
+        top: 81px !important;
     }
+  }
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 24px;
+  gap: 8px;
+  border-top: 1px solid #E4E4E4;
+  padding-top: 24px;
+  flex-wrap: wrap;
+
+  [class*=form-]{
+    margin-right: 15px;
+  }
+}
+
+.modal {
+  .btn-close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+  }
+
+  &.type1 .modal-footer {
+    border-top: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-wrap{
+    padding: 24px;
 
     .btn-close{
-        position: absolute;
-        right: 32px;
-        top: 32px;
-        width: 20px;
-        height: 20px;
-        background-color: rgba(0, 0, 0, 0.0);
-        padding: 0;
+      top:24px;
+      right:24px;
     }
 
-}
-
-.modal.type1 {
-    .modal-footer {
-        border-top: 0;
-        padding: 0;
+    .modal-footer{
+      .form-check{        
+        width:100%;
+        margin-bottom: 16px;;
+      }      
     }
+  }
 }
-/*! //모달*/

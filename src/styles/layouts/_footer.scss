@@ -2,6 +2,7 @@
 @use "../variable" as *;
 
 #footer {
+  margin-top: 80px;
   background-color: #f0f0f0;
   border-top: 1px solid #d8d8d8;
 
@@ -30,7 +31,7 @@
         content: "";
         display: block;
         position: absolute;
-        top: 17;
+        top: 17px;
         right: 24px;
         width: 20px;
         height: 20px;
@@ -289,6 +290,7 @@
 
 @media (max-width: 500px) {
   #footer {
+    margin-top: 48px;
     .f-box {
       padding: 32px 16px;
 
@@ -323,24 +325,32 @@
       }
 
       .f-info {
-        margin-top: 10px;
+        margin-top: 32px;
       }
 
       .f-cnt .info-cs {
         margin-top: 32px;
 
         li:last-child {
-          margin-top: 16;
+          margin-top: 16px;
         }
       }
 
       .link-go {
         flex-direction: row;
         margin: 31px 0 0 0;
+        gap: 16px;
 
         a {
           height: auto;
           margin-top: 0;
+
+          .right{
+            width: 12px;
+            height: 12px;
+            background-size: contain;
+            margin-top: -2px;
+          }
         }
       }
 
@@ -379,5 +389,3 @@
   }
 
 }
-
-

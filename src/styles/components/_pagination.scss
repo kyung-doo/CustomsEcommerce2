@@ -1,10 +1,5 @@
 @use "../mixin" as *;
 
-/*!페이지네이션*/
-[class*=pagination-] {
-  margin-top: 40px;
-}
-
 .pagination {
   display: flex;
   gap: 8px;
@@ -33,6 +28,7 @@
 
   .prev {
     justify-content: flex-end;
+    padding-right: 2px;
   }
 
   .page-navi:before {
@@ -48,7 +44,7 @@
 
   .prev:before {
     background-image: url("/assets/icons/btn-arrow-left.svg");
-    left: 2px;
+    left: 5px;
   }
 
   .next:before {
@@ -208,5 +204,3 @@
     }
   }
 }
-
-/*! //페이지네이션*/

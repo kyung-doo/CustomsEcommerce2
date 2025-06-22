@@ -1,6 +1,5 @@
 @use "../mixin" as *;
 
-/*!라디오*/
 input {
   &[type=radio], &[type=checkbox] {
     width: 0;
@@ -21,6 +20,7 @@ input {
     position: relative;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 
     &:before {
       content: "";
@@ -29,6 +29,7 @@ input {
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;
+      background-color: #fff;
     }
 
     &:after {
@@ -39,8 +40,7 @@ input {
       transform: translateY(-50%);
       border-radius: 50%;
       background-color: #246beb;
-      display: none;
-      left: 6px;
+      display: none;      
     }
 
     &:before {
@@ -82,6 +82,10 @@ input {
       width: 12px;
       height: 12px;
     }
+
+    &:after{
+      left: 6px;
+    }
   }
 
   &.medium label {
@@ -89,9 +93,14 @@ input {
     padding: 0 0 0 29px;
     height: 20px;
 
-    &:before, &:after {
+    &:before{
+      width: 8px;
+      height: 8px;
+    }
+     &:after {
       width: 10px;
       height: 10px;
+      left: 5px;
     }
   }
 }
@@ -304,4 +313,3 @@ input {
     }
   }
 }
-/*! //라디오*/

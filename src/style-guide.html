@@ -398,6 +398,14 @@
                   <dt><i class="icon tb-turn"></i></dt>
                   <dd>tb-turn</dd>
                </dl>     
+               <dl class="text-center ml-10">
+                  <dt><i class="icon search-type1"></i></dt>
+                  <dd>search-type1</dd>
+               </dl>     
+               <dl class="text-center ml-10">
+                  <dt><i class="icon copy"></i></dt>
+                  <dd>copy</dd>
+               </dl>                    
             </div>
          </div>
 
@@ -489,7 +497,7 @@
             </div> 
 
             <div id="modal1" class="modal d-none" data-ui="modal">
-               <div class="modal-wrap" style="width: 760px;">
+               <div class="modal-wrap large">
                   <div class="modal-header">
                      <h4>모달 760</h4>                     
                   </div>
@@ -513,7 +521,7 @@
             </div> 
 
             <div id="modal2" class="modal d-none" data-ui="modal">
-               <div class="modal-wrap" style="width: 560px;">
+               <div class="modal-wrap medium">
                   <div class="modal-header">
                      <h4>모달 560</h4>                     
                   </div>
@@ -537,7 +545,7 @@
             </div> 
 
             <div id="modal3" class="modal d-none type1" data-ui="modal">
-               <div class="modal-wrap" style="width: 400px;">
+               <div class="modal-wrap small">
                   <div class="modal-header">
                      <h4>모달 400</h4>                     
                   </div>
@@ -564,7 +572,7 @@
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal1"&gt;모달 760&lt;/button&gt;
 
                &lt;div id="modal1" class="modal d-none" data-ui="modal"&gt;
-                  &lt;div class="modal-wrap" style="min-width: 760px;"&gt;
+                  &lt;div class="modal-wrap large""&gt;
                      &lt;div class="modal-header"&gt;
                            &lt;h4&gt;모달 760&lt;/h4&gt;                     
                      &lt;/div&gt;
@@ -587,7 +595,7 @@
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal2"&gt;모달 560&lt;/button&gt;
 
                &lt;div id="modal2" class="modal d-none" data-ui="modal"&gt;
-                  &lt;div class="modal-wrap" style="min-width: 560px;"&gt;
+                  &lt;div class="modal-wrap medium"&gt;
                      &lt;div class="modal-header"&gt;
                            &lt;h4&gt;모달 560&lt;/h4&gt;                     
                      &lt;/div&gt;
@@ -610,7 +618,7 @@
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal3"&gt;모달 400&lt;/button&gt;
 
                &lt;div id="modal3" class="modal d-none type1" data-ui="modal"&gt;
-                  &lt;div class="modal-wrap" style="min-width: 400px;"&gt;
+                  &lt;div class="modal-wrap small"&gt;
                      &lt;div class="modal-header"&gt;
                            &lt;h4&gt;모달 400&lt;/h4&gt;                     
                      &lt;/div&gt;
@@ -3349,33 +3357,35 @@
 
          <!-- 레이아웃1 -->
          <h2 class="mt-50" id="LAYOUT1">레이아웃1</h2>  
-         <div class="guide-content">            
-            <ul class="view-list">
-               <li class="col2">
-                  <strong class="tit">타이틀이 들어갑니다.</strong>
-                  <span class="txt">내용이 들어갑니다.</span>
-               </li>
-               <li class="col2">
-                  <strong class="tit">타이틀이 들어갑니다.</strong>
-                  <span class="txt">내용이 들어갑니다.</span>
-               </li>
-               <li class="col2">
-                  <strong class="tit">타이틀이 들어갑니다.</strong>
-                  <span class="txt">내용이 들어갑니다.</span>
-               </li>
-               <li class="col2">
-                  <strong class="tit">타이틀이 들어갑니다.</strong>
-                  <span class="txt">내용이 들어갑니다.</span>
-               </li>
-               <li class="col2">
-                  <strong class="tit">타이틀이 들어갑니다.</strong>
-                  <span class="txt">내용이 들어갑니다.</span>
-               </li>
-               <li class="col2">
-                  <strong class="tit">타이틀이 들어갑니다.</strong>
-                  <span class="txt">내용이 들어갑니다.</span>
-               </li>               
-            </ul>
+         <div class="guide-content">   
+            <div class="view-list">
+               <ul>
+                  <li class="col2">
+                     <strong class="tit">타이틀이 들어갑니다.</strong>
+                     <span class="txt">내용이 들어갑니다.</span>
+                  </li>
+                  <li class="col2">
+                     <strong class="tit">타이틀이 들어갑니다.</strong>
+                     <span class="txt">내용이 들어갑니다.</span>
+                  </li>
+                  <li class="col2">
+                     <strong class="tit">타이틀이 들어갑니다.</strong>
+                     <span class="txt">내용이 들어갑니다.</span>
+                  </li>
+                  <li class="col2">
+                     <strong class="tit">타이틀이 들어갑니다.</strong>
+                     <span class="txt">내용이 들어갑니다.</span>
+                  </li>
+                  <li class="col2">
+                     <strong class="tit">타이틀이 들어갑니다.</strong>
+                     <span class="txt">내용이 들어갑니다.</span>
+                  </li>
+                  <li class="col2">
+                     <strong class="tit">타이틀이 들어갑니다.</strong>
+                     <span class="txt">내용이 들어갑니다.</span>
+                  </li>               
+               </ul>
+            </div>         
          </div>
 
          <pre>
@@ -3384,32 +3394,34 @@
             - col2 : 50% 2칸
             - col3 : 33.333% 3칸
             - col4 : 25% 4칸
-            &lt;ul class="view-list"&gt;
-               &lt;li class="col2"&gt;
-                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
-                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
-               &lt;/li&gt;
-               &lt;li  class="col2"&gt;
-                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
-                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
-               &lt;/li&gt;
-               &lt;li  class="col2"&gt;
-                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
-                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
-               &lt;/li&gt;
-               &lt;li  class="col2"&gt;
-                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
-                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
-               &lt;/li&gt;
-               &lt;li  class="col2"&gt;
-                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
-                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
-               &lt;/li&gt;
-               &lt;li  class="col2"&gt;
-                  &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
-                  &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
-               &lt;/li&gt;
-            &lt;/ul&gt;
+            &lt;div class="view-list"&gt;
+               &lt;ul&gt;
+                  &lt;li class="col2"&gt;
+                     &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                     &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;li class="col2"&gt;
+                     &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                     &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;li class="col2"&gt;
+                     &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                     &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;li class="col2"&gt;
+                     &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                     &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;li class="col2"&gt;
+                     &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                     &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+                  &lt;/li&gt;
+                  &lt;li class="col2"&gt;
+                     &lt;strong class="tit"&gt;타이틀이 들어갑니다.&lt;/strong&gt;
+                     &lt;span class="txt"&gt;내용이 들어갑니다.&lt;/span&gt;
+                  &lt;/li&gt;               
+               &lt;/ul&gt;
+            &lt;/div&gt; 
          </code>
          </pre>
          <!-- 레이아웃1 -->

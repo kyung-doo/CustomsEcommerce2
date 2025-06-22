@@ -1,7 +1,10 @@
 @use "../mixin" as *;
 
-/*!첨부파일*/
 .file-upload.line {
+  padding: 32px;
+  border:1px solid #E4E4E4;
+  border-radius: 8px;
+
   .file-head {
     .tit {
       font-size: 25px;
@@ -23,7 +26,7 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
-    padding: 23px 20px;
+    padding: 24px 32px;
     margin: 24px 0;
     border-radius: 8px;
 
@@ -35,11 +38,13 @@
 
   .file-list {
     position: relative;
+    line-height: 150%;    
 
     .total {
       font-size: 17px;
       font-weight: 700;
       color: #1D1D1D;
+      margin-bottom: 24px;
     }
 
     .current {
@@ -50,26 +55,35 @@
   .upload-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 23px;
+    gap: 16px;    
 
     .file-name {
       font-size: 17px;
       color: #1D1D1D;
+      padding-right: 20px;
+      margin: 8px 0;
     }
 
     .file-info {
       border: 1px solid #D8D8D8;
       border-radius: 4px;
-      padding: 16px 16px;
+      padding: 8px 16px 8px 16px;
       position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      .btn-wrap{
+        display: flex;
+        align-items: center;
+      }
+
+      &.file-down{
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
     }
 
     .btn-wrap {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-
       button {
         display: flex;
         background-color: rgba(0, 0, 0, 0);
@@ -84,10 +98,7 @@
       width: 20px;
       height: 20px;
       background-image: url("/assets/icons/spinner.svg");
-      animation: spin 1s infinite linear;
-      position: absolute;
-      top: 0;
-      right: 0;
+      animation: spin 1s infinite linear;      
     }
 
     .complete {
@@ -121,12 +132,7 @@
         color: #D50136;
         padding-left: 4px;
       }
-    }
-
-    .is-error .btn-wrap {
-      top: 0;
-      right: 0;
-    }
+    }   
 
     .file-down {
       button, a {
@@ -136,18 +142,21 @@
         display: flex;
         align-items: center;
         gap: 4px;
+        padding: 0;
       }
 
-      .btn-wrap {
-        display: flex;
+      .btn-wrap {        
         gap: 16px;
+        justify-content: flex-end;
+        flex: 1;
+        margin: 8px 0;
       }
     }
   }
 
   .upload-delete-btn {
     position: absolute;
-    top: 0;
+    top: -4px;
     right: 0;
 
     button {
@@ -172,4 +181,20 @@
   }
 }
 
-/*! //첨부파일*/
+@media (max-width: 767px) {
+  .file-upload.line{
+    .file-upload{
+      flex-direction: column;gap: 24px;
+
+      .txt{
+        font-size:17px;line-height: 150%;
+      }
+    }
+  }  
+}
+
+@media (max-width: 480px) {
+  .file-upload.line{
+    padding: 24px;
+  }
+}

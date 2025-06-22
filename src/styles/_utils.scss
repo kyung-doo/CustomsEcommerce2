@@ -21,9 +21,18 @@
     text-align: left;
 }
 
+.f-0{
+    font-size:0;
+}
+
 .d-flex {
     display: flex;
 }
+
+.d-flex-nowrap{
+    flex-wrap: nowrap !important;
+}
+
 @for $i from 1 to 100 {
     .mt-#{$i} {
         margin-top: #{$i}px;
@@ -49,4 +58,10 @@
     .pr-#{$i} {
         padding-right: #{$i}px;
     }
+}
+
+@for $i from 1 to 2000 {
+    .mw-#{$i} {
+        max-width: #{$i}px;
+    }    
 }

@@ -1,8 +1,8 @@
 @use "../mixin" as *;
 
-/*!탭메뉴*/
 [class*="tabmenu-"] {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 
   button {
     font-size: 19px;
@@ -72,4 +72,3 @@
     color: #fff;
   }
 }
-/*! //탭메뉴*/

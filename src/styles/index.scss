@@ -17,8 +17,7 @@
 @use "./components/step";
 @use "./components/tooltip";
 @use "./components/table";
-@use "./components/layout3";
-@use "./components/layout1";
+@use "./components/form_list";
 @use "./components/file";
 
 @use "./layouts/header";
@@ -48,7 +47,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	vertical-align: baseline;
+	vertical-align: baseline;	
 }
 
 article, aside, details, figcaption, figure, 

@@ -1,36 +1,49 @@
 @use "../mixin" as *;
 
-/*!아이콘*/
 .icon {
     display: inline-block;
     width: 20px;
     height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
     &.large {
         width: 24px;
         height: 24px;
+        min-width: 24px;
+        min-height: 24px;
     }
     &.x-large {
         width: 24px;
         height: 24px;
+        min-width: 24px;
+        min-height: 24px;
     }
     &.xx-large {
         width: 32px;
         height: 32px;
+        min-width: 32px;
+        min-height: 32px;
     }
     &.xxx-large {
         width: 40px;
         height: 40px;
+        min-width: 40px;
+        min-height: 40px;
     }
     &.small {
         width: 16px;
         height: 16px;
+        min-width: 16px;
+        min-height: 16px;
     }
     &.x-small {
         width: 12px;
         height: 12px;
+        min-width: 12px;
+        min-height: 12px;
     }
     &.check {
         background-image: url('/assets/icons/check.svg');
@@ -226,5 +239,10 @@
     &.tb-turn {
         background-image: url('/assets/icons/tb-turn.svg'); 
     }            
+    &.search-type1 {
+        background-image: url('/assets/icons/search-type1.svg'); 
+    }            
+    &.copy {
+        background-image: url('/assets/icons/copy.svg'); 
+    }            
 }
-/*! //아이콘*/

@@ -1,6 +1,5 @@
 @use "../mixin" as *;
 
-/*!태그*/
 .tag-wrap {
   [class*=btn-] {
     display: inline-flex;
@@ -63,5 +62,3 @@
     }
   }
 }
-
-/*! //태그*/

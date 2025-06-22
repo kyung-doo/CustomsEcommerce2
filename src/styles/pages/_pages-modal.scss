@@ -1,0 +1,38 @@
+/** 인증번호 **/
+.certification-number {
+  display: flex;
+  justify-content: center;
+  margin-top: 29px;
+
+  .number {
+    display: flex;
+    gap: 8px;
+
+    input {
+      width: 100%;
+      min-width: 1px;
+      max-width: 42px;
+      height: 48px;
+      border: 1px solid #C6C6C6;
+      border-radius: 4px;
+    }
+  }
+}
+
+/** 유효시간 **/
+.effective-time {
+  font-size: 15px;
+  color: #E71825;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 11px;
+}
+
+/** 인증번호 재발송 **/
+.reforwarding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+}
