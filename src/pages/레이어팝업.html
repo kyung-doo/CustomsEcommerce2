@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>개인통관고유부호란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h1>레이어팝업 사용방법</h1><br>
+               <p>1. 버튼에서 data-modal-target="#modal1" 을 복사해서 연결하고싶은 버튼에다가 추가한다</p><br>
+               <p>2. 레이어팝업 id값과 data-modal-target값을 동일하게 적용한다</p><br><br>               
+
+               <!-- 개인통관고유부호 조회/정보변경 -->
+               <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 조회/정보변경 레이어팝업</button>   
+               <div id="modal1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 조회/정보변경</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <p class="txt-type">개인통관고유부호 사용정지/사용정지 해제 안내 메시지를 보여주고<br> 안내에 대한 동의 여부를 확인 받음</p>
+                        </div>
+                        <div class="modal-cont">
+                           <div class="txt-box-type">
+                              <p class="txt-type">안내 사항에 대해 확인 하였습니다.</p>
+                              <div class="form-check">
+                                 <input type="checkbox" name="chk_1" id="chk_1">
+                                 <label for="chk_1">확인</label>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn modal-enter primary medium">사용정지</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- // 개인통관고유부호 조회/정보변경 -->
+
+
+               <!-- 개인통관고유부호 부호변경 -->
+               <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 부호변경 레이어팝업</button>
+               <div id="modal2" class="modal d-none type1" data-ui="modal">
+                  <div class="modal-wrap mw-400">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 부호변경</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">                                    
+                           <p class="txt-type">개인통관고유부호 재발급을 위하여 별도의 업무페<br>이지로 이동됩니다.</p>
+                        </div>                                  
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn modal-close tertiary medium">취소</button>
+                        <button type="button" class="btn modal-enter primary medium">확인</button>
+                     </div>
+                  </div>
+               </div>               
+               <!-- // 개인통관고유부호 부호변경 -->
+
+               <!-- 이메일 인증 -->
+               <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">이메일 인증 레이어팝업</button>
+               <div id="modal3" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-560">
+                     <div class="modal-header">
+                           <h5>이메일 인증</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">                                       
+                              <h5 class="tit-type">인증 번호를 입력하세요</h5>
+                              <p class="txt-type cer-txt">
+                                 <strong class="em-type">hongGildong@naver.com</strong>(으)로 6자리 숫자 인증번호를 보냈습니다.
+                                 이메일 주소를 확인하고 인증번호를 입력 후 인증 완료 버튼을 클릭 해주세요.
+                              </p>
+                              <div class="txt-box-type certification-number">
+                                 <ul class="number">
+                                    <li><input type="text" title="인증번호를 입력해주세요"></li>
+                                    <li><input type="text" title="인증번호를 입력해주세요"></li>
+                                    <li><input type="text" title="인증번호를 입력해주세요"></li>
+                                    <li><input type="text" title="인증번호를 입력해주세요"></li>
+                                    <li><input type="text" title="인증번호를 입력해주세요"></li>
+                                    <li><input type="text" title="인증번호를 입력해주세요"></li>
+                                 </ul>                                               
+                              </div>
+                              <span class="effective-time">유효시간 09:30</span>
+                              <div class="reforwarding">
+                                 <p class="txt-type">인증번호가 오지 않은 경우 재발송 버튼을 클릭하세요.</p>
+                                 <button type="button" class="btn secondary medium">재발송</button>
+                              </div>
+                           </div>                                       
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                        <button type="button" class="btn modal-enter primary medium">인증 완료</button>
+                     </div>
+                  </div>
+               </div>
+               <!-- // 이메일 인증 -->
+
+
+               <!-- 이메일 인증 완료 -->
+               <button type="button" data-modal-target="#modal4" style="width:100%;height:50px;margin-bottom:20px">이메일 인증완료 레이어팝업</button>
+               <div id="modal4" class="modal d-none type1" data-ui="modal">
+                  <div class="modal-wrap mw-400">
+                     <div class="modal-header">
+                        <h5>이메일 인증</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">                                    
+                           <p class="txt-type">이메일 인증이 완료 되었습니다.<br>남은 개인통관고유부로 정보변경을 완료해주세요.</p>
+                        </div>                                  
+                     </div>
+                     <div class="modal-footer">                        
+                        <button type="button" class="btn modal-enter primary medium">확인</button>
+                     </div>
+                  </div>
+               </div>
+               <!-- // 이메일 인증 완료 -->
+
+               <!-- 일회용 인증번호 발급 알림 -->
+               <button type="button" data-modal-target="#modal5" style="width:100%;height:50px;margin-bottom:20px">일회용 인증번호 발급 알림 레이어팝업</button>
+               <div id="modal5" class="modal d-none type1" data-ui="modal">
+                  <div class="modal-wrap mw-400">
+                     <div class="modal-header">
+                        <h5>일회용 인증번호 발급 알림</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">                                    
+                           <p class="txt-type">일회용 인증번호 발급 알림에 미동의 하셨습니다.<br> 개인통관고유부호 갱신을 위해서는 일회용 인증번<br>호발급 알림 동의에 동의를 해주셔야 신규 발급이<br> 가능합니다.</p>
+                        </div>                                  
+                     </div>
+                     <div class="modal-footer">                        
+                        <button type="button" class="btn modal-enter primary medium">확인</button>
+                     </div>
+                  </div>
+               </div>
+               <!-- // 일회용 인증번호 발급 알림 -->
+
+               <!-- 개인통관고유부호 정보변경 -->
+               <button type="button" data-modal-target="#modal6" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 정보변경 레이어팝업</button>   
+               <div id="modal6" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 정보변경</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <p class="txt-type">개인통관고유부호 재발급 안내 메시지를 보여주고<br> 안내에 대한 동의 여부를 확인 받음</p>
+                        </div>
+                        <div class="modal-cont">
+                           <div class="txt-box-type">
+                              <p class="txt-type">안내 사항에 대해 확인 하였습니다.</p>
+                              <div class="form-check">
+                                 <input type="checkbox" name="chk_2" id="chk_2">
+                                 <label for="chk_2">확인</label>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn modal-enter primary medium">정보변경</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- // 개인통관고유부호 정보변경 -->
+
+               <!-- 개인통관고유부호 정보변경 -->
+               <button type="button" data-modal-target="#modal7" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 정보변경  레이어팝업</button>   
+               <div id="modal7" class="modal d-none type1" data-ui="modal">
+                  <div class="modal-wrap mw-400">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 정보변경</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <div class="txt-box-type">
+                              <p class="txt-type text-center">개인통관고유부호 정보변경 완료 안내 문구<br> 및 이미지 추후 추가 예정</p>
+                           </div>
+                        </div>
+                        <div class="modal-cont">
+                           <div class="txt-box-type">
+                              <p class="txt-type text-center">국민비서 구삐 홍보 배너 보여줌</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">                           
+                        <button type="button" class="btn modal-enter primary medium">확인</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- // 개인통관고유부호 정보변경 -->
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

@@ -33,7 +33,7 @@
   align-items: flex-start;
   position: relative;
   box-sizing: border-box;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   padding-right: 40px;
 
   > h5 {
@@ -121,11 +121,18 @@
       right:24px;
     }
 
+    .modal-body{
+      .modal-cont{
+        margin-bottom: 24px;
+      }
+    } 
+
     .modal-footer{
+      margin-top: 32px;
       .form-check{        
         width:100%;
         margin-bottom: 16px;;
       }      
-    }
+    }    
   }
 }

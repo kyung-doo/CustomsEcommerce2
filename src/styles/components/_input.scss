@@ -232,13 +232,13 @@
 
   .form-conts {
     &.disabled-type1 {
-      input[type=text]:disabled::placeholder, select:disabled {
+      input[type=text],input[type=text]:disabled::placeholder, select option:disabled, select:disabled{
         color: #717171;
       }
     }
 
     &.disabled-type2 {
-      input[type=text]:disabled::placeholder, select:disabled {
+      input[type=text],input[type=text]:disabled::placeholder, select option:disabled, select:disabled {
         color: #1D1D1D;
       }
     }

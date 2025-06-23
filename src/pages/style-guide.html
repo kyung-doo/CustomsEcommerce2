@@ -31,7 +31,7 @@
             <h3 class="head-tit">개인통관고유부호 조회</h3>
             <div class="step-area">
                <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span>/Step 4</strong>
+                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
                   <h4 class="tit">기본 정보 입력</h4>
                </div>
                <div class="step-box">
@@ -81,7 +81,7 @@
                <br><br>
                <h5 class="title-type medium">타이틀 19px</h5>
                <br><br>
-               <h5 class="title-type">홍길동님의 개인통관고유부호는<strong class="em-type">P240000000000</strong>이고 유효기간 만료일은<strong class="em-type">2026.01.01</strong>까지 입니다.</h5>      
+               <h5 class="title-type1">홍길동님의 개인통관고유부호는<strong class="em-type">P240000000000</strong>이고 유효기간 만료일은<strong class="em-type">2026.01.01</strong>까지 입니다.</h5>      
                <br><br>  
                <div class="agree-title">
                   <strong class="title-type medium"><span class="com">[필수]</span>일회용 인증번호발급 알림</strong>
@@ -90,7 +90,7 @@
                         <button class="tooltip-ico">전화번호 도움말</button>
                         <div class="tooltip-action">                  
                            <div class="tooltip-popover">
-                           <h4 class="tooltip-title">도움말 제목</h4>
+                           <strong class="tooltip-title">도움말 제목</strong>
                            <div class="tooltip-contents">
                               <p>042-1234-1234</p>
                               <div class="btn-wrap">
@@ -113,7 +113,7 @@
                         <button class="tooltip-ico">전화번호 도움말</button>
                         <div class="tooltip-action">                  
                            <div class="tooltip-popover">
-                           <h4 class="tooltip-title">도움말 제목</h4>
+                           <strong class="tooltip-title">도움말 제목</strong>
                            <div class="tooltip-contents">
                               <p>042-1234-1234</p>
                               <div class="btn-wrap">
@@ -345,7 +345,7 @@
                                     </div>  
                                  </li>
                                  <li class="col1">
-                                    <span class="tit">국적</span>
+                                    <strong class="tit">국적</strong>
                                     <div class="inp-box">
                                        <div class="file-upload">
                                           <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
@@ -583,18 +583,31 @@
 
                <h1 style="font-size:30px;background-color: red;color:#fff;text-align: center;padding: 10px;" class="mb-20 mt-20">리스트</h1> 
 
+               <!-- 입력형 타입 -->
                <div class="inp-form">
                   <ul>                                                         
                      <li class="col2">
-                        
+                        입력형
                      </li>                                
                   </ul>                  
                </div>
+               <!-- // 입력형 타입 -->
                <br><br>
-               <div class="inp-form btn-form">
+               <!-- 리스트 타입 -->
+               <div class="inp-form">
+                  <ul class="list-form">                                                         
+                     <li class="col2">
+                        리스트
+                     </li>                                
+                  </ul>                  
+               </div>
+               <!-- // 리스트 타입 -->
+               <br><br>
+               <!-- 버튼이 있는 타입 -->
+               <div class="inp-form">
                   <ul>                                                         
                      <li class="col2">
-                        
+                        버튼
                      </li>                                
                   </ul>
                   <div class="form-btn-area">
@@ -602,10 +615,11 @@
                      <button class="close-btn"><i class="icon close medium"></i>삭제</button>
                   </div>
                </div>
+               <!-- // 버튼이 있는 타입 -->
                <br><br>    
-               <div class="inp-form">
-                  <!-- btn-form : 버튼 타입 / file-form : 첨부파일 타입 -->
-                  <ul class="btn-form file-form">                                                         
+               <!-- 파일첨부 타입 -->
+               <div class="inp-form">                  
+                  <ul class="file-form">                                                         
                      <li class="col1 mw-300">
                         <label for="ex1" class="tit">문서종류</label>
                         <div class="inp-box">
@@ -620,7 +634,7 @@
                         </div>  
                      </li>
                      <li class="col1">
-                        <span class="tit">국적</span>
+                        <strong class="tit">국적</strong>
                         <div class="inp-box">
                            <div class="file-upload">
                               <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
@@ -639,7 +653,8 @@
                      <button class="close-btn"><i class="icon close medium"></i>삭제</button>
                   </div>
                </div>   
-               <br><br>           
+               <!-- 파일첨부 타입 -->
+               <br><br>                  
                <div class="inp-form">
                   <ul>                     
                      <li class="col2 txt-list">
@@ -652,7 +667,7 @@
                                     <button class="tooltip-ico">일회용인증부호 발급알림 도움말</button>
                                     <div class="tooltip-action">                  
                                        <div class="tooltip-popover">
-                                       <h4 class="tooltip-title">도움말 제목</h4>
+                                       <strong class="tooltip-title">도움말 제목</strong>
                                        <div class="tooltip-contents">
                                           <p>동의함</p>
                                           <div class="btn-wrap">
@@ -683,7 +698,7 @@
                                     <button class="tooltip-ico">일회용인증부호 발급알림 도움말</button>
                                     <div class="tooltip-action">                  
                                        <div class="tooltip-popover">
-                                       <h4 class="tooltip-title">도움말 제목</h4>
+                                       <strong class="tooltip-title">도움말 제목</strong>
                                        <div class="tooltip-contents">
                                           <p>동의함</p>
                                           <div class="btn-wrap">
@@ -705,7 +720,7 @@
                         </div>                         
                      </li>
                      <li class="col2 txt-list">
-                        <span class="tit">개인통관고유부호개인통관고유부호</span>   
+                        <strong class="tit">개인통관고유부호개인통관고유부호</strong>   
                         <div class="inp-box">
                            <p class="txt"><a href="#none" title="개인통관고유부호 복사" class="copy">P24000066665555555555660000000 <i class="icon copy small"></i></a></p>
                         </div>                                                                     

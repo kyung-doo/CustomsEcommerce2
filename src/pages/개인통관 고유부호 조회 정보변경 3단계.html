@@ -16,7 +16,8 @@
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
                      <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">개인통관고유부호 조회</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회/정보변경</a></li>                  
                   </ol>
                </nav>
                <div class="language-area">
@@ -28,29 +29,29 @@
                   </div>
                </div>
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <h3 class="head-tit">개인통관고유부호 정보변경</h3>
             <div class="step-area">
                <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span>/Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
+                  <strong class="tit-step"><span>Step 3</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">알림동의</h4>
                </div>
                <div class="step-box">
                   <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
+                     <li class="done">
+                        <span>                              
                               <i class="step">Step 1</i>
                               <span class="step-tit">기본정보 입력</span>
                         </span>
                      </li>
-                     <li>
+                     <li class="done">
                         <span>
                               <i class="step">Step 2</i>
                               <span class="step-tit">배송지 주소 등록</span>
                         </span>
                      </li>
-                     <li>
+                     <li class="active">
                         <span>
+                              <em class="sr-only">현재단계</em>
                               <i class="step">Step 3</i>
                               <span class="step-tit">알림 동의</span>
                         </span>
@@ -68,13 +69,102 @@
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>개인통관고유부호 정보변경 방법</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 정보변경 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               컨텐츠               
+               <div class="txt-box-type end">
+                   <div class="form-check">
+                     <input type="checkbox" name="all_chk" id="all_chk">
+                     <label for="all_chk">전체동의</label>
+                  </div>
+               </div>
+               <div class="agree-title">
+                  <strong class="title-type medium"><span class="com">[필수]</span>일회용 인증번호발급 알림</strong>
+                  <div class="contextual-help top right" data-ui="tooltip">                              
+                     <div class="tooltip-btn-area">                                 
+                        <button class="tooltip-ico">일회용 인증번호발급 알림</button>
+                        <div class="tooltip-action">                  
+                           <div class="tooltip-popover">
+                           <strong class="tooltip-title">일회용 인증번호발급 알림</strong>
+                           <div class="tooltip-contents">
+                              <p>일회용 인증번호발급 알림</p>
+                              <div class="btn-wrap">
+                                 <a href="#;" class="btn link">바로가기</a>
+                              </div>
+                           </div>
+                           <button type="button" class="btn tooltip-close">
+                              <span class="sr-only">닫기</span>                        
+                           </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="acc-area">
+                  <div class="tit">
+                     <p>해외직구 주문 시 발급된 일회용 인증번호 발급 내역을 사용자의 이메일을 통해 알림 전송하는 것을 동의합니다.</p>
+                     <div class="box">
+                        <div class="form-check medium">
+                           <input type="radio" name="chk-agree" id="agree1">
+                           <label for="agree1">동의하지 않음</label>
+                        </div>
+                        <div class="form-check medium">
+                           <input type="radio" name="chk-agree" id="agree2">
+                           <label for="agree2">동의함</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="txt">
+                     <p><i class="icon danger medium"></i>일회용 인증부호 발급 내역을 알림 받지 않을 경우 해외직구통관이 정상적으로 진행되지 않을 수 있습니다.</p>
+                  </div>
+               </div>
+               <div class="agree-title">
+                  <strong class="title-type medium"><span class="choice">[선택]</span>해외직구통관 알림</strong>
+                  <div class="contextual-help top right" data-ui="tooltip">                              
+                     <div class="tooltip-btn-area">                                 
+                        <button class="tooltip-ico">해외직구통관 알림</button>
+                        <div class="tooltip-action">                  
+                           <div class="tooltip-popover">
+                           <strong class="tooltip-title">해외직구통관 알림</strong>
+                           <div class="tooltip-contents">
+                              <p>해외직구통관 알림</p>
+                              <div class="btn-wrap">
+                                 <a href="#;" class="btn link">바로가기</a>
+                              </div>
+                           </div>
+                           <button type="button" class="btn tooltip-close">
+                              <span class="sr-only">닫기</span>                        
+                           </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="acc-area">
+                  <div class="tit">
+                     <p>해외직구 통관 결과 정보를 사용자의 이메일을 통해 알림을 전송하는 것을 동의 합니다.</p>
+                     <div class="box">
+                         <div class="form-check">
+                           <input type="checkbox" name="chk_1" id="chk_1">
+                           <label for="chk_1">동의함</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="txt">
+                     <p><i class="icon danger medium"></i>동의하지 않는 경우 해외직구 통관 결과 알림을 받을 수 없습니다.</p>
+                  </div>
+               </div>
+               <div class="btn-area btn-between">
+                  <div class="align">                            
+                     <button type="button" class="btn tertiary large">이전</button>                 
+                  </div>
+                  <div class="align">                            
+                     <button type="button" class="btn primary large">다음</button>                 
+                  </div>
+               </div>
             </div>
             <!--// 내용 -->
          </div>

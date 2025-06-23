@@ -36,3 +36,9 @@
   align-items: center;
   margin-top: 26px;
 }
+
+@media (max-width: 480px) {
+  .certification-number{
+        padding: 22px 10px;
+  }
+}

@@ -16,65 +16,239 @@
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
                      <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">개인통관고유부호 조회</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회/정보변경</a></li>                  
                   </ol>
                </nav>
                <div class="language-area">
                   <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="switch9" name="radio-switch1" checked>
-                     <label for="switch9" class="kr">한글</label>
-                     <input type="radio" id="switch10" name="radio-switch1">
-                     <label for="switch10" class="en">English</label>
+                     <input type="radio" id="kr" name="radio-switch1" checked>
+                     <label for="kr" class="kr">한글</label>
+                     <input type="radio" id="en" name="radio-switch1">
+                     <label for="en" class="en">English</label>
                   </div>
                </div>
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span>/Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">개인통관고유부호 조회</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
                   <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호란? 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
-            <div class="cont-area">
-               컨텐츠               
+            <div class="cont-area">               
+               <h5 class="title-type1">홍길동님의 개인통관고유부호는<strong class="em-type">P240000000000</strong>이고 유효기간 만료일은<strong class="em-type">2026.01.01</strong>까지 입니다.</h5>           
+               <div class="inp-form">
+                  <ul class="list-form">                                                         
+                     <li class="col2 txt-list">
+                        <strong class="tit">개인통관고유부호</strong>   
+                        <div class="inp-box">
+                           <p class="txt"><a href="#none" title="개인통관고유부호 복사" class="copy">P2400000000000 <i class="icon copy small"></i></a></p>
+                        </div>                                                                     
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">유효기간</strong>
+                        <div class="inp-box">
+                           <p class="txt">2025.01.01 ~ 2026.01.01</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">국적</strong>
+                        <div class="inp-box">
+                           <p class="txt">대한민국</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">주민등록번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">921230-1******</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">한글성명</strong>
+                        <div class="inp-box">
+                           <p class="txt">홍길동</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">영문성명</strong>
+                        <div class="inp-box">
+                           <p class="txt">Hong Gil Dong</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <!-- 타이틀 툴팁 -->
+                        <div class="tooltip-tit tit">
+                           <div class="title">
+                              <strong>전화번호</strong>
+                              <div class="contextual-help top right" data-ui="tooltip">                              
+                                 <div class="tooltip-btn-area">                                 
+                                    <button class="tooltip-ico">전화번호 도움말</button>
+                                    <div class="tooltip-action">                  
+                                       <div class="tooltip-popover">
+                                       <strong class="tooltip-title">전화번호</strong>
+                                       <div class="tooltip-contents">
+                                          <p>042-1234-1234</p>
+                                          <div class="btn-wrap">
+                                             <a href="#;" class="btn link">바로가기</a>
+                                          </div>
+                                       </div>
+                                       <button type="button" class="btn tooltip-close">
+                                          <span class="sr-only">닫기</span>                        
+                                       </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- 타이틀 툴팁 -->
+                        <div class="inp-box">
+                           <p class="txt">042-1234-1234</p>
+                        </div>                         
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">휴대전화번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">010-1234-1234</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <!-- 타이틀 툴팁 -->
+                        <div class="tooltip-tit tit">
+                           <div class="title">
+                              <strong>이메일 주소</strong>
+                              <div class="contextual-help top right" data-ui="tooltip">                              
+                                 <div class="tooltip-btn-area">                                 
+                                    <button class="tooltip-ico">이메일 주소 도움말</button>
+                                    <div class="tooltip-action">                  
+                                       <div class="tooltip-popover">
+                                       <strong class="tooltip-title">이메일 주소</strong>
+                                       <div class="tooltip-contents">
+                                          <p>hong123@naver.com</p>
+                                          <div class="btn-wrap">
+                                             <a href="#;" class="btn link">바로가기</a>
+                                          </div>
+                                       </div>
+                                       <button type="button" class="btn tooltip-close">
+                                          <span class="sr-only">닫기</span>                        
+                                       </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- 타이틀 툴팁 -->
+                        <div class="inp-box">
+                           <p class="txt">hong123@naver.com</p>
+                        </div>                         
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">부호상태</strong>
+                        <div class="inp-box">
+                           <p class="txt">사용</p>
+                        </div>                        
+                     </li>                     
+                     <li class="col2 txt-list">
+                        <!-- 타이틀 툴팁 -->
+                        <div class="tooltip-tit tit">
+                           <div class="title">
+                              <strong>재발급 횟수</strong>
+                              <div class="contextual-help top right" data-ui="tooltip">                              
+                                 <div class="tooltip-btn-area">                                 
+                                    <button class="tooltip-ico">재발급 횟수 도움말</button>
+                                    <div class="tooltip-action">                  
+                                       <div class="tooltip-popover">
+                                       <strong class="tooltip-title">재발급 횟수</strong>
+                                       <div class="tooltip-contents">
+                                          <p>텍스트</p>
+                                          <div class="btn-wrap">
+                                             <a href="#;" class="btn link">바로가기</a>
+                                          </div>
+                                       </div>
+                                       <button type="button" class="btn tooltip-close">
+                                          <span class="sr-only">닫기</span>                        
+                                       </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- 타이틀 툴팁 -->
+                        <div class="inp-box">
+                           <p class="txt">3회</p>
+                        </div>                         
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">일회용인증부호 발급알림</strong>
+                        <div class="inp-box">
+                           <p class="txt">동의함</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">해외직구신고/신청 결과 알림</strong>
+                        <div class="inp-box">
+                           <p class="txt">동의함</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">해외직구 통관알림</strong>
+                        <div class="inp-box">
+                           <p class="txt">동의하지 않음</p>
+                        </div>                        
+                     </li>                     
+                     <li class="col1 txt-list">
+                        <strong class="tit">개인통관고유부호 사용알림</strong>
+                        <div class="inp-box">
+                           <p class="txt">동의하지 않음</p>
+                        </div>                        
+                     </li>                     
+                  </ul>                  
+               </div>
+               <div class="btn-area btn-end btn-area-type no-bor">
+                  <div class="align">
+                     <button type="button" class="btn secondary medium">정보변경</button>                                        
+                     <button type="button" class="btn tertiary medium">사용정지</button>
+                     <button type="button" class="btn tertiary medium">갱신</button>
+                     <button type="button" class="btn tertiary medium">부호변경</button>                     
+                     <button type="button" class="btn tertiary medium">해지</button>
+                  </div>
+               </div>
+               <h5 class="title-type2"><span class="txt">주소는 최대 20개 까지 등록 가능합니다.</span></h5>
+               <div class="table-wrap">
+                  <table class="tbl col check">
+                     <caption>개인통관고유부호 조회에 대한 NO,배송지명,우편번호,기본주소,상세주소 표로 로 구성되어있다.</caption>
+                     <colgroup>
+                        <col style="width: 80px;">
+                        <col style="width: 200px;">
+                        <col style="width: 120px;">                     
+                        <col span="2">                                             
+                     </colgroup>
+                     <thead>
+                        <tr>                                                
+                           <th scope="col"><span class="arr-ico">No <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                           <th scope="col"><span class="arr-ico">배송지명 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                           <th scope="col">우편번호</th>
+                           <th scope="col">기본주소</th>
+                           <th scope="col">상세주소</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="text-center">6</td>
+                           <td>우리집1</td>
+                           <td class="text-center">35351</td>
+                           <td>대전광역시 서구 월평동123</td>                        
+                           <td>우리집빌라 301호</td>                        
+                        </tr>                                                                                                         
+                     </tbody>
+                  </table>
+               </div>
             </div>
             <!--// 내용 -->
          </div>
