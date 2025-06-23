@@ -56,23 +56,33 @@ $(() => {
     $(".mobile-all-menu").on('click', function (e) {
         $("#wrap").addClass('mobile-open');
         gsap.set($("#header .main-menu"), {x: 390});
-        gsap.to($("#header .main-menu"), 0.6, {x: 0, ease: Expo.easeInOut});
+        gsap.to($("#header .main-menu"), 0.6, {x: 0, ease: Expo.easeInOut}); 
+        $('.gnb-menu > li').removeClass('active')
+        $('.dep1').addClass('active');        
+        $('.sub-title').removeClass('mobile-dep-menu');
+        $('.sub-title').siblings('ul').hide();
+        
     });
     $(".mobile-close").on('click', function (e) {
         gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
             $("#wrap").removeClass('mobile-open');
+            $('.sub-title').removeClass('mobile-active');
         }});
     });
-
     $(".mobile-dep-menu").on('click', function () {
         if(!$(this).parent().find('.depth2').is(':visible')) {
-            $(this).parent().find('.depth2').slideDown(300);
-            $(this).addClass('mobile-active');
+            $('.depth2').slideUp(300);            
+            $(this).parent().find('.depth2').slideDown(300);            
+            $('.sub-title').removeClass('mobile-active');
+            $(this).addClass('mobile-active');                                    
+            $('.sub-title').attr('title','메뉴열기')
+            $(this).attr('title','메뉴닫기');            
         } else {
             $(this).parent().find('.depth2').slideUp(300);
             $(this).removeClass('mobile-active');
+            $('.sub-title').attr('title','메뉴열기');
         }
-    })
+    });   
     
 
     // 스크롤 이벤트
@@ -118,7 +128,14 @@ $(() => {
                 $("#header .allmenu").removeClass('active');
                 $('body').css({'overflow': ''});
                 $("#wrap > .blind").hide();
-            }
+            }            
+            $('.sub-title').removeClass('mobile-active');            
+            $('.gnb-main-trigger').on('click',function(e){
+                $('.sub-title').removeClass('mobile-active');
+                $('.sub-title').siblings('depth2').hide();
+
+            })
+            console.log('모바일');
         } else {
             $("#wrap").removeClass('mobile-open');
             gsap.set($("#header .main-menu"), {x: 0});
@@ -127,6 +144,12 @@ $(() => {
                 $("#wrap > .blind").show();
                 $('body').css({'overflow': 'hidden'});
             }
+            $('.depth2').show();
+            $('.sub-title.mobile-dep-menu').removeClass('mobile-active')
+            console.log('pc');
+            $('.gnb-menu > li').removeClass('active');
+            $('.sub-title').removeClass('mobile-active');
+            $('.blind').hide();
         }
     });
 });
