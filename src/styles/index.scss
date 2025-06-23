@@ -98,7 +98,7 @@ html *, body * {
 	position: relative;
 	width: 100%;
 	background-color: #fff;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .blind {
@@ -109,7 +109,11 @@ html *, body * {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
 }
-
+.content-wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
 /*
 *[inert] {
     interactivity: inert;
