@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li><span class="txt">개인통관고유부호 신청</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 신규/부호변경</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 신규/부호변경</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 2</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">배송지 주소 등록</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="done">
+                        <span>                              
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li class="active">
+                        <span>
+                              <em class="sr-only">현재단계</em>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">배송지 주소 등록</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">알림 동의</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>                     
+                              <i class="step">Step 4</i>
+                              <span class="step-tit">확인 및 등록</span>
+                        </span>
+                     </li>               
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>개인통관고유부호 발급 신청 방법</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="txt-box-type address-box">
+                  <p>주소는 최대 20개 까지 등록 가능합니다. <strong><span>3개</span><i>/</i>20개</strong></p>
+                  <button type="button" class="btn secondary medium">주소 추가</button>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="wrap-address-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col1">
+                           <label for="ex1" class="tit">배송지명 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-298">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input mw-298" id="ex1" title="배송지명을 입력해주세요" value="우리집">
+                                 </div>                              
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1 address-list">
+                           <label for="ex2" class="tit">기본 주소 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium first-add mw-140">                     
+                                 <div class="form-conts disabled-type2">
+                                    <input type="text" class="input" id="ex2" disabled title="주소를 확인해주세요" value="123456">
+                                 </div>                              
+                              </div>
+                              <button type="button" class="btn secondary medium ico">우편번호 검색 <i class="icon search-type1 medium"></i></button>
+                              <div class="form-group medium last-add mw-698">                     
+                                 <div class="form-conts disabled-type2">
+                                    <input type="text" class="input" disabled title="주소를 확인해주세요" value="대전시 서구 도안동123">
+                                 </div>                              
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1">
+                           <label for="ex3" class="tit">상세 주소 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-1012">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex3" title="상세주소를 입력해주세요" value="123동 456호">
+                                 </div>                             
+                              </div>
+                           </div>  
+                        </li>
+
+                     </ul>
+                     <div class="form-btn-area">
+                        <button class="refresh-btn"><i class="icon refresh medium"></i>초기화</button>
+                        <button class="close-btn"><i class="icon close medium"></i>삭제</button>
+                     </div>
+                  </div>
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col1">
+                           <label for="ex1_1" class="tit">배송지명 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-298">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input mw-298" id="ex1_1" title="배송지명을 입력해주세요" value="우리집">
+                                 </div>                              
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1 address-list">
+                           <label for="ex2_1" class="tit">기본 주소 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium first-add mw-140">                     
+                                 <div class="form-conts disabled-type2">
+                                    <input type="text" class="input" id="ex2_1" disabled title="주소를 확인해주세요" value="123456">
+                                 </div>                              
+                              </div>
+                              <button type="button" class="btn secondary medium ico">우편번호 검색 <i class="icon search-type1 medium"></i></button>
+                              <div class="form-group medium last-add mw-698">                     
+                                 <div class="form-conts disabled-type2">
+                                    <input type="text" class="input" disabled title="주소를 확인해주세요" value="대전시 서구 도안동123">
+                                 </div>                              
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1">
+                           <label for="ex3_1" class="tit">상세 주소 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-1012">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex3_1" title="상세주소를 입력해주세요" value="123동 456호">
+                                 </div>                             
+                              </div>
+                           </div>  
+                        </li>
+
+                     </ul>
+                     <div class="form-btn-area">
+                        <button class="refresh-btn"><i class="icon refresh medium"></i>초기화</button>
+                        <button class="close-btn"><i class="icon close medium"></i>삭제</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="btn-area btn-between">
+                  <div class="align">                            
+                     <button type="button" class="btn tertiary large">이전</button>                 
+                  </div>
+                  <div class="align">                            
+                     <button type="button" class="btn primary large">다음</button>                 
+                  </div>
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

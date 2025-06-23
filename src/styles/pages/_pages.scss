@@ -211,6 +211,8 @@
   padding: 24px 32px;
   border-radius: 8px;
   background-color: #F4F5F6;
+  margin-top: -18px;
+  margin-bottom: 24px;
 
   ul {
     display: flex;
@@ -220,8 +222,12 @@
     li {
       display: flex;
       align-items: center;
-      margin-bottom: 24px;
+      margin-top: 24px;
       padding-left: 20px;
+
+      &:first-child{
+        margin-top: 0;
+      }
 
       .search-area {
         display: flex;
@@ -312,6 +318,7 @@
   }
 
   .btn-area {
+    margin-top: 24px;
     padding-top: 24px;
     border-top: 1px solid #E6E8EA;
   }
@@ -446,7 +453,7 @@
     }
 
     ul li {
-      margin-bottom: 32px;
+      //margin-bottom: 32px;
 
       .calendar {
         max-width: 100%;
@@ -454,7 +461,7 @@
       }
 
       &:last-child {
-        margin-bottom: 24px;
+        //margin-bottom: 24px;
       }
 
       .search-area{
