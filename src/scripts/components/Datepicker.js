@@ -156,6 +156,7 @@ class Datepicker {
 
         this.calendar.find(".btn-year").on('click', () => {
             this.calendar.find(".year-con").show();
+            this.calendar.find(".month-con").hide();
             setTimeout(() => {
                 const top = this.calendar.find(".year-con button").eq(0).height() * this.calendar.find(".year-con button.active").index();
                 this.calendar.find(".year-con").scrollTop(top);
@@ -164,6 +165,7 @@ class Datepicker {
 
         this.calendar.find(".btn-month").on('click', () => {
             this.calendar.find(".month-con").show();
+            this.calendar.find(".year-con").hide();
         });
 
         if(this.input.val()) {
