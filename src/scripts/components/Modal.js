@@ -28,8 +28,8 @@ class Modal {
     show () {
         this.ele.empty().append(this.copyHtml);
         this.ele.removeClass('d-none');
-
-        gsap.from(this.ele.find(".modal-wrap"), 0.4, {scale: 0.9, opacity: 0, ease: Back.easeOut})
+        gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
+        gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut});
 
         this.ele.find(".btn-close").on("click", () => {
             this.hide();
@@ -37,7 +37,6 @@ class Modal {
         this.ele.find(".modal-close").on("click", () => {
             this.hide();
         });
-        $("#wrap, .guide-wrap").attr('inert', ' ');
         $("body").css({'overflow': 'hidden'});
         this.ele.find(".btn-close").on("focusin", e => {
             $(document).on('keydown', (e) => {
