@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- main -->
+      <div class="content-wrap">
+        <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked="">
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 조회</h3>
+        </div>
+        <div class="cont-body">
+            <h4>한개짜리 달력</h4>
+            <div class="search-box">
+                <ul>
+                    <li class="col1">
+                        <div class="search-area">
+                            <div class="calendar" data-ui="datepicker">
+                                <input type="text" value="2025-06-01" placeholder="YYYY-MM-DD" maxlength="10">
+                                <button class="calendar-btn">달력보기</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <h4>범위지정 달력</h4>
+            <div class="search-box">
+                <ul>
+                    <li class="col1">
+                        <div class="search-area">
+                            <div class="calendar" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                <input id="startDate" type="text" placeholder="YYYY-MM-DD" maxlength="10">
+                                <button class="calendar-btn">달력보기</button>
+                            </div>
+                            <div class="calendar" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                <input id="endDate" type="text" placeholder="YYYY-MM-DD" maxlength="10">
+                                <button class="calendar-btn">달력보기</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="height: 800px"></div>
+        </div>
+        
+      </div>
+      <!-- //main -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

@@ -4,6 +4,7 @@ import styleToJson from './utils/styleToJson';
 import './components/Tabmenu';
 import './components/Modal';
 import './components/Tooltip';
+import './components/Datepicker';
 import './layouts/header';
 
 
@@ -25,6 +26,14 @@ $(() => {
         $(this).tabmenu(props);
     });
 
+    // 모달 타겟
+    $(`*[data-modal-target]`).each(function () {
+        const modalSelector = $(this).data('modal-target');
+        $(this).on("click", function () {
+            $(modalSelector).modal('show');
+        });
+    });
+
     // 모달
     $(`*[data-ui="modal"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
@@ -37,11 +46,10 @@ $(() => {
         $(this).tooltip(props);
     });
 
-    $(`*[data-modal-target]`).each(function () {
-        const modalSelector = $(this).data('modal-target');
-        $(this).on("click", function () {
-            $(modalSelector).modal('show');
-        });
+    // 데이트 피커
+    $(`*[data-ui="datepicker"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).datepicker(props);
     });
     
 });
