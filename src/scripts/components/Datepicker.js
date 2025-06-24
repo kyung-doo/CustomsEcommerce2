@@ -133,13 +133,13 @@ class Datepicker {
         this.calendar.find(".year-con").hide();
         this.calendar.find(".month-con").hide();
 
-        $("html, body").on('scroll', () => {
+        $("html, body").on('scroll.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
         $(window).on('resize', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
-        $("html, body").trigger('scroll');
+        $("html, body").trigger('scroll.datepicker');
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
         });
@@ -342,8 +342,8 @@ class Datepicker {
     }
 
     hideCalendar () {
-        $("html, body").off('scroll');
-        $(window).off('resize');
+        $("html, body").off('scroll.datepicker');
+        $(window).off('resize.datepicker');
         this.input.removeAttr('disabled');
         if(this.calendar) {
             this.calendar.find(".btn-cancel").off('click');
