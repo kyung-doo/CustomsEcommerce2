@@ -161,10 +161,8 @@ class Datepicker {
             this.calendar.find(".month-con").hide();
             this.calendar.find(".btn-prev").css({'pointer-events': 'none'});
             this.calendar.find(".btn-next").css({'pointer-events': 'none'});
-            setTimeout(() => {
-                const top = this.calendar.find(".year-con button").eq(0).height() * this.calendar.find(".year-con button.active").index();
-                this.calendar.find(".year-con").scrollTop(top);
-            });
+            const top = parseInt(this.calendar.find(".year-con button").eq(0).css('height')) * this.calendar.find(".year-con button.active").index();
+            this.calendar.find(".year-con").scrollTop(top);
         });
 
         this.calendar.find(".btn-month").on('click', () => {
