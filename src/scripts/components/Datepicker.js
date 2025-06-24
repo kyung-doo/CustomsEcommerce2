@@ -144,19 +144,23 @@ class Datepicker {
             this.hideCalendar();
         });
         this.calendar.find(".btn-enter").on('click', () => {
-            this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
+            if(this.selectDate) {
+                this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
+            }
             this.hideCalendar();
         });
-        this.calendar.find(".btn-prev").on('click', () => {
+        this.calendar.find(".btn-prev").css({'pointer-events': ''}).on('click', () => {
             this.prevCalendar();
         });
-        this.calendar.find(".btn-next").on('click', () => {
+        this.calendar.find(".btn-next").css({'pointer-events': ''}).on('click', () => {
             this.nextCalendar();
         });
 
         this.calendar.find(".btn-year").on('click', () => {
             this.calendar.find(".year-con").show();
             this.calendar.find(".month-con").hide();
+            this.calendar.find(".btn-prev").css({'pointer-events': 'none'});
+            this.calendar.find(".btn-next").css({'pointer-events': 'none'});
             setTimeout(() => {
                 const top = this.calendar.find(".year-con button").eq(0).height() * this.calendar.find(".year-con button.active").index();
                 this.calendar.find(".year-con").scrollTop(top);
@@ -166,6 +170,8 @@ class Datepicker {
         this.calendar.find(".btn-month").on('click', () => {
             this.calendar.find(".month-con").show();
             this.calendar.find(".year-con").hide();
+            this.calendar.find(".btn-prev").css({'pointer-events': 'none'});
+            this.calendar.find(".btn-next").css({'pointer-events': 'none'});
         });
 
         if(this.input.val()) {
@@ -249,13 +255,16 @@ class Datepicker {
                 x.type += ' disabled';
             }
             if(this.props.maxInput && $(this.props.maxInput).val()) {
-                if(new Date(x.year+'-'+x.month+'-'+x.day) >= new Date($(this.props.maxInput).val())) {
+                if(new Date(x.year+'-'+x.month+'-'+x.day) > new Date($(this.props.maxInput).val())) {
                     x.type += ' disabled';
                 }
             }
             if(this.props.minInput && $(this.props.minInput).val()) {
+                const minDate = new Date($(this.props.minInput).val());
                 if(new Date(x.year+'-'+x.month+'-'+x.day) <= new Date($(this.props.minInput).val())) {
-                    x.type += ' disabled';
+                    if(!(x.year === minDate.getFullYear() && x.month === minDate.getMonth() +1 && x.day === minDate.getDate())) {
+                        x.type += ' disabled';
+                    }
                 }
             }
         });
@@ -289,6 +298,8 @@ class Datepicker {
         this.calendar.find(".year-con button").on('click', (e) => {
             this.currentYear = $(e.currentTarget).data('year');
             this.calendar.find(".year-con").hide();
+            this.calendar.find(".btn-prev").css({'pointer-events': ''});
+            this.calendar.find(".btn-next").css({'pointer-events': ''});
             this.renderCalendar();
         });
     }
@@ -305,6 +316,8 @@ class Datepicker {
         this.calendar.find(".month-con button").on('click', (e) => {
             this.currentMonth = $(e.currentTarget).data('month');
             this.calendar.find(".month-con").hide();
+            this.calendar.find(".btn-prev").css({'pointer-events': ''});
+            this.calendar.find(".btn-next").css({'pointer-events': ''});
             this.renderCalendar();
         });
     }
