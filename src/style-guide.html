@@ -4114,25 +4114,25 @@
          <!-- 첨부파일 -->
 
          <!-- 달력 -->
+         <h2 class="mt-50" id="CALENDAR">달력</h2>
          <div class="guide-content" style="overflow: hidden;">
-            <h2 class="mt-50" id="CALENDAR">달력</h2>
             <p>한개짜리 달력</p>
             <div class="calendar">
                <div class="calendar-form" data-ui="datepicker">
-                  <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
+                  <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
                   <button class="calendar-btn">달력보기</button>
                </div>                        
             </div>  
             <br><br>
             <p>범위지정 달력</p>
             <div class="calendar">
-               <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
-                  <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
+               <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                  <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
                   <button class="calendar-btn">시작 달력보기</button>
                </div>
                <i class="hy">~</i>
-               <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
-                  <input type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD">
+               <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                  <input id="endDate" type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
                   <button class="calendar-btn">끝나는 달력보기</button>
                </div>
             </div>
@@ -4142,20 +4142,20 @@
            - 한개짜리 달력
             &lt;div class="calendar"&gt;
                &lt;div class="calendar-form" data-ui="datepicker"&gt;
-                  &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD"&gt;
+                  &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10"&gt;
                   &lt;button class="calendar-btn"&gt;시작 달력보기&lt;/button&gt;
                &lt;/div&gt;                        
             &lt;/div&gt;  
 
-            - 한개짜리 달력
+            - 범위지정 달력
             &lt;div class="calendar"&gt;
-               &lt;div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'"&gt;
-                  &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD"&gt;
+               &lt;div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'"&gt;
+                  &lt;input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10"&gt;
                   &lt;button class="calendar-btn"&gt;시작 달력보기&lt;/button&gt;
                &lt;/div&gt;
                &lt;i class="hy"&gt;~&lt;/i&gt;
-               &lt;div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'"&gt;
-                  &lt;input type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD"&gt;
+               &lt;div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'"&gt;
+                  &lt;input id="endDate" type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10"&gt;
                   &lt;button class="calendar-btn"&gt;끝나는 달력보기&lt;/button&gt;
                &lt;/div&gt;
             &lt;/div&gt;     
