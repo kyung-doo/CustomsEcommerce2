@@ -41,7 +41,7 @@ class Modal {
         });
         $("body").css({'overflow': 'hidden'});
         this.ele.find(".btn-close").on("focusin", e => {
-            $(document).on('keydown', (e) => {
+            $(document).on('keydown.modal', (e) => {
                 if(e.key === 'Tab' && !e.shiftKey) {
                     this.ele.find(".modal-body").focus();
                     e.preventDefault();
@@ -49,7 +49,7 @@ class Modal {
             });
         });
         this.ele.find(".modal-body").on("focusin", e => {
-            $(document).on('keydown', (e) => {
+            $(document).on('keydown.modal', (e) => {
                 if(e.key === 'Tab' && e.shiftKey) {
                     this.ele.find(".btn-close").focus();
                     e.preventDefault();
@@ -57,10 +57,10 @@ class Modal {
             });
         });
         this.ele.find(".btn-close").on("focusout", e => {
-            $(document).off('keydown');
+            $(document).off('keydown.modal');
         });
         this.ele.find(".modal-body").on("focusout", e => {
-            $(document).off('keydown');
+            $(document).off('keydown.modal');
         });
         this.ele.find(".modal-body").attr("tabindex", 0).focus();
     }
@@ -71,7 +71,7 @@ class Modal {
         this.ele.find(".modal-close").off("click");
         $("#wrap, .guide-wrap").removeAttr('inert');
         $("body").css({'overflow': ''});
-        $(document).off('keydown');
+        $(document).off('keydown.modal');
         this.ele.empty();
         $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();
         this.ele.trigger('modal-hide');

@@ -163,16 +163,19 @@
                     border-radius: 50%;                                     
                 }
                 /** 오늘 **/
-                &.today button,&.today button:hover {
+                &.today button {
                     color: #246BEB;
                     border:1px solid #246BEB;     
                     background-color: rgba(0,0,0,0.0);                                  
                 }
+                &.today button:hover {
+                    background-color: #EDF1F5;                                  
+                }
 
                 /** 선택 **/
                 &.active button {
-                    background-color: #246BEB;
-                    color: #fff;                    
+                    background-color: #246BEB !important;
+                    color: #fff !important;                    
                 }                
 
                 /** hover **/
@@ -256,6 +259,11 @@
                 }
                 &:hover{
                     background-color: #EDF1F5;
+                }
+                &:disabled {
+                    pointer-events: none;
+                    opacity: 0.5;
+                    color:#717171;
                 }
             }
         }
