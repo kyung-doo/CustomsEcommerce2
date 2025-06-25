@@ -3,6 +3,7 @@
 <head>
    <title>관세청 전자상거래포털 - HTML 파일리스트</title>
    <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <script type="text/javascript" src="/js/main.bundle.js"></script>
    <style>
       h1{
          padding-left: 20px;
@@ -37,10 +38,21 @@
 
       a{         
          color:#000;
-      }      
+      }     
+      a.on{
+         color:red;
+      } 
    </style>
 </head>
 <body>
+   <script>
+      $(function(){
+         $('a').click(function(){
+            $('a').removeClass('on');
+            $(this).addClass('on');
+         })
+      })
+   </script>
    <h1>HTML 파일리스트</h1>
    <table class="tb-index">
       <colgroup>
@@ -116,7 +128,7 @@
                <a href="/pages/개인통관 고유부호 조회 정보변경 4단계.html" target="_blank">개인통관고유부호 정보변경 4단계</a>                               
             </td>
             <td></td>
-            <td>툴팁 반응형 개발들어가면 확인</td>
+            <td>툴팁 반응형 개발들어가면 확인<br>주소추가??? 이사님한테 물어보고진행</td>
          </tr>              
          <tr>
             <td>개인통관 고유부호 발급/이력조회</td>
@@ -211,7 +223,7 @@
             <td></td>
          </tr>              
          <tr>
-            <td rowspan="2"  style="background-color: red;">관세환급</td>
+            <td rowspan="2"  style="background-color: #ddd;">관세환급</td>
             <td>관세환급 신청</td>
             <td><a href="/pages/" target="_blank">12</a></td>
             <td></td>
@@ -219,8 +231,8 @@
             <td></td>
          </tr>              
          <tr>
-            <td style="background-color: red;">관세환급 신청 결과 조회</td>
-            <td style="background-color: red;">
+            <td style="background-color: #ddd;">관세환급 신청 결과 조회</td>
+            <td style="background-color: #ddd;">
                <a href="/pages/환급신청 처리결과 상세조회.html" target="_blank">환급신청 처리결과 상세조회</a><br>
                <a href="/pages/환급신청 처리결과 상세조회 기각.html" target="_blank">환급신청 처리결과 상세조회 기각</a><br>
                <a href="/pages/환급신청 처리결과 상세조회 통보.html" target="_blank">환급신청 처리결과 상세조회 통보</a><br>
@@ -232,15 +244,10 @@
                <a href="/pages/환급신청 처리결과 상세조회_2.html" target="_blank">환급신청 처리결과 상세조회_2</a><br>
                <a href="/pages/환급신청 처리결과 상세조회_3.html" target="_blank">환급신청 처리결과 상세조회_3</a><br>
                <a href="/pages/환급신청 처리결과 상세조회_4.html" target="_blank">환급신청 처리결과 상세조회_4</a><br>
-               <a href="/pages/환급신청 결과 및 오류 통보 조회_1.html" target="_blank">환급신청 결과 및 오류 통보 조회_1</a><br>
-               <a href="/pages/1" target="_blank">1</a><br>
-               <a href="/pages/1" target="_blank">1</a><br>
-               <a href="/pages/1" target="_blank">1</a><br>
-               <a href="/pages/1" target="_blank">1</a><br>
-               <a href="/pages/1" target="_blank">1</a><br>
+               <a href="/pages/환급신청 결과 및 오류 통보 조회_1.html" target="_blank">환급신청 결과 및 오류 통보 조회_1</a><br>               
             </td>
             <td></td>
-            <td></td>
+            <td>테이블 보류<br>테이블 단순형 반응형???</td>
             <td></td>
             <td></td>
          </tr>              

@@ -174,8 +174,8 @@
       }    
       
       /** 첨부파일 초기화,삭제 버튼 위치 **/
-      &.btn-form + .form-btn-area{
-          top: 71px;
+      & + .form-btn-area{
+          top: 66px;
       }
     }
 

@@ -5,9 +5,7 @@
   .btn-area:has(.large){margin-top: 48px;}
   .title-type2{margin-top: 48px;margin-bottom: 14px;}
   .compulsory-txt{margin-top: 45px;margin-bottom: 13px;}
-  .txt-box-type{margin-top: 24px;}
-  .wrap-address-area .inp-form:first-child{margin-top: 0;}
-  .wrap-address-area .inp-form{margin-top: 8px;}
+  .txt-box-type{margin-top: 24px;}  
   .agree-title{margin-top: 43px;margin-bottom: 16px;}
   .title-type3:first-child{margin-top: 42px;}
   .title-type3{margin-top: 58px;margin-bottom: 17px;}
@@ -19,6 +17,8 @@
   .inp-form .advice-txt{margin-top: 20px;}
   [class*=tabmenu-]{margin-top: 48px;}
 }
+.wrap-address-area .inp-form:first-child{margin-top: 0;}
+.wrap-address-area .inp-form{margin-top: 8px;}
 
 .content-wrap {
   max-width: 1312px;
