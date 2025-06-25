@@ -257,6 +257,11 @@
                 &:hover{
                     background-color: #EDF1F5;
                 }
+                &:disabled {
+                    pointer-events: none;
+                    opacity: 0.5;
+                    color:#717171;
+                }
             }
         }
     }

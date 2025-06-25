@@ -317,6 +317,13 @@ class Datepicker {
                 this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}월</button>`)
             }
         }
+        if(this.currentYear === new Date().getFullYear()) {
+            this.calendar.find(".month-con button").each(function () {
+                if($(this).data('month') > new Date().getMonth() +1) {
+                    $(this).attr('disabled', 'disabled');
+                }
+            });
+        }
         this.calendar.find(".month-con button").on('click', (e) => {
             this.currentMonth = $(e.currentTarget).data('month');
             this.calendar.find(".month-con").hide();
