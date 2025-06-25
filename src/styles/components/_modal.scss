@@ -19,7 +19,8 @@
   background-color: #fff;
   padding: 32px;
   width:95%;
-  min-width: 100px;  
+  min-width: 100px;   
+  max-height:95% 
 }
 
 .modal-header {
@@ -42,10 +43,13 @@
 
 .modal-body {
   box-sizing: border-box;  
+  overflow-y: auto;
+      max-height: calc(100vh - 272px);
+  
 
-  .modal-cont {
-    margin-bottom: 32px;    
+  .modal-cont {    
     line-height: 150%;
+    margin-bottom: 26px;
 
     .cer-txt{
       margin-top: 12px;
@@ -79,8 +83,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
-  margin-top: 24px;
+  align-items: center;  
   gap: 8px;
   border-top: 1px solid #E4E4E4;
   padding-top: 24px;
@@ -118,16 +121,18 @@
     }
 
     .modal-body{
+      max-height: calc(100vh - 305px);
       .modal-cont{
         margin-bottom: 24px;
       }
     } 
 
-    .modal-footer{
-      margin-top: 32px;
+    .modal-footer{      
       .form-check{        
         width:100%;
-        margin-bottom: 16px;;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: flex-end;
       }      
     }    
   }

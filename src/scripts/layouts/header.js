@@ -7,7 +7,7 @@ $(() => {
     let oldTop = 0;
           
 
-    $("#wrap").append('<div class="blind d-none"></div>');
+    $("#wrap").append('<div class="blind d-none"></div>');    
 
     // 메인 네비
     $(".gnb-menu li").each(function () {

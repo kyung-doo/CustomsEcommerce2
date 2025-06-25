@@ -91,12 +91,7 @@
     font-size: 17px;
     color: #1D1D1D;
     vertical-align: middle;
-    text-align: center;
-
-    .in-num{
-      text-decoration: underline;
-      color:#246BEB
-    }
+    text-align: center;    
 
     * {
       color: #1D1D1D;
@@ -194,6 +189,11 @@
     background-position: center;
     background-color: #fff;
   }
+
+  .in-num{
+    text-decoration: underline;
+    color:#246BEB !important;
+  }
 }
 
 .table-wrap {
@@ -265,6 +265,7 @@
       font-size: 15px;
       font-weight: 700;
       color: #1D1D1D;
+      width: 120px;
 
       * {
         font-size: 15px;
@@ -274,9 +275,12 @@
     }
 
     .txt {
+      width: calc(100% - 120px);
       font-size: 17px;
       font-weight: 400;
       color: #1D1D1D;
+      text-align: right;
+      padding-left: 10px;
 
       * {
         font-size: 17px;
@@ -298,6 +302,17 @@
 
   &.mobile{
     display: none;
+  }
+}
+
+/** 조회형 카드 반응형 **/
+.wrap-check-tbl{
+  .mobile .wrap-body{
+    border-top: 1px solid #58616A;
+
+    button{
+      width:100%;
+    }
   }
 }
 
