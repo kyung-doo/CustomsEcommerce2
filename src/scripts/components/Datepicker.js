@@ -119,7 +119,7 @@ class Datepicker {
                         <div class="month-con d-none"></div>
                     </div>
                     <div class="calendar-footer">
-                        <button type="button" class="btn tertiary small btn-cancel mr-5">취소</button>
+                        <button type="button" class="btn tertiary small btn-cancel mr-8">취소</button>
                         <button type="button" class="btn primary small btn-enter">확인</button>
                     </div>
                 </div>
@@ -163,6 +163,8 @@ class Datepicker {
             this.calendar.find(".btn-next").css({'pointer-events': 'none'});
             const top = parseInt(this.calendar.find(".year-con button").eq(0).css('height')) * this.calendar.find(".year-con button.active").index();
             this.calendar.find(".year-con").scrollTop(top);
+            $('.btn-month').removeClass('on');            
+            $('.btn-year').addClass('on'); 
         });
 
         this.calendar.find(".btn-month").on('click', () => {
@@ -170,6 +172,8 @@ class Datepicker {
             this.calendar.find(".year-con").hide();
             this.calendar.find(".btn-prev").css({'pointer-events': 'none'});
             this.calendar.find(".btn-next").css({'pointer-events': 'none'});
+            $('.btn-year').removeClass('on'); 
+            $('.btn-month').addClass('on');            
         });
 
         if(this.input.val()) {
@@ -306,9 +310,9 @@ class Datepicker {
         this.calendar.find(".month-con").empty();
         for(let i = 1; i <= 12; i++) {
             if(this.currentMonth === i) {
-                this.calendar.find(".month-con").append(`<button class="btn-month-select active" data-month="${i}">${i}</button>`)
+                this.calendar.find(".month-con").append(`<button class="btn-month-select active" data-month="${i}">${i}월</button>`)
             } else {
-                this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}</button>`)
+                this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}월</button>`)
             }
         }
         this.calendar.find(".month-con button").on('click', (e) => {
