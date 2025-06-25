@@ -4115,47 +4115,48 @@
 
          <!-- 달력 -->
          <h2 class="mt-50" id="CALENDAR">달력</h2>
-         <div class="search-box">
-            <ul>
-               <li class="col1">
-                  <span class="tit" for="first-calendar1">한개짜리 달력 <i class="compulsory">필수</i></span>
-                  <div class="search-area">
-                     <div class="calendar">
-                        <div class="calendar-form" data-ui="datepicker">
-                           <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
-                           <button class="calendar-btn">시작 달력보기</button>
-                        </div>                        
-                     </div>                                          
-                  </div>                        
-               </li>                     
-               <li class="col1">
-                  <span class="tit" for="first-calendar2">범위지정 달력 <i class="compulsory">필수</i></span>
-                  <div class="search-area">                     
-                     <div class="calendar">
-                        <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
-                           <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
-                           <button class="calendar-btn">시작 달력보기</button>
-                        </div>
-                        <i class="hy">-</i>
-                        <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
-                           <input type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD">
-                           <button class="calendar-btn">끝나는 달력보기</button>
-                        </div>
-                     </div>                                          
-                  </div>                        
-               </li>                     
-            </ul>
-            <div class="btn-area btn-end">
-               <div class="align">
-                  <button type="button" class="btn tertiary medium">초기화</button>
-                  <button type="button" class="btn secondary medium">조회</button>                        
-               </div>
+         <p>한개짜리 달력</p>
+         <div class="calendar">
+            <div class="calendar-form" data-ui="datepicker">
+               <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
+               <button class="calendar-btn">시작 달력보기</button>
+            </div>                        
+         </div>  
+         <br><br>
+         <p>범위지정 달력</p>
+         <div class="calendar">
+            <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+               <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
+               <button class="calendar-btn">시작 달력보기</button>
             </div>
-         </div>
-
+            <i class="hy">-</i>
+            <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+               <input type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD">
+               <button class="calendar-btn">끝나는 달력보기</button>
+            </div>
+         </div>     
          <pre>
          <code class="html"> 
-           
+           - 한개짜리 달력
+            &lt;div class="calendar"&gt;
+               &lt;div class="calendar-form" data-ui="datepicker"&gt;
+                  &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD"&gt;
+                  &lt;button class="calendar-btn"&gt;시작 달력보기&lt;/button&gt;
+               &lt;/div&gt;                        
+            &lt;/div&gt;  
+
+            - 한개짜리 달력
+            &lt;div class="calendar"&gt;
+               &lt;div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'"&gt;
+                  &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD"&gt;
+                  &lt;button class="calendar-btn"&gt;시작 달력보기&lt;/button&gt;
+               &lt;/div&gt;
+               &lt;i class="hy"&gt;-&lt;/i&gt;
+               &lt;div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'"&gt;
+                  &lt;input type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD"&gt;
+                  &lt;button class="calendar-btn"&gt;끝나는 달력보기&lt;/button&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;     
 
          </code>
          </pre>
