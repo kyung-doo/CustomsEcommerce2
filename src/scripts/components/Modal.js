@@ -29,7 +29,9 @@ class Modal {
         this.ele.empty().append(this.copyHtml);
         this.ele.removeClass('d-none');
         gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
-        gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut});
+        gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut, onComplete: () => {
+            this.ele.trigger('modal-show');
+        }});
 
         this.ele.find(".btn-close").on("click", () => {
             this.hide();
@@ -72,6 +74,7 @@ class Modal {
         $(document).off('keydown');
         this.ele.empty();
         $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();
+        this.ele.trigger('modal-hide');
     }
 
 }

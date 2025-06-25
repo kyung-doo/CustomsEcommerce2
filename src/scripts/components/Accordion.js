@@ -1,0 +1,49 @@
+import $ from 'jquery';
+
+
+class Accordion {
+
+    static DEFAULT_PROPS = {
+        beforeClose: false
+    }
+
+    constructor( ele, props ) {
+        this.ele = ele;
+        this.props = props;
+        this.init();
+    }
+
+    init () {
+        this.ele.find('.accordion-header > a').on('click', ( e ) => {
+            const target = $(e.currentTarget).parent().parent();
+            if(!target.hasClass('active')) {
+                if(this.props.beforeClose) {
+                    target.siblings('*[data-ui="accordion"]').find('.accordion-body').slideUp(300);
+                    target.siblings('*[data-ui="accordion"]').removeClass('active');
+                }
+                target.find(".accordion-body").slideDown(300);
+                target.addClass('active');
+            } else {
+                target.find(".accordion-body").slideUp(300);
+                target.removeClass('active');
+            }
+        });
+    }
+    
+    destroy () {
+        this.ele.find('.accordion-header > a').off('click');
+    }
+}
+
+$.fn.accordion = Plugin;
+$.fn.accordion.Constructor = Accordion;
+
+function Plugin (option, params) {
+    return this.each(function () {
+        var $this = $(this);
+        var data = $this.data('accordion');
+        var options =  $.extend({}, Accordion.DEFAULT_PROPS, typeof option == "object"  && option);
+        if(!data || typeof data == 'string') $this.data('accordion', (data = new Accordion($this, options)));
+        if(typeof option == 'string') data[option](params);
+    });
+}

@@ -136,7 +136,7 @@ class Datepicker {
         $("html, body").on('scroll.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
-        $(window).on('resize', () => {
+        $(window).on('resize.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
         $("html, body").trigger('scroll.datepicker');
