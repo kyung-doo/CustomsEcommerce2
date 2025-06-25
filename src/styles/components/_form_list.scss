@@ -46,7 +46,7 @@
           width: 180px;
           line-height: 150%;
           position: relative;
-          word-break: break-all;
+          word-break: break-word;
         }
 
         .title {
@@ -64,7 +64,7 @@
             font-size: 17px;
             line-height: 150%;
             color: #1D1D1D;
-            word-break: break-all;
+            word-break: break-word;
           }
 
           a {
@@ -111,6 +111,10 @@
         min-width: 112px;
       }
         **/
+      
+      &.address-list button{
+        margin-right: 8px;
+      }
         
       &.col1 {
         width: 100%;
@@ -215,11 +219,18 @@
   }
 }
 
+@media (max-width: 1312px) {
+  /** 버튼이 있는 리스트 **/
+  .inp-form:has(.form-btn-area){
+    padding: 72px 24px 34px 24px;
+  }   
+}
+
 @media (max-width: 767px) {
   /** 리스트 **/
   .inp-form {   
     
-    padding: 24px;
+    padding: 34px 24px;
 
     [class*=col] {
       width: 100% !important;
@@ -231,7 +242,7 @@
 
     [class*=form-group] {
       width: 100%;
-    }
+    }    
 
     .form-group {
       &.medium {
@@ -245,23 +256,11 @@
           font-size: 15px;
         }
       }
-    }
+    }     
 
     li {
       /** 텍스트 타입 **/
       &.txt-list {
-        /*
-        .tit {
-          width: 180px;
-        }
-
-        .txt {
-          width: calc(100% - 180px);
-          text-align: right;
-          padding-right: 0;
-        }
-          */
-
         .inp-box {
           text-align: right;
         }
@@ -289,11 +288,10 @@
       }
     }    
 
-    .form-btn-area{
-      margin-top: 21px;
-      justify-content: flex-end;
-      position: static;
-    }
+    .form-btn-area{      
+      top: 32px;
+      right: 24px;      
+    }    
   }
 }
 
@@ -328,7 +326,8 @@
 
       /** 주소 **/
       &.address-list button {
-        max-width: 151px;
+        max-width: 136px;
+        margin-right: 0;
       }        
 
       /** 상단 점선 **/

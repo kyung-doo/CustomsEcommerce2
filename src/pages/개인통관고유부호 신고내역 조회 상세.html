@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li><span class="txt">개인통관고유부호 도용신고</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 신고내역 조회</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 신고내역 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>개인통관고유부호 도용신고 절차 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 도용신고 절차 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">신고인 정보</h5>
+               <div class="inp-form">
+                  <ul class="list-form">                                                         
+                     <li class="col2 txt-list">
+                        <strong class="tit">피 도용 개인통관고유부호</strong>
+                        <div class="inp-box">
+                           <p class="txt">P2400000000000</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">신고인 이름</strong>
+                        <div class="inp-box">
+                           <p class="txt">홍길동</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">신고인 연락처</strong>
+                        <div class="inp-box">
+                           <p class="txt">010-1234-1234</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">신고인 이메일</strong>
+                        <div class="inp-box">
+                           <p class="txt">Hong123@naver.com</p>
+                        </div>                        
+                     </li>
+                     <li class="col1 txt-list">
+                        <strong class="tit">운송장 번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">123456789101</p>
+                        </div>                        
+                     </li>
+                     <li class="col1 txt-list bor-list">
+                        <strong class="tit">신고내용</strong>   
+                        <div class="inp-box">
+                           <p class="txt">신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다. 신고 내용이 출력 됩니다.</p>
+                        </div>                                                                     
+                     </li>
+                  </ul>                  
+               </div>
+               <h5 class="title-type3">조치사항</h5>
+               <div class="inp-form">
+                  <ul class="list-form">                                                         
+                     <li class="col2 txt-list">
+                        <strong class="tit">조치 세관</strong>
+                        <div class="inp-box">
+                           <p class="txt">인천공항세관</p>
+                        </div>                        
+                     </li>
+                     <li class="col2 txt-list">
+                        <strong class="tit">처리과</strong>
+                        <div class="inp-box">
+                           <p class="txt">홍길동</p>
+                        </div>                        
+                     </li>
+                     <li class="col1 txt-list">
+                        <strong class="tit">세관전화번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">010-1234-1234</p>
+                        </div>                        
+                     </li>                     
+                     <li class="col1 txt-list bor-list">
+                        <strong class="tit">조치사항</strong>   
+                        <div class="inp-box">
+                           <p class="txt">조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다. 조시사항이 출력됩니다.</p>
+                        </div>                                                                     
+                     </li>
+                  </ul>                  
+               </div>
+               <h5 class="title-type3">첨부파일</h5>
+               <div class="file-upload line list">                              
+                  <div class="file-list">                     
+                     <ul class="upload-list">                                               
+                        <li>
+                           <div class="file-info m-column file-down">
+                              <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                              <div class="btn-wrap">
+                                 <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>                                 
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="file-info m-column file-down">
+                              <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                              <div class="btn-wrap">
+                                 <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>                                 
+                              </div>
+                           </div>
+                        </li>
+                     </ul>                     
+                  </div>  
+               </div>
+               <div class="btn-area btn-end">
+                  <div class="align">                            
+                     <button type="button" class="btn primary large">목록</button>                 
+                  </div>
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

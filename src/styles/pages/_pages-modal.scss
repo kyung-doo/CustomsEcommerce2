@@ -1,8 +1,7 @@
 /** 인증번호 **/
 .certification-number {
   display: flex;
-  justify-content: center;
-  margin-top: 29px;
+  justify-content: center;  
 
   .number {
     display: flex;
@@ -33,8 +32,12 @@
 .reforwarding {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 26px;
+  align-items: center;  
+}
+
+/** 테이블 **/
+.modal-body [class*=-tbl]{
+  margin-bottom: 20px;
 }
 
 @media (max-width: 480px) {
