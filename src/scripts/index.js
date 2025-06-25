@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import * as $ from "jquery";
 import '@/styles/index.scss';
 import styleToJson from './utils/styleToJson';
 import './components/Tabmenu';
@@ -8,19 +8,16 @@ import './components/Datepicker';
 import './components/Accordion';
 import './layouts/header';
 
-
 // 전역변수
-window.isMobile = false;
+global.isMobile = false;
 if('ontouchstart' in window){
-    window.isMobile = true;
+    global.isMobile = true;
 }
-window.$ = $;
+global.$ = $;
+createUI();
 
 
-
-// 컴포넌트 UI 생성
 $(() => {
-    createUI();
 
     // dom 변경 시 UI 다시 생성
     const domObserver = new MutationObserver(() => {
@@ -33,6 +30,7 @@ $(() => {
     });
 });
 
+// 컴포넌트 UI 생성
 function createUI () {
     // 탭메뉴
     $(`*[data-ui="tabmenu"]`).each(function () {
