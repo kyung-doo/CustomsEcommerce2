@@ -69,7 +69,28 @@
          padding: 30px;
          margin-left: 250px;
          width: calc(100% - 250px);
-      }      
+      } 
+      
+      
+      .accordion-header {
+         width: 300px;
+         height: 50px;
+         border: solid 1px #ccc;
+      }
+
+      .accordion-header a {
+         width: 100%;
+         height: 100%;
+         display: block;
+         padding: 10px;
+      }
+
+      .accordion-body {
+         width: 300px;
+         border: solid 1px #ccc;
+         padding: 10px;
+      }
+
    </style>
    
    <script>
@@ -82,6 +103,10 @@
 
          $(".tabmenu").on('change', (e, idx) => {
             console.log('탭 체인지 : ', idx);
+         });
+
+         $("#modal1").on("modal-show", function () {
+            console.log('모달 오픈');
          });
       });
    </script>
@@ -110,7 +135,8 @@
             <li data-id="TABLE">테이블</li>
             <li data-id="LAYOUT3">레이아웃3</li>            
             <li data-id="LAYOUT1">레이아웃1</li>          
-            <li data-id="FILE">첨부파일</li>                                     
+            <li data-id="FILE">첨부파일</li>
+            <li data-id="ACCORDION">아코디언</li>                                     
          </ul>
       </div>
       <div class="main">
@@ -456,6 +482,12 @@
          
          <pre>
             <code class="html">
+
+               - 탭메뉴 체인지 이벤트
+               $(".tabmenu-line1").on('change', (e, index) => {
+                  console.log(index);
+               });
+
                - 탭 라인 타입 1번
                &lt;div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props=""&gt;
                   &lt;button class="tab-menu active" title="선택됨"&gt;Title1&lt;/button&gt;
@@ -568,6 +600,20 @@
          
          <pre>
             <code class="html">         
+
+               - 스크립트로 모달 오픈
+               $("#modal1").modal("show");
+
+               - 스크립트로 모달 닫기
+               $("#modal1").modal("hide");
+
+               - 모달 오픈 이벤트 * 초기화를 위해 모달 오픈전엔 자식 객체가 없으므로 모달 오픈 이벤트 안에 로직 스크립트 작성해야함
+               $("#modal1").on("modal-show", function () {});
+
+               - 모달 클로즈 이벤트
+               $("#modal1").on("modal-hide", function () {});
+
+               
                - 사이즈 760
                &lt;button type="button" class="btn secondary medium" data-modal-target="#modal1"&gt;모달 760&lt;/button&gt;
 
@@ -3594,6 +3640,112 @@
          </code>
          </pre>
          <!-- 첨부파일 -->
+
+
+         <!-- 아코디언 -->
+         <h2 class="mt-50" id="ACCORDION">아코디언</h2>  
+         <div class="guide-content" style="overflow: hidden;">                    
+               <div class="d-flex">
+
+                  <div>
+                     <h4>기본형</h4>
+                     <div class="accordion-wrap" data-ui="accordion">
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);">아코디언 타이틀</a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용
+                        </div>
+                     </div>
+                     <div class="accordion-wrap" data-ui="accordion">
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);">아코디언 타이틀</a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용
+                        </div>
+                     </div>
+                     <div class="accordion-wrap" data-ui="accordion">
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);">아코디언 타이틀</a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="ml-30">
+                     <h4>열리기전 이웃한 아코디언 닫기</h4>
+                     <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);">아코디언 타이틀</a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용
+                        </div>
+                     </div>
+                     <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);">아코디언 타이틀</a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용
+                        </div>
+                     </div>
+                     <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);">아코디언 타이틀</a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용<br />
+                           아코디언 내용 아코디언 내용 아코디언 내용
+                        </div>
+                     </div>
+                  </div>
+
+              </div>
+         </div>
+
+         <pre>
+         <code class="html"> 
+
+            - 기본형
+            &lt;div class="accordion-wrap" data-ui="accordion"&gt;
+               &lt;div class="accordion-header"&gt;
+                  &lt;a href="javascript: void(0);"&gt;아코디언 타이틀&lt;/a&gt;
+               &lt;/div&gt;
+               &lt;div class="accordion-body d-none"&gt;아코디언 내용&lt;/div&gt;
+            &lt;/div&gt;
+
+            - 열리기전 이웃한 아코디언 닫기
+            &lt;div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;"&gt;
+               &lt;div class="accordion-header"&gt;
+                  &lt;a href="javascript: void(0);"&gt;아코디언 타이틀&lt;/a&gt;
+               &lt;/div&gt;
+               &lt;div class="accordion-body d-none"&gt;아코디언 내용&lt;/div&gt;
+            &lt;/div&gt;
+
+         </code>
+         </pre>
+         <!-- 아코디언 -->
 
          <div class="description">
             <h4></h4>

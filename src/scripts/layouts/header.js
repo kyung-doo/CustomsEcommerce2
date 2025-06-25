@@ -140,9 +140,9 @@ $(() => {
             $("#wrap").removeClass('mobile-open');
             gsap.set($("#header .main-menu"), {x: 0});
             $("#header .main-menu").css({transfrom: 'none'});
+            $('body').css({'overflow': ''});
             if($(".gnb-menu li.active").length > 0) {
                 $("#wrap > .blind").show();
-                $('body').css({'overflow': 'hidden'});
             }
             $('.depth2').show();
             $('.sub-title.mobile-dep-menu').removeClass('mobile-active')

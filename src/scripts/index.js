@@ -4,6 +4,8 @@ import styleToJson from './utils/styleToJson';
 import './components/Tabmenu';
 import './components/Modal';
 import './components/Tooltip';
+import './components/Datepicker';
+import './components/Accordion';
 import './layouts/header';
 
 
@@ -18,11 +20,32 @@ window.$ = $;
 
 // 컴포넌트 UI 생성
 $(() => {
+    createUI();
 
+    // dom 변경 시 UI 다시 생성
+    const domObserver = new MutationObserver(() => {
+        createUI();
+    });
+    domObserver.observe(document.body, {
+        attributes: true, 
+        childList: true, 
+        characterData: true
+    });
+});
+
+function createUI () {
     // 탭메뉴
     $(`*[data-ui="tabmenu"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).tabmenu(props);
+    });
+
+    // 모달 타겟
+    $(`*[data-modal-target]`).each(function () {
+        const modalSelector = $(this).data('modal-target');
+        $(this).off('click').on("click", function () {
+            $(modalSelector).modal('show');
+        });
     });
 
     // 모달
@@ -37,11 +60,15 @@ $(() => {
         $(this).tooltip(props);
     });
 
-    $(`*[data-modal-target]`).each(function () {
-        const modalSelector = $(this).data('modal-target');
-        $(this).on("click", function () {
-            $(modalSelector).modal('show');
-        });
+    // 데이트 피커
+    $(`*[data-ui="datepicker"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).datepicker(props);
     });
-    
-});
+
+    // 아코디언
+    $(`*[data-ui="accordion"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).accordion(props);
+    });
+}
