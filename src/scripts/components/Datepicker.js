@@ -84,8 +84,9 @@ class Datepicker {
         this.btn.on('click', () => {
             if(!this.isShow) {
                 this.isShow = true;
-                this.showCalendar();
+                this.showCalendar();                                
             }
+            this.btn.closest('.calendar-form').addClass('on');
         });
     }
 
@@ -299,10 +300,11 @@ class Datepicker {
         }
         this.calendar.find(".year-con button").on('click', (e) => {
             this.currentYear = $(e.currentTarget).data('year');
-            this.calendar.find(".year-con").hide();
+            this.calendar.find(".year-con").hide();                        
             this.calendar.find(".btn-prev").css({'pointer-events': ''});
             this.calendar.find(".btn-next").css({'pointer-events': ''});
             this.renderCalendar();
+            $('.btn-year').removeClass('on');
         });
     }
 
@@ -321,6 +323,7 @@ class Datepicker {
             this.calendar.find(".btn-prev").css({'pointer-events': ''});
             this.calendar.find(".btn-next").css({'pointer-events': ''});
             this.renderCalendar();
+            $('.btn-month').removeClass('on');
         });
     }
 
@@ -347,6 +350,7 @@ class Datepicker {
         $("html, body").off('scroll.datepicker');
         $(window).off('resize.datepicker');
         this.input.removeAttr('disabled');
+        $('.calendar-form').removeClass('on');        
         if(this.calendar) {
             this.calendar.find(".btn-cancel").off('click');
             this.calendar.find(".btn-enter").off('click');
@@ -356,10 +360,12 @@ class Datepicker {
             this.calendar.find(".btn-month").off('click');
             this.calendar.find('.day-con .day').off('click');
             this.calendar.find(".year-con button").off('click')
-            this.calendar.remove();
+            this.calendar.remove();            
         }
         this.isShow = false;
         this.selectDate = null;
+
+        
     }
 }
 
