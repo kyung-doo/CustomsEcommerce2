@@ -310,6 +310,12 @@ class Datepicker {
             );
         });
 
+        this.calendar.find('.day-con .day').each(function () {
+            if($(this).hasClass('disabled')) {
+                $(this).find("button").attr('disabled', 'disabled');
+            }
+        });
+
         this.calendar.find('.day-con .day button').on('click', ( e ) => {
             const target = $(e.currentTarget).parent();
             this.selectDate = new Date(target.data('date'));
@@ -333,7 +339,11 @@ class Datepicker {
             this.calendar.find(".year-con").hide();                        
             this.calendar.find(".btn-prev").css({'pointer-events': ''});
             this.calendar.find(".btn-next").css({'pointer-events': ''});
-            this.calendar.find(".day-con button").attr('disabled', '');
+            this.calendar.find('.day-con .day').each(function () {
+                if(!$(this).hasClass('disabled')) {
+                    $(this).find("button").attr('disabled', '');
+                }
+            });
             this.renderCalendar();
             $('.btn-year').removeClass('on');
         });
@@ -360,7 +370,11 @@ class Datepicker {
             this.calendar.find(".month-con").hide();
             this.calendar.find(".btn-prev").css({'pointer-events': ''});
             this.calendar.find(".btn-next").css({'pointer-events': ''});
-            this.calendar.find(".day-con button").attr('disabled', '');
+            this.calendar.find('.day-con .day').each(function () {
+                if(!$(this).hasClass('disabled')) {
+                    $(this).find("button").attr('disabled', '');
+                }
+            });
             this.renderCalendar();
             $('.btn-month').removeClass('on');
         });
