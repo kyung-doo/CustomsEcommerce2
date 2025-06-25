@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import $ from "jquery";
 import '@/styles/index.scss';
 import styleToJson from './utils/styleToJson';
 import './components/Tabmenu';
@@ -14,10 +14,10 @@ if('ontouchstart' in window){
     global.isMobile = true;
 }
 global.$ = $;
-createUI();
-
 
 $(() => {
+
+    createUI();
 
     // dom 변경 시 UI 다시 생성
     const domObserver = new MutationObserver(() => {
