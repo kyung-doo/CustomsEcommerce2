@@ -58,7 +58,7 @@
   }
 
   &.bottom .tooltip-action {
-    top: 70px;
+    top: 45px;
   }
 
   &.top {
@@ -67,25 +67,25 @@
     }
 
     &.center .tooltip-action {
-      right: -150px;
+      right: -171px;
     }
 
     &.left .tooltip-action {
-      right: -6px;
+      right: -27px;
     }
   }
 
   &.bottom {
     &.right .tooltip-action {
-      left: -6px;
+      left: -27px;
     }
 
     &.center .tooltip-action {
-      right: -139px;
+      right: -161px;
     }
 
     &.left .tooltip-action {
-      right: -6px;
+      right: -27px;
     }
   }
 }
