@@ -43,19 +43,19 @@
                <div class="search-box">
                   <ul>
                      <li class="col1">
-                        <label class="tit" for="">신고자 <i class="compulsory">필수</i></label>
+                        <span class="tit">신고자 <i class="compulsory">필수</i></span>
                         <div class="search-area">
                            <div class="calendar">
-                              <div class="calendar-form">
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
                                  <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD">
                                  <button class="calendar-btn">시작 달력보기</button>
                               </div>
                               <i class="hy">-</i>
-                              <div class="calendar-form">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
                                  <input type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD">
                                  <button class="calendar-btn">끝나는 달력보기</button>
                               </div>
-                           </div>
+                           </div>                                          
                            <div class="form-chip large">
                               <input type="radio" class="radio" name="chk_1" id="chk_chip_11" checked>
                               <label class="form-chip-outline" for="chk_chip_11">1주일</label>
@@ -74,7 +74,7 @@
                            </div>
                         </div>                        
                      </li>
-                     <li class="col2">
+                     <li class="col1">
                         <label class="tit" for="">운송장부호</label>
                         <div class="search-area">
                             <div class="form-group medium mw-360">                     
