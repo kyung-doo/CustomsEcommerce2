@@ -169,7 +169,7 @@ class Datepicker {
             this.calendar.find(".year-con").scrollTop(top);
             $('.btn-month').removeClass('on');            
             $('.btn-year').addClass('on'); 
-            this.calendar.find(".year-con button").eq(0).focus();
+            this.calendar.find(".year-con button.active").focus();
         });
 
         this.calendar.find(".btn-month").on('click', () => {

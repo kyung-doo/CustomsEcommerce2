@@ -23,6 +23,7 @@ class Modal {
         );
         this.copyHtml = this.ele.html();
         $("body").append(this.ele);
+        this.ele.empty();
     }
 
     show () {
