@@ -87,6 +87,9 @@
     &.close {
         background-image: url('/assets/icons/close.svg');
     }
+    &.close-d {
+        background-image: url('/assets/icons/close-d.svg');
+    }
     &.ellipsis {
         background-image: url('/assets/icons/ellipsis.svg');
     }
@@ -122,6 +125,9 @@
     }
     &.refresh {
         background-image: url('/assets/icons/refresh.svg');
+    }
+    &.refresh-d {
+        background-image: url('/assets/icons/refresh-d.svg');
     }
     &.filter {
         background-image: url('/assets/icons/filter.svg');

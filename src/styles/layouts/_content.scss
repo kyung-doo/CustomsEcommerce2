@@ -1,6 +1,6 @@
 /** 컨텐츠 여백 **/
 .cont-body{
-  .title-type1{margin-top:48px;margin-bottom:24px;}
+  .title-type1{margin-top:42px;margin-bottom:19px;}
   .btn-area:has(.medium){margin-top: 24px;}
   .btn-area:has(.large){margin-top: 48px;}
   .title-type2{margin-top: 48px;margin-bottom: 14px;}
@@ -14,11 +14,11 @@
   .tbl-top{margin-bottom: 19px;}
   .pagination{margin-top: 40px;}
   .title-top{margin-top: 48px;margin-bottom: 24px;}
-  .inp-form .advice-txt{margin-top: 20px;}
+  .advice-txt{margin-top: 20px;}
   [class*=tabmenu-]{margin-top: 48px;}
 }
-.wrap-address-area .inp-form:first-child{margin-top: 0;}
-.wrap-address-area .inp-form{margin-top: 8px;}
+.wrap-form-area .inp-form:first-child{margin-top: 0;}
+.wrap-form-area .inp-form{margin-top: 8px;}
 
 .content-wrap {
   max-width: 1312px;

@@ -316,6 +316,18 @@
   }
 }
 
+@media (max-width: 900px) {
+  .table-wrap table.check{
+    th{
+      padding:16px 10px;
+    }
+    td{
+      padding: 16px 10px;
+      font-size:15px;
+    }
+  }  
+}
+
 @media (max-width: 767px) {
   .board-top {
     flex-direction: column;
