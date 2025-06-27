@@ -1,7 +1,15 @@
 @use "../mixin" as *;
 
 [class*="tabmenu-"] {
-  display: flex;  
+  display: flex;
+  
+  @include mobile {
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
   button {
     font-size: 19px;
@@ -18,6 +26,14 @@
     &:disabled {
       color: #8E8E8E;
       pointer-events: none;
+    }
+  }
+
+  .btn-next,
+  .btn-prev {
+
+    i {
+      filter: invert(100%) brightness(200%);
     }
   }
 }
