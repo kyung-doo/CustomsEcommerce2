@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
+                     <li><span class="txt">관세환급</span></li>   
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">관세환급 신청 결과 조회</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">환급신청 처리결과 상세조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>전자상거래 관세 환급신청 처리결과 절차 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">전자상거래 관세 환급신청 처리결과 절차 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">
+                  <button class="tab-menu active" title="선택됨">기본정보</button>
+                  <button class="tab-menu">물품정보</button>
+                  <button class="tab-menu">환급세액</button>
+                  <button class="tab-menu">제출서류</button>                  
+               </div>  
+               <h5 class="title-type3">환급신청 기본정보</h5>
+               <div class="inp-form">
+                  <ul>                                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">이름</strong>
+                        <div class="inp-box">
+                           <p class="txt">홍길동</p>
+                        </div>                        
+                     </li>                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">주민등록번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">991231 – 1xxxxxxx</p>
+                        </div>                        
+                     </li>                                                             
+                     <li class="col1 txt-list">
+                        <strong class="tit">휴대전화번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">010-1234-1234</p>
+                        </div>                        
+                     </li>                                                             
+                     <li class="col1 txt-list">
+                        <strong class="tit">주소</strong>
+                        <div class="inp-box">
+                           <p class="txt">(35353) 대전광역시 서구 월평동로123-12 월평빌라301호</p>
+                        </div>                        
+                     </li>                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">환급신청세관</strong>
+                        <div class="inp-box">
+                           <p class="txt">인천공항세관</p>
+                        </div>                        
+                     </li>                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">환급지급은행</strong>
+                        <div class="inp-box">
+                           <p class="txt">하나은행</p>
+                        </div>                        
+                     </li>                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">계좌번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">(실명인증완료) ***-******-*****</p>
+                        </div>                        
+                     </li>                                                             
+                  </ul>                  
+               </div>
+               <h5 class="title-type3">환급신청 처리정보</h5>
+               <div class="inp-form">
+                  <ul>                                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">환급신청번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">118521200056X</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">신청일자</strong>
+                        <div class="inp-box">
+                           <p class="txt">2025-05-12</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">환급번호</strong>
+                        <div class="inp-box">
+                           <p class="txt">021641201266</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">환급신청금액</strong>
+                        <div class="inp-box">
+                           <p class="txt">10,000,000 원</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">처리세관</strong>
+                        <div class="inp-box">
+                           <p class="txt">인천공항세관</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">처리과</strong>
+                        <div class="inp-box">
+                           <p class="txt">환급심사과</p>
+                        </div>                        
+                     </li> 
+                     <li class="col1 txt-list bor-list">
+                        <strong class="tit">처리상태</strong>   
+                        <div class="inp-box">
+                           <strong class="txt">서류체줄통보</strong>
+                        </div>                                                                     
+                     </li>
+                  </ul>                  
+               </div>
+               <h5 class="title-type3">환급신청 보완서류 정보</h5>
+               <div class="inp-form">
+                  <ul>                                                                             
+                     <li class="col2 txt-list">
+                        <strong class="tit">통보일시</strong>
+                        <div class="inp-box">
+                           <p class="txt">2025-05-14 12:00:00</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">담당자연락처</strong>
+                        <div class="inp-box">
+                           <p class="txt">010-1234-1234</p>
+                        </div>                        
+                     </li> 
+                     <li class="col2 txt-list">
+                        <strong class="tit">추가서류</strong>
+                        <div class="inp-box">
+                           <p class="txt">구매 인보이스, 반송 운송장, 반품 확인서, 환불 영수증</p>
+                        </div>                        
+                     </li> 
+                  </ul>                  
+               </div>
+               <div class="btn-area btn-end">
+                  <div class="align">                                          
+                     <button type="button" class="btn tertiary medium">보완서류 등록</button>
+                  </div>
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

@@ -4,6 +4,11 @@
   padding: 32px;
   position: relative;
 
+  /** 리스트형식은 마진 24 **/
+  &:has(.txt-list) ul{
+    gap:24px 0
+  }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -65,6 +70,10 @@
             line-height: 150%;
             color: #1D1D1D;
             word-break: break-word;
+
+            button{
+              margin-left: 15px;
+            }
           }
 
           a {
@@ -74,8 +83,8 @@
         }
       }
 
-      /** 상단 점선 **/
-      &.bor-list {
+      /** 점선 **/
+      &[class*=bor-list]{
         padding-top: 24px;
         position: relative;
 
@@ -88,29 +97,17 @@
           width: 100%;
           height: 1px;
           background-image: url(/assets/icons/dotted.svg);
-        }
+        }        
+      }  
+      
+      /** 실선 **/
+      &.bor-list-line{
+          border-top:1px solid #717171;
 
-        .txt{
-          &.success{
-            color:#2768FF;
+          &::before{
+            background-image: none;
           }
-          &.dismissal{
-            color:#EB003B;
-          }          
-        }
       }
-
-      /** 주소 
-      &.address-list button {
-        min-width: 151px;
-      }
-        **/
-
-      /** 이메일 
-      &.email-list button {
-        min-width: 112px;
-      }
-        **/
       
       &.address-list button{
         margin-right: 8px;
@@ -179,10 +176,11 @@
       }
     }
 
-    /** 리스트 타입 **/
+    /** 리스트 타입 
     &.list-form{
       gap: 24px 0;
     }
+      **/
   }
 
   .inp-box {
@@ -215,6 +213,41 @@
       background-color: rgba(0, 0, 0, 0);
       gap: 5px;
       padding-right: 0;
+
+      &.refresh-btn:disabled{
+        i{
+          background-image: url('/assets/icons/refresh-d.svg');
+        }
+      }      
+      &.close-btn:disabled{
+        i{
+          background-image: url('/assets/icons/close-d.svg');
+        }
+      }      
+    }
+  }
+}
+
+/** 리스트 합계 **/
+.wrap-form-area{
+  .total-area{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 24px;
+    padding: 24px 0;
+    border-top:1px solid #717171;
+    p{
+      font-size: 19px;
+      color:#1D1D1D;
+    }
+    strong{
+      margin-left: 24px;
+      font-size: 25px;
+      color:#1D1D1D;
+      span{
+        margin-left: 4px;
+      }
     }
   }
 }
@@ -267,7 +300,7 @@
       }
 
       /** 상단 점선 **/
-      &.bor-list {
+      &[class*=bor-list]{
         flex-direction: column;
 
         .inp-box {
@@ -331,7 +364,7 @@
       }        
 
       /** 상단 점선 **/
-      &.bor-list .inp-box {
+      &[class*=bor-list] .inp-box {
         width: 100% !important;
       }
 

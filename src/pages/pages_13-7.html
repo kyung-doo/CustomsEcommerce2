@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
+                     <li><span class="txt">관세환급</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">관세환급 신청 결과 조회</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">환급신청 결과 및 오류 통보 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>환급신청 처리 절차 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">환급신청 처리 절차 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="search-box">
+                  <ul>
+                     <li class="col1">
+                        <strong class="tit">신청기간 <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">시작 달력보기</button>
+                              </div>
+                              <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">끝나는 달력보기</button>
+                              </div>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1" checked="">
+                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                              <label class="form-chip-outline" for="chk_chip_2">1주일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                              <label class="form-chip-outline" for="chk_chip_3">1개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
+                              <label class="form-chip-outline" for="chk_chip_4">3개월</label>
+                           </div>
+                        </div>                        
+                     </li>       
+                     <li class="col2">
+                        <strong class="tit">처리상태 <i class="compulsory">필수</i></strong>
+                        <div class="search-area check-area">                           
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio2">
+                              <label for="radio2">정상통보</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio3">
+                              <label for="radio3">오류통보</label>
+                           </div>                                                     
+                        </div>                           
+                     </li>    
+                     <li class="col2">
+                        <label class="tit" for="ex00">처리상태 <i class="compulsory">필수</i></label>
+                        <div class="search-area">
+                           <div class="form-group medium mw-360">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex00" required="" title="처리상태 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">전체</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                        </div>                        
+                     </li>          
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="button" class="btn secondary medium">조회</button>                        
+                     </div>
+                  </div>
+               </div>      
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<span>240</span>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+               </div>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>환급신청 결과 및 오류 통보 조회 대한 NO,신청일자,환급신청금액,환급신청번호,환급번호,지급은행,계좌번호,지급일자,처리상태,상세보기 표로 로 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width: 11%;">
+                           <col style="width: 18%;">
+                           <col style="width: 11%;">
+                           <col style="width: 13%;">
+                           <col style="width: 11%;">
+                           <col style="width: 11%;">
+                           <col style="width: 11%;">
+                           <col style="width: 11%;">
+                           <col style="width: 17%;">
+                           <col style="width: 10%;">
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">NO</th>
+                              <th scope="col"><span class="arr-ico">신청일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col">환급신청금액</th>
+                              <th scope="col">환급신청번호</th>
+                              <th scope="col">환급번호</th>
+                              <th scope="col">지급은행</th>
+                              <th scope="col">계좌번호</th>
+                              <th scope="col">지급일자</th>
+                              <th scope="col"><span class="arr-ico">처리상태 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col">상세보기</th>                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>999</td>
+                              <td>2025-12-05</td>
+                              <td>999,999</td>
+                              <td>12345-25-000010</td>
+                              <td>03064-25-00010</td>
+                              <td>하나은행</td>
+                              <td>***-******-*****</td>
+                              <td>2025-12-05</td>
+                              <td><strong class="txt success">이체정상</strong></td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>999</td>
+                              <td>2025-12-05</td>
+                              <td>999,999</td>
+                              <td>12345-25-000010</td>
+                              <td>03064-25-00010</td>
+                              <td>하나은행</td>
+                              <td>***-******-*****</td>
+                              <td>2025-12-05</td>
+                              <td><strong class="txt">서류제출</strong></td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>999</td>
+                              <td>2025-12-05</td>
+                              <td>999,999</td>
+                              <td>12345-25-000010</td>
+                              <td>03064-25-00010</td>
+                              <td>하나은행</td>
+                              <td>***-******-*****</td>
+                              <td>2025-12-05</td>
+                              <td><strong class="txt dismissal">기각</strong></td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>999</td>
+                              <td>2025-12-05</td>
+                              <td>999,999</td>
+                              <td>12345-25-000010</td>
+                              <td>03064-25-00010</td>
+                              <td>하나은행</td>
+                              <td>***-******-*****</td>
+                              <td>2025-12-05</td>
+                              <td>접수</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>
+                           </tr>                                                                                                         
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mobile">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">신청일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청금액</strong>
+                                 <span class="txt">999,999</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청번호</strong>
+                                 <span class="txt">12345-25-000010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급번호</strong>
+                                 <span class="txt">03064-25-00010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급은행</strong>
+                                 <span class="txt">하나은행</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">계좌번호</strong>
+                                 <span class="txt">***-******-*****</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt"><strong class="txt success">이체정상</strong></span>
+                              </li>                                                            
+                              <li>
+                                 <button type="button" class="btn tertiary medium">보기</button>
+                              </li>                                                            
+                           </ul>
+                        </li>  
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">신청일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청금액</strong>
+                                 <span class="txt">999,999</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청번호</strong>
+                                 <span class="txt">12345-25-000010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급번호</strong>
+                                 <span class="txt">03064-25-00010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급은행</strong>
+                                 <span class="txt">하나은행</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">계좌번호</strong>
+                                 <span class="txt">***-******-*****</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt"><strong class="txt">서류제출</strong></span>
+                              </li>                                                            
+                              <li>
+                                 <button type="button" class="btn tertiary medium">보기</button>
+                              </li>                                                            
+                           </ul>
+                        </li> 
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">신청일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청금액</strong>
+                                 <span class="txt">999,999</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청번호</strong>
+                                 <span class="txt">12345-25-000010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급번호</strong>
+                                 <span class="txt">03064-25-00010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급은행</strong>
+                                 <span class="txt">하나은행</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">계좌번호</strong>
+                                 <span class="txt">***-******-*****</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt"><strong class="txt dismissal">기각</strong></span>
+                              </li>                                                            
+                              <li>
+                                 <button type="button" class="btn tertiary medium">보기</button>
+                              </li>                                                            
+                           </ul>
+                        </li> 
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">신청일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청금액</strong>
+                                 <span class="txt">999,999</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급신청번호</strong>
+                                 <span class="txt">12345-25-000010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">환급번호</strong>
+                                 <span class="txt">03064-25-00010</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급은행</strong>
+                                 <span class="txt">하나은행</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">계좌번호</strong>
+                                 <span class="txt">***-******-*****</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">지급일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                            
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">접수</span>
+                              </li>                                                            
+                              <li>
+                                 <button type="button" class="btn tertiary medium">보기</button>
+                              </li>                                                            
+                           </ul>
+                        </li>                                                                                                                                                                                         
+                     </ul>
+                  </div>
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
