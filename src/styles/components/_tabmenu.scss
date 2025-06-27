@@ -37,7 +37,7 @@
     height: 32px;
     z-index: 1;
     border-radius: 50%;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     @include flex();
     i {
       filter: invert(100%) brightness(200%);
