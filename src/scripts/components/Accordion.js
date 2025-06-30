@@ -23,9 +23,11 @@ class Accordion {
                 }
                 target.find(".accordion-body").slideDown(300);
                 target.addClass('active');
+                target.find('i').text('닫기');
             } else {
                 target.find(".accordion-body").slideUp(300);
                 target.removeClass('active');
+                target.find('i').text('열기');
             }
         });
     }
