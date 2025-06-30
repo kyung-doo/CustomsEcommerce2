@@ -437,6 +437,20 @@ strong.txt{
     }
   }
 
+  .title-top{
+    display: flex;
+    flex-direction: column !important;
+    gap:15px;
+
+    > div{
+      width:100%;
+
+      button{
+        width:100% !important;
+      }
+    }
+  }
+
   /** 주소 제목 **/
   .add-title{
     .pc{
@@ -455,8 +469,6 @@ strong.txt{
 
   /** 하단버튼 **/
   .btn-area-type1 .align {
-    flex-wrap: wrap;
-
     button.btn {
       &.secondary {
         width: 100%;

@@ -263,10 +263,12 @@
 @media (max-width: 767px) {
   .file-upload.line{
     .file-upload{
-      flex-direction: column;gap: 24px;
+      flex-direction: column;
+      gap: 24px;
 
       .txt{
-        font-size:17px;line-height: 150%;
+        font-size:17px;
+        line-height: 150%;
       }
     }
   }  

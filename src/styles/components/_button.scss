@@ -175,7 +175,12 @@ button[class*=btn],label[class*=btn] {
 
   .align {
     display: flex;
-    gap:8px;    
-    flex-wrap: wrap;
+    gap:8px;        
   }
 }
+
+.btn-area-type1{
+    .align{
+      flex-wrap: wrap;
+    }  
+  } 

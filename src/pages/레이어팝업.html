@@ -43,6 +43,17 @@
                <p>1. 버튼에서 data-modal-target="#modal1" 을 복사해서 연결하고싶은 버튼에다가 추가한다</p><br>
                <p>2. 레이어팝업 id값과 data-modal-target값을 동일하게 적용한다</p><br><br>               
 
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+                 
+               </div>
+               <!-- 팝업 사용후 삭제해주세요 -->
+
+
+
+
+               
+
                <h1 style="font-size:40px;color:red">기타 팝업</h1>
 
                <!-- 휴대폰번호 중복 목록 -->
@@ -601,9 +612,6 @@
                </div> 
                <!-- // 휴대폰번호 중복 삭제 -->
 
-
-
-
                <!-- 개인통관고유부호 유효기간 만료 안내 -->
                <button type="button" data-modal-target="#modal5" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 유효기간 만료 안내 레이어팝업</button>   
                <div id="modal5" class="modal d-none" data-ui="modal">
@@ -654,155 +662,9 @@
 
                <h1 style="font-size:40px;color:red">해외직구 납부고지환급</h1>
 
-               <!-- 환급신청 보완서류 등록 -->
-               <button type="button" data-modal-target="#modal6" style="width:100%;height:50px;margin-bottom:20px">환급신청 보완서류 등록 레이어팝업</button>                  
-               <div id="modal6" class="modal d-none" data-ui="modal">
-                  <div class="modal-wrap mw-1280">
-                     <div class="modal-header">
-                        <h5>환급신청 보완서류 등록</h5>                     
-                     </div>
-                     <div class="modal-body" tabindex="0">
-                        <div class="modal-cont">
-                           <div class="txt-box-type type1">
-                              <p>주소는 최대 20개 까지 등록 가능합니다. <strong><span>3개</span><i>/</i>20개</strong></p>
-                              <button type="button" class="btn secondary medium">추가</button>
-                           </div>
-                           <div class="wrap-form-area">
-                              <div class="inp-form">                              
-                                 <ul class="file-form">                                                         
-                                    <li class="col1 mw-300">
-                                       <label for="ex1" class="tit">문서종류</label>
-                                       <div class="inp-box">
-                                          <div class="form-group medium">                  
-                                             <div class="form-conts disabled-type2">
-                                                <select class="form-select" id="ex1" required="" title="문서종류를 선택해주세요">                                                       
-                                                   <option value="" disabled hidden>문서종류를 선택해주세요</option>
-                                                   <option value="자가사용물품 반품 기타증빙자료" selected="">자가사용물품 반품 기타증빙자료</option>                                 
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>  
-                                    </li>
-                                    <li class="col1">
-                                       <strong class="tit">첨부파일명</strong>
-                                       <div class="inp-box">
-                                          <div class="file-upload">
-                                             <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
-                                             <div class="file-upload-btn-wrap">
-                                                <input type="file" name="myFile" id="fileu-upload1" hidden="">
-                                                <label for="fileu-upload1" class="btn tertiary medium">
-                                                   파일선택
-                                                </label>
-                                             </div>
-                                          </div>                                       
-                                       </div>                                    
-                                    </li>                                
-                                 </ul>
-                                 <div class="form-btn-area">
-                                    <button class="refresh-btn"><i class="icon refresh medium"></i>초기화</button>
-                                    <button class="close-btn"><i class="icon close medium"></i>삭제</button>
-                                 </div>
-                              </div>
-                              <div class="inp-form">                              
-                                 <ul class="file-form">                                                         
-                                    <li class="col1 mw-300">
-                                       <label for="ex2" class="tit">문서종류</label>
-                                       <div class="inp-box">
-                                          <div class="form-group medium">                  
-                                             <div class="form-conts disabled-type2">
-                                                <select class="form-select" id="ex2" required="" title="문서종류를 선택해주세요">
-                                                   <option value="" disabled hidden>문서종류를 선택해주세요</option>
-                                                   <option value="자가사용물품 반품 기타증빙자료" selected="">자가사용물품 반품 기타증빙자료</option>                                 
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>  
-                                    </li>
-                                    <li class="col1">
-                                       <strong class="tit">첨부파일명</strong>
-                                       <div class="inp-box">
-                                          <div class="file-upload">
-                                             <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
-                                             <div class="file-upload-btn-wrap">
-                                                <input type="file" name="myFile" id="fileu-upload2" hidden="">
-                                                <label for="fileu-upload2" class="btn tertiary medium">
-                                                   파일선택
-                                                </label>
-                                             </div>
-                                          </div>                                       
-                                       </div>                                    
-                                    </li>                                
-                                 </ul>
-                                 <div class="form-btn-area">
-                                    <button class="refresh-btn"><i class="icon refresh medium"></i>초기화</button>
-                                    <button class="close-btn"><i class="icon close medium"></i>삭제</button>
-                                 </div>
-                              </div>
-                              <div class="inp-form">                              
-                                 <ul class="file-form">                                                         
-                                    <li class="col1 mw-300">
-                                       <label for="ex3" class="tit">문서종류</label>
-                                       <div class="inp-box">
-                                          <div class="form-group medium">                  
-                                             <div class="form-conts disabled-type2">
-                                                <select class="form-select" id="ex3" required="" title="문서종류를 선택해주세요">
-                                                   <option value="" disabled hidden>문서종류를 선택해주세요</option>
-                                                   <option value="자가사용물품 반품 기타증빙자료" selected="">자가사용물품 반품 기타증빙자료</option>                                 
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>  
-                                    </li>
-                                    <li class="col1">
-                                       <strong class="tit">첨부파일명</strong>
-                                       <div class="inp-box">
-                                          <div class="file-upload">
-                                             <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
-                                             <div class="file-upload-btn-wrap">
-                                                <input type="file" name="myFile" id="fileu-upload3" hidden="">
-                                                <label for="fileu-upload3" class="btn tertiary medium">
-                                                   파일선택
-                                                </label>
-                                             </div>
-                                          </div>                                       
-                                       </div>                                    
-                                    </li>                                
-                                 </ul>
-                                 <div class="form-btn-area">
-                                    <button class="refresh-btn"><i class="icon refresh medium"></i>초기화</button>
-                                    <button class="close-btn"><i class="icon close medium"></i>삭제</button>
-                                 </div>
-                              </div>
-                           </div>
-                           <p class="advice-txt">파일은 종류별 최대 20개 200MB로 제한됩니다.</p>
-                        </div>                        
-                     </div>
-                     <div class="modal-footer">
-                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
-                           <button type="button" class="btn modal-enter primary medium">제출</button>
-                     </div>
-                  </div>
-               </div> 
-               <!-- 환급신청 보완서류 등록 -->
+               
 
-               <!-- 환급 통지서 출력 -->
-               <button type="button" data-modal-target="#modal7" style="width:100%;height:50px;margin-bottom:20px">환급 통지서 출력 레이어팝업</button>   
-               <div id="modal7" class="modal d-none" data-ui="modal">
-                  <div class="modal-wrap mw-1280">
-                     <div class="modal-header">
-                        <h5>환급 통지서 출력</h5>                     
-                     </div>
-                     <div class="modal-body" tabindex="0">                        
-                        <div class="modal-cont">
-                           콘텐츠 영역
-                        </div>
-                     </div>
-                     <div class="modal-footer">
-                           <button type="button" class="btn modal-close tertiary medium">닫기</button>                           
-                     </div>
-                  </div>
-               </div>
-               <!-- // 환급 통지서 출력 -->
+               
 
                <!-- 환급신청 보완서류 등록 -->
                <button type="button" data-modal-target="#modal202" style="width:100%;height:50px;margin-bottom:20px">환급신청 보완서류 등록 레이어팝업</button>                  

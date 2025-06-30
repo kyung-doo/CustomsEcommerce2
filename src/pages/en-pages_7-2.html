@@ -48,80 +48,82 @@
                      <button type="button" class="btn tertiary  medium">Reset</button>
                   </div>               
                </div>
-               <div class="inp-form">
-                  <ul>                                                         
-                     <li class="col2">
-                        <label for="ex1" class="tit">Personal customs clearance code of the stolen person</label>
-                        <div class="inp-box">
-                           <div class="form-group medium mw-389">                  
-                              <div class="form-conts disabled-type1">
-                                 <input type="text" id="ex1" class="input" value="P240000000000(사용)" title="피도용 개인통관고유부호를 확인해주세요" disabled>
-                              </div>                           
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2">
+                           <label for="ex1" class="tit">Personal customs clearance code of the stolen person</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-389">                  
+                                 <div class="form-conts disabled-type1">
+                                    <input type="text" id="ex1" class="input" value="P240000000000(사용)" title="피도용 개인통관고유부호를 확인해주세요" disabled>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col2">
+                           <label for="ex2" class="tit">Reporter's name</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-389">                  
+                                 <div class="form-conts disabled-type1">
+                                    <input type="text" id="ex2" class="input" value="홍길동" title="신고인 이름을 확인해주세요" disabled>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1">
+                           <label for="ex3" class="tit">Reporter's contact information</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-147">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex3" required="" title="첫번쨰 번호를 선택해주세요">
+                                    <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                    <option value="042" selected="">042</option>                              
+                                    </select>
+                                 </div>                           
+                              </div>
+                              <i class="hy">-</i>
+                              <div class="form-group medium mw-147">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" value="1234" title="두번쨰 번호를 입력해주세요">
+                                 </div>                           
+                              </div>     
+                              <i class="hy">-</i>
+                              <div class="form-group medium mw-147">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" value="1234" title="마지막 번호를 입력해주세요">
+                                 </div>                           
+                              </div>     
                            </div>
-                        </div>  
-                     </li>
-                     <li class="col2">
-                        <label for="ex2" class="tit">Reporter's name</label>
-                        <div class="inp-box">
-                           <div class="form-group medium mw-389">                  
-                              <div class="form-conts disabled-type1">
-                                 <input type="text" id="ex2" class="input" value="홍길동" title="신고인 이름을 확인해주세요" disabled>
-                              </div>                           
-                           </div>
-                        </div>  
-                     </li>
-                     <li class="col1">
-                        <label for="ex3" class="tit">Reporter's contact information</label>
-                        <div class="inp-box">
-                           <div class="form-group medium mw-147">                  
-                              <div class="form-conts">
-                                 <select class="form-select" id="ex3" required="" title="첫번쨰 번호를 선택해주세요">
-                                 <option value="" disabled="" hidden="">조건을 선택해주세요</option>
-                                 <option value="042" selected="">042</option>                              
-                                 </select>
-                              </div>                           
-                           </div>
-                           <i class="hy">-</i>
-                           <div class="form-group medium mw-147">                     
-                              <div class="form-conts">
-                                 <input type="text" class="input" value="1234" title="두번쨰 번호를 입력해주세요">
-                              </div>                           
-                           </div>     
-                           <i class="hy">-</i>
-                           <div class="form-group medium mw-147">                     
-                              <div class="form-conts">
-                                 <input type="text" class="input" value="1234" title="마지막 번호를 입력해주세요">
-                              </div>                           
-                           </div>     
-                        </div>
-                     </li>
-                     <li class="col1">
-                        <label for="ex5" class="tit">Reporter's email</label>
-                        <div class="inp-box">
-                           <div class="form-group medium mw-283">                     
-                              <div class="form-conts">
-                                 <input type="text" id="ex5" class="input" value="hongGilDong" title="아이디를 입력해주세요">
-                              </div>                           
-                           </div>
-                           <i class="hy">@</i>
-                           <div class="form-group medium mw-283">                     
-                              <div class="form-conts">
-                                 <input type="text" class="input" value="naver.com" title="메일을 입력해주세요">
-                              </div>                           
-                           </div>
-                           <div class="form-group medium mw-283">                  
-                              <div class="form-conts">
-                                 <select class="form-select" required="" title="메일을 선택해주세요">
-                                    <option value="" disabled="" hidden="">조건을선택해주세요</option>                                 
-                                    <option value="직접입력" selected="">직접입력</option>
-                                 </select>
-                              </div>                           
-                           </div>
-                           <button type="button" class="btn secondary medium">이메일 인증</button>                                 
-                        </div>  
-                        <p class="advice-txt">The reporter information you entered will only be used to inform you of the results of your theft report processing, and will not be reflected in your personal customs clearance code.</p>                      
-                     </li>
-                  </ul>                  
+                        </li>
+                        <li class="col1">
+                           <label for="ex5" class="tit">Reporter's email</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-283">                     
+                                 <div class="form-conts">
+                                    <input type="text" id="ex5" class="input" value="hongGilDong" title="아이디를 입력해주세요">
+                                 </div>                           
+                              </div>
+                              <i class="hy">@</i>
+                              <div class="form-group medium mw-283">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" value="naver.com" title="메일을 입력해주세요">
+                                 </div>                           
+                              </div>
+                              <div class="form-group medium mw-283">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" required="" title="메일을 선택해주세요">
+                                       <option value="" disabled="" hidden="">조건을선택해주세요</option>                                 
+                                       <option value="직접입력" selected="">직접입력</option>
+                                    </select>
+                                 </div>                           
+                              </div>
+                              <button type="button" class="btn secondary medium">이메일 인증</button>                                 
+                           </div>  
+                           <p class="advice-txt">The reporter information you entered will only be used to inform you of the results of your theft report processing, and will not be reflected in your personal customs clearance code.</p>                      
+                        </li>
+                     </ul>                  
+                  </div>
                </div>
                <h5 class="title-type3">신고정보 입력</h5>                             
                <div class="wrap-form-area">

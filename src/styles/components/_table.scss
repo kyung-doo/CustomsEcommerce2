@@ -144,6 +144,7 @@
 
   .form-check{
     width:20px;    
+    display: inline-block;
   }  
 
   .th-turn {
@@ -255,7 +256,7 @@
 
       li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         padding: 10px 8px;
         justify-content: space-between;
       }
@@ -283,6 +284,7 @@
       color: #1D1D1D;
       text-align: right;
       padding-left: 10px;
+      line-height: 150%;
 
       * {
         font-size: 17px;
