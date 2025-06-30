@@ -1,7 +1,15 @@
 @use "../mixin" as *;
 
 [class*="tabmenu-"] {
-  display: flex;  
+  position: relative;
+  .tabmenu-wrap {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
   button {
     font-size: 19px;
@@ -19,6 +27,27 @@
       color: #8E8E8E;
       pointer-events: none;
     }
+  }
+
+  .btn-next,
+  .btn-prev {
+    position: absolute;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    @include flex();
+    i {
+      filter: invert(100%) brightness(200%);
+    }
+  }
+  .btn-prev {
+    left: 0;
+  }
+  .btn-next {
+    right: 0;
   }
 }
 

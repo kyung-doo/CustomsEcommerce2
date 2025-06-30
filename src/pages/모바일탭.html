@@ -2,6 +2,13 @@
 <html lang="ko">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+   <script type="text/javascript">
+        $(() => {
+            $(".tabmenu-line1").on('change', (e, index) => {
+                console.log('탭메뉴 체인지: ', index);
+            });
+        });
+   </script>
 </head>
 <body>
    <div id="wrap">
@@ -31,35 +38,13 @@
             <h3 class="head-tit">개인통관고유부호 조회</h3>
         </div>
         <div class="cont-body">
-            <h4>한개짜리 달력</h4>
-            <div class="search-box">
-                <ul>
-                    <li class="col1">
-                        <div class="search-area">
-                            <div class="calendar" data-ui="datepicker">
-                                <input type="text" value="2025-06-01" placeholder="YYYY-MM-DD" maxlength="10">
-                                <button class="calendar-btn">달력보기</button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <h4>범위지정 달력</h4>
-            <div class="search-box">
-                <ul>
-                    <li class="col1">
-                        <div class="search-area">
-                            <div class="calendar" data-ui="datepicker" data-props="maxInput: '#endDate'">
-                                <input id="startDate" type="text" placeholder="YYYY-MM-DD" maxlength="10">
-                                <button class="calendar-btn">달력보기</button>
-                            </div>
-                            <div class="calendar" data-ui="datepicker" data-props="minInput: '#startDate'">
-                                <input id="endDate" type="text" placeholder="YYYY-MM-DD" maxlength="10">
-                                <button class="calendar-btn">달력보기</button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+            <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">
+                <button class="tab-menu " title="선택됨">기본정보</button>
+                <button class="tab-menu active">물품정보</button>
+                <button class="tab-menu ">환급세액</button>
+                <button class="tab-menu ">제출서류</button>
+                <button class="tab-menu ">물품정보</button>
+                <button class="tab-menu ">환급세액</button>                  
             </div>
             <div style="height: 800px"></div>
         </div>
