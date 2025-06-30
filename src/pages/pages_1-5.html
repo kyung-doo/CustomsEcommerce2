@@ -146,7 +146,18 @@
                      </li>
                   </ul>                  
                </div>
-               <h5 class="title-type3">배송 주소 <span class="txt">주소는 최대 20개 까지 등록 가능합니다.</span></h5>
+
+               <div class="add-title">
+                  <div class="pc">
+                     <h5 class="title-type3">배송 주소 <span class="txt">주소는 최대 20개 까지 등록 가능합니다.</span></h5>
+                  </div>
+                  <div class="mo">
+                     <h5 class="title-type medium">배송 주소</h5>
+                     <div class="txt-box-type type1">
+                        <p>주소는 최대 20개 까지 등록 가능합니다. <strong><span>3개</span><i>/</i>20개</strong></p>                        
+                     </div>
+                  </div>
+               </div>    
                <div class="wrap-check-tbl">
                   <div class="table-wrap pc">
                      <table class="tbl col check">
@@ -169,66 +180,49 @@
                         </thead>
                         <tbody>
                            <tr>
-                              <td class="text-center">6</td>
+                              <td>6</td>
                               <td>우리집1</td>
-                              <td class="text-center">35351</td>
+                              <td>35351</td>
                               <td>대전광역시 서구 월평동123</td>                        
                               <td>우리집빌라 301호</td>                        
                            </tr>                                                                                                         
                         </tbody>
                      </table>
                   </div>
-                  <div class="table-wrap mobile">                     
-                     <ul class="wrap-body">
-                        <li>
-                           <ul class="body">                              
-                              <li>
-                                 <strong class="title">NO</strong>
-                                 <span class="txt">3</span>
-                              </li>
-                              <li>
-                                 <strong class="title">배송지명</strong>
-                                 <span class="txt">2025-12-05</span>
-                              </li>
-                              <li>
-                                 <strong class="title">우편번호</strong>
-                                 <span class="txt">35351</span>
-                              </li>
-                              <li>
-                                 <strong class="title">기본주소</strong>
-                                 <span class="txt">대전광역시 서구 월평동123</span>
-                              </li>
-                              <li>
-                                 <strong class="title">상세주소</strong>
-                                 <span class="txt">우리집빌라 301호</span>
-                              </li>
-                           </ul>
-                        </li>                                                          
-                        <li>
-                           <ul class="body">                              
-                              <li>
-                                 <strong class="title">NO</strong>
-                                 <span class="txt">3</span>
-                              </li>
-                              <li>
-                                 <strong class="title">배송지명</strong>
-                                 <span class="txt">2025-12-05</span>
-                              </li>
-                              <li>
-                                 <strong class="title">우편번호</strong>
-                                 <span class="txt">35351</span>
-                              </li>
-                              <li>
-                                 <strong class="title">기본주소</strong>
-                                 <span class="txt">대전광역시 서구 월평동123</span>
-                              </li>
-                              <li>
-                                 <strong class="title">상세주소</strong>
-                                 <span class="txt">우리집빌라 301호</span>
-                              </li>
-                           </ul>
-                        </li>                                                          
-                     </ul>
+                  <div class="wrap-form-area add-mo">
+                     <div class="inp-form">
+                        <ul>                                                         
+                           <li class="col2 txt-list">
+                              <strong class="add-tit">우리집(세종)</strong>
+                              <div class="inp-box">
+                                 <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
+                                 <p class="add-txt">가락마을 10단지, 1234-5678</p>
+                              </div>                        
+                           </li>
+                        </ul>                        
+                     </div>                  
+                     <div class="inp-form">
+                        <ul>                                                         
+                           <li class="col2 txt-list">
+                              <strong class="add-tit">우리집(세종)</strong>
+                              <div class="inp-box">
+                                 <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
+                                 <p class="add-txt">가락마을 10단지, 1234-5678</p>
+                              </div>                        
+                           </li>
+                        </ul>                        
+                     </div>                  
+                     <div class="inp-form">
+                        <ul>                                                         
+                           <li class="col2 txt-list">
+                              <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
+                              <div class="inp-box">
+                                 <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
+                                 <p class="add-txt">가락마을 10단지, 1234-5678</p>
+                              </div>                        
+                           </li>
+                        </ul>                        
+                     </div>                  
                   </div>
                </div>
                <div class="btn-area btn-between">
@@ -238,7 +232,73 @@
                   <div class="align">                            
                      <button type="button" class="btn primary large">저장</button>                 
                   </div>
-               </div>               
+               </div>     
+               
+               
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+                  <!-- 개인통관고유부호 정보변경 -->
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 정보변경</button>   
+                  <div id="modal1" class="modal d-none" data-ui="modal">
+                     <div class="modal-wrap mw-760">
+                        <div class="modal-header">
+                           <h5>개인통관고유부호 정보변경</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <p class="txt-type">개인통관고유부호 재발급 안내 메시지를 보여주고<br> 안내에 대한 동의 여부를 확인 받음</p>
+                           </div>
+                           <div class="modal-cont">
+                              <div class="txt-box-type">
+                                 <p class="txt-type">안내 사항에 대해 확인 하였습니다.</p>
+                                 <div class="form-check">
+                                    <input type="checkbox" name="chk_2" id="chk_2">
+                                    <label for="chk_2">확인</label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                              <button type="button" class="btn modal-enter primary medium">정보변경</button>
+                        </div>
+                     </div>
+                  </div> 
+                  <!-- // 개인통관고유부호 정보변경 -->
+
+                  <!-- 개인통관고유부호 정보변경 -->
+                  <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 정보변경</button>   
+                  <div id="modal2" class="modal d-none type1" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>개인통관고유부호 정보변경</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <div class="txt-box-type">
+                                 <p class="txt-type text-center">개인통관고유부호 정보변경 완료 안내 문구<br> 및 이미지 추후 추가 예정</p>
+                              </div>
+                           </div>
+                           <div class="modal-cont">
+                              <div class="txt-box-type">
+                                 <p class="txt-type text-center">국민비서 구삐 홍보 배너 보여줌</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="modal-footer">                           
+                           <button type="button" class="btn modal-enter primary medium">확인</button>
+                        </div>
+                     </div>
+                  </div> 
+                  <!-- // 개인통관고유부호 정보변경 -->
+               </div>
+               <!-- 팝업 사용후 삭제해주세요 -->
+
+
+
+
             </div>
             <!--// 내용 -->
          </div>

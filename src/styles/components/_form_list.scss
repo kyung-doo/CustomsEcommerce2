@@ -6,7 +6,11 @@
 
   /** 리스트형식은 마진 24 **/
   &:has(.txt-list) ul{
-    gap:24px 0
+    gap:15px 0
+  }  
+
+  &:has(.form-btn-area){
+    padding: 32px 130px 32px 32px;
   }
 
   ul {
@@ -20,6 +24,15 @@
       font-size: 15px;
       font-weight: 700;
       color: #1D1D1D;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding-right: 17px;
+
+      .compulsory{
+        right:0
+      }
 
       + .form-group {
         display: flex;
@@ -40,7 +53,7 @@
       &.txt-list {
         display: flex;
         margin-left: 40px;
-        align-items: flex-start;
+        align-items: center;
 
         .tit {
           font-size: 15px;
@@ -48,7 +61,7 @@
           color: #1D1D1D;
           display: flex;
           align-items: center;
-          width: 180px;
+          width: 190px;
           line-height: 150%;
           position: relative;
           word-break: break-word;
@@ -87,6 +100,7 @@
       &[class*=bor-list]{
         padding-top: 24px;
         position: relative;
+        align-items: flex-start;
 
         &::before {
           content: "";
@@ -101,12 +115,15 @@
       }  
       
       /** 실선 **/
+      &[class*=bor-list-line]::before{
+        background-image: none;
+      }
       &.bor-list-line{
-          border-top:1px solid #717171;
+          border-top:1px solid #717171;          
+      }
 
-          &::before{
-            background-image: none;
-          }
+      &.bor-list-line1{
+        border-top:1px solid #D8D8D8;        
       }
       
       &.address-list button{
@@ -188,13 +205,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-
-  .tit {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+  }  
 
   .form-group, .wrap-form-group {
     width: 100%;
@@ -249,6 +260,70 @@
         margin-left: 4px;
       }
     }
+  }
+}
+
+/** 주소추가 pc 모바일 **/
+.add-mo{
+  display: none;
+}
+
+.add-pc{
+  display: block;
+}
+
+/** 주소찾기 모바일 **/
+.add-mo{
+  margin-top: 24px;
+  .inp-form{
+    padding: 24px !important;
+    li{
+      flex-direction: column;
+      .inp-box{
+        text-align: left !important;
+        padding-left: 0 !important;
+        margin-top: 14px !important;
+        width: 100%;
+      }
+      .add-tit{
+        font-size: 19px;
+        font-weight: 600;
+        color:#1D1D1D;
+        display: flex;
+        align-items: center;
+        width:100%;
+
+        .add-modify-btn{
+          font-size:0;
+          width:0;
+          background-color: rgba(0,0,0,0.0);
+          margin-left: 8px;
+        }        
+      }
+      .add-txt{
+        font-size: 17px;
+        color:#555;
+        line-height: 150%;
+      }
+    }  
+  }  
+
+  .form-btn-area{
+    top:24px !important
+  }
+}
+
+.batch-list{  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+
+  .txt{
+    font-size: 17px;
+    color:#1D1D1D;
+    line-height: 150%;
   }
 }
 
@@ -378,5 +453,19 @@
       }
 
     }
+  }
+
+
+  /** 주소추가 pc 모바일 **/
+  .add-mo{
+    display: block;
+  }
+
+  .add-pc,.add-compulsory{
+    display: none !important;
+  }
+
+  .batch-list{
+    flex-direction: column;
   }
 }

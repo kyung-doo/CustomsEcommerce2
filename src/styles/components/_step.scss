@@ -21,7 +21,7 @@
   }
 
   li {
-    padding: 32px 0 0 0;
+    padding: 32px 32px 0 0;
     position: relative;
 
     &:before, &:after {
@@ -71,7 +71,7 @@
         border: 1.2px solid #246BEB;
         background-color: #fff;
         background-image: url('/assets/icons/step-ellipsis.svg');
-        background-position: center center;
+        background-position: center;
         background-repeat: no-repeat;
         width: 17px;
         height: 16px;

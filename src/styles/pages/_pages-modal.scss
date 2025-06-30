@@ -55,6 +55,45 @@
   }
 }
 
+.modal-wrap:has(.address-list){
+  padding: 24px;
+
+  .inp-form{
+    border:0;
+    padding: 55px 0 0 0;
+    border-top:1px solid #E4E4E4;
+
+     .compulsory{
+        bottom:-6px;
+      }
+      
+    .address-list{        
+      .inp-box{
+        flex-wrap: wrap;
+
+       
+
+        .first-add{
+          max-width:152px;
+        }
+
+        .add-btn{
+          width:150px;
+          margin-right: 0
+        }
+      }      
+    }    
+  }
+
+  .compulsory-txt{
+    margin-bottom: 14px;
+
+    .compulsory{
+       bottom:7px;
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .certification-number{
         padding: 22px 10px;

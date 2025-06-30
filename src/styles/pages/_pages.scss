@@ -1,7 +1,9 @@
 // .cont-area * {
 //   transition: all .3s;
 // }
-
+.testtest{
+  margin-top: 100px;
+}
 /** 리스트 툴팁 아이콘 **/
 .tooltip-ico {
   width: 16px;
@@ -13,15 +15,23 @@
 }
 
 .contextual-help {
-  margin-top: -5px;
-  margin-left: 4px;
+  display: inline-block;
+  height: 16px;
+  line-height: 0;
+  position: absolute;
+  bottom: 4px;
+  margin-left: 5px;
+}
+
+.tooltip-tit .title{
+  display: inline !important;    
 }
 
 /** 제목 **/
 [class*=title-type]{  
   color:#1D1D1D;
   line-height: 150%;
-  font-size: 21px;
+  font-size: 21px;  
 
   .txt{
     font-size:15px;
@@ -53,13 +63,49 @@
   }  
 }
 
+/** 주소 제목 **/
+.add-title{
+  .pc{
+    display: block;
+  }
+
+  .mo{
+    display: none;
+
+    .title-type{
+      margin-top: 43px;
+    }
+
+    .txt-box-type{
+      margin-top: 19px;
+
+      strong{
+        margin: 8px 0 0 0 !important;
+      }
+    }
+  }
+
+
+}
+
 /** 알림동의 **/
 .agree-title{
-  display: flex;
+  display: inline-block;
   align-items: center;  
+  position: relative;
+  padding-left: 45px;
 
-  .title-type > span{
-    margin-right: 8px;
+  .title-type{
+    
+    > span{
+      margin-right: 8px;
+      position: absolute;
+      left: 0;
+    }
+  } 
+
+  .contextual-help{
+    bottom: 5px;
   }
 }
 
@@ -91,28 +137,36 @@ strong.txt{
 
 /** 필수입력 **/
 .compulsory-txt {
+  position: relative;
   font-size: 15px;
   font-weight: 400;
   color: #1D1D1D;
   display: flex;  
   line-height: 150%;
   align-items: flex-start;
+  padding-left: 15px;
 
 
   .compulsory{
-    margin-top: 6px;
+    margin: 0;
+    bottom: 6px;
+    height: 0;
+    left: 0;
   }
 }
 
 .compulsory {
+  position: absolute;
+  bottom: 3px;
   font-size: 0;
   list-style: none;
   display: inline-block;
-  background-image: url("/assets/icons/compulsory.svg");
+  background-image: url(/assets/icons/compulsory.svg);
   min-width: 8px;
   min-height: 8px;
-  margin-right: 4px;  
+  margin-right: 4px;
   background-repeat: no-repeat;
+  margin-left: 5px;
 }
 
 /** 도움말 **/
@@ -191,7 +245,7 @@ strong.txt{
     p {
       font-size: 17px;
       color: #1D1D1D;
-      padding-right: 10px;
+      padding-right: 40px;
       line-height: 150%;
     }
 
@@ -241,19 +295,21 @@ strong.txt{
       }
 
       .search-area {
+        position: relative;
         display: flex;
         width: calc(100% - 120px);
         gap: 8px;
         flex-wrap: wrap;
+        padding-left: 20px;
       }
 
       .tit {
-        display: flex;
-        gap: 8px;
+        display: inline;
+        position: relative;        
         width: 120px;
         align-items: center;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 700;        
       }
 
       .form-group {
@@ -337,10 +393,15 @@ strong.txt{
 
       .search-area {
         margin-top: 20px;
+        padding-left: 0;
       }
 
       .form-group {
         max-width: 100%;
+      }
+
+      .tit{
+        width:100%;
       }
     }
   }
@@ -373,6 +434,17 @@ strong.txt{
         margin-top: 12px;
         font-size:15px;
       }
+    }
+  }
+
+  /** 주소 제목 **/
+  .add-title{
+    .pc{
+      display: none;
+    }
+
+    .mo{
+      display: block;
     }
   }
   
@@ -410,29 +482,41 @@ strong.txt{
 
   /** 검색 **/
   .search-box {
+    .tit{
+      width:100% !important;
+    }
+
     .btn-area::before {
       display: none;
 
       .search-area{
-        margin-top: 8px !important;        
+        margin-top: 8px !important;      
       }
     }        
   }
 
   
   [class*=txt-box-type].type1{    
-    p{
+    display: flex;
+    flex-direction: column;
+    p{      
       width:100%;
       display: flex;
       flex-direction: column;
       font-size: 17px;
       line-height: 150%;
+      padding-right: 0;
 
       strong{
         font-size: 15px;
-        margin: 15px 0 0 0;
+        margin: 10px 0 0 0;
       }
-    }    
+    }   
+    
+    button{
+      margin-top: 19px;
+      width: 100%;
+    }
   }
   
 

@@ -1,8 +1,6 @@
 @use "../mixin" as *;
 
 .contextual-help {
-  position: relative;
-
   .tooltip-btn-area {
     display: inline-block;
     position: relative;
@@ -113,7 +111,7 @@
     font-size: 15px;
     font-weight: 700;
     color: #1D1D1D;
-  }
+  }  
 
   .tooltip-contents {
     margin-top: 16px;

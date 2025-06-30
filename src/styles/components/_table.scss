@@ -266,6 +266,8 @@
       font-weight: 700;
       color: #1D1D1D;
       width: 120px;
+      word-break: auto-phrase;
+      line-height: 150%;
 
       * {
         font-size: 15px;
