@@ -401,6 +401,21 @@
       right: 24px;      
     }    
   }
+
+  /** 주소추가 pc 모바일 **/
+  .add-mo{
+    display: block;
+  }
+
+  .add-pc,.add-compulsory{
+    display: none !important;
+  }
+
+  .batch-list{
+    flex-direction: column;
+  }
+
+  
 }
 
 @media (max-width: 480px) {
@@ -453,19 +468,5 @@
       }
 
     }
-  }
-
-
-  /** 주소추가 pc 모바일 **/
-  .add-mo{
-    display: block;
-  }
-
-  .add-pc,.add-compulsory{
-    display: none !important;
-  }
-
-  .batch-list{
-    flex-direction: column;
   }
 }

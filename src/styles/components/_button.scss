@@ -160,7 +160,7 @@ button[class*=btn],label[class*=btn] {
 
 .btn-area {
   display: flex;
-  gap: 8px;
+  gap: 8px;  
     &.btn-end {
       justify-content: flex-end;
     }
@@ -176,5 +176,6 @@ button[class*=btn],label[class*=btn] {
   .align {
     display: flex;
     gap:8px;    
+    flex-wrap: wrap;
   }
 }

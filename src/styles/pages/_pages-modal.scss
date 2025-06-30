@@ -8,6 +8,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;  
+
+    .txt-type{
+      padding-right: 20px;
+    }
   }
 
   .effective-time {
@@ -60,7 +64,7 @@
 
   .inp-form{
     border:0;
-    padding: 55px 0 0 0;
+    padding: 60px 0 0 0;
     border-top:1px solid #E4E4E4;
 
      .compulsory{
