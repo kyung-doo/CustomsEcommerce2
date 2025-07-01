@@ -107,9 +107,9 @@ class Tabmenu {
             this.scrollFlag = false;
         } else {
             if(!this.scrollFlag) {
-                if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) === 0) {
+                if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) <= 2) {
                     this.ele.find('.btn-next').show();
-                } else if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) === parseInt(this.getScrollWidth() - this.ele.width())) {
+                } else if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) >= parseInt(this.getScrollWidth() - this.ele.width()) - 2) {
                     this.ele.find('.btn-prev').show();
                 } else {
                     this.ele.find('.btn-next').show();
@@ -122,9 +122,9 @@ class Tabmenu {
     }
 
     onScroll () {
-        if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) === 0) {
+        if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) <= 2) {
             this.ele.find('.btn-prev').hide();
-        } else if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) === parseInt(this.getScrollWidth() - this.ele.width())) {
+        } else if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) >= parseInt(this.getScrollWidth() - this.ele.width()) - 2) {
             this.ele.find('.btn-next').hide();
         } else {
             this.ele.find('.btn-next').show();
