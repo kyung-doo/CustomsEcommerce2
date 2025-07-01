@@ -71,7 +71,7 @@
   table {
     table-layout: fixed;
     width: 100%;
-    border-collapse: collapse;
+    /*border-collapse: separate;*/
     border-spacing: 0;
   }
 
@@ -136,7 +136,7 @@
 
     &.cont {
       th {
-        padding: 10px 16px;
+        padding: 16px 16px;
       }
 
       td {
@@ -163,15 +163,17 @@
   }  
 
   .th-turn {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 0;
-    right: -7px;
-    background-image: url("/assets/icons/tb-turn.svg");
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0);
-    transition: all 0.3s;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      background-image: url(/assets/icons/tb-turn.svg);
+      background-position: center;
+      background-color: rgba(0, 0, 0, 0);
+      transition: all 0.3s;
+      transform: translateY(-50%);
+      padding: 0;
 
     &.active {
       transform: rotate(180deg);
@@ -180,7 +182,8 @@
 
   .arr-ico {
     position: relative;
-    padding-right: 20px;
+    padding-right: 18px;
+    display: block;
   }
 
   a.txt {
@@ -213,16 +216,12 @@
 }
 
 .table-wrap {
-  table.cont {
-    th {
-      text-align: center;
-    }
-
+  table.cont {    
     tr {
       &.line1 th {
         background-color: #CDD1D5;
-        border-bottom: 0;
-        border-top: 1px solid #58616A;
+        border-bottom: 0;        
+        border-top: 1px solid #58616A;        
 
         &:first-child {
           border-left: 1px solid #CDD1D5;
@@ -233,22 +232,17 @@
         }
       }
 
-      &.line2 th {
+      th {
         border: 1px solid #B1B8BE;
-
-        &:first-child {
-          border-left: 1px solid #E6E8EA;
-        }
-
-        &:last-child {
-          border-right: 1px solid #E6E8EA;
-        }
+        border-top: none;
+        border-left: none;        
       }
     }
 
     td {
       border: 1px solid #E4E4E4;
       border-top: none;
+      border-right:none;
     }
   }
 
@@ -332,6 +326,7 @@
 
 /** 단순형 테이블 **/  
 .wrap-cont-tbl{   
+  position: relative;  
   .modal-tit{
     font-size:17px;
     color:#1D1D1D;
@@ -340,7 +335,19 @@
   .table-wrap{
     table{
       position: relative;
-      margin-top: 15px;        
+      margin-top: 15px;    
+      
+      &::after{
+        content:"";
+        display: block;
+        position: absolute;   
+        top:0;
+        right:0;
+        background-color: #E4E4E4; 
+        width: 1px;
+        height:100%;        
+        z-index: 1;
+      }
 
       &::before{
         content:"";
@@ -362,10 +369,6 @@
       font-weight: 400;
       margin-top: 5px;
     }
-  }
-
-  th{      
-    border-color:#B1B8BE;      
   }
 
   td{
@@ -534,7 +537,7 @@
 
   .tbl {
     &.check, &.cont {
-      width: 768px;
+      width: 1110px;
     }
   }  
 }

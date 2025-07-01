@@ -33,6 +33,23 @@
     flex-wrap: nowrap !important;
 }
 
+.bor-right{
+    border-right:1px solid #B1B8BE !important;
+}
+
+.bor-left-no{
+    border-left:none !important;
+}
+
+.bor-right-no{
+    border-right:none !important;
+}
+
+.bor-col-sep{
+    border-collapse: separate !important;
+}
+
+
 @for $i from 0 to 100 {
     .mt-#{$i} {
         margin-top: #{$i}px !important;

@@ -31,7 +31,7 @@
 [class*=title-type]{  
   color:#1D1D1D;
   line-height: 150%;
-  font-size: 21px;  
+  font-size: 21px;    
 
   .txt{
     font-size:15px;
@@ -61,6 +61,29 @@
   &.medium{
     font-size:19px
   }  
+
+  &.title-type3:has(.tooltip-tit){    
+    position: relative;    
+    display: inline-flex;    
+    height:28px;
+    padding-right: 25px;
+    .tooltip-tit{
+      display: inline-block;
+      .contextual-help{
+        top:5px;      
+        right:0;  
+      }
+      .title{
+        > strong{
+          font-size:0;
+        }
+      }    
+      .tooltip-ico{        
+        width:20px;
+        height:20px;
+      }  
+    }
+  }
 }
 
 /** 주소 제목 **/
@@ -281,7 +304,7 @@ strong.txt{
 
   ul {
     display: flex;
-    margin-left: -20px;
+    margin-left: -40px;
     flex-wrap: wrap;
 
     li {
@@ -299,8 +322,11 @@ strong.txt{
         display: flex;
         width: calc(100% - 120px);
         gap: 8px;
-        flex-wrap: wrap;
-        padding-left: 20px;
+        flex-wrap: wrap;        
+
+        &.nowrap{
+          flex-wrap: nowrap;
+        }
       }
 
       .tit {
@@ -345,6 +371,25 @@ strong.txt{
     border-top: 1px solid #E6E8EA;
   }
 }
+
+
+@media (max-width: 1280px) {
+  .search-box{
+    ul{
+      li{
+        .search-area{
+          &.nowrap{
+            flex-wrap: wrap;
+            .form-group{
+              max-width:100%;
+            }
+          }
+        }
+      } 
+    } 
+  } 
+}
+
 
 @media (max-width: 767px) {
   /** step **/

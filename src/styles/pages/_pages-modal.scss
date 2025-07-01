@@ -65,6 +65,17 @@
       
     }
   }  
+
+  .search-box{
+    .compulsory{
+      bottom:-6px;
+    }
+  }  
+  .compulsory-txt{
+    .compulsory{
+      bottom: 8px;
+    }
+  } 
 }
 
 .modal-wrap:has(.address-list){
