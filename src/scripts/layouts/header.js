@@ -134,8 +134,7 @@ $(() => {
                 $('.sub-title').removeClass('mobile-active');
                 $('.sub-title').siblings('depth2').hide();
 
-            })
-            console.log('모바일');
+            })            
         } else {
             $("#wrap").removeClass('mobile-open');
             gsap.set($("#header .main-menu"), {x: 0});
@@ -145,8 +144,7 @@ $(() => {
                 $("#wrap > .blind").show();
             }
             $('.depth2').show();
-            $('.sub-title.mobile-dep-menu').removeClass('mobile-active')
-            console.log('pc');
+            $('.sub-title.mobile-dep-menu').removeClass('mobile-active')            
             $('.gnb-menu > li').removeClass('active');
             $('.sub-title').removeClass('mobile-active');
             $('.blind').hide();

@@ -469,15 +469,15 @@ strong.txt{
 
   /** 하단버튼 **/
   .btn-area-type1 .align {
-    button.btn {
-      &.secondary {
-        width: 100%;
-      }
-
-      &.tertiary {
-        width: calc(50% - 4px);
+    .full-btn{
+      width:100%;
+      button.btn{
+        width:100%;
       }
     }
+    button.btn{
+      width: calc(50% - 4px);
+    }    
   }
     
 

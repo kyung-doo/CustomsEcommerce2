@@ -16,12 +16,12 @@
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
                      <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
-                     <li><span class="txt">관세환급</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">관세환급 신청 결과 조회</a></li>                  
+                     <li><span class="txt">수입신고 내역</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">수입신고 내역 조회</a></li>                  
                   </ol> 
                </nav>               
             </div>
-            <h3 class="head-tit">전자상거래 신고현황 목록 조회</h3>            
+            <h3 class="head-tit">전자상거래 신고 보완서류 등록</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
@@ -32,102 +32,78 @@
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               <div class="search-box"> 
-                  <ul>
-                     <li class="col1">
-                        <strong class="tit">신청기간 <i class="compulsory">필수</i></strong>
-                        <div class="search-area">
-                           <div class="calendar">
-                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
-                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
-                                 <button class="calendar-btn">시작 달력보기</button>
-                              </div>
-                              <i class="hy">~</i>
-                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
-                                 <input id="endDate" type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
-                                 <button class="calendar-btn">끝나는 달력보기</button>
-                              </div>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1" checked="">
-                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
-                              <label class="form-chip-outline" for="chk_chip_2">1주일</label>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
-                              <label class="form-chip-outline" for="chk_chip_3">1개월</label>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
-                              <label class="form-chip-outline" for="chk_chip_4">3개월</label>
-                           </div>
-                        </div>                        
-                     </li>       
-                     <li class="col1">
-                        <strong class="tit">신청구분 <i class="compulsory">필수</i></strong>
-                        <div class="search-area check-area">                           
-                           <div class="form-check medium">
-                              <input type="radio" name="radio" id="radio2">
-                              <label for="radio2">정상통보</label>
-                           </div>                          
-                           <div class="form-check medium">
-                              <input type="radio" name="radio" id="radio3">
-                              <label for="radio3">오류통보</label>
-                           </div>                                                     
-                        </div>                           
-                     </li>                         
-                  </ul>
-                  <div class="btn-area btn-end">
-                     <div class="align">
-                        <button type="button" class="btn tertiary medium">초기화</button>
-                        <button type="button" class="btn secondary medium">조회</button>                        
-                     </div>
+               <h5 class="title-type3">신고사항</h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                                                 
+                        <li class="col2 txt-list">
+                           <strong class="tit">수입신고번호</strong>
+                           <div class="inp-box">
+                              <p class="txt">11014-16-123456M</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">보완통구구분</strong>
+                           <div class="inp-box">
+                              <p class="txt">정정보완</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col1 txt-list">
+                           <strong class="tit">신고인</strong>
+                           <div class="inp-box">
+                              <p class="txt">‘관세법인제일인천공항지점’, ‘박중석’</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">납세자</strong>
+                           <div class="inp-box">
+                              <p class="txt">(주)황금복</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">신고일자</strong>
+                           <div class="inp-box">
+                              <p class="txt">2016-01-15</p>
+                           </div>                        
+                        </li>                                           
+                     </ul>                  
                   </div>
-               </div>      
-               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
-               <div class="board-top tbl-top">
-                  <div class="left-box">
-                     <strong class="tit top-txt">전체<span>240</span>개</strong>
-                     <div class="top-txt">
-                        <select class="form-select-sort large" title="정보 구분 선택">                           
-                           <option value="">10개씩 보기</option>               
-                           <option value="">10개씩 보기</option>               
-                           <option value="">10개씩 보기</option>               
-                           <option value="">10개씩 보기</option>               
-                        </select>
-                     </div>                     
-                  </div>                  
                </div>
+               <h5 class="title-type3">품목사항</h5>
                <div class="wrap-check-tbl">
                   <div class="table-wrap pc">
                      <table class="tbl col check">
-                        <caption>환급신청 결과 및 오류 통보 조회 대한 NO,제출일자,제출번호,오류사항,상세보기 표로 로 구성되어있다.</caption>
+                        <caption>품목사항에 대한 표로 란번호,HS부호,품명,원산지,관세과세가격미화금액 구성되어있다.</caption>
                         <colgroup>
-                           <col style="width: 10%;">
-                           <col style="width: 18%;">
+                           <col style="width: 80px;">
+                           <col style="width: 17%;">
                            <col>
-                           <col style="width: 25%;">
-                           <col style="width: 11%;">                           
+                           <col style="width: 10%;">
+                           <col style="width: 18%;">                           
                         </colgroup>
                         <thead>
-                           <tr>                                                
-                              <th scope="col">NO</th>
-                              <th scope="col"><span class="arr-ico">제출일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
-                              <th scope="col">제출번호</th>
-                              <th scope="col">오류사항</th>
-                              <th scope="col">상세보기</th>                              
+                           <tr>                                                                                                         
+                              <th scope="col">란번호</th>                              
+                              <th scope="col">HS부호</th>                              
+                              <th scope="col">품명</th>                              
+                              <th scope="col">원산지</th>                              
+                              <th scope="col">관세과세가격미화금액</th>                              
                            </tr>
                         </thead>
                         <tbody>
                            <tr>
-                              <td>999</td>
-                              <td>2025-12-05</td>
-                              <td>ELI-db047506-eb9f-4750-95d0-299664857867</td>
-                              <td>환급신청세액합계 오류입니다.</td>
-                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                              <td>001</td>                              
+                              <td>0303.89-8002</td>
+                              <td>FUGU XANTHOPTERUS</td>
+                              <td>중국</td>
+                              <td>2,729</td>
+                           </tr>                                                                                                                                    
+                           <tr>
+                              <td>001</td>                              
+                              <td>0303.89-8002</td>
+                              <td>FUGU XANTHOPTERUS</td>
+                              <td>중국</td>
+                              <td>2,729</td>
                            </tr>                                                                                                                                    
                         </tbody>
                      </table>
@@ -135,56 +111,58 @@
                   <div class="table-wrap mobile">                     
                      <ul class="wrap-body">
                         <li>
-                           <ul class="body">                              
+                           <ul class="body">                                                            
                               <li>
-                                 <strong class="title">NO</strong>
-                                 <span class="txt">999</span>
-                              </li>                                                            
+                                 <strong class="title">란번호</strong>
+                                 <span class="txt">001</span>
+                              </li>                              
                               <li>
-                                 <strong class="title">제출일자</strong>
-                                 <span class="txt">2025-12-05</span>
-                              </li>                                                            
+                                 <strong class="title">HS부호</strong>
+                                 <span class="txt">0303.89-8002</span>
+                              </li>                              
                               <li>
-                                 <strong class="title">제출번호</strong>
-                                 <span class="txt">ELI-db047506-eb9f-4750-95d0-299664857867</span>
-                              </li>                                                            
+                                 <strong class="title">상품명</strong>
+                                 <span class="txt">FUGU XANTHOPTERUS</span>
+                              </li>                              
                               <li>
-                                 <strong class="title">오류사항</strong>
-                                 <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                              </li>                                                            
+                                 <strong class="title">원산지</strong>
+                                 <span class="txt">중국</span>
+                              </li>                              
                               <li>
-                                 <button type="button" class="btn tertiary medium">보기</button>
-                              </li>                                                            
+                                 <strong class="title">관세과세가격미화금액</strong>
+                                 <span class="txt">2,729</span>
+                              </li>                              
                            </ul>
-                        </li>   
+                        </li>  
                         <li>
-                           <ul class="body">                              
+                           <ul class="body">                                                            
                               <li>
-                                 <strong class="title">NO</strong>
-                                 <span class="txt">999</span>
-                              </li>                                                            
+                                 <strong class="title">란번호</strong>
+                                 <span class="txt">001</span>
+                              </li>                              
                               <li>
-                                 <strong class="title">제출일자</strong>
-                                 <span class="txt">2025-12-05</span>
-                              </li>                                                            
+                                 <strong class="title">HS부호</strong>
+                                 <span class="txt">0303.89-8002</span>
+                              </li>                              
                               <li>
-                                 <strong class="title">제출번호</strong>
-                                 <span class="txt">ELI-db047506-eb9f-4750-95d0-299664857867</span>
-                              </li>                                                            
+                                 <strong class="title">상품명</strong>
+                                 <span class="txt">FUGU XANTHOPTERUS</span>
+                              </li>                              
                               <li>
-                                 <strong class="title">오류사항</strong>
-                                 <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                              </li>                                                            
+                                 <strong class="title">원산지</strong>
+                                 <span class="txt">중국</span>
+                              </li>                              
                               <li>
-                                 <button type="button" class="btn tertiary medium">보기</button>
-                              </li>                                                            
+                                 <strong class="title">관세과세가격미화금액</strong>
+                                 <span class="txt">2,729</span>
+                              </li>                              
                            </ul>
-                        </li>                                                                        
+                        </li>                                                       
                      </ul>
                   </div>
                </div>
                <div class="pagination pagination-type1">               
-                  <button class="page-navi prev" disabled="">이전</button>
+                  <button class="page-navi prev" disabled>이전</button>
                   <div class="page-links">
                      <a class="page-link mobile-link" href="#">1</a>
                      <span class="page-link link-dot mobile-dot"></span>
@@ -199,83 +177,267 @@
                      <span class="page-link link-dot"></span>
                      <a class="page-link mobile-link" href="#">120</a>
                   </div>
-                  <button class="page-navi next">다음</button>
+                  <button class="page-navi next" >다음</button>
                </div>
-
-
-
-               <!-- 팝업 사용후 삭제해주세요 -->
-               <div class="testtest">
-                 <!-- 오류사항 자세히 보기 -->
-                  <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">오류사항 자세히 보기</button>                  
-                  <div id="modal3" class="modal d-none" data-ui="modal">
-                     <div class="modal-wrap mw-760">
-                        <div class="modal-header">
-                           <h5>오류사항 자세히 보기</h5>                     
-                        </div>
-                        <div class="modal-body" tabindex="0">
-                           <div class="modal-cont">
-                              <div class="wrap-check-tbl">
-                                 <div class="table-wrap pc">
-                                    <table class="tbl col check">
-                                       <caption>오류사항 자세히 보기 대한 NO,오류사항 표로 로 구성되어있다.</caption>
-                                       <colgroup>
-                                          <col style="width: 15%;">
-                                          <col>                                                                     
-                                       </colgroup>
-                                       <thead>
-                                          <tr>                                                
-                                             <th scope="col">NO</th>                                             
-                                             <th scope="col">오류사항</th>                                             
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <td>3</td>
-                                             <td>공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</td>                                             
-                                          </tr>                                                                                                                                    
-                                       </tbody>
-                                    </table>
-                                 </div>
-                                 <div class="table-wrap mobile">                     
-                                    <ul class="wrap-body">
-                                       <li>
-                                          <ul class="body">                              
-                                             <li>
-                                                <strong class="title">NO</strong>
-                                                <span class="txt">3</span>
-                                             </li>                                                            
-                                             <li>
-                                                <strong class="title">오류사항</strong>
-                                                <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                                             </li>                                                                                                         
-                                          </ul>
-                                       </li>                                                                                                               
-                                       <li>
-                                          <ul class="body">                              
-                                             <li>
-                                                <strong class="title">NO</strong>
-                                                <span class="txt">3</span>
-                                             </li>                                                            
-                                             <li>
-                                                <strong class="title">오류사항</strong>
-                                                <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                                             </li>                                                                                                         
-                                          </ul>
-                                       </li>                                                                                                               
-                                    </ul>
-                                 </div>
-                              </div>
+               <h5 class="title-type3">보완기간</h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                                                 
+                        <li class="col2 txt-list">
+                           <strong class="tit">문서번호</strong>
+                           <div class="inp-box">
+                              <p class="txt">030-11-보완-16-00375</p>
                            </div>                        
-                        </div>
-                        <div class="modal-footer">
-                           <button type="button" class="btn modal-close tertiary medium">닫기</button>                           
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">연락처 전화</strong>
+                           <div class="inp-box">
+                              <p class="txt">051-620-6239</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">보완요구기한</strong>
+                           <div class="inp-box">
+                              <p class="txt">2025-01-01</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">보완승인일자</strong>
+                           <div class="inp-box">
+                              <p class="txt"></p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">보완이행일자</strong>
+                           <div class="inp-box">
+                              <p class="txt"></p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col2 txt-list">
+                           <strong class="tit">보완통보일자</strong>
+                           <div class="inp-box">
+                              <p class="txt"></p>
+                           </div>                        
+                        </li>                                           
+                     </ul>                  
+                  </div>
+               </div>
+               <h5 class="title-type3">정정보완 요구사항</h5>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>정정보완 요구사항에 대한 표로 란번호,항목코드,항목명 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width: 80px;">
+                           <col style="width: 200px;">
+                           <col>                           
+                        </colgroup>
+                        <thead>
+                           <tr>                                                                                                         
+                              <th scope="col">란번호</th>                              
+                              <th scope="col">항목코드</th>                              
+                              <th scope="col">항목명</th>                                                            
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>001</td>                              
+                              <td>008</td>
+                              <td>HS 코드 정정</td>
+                           </tr>                                                                                                                                                               
+                        </tbody>
+                     </table>
+                  </div>                 
+                  <div class="table-wrap mobile">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                                                            
+                              <li>
+                                 <strong class="title">란번호</strong>
+                                 <span class="txt">001</span>
+                              </li>
+                              <li>
+                                 <strong class="title">항목코드</strong>
+                                 <span class="txt">008</span>
+                              </li>
+                              <li>
+                                 <strong class="title">항목명</strong>
+                                 <span class="txt">HS 코드 정정</span>
+                              </li>                              
+                           </ul>
+                        </li>                                                       
+                        <li>
+                           <ul class="body">                                                            
+                              <li>
+                                 <strong class="title">란번호</strong>
+                                 <span class="txt">001</span>
+                              </li>
+                              <li>
+                                 <strong class="title">항목코드</strong>
+                                 <span class="txt">008</span>
+                              </li>
+                              <li>
+                                 <strong class="title">항목명</strong>
+                                 <span class="txt">HS 코드 정정</span>
+                              </li>                              
+                           </ul>
+                        </li>                                                       
+                     </ul>
+                  </div>
+               </div>
+                <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                                                 
+                        <li class="col1 txt-list">
+                           <strong class="tit">보완요구내용</strong>
+                           <div class="inp-box">
+                              <p class="txt">정확한 용도, 작동 방식 확인 후 HS 코드 세분류 필요</p>
+                           </div>                        
+                        </li>                                           
+                        <li class="col1 txt-list">
+                           <strong class="tit">보완안내내용</strong>
+                           <div class="inp-box">
+                              <p class="txt">HS CODE가 너무 일반적으로 신고됨 (기계류, 부품 등)</p>
+                           </div>                        
+                        </li>                                                                   
+                     </ul>                  
+                  </div>
+               </div>
+               <div class="board-top no-wrap title-top">
+                  <div class="left-box">
+                     <h5 class="title-type">첨부파일</h5>      
+                  </div>   
+                  <div class="right-box">                     
+                     <button type="button" class="btn primary medium">서류 업로드</button>
+                  </div>               
+               </div>
+               <div class="wrap-crud-tbl">                  
+                  <div class="table-wrap pc">
+                     <table class="tbl col crud">
+                        <caption>첨부파일에 대한 표로 NO,란번호,파일형식,첨부서류부호,첨부파일 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width:52px">
+                           <col style="width:80px">
+                           <col style="width: 10%;">
+                           <col style="width: 10%;">
+                           <col style="width: 14%;">                           
+                           <col>                           
+                        </colgroup>
+                        <thead>
+                           <tr>                                                                                                         
+                              <th scope="col">
+                                 <div class="form-check">
+                                    <input type="checkbox" id="all_chk">
+                                    <label for="all_chk"><span class="sr-only">전체선택</span></label>
+                                 </div>
+                              </th>                              
+                              <th scope="col">NO</th>                              
+                              <th scope="col">란번호</th>                              
+                              <th scope="col">파일형식</th>                              
+                              <th scope="col">첨부서류부호</th>                              
+                              <th scope="col">첨부파일</th>  
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>
+                                 <div class="form-check">
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>                              
+                              <td>1</td>
+                              <td>123456</td>
+                              <td>PDF</td>
+                              <td>123456789</td>
+                              <td>123456ABCD.pdf</td>
+                           </tr>                                                                                                                                    
+                        </tbody>
+                     </table>
+                  </div>
+
+                  <div class="table-wrap mobile">
+                     <div class="header">
+                        <div class="form-check">
+                           <input type="checkbox" id="all_chk_1">
+                           <label for="all_chk_1"><span class="sr-only">전체선택</span></label>
                         </div>
                      </div>
-                  </div> 
-                  <!-- 오류사항 자세히 보기 -->
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">
+                              <li>
+                                 <div class="title">
+                                       <div class="form-check">
+                                          <input type="checkbox" id="tb_1">
+                                          <label for="tb_1"><span class="sr-only">선택</span></label>
+                                       </div>
+                                 </div>                                 
+                              </li>
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">1</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">란번호</strong>
+                                 <span class="txt">123456</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">파일형식</strong>
+                                 <span class="txt">PDF</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">첨부서류부호</strong>
+                                 <span class="txt">123456789</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">첨부파일</strong>
+                                 <span class="txt">123456ABCD.pdf</span>
+                              </li>                              
+                           </ul>
+                        </li>  
+                        <li>
+                           <ul class="body">
+                              <li>
+                                 <div class="title">
+                                       <div class="form-check">
+                                          <input type="checkbox" id="tb_1">
+                                          <label for="tb_1"><span class="sr-only">선택</span></label>
+                                       </div>
+                                 </div>                                 
+                              </li>
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">1</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">란번호</strong>
+                                 <span class="txt">123456</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">파일형식</strong>
+                                 <span class="txt">PDF</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">첨부서류부호</strong>
+                                 <span class="txt">123456789</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">첨부파일</strong>
+                                 <span class="txt">123456ABCD.pdf</span>
+                              </li>                              
+                           </ul>
+                        </li>                       
+                     </ul>
+                  </div>
                </div>
-               <!-- 팝업 사용후 삭제해주세요 -->               
+               <div class="btn-area btn-end">
+                  <div class="align">                                          
+                     <button type="button" class="btn tertiary large">목록</button>
+                  </div>
+               </div>
+
+                        
 
             </div>
             <!--// 내용 -->

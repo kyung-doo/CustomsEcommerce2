@@ -17,9 +17,13 @@
   .title-top{margin-top: 48px;margin-bottom: 24px;}
   .advice-txt{margin-top: 20px;}
   [class*=tabmenu-]{margin-top: 48px;}  
+  .wrap-form-area .inp-form:first-child{margin-top: 0;}
+  .wrap-form-area .inp-form{margin-top: 8px;}
+  .wrap-check-tbl + .wrap-form-area{margin-top: 24px;}  
+  .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
+  .wrap-check-tbl + .wrap-form-area{margin-top: 24px;}
 }
-.wrap-form-area .inp-form:first-child{margin-top: 0;}
-.wrap-form-area .inp-form{margin-top: 8px;}
+
 
 /** 레이어팝업 **/
 .modal_pop_box{
@@ -142,6 +146,13 @@
       margin-top: 16px;
     }
   } 
+}
+
+
+
+.page-pc{display: block !important;}
+@media (max-width: 767px) {  
+  .page-mo{display: none !important;}
 }
 
 @media (max-width: 480px) {  

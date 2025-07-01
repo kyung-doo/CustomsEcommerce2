@@ -33,7 +33,7 @@
     flex-wrap: nowrap !important;
 }
 
-@for $i from 1 to 100 {
+@for $i from 0 to 100 {
     .mt-#{$i} {
         margin-top: #{$i}px !important;
     }

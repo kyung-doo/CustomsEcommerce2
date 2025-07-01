@@ -16,12 +16,12 @@
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
                      <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
-                     <li><span class="txt">관세환급</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">관세환급 신청 결과 조회</a></li>                  
+                     <li><span class="txt">수입신고 내역</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">수입신고 내역 조회</a></li>                  
                   </ol> 
                </nav>               
             </div>
-            <h3 class="head-tit">전자상거래 신고현황 목록 조회</h3>            
+            <h3 class="head-tit">전자상거래 신고 상세 조회</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
@@ -32,250 +32,131 @@
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               <div class="search-box"> 
-                  <ul>
-                     <li class="col1">
-                        <strong class="tit">신청기간 <i class="compulsory">필수</i></strong>
-                        <div class="search-area">
-                           <div class="calendar">
-                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
-                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
-                                 <button class="calendar-btn">시작 달력보기</button>
-                              </div>
-                              <i class="hy">~</i>
-                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
-                                 <input id="endDate" type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
-                                 <button class="calendar-btn">끝나는 달력보기</button>
-                              </div>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1" checked="">
-                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
-                              <label class="form-chip-outline" for="chk_chip_2">1주일</label>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
-                              <label class="form-chip-outline" for="chk_chip_3">1개월</label>
-                           </div>
-                           <div class="form-chip large">
-                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
-                              <label class="form-chip-outline" for="chk_chip_4">3개월</label>
-                           </div>
-                        </div>                        
-                     </li>       
-                     <li class="col1">
-                        <strong class="tit">신청구분 <i class="compulsory">필수</i></strong>
-                        <div class="search-area check-area">                           
-                           <div class="form-check medium">
-                              <input type="radio" name="radio" id="radio2">
-                              <label for="radio2">정상통보</label>
-                           </div>                          
-                           <div class="form-check medium">
-                              <input type="radio" name="radio" id="radio3">
-                              <label for="radio3">오류통보</label>
-                           </div>                                                     
-                        </div>                           
-                     </li>                         
-                  </ul>
-                  <div class="btn-area btn-end">
-                     <div class="align">
-                        <button type="button" class="btn tertiary medium">초기화</button>
-                        <button type="button" class="btn secondary medium">조회</button>                        
-                     </div>
-                  </div>
-               </div>      
-               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
-               <div class="board-top tbl-top">
-                  <div class="left-box">
-                     <strong class="tit top-txt">전체<span>240</span>개</strong>
-                     <div class="top-txt">
-                        <select class="form-select-sort large" title="정보 구분 선택">                           
-                           <option value="">10개씩 보기</option>               
-                           <option value="">10개씩 보기</option>               
-                           <option value="">10개씩 보기</option>               
-                           <option value="">10개씩 보기</option>               
-                        </select>
-                     </div>                     
-                  </div>                  
-               </div>
-               <div class="wrap-check-tbl">
-                  <div class="table-wrap pc">
-                     <table class="tbl col check">
-                        <caption>환급신청 결과 및 오류 통보 조회 대한 NO,제출일자,제출번호,오류사항,상세보기 표로 로 구성되어있다.</caption>
-                        <colgroup>
-                           <col style="width: 10%;">
-                           <col style="width: 18%;">
-                           <col>
-                           <col style="width: 25%;">
-                           <col style="width: 11%;">                           
-                        </colgroup>
-                        <thead>
-                           <tr>                                                
-                              <th scope="col">NO</th>
-                              <th scope="col"><span class="arr-ico">제출일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
-                              <th scope="col">제출번호</th>
-                              <th scope="col">오류사항</th>
-                              <th scope="col">상세보기</th>                              
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>999</td>
-                              <td>2025-12-05</td>
-                              <td>ELI-db047506-eb9f-4750-95d0-299664857867</td>
-                              <td>환급신청세액합계 오류입니다.</td>
-                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
-                           </tr>                                                                                                                                    
-                        </tbody>
-                     </table>
-                  </div>
-                  <div class="table-wrap mobile">                     
-                     <ul class="wrap-body">
-                        <li>
-                           <ul class="body">                              
-                              <li>
-                                 <strong class="title">NO</strong>
-                                 <span class="txt">999</span>
-                              </li>                                                            
-                              <li>
-                                 <strong class="title">제출일자</strong>
-                                 <span class="txt">2025-12-05</span>
-                              </li>                                                            
-                              <li>
-                                 <strong class="title">제출번호</strong>
-                                 <span class="txt">ELI-db047506-eb9f-4750-95d0-299664857867</span>
-                              </li>                                                            
-                              <li>
-                                 <strong class="title">오류사항</strong>
-                                 <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                              </li>                                                            
-                              <li>
-                                 <button type="button" class="btn tertiary medium">보기</button>
-                              </li>                                                            
-                           </ul>
-                        </li>   
-                        <li>
-                           <ul class="body">                              
-                              <li>
-                                 <strong class="title">NO</strong>
-                                 <span class="txt">999</span>
-                              </li>                                                            
-                              <li>
-                                 <strong class="title">제출일자</strong>
-                                 <span class="txt">2025-12-05</span>
-                              </li>                                                            
-                              <li>
-                                 <strong class="title">제출번호</strong>
-                                 <span class="txt">ELI-db047506-eb9f-4750-95d0-299664857867</span>
-                              </li>                                                            
-                              <li>
-                                 <strong class="title">오류사항</strong>
-                                 <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                              </li>                                                            
-                              <li>
-                                 <button type="button" class="btn tertiary medium">보기</button>
-                              </li>                                                            
-                           </ul>
-                        </li>                                                                        
-                     </ul>
-                  </div>
-               </div>
-               <div class="pagination pagination-type1">               
-                  <button class="page-navi prev" disabled="">이전</button>
-                  <div class="page-links">
-                     <a class="page-link mobile-link" href="#">1</a>
-                     <span class="page-link link-dot mobile-dot"></span>
-                     <a class="page-link" href="#">2</a>
-                     <a class="page-link" href="#">3</a>
-                     <a class="page-link" href="#">4</a>
-                     <a class="page-link mobile-link" href="#">5</a>
-                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
-                     <a class="page-link mobile-link" href="#">7</a>
-                     <a class="page-link" href="#">8</a>
-                     <a class="page-link" href="#">9</a>
-                     <span class="page-link link-dot"></span>
-                     <a class="page-link mobile-link" href="#">120</a>
-                  </div>
-                  <button class="page-navi next">다음</button>
-               </div>
-
-
-
-               <!-- 팝업 사용후 삭제해주세요 -->
-               <div class="testtest">
-                 <!-- 오류사항 자세히 보기 -->
-                  <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">오류사항 자세히 보기</button>                  
-                  <div id="modal3" class="modal d-none" data-ui="modal">
-                     <div class="modal-wrap mw-760">
-                        <div class="modal-header">
-                           <h5>오류사항 자세히 보기</h5>                     
-                        </div>
-                        <div class="modal-body" tabindex="0">
-                           <div class="modal-cont">
-                              <div class="wrap-check-tbl">
-                                 <div class="table-wrap pc">
-                                    <table class="tbl col check">
-                                       <caption>오류사항 자세히 보기 대한 NO,오류사항 표로 로 구성되어있다.</caption>
-                                       <colgroup>
-                                          <col style="width: 15%;">
-                                          <col>                                                                     
-                                       </colgroup>
-                                       <thead>
-                                          <tr>                                                
-                                             <th scope="col">NO</th>                                             
-                                             <th scope="col">오류사항</th>                                             
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <td>3</td>
-                                             <td>공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</td>                                             
-                                          </tr>                                                                                                                                    
-                                       </tbody>
-                                    </table>
-                                 </div>
-                                 <div class="table-wrap mobile">                     
-                                    <ul class="wrap-body">
-                                       <li>
-                                          <ul class="body">                              
-                                             <li>
-                                                <strong class="title">NO</strong>
-                                                <span class="txt">3</span>
-                                             </li>                                                            
-                                             <li>
-                                                <strong class="title">오류사항</strong>
-                                                <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                                             </li>                                                                                                         
-                                          </ul>
-                                       </li>                                                                                                               
-                                       <li>
-                                          <ul class="body">                              
-                                             <li>
-                                                <strong class="title">NO</strong>
-                                                <span class="txt">3</span>
-                                             </li>                                                            
-                                             <li>
-                                                <strong class="title">오류사항</strong>
-                                                <span class="txt">공통사항 환급신청관세와 개별환급신청관세의 합이 다릅니다</span>
-                                             </li>                                                                                                         
-                                          </ul>
-                                       </li>                                                                                                               
-                                    </ul>
+               <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">
+                  <button class="tab-menu active" title="선택됨">수입신고공통사항</button>
+                  <button class="tab-menu">수입신고 거래내역</button>
+                  <button class="tab-menu">제출서류내역</button>                                                                                                                                          
+               </div>  
+               <h5 class="title-type3">수입신고공통사항</h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">신고번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">4062025000001M</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">신고일자</strong>   
+                           <div class="inp-box">
+                              <p class="txt">2025-04-28</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">신고인 상호 및 성명</strong>   
+                           <div class="inp-box">
+                              <p class="txt">‘관세법인제일인천공항지점’, ‘박중석’</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">신고인 전화번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">0327166152</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">징수형태</strong>   
+                           <div class="inp-box">
+                              <p class="txt">신고,수리전납부</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">M B/L-H B/L</strong>   
+                           <div class="inp-box">
+                              <p class="txt">HDFC25E6902111A – 598941000000</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">입항일자</strong>   
+                           <div class="inp-box">
+                              <p class="txt">2025-01-01</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">특송업체명</strong>   
+                           <div class="inp-box">
+                              <p class="txt">(주)제빅스로지스틱스</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">운송용기</strong>   
+                           <div class="inp-box">
+                              <p class="txt">벌크</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">선(기)명</strong>   
+                           <div class="inp-box">
+                              <p class="txt">OZ588</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">국내도착함</strong>   
+                           <div class="inp-box">
+                              <p class="txt">제주항</p>
+                           </div>                                                                     
+                        </li>
+                        
+                        <li class="col2 txt-list">
+                           <!-- 타이틀 툴팁 -->
+                           <div class="tooltip-tit tit">
+                              <div class="title">
+                                 <strong>처리상태</strong>
+                                 <div class="contextual-help top right" data-ui="tooltip">                              
+                                    <div class="tooltip-btn-area">                                 
+                                       <button class="tooltip-ico">전화번호 도움말</button>
+                                       <div class="tooltip-action">                  
+                                          <div class="tooltip-popover">
+                                          <strong class="tooltip-title">전화번호</strong>
+                                          <div class="tooltip-contents">
+                                             <p>042-1234-1234</p>
+                                             <div class="btn-wrap">
+                                                <a href="#;" class="btn link">바로가기</a>
+                                             </div>
+                                          </div>
+                                          <button type="button" class="btn tooltip-close">
+                                             <span class="sr-only">닫기</span>                        
+                                          </button>
+                                          </div>
+                                       </div>
+                                    </div>
                                  </div>
                               </div>
-                           </div>                        
-                        </div>
-                        <div class="modal-footer">
-                           <button type="button" class="btn modal-close tertiary medium">닫기</button>                           
-                        </div>
-                     </div>
-                  </div> 
-                  <!-- 오류사항 자세히 보기 -->
+                           </div>
+                           <!-- 타이틀 툴팁 -->
+                           <div class="inp-box">
+                              <strong class="txt success">신고수리</strong>
+                           </div>                         
+                        </li>              
+                     </ul>                  
+                  </div>
                </div>
-               <!-- 팝업 사용후 삭제해주세요 -->               
+               <div class="btn-area btn-end btn-area-type1">
+                  <div class="align">
+                     <button type="button" class="btn tertiary medium">필증출력</button>
+                     <button type="button" class="btn tertiary medium">보완서류등록</button>
+                     <div class="full-btn">
+                        <button type="button" class="btn tertiary medium">수입신고 정정이력</button>
+                     </div>
+                  </div>
+               </div>            
+
+
+
+
+
+                        
 
             </div>
             <!--// 내용 -->
