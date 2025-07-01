@@ -8,6 +8,7 @@ class Datepicker {
     static DEFAULT_PROPS = {
         minInput: null,
         maxInput: null,
+        target: '',
     }
 
     static MINIMUM_DATE = new Date('1930-01-01');
@@ -128,8 +129,12 @@ class Datepicker {
         `);
 
         this.input.attr('disabled', 'disabled');
-
-        $("body").append(this.calendar);
+        
+        if(!this.props.target) {
+            $("body").append(this.calendar);
+        } else {
+            $(this.props.target).append(this.calendar);
+        }
 
         this.calendar.find(".year-con").hide();
         this.calendar.find(".month-con").hide();
