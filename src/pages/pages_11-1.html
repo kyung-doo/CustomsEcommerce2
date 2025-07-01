@@ -15,66 +15,274 @@
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
+                     <li><span class="txt">관세납부</span></li>                      
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인전자납부/납부내역 조회</a></li>                  
                   </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="switch9" name="radio-switch1" checked>
-                     <label for="switch9" class="kr">한글</label>
-                     <input type="radio" id="switch10" name="radio-switch1">
-                     <label for="switch10" class="en">English</label>
-                  </div>
-               </div>
+               </nav>               
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">개인통관고유부호 개인전자 납부 내역 조회</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>개인전자납부 이용 가이드</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인전자납부 이용 가이드 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               컨텐츠               
+               <div class="search-box"> 
+                  <ul>
+                     <li class="col1">
+                        <strong class="tit">조회기간 <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="form-group medium mw-140">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex3" required="" title="조회기간 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">고지일자</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">시작 달력보기</button>
+                              </div>
+                              <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="끝나는날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">끝나는 달력보기</button>
+                              </div>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1" checked="">
+                              <label class="form-chip-outline" for="chk_chip_1">1주일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                              <label class="form-chip-outline" for="chk_chip_2">1개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                              <label class="form-chip-outline" for="chk_chip_3">3개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
+                              <label class="form-chip-outline" for="chk_chip_4">6개월</label>
+                           </div>
+                        </div>                        
+                     </li>       
+                     <li class="col2">
+                        <label class="tit" for="ex1">세관</label>
+                        <div class="search-area">
+                           <div class="form-group medium mw-360">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex1" required="" title="세관 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">인천공항세관</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex2">세목구분</label>
+                        <div class="search-area">
+                           <div class="form-group medium mw-360">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex2" required="" title="세목구분 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">인천공항세관</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex4">번호</label>
+                        <div class="search-area">                           
+                           <div class="form-group medium mw-130">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex4" required="" title="번호 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">신고번호</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                           <div class="form-group medium mw-300">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" placeholder="신고번호를 입력해주세요." title="번호 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>   
+                     <li class="col2">
+                        <strong class="tit">구분</strong>
+                        <div class="search-area check-area">                           
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio1">
+                              <label for="radio1">전체</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio2">
+                              <label for="radio2">수납</label>
+                           </div>                                                     
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio3">
+                              <label for="radio3">체납</label>
+                           </div>                                                     
+                        </div>                           
+                     </li>                
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="button" class="btn secondary medium">조회</button>                        
+                     </div>
+                  </div>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<span>240</span>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+               </div>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>개인통관고유부호 개인전자 납부 내역 조회에 대한  NO,세관,신고번호,전자납부번호,납세자성명,고지일자,납기일자,수납일자,금액,납부상태,상세보기 표로 로 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                           <col style="width:10%;">                                                      
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">NO</th>                              
+                              <th scope="col">세관</th>                              
+                              <th scope="col">신고번호</th>                              
+                              <th scope="col">전자납부번호</th>                              
+                              <th scope="col">납세자성명</th>                              
+                              <th scope="col"><span class="arr-ico">고지일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>                          
+                              <th scope="col"><span class="arr-ico">납기일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>                       
+                              <th scope="col"><span class="arr-ico">수납일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col"><span class="arr-ico">금액 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col">납부상태</th>                              
+                              <th scope="col">상세보기</th>                                                                                                               
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>999</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">조회</button></td>                                                            
+                           </tr>   
+                           <tr>
+                              <td>999</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td><strong class="txt dismissal">미수납</strong></td>                                                            
+                              <td><button type="button" class="btn secondary small">납부</button></td>                                                            
+                           </tr>                                                                                                                                                                                                                                                                                               
+                           <tr>
+                              <td>999</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td><strong class="txt dismissal">체납</strong></td>                                                            
+                              <td><button type="button" class="btn secondary small">납부</button></td>                                                            
+                           </tr>    
+                            <tr>
+                              <td>999</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>                                                                                                                                                                                                                                                                                              
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mobile">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">신고번호</strong>
+                                 <span class="txt">ㅇㅇㅇㅇ</span>
+                              </li>                                                                                                                                                                                                               
+                           </ul>
+                        </li>                                                 
+                     </ul>
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <!--// 내용 -->
          </div>
