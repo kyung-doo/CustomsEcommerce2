@@ -167,7 +167,7 @@
       height: 20px;
       position: absolute;
       top: 50%;
-      right: -10px;
+      right: 0;
       background-image: url(/assets/icons/tb-turn.svg);
       background-position: center;
       background-color: rgba(0, 0, 0, 0);
@@ -182,8 +182,8 @@
 
   .arr-ico {
     position: relative;
-    padding-right: 18px;
-    display: block;
+    padding-right: 25px;
+    display: inline-block;
   }
 
   a.txt {
@@ -298,7 +298,7 @@
       font-weight: 400;
       color: #1D1D1D;
       text-align: right;
-      padding-left: 10px;
+      padding-left: 20px;
       line-height: 150%;
 
       * {

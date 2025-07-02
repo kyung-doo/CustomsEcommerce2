@@ -1,9 +1,23 @@
-// .cont-area * {
-//   transition: all .3s;
-// }
+
+/** 개발 들어가면 삭제 **/
 .testtest{
   margin-top: 100px;
 }
+
+/** 파일찾기 **/
+input[type=file]{
+    display: block;
+    position: absolute;
+    top:-10000px;
+    left: -10000px;
+    width:0px;
+    height:0px;
+
+    &:focus + label{
+        outline: 2px solid #000;
+    }
+}
+
 /** 리스트 툴팁 아이콘 **/
 .tooltip-ico {
   width: 16px;
@@ -167,29 +181,48 @@ strong.txt{
   display: flex;  
   line-height: 150%;
   align-items: flex-start;
-  padding-left: 15px;
-
-
-  .compulsory{
-    margin: 0;
-    bottom: 6px;
-    height: 0;
-    left: 0;
-  }
+  padding-left: 12px;
 }
 
-.compulsory {
+/** 필수입력 아이콘 **/
+.compulsory {  
   position: absolute;
-  bottom: 3px;
+  bottom: 8px;
   font-size: 0;
   list-style: none;
   display: inline-block;
   background-image: url(/assets/icons/compulsory.svg);
-  min-width: 8px;
-  min-height: 8px;
-  margin-right: 4px;
+  width: 8px;
+  height: 8px;
   background-repeat: no-repeat;
+}
+
+/** 모달팝업 검색 필수입력 **/
+.modal-body .search-box .compulsory{
   margin-left: 5px;
+}
+
+/** 페이지 검색 필수입력 **/
+.cont-area .search-box .compulsory{
+  margin-left: 5px;
+  bottom: 3px;
+}
+
+/** 필수 입력 **/
+.compulsory-txt .compulsory{
+  left: 0;  
+}
+
+/** 모달 입력폼 필수입력 **/
+.modal-body .wrap-form-area .tit .compulsory{
+  right: 0;
+  bottom: 8px;
+}
+
+/** 페이지 입력폼 필수입력 **/
+.cont-area .wrap-form-area .tit .compulsory{
+  right: 0;
+  bottom: 4px;
 }
 
 /** 도움말 **/
@@ -331,11 +364,13 @@ strong.txt{
 
       .tit {
         display: inline;
-        position: relative;        
+        position: relative;
+        min-width: 120px;
         width: 120px;
         align-items: center;
         font-size: 15px;
         font-weight: 700;        
+        padding-right: 20px;
       }
 
       .form-group {

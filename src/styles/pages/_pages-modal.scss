@@ -3,12 +3,11 @@
 }
 
 .modal-body{
-
   .reforwarding {
     display: flex;
     justify-content: space-between;
     align-items: center;  
-
+    
     .txt-type{
       padding-right: 20px;
     }
@@ -64,18 +63,7 @@
       font-size: 15px;
       
     }
-  }  
-
-  .search-box{
-    .compulsory{
-      bottom:-6px;
-    }
-  }  
-  .compulsory-txt{
-    .compulsory{
-      bottom: 8px;
-    }
-  } 
+  }     
 }
 
 .modal-wrap:has(.address-list){
@@ -85,16 +73,11 @@
     border:0;
     padding: 60px 0 0 0;
     border-top:1px solid #E4E4E4;
-
-     .compulsory{
-        bottom:-6px;
-      }
+    border-radius: 0;    
       
     .address-list{        
       .inp-box{
-        flex-wrap: wrap;
-
-       
+        flex-wrap: wrap;      
 
         .first-add{
           max-width:152px;
@@ -106,14 +89,14 @@
         }
       }      
     }    
+
+    .form-btn-area{
+      right: 0;
+    }
   }
 
   .compulsory-txt{
     margin-bottom: 14px;
-
-    .compulsory{
-       bottom:7px;
-    }
   }
 }
 
@@ -152,6 +135,15 @@
         label{
           width:100%;
         }
+      }
+    }
+
+    .reforwarding{
+      flex-direction: column;
+
+      button{
+        width:100%;
+        margin-top: 21px;
       }
     }
   }  
