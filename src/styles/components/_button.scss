@@ -8,10 +8,6 @@ button[class*=btn],label[class*=btn] {
   justify-content: center;    
   white-space: nowrap;
 
-  &.ico i{
-    margin-left: 4px;
-  }
-
   &.xlarge {
     padding: 0 24px;    
     height: 64px;
@@ -179,7 +175,7 @@ button[class*=btn],label[class*=btn] {
   }
 }
 
-.btn-area-type1{
+.btn-area-type1{    
     .align{
       flex-wrap: wrap;
     }  

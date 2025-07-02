@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
+                     <li><span class="txt">관세환급</span></li>  
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">관세환급 신청</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">해외직구 환급신청</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 3</strong>
+                  <h4 class="tit">환급신청 란사항 정보</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="done">
+                        <span>
+                              <em class="sr-only">현재단계</em>
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li class="active">
+                        <span>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">환급물품 정보</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">제출서류 등록</span>
+                        </span>
+                     </li>                     
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>전자상거래 관세 환급 신청서 작성 방법</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">전자상거래 관세 환급 신청서 작성 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="txt-box-type type2">
+                  <ul class="top-list-box"> 
+                     <li>환급신청 할 수출 물품금액이200만원 초과일 경우 반드시 수출신고하여야 환급이 가능합니다.</li>
+                     <li>수출신고번호 미 입력 시 환급 신청이 기각될 수 있습니다.</li>
+                     <li>환급신청할란번호의 체크박스를 선택한 후 각  규격의 환급신청 할 수량을 입력 후 환급세액을 입력하셔야 신청이 가능합니다.</li>
+                  </ul>
+               </div>       
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">란번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">001</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">품명</strong>   
+                           <div class="inp-box">
+                              <p class="txt">TELEVISION 1234567890 TELEVISION 1234567890 TELEVISION 1234567890</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">수입신고번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">434124321M</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">관세</strong>   
+                           <div class="inp-box">
+                              <p class="txt">145,412</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">부가세 등</strong>   
+                           <div class="inp-box">
+                              <p class="txt">113,421</p>
+                           </div>                                                                     
+                        </li>                                         
+                     </ul>       
+                     <div class="form-check medium">
+                        <input type="checkbox" id="radio_chk1">
+                        <label for="radio_chk1"><span class="sr-only">선택</span></label>
+                     </div>           
+                  </div>
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">란번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">001</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">품명</strong>   
+                           <div class="inp-box">
+                              <p class="txt">TELEVISION 1234567890 TELEVISION 1234567890 TELEVISION 1234567890</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">수입신고번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">434124321M</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">관세</strong>   
+                           <div class="inp-box">
+                              <p class="txt">145,412</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">부가세 등</strong>   
+                           <div class="inp-box">
+                              <p class="txt">113,421</p>
+                           </div>                                                                     
+                        </li>                                         
+                     </ul>       
+                     <div class="form-check medium">
+                        <input type="checkbox" id="radio_chk2">
+                        <label for="radio_chk2"><span class="sr-only">선택</span></label>
+                     </div>           
+                  </div>
+               </div>    
+               <div class="btn-area btn-between">
+                  <div class="align">                            
+                     <button type="button" class="btn tertiary large">이전</button>                 
+                     <button type="button" class="btn tertiary large">목록</button>                 
+                  </div>
+                  <div class="align">                            
+                     <button type="button" class="btn tertiary large">미리보기</button>                 
+                     <button type="button" class="btn primary large">다음</button>                 
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
