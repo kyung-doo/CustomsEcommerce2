@@ -4139,7 +4139,12 @@
          </div>     
          <pre>
          <code class="html"> 
-           - 한개짜리 달력
+            - data-props
+               - maxInput: 범위지정 시작 달력용 종료 인풋
+               - minInput: 범위지정 종료 달력용 시작 인풋
+               - target: 기본은 body에 생성되지만 다른 곳에 생성 되어야 하는 경우(ex: modal) 사용
+              
+            - 한개짜리 달력
             &lt;div class="calendar"&gt;
                &lt;div class="calendar-form" data-ui="datepicker"&gt;
                   &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10"&gt;
