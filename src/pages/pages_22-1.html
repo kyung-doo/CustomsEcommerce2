@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">해외직구 정보제공</span></li>                                          
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">해외직구물품 예상세액 조회</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">해외직구 예상세액 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>지구물품예상세액조회서비스(가상 구입물품 세액 조회)란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">지구물품예상세액조회서비스(가상 구입물품 세액 조회)란? 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <div class="accordion">
+               <a href="#none">
+                  <strong>자가사용물품 면세기준(금액)</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">자가사용물품 면세기준(금액) 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">환급신청액 합계</h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                                             
+                        <li class="col1 bor-list-b">
+                           <label for="ex1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-389">                  
+                                 <div class="form-conts disabled-type1">
+                                    <select class="form-select" id="ex1" disabled="" required="" title="국적을 확인할수있습니다">
+                                       <option value="" disabled="" hidden="" selected="">국적을 선택해주세요</option>
+                                       <option value="대한민국">대한민국</option>                                 
+                                    </select>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>                        
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                        <li class="col2 txt-list">
+                           <label for="textarea1" class="tit">ddddd</label>
+                           <div class="inp-box">
+                              <p class="txt">ddddd</p>
+                           </div>  
+                        </li>
+                     </ul>                  
+                  </div>
+               </div>
+               
+               
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

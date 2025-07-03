@@ -2,7 +2,7 @@
 
   /** 리스트형식은 마진 24 **/
   &:has(.txt-list) ul{gap:15px 0} 
-  &:has(.txt-list) ul li:not(.txt-list):not(.accordion-wrap){margin-top: 15px;} 
+  &:has(.txt-list) ul li:not(.txt-list):not(.accordion-wrap){margin-top: 15px;}
   &:has(.form-btn-area){padding: 32px 130px 32px 32px;}
   
   ul {display:flex;flex-direction:row;flex-wrap:wrap;gap:32px 0;margin-left:-40px;
@@ -28,6 +28,10 @@
       /** 점선 **/
       &[class*=bor-list]{padding-top: 24px;position: relative;align-items: flex-start;
         &::before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:1px;background-image:url(/assets/icons/dotted.svg)}
+
+        &.bor-list-b{padding-bottom: 24px;padding-top: 0;
+          &::before{bottom:0;top:auto}
+        }        
       }  
 
       &[class*=bor-list].ps-txt{flex-direction: row; 
@@ -35,9 +39,13 @@
       }
       
       /** 실선 **/
-      &[class*=bor-list-line]::before{background-image: none;}
+      &[class*=bor-list-line]:not(.bor-list-show)::before{background-image: none;}
+
       &.bor-list-line{border-top:1px solid #717171;}
+
       &.bor-list-line1{border-top:1px solid #D8D8D8;}      
+      &.bor-list-line1-b{border-bottom:1px solid #D8D8D8;padding-bottom: 24px;}  
+
       &.address-list button{margin-right: 8px;gap: 5px;}
       
       /** 넓이 **/
@@ -95,8 +103,7 @@
         ul{border-top:0;
           li{background-color: rgba(0,0,0,0.0);padding-top: 0;border-radius: 0;align-items: flex-start;            
             &[class*=bor-list]{padding-top: 24px;border-color: #D8D8D8;}            
-            &:not(.txt-list){flex-direction: column;}            
-            &.bor-list-b{border-bottom:1px solid #D8D8D8;padding-bottom: 24px;}
+            &:not(.txt-list){flex-direction: column;}                        
             .inp-box{width:100%;}
             label{width:auto;padding-right: 12px;}
             .txt{font-weight: 400;}

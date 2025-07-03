@@ -22,6 +22,7 @@
   .wrap-cont-tbl table:first-child{margin-top: 0;}  
   .search-box + .compulsory-txt{margin-top: 24px;margin-bottom: 49px;}
   .txt-box-type.type1 + .wrap-form-area{margin-top: 24px;}
+  .accordion:nth-child(n+2){margin-top: 8px;}
 }
 
 .wrap-form-area .inp-form:first-child{margin-top: 0;}
