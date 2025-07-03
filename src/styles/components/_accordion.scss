@@ -20,9 +20,9 @@
         }
       }
     }
-    .accordion-header{
-      padding: 24px; 
+    .accordion-header{      
       a{           
+        padding: 24px; 
         font-size: 17px;
         text-decoration: none;
         color:#1D1D1D;
@@ -45,6 +45,14 @@
           display: flex;
           justify-content: space-between;
           padding-top: 24px;
+
+          &.form-list{
+            flex-direction: column;
+            .txt-area{
+              margin-top: 12px;
+            }
+          }
+
           .txt{
             text-align: left;
             padding-left: 0;

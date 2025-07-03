@@ -77,10 +77,10 @@
                               <p class="txt">001</p>
                            </div>                                                                     
                         </li>                                         
-                        <li class="col1 txt-list">
+                        <li class="col2 txt-list">
                            <strong class="tit">품명</strong>   
                            <div class="inp-box">
-                              <p class="txt">TELEVISION 1234567890 TELEVISION 1234567890 TELEVISION 1234567890</p>
+                              <p class="txt">TELEVISION 1234567890</p>
                            </div>                                                                     
                         </li>                                         
                         <li class="col2 txt-list">
@@ -102,15 +102,15 @@
                            </div>                                                                     
                         </li>                                         
                      </ul>     
-
-                     <div class="cont-acc-list type1 pc">
+                     <!--  해외직구 환급신청 드롭다운 -->
+                     <div class="cont-acc-list type1">
                         <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
                            <div class="accordion-header">
                               <a href="javascript: void(0);"><i class="icon btn-arrow-down medium">열기</i></a>
                            </div>
                            <div class="accordion-body d-none">
                               <div class="inp-form">
-                                 <ul class="mo-cont-wrap">                                                         
+                                 <ul>                                                         
                                     <li class="col1 txt-list">
                                        <strong class="tit">번호</strong>   
                                        <div class="inp-box">
@@ -142,22 +142,22 @@
                                        </div>                                                                     
                                     </li>    
                                     <li class="col1 bor-list bor-list-b nowrap-list">
-                                       <label class="tit" for="">환급 신청 수량 <i class="compulsory">필수</i></label>   
+                                       <label class="tit" for="drop-ex1">환급 신청 수량 <i class="compulsory">필수</i></label>   
                                        <div class="inp-box">
                                           <div class="form-group medium mw-390">                     
                                              <div class="form-conts">
-                                                <input type="text" id="ex5" class="input text-right" value="1" title="환급 신청 수량 입력해주세요">
+                                                <input type="text" id="drop-ex1" class="input text-right" value="1" title="환급 신청 수량 입력해주세요">
                                              </div>                           
                                           </div>
                                           <button type="button" class="btn secondary medium return-btn">환급세액입력</button>
                                        </div>                                                                     
                                     </li>
                                     <li class="col2">
-                                       <label class="tit" for="">수출신고번호 <i class="compulsory">필수</i></label>   
+                                       <label class="tit" for="drop-ex2">수출신고번호 <i class="compulsory">필수</i></label>   
                                        <div class="inp-box">
                                           <div class="form-group medium mw-390">                  
                                              <div class="form-conts">
-                                                <select class="form-select" id="ex3" required="" title="첫번쨰 번호를 선택해주세요">
+                                                <select class="form-select" id="drop-ex2" required="" title="수출신고번호 선택해주세요">
                                                 <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
                                                 <option value="02" selected="">434124321M(선적완료)</option>                              
                                                 </select>
@@ -166,11 +166,11 @@
                                        </div>                                                                     
                                     </li>
                                     <li class="col2">
-                                       <label class="tit" for="">수출신고 란번호 <i class="compulsory">필수</i></label>   
+                                       <label class="tit" for="drop-ex3">수출신고 란번호 <i class="compulsory">필수</i></label>   
                                        <div class="inp-box">
                                           <div class="form-group medium mw-390">                  
                                              <div class="form-conts">
-                                                <select class="form-select" id="ex3" required="" title="수출신고 란번호를 선택해주세요">
+                                                <select class="form-select" id="drop-ex3" required="" title="수출신고 란번호를 선택해주세요">
                                                 <option value="" disabled="" hidden="">번호를 선택해주세요</option>
                                                 <option value="02" selected="">001</option>                              
                                                 </select>
@@ -179,40 +179,186 @@
                                        </div>                                                                     
                                     </li>
                                     <li class="col2 nowrap-list">
-                                       <label for="ex2" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
+                                       <label for="drop-ex4" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
                                        <div class="inp-box">
-                                          <button type="button" class="btn primary medium return-btn" disabled>환급세액입력</button>
+                                          <button type="button" class="btn secondary medium return-btn" disabled>환급세액입력</button>
                                           <div class="form-group medium mw-390">                     
                                              <div class="form-conts disabled-type2">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="란사항 신청액 합계 확인할수있습니다">
+                                                <input type="text" class="input text-right" id="drop-ex4" value="0" disabled="" title="란사항 신청액 합계 확인할수있습니다">
                                              </div>                           
                                           </div>                                             
                                        </div>
-                                       <p class="advice-txt">본세100만원 이상인 경우 납부지연가산세 변동 내역을 확인하실 수 있습니다.</p>
+                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>
                                        <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
                                     </li>
                                  </ul> 
                               </div>
                            </div>
                         </div>
-                     </div>                     
+                     </div>      
+                     <!--  해외직구 환급신청 드롭다운 -->               
                      <div class="form-check medium">
-                        <input type="checkbox" id="radio_chk1">
-                        <label for="radio_chk1"><span class="sr-only">선택</span></label>
+                        <input type="checkbox" id="chk_chk1">
+                        <label for="chk_chk1"><span class="sr-only">선택</span></label>
                      </div>           
-                  </div>                  
+                  </div>    
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">란번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">001</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">품명</strong>   
+                           <div class="inp-box">
+                              <p class="txt">TELEVISION 1234567890</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">수입신고번호</strong>   
+                           <div class="inp-box">
+                              <p class="txt">434124321M</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">관세</strong>   
+                           <div class="inp-box">
+                              <p class="txt">145,412</p>
+                           </div>                                                                     
+                        </li>                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">부가세 등</strong>   
+                           <div class="inp-box">
+                              <p class="txt">113,421</p>
+                           </div>                                                                     
+                        </li>                                         
+                     </ul>     
+                     <!--  해외직구 환급신청 드롭다운 -->
+                     <div class="cont-acc-list type1">
+                        <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                           <div class="accordion-header">
+                              <a href="javascript: void(0);"><i class="icon btn-arrow-down medium">열기</i></a>
+                           </div>
+                           <div class="accordion-body d-none">
+                              <div class="inp-form">
+                                 <ul>                                                         
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">번호</strong>   
+                                       <div class="inp-box">
+                                          <p class="txt">00101</p>
+                                       </div>                                                                     
+                                    </li>                                         
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">모델 및 규격</strong>   
+                                       <div class="inp-box">
+                                          <p class="txt">RSG UHD 65 SEREIES 65 INCH CLASS 4K SMART UHD TV</p>
+                                       </div>                                                                     
+                                    </li>                                         
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">환급가능수량</strong>   
+                                       <div class="inp-box">
+                                          <p class="txt">1(PC)</p>
+                                       </div>                                                                     
+                                    </li>                                         
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">신고단가</strong>   
+                                       <div class="inp-box">
+                                          <p class="txt">1,525.57</p>
+                                       </div>                                                                     
+                                    </li>                                         
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">신고금액</strong>   
+                                       <div class="inp-box">
+                                          <p class="txt">1,525.57</p>
+                                       </div>                                                                     
+                                    </li>    
+                                    <li class="col1 bor-list bor-list-b nowrap-list">
+                                       <label class="tit" for="drop-ex1-1">환급 신청 수량 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                     
+                                             <div class="form-conts">
+                                                <input type="text" id="drop-ex1-1" class="input text-right" value="1" title="환급 신청 수량 입력해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium return-btn">환급세액입력</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="drop-ex2-2">수출신고번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="drop-ex2-2" required="" title="수출신고번호 선택해주세요">
+                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
+                                                <option value="02" selected="">434124321M(선적완료)</option>                              
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="drop-ex3-3">수출신고 란번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="drop-ex3-3" required="" title="수출신고 란번호를 선택해주세요">
+                                                <option value="" disabled="" hidden="">번호를 선택해주세요</option>
+                                                <option value="02" selected="">001</option>                              
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2 nowrap-list">
+                                       <label for="drop-ex4-4" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <button type="button" class="btn secondary medium return-btn" disabled>환급세액입력</button>
+                                          <div class="form-group medium mw-390">                     
+                                             <div class="form-conts disabled-type2">
+                                                <input type="text" class="input text-right" id="drop-ex4-4" value="0" disabled="" title="란사항 신청액 합계 확인할수있습니다">
+                                             </div>                           
+                                          </div>                                             
+                                       </div>
+                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>
+                                       <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                                    </li>
+                                 </ul> 
+                              </div>
+                           </div>
+                        </div>
+                     </div>      
+                     <!--  해외직구 환급신청 드롭다운 -->               
+                     <div class="form-check medium">
+                        <input type="checkbox" id="chk_chk2">
+                        <label for="chk_chk2"><span class="sr-only">선택</span></label>
+                     </div>           
+                  </div>                             
                </div>  
-               <div class="btn-area btn-between btn-area-type">
-                  <div class="align">
-                     <div class="full-btn">
-                        <button type="button" class="btn secondary large">임시저장</button>
-                     </div>                     
+               <div class="btn-area btn-between btn-area-type pc">
+                  <div class="align">                     
                      <button type="button" class="btn tertiary large">이전</button>
                      <button type="button" class="btn tertiary large">목록</button>
                   </div>
                   <div class="align">
                      <button type="button" class="btn tertiary large">미리보기</button>                     
+                     <button type="button" class="btn secondary large">임시저장</button>
                      <button type="button" class="btn primary large">다음</button>                     
+                  </div>
+               </div>
+
+               <div class="btn-area btn-between btn-area-type mo">
+                  <div class="align">                     
+                     <div class="full-btn">
+                        <button type="button" class="btn tertiary large">목록</button>
+                     </div>
+                     <button type="button" class="btn tertiary large">미리보기</button>                     
+                     <button type="button" class="btn secondary large">임시저장</button>                     
+                  </div>
+                  <div class="align">                     
+                     <button type="button" class="btn tertiary large btn-margin">이전</button>                     
+                     <button type="button" class="btn primary large btn-margin">다음</button>                     
                   </div>
                </div>
                

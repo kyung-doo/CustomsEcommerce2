@@ -175,7 +175,7 @@ button[class*=btn],label[class*=btn] {
   }
 }
 
-.btn-area-type1{    
+[class*=btn-area-type]{    
     .align{
       flex-wrap: wrap;
     }  

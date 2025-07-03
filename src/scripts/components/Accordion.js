@@ -18,16 +18,24 @@ class Accordion {
             const target = $(e.currentTarget).parent().parent();
             if(!target.hasClass('active')) {
                 if(this.props.beforeClose) {
-                    target.siblings('*[data-ui="accordion"]').find('.accordion-body').slideUp(300);
+                    target.siblings('*[data-ui="accordion"]').find('.accordion-body').slideUp(100);
                     target.siblings('*[data-ui="accordion"]').removeClass('active');
                 }
-                target.find(".accordion-body").slideDown(300);
+                target.find(".accordion-body").slideDown(100);
                 target.addClass('active');
                 target.find('i').text('닫기');
             } else {
-                target.find(".accordion-body").slideUp(300);
+                target.find(".accordion-body").slideUp(100);
                 target.removeClass('active');
                 target.find('i').text('열기');
+            }
+        });
+        
+        $(window).resize(function() {
+            if($(window).width() <= 480) {
+                $('.accordion-wrap').removeClass('active');
+                $('.accordion-body').removeAttr('style');                
+                $('.accordion-header > a i').text('열기')
             }
         });
     }

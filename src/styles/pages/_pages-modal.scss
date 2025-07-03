@@ -45,8 +45,6 @@
     margin: 24px 0;
 
     li{
-      min-width: 100px;
-
       p.txt.disabled{        
         color:#8E8E8E;
       }
@@ -100,43 +98,14 @@
   }
 }
 
-@media (max-width: 1312px) {
-  .modal-body{
-    .wrap-form-area{
-      .form-btn-area{
-        top: 32px !important;
-      }
-    } 
-  }  
-}
 
-@media (max-width: 767px) {
-  .modal-body{
-    .inp-form ul.file-form{
-      flex-direction: column;
-      width:100%;      
-    }
-  }
-}
 
 
 @media (max-width: 480px) {
   .modal-body{
     .certification-number{
       padding: 22px 10px;
-    }
-
-    .file-upload{
-      flex-direction: column;
-
-      .file-upload-btn-wrap{
-        width:100%;
-
-        label{
-          width:100%;
-        }
-      }
-    }
+    }    
 
     .reforwarding{
       flex-direction: column;

@@ -15,52 +15,39 @@
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">해외직구 납부·고지·환급</span></li>                     
+                     <li><span class="txt">관세환급</span></li>  
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">관세환급 신청</a></li>                  
                   </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="switch9" name="radio-switch1" checked>
-                     <label for="switch9" class="kr">한글</label>
-                     <input type="radio" id="switch10" name="radio-switch1">
-                     <label for="switch10" class="en">English</label>
-                  </div>
-               </div>
+               </nav>               
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <h3 class="head-tit">해외직구 환급신청</h3>
             <div class="step-area">
                <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
+                  <strong class="tit-step"><span>Step 3</span><i>/</i>Step 3</strong>
+                  <h4 class="tit">제출서류 등록</h4>
                </div>
                <div class="step-box">
                   <ol class="step-wrap step-type2">
-                     <li class="active">
+                     <li class="done">
                         <span>
                               <em class="sr-only">현재단계</em>
                               <i class="step">Step 1</i>
                               <span class="step-tit">기본정보 입력</span>
                         </span>
                      </li>
-                     <li>
+                     <li class="done">
                         <span>
                               <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
+                              <span class="step-tit">환급물품 정보</span>
                         </span>
                      </li>
-                     <li>
+                     <li class="active">
                         <span>
                               <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
+                              <span class="step-tit">제출서류 등록</span>
                         </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
+                     </li>                     
                   </ol>
                </div>
             </div>
@@ -68,13 +55,183 @@
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>전자상거래 관세 환급 신청서 작성 방법</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">전자상거래 관세 환급 신청서 작성 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               컨텐츠               
+               <h5 class="title-type3">파일첨부</h5>
+               <div class="txt-box-type type1 page-mo">
+                  <p>보완서류는 최대 20개까지 등록 가능합니다. <strong><span>3개</span><i>/</i>20개</strong></p>
+                  <button type="button" class="btn secondary medium">추가</button>
+               </div>
+               <div class="wrap-form-area">
+                  <div class="inp-form">                              
+                     <ul class="file-form">                                                         
+                        <li class="col1 mw-300">
+                           <label for="ex1" class="tit">문서종류</label>
+                           <div class="inp-box">
+                              <div class="form-group medium">                  
+                                 <div class="form-conts disabled-type2">
+                                    <select class="form-select" id="ex1" required="" title="문서종류를 선택해주세요">                                                       
+                                       <option value="" disabled hidden>문서종류를 선택해주세요</option>
+                                       <option value="자가사용물품 반품 기타증빙자료자가사용물품 반품 기타증빙자료" selected="">자가사용물품 반품 기타증빙자료자가사용물품 반품 기타증빙자료</option>                                 
+                                    </select>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1 mw-640">
+                           <strong class="tit">첨부파일명</strong>
+                           <div class="inp-box">
+                              <div class="file-upload">
+                                 <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
+                                 <div class="file-upload-btn-wrap">
+                                    <input type="file" name="myFile" id="fileu-upload1" hidden="">
+                                    <label for="fileu-upload1" class="btn tertiary medium">
+                                       파일선택
+                                    </label>
+                                 </div>
+                              </div>                                       
+                           </div>                                    
+                        </li>                                
+                     </ul>
+                     <div class="form-btn-area">
+                        <button class="refresh-btn text"><i class="icon refresh medium"></i>초기화</button>
+                        <button class="close-btn text"><i class="icon close medium"></i>삭제</button>
+                     </div>
+                  </div>
+                  <div class="inp-form">                              
+                     <ul class="file-form">                                                         
+                        <li class="col1 mw-300">
+                           <label for="ex2" class="tit">문서종류</label>
+                           <div class="inp-box">
+                              <div class="form-group medium">                  
+                                 <div class="form-conts disabled-type2">
+                                    <select class="form-select" id="ex2" required="" title="문서종류를 선택해주세요">
+                                       <option value="" disabled hidden>문서종류를 선택해주세요</option>
+                                       <option value="자가사용물품 반품 기타증빙자료" selected="">자가사용물품 반품 기타증빙자료</option>                                 
+                                    </select>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1 mw-640">
+                           <strong class="tit">첨부파일명</strong>
+                           <div class="inp-box">
+                              <div class="file-upload">
+                                 <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
+                                 <div class="file-upload-btn-wrap">
+                                    <input type="file" name="myFile" id="fileu-upload2" hidden="">
+                                    <label for="fileu-upload2" class="btn tertiary medium">
+                                       파일선택
+                                    </label>
+                                 </div>
+                              </div>                                       
+                           </div>                                    
+                        </li>                                
+                     </ul>
+                     <div class="form-btn-area">
+                        <button class="refresh-btn text"><i class="icon refresh medium"></i>초기화</button>
+                        <button class="close-btn text"><i class="icon close medium"></i>삭제</button>
+                     </div>
+                  </div>
+                  <div class="inp-form">                              
+                     <ul class="file-form">                                                         
+                        <li class="col1 mw-300">
+                           <label for="ex3" class="tit">문서종류</label>
+                           <div class="inp-box">
+                              <div class="form-group medium">                  
+                                 <div class="form-conts disabled-type2">
+                                    <select class="form-select" id="ex3" required="" title="문서종류를 선택해주세요">
+                                       <option value="" disabled hidden>문서종류를 선택해주세요</option>
+                                       <option value="자가사용물품 반품 기타증빙자료" selected="">자가사용물품 반품 기타증빙자료</option>                                 
+                                    </select>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1 mw-640">
+                           <strong class="tit">첨부파일명</strong>
+                           <div class="inp-box">
+                              <div class="file-upload">
+                                 <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
+                                 <div class="file-upload-btn-wrap">
+                                    <input type="file" name="myFile" id="fileu-upload3" hidden="">
+                                    <label for="fileu-upload3" class="btn tertiary medium">
+                                       파일선택
+                                    </label>
+                                 </div>
+                              </div>                                       
+                           </div>                                    
+                        </li>                                
+                     </ul>
+                     <div class="form-btn-area">
+                        <button class="refresh-btn text"><i class="icon refresh medium"></i>초기화</button>
+                        <button class="close-btn text"><i class="icon close medium"></i>삭제</button>
+                     </div>
+                  </div>
+               </div>
+               <p class="advice-txt">파일은 종류별 최대 20개 200MB로 제한됩니다.</p>
+               <div class="btn-area btn-between btn-area-type pc">
+                  <div class="align">                     
+                     <button type="button" class="btn tertiary large">이전</button>                     
+                  </div>
+                  <div class="align">
+                     <button type="button" class="btn tertiary large">미리보기</button>                     
+                     <button type="button" class="btn secondary large">임시저장</button>
+                     <button type="button" class="btn primary large">다음</button>                     
+                  </div>
+               </div>
+               <div class="btn-area btn-between btn-area-type mo">
+                  <div class="align">                                          
+                     <button type="button" class="btn tertiary large">미리보기</button>                     
+                     <button type="button" class="btn secondary large">임시저장</button>                     
+                  </div>
+                  <div class="align">                     
+                     <button type="button" class="btn tertiary large btn-margin">이전</button>                     
+                     <button type="button" class="btn primary large btn-margin">다음</button>                     
+                  </div>
+               </div>
+
+
+
+
+
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+
+                  <!-- 환급 신청서 출력 -->
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">환급 신청서 출력</button>   
+                  <div id="modal1" class="modal d-none" data-ui="modal">
+                     <div class="modal-wrap mw-1280">
+                        <div class="modal-header">
+                           <h5>환급 신청서 출력</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              콘텐츠 영역
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn modal-close tertiary medium">닫기</button>                              
+                        </div>
+                     </div>
+                  </div> 
+                  <!-- 환급 신청서 출력 -->
+
+
+
+               </div>
+               <!-- 팝업 사용후 삭제해주세요 -->   
+
+
+
+
+
             </div>
             <!--// 내용 -->
          </div>
