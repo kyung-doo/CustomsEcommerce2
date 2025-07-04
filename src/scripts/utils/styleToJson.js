@@ -36,3 +36,31 @@ export default function (el, style) {
     }
     return obj;
 }
+
+
+function testtesttes(){
+    $('.cont-area select,.cont-area input,.cont-area textarea').each(function(i){
+        var title = $(this).attr('title');       
+        var id = $(this).attr('id');   
+        
+        $('.form-group').eq(i).append('<div style="color:red;margin-top:10px;">타이틀 : '+title+'</div>')                    
+        $('.cont-area label').eq(i).append('<div style="color:red;margin-top:10px;color:blue">아이디 : '+id+'</div>')        
+    })
+
+    $('.cont-area caption').each(function(i){        
+        var caption = $(this).text();     
+
+        $('.table-wrap').eq(i).append('<div style="color:red;width:100%:margin-top:10px;">'+caption+'</div>')                
+    })
+
+    $('.cont-area label').each(function(i){        
+        var info = $(this).attr('for');     
+
+        $('.cont-area label').eq(i).append('<div style="color:red;width:100%;">for정보 : '+info+'</div>')                        
+    })
+}
+
+
+$(function(){
+  //testtesttes()  
+})

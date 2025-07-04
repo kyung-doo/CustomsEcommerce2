@@ -12,21 +12,21 @@
 }
 
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 .text-right {
-    text-align: right;
+    text-align: right !important;
 }
 
 .f-0{
-    font-size:0;
+    font-size:0 !important;
 }
 
 .d-flex {
-    display: flex;
+    display: flex !important;
 }
 
 .d-flex-nowrap{
@@ -48,7 +48,6 @@
 .bor-col-sep{
     border-collapse: separate !important;
 }
-
 
 @for $i from 0 to 100 {
     .mt-#{$i} {
@@ -80,5 +79,11 @@
 @for $i from 1 to 2000 {
     .mw-#{$i} {
         max-width: #{$i}px;
+    }    
+}
+
+@for $i from 1 to 2000 {
+    .minw-#{$i} {
+        min-width: #{$i}px !important;
     }    
 }

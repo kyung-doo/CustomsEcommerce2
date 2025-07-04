@@ -321,7 +321,8 @@
 
     .f-box {
       .f-cnt {
-        flex-direction: column;
+        flex-direction: column;        
+        .f-info{padding-right: 0;}
       }
 
       .f-info {
