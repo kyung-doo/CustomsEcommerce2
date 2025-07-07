@@ -29,12 +29,12 @@ class Modal {
     show () {
         this.ele.empty().append(this.copyHtml);
         this.ele.removeClass('d-none');
-        /*
-        gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
-        gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut, onComplete: () => {
+        
+        // gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
+        // gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut, onComplete: () => {
             this.ele.trigger('modal-show');
-        }});
-        */
+        // }});
+        
 
         this.ele.find(".btn-close").on("click", () => {
             this.hide();
@@ -69,6 +69,7 @@ class Modal {
     }
     
     hide () {
+        this.ele.trigger('modal-hide');
         this.ele.addClass('d-none');
         this.ele.find(".btn-close").off("click");
         this.ele.find(".modal-close").off("click");
@@ -77,7 +78,6 @@ class Modal {
         $(document).off('keydown.modal');
         this.ele.empty();
         $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();
-        this.ele.trigger('modal-hide');
     }
 
 }
