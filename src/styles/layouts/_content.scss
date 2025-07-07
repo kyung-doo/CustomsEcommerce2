@@ -29,6 +29,7 @@
   .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
   .title.mo{margin-top: 41px;margin-bottom: 24px;}
   .wrap-form-area + .board-top.no-wrap.title-top{margin-top: 24px;}
+  .wrap-form-area + .wrap-cont-tbl{margin-top: 48px;}
 
 }
 
@@ -41,6 +42,8 @@
   .title-type3:first-child{margin-top: 20px;}
   .advice-txt{margin-top: 16px;}
   .modal-cont{margin-bottom: 32px;}
+  .modal-cont .title-type3:first-child{margin-top: 0;}
+  .board-top.tbl-top{margin-bottom: 19px;}
 }
 
 /** 레이어팝업 **/

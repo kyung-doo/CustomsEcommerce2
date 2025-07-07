@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">기본 정보 입력</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="active">
+                        <span>
+                              <em class="sr-only">현재단계</em>
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">배송지 주소 등록</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">알림 동의</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>                     
+                              <i class="step">Step 4</i>
+                              <span class="step-tit">확인 및 등록</span>
+                        </span>
+                     </li>               
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>개인통관고유부호란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+
+               <!-- 수입신고내역 조회 -->
+               <div class="testtest">
+                 <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">수입신고내역 조회</button>   
+                  <div id="modal1" class="modal d-none" data-ui="modal">
+                     <div class="modal-wrap mw-1280">
+                        <div class="modal-header">
+                           <h5>수입신고내역 조회</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <h5 class="title-type3">수입신고서 기본</h5>
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                                                             
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">신고번호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">42632-15-500001U</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">신고일자</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">2025-04-28</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                    </ul>                  
+                                 </div>
+                              </div>
+                              <h5 class="title-type3">신고인</h5>
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                                                             
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">상호/성명</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">전자상거래/홍길동</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">전화번호내선</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">012-123-1234</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col1 txt-list">
+                                          <strong class="tit">이메일</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">hong@mail.com</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                    </ul>                  
+                                 </div>
+                              </div>
+                              <h5 class="title-type3">수입자</h5>
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                                                             
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">상호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">삼성SDS</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">통관고유부호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">P200022549999</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col1 txt-list">
+                                          <strong class="tit">수입자구분</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">수입자 납세의무자 동일</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                    </ul>                  
+                                 </div>
+                              </div>
+                              <h5 class="title-type3">납세의무자</h5>
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                                                             
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">상호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">삼성SDS</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">성명</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">홍길동</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">통관고유부호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">수입자 납세의무자 동일</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">전화번호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">012-123-1234</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col1 txt-list">
+                                          <strong class="tit">주소</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">(05515) 서울시 송파구 올림픽로35길 125 삼성SDS</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                                                       
+                                    </ul>                  
+                                 </div>
+                              </div>
+                              <h5 class="title-type3">기본신고사항</h5>
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                                                             
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">신고구분</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">일반서류신고</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">거래구분</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">일반형태수입</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">수입종류</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">일반수입(내수용)</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">결재방법</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">계좌이체(상호계산방식)</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">징수형태</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">신고,수리전납부</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">화물관리번호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">25HDFC6902i-1234-5678</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">검사(반입)장소</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">1234567-122222222 (하나로티앤에스)</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">세관</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">인천세관</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">입항일자</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">2025-01-01</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">반입일자</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">2025-02-01</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">적출국</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">홍콩</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">M B/L-H B/L</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">HDFC25E6902111A – 598941000000</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">분할신고여부</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">N</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">운송수단/용기</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">선박에 의한 운송 / 벌크</p>
+                                          </div>                        
+                                       </li>                                                                                                                                                                                                                                                                                                                                                                  
+                                    </ul>                  
+                                 </div>
+                              </div>
+
+
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">                              
+                              <button type="button" class="btn modal-enter primary medium">닫기</button>
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               <!-- 수입신고내역 조회 -->
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->                           
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

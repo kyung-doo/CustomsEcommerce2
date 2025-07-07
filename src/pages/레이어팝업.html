@@ -38,18 +38,18 @@
                </a>
             </div>
             <!-- 내용 -->
-            <div class="cont-area">
+            <div class="cont-area mt-50">
                <h1>레이어팝업 사용방법</h1><br>
                <p>1. 버튼에서 data-modal-target="#modal1" 을 복사해서 연결하고싶은 버튼에다가 추가한다</p><br>
                <p>2. 레이어팝업 id값과 data-modal-target값을 동일하게 적용한다</p><br><br>               
 
                <!-- 팝업 사용후 삭제해주세요 -->
                <div class="testtest">
-                 
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">ㅁㅁㅁㅁ</button>   
                </div>
                <!-- 팝업 사용후 삭제해주세요 -->               
 
-               <h1 style="font-size:40px;color:red">기타 팝업</h1>
+               <h1 style="font-size:40px;color:red;margin-bottom: 20px;">개인통관고유부호 모음</h1>
 
                <!-- 휴대폰번호 중복 목록 -->
                <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">휴대폰번호 중복 목록</button>   
@@ -640,6 +640,80 @@
                   </div>
                </div>
                <!-- // 개인통관고유부호 유효기간 만료 안내 -->
+
+               <h1 style="font-size:40px;color:red;margin-top: 50px;margin-bottom: 20px;">통관 정보 팝업 모음</h1>
+
+               <!-- 특송업체 상세조회 -->
+               <button type="button" data-modal-target="#modal6" style="width:100%;height:50px;margin-bottom:20px">특송업체 상세조회</button>   
+               <div id="modal6" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>특송업체 상세조회</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>                                                                             
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">특송 업체명</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">주식회사 허브넷로지스틱스</p>
+                                       </div>                        
+                                    </li>                                                             
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">전화번호</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">02-1111-1111</p>
+                                       </div>                        
+                                    </li>                                                                                                                                                           
+                                 </ul>                  
+                              </div>
+                           </div>
+                        </div>                        
+                     </div>
+                     <div class="modal-footer">                           
+                        <button type="button" class="btn modal-enter primary medium">닫기</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- 특송업체 상세조회 -->
+
+               <!-- 관세사 정보 상세조회 -->
+               <button type="button" data-modal-target="#modal7" style="width:100%;height:50px;margin-bottom:20px">관세사 정보 상세조회</button>   
+               <div id="modal7" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>관세사 정보 상세조회</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>                                                                             
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">관세사명</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">(주)허브넷로지스틱스</p>
+                                       </div>                        
+                                    </li>                                                             
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">전화번호</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">02-1111-1111</p>
+                                       </div>                        
+                                    </li>                                                                                                                                                           
+                                 </ul>                  
+                              </div>
+                           </div>
+                        </div>                        
+                     </div>
+                     <div class="modal-footer">                           
+                        <button type="button" class="btn modal-enter primary medium">닫기</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- 관세사 정보 상세조회 -->
 
 
 

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">해외직구 수입통관 정보</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">수입화물 진행정보 조회</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">수입화물진행정보(BL화물정보) 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>수입화물 진행정보란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">수입화물 진행정보란? 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="search-box">
+                  <ul>                                   
+                     <li class="col1">
+                        <div class="form-check medium tit">
+                           <input type="radio" name="rdo_11" id="rdo_22" checked="">
+                           <label for="rdo_22" class="tit">M B/L – H B/L <i class="compulsory">필수</i></label>
+                        </div>      
+                        <div class="">
+                           <div class="search-area nowrap type1">                           
+                              <div class="form-group medium mw-328">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" placeholder="M B/L" title="정보를 입력해주세요">
+                                 </div>                              
+                              </div>
+                              <div class="form-group medium mw-328">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" placeholder="H B/L" title="정보를 입력해주세요">
+                                 </div>                                
+                              </div>
+                              <div class="form-group medium mw-140">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" required="" title="조건을 선택해주세요">
+                                       <option value="" selected="" disabled="" hidden="">2025</option>
+                                       <option value="항목1">항목1</option>
+                                       <option value="항목2">항목2</option>
+                                       <option value="항목3">항목3</option>
+                                    </select>
+                                 </div>                              
+                              </div>                           
+                           </div>   
+                           <p class="advice-txt">개인물품인 경우 운송장번호를 H B/L에 입력하세요.</p>                                                       
+                        </div>     
+                     </li>    
+                     <li class="col1">
+                        <div class="form-check medium tit">
+                           <input type="radio" name="rdo_11" id="rdo_22" checked="">
+                           <label for="rdo_22" class="tit">화물관리번호 <i class="compulsory">필수</i></label>
+                        </div>           
+                        <div class="search-area">                           
+                           <div class="form-group medium mw-328">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" placeholder="내용을 입력해주세요" title="정보를 입력해주세요">
+                              </div>                              
+                           </div>                           
+                        </div>                           
+                     </li>    
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="button" class="btn secondary medium">조회</button>                        
+                     </div>
+                  </div>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">수입화물진행정보(BL화물정보)조회</button>   
+                  <div id="modal1" class="modal d-none" data-ui="modal">
+                     <div class="modal-wrap mw-1280">
+                        <div class="modal-header">
+                           <h5>수입화물진행정보(BL화물정보)조회</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">                           
+                           <div class="modal-cont">
+                              <div class="board-top tbl-top">
+                                 <div class="left-box">
+                                    <strong class="tit top-txt">전체<span>240</span>개</strong>
+                                    <div class="top-txt">
+                                       <select class="form-select-sort large" title="정보 구분 선택">                           
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                       </select>
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                              <div class="wrap-check-tbl">
+                                 <div class="table-wrap pc">
+                                    <table class="tbl col check">
+                                       <caption>수입화물진행정보(BL화물정보)조회 대한 NO,화물관리번호,B/L번호,품명,입항일자,양륙항,운송사명,포장개수,중량, 표로 로 구성되어있다.</caption>
+                                       <colgroup>
+                                          <col style="width:5.46875%;">                                                      
+                                          <col style="width:17.1875%;">                                                      
+                                          <col style="width:15.625%;">                                                      
+                                          <col style="width:15.625%;">                                                      
+                                          <col style="width:10.15625%;">                                                      
+                                          <col style="width:7.03125%;">                                                      
+                                          <col style="width:7.8125%;">                                                      
+                                          <col style="width:7.03125%;">                                                      
+                                          <col style="width:9.0625%;">                                                      
+                                       </colgroup>
+                                       <thead>
+                                          <tr>                                                
+                                             <th scope="col">NO</th>
+                                             <th scope="col">화물관리번호</th>
+                                             <th scope="col">B/L번호</th>
+                                             <th scope="col">품명</th>
+                                             <th scope="col">입항일자</th>
+                                             <th scope="col">양륙항</th>
+                                             <th scope="col">운송사명</th>
+                                             <th scope="col">포장개수</th>
+                                             <th scope="col">중량</th>                                                                           
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          <tr>
+                                             <td>10</td>                              
+                                             <td>25HDFC6902i97810116</td>                              
+                                             <td><a href="#none" class="in-num">HDFC25E6902978A- 598941820554</a></td>                              
+                                             <td>QCY WIRELESS ACTIVE NOIS…</td>                              
+                                             <td>2025-02-27</td>                              
+                                             <td>인천항</td>                              
+                                             <td>화동해운 주식회사</td>                              
+                                             <td>1 GT</td>                              
+                                             <td>0.564 KG</td>                              
+                                          </tr>
+                                          <tr>
+                                             <td>10</td>                              
+                                             <td>25HDFC6902i97810116</td>                              
+                                             <td><a href="#none" class="in-num">HDFC25E6902978A- 598941820554</a></td>                              
+                                             <td>QCY WIRELESS ACTIVE NOIS…</td>                              
+                                             <td>2025-02-27</td>                              
+                                             <td>인천항</td>                              
+                                             <td>화동해운 주식회사</td>                              
+                                             <td>1 GT</td>                              
+                                             <td>0.564 KG</td>                              
+                                          </tr>
+                                          <tr>
+                                             <td>10</td>                              
+                                             <td>25HDFC6902i97810116</td>                              
+                                             <td><a href="#none" class="in-num">HDFC25E6902978A- 598941820554</a></td>                              
+                                             <td>QCY WIRELESS ACTIVE NOIS…</td>                              
+                                             <td>2025-02-27</td>                              
+                                             <td>인천항</td>                              
+                                             <td>화동해운 주식회사</td>                              
+                                             <td>1 GT</td>                              
+                                             <td>0.564 KG</td>                              
+                                          </tr>                                                                                                                                                               
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 <div class="table-wrap mo">                     
+                                    <ul class="wrap-body">                                       
+                                       <li>
+                                          <ul class="body">                              
+                                             <li>
+                                                <strong class="title">NO</strong>
+                                                <span class="txt">999</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">화물관리번호</strong>
+                                                <span class="txt">25HDFC6902i97810116</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">B/L번호</strong>
+                                                <span class="txt"><a href="#none" class="in-num">HDFC25E6902978A- 598941820554</a></span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">품명</strong>
+                                                <span class="txt">QCY WIRELESS ACTIVE NOIS…</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">입항일자</strong>
+                                                <span class="txt">2025-02-27</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">양륙항</strong>
+                                                <span class="txt">인천항</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">운송사명</strong>
+                                                <span class="txt">화동해운주식회사</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">포장개수</strong>
+                                                <span class="txt">1 GT</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">중량</strong>
+                                                <span class="txt">0.564 KG</span>
+                                             </li>                                                                                                                                                                                                                             
+                                          </ul>
+                                       </li>                           
+                                       <li>
+                                          <ul class="body">                              
+                                             <li>
+                                                <strong class="title">NO</strong>
+                                                <span class="txt">999</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">화물관리번호</strong>
+                                                <span class="txt">25HDFC6902i97810116</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">B/L번호</strong>
+                                                <span class="txt"><a href="#none" class="in-num">HDFC25E6902978A- 598941820554</a></span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">품명</strong>
+                                                <span class="txt">QCY WIRELESS ACTIVE NOIS…</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">입항일자</strong>
+                                                <span class="txt">2025-02-27</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">양륙항</strong>
+                                                <span class="txt">인천항</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">운송사명</strong>
+                                                <span class="txt">화동해운주식회사</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">포장개수</strong>
+                                                <span class="txt">1 GT</span>
+                                             </li>                                                                                                                                                                                                                             
+                                             <li>
+                                                <strong class="title">중량</strong>
+                                                <span class="txt">0.564 KG</span>
+                                             </li>                                                                                                                                                                                                                             
+                                          </ul>
+                                       </li>                           
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="pagination pagination-type1">               
+                                 <button class="page-navi prev" disabled="">이전</button>
+                                 <div class="page-links">
+                                    <a class="page-link mobile-link" href="#">1</a>
+                                    <span class="page-link link-dot mobile-dot"></span>
+                                    <a class="page-link" href="#">2</a>
+                                    <a class="page-link" href="#">3</a>
+                                    <a class="page-link" href="#">4</a>
+                                    <a class="page-link mobile-link" href="#">5</a>
+                                    <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                                    <a class="page-link mobile-link" href="#">7</a>
+                                    <a class="page-link" href="#">8</a>
+                                    <a class="page-link" href="#">9</a>
+                                    <span class="page-link link-dot"></span>
+                                    <a class="page-link mobile-link" href="#">120</a>
+                                 </div>
+                                 <button class="page-navi next">다음</button>
+                              </div>
+
+
+
+
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>                              
+                        </div>
+                     </div>
+                  </div> 
+               </div>
+               <!-- 팝업 사용후 삭제해주세요 -->               
+
+
+
+
+                
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

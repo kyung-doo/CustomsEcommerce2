@@ -63,20 +63,21 @@ function accessibility(){
 
 //리스트 타입 제일큰 넓이값 구하기
 function formList() {
-        var title = $(".wrap-form-area .inp-form .txt-list .tit");
-        var width_array = title.map(function () {
-            return $(this).width();
-        }).get();
- 
-        var max_width = Math.max.apply(Math, width_array);
-        
-        if(max_width >= 160){
-            title.css({"width":"160px"})
-        }else{
-            title.width(max_width);
-        }        
-    }
+    var title = $(".wrap-form-area .inp-form .txt-list .tit");
+    var width_array = title.map(function () {
+        return $(this).width();
+    }).get();
+
+    var max_width = Math.max.apply(Math, width_array);
+    
+    if(max_width >= 160){
+        title.css({"width":"160px"})
+    }else{
+        title.width(max_width);
+    }        
+}
+
 $(function(){
   //accessibility()  
-  formList()
+  //formList() 
 })

@@ -14,6 +14,9 @@
 .dotted-line-bottom{padding-bottom: 25px;}
 .dotted-line-bottom::before{bottom:0;}
 
+.dotted-line-right{padding-right: 25px;}
+.dotted-line-right::before{right:0;width:2px;height:100%;left: auto;background-image:url(/assets/icons/dotted-row.svg)}
+
 /** 실선 **/      
 .solid-line-top1{border-top:1px solid #717171;margin-top: 25px;}
 .solid-line-bottom1{border-bottom:1px solid #717171;padding-bottom: 25px;}
@@ -122,6 +125,9 @@ strong.txt{font-weight: 700 !important;
 /** 페이지 검색 필수입력 **/
 .cont-area .search-box .compulsory{margin-left: 5px;bottom: 7px;}
 
+/** 페이지 체크박스,라디오박스 검색 필수입력 **/
+.cont-area .search-box .form-check .tit .compulsory{margin-left: 5px;bottom: 5px;}
+
 /** 필수 입력 **/
 .compulsory-txt .compulsory{left: 0;}
 
@@ -165,16 +171,21 @@ strong.txt{font-weight: 700 !important;
   ul {display: flex;margin-left: -40px;flex-wrap: wrap;gap:24px 0;
     li {display: flex;align-items: center;padding-left: 40px;
       &:first-child{margin-top: 0;}
-      .search-area {position: relative;display: flex;width: calc(100% - 120px);gap: 8px;flex-wrap: wrap;        
-        &.nowrap{flex-wrap: nowrap;}
+      .search-area {position: relative;display: flex;width: calc(100% - 120px);gap: 8px;flex-wrap: wrap;align-items: center;        
+        &[class*=nowrap]{flex-wrap: nowrap;}
       }
       .tit{display:inline;position:relative;min-width:120px;width:120px;align-items:center;font-size:15px;font-weight:700;padding-right:20px;line-height: 150%;}
+      .form-check.medium.tit{width:150px;min-width:150px}
+
+      
       .form-group {width: 100%;min-width: 10px;}
       .check-area {gap: 24px;}
       &.col1 {width: 100%;}
       &.col2 {width: 50%;}
       &.col3 {width: 33.333%;}
       &.col4 {width: 25%;}
+
+      .advice-txt{margin-top: 0;}
     }    
   }
 
@@ -241,7 +252,7 @@ strong.txt{font-weight: 700 !important;
     ul{
       li{
         .search-area{
-          &.nowrap{flex-wrap: wrap;
+          &.nowrap:not(.type1){flex-wrap: wrap;
             .form-group{max-width:100%;}
           }
         }
@@ -273,6 +284,7 @@ strong.txt{font-weight: 700 !important;
       .search-area {margin-top: 10px;padding-left: 0;}
       .form-group {max-width: 100%;}
       .tit{width:100%;}
+      .nowrap.type1{flex-direction: column;}
     }
   }
 
@@ -347,7 +359,7 @@ strong.txt{font-weight: 700 !important;
     .tit{width:100% !important;}
     .btn-area::before {display: none;
       .search-area{margin-top: 8px !important;}
-    }        
+    }            
   }
   
   /** 텍스트 박스 **/
