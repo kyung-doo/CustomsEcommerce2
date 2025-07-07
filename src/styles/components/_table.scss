@@ -13,6 +13,7 @@
   .choice {margin: 0 5px 0 11px;font-size: 17px;}
 
   .top-txt {position: relative;padding-left: 12px;
+    &.tit{padding-left: 0;}
     select{padding-left:0;}
     &:before {content: "";display: block;position: absolute;top: 5px;left: 0;width: 1px;height: 16px;background-color: #E4E4E4;}
   }
@@ -20,7 +21,9 @@
   .tit:before {display: none;}
 
   &.no-wrap{flex-direction: row;
-    .right-box{margin-top: 0;}
+    .right-box{margin-top: 0;
+      &:has(button){gap:8px}
+    }
   }
 }
 
@@ -32,12 +35,11 @@
   th {font-size: 15px;font-weight: 700;color: #1D1D1D;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}
-      .contextual-help{bottom:1px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
-        .tooltip-ico{width:12px;height:12px;background-image: url(/assets/icons/tb-exclamation.svg);}
+      .contextual-help{bottom:2px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
+        .tooltip-ico{background-image: url(/assets/icons/tb-exclamation.svg);}
         .tooltip-popover{text-align: left;}
       }
-    }    
-    .info-txt{margin-top: 12px;}    
+    }        
   }
 
   td {border-bottom: 1px solid #E4E4E4;font-size: 17px;color: #1D1D1D;vertical-align: middle;text-align: center;    
@@ -47,14 +49,14 @@
   table {
     /** 카드형 **/
     &.crud {
-      th {padding: 16px;}
-      td {padding: 20px 16px;}
+      th {padding: 16px 5px;}
+      td {padding: 20px 5px;}
     }
 
     /** 조회형 **/
     &.check {
-      th {padding: 16px;}
-      td {padding: 18px 16px;}
+      th {padding: 16px 5px;}
+      td {padding: 18px 5px;}
     }
 
     /** 단순형 **/
@@ -101,7 +103,7 @@
   }
 
   /** 모바일 테이블 **/
-  &.mobile {
+  &.mo {
     .header {background-color: #E6E8EA;padding: 16px;border-bottom: 1px solid #58616A;
       .form-check {display: inline-flex;}
     }
@@ -126,9 +128,6 @@
 
     .number {font-size: 15px;font-weight: 700;color: #1D1D1D;}
   }
-
-  &.pc{display: block;}
-  &.mobile{display: none;}
 }
 
 /** 단순형 테이블 **/  
@@ -148,7 +147,7 @@
 
   tbody th{text-align: left !important;}
 
-  .table-wrap.mobile{
+  .table-wrap.mo{
     .modal-tit{display: block;margin-top: 48px;
       &:first-child{margin-top: 26px;}       
     }
@@ -157,13 +156,13 @@
 
 /** 조회형 반응형 **/
 .wrap-check-tbl{  
-  .mobile .wrap-body{border-top: 1px solid #58616A;     
+  .mo .wrap-body{border-top: 1px solid #58616A;     
     &.box-line{display: flex;gap: 8px 0;flex-direction: column;border-top: 0;
       .body{border:0;padding: 0;
         li{padding: 0;flex-direction: column;gap:24px 0;border:1px solid #E4E4E4;border-radius: 8px;padding: 24px;
           .number{color:#555;font-weight: 400;}
-          .title{width:100%;display: flex;justify-content: space-between;align-items: center;
-            a{text-decoration: none;font-size: 19px;font-weight: 600;}
+          .title{width:100%;display: flex;justify-content: space-between;align-items: center;font-size: 19px;font-weight: 600;word-break: break-word;
+            *{text-decoration: none;font-size: 19px;font-weight: 600;}
           }
           .txt-area{display: flex;justify-content: space-between;align-items: center;width: 100%;
             .txt{padding-left: 0;color:#555;text-align: left;}
@@ -199,12 +198,9 @@
     } 
   }
 
-  .table-wrap {display: block;overflow-x: auto;
-    &.pc{display: none;}
-    &.mobile{display: block;}
-  }
+  .table-wrap {display: block;overflow-x: auto;}
 
   .tbl {
     &.check, &.cont {width: 1110px;}
-  }  
+  }    
 }

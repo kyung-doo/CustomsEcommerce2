@@ -69,17 +69,6 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   &.pale{font-weight: 400;}
 }
 
-/** 주소 제목 **/
-.add-title{
-  .pc{display: block;}
-  .mo{display: none;
-    .title-type{margin-top: 43px;}
-    .txt-box-type{margin-top: 19px;
-      strong{margin: 8px 0 0 0 !important;}
-    }
-  }
-}
-
 /** 알림동의 **/
 .agree-title{display: inline-block;align-items: center;position: relative;padding-left: 45px;
   .title-type{    
@@ -131,7 +120,7 @@ strong.txt{font-weight: 700 !important;
 .modal-body .search-box .compulsory{margin-left: 5px;}
 
 /** 페이지 검색 필수입력 **/
-.cont-area .search-box .compulsory{margin-left: 5px;bottom: 3px;}
+.cont-area .search-box .compulsory{margin-left: 5px;bottom: 7px;}
 
 /** 필수 입력 **/
 .compulsory-txt .compulsory{left: 0;}
@@ -281,7 +270,7 @@ strong.txt{font-weight: 700 !important;
   .search-box {padding: 24px;
     li[class*=col] {width: 100% !important;flex-direction: column;align-items: flex-start;
       .search-area, strong {width: 100%;}
-      .search-area {margin-top: 20px;padding-left: 0;}
+      .search-area {margin-top: 10px;padding-left: 0;}
       .form-group {max-width: 100%;}
       .tit{width:100%;}
     }
@@ -289,7 +278,7 @@ strong.txt{font-weight: 700 !important;
 
   /** 일회용 인증 박스 **/
   .acc-area .tit {flex-wrap: wrap;
-    .box {margin-top: 24px;}
+    .box {margin-top: 16px;}
   }  
 
   /** 상세페이지 **/
@@ -303,7 +292,7 @@ strong.txt{font-weight: 700 !important;
         }    
       }
     }     
-  }
+  }  
 }
 
 @media (max-width: 550px) {  
@@ -347,12 +336,6 @@ strong.txt{font-weight: 700 !important;
       button{width:100% !important;}
     }
   }
-
-  /** 주소 제목 **/
-  .add-title{
-    .pc{display: none;}
-    .mo{display: block;}
-  }
   
   /** 텍스트 **/
   [class*=txt-type]{
@@ -381,4 +364,10 @@ strong.txt{font-weight: 700 !important;
       }   
     }
   }
+
+
+
+
+  /** 반응형 **/
+
 }

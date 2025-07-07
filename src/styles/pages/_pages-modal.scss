@@ -44,6 +44,8 @@
   .wrap-form-area{
     margin: 24px 0;
 
+    &:first-child{margin: 0;}
+
     li{
       p.txt.disabled{        
         color:#8E8E8E;
@@ -107,6 +109,7 @@
       padding: 22px 10px;
     }    
 
+    
     .reforwarding{
       flex-direction: column;
 
@@ -115,5 +118,6 @@
         margin-top: 21px;
       }
     }
+      
   }  
 }
