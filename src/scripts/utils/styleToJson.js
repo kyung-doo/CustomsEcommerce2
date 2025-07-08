@@ -77,7 +77,23 @@ function formList() {
     }        
 }
 
+//반응형 확인
+function windowR(){
+    $(window).on('resize load', function(){   
+        var w = $(this).width()
+        $('.windowR').remove()
+        $('#wrap').append(`<div class="windowR" style="position: fixed;top:0;right:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}</div>`);
+
+        if(w <= 390){
+            $('#wrap').css({"border":"3px solid red"})
+        }else{
+            $('#wrap').css({"border":"0"})
+        }
+    });
+}
+
 $(function(){
   //accessibility()  
   //formList() 
+  windowR()
 })
