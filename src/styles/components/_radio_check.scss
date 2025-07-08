@@ -21,6 +21,8 @@ input {
     display: flex;
     align-items: center;
     white-space: nowrap;
+    font-size:17px;
+    color:#1D1D1D;
 
     &:before {
       content: "";

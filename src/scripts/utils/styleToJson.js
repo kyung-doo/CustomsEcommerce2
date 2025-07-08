@@ -80,9 +80,14 @@ function formList() {
 //반응형 확인
 function windowR(){
     $(window).on('resize load', function(){   
-        var w = $(this).width()
+        var w = $(this).width();
+        var h = $(this).height();
+        var sumbox = 120;        
+        var sum = sumbox / 1280 * 100
         $('.windowR').remove()
-        $('#wrap').append(`<div class="windowR" style="position: fixed;top:0;right:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}</div>`);
+        $('#wrap').append(`<div class="windowR" style="position: fixed;top:0;left:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}<br>${h}</div>`);        
+
+        console.log(sum)
 
         if(w <= 390){
             $('#wrap').css({"border":"3px solid red"})
@@ -91,6 +96,7 @@ function windowR(){
         }
     });
 }
+
 
 $(function(){
   //accessibility()  

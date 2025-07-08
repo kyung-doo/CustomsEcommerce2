@@ -4,18 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript" src="/js/main.bundle.js"></script>
 <title>관세청 전자상거래포털</title>
 <style type="text/css">
 html,body{box-sizing:border-box}
 body{overflow-x:hidden;overflow-y:auto;padding:15px;background:#ddd}
 h1 a,h2 a{display:block;color:#fff !important;letter-spacing:-1.5px;text-align:center;}
 h1 a{padding:20px 0;font-size:24px;font-weight:600;;font-family:'NotoSans','나눔고딕',Nanum Gothic, Malgun gothic, '맑은고딕', Dotum, '돋움', arial, sans-serif;background:#333}
-h2{position:relative;margin:25px 0 5px;padding-left:10px;letter-spacing:-1.5px;font-size:18px;}
-h2:before{content:'';display:block;position:absolute;top:5px;left:2px;width:5px;height:15px;background:#f60;}
+h2{position:relative;margin:25px 0 5px;padding-left:10px;letter-spacing:-1.5px;font-size:24px;}
+h2:before{content:'';display:block;position:absolute;top:11px;left:2px;width:5px;height:15px;background:#f60;}
 h2.info_link{padding-left:0;}
 h2.info_link:before{display:none;}
 h2.info_link a{padding:10px;text-align:left;background:#666;}
-p{font-size:14px;line-height: 23px;font-weight: bold;}
+p{font-size:14px;font-weight: bold;}
 ul{padding:8px 12px 8px 12px;background:#fff}
 li{position:relative;padding:3px;line-height:28px;letter-spacing:-0.5px;border-top:1px dotted #ccc;color:#333; list-style-type : none}
 li:first-child{border-top-width:0}
@@ -45,11 +46,11 @@ li span.state_06:before{content:'신규화면';}
 li span.state_07:before{content:'화면참조';}
 ul ul{margin:3px 0;background:#f4f4f4}
 ul ul li{padding:1px;line-height:25px;border-top-width:0;}
-ul ul li a{padding-right:65px;line-height:24px;font-size:13px;font-weight:normal}
+ul ul li a{padding-right:65px;line-height:24px;font-size:15px;}
 ul ul li a:hover{color:#f60;text-decoration:underline !important}
 a:focus{color: red;}
 ul ul ul{margin-top:2px;padding-right:0;background:#fff;}
-ul ul ul li a{line-height:22px;font-size:12px;}
+ul ul ul li a{line-height:22px;font-size:15px;}
 ul ul ul li a span{font-weight:normal;}
 ul ul ul ul{margin:0;margin-left:10px;padding-top:3px;padding-left:0;}
 ul ul ul ul li a{padding-left:6px;}
@@ -61,17 +62,36 @@ ul ul ul ul li:before{content:'·';top:-3px}
 
 .modify_cont{display:none;position:absolute;top:100%;right:0;min-height:20px;padding:5px;color:#fff;font-size:12px;background:#000;z-index:100;}
 .modify_cont:before{content:'';display:block;position:absolute;top:-10px;right:20px;border:5px solid transparent;border-bottom-color:#000;}
+
+[target="contentframe"].on{color:green;font-weight: 700;}
+a{color:#000}
+
 </style>
 </head>
 <body>
 
+
+	<script>
+		
+		$(function(){
+    $('[target="contentframe"]').click(function(){
+		$('[target="contentframe"]').removeClass('on')
+        $(this).addClass('on');
+    })
+})
+
+	</script>
 <h1><a href="pages/" target="contentframe" title="우측 새창에서 열기">관세청 전자상거래포털</a></h1>
 
 	<h2>특이사항</h2>
 	<ul>
-		<li>툴팁 작업예정</li>		
-		<li>각 페이지 도움말 작업예정</li>		
-		<li>영문 작업예정</li>		
+		<li>서브레이아웃 통합검색 작업예정</li>		
+		<li>서브레이아웃 이메일 작업예정</li>	
+		<li>서브레이아웃 국민비서팝업 작업예정</li>	
+		<li>서브레이아웃 도움말 작업예정</li>		
+		<li>서브레이아웃 관련 누리집, 세관 바로가기 작업예정</li>		
+		<li>툴팁 작업예정</li>				
+		<li>영문 작업예정</li>				
 	</ul>
 
 	<h2>스타일가이드</h2>
@@ -82,7 +102,7 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>레이아웃</h2>
 	<ul>
 		<li><a href="pages/메인.html" target="contentframe">메인</a><span class="state_01"></span></li>
-		<li><a href="pages/서브레이아웃.html" target="contentframe">서브레이아웃</a><span class="state_02"></span></li>		
+		<li><a href="pages/서브레이아웃.html" target="contentframe">서브레이아웃</a><span class="state_01"></span></li>		
 	</ul>
 
 	<h2>레이어팝업 모음</h2>
@@ -93,10 +113,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>개인통관고유부호</h2>
 	<ul>
 		<li>
-			<strong style="font-size:14px;">개인통관고유부호 조회</strong>
+			<strong style="font-size:18px;color:red">개인통관고유부호 조회</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관 고유부호 조회/정보변경[1]</strong>
+					<strong style="font-size:15px;color:blue">개인통관 고유부호 조회/정보변경[1]</strong>
 					<ul>
 						<li><a href="pages/pages_1-1.html" target="contentframe">1.개인통관고유부호 조회</a><span class="state_03"></span></li>
 						<li><a href="pages/pages_1-2.html" target="contentframe">2.개인통관고유부호 정보변경 1단계</a><span class="state_03"></span></li>
@@ -111,7 +131,7 @@ ul ul ul ul li:before{content:'·';top:-3px}
 					</ul>					
 				</li>
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관 고유부호 발급/이력조회[2]</strong>
+					<strong style="font-size:15px;color:blue">개인통관 고유부호 발급/이력조회[2]</strong>
 					<ul>
 						<li><a href="pages/pages_2-1.html" target="contentframe">1.개인통관고유부호 발급 이력조회</a><span class="state_03"></span></li>
 						<li><a href="pages/en-pages_2-1.html" target="contentframe">1.개인통관고유부호 발급 이력조회[영문]</a><span class="state_03"></span></li>						
@@ -120,10 +140,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>
 		</li>
 		<li>
-			<strong style="font-size:14px;">개인통관고유부호 신청</strong>
+			<strong style="font-size:18px;color:red">개인통관고유부호 신청</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관고유부호 신규/재발급[3]</strong>
+					<strong style="font-size:15px;color:blue">개인통관고유부호 신규/재발급[3]</strong>
 					<ul>
 						<li><a href="pages/pages_3-1.html" target="contentframe">1.개인통관고유부호 신규/부호변경 1단계</a><span class="state_03"></span></li>						
 						<li><a href="pages/pages_3-2.html" target="contentframe">2.개인통관고유부호 신규/부호변경 2단계</a><span class="state_03"></span></li>						
@@ -138,21 +158,21 @@ ul ul ul ul li:before{content:'·';top:-3px}
 					</ul>					
 				</li>				
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관고유부호 사용정지/해제[4]</strong>
+					<strong style="font-size:15px;color:blue">개인통관고유부호 사용정지/해제[4]</strong>
 					<ul>
 						<li><a href="pages/pages_4-1.html" target="contentframe">1.개인통관고유부호 사용정지/해제</a><span class="state_03"></span></li>												
 						<li><a href="pages/en-pages_4-1.html" target="contentframe">1.개인통관고유부호 사용정지/해제[영문]</a><span class="state_03"></span></li>
 					</ul>					
 				</li>				
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관고유부호 유효기간 갱신[5]</strong>
+					<strong style="font-size:15px;color:blue">개인통관고유부호 유효기간 갱신[5]</strong>
 					<ul>
 						<li><a href="pages/pages_5-1.html" target="contentframe">1.개인통관고유부호 갱신</a><span class="state_03"></span></li>																		
 						<li><a href="pages/en-pages_5-1.html" target="contentframe">1.개인통관고유부호 갱신[영문]</a><span class="state_03"></span></li>																		
 					</ul>					
 				</li>				
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관고유부호 해지 신청[6]</strong>
+					<strong style="font-size:15px;color:blue">개인통관고유부호 해지 신청[6]</strong>
 					<ul>
 						<li><a href="pages/pages_6-1.html" target="contentframe">1.개인통관고유부호 해지 신청</a><span class="state_03"></span></li>																		
 						<li><a href="pages/en-pages_6-1.html" target="contentframe">1.개인통관고유부호 해지 신청[영문]</a><span class="state_03"></span></li>																		
@@ -161,10 +181,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>
 		</li>		
 		<li>
-			<strong style="font-size:14px;">개인통관고유부호 도용신고</strong>
+			<strong style="font-size:18px;color:red">개인통관고유부호 도용신고</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관고유부호 도용신고[7]</strong>
+					<strong style="font-size:15px;color:blue">개인통관고유부호 도용신고[7]</strong>
 					<ul>
 						<li><a href="pages/pages_7-1.html" target="contentframe">1.개인통관고유부호 도용신고</a><span class="state_03"></span></li>
 						<li><a href="pages/pages_7-2.html" target="contentframe">2.개인통관고유부호 도용신고 상세</a><span class="state_03"></span></li>
@@ -173,7 +193,7 @@ ul ul ul ul li:before{content:'·';top:-3px}
 					</ul>					
 				</li>
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인통관고유부호 신고내역 조회[8]</strong>
+					<strong style="font-size:15px;color:blue">개인통관고유부호 신고내역 조회[8]</strong>
 					<ul>
 						<li><a href="pages/pages_8-1.html" target="contentframe">1.개인통관고유부호 신고내역 조회</a><span class="state_03"></span></li>
 						<li><a href="pages/pages_8-2.html" target="contentframe">2.개인통관고유부호 신고내역 조회 상세</a><span class="state_03"></span></li>
@@ -184,10 +204,27 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>
 		</li>
 		<li>
-			<strong style="font-size:14px;">해외직구 인증번호 발급내역</strong>
+			<strong style="font-size:18px;color:red">해외직구 인증번호 발급내역</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">일회용 인증번호/개인통관고유부호 발급 내역 조회[9]</strong>
+					<strong style="font-size:15px;color:blue">일회용 인증번호/개인통관고유부호 발급 내역 조회[9]</strong>
+					<ul>
+						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
+					</ul>					
+				</li>				
+			</ul>
+		</li>
+		<li>
+			<strong style="font-size:18px;color:red">방문발급 사전 신청/조회</strong>
+			<ul>
+				<li class="3depth1">
+					<strong style="font-size:15px;color:blue">개인통관고유부호 방문발급사전신청 조회[new-1]</strong>
+					<ul>
+						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
+					</ul>					
+				</li>
+				<li class="3depth1">
+					<strong style="font-size:15px;color:blue">개인통관고유부호 방문발급 사전신청[new-2]</strong>
 					<ul>
 						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 					</ul>					
@@ -199,10 +236,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>해외직구 납부·고지·환급</h2>
 	<ul>		
 		<li>
-			<strong style="font-size:14px;">수입신고 내역</strong>
+			<strong style="font-size:18px;color:red">수입신고 내역</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">수입신고 내역 조회[10]</strong>
+					<strong style="font-size:15px;color:blue">수입신고 내역 조회[10]</strong>
 					<ul>
 						<li><a href="pages/pages_10-1.html" target="contentframe">1.전자상거래 신고현황 목록 조회</a><span class="state_03"></span></li>						
 						<li><a href="pages/pages_10-2.html" target="contentframe">2.전자상거래 신고 상세 조회[수입신고공통사항]</a><span class="state_03"></span></li>
@@ -215,10 +252,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>
 		</li>		
 		<li>
-			<strong style="font-size:14px;">관세 납부</strong>
+			<strong style="font-size:18px;color:red">관세 납부</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">개인전자납부/납부내역 조회[11]</strong>
+					<strong style="font-size:15px;color:blue">개인전자납부/납부내역 조회[11]</strong>
 					<ul>
 						<li><a href="pages/pages_11-1.html" target="contentframe">1.개인통관고유부호 개인전자 납부 내역 조회</a><span class="state_03"></span></li>						
 						<li><a href="pages/pages_11-2.html" target="contentframe">2.개인통관고유부호 개인전자 납부 내역 조회 상세</a><span class="state_03"></span></li>						
@@ -227,10 +264,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>
 		</li>	
 		<li>
-			<strong style="font-size:14px;">관세환급</strong>
+			<strong style="font-size:18px;color:red">관세환급</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">관세환급 신청[12]</strong>
+					<strong style="font-size:15px;color:blue">관세환급 신청[12]</strong>
 					<ul>
 						<li><a href="pages/pages_12-1.html" target="contentframe">1.환급신청 대상 목록 조회</a><span class="state_03"></span></li>												
 						<li><a href="pages/pages_12-2.html" target="contentframe">2.해외직구 환급신청 1단계</a><span class="state_03"></span></li>	
@@ -242,7 +279,7 @@ ul ul ul ul li:before{content:'·';top:-3px}
 					</ul>					
 				</li>
 				<li class="3depth1">
-					<strong style="font-size:13px;">관세환급 신청 결과 조회[13]</strong>
+					<strong style="font-size:15px;color:blue">관세환급 신청 결과 조회[13]</strong>
 					<ul>
 						<li><a href="pages/pages_13-1.html" target="contentframe">1.환급신청 처리결과 상세조회[기본정보] 이체정상</a><span class="state_03"></span></li>												
 						<li><a href="pages/pages_13-2.html" target="contentframe">2.환급신청 처리결과 상세조회[기본정보] 기각</a><span class="state_03"></span></li>	
@@ -266,17 +303,17 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>해외직구 수입통관 정보</h2>
 	<ul>
 		<li>
-			<strong style="font-size:14px;">통관정보</strong>
+			<strong style="font-size:18px;color:red">통관정보</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">수입통관 내역 조회[14]</strong>
+					<strong style="font-size:15px;color:blue">수입통관 내역 조회[14]</strong>
 					<ul>
-						<li><a href="pages/pages_14-1.html" target="contentframe">1.수입신고내역 조회</a><span class="state_02"></span></li>						
+						<li><a href="pages/pages_14-1.html" target="contentframe">1.수입신고내역 조회</a><span class="state_03"></span></li>						
 					</ul>					
 				</li>
 				
 				<li class="3depth1">
-					<strong style="font-size:13px;">해외직구 거래 내역 조회[15]</strong>
+					<strong style="font-size:15px;color:blue">해외직구 거래 내역 조회[15]</strong>
 					<ul>
 						<li><a href="pages/pages_15-1.html" target="contentframe">1.해외직구 통관정보 내역 조회</a><span class="state_02"></span></li>						
 						<li><a href="pages/pages_15-2.html" target="contentframe">2.수입화물 진행정보 조회</a><span class="state_02"></span></li>	
@@ -285,10 +322,10 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>
 		</li>		
 		<li>
-			<strong style="font-size:14px;">화물진행 정보</strong>
+			<strong style="font-size:18px;color:red">화물진행 정보</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">수입화물 진행정보 조회[16]</strong>
+					<strong style="font-size:15px;color:blue">수입화물 진행정보 조회[16]</strong>
 					<ul>
 						<li><a href="pages/pages_16-1.html" target="contentframe">1.수입화물진행정보(BL화물정보) 조회</a><span class="state_02"></span></li>						
 						<li><a href="pages/pages_16-2.html" target="contentframe">2.수입화물진행정보(BL화물정보) 조회</a><span class="state_02"></span></li>
@@ -301,38 +338,38 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>해외직구 현황</h2>
 	<ul>
 		<li>
-			<strong style="font-size:14px;">통계</strong>
+			<strong style="font-size:18px;color:red">통계</strong>
 			<ul>
 				<li class="3depth1">
-					<strong style="font-size:13px;">세관별 수입통관[17]</strong>
+					<strong style="font-size:15px;color:blue">세관별 수입통관[17]</strong>
 					<ul>
 						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 					</ul>					
 				</li>
 
 				<li class="3depth1">
-					<strong style="font-size:13px;">물품별 수입통관[18]</strong>
+					<strong style="font-size:15px;color:blue">물품별 수입통관[18]</strong>
 					<ul>
 						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 					</ul>					
 				</li>
 
 				<li class="3depth1">
-					<strong style="font-size:13px;">통관 단계별 소요시간[19]</strong>
+					<strong style="font-size:15px;color:blue">통관 단계별 소요시간[19]</strong>
 					<ul>
 						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 					</ul>					
 				</li>
 
 				<li class="3depth1">
-					<strong style="font-size:13px;">세관별 소요시간[20]</strong>
+					<strong style="font-size:15px;color:blue">세관별 소요시간[20]</strong>
 					<ul>
 						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 					</ul>					
 				</li>
 
 				<li class="3depth1">
-					<strong style="font-size:13px;">발송국별 소요시간[21]</strong>
+					<strong style="font-size:15px;color:blue">발송국별 소요시간[21]</strong>
 					<ul>
 						<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 					</ul>					
@@ -344,20 +381,20 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>해외직구 정보제공</h2>
 	<ul>
 		<li>
-			<strong style="font-size:14px;">주간 환율[22]</strong>
+			<strong style="font-size:18px;color:red">주간 환율[22]</strong>
 			<ul>
 				<li><a href="pages/pages_22-1.html" target="contentframe">1.환율 정보 조회</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>		
 		<li>
-			<strong style="font-size:14px;">해외직구물품 예상세액 조회[23]</strong>
+			<strong style="font-size:18px;color:red">해외직구물품 예상세액 조회[23]</strong>
 			<ul>
 				<li><a href="pages/pages_23-1.html" target="contentframe">1.해외직구 예상세액 조회</a><span class="state_03"></span></li>						
 				<li><a href="pages/pages_23-2.html" target="contentframe">2.해외직구 예상세액 조회</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">해외직구 등록업체 조회[24]</strong>
+			<strong style="font-size:18px;color:red">해외직구 등록업체 조회[24]</strong>
 			<ul>
 				<li><a href="pages/pages_24-1.html" target="contentframe">1.해외직구 등록업체 조회[전자상거래 업체]</a><span class="state_03"></span></li>						
 				<li><a href="pages/pages_24-2.html" target="contentframe">2.해외직구 등록업체 조회[관세사]</a><span class="state_03"></span></li>						
@@ -365,7 +402,7 @@ ul ul ul ul li:before{content:'·';top:-3px}
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">업무 안내[25]</strong>
+			<strong style="font-size:18px;color:red">업무 안내[25]</strong>
 			<ul>
 				<li><a href="pages/pages_25-1.html" target="contentframe">1.전자상거래포털 이용안내</a><span class="state_03"></span></li>						
 				<li><a href="pages/pages_25-2.html" target="contentframe">2.전자상거래포털 이용안내 상세보기</a><span class="state_03"></span></li>						
@@ -376,25 +413,25 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>고객센터</h2>
 	<ul>
 		<li>
-			<strong style="font-size:14px;">공지사항[26]</strong>
+			<strong style="font-size:18px;color:red">공지사항[26]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">자주묻는 질문[27]</strong>
+			<strong style="font-size:18px;color:red">자주묻는 질문[27]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">자료실[28]</strong>
+			<strong style="font-size:18px;color:red">자료실[28]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">질의응답[29]</strong>
+			<strong style="font-size:18px;color:red">질의응답[29]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
@@ -404,37 +441,37 @@ ul ul ul ul li:before{content:'·';top:-3px}
 	<h2>마이페이지</h2>
 	<ul>
 		<li>
-			<strong style="font-size:14px;">나의 메시지[30]</strong>
+			<strong style="font-size:18px;color:red">나의 메시지[30]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">통관·납부·환급내역 조회[31]</strong>
+			<strong style="font-size:18px;color:red">통관·납부·환급내역 조회[31]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">통관 현황[32]</strong>
+			<strong style="font-size:18px;color:red">통관 현황[32]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">관세납부 현황[33]</strong>
+			<strong style="font-size:18px;color:red">관세납부 현황[33]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">물품분류별 통관현황[34]</strong>
+			<strong style="font-size:18px;color:red">물품분류별 통관현황[34]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					
 		</li>
 		<li>
-			<strong style="font-size:14px;">회원정보 수정[35]</strong>
+			<strong style="font-size:18px;color:red">회원정보 수정[35]</strong>
 			<ul>
 				<li><a href="pages/" target="contentframe">페이지</a><span class="state_01"></span></li>						
 			</ul>					

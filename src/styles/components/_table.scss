@@ -66,7 +66,7 @@
     }
   }
 
-  input[type=checkbox] + label, input[type=radio] + label {padding: 0;
+  &.pc input[type=checkbox] + label, input[type=radio] + label {padding: 0;
     &:before {position: relative;top: 0;left: 0;transform: translateY(0);background-color: #fff;}
   }
 
@@ -114,7 +114,7 @@
 
   /** 모바일 테이블 **/
   &.mo {
-    .header {background-color: #E6E8EA;padding: 16px;border-bottom: 1px solid #58616A;
+    .header {padding: 24px 0;border-bottom: 1px solid #58616A;
       .form-check {display: inline-flex;}
     }
 

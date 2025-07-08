@@ -46,7 +46,8 @@
 .modal-body {
   box-sizing: border-box;  
   overflow-y: auto;
-      max-height: calc(100vh - 300px);
+  overflow-x: hidden;
+  max-height: calc(100vh - 300px);
   
 
   .modal-cont {    
@@ -114,21 +115,29 @@
 
 @media (max-width: 480px) {
   .modal-wrap{
-    padding: 24px;
+    padding: 24px 0;
+
 
     .btn-close{
       top:24px;
       right:24px;
     }
 
+    .modal-header{
+      padding-left: 24px;
+    }
+
     .modal-body{
       max-height: calc(100vh - 305px);
+      padding: 0 24px;
       .modal-cont{
         margin-bottom: 24px;
       }
     } 
 
-    .modal-footer{      
+    .modal-footer{    
+      padding-left: 24px;  
+      padding-right: 24px;  
       .form-check{        
         width:100%;
         margin-bottom: 16px;

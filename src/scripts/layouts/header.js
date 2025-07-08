@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import gsap, { Expo } from 'gsap';
+import { divide } from 'lodash';
 
 
 $(() => {
@@ -61,6 +62,10 @@ $(() => {
         $('.dep1').addClass('active');        
         $('.sub-title').removeClass('mobile-dep-menu');
         $('.sub-title').siblings('ul').hide();
+        $('body,html').css({"overflow":"hidden"});
+        $(window).on('resize',function(){
+            $('body,html').css({"overflow":"hidden"});
+        }) 
         
     });
     $(".mobile-close").on('click', function (e) {
@@ -68,6 +73,10 @@ $(() => {
             $("#wrap").removeClass('mobile-open');
             $('.sub-title').removeClass('mobile-active');
         }});
+        $('body,html').css({"overflow":"auto"});        
+        $(window).on('resize',function(){
+            $('body,html').css({"overflow":"auto"});
+        }) 
     });
     $(".mobile-dep-menu").on('click', function () {
         if(!$(this).parent().find('.depth2').is(':visible')) {
@@ -150,4 +159,58 @@ $(() => {
             $('.blind').hide();
         }
     });
+
+
+    // 팝업
+    $(function(){
+        var btn = $('.popup-box .btn-navi.popup');        
+        var closeBtn = $('.popup-box .close-btn');        
+        var box = $('.popup-box .modal');
+
+        btn.click(function(){
+            var th = $(this);            
+            th.addClass('active');
+            /*
+            $('body,html').css({"overflow":"hidden"});
+            $(window).on('resize',function(){
+                $('body,html').css({"overflow":"hidden"});
+            })
+                */
+        });
+
+        closeBtn.click(function(){
+            var th = $(this);            
+            box.hide();
+            th.closest('.popup-box').find('.btn-navi.popup').removeClass('active');
+            /*
+            $('body,html').css({"overflow":"auto"});
+            $(window).on('resize',function(){
+                $('body,html').css({"overflow":"auto"});
+            })
+                */            
+        })
+    });
 });
+
+
+
+
+/****
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 텍스트가 길면 ..... 처리 px:no,체크박스,라디오박스
+ * 
+ * 로그인전 전체메뉴,팝업,통합검색
+ * 로그인후 팝업,통합검색,전체메뉴
+ * 
+ * 
+ */

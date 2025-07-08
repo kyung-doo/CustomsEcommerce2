@@ -208,48 +208,11 @@
   &.form-tit-group.is-error {
     outline: 2px solid #EB003B;
     border-color: #EB003B;
-  }
-
-  textarea:disabled {
-    background-color: #E4E4E4;
-    border-color: #C6C6C6;
-  }
-
-  .form-conts {
-    select:disabled {
-      border-color: #C6C6C6;
-    }
-
-    input[type=text]:disabled, select:disabled {
-      background-color: #E4E4E4;
-    }
-  }
-
-  &.form-tit-group.disabled {
-    background-color: #E4E4E4;
-  }
+  }  
 
   &.form-tit-group:focus-within {
     outline:2px solid #000;
-  }
-
-  .form-conts {
-    &.disabled-type1 {
-      input[type=text],input[type=text]:disabled::placeholder, select option:disabled, select:disabled{
-        color: #717171;
-      }
-    }
-
-    &.disabled-type2 {
-      input[type=text],input[type=text]:disabled::placeholder, select option:disabled, select:disabled {
-        color: #1D1D1D;
-      }
-    }
-  }
-
-  .disabled-type2 textarea:disabled::placeholder {
-    color: #1D1D1D;
-  }
+  }  
 
   textarea::placeholder {
     font-size: 17px;
@@ -261,10 +224,6 @@
   }
 
   &.form-tit-group input[type=text] {
-    &:disabled {
-      background-color: rgba(0, 0, 0, 0);
-    }
-
     &::placeholder {
       font-size: 17px;
       color: #8E8E8E;
@@ -319,3 +278,7 @@
     background-size: 14px;
   }
 }
+
+
+/** disabled **/
+input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option{background-color: #D8D8D8;color:#1D1D1D;opacity:1;border-color:#C6C6C6;}
