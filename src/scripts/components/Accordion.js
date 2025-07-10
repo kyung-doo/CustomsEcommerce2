@@ -14,8 +14,8 @@ class Accordion {
     }
 
     init () {
-        this.ele.find('.accordion-header > a').on('click', ( e ) => {
-            const target = $(e.currentTarget).parent().parent();
+        this.ele.find('.accordion-header .accordion-btn').on('click', ( e ) => {            
+            const target = $(e.currentTarget).closest('.accordion-wrap')
             if(!target.hasClass('active')) {
                 if(this.props.beforeClose) {
                     target.siblings('*[data-ui="accordion"]').find('.accordion-body').slideUp(100);
@@ -23,11 +23,11 @@ class Accordion {
                 }
                 target.find(".accordion-body").slideDown(100);
                 target.addClass('active');
-                target.find('i').text('닫기');
+                //target.find('i').text('닫기');
             } else {
                 target.find(".accordion-body").slideUp(100);
                 target.removeClass('active');
-                target.find('i').text('열기');
+                //target.find('i').text('열기');
             }
         });
         
@@ -35,7 +35,7 @@ class Accordion {
             if($(window).width() <= 480) {
                 $('.accordion-wrap').removeClass('active');
                 $('.accordion-body').removeAttr('style');                
-                $('.accordion-header > a i').text('열기')
+                //$('.accordion-header > a i').text('열기')
             }
         });
     }

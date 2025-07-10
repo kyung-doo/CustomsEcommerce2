@@ -40,6 +40,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   .txt{font-size:15px;font-weight: 400;margin-left: 6px;} 
 
   .em-type{color: #246BEB;margin: 0 4px;} 
+  .number{color:#1D56BC !important;margin: 0 5px;}
   
   /** 폰트크기 **/
   &.medium{font-size:19px}  
@@ -260,6 +261,20 @@ strong.txt{font-weight: 700 !important;
   }
 }
 
+//그래프
+.wrap-graph{padding: 32px;border:1px solid #E4E4E4;border-radius: 8px;
+  .graph-box{margin-top: 32px;}
+}
+
+//FAQ
+.wrap-faq{border:1px solid red;
+  .header{display: flex;background-color: #E6E8EA;border-bottom:1px solid #58616A;
+    li{padding: 16px 16px;font-size: 15px;font-weight: 700;color:#1D1D1D;
+      &.list1{}
+    }
+  }
+}
+
 @media (max-width: 1280px) {
   .search-box{
     ul{
@@ -295,7 +310,7 @@ strong.txt{font-weight: 700 !important;
     li[class*=col] {width: 100% !important;flex-direction: column;align-items: flex-start;
       .search-area, strong {width: 100%;}
       .search-area {margin-top: 10px;padding-left: 0;}
-      .form-group {max-width: 100%;}
+      .form-group {max-width: 100% !important;}
       .tit{width:100%;}
       .nowrap.type1{flex-direction: column;}
       &:has(.search-area-box){
@@ -311,8 +326,7 @@ strong.txt{font-weight: 700 !important;
 
   /** 상세페이지 **/
   .wrap-detail{
-    h4.title{padding-bottom: 32px;}
-    
+    h4.title{padding-bottom: 32px;}    
     .wrap-pages-move{
       .pages-move{flex-direction: column;gap: 8px;
         li{margin:0 !important;width:100%;
@@ -392,5 +406,10 @@ strong.txt{font-weight: 700 !important;
         strong{font-size: 15px;margin: 10px 0 0 0;}
       }   
     }
+  }
+
+  /** 상세페이지 **/
+  .wrap-detail{
+    h4.title{padding-bottom: 24px;font-size:21px}        
   }
 }

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li><span class="txt">해외직구 인증번호 발급내역</span></li>
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">일회용 인증번호/개인통관고유부호 발급 내역 조회</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">One-time authentication number/ personal customs cleance code issuance details</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>일회용 인증번호란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">일회용 인증번호란? 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="search-box">
+                  <ul>
+                     <li class="col1">
+                        <span class="tit">Viewing period <i class="compulsory">필수</i></span>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">시작 달력보기</button>
+                              </div>
+                              <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_11" checked>
+                              <label class="form-chip-outline" for="chk_chip_11">당일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_12">
+                              <label class="form-chip-outline" for="chk_chip_12">1주일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_13">
+                              <label class="form-chip-outline" for="chk_chip_13">1개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_14">
+                              <label class="form-chip-outline" for="chk_chip_14">3개월</label>
+                           </div>
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex00">Certification number</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" id="ex00" class="input" placeholder="내용을 입력해주세요." title="인증번호 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex00">Ordering(delivery agency) company</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" id="ex00" class="input" placeholder="내용을 입력해주세요" title="주문(배송대행) 업체명 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>                     
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">Reset</button>
+                        <button type="button" class="btn secondary medium">Check</button>                        
+                     </div>
+                  </div>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> Indicates required fields.</p>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">Total<span>240</span>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+               </div>               
+               <div class="wrap-check-tbl">                  
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>일회용 인증번호/개인통관고유부호 발급내역에 대한 NO,발급일시,인증번호,일회용 개인통관부호,주문(배송대행)업체명,주문(배송대행)업체 영문명,주문번호로 구성되어있다.</caption>
+                        <colgroup>
+                              <col style="width: 80px;">
+                              <col style="width: 20.3125%;">
+                              <col style="width: 100px;">
+                              <col style="width: 14.0625%;">
+                              <col style="width: 18.75%;">
+                              <col style="width: 18.75%;">
+                              <col style="width: 14.0625%;">                      
+                        </colgroup>                        
+                        <thead>
+                              <tr>                                 
+                                 <th scope="col">NO</th>                                 
+                                 <th scope="col"><span class="arr-ico">Date of issuance <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>                                 
+                                 <th scope="col">Certification number</th>                                 
+                                 <th scope="col">Disposable personal customs clearance code.</th>                                 
+                                 <th scope="col"><span class="arr-ico">Ordering (delivery agency) company name <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>                                 
+                                 <th scope="col"><span class="arr-ico">Ordering (delivery agency) company name <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>                                 
+                                 <th scope="col">Order number</th>                                 
+                              </tr>
+                        </thead>
+                        <tbody>
+                              <tr>                                 
+                                 <td>999</td>                                 
+                                 <td>2025-05-07 13시 21분 32초</td>                                 
+                                 <td>568989</td>                                 
+                                 <td>미제공</td>                                 
+                                 <td>알리 익스프레스</td>                                 
+                                 <td>Ali Express</td>                                 
+                                 <td>미제공</td>                                                                  
+                              </tr>
+                              <tr>                                 
+                                 <td>999</td>                                 
+                                 <td>2025-05-07 13시 21분 32초</td>                                 
+                                 <td>568989</td>                                 
+                                 <td>미제공</td>                                 
+                                 <td>알리 익스프레스</td>                                 
+                                 <td>Ali Express</td>                                 
+                                 <td>CUCC123456702</td>                                                                  
+                              </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mo">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Date of issuance</strong>
+                                 <span class="txt">2025-05-07 13시 21분 32초</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Certification number</strong>
+                                 <span class="txt">568989</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Disposable personal customs clearance code.</strong>
+                                 <span class="txt">미제공</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Ordering(delivery agency) company name</strong>
+                                 <span class="txt">알리 익스프레스</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Ordering(delivery agency) company name</strong>
+                                 <span class="txt">Ali Express</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Order number</strong>
+                                 <span class="txt">CUCC123456789</span>
+                              </li>                                                                                       
+                           </ul>
+                        </li>  
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Date of issuance</strong>
+                                 <span class="txt">2025-05-07 13시 21분 32초</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Certification number</strong>
+                                 <span class="txt">568989</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Disposable personal customs clearance code.</strong>
+                                 <span class="txt">미제공</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Ordering(delivery agency) company name</strong>
+                                 <span class="txt">알리 익스프레스</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Ordering(delivery agency) company name</strong>
+                                 <span class="txt">Ali Express</span>
+                              </li>
+                              <li>
+                                 <strong class="title">Order number</strong>
+                                 <span class="txt">CUCC123456789</span>
+                              </li>                                                                                       
+                           </ul>
+                        </li>                                                                                                                                                                                          
+                     </ul>
+                  </div>
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

@@ -229,7 +229,7 @@
     .inp-form {padding: 34px 24px;
       [class*=col] {width: 100% !important;}
       [class*=mw] {max-width: 100% !important;}
-      [class*=form-group] {width: 100%;}    
+      [class*=form-group] {width: 100% ;}    
       .form-group {
         &.medium {
           input[type=text], select, input[type=password] {font-size: 15px;}
@@ -302,7 +302,7 @@
   .wrap-form-area{
     .inp-form ul {
       .hy {display: block;text-align: left;width: 100%;}    
-      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico) {width: 100%;}
+      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico):not(.add-modify-btn) {width: 100%;}
       li {       
 
         /** 주소 **/

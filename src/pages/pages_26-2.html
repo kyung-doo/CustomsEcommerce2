@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">고객센터</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">공지사항</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">공지사항</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>공지사항 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">공지사항 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="wrap-detail">
+                  <h4 class="title">예상오류 통보 기준 추가 알림(3.14)</h4>
+                  <div class="detail-area">
+                     <ul class="detail-list">
+                        <li>
+                           <strong>업무구분</strong>
+                           <span>수입통관</span>
+                        </li>
+                        <li>
+                           <strong>등록일</strong>
+                           <span>2025-05-30</span>
+                        </li>
+                        <li>
+                           <strong>조회수</strong>
+                           <span>4504</span>
+                        </li>
+                     </ul>
+                     <p class="detail-txt">
+                        행정안전부 간편인증 서비스 시스템 장비교체로 인해<br>
+                        아래아 같이 일시 중단 될 예정이오니 업무에 참고하시기 바랍니다.<br>
+                        -아래 –<br>
+                        ㅇ 작업 일시 : 2025.05.01(화)<br>
+                        ㅇ 작업 내용 : 행정안정부 간편인증 전용선 VPN 교체<br>
+                        ㅇ 영향서비스 : 행정안전부 간편인증 서비스( 10초 이내 순단 발생)<br>
+                        ㅇ 기타 문의사항 : 전자통관 기술지원센터(1544-1285)
+                     </p>
+                     <div class="detail-file">
+                        <h5 class="title">첨부파일</h5>
+                        <div class="file-upload line list">                              
+                           <div class="file-list">                     
+                              <ul class="upload-list">                                               
+                                 <li>
+                                    <div class="file-info m-column file-down">
+                                       <div class="file-name">타이틀영역 [PDF, 20KB]</div>
+                                       <div class="btn-wrap">
+                                          <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>                                 
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="file-info m-column file-down">
+                                       <div class="file-name">타이틀영역 [PDF, 20KB]</div>
+                                       <div class="btn-wrap">
+                                          <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>                                 
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>                     
+                           </div>  
+                        </div>
+                     </div>
+                  </div>
+                  <div class="wrap-pages-move">
+                     <ul class="pages-move">  
+                        <li class="prev">
+                           <a href="#none">
+                              <strong><i class="icon btn-arrow-left x-small"></i> 이전글</strong>
+                              <p>관세법 개정에 따른 관세 감면률 변경관세법 개정에 따른 관세 감면률 변경관세법 개정에 따른 관세 감면률 변경관세법 개정에 따른 관세 감면률 변경관세법 개정에 따른 관세 감면률 변경</p>
+                           </a>
+                        </li>
+                        <li class="next">
+                           <a href="#none">                           
+                              <p>관세법 개정에 따른 관세 감면률 변경</p>
+                              <strong>다음글 <i class="icon btn-arrow-right x-small"></i></strong>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>               
+               <div class="btn-area btn-end">
+                  <div class="align">                            
+                     <button type="button" class="btn tertiary large">목록</button>
+                  </div>
+               </div>
+
+
+
+
+
+
+                           
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

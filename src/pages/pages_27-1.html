@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">고객센터</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">자주찾는 질문</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">자주찾는 질문(FAQ)</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>자주 묻는 질문 활용 방법 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">자주 묻는 질문 활용 방법 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="search-box">
+                  <ul>
+                     <li class="col1">
+                        <label class="tit" for="ex00">검색</label>
+                        <div class="search-area nowrap type1">
+                           <div class="form-group medium mw-140">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex00" required="" title="검색 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">전체</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                           <div class="form-group medium mw-948">                     
+                              <div class="form-conts">
+                                 <input type="text" id="ex00" class="input" placeholder="내용을 입력해주세요" title="검색 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>
+                              
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">                        
+                        <button type="button" class="btn secondary medium">검색</button>                        
+                     </div>
+                  </div>
+               </div>
+               <h5 class="title-type3">총<strong class="number">240</strong>건의 자주 묻는 질문(FAQ)가 있습니다.</h5>
+               <div class="wrap-faq">
+                  <ul class="header">
+                     <li class="list1">NO</li>
+                     <li class="list2">구분</li>
+                     <li class="list3">제목</li>
+                  </ul>
+                  
+                  <div class="body">
+
+                     <!-- q1 -->                     
+                     <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header">
+                           <ul>
+                              <li class="number">Q1</li>
+                              <li>개인통관고유부호</li>
+                              <li><a href="javascript: void(0);" class="accordion-btn tb-title">개인통관고유부호 신청 방법이 궁금합니다.</a></li>
+                           </ul>                           
+                        </div>
+                        <div class="accordion-body d-none">
+                           <span class="number">A2</span>
+                           <div class="faq-box">
+                              <strong class="title">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</strong>
+                              <p class="txt">소학교 때 책상을 같이 했던 아이들의 이름과 패, 경, 옥 이런 이국소녀들의 이름과 벌써 아기 어머니된 계집애들의 이름과, 가난한 이웃 사람들의 이름과, 비둘기, 강아지, 토끼, 노새, 노루, 프랑시스 잠, 라이너 마리아 릴케 이런 시인의 이름을 불러 봅니다. 가슴 속에 하나 둘 새겨지는 별을 이제 다 못 헤는 것은 쉬이 아침이 오는 까닭이요, 내일 밤이 남은 까닭이요, 아직 나의 청춘이 다하지 않은 까닭입니다.</p>                              
+                           </div>
+                           <h5 class="title-type3">첨부파일</h5>
+                           <div class="file-upload line list">                              
+                              <div class="file-list">                     
+                                 <ul class="upload-list">                                               
+                                    <li>
+                                       <div class="file-info m-column file-down">
+                                          <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                                          <div class="btn-wrap">
+                                             <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>                                 
+                                          </div>
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="file-info m-column file-down">
+                                          <div class="file-name">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB] </div>
+                                          <div class="btn-wrap">
+                                             <button type="button" class="text">다운로드 <i class="icon download medium"></i></button>                                 
+                                          </div>
+                                       </div>
+                                    </li>
+                                 </ul>                     
+                              </div>  
+                           </div>
+                        </div>
+                     </div>
+                     <!-- q1 -->
+
+                  </div>
+
+               </div>
+               
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
