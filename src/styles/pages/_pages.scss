@@ -268,11 +268,15 @@ strong.txt{font-weight: 700 !important;
 
 //FAQ
 .wrap-faq{border:1px solid red;
+  .list1{width:80px}
+  .list2{width:160px}
+  .list3{width:calc(100% - 240px)}
+
   .header{display: flex;background-color: #E6E8EA;border-bottom:1px solid #58616A;
-    li{padding: 16px 16px;font-size: 15px;font-weight: 700;color:#1D1D1D;
-      &.list1{}
-    }
+    li{padding: 16px 16px;font-size: 15px;font-weight: 700;color:#1D1D1D;text-align: center;}
   }
+
+  .body .accordion-header ul{display: flex;text-align: center;}
 }
 
 @media (max-width: 1280px) {
