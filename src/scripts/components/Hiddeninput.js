@@ -3,13 +3,15 @@ import $ from 'jquery';
 class Hiddeninput {
 
     static DEFAULT_PROPS = {
-        showNum: 0
+        showNum: 0,
+        numberOnly: false
     }
 
     constructor( ele, props ) {
         this.ele = ele;
         this.props = props;
         this.actualValue = '';
+        this.regex = this.props.numberOnly ? /^[0-9]+$/ : /^[^\u3131-\u314E가-힣\s]+$/;
         this.init();
     }
 
@@ -28,7 +30,14 @@ class Hiddeninput {
         const input = this.ele[0];
         const { selectionStart, selectionEnd } = input;
         const inputType = e.originalEvent.inputType;
-        const data = e.originalEvent.data;
+        let data = e.originalEvent.data;
+        if(data) {
+            if(!this.regex.test(data)) {
+                e.preventDefault();
+                return;
+            }
+        }
+        
         if (inputType === 'insertText' || inputType === 'insertCompositionText') {
             this.actualValue = this.actualValue.slice(0, selectionStart) + data + this.actualValue.slice(selectionEnd);
         } else if (inputType === 'deleteContentBackward') {

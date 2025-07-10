@@ -4356,7 +4356,7 @@
             <h4>주민등록번호</h4>
             <div class="form-group medium">                     
                <div class="form-conts">
-                  <input type="text" id="pass2" class="input" placeholder="내용을 입력해주세요" title="정보를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1">
+                  <input type="text" id="pass2" class="input" placeholder="내용을 입력해주세요" title="정보를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1; numberOnly: true">
                </div>               
             </div>
          </div>
@@ -4366,6 +4366,7 @@
 
             - data-props
               - showNum: 앞자리 보여질 개수
+              - numberOnly: 숫자만 입력가능
 
             - 실제 입력값 가져오기
                $("input").date("value");
@@ -4374,7 +4375,7 @@
             &lt;input type="text" class="input" placeholder="" title="" data-ui="hidden-input"&gt;
 
             - 주민등록번호
-            &lt;input type="text" class="input" placeholder="" title="" data-ui="hidden-input" data-props="showNum: 1"&gt;
+            &lt;input type="text" class="input" placeholder="" title="" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true"&gt;
 
          </code>
          </pre>
