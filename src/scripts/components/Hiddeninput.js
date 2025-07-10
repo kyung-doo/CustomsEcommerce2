@@ -66,7 +66,6 @@ class Hiddeninput {
         const maskedPart = '*'.repeat(Math.max(0, this.actualValue.length - this.props.showNum));
         const display = visiblePart + maskedPart;
         input.value = display;
-        console.log(this.actualValue);
     }
 
     destroy () {
