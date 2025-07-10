@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import gsap, { Cubic } from 'gsap';
 
 class Hiddeninput {
 
@@ -10,8 +9,6 @@ class Hiddeninput {
     constructor( ele, props ) {
         this.ele = ele;
         this.props = props;
-        this.start = 0;
-        this.end = 0;
         this.actualValue = '';
         this.init();
     }
@@ -49,11 +46,7 @@ class Hiddeninput {
         } else if (inputType === 'insertFromPaste') {
             navigator.clipboard.readText().then(pastedText => {
                 this.actualValue = this.actualValue.slice(0, selectionStart) + pastedText + this.actualValue.slice(selectionEnd);
-                this.ele.data('value', this.actualValue);
-                const visiblePart = this.actualValue.slice(0, this.props.showNum);
-                const maskedPart = '*'.repeat(Math.max(0, this.actualValue.length - this.props.showNum));
-                const display = visiblePart + maskedPart;
-                input.value = display;
+                this.onInput();
             });
             e.preventDefault();
         }
