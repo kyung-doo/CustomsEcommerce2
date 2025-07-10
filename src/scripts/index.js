@@ -6,6 +6,7 @@ import './components/Modal';
 import './components/Tooltip';
 import './components/Datepicker';
 import './components/Accordion';
+import './components/Hiddeninput';
 import './layouts/header';
 
 // 전역변수
@@ -68,5 +69,11 @@ function createUI () {
     $(`*[data-ui="accordion"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).accordion(props);
+    });
+
+    // 패스워드 / 주민등록용 인풋
+    $(`*[data-ui="hidden-input"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).hiddeninput(props);
     });
 }
