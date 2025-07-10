@@ -92,38 +92,6 @@ function windowR(){
     });
 }
 
-//패스워드
-function passwordInput(){
-    $('.password-input').on('propertychange change keyup paste input',function(){        
-        var inputValue = $(this).val();  
-        var passwordIco = "*";    
-        var psNumber = passwordIco.repeat(inputValue.length);          
-        var psResident = inputValue.substring(0,1) + passwordIco.repeat(inputValue.length-1,0);                    
-
-        /*** 기본 비밀번호 **/
-        $(this).closest('.password-area').find('.psbox-number').text(psNumber);            
-
-        /*** 주민등록번호 **/
-        $(this).closest('.password-area').find('.psbox-resident').text(psResident);            
-    });    
-
-    /** disabled **/
-    if($('.password-input').length >= 1){
-        $(window).on('load',function(){                            
-            var inputValue = $('.password-input').val();  
-            var passwordIco = "*";    
-            var psNumber = passwordIco.repeat(inputValue.length);  
-            var psResident = inputValue.substring(0,1) + passwordIco.repeat(inputValue.length-1,0);   
-            
-            /*** 기본 비밀번호 **/
-            $('.password-input[disabled]').siblings('.psbox-number').text(psNumber);            
-            
-            /*** 주민등록번호 **/
-            $('.password-input[disabled]').siblings('.psbox-resident').text(psResident);            
-        })
-    }   
-}
-
 $(function(){
   //accessibility()  
   //formList() 

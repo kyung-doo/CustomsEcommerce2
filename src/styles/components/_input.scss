@@ -1,12 +1,12 @@
 @use "../mixin" as *;
 
 .form-group {
-  input[type=text], [class*=psbox-] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;color: #1D1D1D;padding: 0px 16px;}    
+  input[type=text], input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;color: #1D1D1D;padding: 0px 16px;}    
   .form-hint-invalid {font-size: 15px;color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
-  input[type=text],select,textarea, [class*=psbox-]{width:100%;min-width: 10px;}
+  input[type=text],select,textarea, input[type=password]{width:100%;min-width: 10px;}
 
    &.form-tit-group {border: 1px solid #C6C6C6;display: flex;height: 46px;padding: 0 16px;align-items: center;position: relative;border-radius: 4px;
-    input[type=text], [class*=psbox-] {border: 0;background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;padding: 0;height: 100%;padding-left: 15px;width: 100%;}
+    input[type=text], input[type=password] {border: 0;background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;padding: 0;height: 100%;padding-left: 15px;width: 100%;}
     label {font-size: 17px;color: #1D1D1D;position: relative;      
       &:before {content: "";display: block;position: absolute;top: 50%;right: -8px;width: 1px;height: 16px;background-color: #C6C6C6;transform: translateY(-50%);}
     }
@@ -22,37 +22,37 @@
   select {border-color: #C6C6C6;-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("/assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 14px;background-color: #fff;color: #1D1D1D;padding: 0px 35px 0 16px;border-radius: 4px;border: 1px solid #717171;text-overflow: ellipsis;white-space: nowrap;text-decoration: none;
     &:invalid {color: #8E8E8E;}
   }
-  .form-conts.is-success input[type=text],.form-conts.is-success [class*=psbox-] {outline: 2px solid #246BEB;border-color: #246BEB;}
+  .form-conts.is-success input[type=text],.form-conts.is-success input[type=password] {outline: 2px solid #246BEB;border-color: #246BEB;}
   &.form-tit-group {
     &.is-success {outline: 2px solid #246BEB;border-color: #246BEB;}
-    input[type=text]:focus, [class*=psbox-]:focus {outline: none;}
+    input[type=text]:focus, input[type=password]:focus {outline: none;}
   }
   .textarea-count .count-now.is-error {color: #D50136;}
   .wrap-textarea-count .form-hint-invalid.txt-error {margin-top: 0;}
   .form-hint-invalid.txt-error:before {background-image: url("/assets/icons/danger.svg");}
   .form-conts.is-error {
-    input[type=text], textarea, select, [class*=psbox-] {outline: 2px solid #EB003B;border-color: #EB003B;}
+    input[type=text], textarea, select, input[type=password] {outline: 2px solid #EB003B;border-color: #EB003B;}
   }
   &.form-tit-group.is-error {outline: 2px solid #EB003B;border-color: #EB003B;}  
   &.form-tit-group:focus-within {outline:2px solid #000;}  
   textarea::placeholder {font-size: 17px;color: #8E8E8E;}
-  input[type=text]::placeholder, [class*=psbox-]::placeholder {color: #8E8E8E;}
-  &.form-tit-group input[type=text], &.form-tit-group [class*=psbox-] {
+  input[type=text]::placeholder, input[type=password]::placeholder {color: #8E8E8E;}
+  &.form-tit-group input[type=text], &.form-tit-group input[type=password] {
     &::placeholder {font-size: 17px;color: #8E8E8E;}
   }
   &.large {
-    input[type=text], select, [class*=psbox-] {height: 56px;font-size: 19px;}
+    input[type=text], select, input[type=password] {height: 56px;font-size: 19px;}
   }
   &.medium {
-    input[type=text], select, [class*=psbox-] {height: 48px;font-size: 17px;}
+    input[type=text], select, input[type=password] {height: 48px;font-size: 17px;}
   }
   &.small {
-    input[type=text], select, [class*=psbox-] {height: 40px;font-size: 15px;}
+    input[type=text], select, input[type=password] {height: 40px;font-size: 15px;}
   }
 
   //비밀번호
   .password-area{position: relative;padding: 0;    
-    [class*=psbox-]{overflow: hidden;white-space: nowrap;width:100%;height: 48px;display: flex;align-items: center;padding-top: 6px;font-size: 17px;color:#1D1D1D;font-weight: 400;}  
+    input[type=password]{overflow: hidden;white-space: nowrap;width:100%;height: 48px;display: flex;align-items: center;padding-top: 6px;font-size: 17px;color:#1D1D1D;font-weight: 400;}  
     input[type=password]{position: absolute;top:0;left:0;background-color: rgba(0,0,0,0.0);width:100%;height: 100%;color:transparent;border:0;padding: 0 16px;border:0;}
     input[type=password]{font-size:16px}    
   }
@@ -70,4 +70,4 @@
 }
 
 /** disabled **/
-input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + [class*=psbox-]{background-color: #D8D8D8;color:#1D1D1D;opacity:1;border-color:#C6C6C6;}
+input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + input[type=password]{background-color: #D8D8D8;color:#1D1D1D;opacity:1;border-color:#C6C6C6;}
