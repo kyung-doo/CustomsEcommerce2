@@ -65,7 +65,7 @@ class Modal {
         this.ele.find(".modal-body").on("focusout", e => {
             $(document).off('keydown.modal');
         });
-        this.ele.find(".modal-body").attr("tabindex", 0).focus();
+        this.ele.find(".modal-body").attr("tabindex", 0).focus();        
     }
     
     hide () {

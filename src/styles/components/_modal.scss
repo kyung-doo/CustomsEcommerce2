@@ -1,149 +1,40 @@
 @use "../mixin" as *;
 
-.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all .3s;   
+.modal {position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 999;background-color: rgba(0, 0, 0, 0.5);transition: all .3s;}
+.modal-wrap {position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);border-radius: 8px;background-color: #fff;padding: 32px;width:95%;min-width: 100px;max-height:95%;}
+.modal-header {display: flex;flex-direction: column;justify-content: center;align-items: flex-start;position: relative;box-sizing: border-box;margin-bottom: 25px;padding-right: 40px;
+  > h5 {font-weight: 700;font-size: 17px;color: #1D1D1D;margin-top: 15px;line-height: 150%;}
 }
+.modal-body {box-sizing: border-box;overflow-y: auto;overflow-x: hidden;max-height: calc(100vh - 300px);
+  .modal-cont {line-height: 150%;margin-bottom: 32px;   
+    > *:last-child{margin-bottom: 0;} 
+    .cer-txt{margin-top: 12px;}
+    [class*=-type]{width:100%;color: #1D1D1D;line-height: 150%;
+      .em-type{color:#246BEB;}
+    }
+    .tit-type{font-size: 21px;}
+    .txt-type{font-size:17px;}
 
-.modal-wrap {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 8px;
-  background-color: #fff;
-  padding: 32px;
-  width:95%;
-  min-width: 100px;   
-  max-height:95%;  
-}
-
-.modal-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  box-sizing: border-box;
-  margin-bottom: 25px;
-  padding-right: 40px;
-
-  > h5 {
-    font-weight: 700;
-    font-size: 17px;
-    color: #1D1D1D;
-    margin-top: 15px;
-    line-height: 150%;
+    .btn-form + .form-btn-area{top: 81px !important;}
   }
 }
-
-.modal-body {
-  box-sizing: border-box;  
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: calc(100vh - 300px);
-  
-
-  .modal-cont {    
-    line-height: 150%;    
-
-    .cer-txt{
-      margin-top: 12px;
-    }
-
-    [class*=-type]{
-      width:100%;
-      color: #1D1D1D;
-      line-height: 150%;
-
-      .em-type{
-        color:#246BEB;
-      }
-    }
-    .tit-type{
-      font-size: 21px;      
-    }
-
-    .txt-type{
-      font-size:17px;            
-    }
-
-    /** 첨부파일 초기화,삭제 버튼 위치 **/
-    .btn-form + .form-btn-area{
-        top: 81px !important;
-    }
-  }
-}
-
-.modal-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;  
-  gap: 8px;
-  border-top: 1px solid #E4E4E4;
-  padding-top: 24px;
-  flex-wrap: wrap;
-
-  [class*=form-]{
-    margin-right: 15px;
-  }
+.modal-footer {display: flex;flex-direction: row;justify-content: flex-end;align-items: center;gap: 8px;border-top: 1px solid #E4E4E4;padding-top: 24px;flex-wrap: wrap;
+  [class*=form-]{margin-right: 15px;}
 }
 
 .modal {
-  .btn-close {
-    position: absolute;
-    right: 32px;
-    top: 32px;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 0;
-  }
-
-  &.type1 .modal-footer {
-    border-top: 0;
-    padding: 0;
-  }
+  .btn-close {position: absolute;right: 32px;top: 32px;width: 20px;height: 20px;background-color: rgba(0, 0, 0, 0);padding: 0;}
+  &.type1 .modal-footer {border-top: 0;padding: 0;}
 }
 
 @media (max-width: 480px) {
-  .modal-wrap{
-    padding: 24px 0;
-
-
-    .btn-close{
-      top:24px;
-      right:24px;
-    }
-
-    .modal-header{
-      padding-left: 24px;
-    }
-
-    .modal-body{
-      max-height: calc(100vh - 305px);
-      padding: 0 24px;
-      .modal-cont{
-        margin-bottom: 24px;
-      }
+  .modal-wrap{padding: 24px;
+    .btn-close{top:24px;right:24px;}    
+    .modal-body{max-height: calc(100vh - 305px);
+      .modal-cont{margin-bottom: 24px;}
     } 
-
-    .modal-footer{    
-      padding-left: 24px;  
-      padding-right: 24px;  
-      .form-check{        
-        width:100%;
-        margin-bottom: 16px;
-        display: flex;
-        justify-content: flex-end;
-      }      
+    .modal-footer{
+      .form-check{width:100%;margin-bottom: 16px;display: flex;justify-content: flex-end;}      
     }    
   }
 }

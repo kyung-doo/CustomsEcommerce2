@@ -18,8 +18,9 @@
         height: 48px;
         background-color: #FFF;
         border: 1px solid #717171;
-        border-radius: 4px;
-        padding: 0 16px 0 16px;
+        border-radius: 4px;        
+        
+        input{padding: 0 43px 0 16px;}
     }
 
     .calendar-form.on{        
@@ -45,6 +46,10 @@
         background-repeat: no-repeat;
         background-position: center;
         padding: 0;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
     }
 
     i {

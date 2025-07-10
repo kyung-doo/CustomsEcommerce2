@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 방문발급 사전신청 조회</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 방문발급사전신청 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>개인통관고유부호 방문발급 사전신청 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 방문발급 사전신청 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">조회정보</h5>   
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>     
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>    
+                        <li class="col1">
+                           <label for="ex1" class="tit">국적</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-390">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex1" required="" title="국적을 확인할수있습니다">
+                                       <option value="" disabled="" hidden="" selected="">대한민국</option>
+                                       <option value="대한민국">대한민국</option>                                 
+                                    </select>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>               
+                        <li class="col2">
+                           <strong class="tit">한글성명 <i class="compulsory">필수</i></strong>
+                           <div class="inp-box">
+                              <div class="wrap-form-group mw-191">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit1" class="form-title">성</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit1" class="input" placeholder="홍" title="성을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                              <div class="wrap-form-group mw-191">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit2" class="form-title">이름</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit2" class="input" placeholder="길동" title="이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col2">
+                           <strong class="tit">영문성명 <i class="compulsory">필수</i></strong>
+                           <div class="inp-box">
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit3" class="form-title">Last</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit3" class="input" placeholder="GilDong" title="마지막 이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>                              
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit5" class="form-title">First</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit5" class="input" placeholder="Hong" title="첫번쨰 이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col1">
+                           <label for="ex2" class="tit">주민등록번호 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-186">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex2" placeholder="991231" title="첫번쨰 번호를 확인할수있습니다">
+                                 </div>                           
+                              </div>   
+                              <i class="hy">-</i>
+                              <div class="form-group medium mw-186">                     
+                                 <div class="form-conts">
+                                    <div class="password-area">
+                                       <input type="password" class="input password-input" id="ex1" placeholder="1******">   
+                                       <div class="psbox-resident"></div>                                       
+                                    </div>                                    
+                                 </div>                           
+                              </div>   
+                           </div>
+                           <p class="advice-txt">신청시 입력하신 주민등록번호를 입력하세요.</p>
+                        </li>
+                        <li class="col1">
+                           <label for="ex1" class="tit">사전신청 비밀번호 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-390">                  
+                                 <div class="form-conts">
+                                    <div class="password-area">
+                                       <input type="password" class="input password-input" id="ex1" autocomplete="off">   
+                                       <div class="psbox-number"></div>                                       
+                                    </div>
+                                 </div>                           
+                              </div>
+                           </div>  
+                           <p class="advice-txt">특수문자를 포함하여 8자리 이상</p>
+                        </li>
+                        <li class="col1 vc-list">
+                           <label for="ex5" class="tit">인증번호 입력 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-158">                     
+                                 <div class="form-conts">
+                                    <input type="text" id="ex5" class="input" title="아이디를 입력해주세요">                                    
+                                 </div>                           
+                                 <p class="advice-txt info-txt com">입력 유효시간 09:39</p>
+                              </div>                              
+                              <button type="button" class="btn secondary medium">등록 이메일로 인증번호 발송</button>                                 
+                           </div>                                                   
+                        </li> 
+                     </ul>                  
+                  </div>   
+               </div> 
+               <div class="btn-area btn-end">
+                  <div class="align">
+                     <button type="button" class="btn primary large" disabled>사전신청정보 조회</button>
+                  </div>
+               </div>
+            
+            
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

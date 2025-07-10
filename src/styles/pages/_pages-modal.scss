@@ -1,123 +1,42 @@
-.modal-body [class*=-tbl]{
-  margin-bottom: 20px;
-}
-
 .modal-body{
-  .reforwarding {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
-    
-    .txt-type{
-      padding-right: 20px;
+  .reforwarding {display: flex;justify-content: space-between;align-items: center;      
+    .txt-type{padding-right: 20px;}
+  }
+  .effective-time {font-size: 15px;color: #E71825;width: 100%;text-align: center;display: block;margin-top: 11px;}
+  .certification-number {display: flex;justify-content: center;  
+    .number {display: flex;gap: 8px;
+      input {width: 100%;min-width: 1px;max-width: 42px;height: 48px;border: 1px solid #C6C6C6;border-radius: 4px;}
     }
   }
-
-  .effective-time {
-    font-size: 15px;
-    color: #E71825;
-    width: 100%;
-    text-align: center;
-    display: block;
-    margin-top: 11px;
-  }
-
-  .certification-number {
-    display: flex;
-    justify-content: center;  
-
-    .number {
-      display: flex;
-      gap: 8px;
-
-      input {
-        width: 100%;
-        min-width: 1px;
-        max-width: 42px;
-        height: 48px;
-        border: 1px solid #C6C6C6;
-        border-radius: 4px;
-      }
-    }
-  }
-
-  .wrap-form-area{
-    margin: 24px 0;
-
+  .wrap-form-area{margin: 24px 0;
     &:first-child{margin: 0;}
-
     li{
-      p.txt.disabled{        
-        color:#8E8E8E;
-      }
+      p.txt.disabled{color:#8E8E8E;}
     }    
   }
-
-  .total-area{
-    border-top:1px solid #717171;
-    margin-top: 24px;
-    padding-top: 24px;
-    display: flex;
-    
-    p{
-      font-size: 15px;
-      
-    }
+  .total-area{border-top:1px solid #717171;margin-top: 24px;padding-top: 24px;display: flex;    
+    p{font-size: 15px;}
   }     
 }
-
-.modal-wrap:has(.address-list){
-  padding: 24px;
-
-  .inp-form{
-    border:0;
-    padding: 60px 0 0 0;
-    border-top:1px solid #E4E4E4;
-    border-radius: 0;    
-      
+.modal-wrap:has(.address-list){padding: 24px;
+  .inp-form{border:0;padding: 60px 0 0 0;border-top:1px solid #E4E4E4;border-radius: 0;          
     .address-list{        
-      .inp-box{
-        flex-wrap: wrap;      
-
-        .first-add{
-          max-width:152px;
-        }
-
-        .add-btn{
-          width:150px;
-          margin-right: 0
-        }
+      .inp-box{flex-wrap: wrap;      
+        .first-add{max-width:152px;}
+        .add-btn{width:150px;margin-right: 0}
       }      
     }    
-
-    .form-btn-area{
-      right: 0;
-    }
+    .form-btn-area{right: 0;}
   }
 
-  .compulsory-txt{
-    margin-bottom: 14px;
-  }
+  .compulsory-txt{margin-bottom: 14px;}
 }
-
-
-
 
 @media (max-width: 480px) {
   .modal-body{
-    .certification-number{
-      padding: 22px 10px;
-    }    
-
-    
-    .reforwarding{
-      flex-direction: column;
-
-      button{
-        width:100%;
-        margin-top: 21px;
-      }
+    .certification-number{padding: 22px 10px;}        
+    .reforwarding{flex-direction: column;
+      button{width:100%;margin-top: 21px;}
     }
-      
   }  
 }

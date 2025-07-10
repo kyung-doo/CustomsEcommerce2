@@ -31,6 +31,62 @@
             </div>
             <!-- 내용 -->
             <div class="cont-area">
+               <div class="search-box">
+                  <ul>                                   
+                     <li class="col1">
+                        <div class="form-check medium tit">
+                           <input type="radio" name="rdo_11" id="rdo_22" checked="">
+                           <label for="rdo_22" class="tit">M B/L – H B/L <i class="compulsory">필수</i></label>
+                        </div>      
+                        <div class="search-area-box">
+                           <div class="search-area nowrap type1">
+                              <div class="form-group medium mw-328">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" placeholder="M B/L" title="정보를 입력해주세요">
+                                 </div>                              
+                              </div>
+                              <div class="form-group medium mw-328">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" placeholder="H B/L" title="정보를 입력해주세요">
+                                 </div>                                
+                              </div>
+                              <div class="form-group medium mw-140">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" required="" title="조건을 선택해주세요">
+                                       <option value="" selected="" disabled="" hidden="">2025</option>
+                                       <option value="항목1">항목1</option>
+                                       <option value="항목2">항목2</option>
+                                       <option value="항목3">항목3</option>
+                                    </select>
+                                 </div>                              
+                              </div>                                                      
+                           </div>                        
+                           <p class="advice-txt">개인물품인 경우 운송장번호를 H B/L에 입력하세요.</p>                                   
+                        </div>                        
+                     </li>    
+                     <li class="col1">
+                        <div class="form-check medium tit">
+                           <input type="radio" name="rdo_11" id="rdo_22" checked="">
+                           <label for="rdo_22" class="tit">화물관리번호</label>
+                        </div>           
+                        <div class="search-area">                           
+                           <div class="form-group medium mw-328">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" placeholder="내용을 입력해주세요" title="정보를 입력해주세요">
+                              </div>                              
+                           </div>                           
+                        </div>                           
+                     </li>    
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="button" class="btn secondary medium">조회</button>                        
+                     </div>
+                  </div>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+
                <div class="board-top no-wrap title-top">
                   <div class="left-box">
                      <h5 class="title-type">통관정보 상세정보</h5>      
@@ -216,8 +272,11 @@
                            <div class="inp-box">
                               <p class="txt">032-111-1111</p>
                            </div>                        
+                        </li>
+                        <li class="col2 txt-list mo">
+                           <button type="button" class="btn secondary medium w100per">수입화물 진행정보 상세조회</button>
                         </li>                                                                                                                                                                                                                    
-                     </ul>                  
+                     </ul> 
                   </div>
                </div>
                <div class="wrap-cont-tbl">
@@ -225,7 +284,7 @@
                      <table class="tbl col cont type1 bor-col-sep">
                         <caption>수입화물진행정보(BL화물정보) 조회 표로 NO,처리단계,장치장/장치위치,포장개수,반출입(처리)일시,처리일시,장치장명,중량,반출입(처리)내용 구성되어있다.</caption>
                         <colgroup>
-                           <col style="width: 6.25%;">                     
+                           <col style="width: 80px;">                     
                            <col style="width: 23.4375%;">                     
                            <col style="width: 23.4375%;">                     
                            <col style="width: 23.4375%;">                     
@@ -304,669 +363,9 @@
                            </tr>                                          
                         </tbody>
                      </table>                     
-                  </div>
-
-                  <div class="table-wrap mo">
-                     <strong class="modal-tit">본세</strong>
-                     <div class="cont-acc-tbl">                                                                              
-                        <ul class="mo-cont-wrap">  
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>관세</p>
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" placeholder="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>개별 소비세</p>
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>교통에너지환경세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>주세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>교육세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>농특세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>부가세 <span>부가세과세과표 입력 시 자동입력</span></p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>신고지연가산세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>미신고가산세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>납기경과가산세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>세외수입금액</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>환급 신청액합계</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" disabled="" title="환급 신청액(원) 확인해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                        </ul>                                          
-                     </div>                                    
-
-                     <strong class="modal-tit">가산세</strong>
-                     <div class="cont-acc-tbl">                                                                              
-                        <ul class="mo-cont-wrap">  
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>관세</p>
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>개별 소비세</p>
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>교통에너지환경세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>주세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>교육세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>농특세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>
-                           <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                              <div class="accordion-header">
-                                 <a href="javascript: void(0);">
-                                    <p>부가세</p>  
-                                    <i class="icon btn-arrow-down medium">열기</i>
-                                 </a>
-                              </div>
-                              <div class="accordion-body d-none">
-                                 <ul>
-                                    <li>
-                                       <p class="txt">기납부 금액(원)</p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">기환급 금액(원)</p>
-                                       <p class="txt-area">0</p>
-                                    </li>
-                                    <li>
-                                       <p class="txt">환급신청 가능금액(원) <span>(기납부-기환급)</span></p>
-                                       <p class="txt-area">145,0.60</p>
-                                    </li>
-                                    <li class="form-list dotted-line-top">
-                                       <p class="txt">환급 신청액(원)</p>
-                                       <p class="txt-area">
-                                          </p><div class="form-group medium">                     
-                                             <div class="form-conts">
-                                                <input type="text" class="input text-right" value="0" title="환급 신청액(원) 입력해주세요">
-                                             </div>                                                   
-                                          </div>
-                                       <p></p>
-                                    </li>
-                                 </ul>
-                              </div>                                             
-                           </li>                                          
-                        </ul>                                          
-                     </div>                                    
-                  </div>
+                  </div>                  
                </div>
-               <div class="pagination pagination-type1">               
+               <div class="pagination pagination-type1 fpc">               
                   <button class="page-navi prev" disabled="">이전</button>
                   <div class="page-links">
                      <a class="page-link mobile-link" href="#">1</a>
@@ -989,6 +388,427 @@
                   <button type="button" class="btn primary large">목록</button>
                </div>
             </div>
+
+
+            <!-- 팝업 사용후 삭제해주세요 -->
+            <div class="testtest">
+
+               <!-- 수입화물 진행정보 상세조회 -->
+               <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">수입화물 진행정보 상세조회</button>   
+               <div id="modal1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-1280">
+                     <div class="modal-header">
+                        <h5>수입화물 진행정보 상세조회</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">                        
+                        <div class="modal-cont">
+
+                           <div class="board-top tbl-top">
+                              <div class="left-box">
+                                 <strong class="tit top-txt">전체<span>9</span>건</strong>                                 
+                              </div>                  
+                           </div>
+                           <div class="table-wrap type1">                              
+                              <div class="cont-acc-tbl">                                                                              
+                                 <ul class="mo-cont-wrap">  
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>통관목록심사완료 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li>  
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>반출신고 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>반입신고 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>하선신고 수리 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>입항적재화물목록 운항정보 정정 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>입항보고 수리 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>입항적재화물목록 심사완료 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>입항적재화물목록 제출 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li> 
+                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                       <div class="accordion-header">
+                                          <a href="javascript: void(0);">
+                                             <p>통관목록접수 <span class="data">2025-02-26 23:07:54</span></p>                                             
+                                             <i class="icon btn-arrow-down medium">열기</i>
+                                          </a>
+                                       </div>
+                                       <div class="accordion-body d-none">
+                                          <ul>
+                                             <li>
+                                                <p class="acc-tit">장치장/장치위치</p>
+                                                <p class="acc-txt">02077024</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">장치장명</p>
+                                                <p class="acc-txt">허브넷로지스틱스 (인천항 4부두)</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">포장개수/중량</p>
+                                                <p class="acc-txt">1 GT / 0.2 KG</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">신고번호</p>
+                                                <p class="acc-txt">SE01512500000380</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)일시</p>
+                                                <p class="acc-txt">2024-02-27 07:20:45</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">반출입(처리)내용</p>
+                                                <p class="acc-txt">수입신고 수리후 반출</p>
+                                             </li>
+                                             <li>
+                                                <p class="acc-tit">비고</p>
+                                                <p class="acc-txt">[안내사항] 기타 안내사항이 표시됩니다.</p>
+                                             </li>                                                                                          
+                                          </ul>
+                                       </div>                                             
+                                    </li>                                   
+                                 </ul>                                          
+                              </div>                                    
+                           </div>
+                           <div class="pagination pagination-type1">               
+                              <button class="page-navi prev" disabled="">이전</button>
+                              <div class="page-links">
+                                 <a class="page-link mobile-link" href="#">1</a>
+                                 <span class="page-link link-dot mobile-dot"></span>
+                                 <a class="page-link" href="#">2</a>
+                                 <a class="page-link" href="#">3</a>
+                                 <a class="page-link" href="#">4</a>
+                                 <a class="page-link mobile-link" href="#">5</a>
+                                 <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                                 <a class="page-link mobile-link" href="#">7</a>
+                                 <a class="page-link" href="#">8</a>
+                                 <a class="page-link" href="#">9</a>
+                                 <span class="page-link link-dot"></span>
+                                 <a class="page-link mobile-link" href="#">120</a>
+                              </div>
+                              <button class="page-navi next">다음</button>
+                           </div>
+
+
+
+                        </div>
+                     </div>
+                     <div class="modal-footer">                           
+                        <button type="button" class="btn modal-enter primary medium">닫기</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- 수입화물 진행정보 상세조회 -->
+
+            </div>
+            <!-- 팝업 사용후 삭제해주세요 -->
+
+
+
                
 
 

@@ -37,7 +37,6 @@ export default function (el, style) {
     return obj;
 }
 
-
 //접근성
 function accessibility(){
     $('.cont-area select,.cont-area input,.cont-area textarea').each(function(i){
@@ -70,8 +69,8 @@ function formList() {
 
     var max_width = Math.max.apply(Math, width_array);
     
-    if(max_width >= 160){
-        title.css({"width":"160px"})
+    if(max_width >= 180){
+        title.css({"width":"180px"})
     }else{
         title.width(max_width);
     }        
@@ -81,13 +80,9 @@ function formList() {
 function windowR(){
     $(window).on('resize load', function(){   
         var w = $(this).width();
-        var h = $(this).height();
-        var sumbox = 120;        
-        var sum = sumbox / 1280 * 100
+        var h = $(this).height();        
         $('.windowR').remove()
-        $('#wrap').append(`<div class="windowR" style="position: fixed;top:0;left:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}<br>${h}</div>`);        
-
-        console.log(sum)
+        $('#wrap').append(`<div class="windowR" style="position: fixed;top:0;left:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}<br>${h}</div>`);                
 
         if(w <= 390){
             $('#wrap').css({"border":"3px solid red"})
@@ -97,9 +92,42 @@ function windowR(){
     });
 }
 
+//패스워드
+function passwordInput(){
+    $('.password-input').on('propertychange change keyup paste input',function(){        
+        var inputValue = $(this).val();  
+        var passwordIco = "*";    
+        var psNumber = passwordIco.repeat(inputValue.length);          
+        var psResident = inputValue.substring(0,1) + passwordIco.repeat(inputValue.length-1,0);                    
+
+        /*** 기본 비밀번호 **/
+        $(this).closest('.password-area').find('.psbox-number').text(psNumber);            
+
+        /*** 주민등록번호 **/
+        $(this).closest('.password-area').find('.psbox-resident').text(psResident);            
+    });    
+
+    /** disabled **/
+    if($('.password-input').length >= 1){
+        $(window).on('load',function(){                            
+            var inputValue = $('.password-input').val();  
+            var passwordIco = "*";    
+            var psNumber = passwordIco.repeat(inputValue.length);  
+            var psResident = inputValue.substring(0,1) + passwordIco.repeat(inputValue.length-1,0);   
+            
+            /*** 기본 비밀번호 **/
+            $('.password-input[disabled]').siblings('.psbox-number').text(psNumber);            
+            
+            /*** 주민등록번호 **/
+            $('.password-input[disabled]').siblings('.psbox-resident').text(psResident);            
+        })
+    }   
+}
 
 $(function(){
   //accessibility()  
   //formList() 
   windowR()
+ // passwordInput()
+  
 })

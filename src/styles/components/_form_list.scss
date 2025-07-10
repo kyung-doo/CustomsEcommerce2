@@ -1,15 +1,32 @@
 .wrap-form-area{
   .inp-form {border:1px solid #e4e4e4;border-radius:8px;padding:32px;position:relative;  
+    /** 버튼이있을때 **/
     &:has(.form-btn-area){padding: 32px 130px 32px 32px;}   
+
+    /** stop이 있을떄 **/
     &:has(.step-area.type1){padding: 32px 32px 32px 239px;}
+
+    /** stop,버튼이 같이 있을떄 **/
+    &:has(.step-area.type1):has(.form-btn-area){padding: 32px 130px 32px 239px;}
     
     > ul {display:flex;flex-direction:row;flex-wrap:wrap;margin-left:-40px;margin-top: -25px;
       .tit {font-size:15px;font-weight:700;color:#1d1d1d;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;
         + .form-group {display:flex;align-items:center;gap:8px;margin-top:9px;}
       }      
 
-      li {margin-left: 40px;min-width: 100px;padding-top: 25px;align-items: flex-start;}    
-    }
+      li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;
+
+        /** 리스트 타입이 텍스트일 경우 여백 **/
+        &.txt-list{padding-top: 15px;}
+        &.txt-list:first-child{margin-top: 10px;}
+      }          
+    }    
+    
+    /** 넓이 **/
+    .col1 {width: 100%;}
+    .col2 {width: calc(50% - 40px);}
+    .col3 {width: calc(33.333% - 40px);}
+    .col4 {width: calc(25% - 40px);}
 
     /** 텍스트 리스트 **/
     .txt-list {display: flex;margin-left: 40px;align-items: flex-start;
@@ -22,12 +39,6 @@
         a {color: #1D1D1D;text-decoration: none;}
       }
     }    
-    
-    /** 넓이 **/
-    .col1 {width: 100%;}
-    .col2 {width: calc(50% - 40px);}
-    .col3 {width: calc(33.333% - 40px);}
-    .col4 {width: calc(25% - 40px);}
 
     /** 필수 **/
     .compulsory-title {margin-top: 10px;}
@@ -47,12 +58,14 @@
     }   
 
     /** 리스트 영역 **/
-    .inp-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;
+    .inp-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;      
       .area-group{display: flex;align-items: center;gap: 8px;width: 100%;min-width: 100px;}
+      .check-list-box{display: flex;gap:24px;flex-wrap: wrap;margin-top: 10px;}
     }  
+
     .form-group, .wrap-form-group {width: 100%;}
     .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 5px;
-      button {font-size: 17px;background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;
+      button.text {font-size: 17px;background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;
         &.refresh-btn:disabled{
           i{background-image: url('/assets/icons/refresh-d.svg');}
         }      
@@ -63,9 +76,11 @@
     }  
 
     /** 체크박스 타입 **/
-    &:has(.form-check){padding-left: 76px;
-      .form-check{position: absolute;top:32px;left:32px;}
-      label{padding: 0;padding-left: 0 !important;width:20px;}
+    &:has(>.form-check){padding-left: 76px;
+      > .form-check{position: absolute;top:32px;left:32px;
+        label{padding: 0;padding-left: 0 !important;width:20px;}
+      }
+      
     }
 
     /** 드롭다운 메뉴 타입1 **/
@@ -83,7 +98,7 @@
               label{width:auto;padding-right: 12px;}
               .txt{font-weight: 400;}
               .compulsory-txt{margin-top: 2px;margin-bottom: 0;}
-              .return-btn{width:121px}
+              .return-btn{width:121px}              
             }
           }
         }      
@@ -127,7 +142,7 @@
   }
 
   /** 주소찾기 모바일 **/
-  &.mo{margin-top: 24px;
+  &.type1{margin-top: 24px;
     .inp-form{padding: 24px !important;
       li.txt-list{flex-direction: column;
         .inp-box{text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}
@@ -145,24 +160,55 @@
   }
 
   .nowrap-box{display: flex;gap: 8px;}
+
+  //인증번호 입력
+  .vc-list{
+    .inp-box{align-items: flex-start;}
+  }   
+
+  //서브 리스트 유형
+  .sub-form{    
+    .sub-form-box{width:100%;
+      ul{display: flex;margin-left: -40px;}
+      .sub-list-wrap{display: flex;gap:24px}
+      label{font-size:15px;}
+      .sub-box{margin-top: 12px;display: flex;align-items: center;gap: 8px;}
+      .sub-list-box{width:100%;min-width: 100px;}      
+    } 
+    .sub-tit{font-size: 17px;}
+  }
+
+  //주소
+  .address-list button{gap:4px;margin-right: 8px;}
+
+  //선이없는 타입
+  &.no-bor-form{
+    .inp-form{padding: 0;border:0;}
+  }
 }
 
-@media (max-width: 1312px) {
-  /** 버튼이 있는 리스트 **/
+@media (max-width: 1312px) {  
   .wrap-form-area{
+    /** 버튼이 있는 리스트 **/
     .inp-form:has(.form-btn-area){padding: 72px 24px 34px 24px;}   
-    .form-btn-area{top: 32px !important;}
+    /*.inp-form .form-btn-area{top: 32px;}*/
+
+    /** stop,버튼이 같이 있을떄 **/
+    .inp-form:has(.step-area.type1):has(.form-btn-area){padding: 34px 130px 34px 239px;}    
   }
 }
 
 @media (max-width: 1023px) {
   /** step **/
   .wrap-form-area{
-    .inp-form{
+    .inp-form{      
       &:has(.step-area.type1){padding: 140px 24px 32px 24px;}      
+      /** stop,버튼이 같이 있을떄 **/
+      &:has(.step-area.type1):has(.form-btn-area){padding: 140px 130px 32px 24px;
+        .form-btn-area{top: 140px;}
+      }
       .step-area.type1{width:100%;height:auto;padding-bottom: 0;padding: 32px 24px 0 24px;
-        &.dotted-line-right::before{bottom:0;width: calc(100% - 48px);height:2px;background-image:url(/assets/icons/dotted.svg);left:24px}
-        &::before{}
+        &.dotted-line-right::before{bottom:0;width: calc(100% - 48px);height:2px;background-image:url(/assets/icons/dotted.svg);left:24px}        
         .step-wrap{flex-direction: row;flex-direction: row-reverse;justify-content: center;align-items: flex-start;
           li{width:auto;min-width:auto;flex:1;display: flex;justify-content: center;
             &::before{top: 10px;left: 50%;width: 100%;height: 1px;}
@@ -186,11 +232,11 @@
       [class*=form-group] {width: 100%;}    
       .form-group {
         &.medium {
-          input[type=text], select {font-size: 15px;}
+          input[type=text], select, input[type=password] {font-size: 15px;}
         }
 
         &.form-tit-group {
-          label, input[type=text] {font-size: 15px;}
+          label, input[type=text], input[type=password] {font-size: 15px;}
         }
       }   
       
@@ -220,11 +266,27 @@
       .form-btn-area{right: 24px;}    
 
       /** 체크박스 타입 **/
-      &:has(.form-check){padding: 76px 24px 34px 24px;
-        .form-check{left:24px;}      
+      &:has(>.form-check){padding: 76px 24px 34px 24px;
+        > .form-check{left:24px;}      
       }    
 
       .form-btn-area{top: 24px;}
+
+
+      /** stop,버튼이 같이 있을떄 **/
+      &:has(.step-area.type1):has(.form-btn-area){padding: 140px 24px 32px 24px;
+        .form-btn-area{position: static;margin-top: 17px;justify-content: center;
+          button{height:48px;width:100%;}
+        }
+      }
+    }
+
+    //서브 리스트 유형
+    .sub-form{    
+      .sub-form-box{
+        ul{flex-direction: column;}      
+        li{width:calc(100% - 40px) !important}  
+      }       
     }
   }
 }
@@ -237,46 +299,60 @@
 
 @media (max-width: 480px) {
   /** 리스트 **/
-  .inp-form ul {
-    .hy {display: block;text-align: center;width: 100%;}    
-    button:not(.ico):not(.tooltip-close) {width: 100%;}
-    li {
-      /** 텍스트 타입 **/
-      &.txt-list {          
-        .tooltip-ico {width: 16px;}
-      }      
+  .wrap-form-area{
+    .inp-form ul {
+      .hy {display: block;text-align: center;width: 100%;}    
+      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico) {width: 100%;}
+      li {       
 
-      /** 주소 **/
-      &.address-list button {max-width: 136px;margin-right: 0;}                    
+        /** 주소 **/
+        &.address-list button {max-width: 136px;margin-right: 0;}                    
 
-      /** 입력박스 밑으로 정렬 **/
-      .inp-box:not(.nowrap-list){flex-direction: column;}      
-    }  
-    
-    /** 란번호 자세히 버튼 **/
-    .number-box{
-      button{width:59px !important;}      
-    }
+        /** 입력박스 밑으로 정렬 **/
+        .inp-box:not(.nowrap-list){flex-direction: column;}      
+      }  
+      
+      /** 란번호 자세히 버튼 **/
+      .number-box{
+        button{width:59px !important;}      
+      }
 
-    /** 환급신청 세액정보 버튼 **/
-    .return-box{    
-      .txt{display: flex;flex-direction: column;align-items: flex-end;}
-      button{width:129px !important;margin-left: 0 !important;}    
-    }
+      /** 환급신청 세액정보 버튼 **/
+      .return-box{    
+        .txt{display: flex;flex-direction: column;align-items: flex-end;}
+        button{width:129px !important;margin-left: 0 !important;}    
+      }
 
-    .file-upload{
-      flex-direction: column;
+      .file-upload{
+        flex-direction: column;
 
-      .file-upload-btn-wrap{
-        width:100%;
-
-        label{
+        .file-upload-btn-wrap{
           width:100%;
+
+          label{
+            width:100%;
+          }
         }
       }
+
+      .batch-list{flex-direction: column;}  
+
+      //인증번호 입력
+      .vc-list{      
+        .form-group{display: flex;gap:8px;
+          .advice-txt{margin-top: 0;}
+          input[type=text]{width:140px;}
+        }
+      } 
     }
 
-    .batch-list{flex-direction: column;}  
+     //서브 리스트 유형
+    .sub-form{    
+      .sub-form-box{
+        .sub-box, .sub-list-wrap{flex-direction: column;}
+        .sub-list-box .calendar{width:100%;}
+      }       
+    }
   }
   
   /** 드롭다운 **/

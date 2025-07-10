@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">개인통관고유부호</span></li>                                          
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 방문발급 사전신청</a></li>                  
+                  </ol>
+               </nav>
+               <div class="language-area">
+                  <div class="form-toggle-switch language-switch">
+                     <input type="radio" id="switch9" name="radio-switch1" checked>
+                     <label for="switch9" class="kr">한글</label>
+                     <input type="radio" id="switch10" name="radio-switch1">
+                     <label for="switch10" class="en">English</label>
+                  </div>
+               </div>
+            </div>
+            <h3 class="head-tit">개인통관고유부호 방문발급 사전신청</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 4</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">확인 및 등록</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="done">
+                        <span>
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li class="done">
+                        <span>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">배송지 주소 등록</span>
+                        </span>
+                     </li>
+                     <li class="done">
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">알림 동의</span>
+                        </span>
+                     </li>
+                     <li class="active">
+                        <span>   
+                              <em class="sr-only">현재단계</em>                  
+                              <i class="step">Step 4</i>
+                              <span class="step-tit">확인 및 등록</span>
+                        </span>
+                     </li>               
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>개인통관고유부호 방문발급 사전신청 방법</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 방문발급 사전신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">기본 정보</h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">국적</strong>
+                           <div class="inp-box">
+                              <p class="txt">대한민국</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">한글성명</strong>
+                           <div class="inp-box">
+                              <p class="txt">김관세</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">영문성명</strong>
+                           <div class="inp-box">
+                              <p class="txt">Hong Gil Dong</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">전화번호</strong>
+                           <div class="inp-box">
+                              <p class="txt">042-1234-1234</p>
+                           </div>                        
+                        </li>
+                        <li class="col1 txt-list">
+                           <strong class="tit">이메일주소</strong>
+                           <div class="inp-box">
+                              <p class="txt">honggildong@naver.com</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">여권번호</strong>
+                           <div class="inp-box">
+                              <p class="txt">M12345566</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">여권유효기간</strong>
+                           <div class="inp-box">
+                              <p class="txt">2025-12-31</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">방문예정일자</strong>
+                           <div class="inp-box">
+                              <p class="txt">2025-08-03</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">신청일자</strong>
+                           <div class="inp-box">
+                              <p class="txt">2025-01-03</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">일회용 인증부호 발급알림</strong>
+                           <div class="inp-box">
+                              <p class="txt">사용</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">해외직구 신고/신청/결과 알림</strong>
+                           <div class="inp-box">
+                              <p class="txt">미사용</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">해외직구 통관알림</strong>
+                           <div class="inp-box">
+                              <p class="txt">사용</p>
+                           </div>                        
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">개인통관고유부호 사용알림</strong>
+                           <div class="inp-box">
+                              <p class="txt">미사용</p>
+                           </div>                        
+                        </li>                       
+                     </ul>                  
+                  </div>
+               </div>
+               <div class="title pc">
+                  <h5 class="title-type2">배송 주소<span class="txt">주소는 최대 20개 까지 등록 가능합니다.</span></h5>
+               </div>
+               <div class="title mo">
+                  <h5 class="title-type medium">배송 주소</h5>
+                  <div class="txt-box-type type1">
+                     <p>주소는 최대 20개 까지 등록 가능합니다. <strong><span>3개</span><i>/</i>20개</strong></p>                        
+                  </div>
+               </div>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>개인통관고유부호 조회에 대한 NO,배송지명,우편번호,기본주소,상세주소 표로 로 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width: 80px;">
+                           <col style="width: 15.625%;">
+                           <col style="width: 9.375%;">                           
+                           <col style="width: 34.375%;">
+                           <col style="width: 34.375%;">
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">No</th>
+                              <th scope="col">배송지명</th>
+                              <th scope="col">우편번호</th>
+                              <th scope="col">기본주소</th>
+                              <th scope="col">상세주소</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>6</td>
+                              <td>우리집1</td>
+                              <td>35351</td>
+                              <td>대전광역시 서구 월평동123</td>                        
+                              <td>우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mo">                     
+                     <ul class="wrap-body box-line">
+                        <li>
+                           <ul class="body">                                                            
+                              <li>                                 
+                                 <strong class="title">우리집(세종)</strong>
+                                 <div class="txt-area">
+                                    <span class="txt">
+                                       (30068) 세종특별자치시 마음로 999<br>
+                                       가락마을 10단지, 1234-5678
+                                    </span>                                    
+                                 </div>                                 
+                              </li>                                                                                          
+                           </ul>
+                        </li>                                                                                                                     
+                        <li>
+                           <ul class="body">                                                            
+                              <li>                                 
+                                 <strong class="title">우리집(세종)</strong>
+                                 <div class="txt-area">
+                                    <span class="txt">
+                                       (30068) 세종특별자치시 마음로 999<br>
+                                       가락마을 10단지, 1234-5678
+                                    </span>                                    
+                                 </div>                                 
+                              </li>                                                                                          
+                           </ul>
+                        </li>                                                                                                                     
+                     </ul>
+                  </div>
+               </div>
+               <div class="btn-area btn-between">
+                  <div class="align">                            
+                     <button type="button" class="btn tertiary large">이전</button>                 
+                  </div>
+                  <div class="align">                            
+                     <button type="button" class="btn primary large">저장</button>                 
+                  </div>
+               </div>     
+               
+               
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+                  
+                  <!-- 사전신청 조회 비밀번호 입력 -->
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">사전신청 조회 비밀번호 입력</button>
+                  <div id="modal1" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>사전신청 조회 비밀번호 입력</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <p class="txt-type dotted-line-bottom">
+                                 사전신청조회용 비밀번호를 입력하세요.<br>
+                                 (비밀번호 분실시재신청이 필요합니다.)
+                              </p>
+                              <div class="wrap-form-area no-bor-form">
+                                 <div class="inp-form">
+                                    <ul>                                                         
+                                       <li class="col1">
+                                          <label for="ex1" class="tit">비밀번호</label>
+                                          <div class="inp-box">
+                                             <div class="form-group medium mw-390">                  
+                                                <div class="form-conts">
+                                                   <div class="password-area">
+                                                      <input type="password" class="input password-input" id="ex1" autocomplete="off">   
+                                                      <div class="psbox-number"></div>                                       
+                                                   </div>
+                                                </div>                           
+                                             </div>
+                                          </div>  
+                                          <p class="advice-txt">특수문자를 포함하여 8자리 이상</p>
+                                       </li>
+                                       <li class="col1">
+                                          <label for="ex1" class="tit">입력확인</label>
+                                          <div class="inp-box">
+                                             <div class="form-group medium mw-390">                  
+                                                <div class="form-conts">
+                                                   <div class="password-area">
+                                                      <input type="password" class="input password-input" id="ex1" autocomplete="off">   
+                                                      <div class="psbox-number"></div>                                       
+                                                   </div>
+                                                </div>                           
+                                             </div>
+                                          </div>                                            
+                                       </li>                                       
+                                    </ul>                  
+                                 </div>   
+                              </div>
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">                              
+                              <button type="button" class="btn modal-enter primary medium">신청완료</button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- 사전신청 조회 비밀번호 입력 -->
+
+                  <!-- 개인통관고유부호 방문발급 사전신청 -->
+                  <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 방문발급 사전신청</button>
+                  <div id="modal2" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>개인통관고유부호 방문발급 사전신청</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <p class="txt-type">
+                                 <span>Alex</span>님의 <strong>개인통관고유부호 사전신청이 완료</strong>되었<br>
+                                 습니다. 입력하신 기본정보와 비밀번호로 신청내용<br>
+                                 을 조회하실 수 있습니다.
+                              </p>                              
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">                              
+                              <button type="button" class="btn modal-enter primary medium">홈으로 이동</button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- 개인통관고유부호 방문발급 사전신청 -->
+
+                  
+               </div>
+               <!-- 팝업 사용후 삭제해주세요 -->
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

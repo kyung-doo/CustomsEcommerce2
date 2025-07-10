@@ -1,65 +1,30 @@
-[class*=cont-acc-]{
-  border-top:1px solid #1D1D1D;
-  margin-top: 20px;
-  padding-top: 8px;    
-
-  .mo-cont-wrap > li{
-    margin-top: 8px;
-    background-color: #F4F5F6;  
-    border-radius: 8px;  
-  }
-
+[class*=cont-acc-]{border-top:1px solid #1D1D1D;margin-top: 20px;padding-top: 8px;    
+  .mo-cont-wrap > li{margin-top: 8px;background-color: #F4F5F6;border-radius: 8px;}
   .accordion-wrap{                        
     &.active{
       .accordion-header{
         a{
-          i{
-            transition: all .3s;
-            transform: rotate(180deg);
-          }
+          i{transition: all .3s;transform: rotate(180deg);}
         }
       }
     }
     .accordion-header{      
-      a{           
-        padding: 24px; 
-        font-size: 17px;
-        text-decoration: none;
-        color:#1D1D1D;
-        font-weight: 700;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        i{
-          font-size:0;
-        }
+      a{padding: 24px;font-size: 17px;text-decoration: none;color:#1D1D1D;font-weight: 700;display: flex;justify-content: space-between;align-items: center;        
+        .data{display: block;font-size: 15px;color:#2D2D2D;margin-top: 5px;font-weight: 400;}
+        i{font-size:0;}
       }
     }
-    .accordion-body{
-      padding: 0 24px 24px 24px;               
-      ul{          
-        border-top:1px solid #D8D8D8;        
-        li{
-          padding-top: 25px;
-          transition: all .3s;
-          display: flex;
-          justify-content: space-between;          
-
-          &.form-list{
-            flex-direction: column;
-            .txt-area{
-              margin-top: 12px;
-            }
+    .accordion-body{padding: 0 24px 24px 24px;               
+      ul{border-top:1px solid #D8D8D8;        
+        li{padding-top: 25px;transition: all .3s;display: flex;justify-content: space-between;          
+          .txt-area{text-align: right;}
+          &.form-list{flex-direction: column;
+            .form-group{margin-top: 12px;}
+            .acc-tit{width:100%;text-align: left;}
           }
-
-          .txt{
-            text-align: left;
-            padding-left: 0;
-            font-size: 15px;
-            font-weight: 700;
-            color:#1D1D1D;
-          }
+          .acc-tit{font-size: 15px;font-weight: 700;color:#1D1D1D;width:150px;min-width:150px;}
+          .acc-txt{font-size: 17px;font-weight: 400;color:#1D1D1D;text-align: right;}
+         /* .txt{text-align: left;padding-left: 0;font-size: 15px;font-weight: 700;color:#1D1D1D;}*/
         }
       }
       
