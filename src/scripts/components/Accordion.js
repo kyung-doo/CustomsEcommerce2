@@ -22,12 +22,13 @@ class Accordion {
                     target.siblings('*[data-ui="accordion"]').removeClass('active');
                 }
                 target.find(".accordion-body").slideDown(100);
-                target.addClass('active');
-                //target.find('i').text('닫기');
+                target.addClass('active');                
+                target.find('.accordion-btn').attr('title','닫기');
+                console.log(target.find('.accordion-btn'))
             } else {
                 target.find(".accordion-body").slideUp(100);
                 target.removeClass('active');
-                //target.find('i').text('열기');
+                target.find('.accordion-btn').attr('title','열기');                
             }
         });
         
@@ -35,7 +36,7 @@ class Accordion {
             if($(window).width() <= 480) {
                 $('.accordion-wrap').removeClass('active');
                 $('.accordion-body').removeAttr('style');                
-                //$('.accordion-header > a i').text('열기')
+                $('.accordion-header .accordion-btn').attr('title','열기')
             }
         });
     }

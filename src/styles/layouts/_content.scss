@@ -35,6 +35,7 @@
   .wrap-form-area + .wrap-cont-tbl{margin-top: 48px;}  
   .title-type.medium + .txt-box-type.type1{margin-top: 20px;}
   .wrap-graph + .compulsory-txt{margin-top: 24px;}
+  .add-title{margin-top: 48px;margin-bottom: 14px;}  
 }
 
 .wrap-form-area .inp-form:first-child{margin-top: 0;}
@@ -51,6 +52,7 @@
   .board-top.tbl-top{margin-bottom: 19px;}
   .board-top.tbl-top:first-child{margin-bottom: 0;}
 }
+
 
 .content-wrap {max-width: 1312px;margin: 0 auto;padding: 0 16px;
   .cont-head {
@@ -112,4 +114,8 @@
   .cont-body{
     .search-box + .tbl-top{margin-top: 48px;}
   }  
+
+  .modal-body{
+    .title-type3:first-child{margin-top: 0;}
+  }
 }

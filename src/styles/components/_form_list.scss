@@ -16,9 +16,9 @@
 
       li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;
 
-        /** 리스트 타입이 텍스트일 경우 여백 **/
+        /** 리스트 타입이 텍스트일 경우 여백 
         &.txt-list{padding-top: 15px;}
-        &.txt-list:first-child{margin-top: 10px;}
+        &.txt-list:first-child{margin-top: 10px;}**/
       }          
     }    
     
@@ -131,6 +131,8 @@
         }
       }
     }
+
+    .hy{min-width: 15px;display: flex;justify-content: center;}
   }
 
  /** 리스트 합계 **/
@@ -191,7 +193,12 @@
   .wrap-form-area{
     /** 버튼이 있는 리스트 **/
     .inp-form:has(.form-btn-area){padding: 72px 24px 34px 24px;}   
-    /*.inp-form .form-btn-area{top: 32px;}*/
+
+    /** 파일첨부 타입 버튼 위치 **/
+    .inp-form .file-form {
+      /** 첨부파일 초기화,삭제 버튼 위치 **/
+      & + .form-btn-area{top: 32px;}
+    }       
 
     /** stop,버튼이 같이 있을떄 **/
     .inp-form:has(.step-area.type1):has(.form-btn-area){padding: 34px 130px 34px 239px;}    
@@ -251,8 +258,9 @@
         }      
 
         /** 주소 **/
-        &.address-list .inp-box {flex-wrap: wrap;
-          .first-add {max-width: 143px !important;}
+        &.address-list .inp-box {flex-wrap: wrap;          
+          .first-add{width:calc(100% - 158px)}
+          button{margin-right: 0;}          
         }
 
         /** 반응형할떄 줄바꿈 **/
@@ -299,18 +307,9 @@
 
 @media (max-width: 480px) {
   /** 리스트 **/
-  .wrap-form-area{
-    .inp-form ul {
-      .hy {display: block;text-align: left;width: 100%;}    
-      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico):not(.add-modify-btn) {width: 100%;}
-      li {       
-
-        /** 주소 **/
-        &.address-list button {max-width: 136px;margin-right: 0;}                    
-
-        /** 입력박스 밑으로 정렬 **/
-        .inp-box:not(.nowrap-list){flex-direction: column;}      
-      }  
+  .wrap-form-area{    
+    .inp-form ul {      
+      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico):not(.add-modify-btn) {width: 100%;}      
       
       /** 란번호 자세히 버튼 **/
       .number-box{
@@ -347,12 +346,24 @@
     }
 
      //서브 리스트 유형
-    .sub-form{    
-      .sub-form-box{
-        .sub-box, .sub-list-wrap{flex-direction: column;}
-        .sub-list-box .calendar{width:100%;}
-      }       
-    }
+    .sub-box:not(.nowrap-list):not([class*=nowrap-list-type]),
+    .sub-list-wrap{flex-direction: column;}
+    .sub-list-box .calendar{width:100%;}
+
+    /** 입력폽 밑으로 정렬 **/
+    .inp-box:not(.nowrap-list):not([class*=nowrap-list-type]){flex-direction: column;}      
+
+    /** 입력폼 반응형 타입1 **/
+    .inp-box[class*=nowrap-list-],
+    .sub-box[class*=nowrap-list-]{display: flex;flex-wrap: wrap;
+      .form-group:first-child{width: calc(100% - 23px);}
+      .form-group{width: calc(50% - 16px);}                 
+
+      &.nowrap-list-type2{            
+        .form-group:first-child{width: calc(100% - 23px);}
+        .form-group{width: 100%;}          
+      }
+    }                
   }
   
   /** 드롭다운 **/

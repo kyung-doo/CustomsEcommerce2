@@ -47,7 +47,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 
   &.title-type3:has(.tooltip-tit){position: relative;display: inline-flex;height:28px;padding-right: 25px;
     .tooltip-tit{display: inline-block;
-      .contextual-help{top:5px;right:0;}
+      .contextual-help{top:4px;right:0;}
       .title{
         > strong{font-size:0;}
       }    

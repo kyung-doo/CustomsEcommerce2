@@ -59,7 +59,7 @@
                         </li>               
                         <li class="col2">
                            <strong class="tit">한글성명 <i class="compulsory">필수</i></strong>
-                           <div class="inp-box">
+                           <div class="inp-box nowrap-list">
                               <div class="wrap-form-group mw-191">
                                  <div class="form-group form-tit-group">  
                                     <label for="tit1" class="form-title">성</label>                   
@@ -101,7 +101,7 @@
                         </li>
                         <li class="col1">
                            <label for="ex2" class="tit">주민등록번호 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
+                           <div class="inp-box nowrap-list">
                               <div class="form-group medium mw-186">                     
                                  <div class="form-conts">
                                     <input type="text" class="input" id="ex2" placeholder="991231" title="첫번쨰 번호를 확인할수있습니다">
@@ -110,10 +110,7 @@
                               <i class="hy">-</i>
                               <div class="form-group medium mw-186">                     
                                  <div class="form-conts">
-                                    <div class="password-area">
-                                       <input type="password" class="input password-input" id="ex1" placeholder="1******">   
-                                       <div class="psbox-resident"></div>                                       
-                                    </div>                                    
+                                     <input type="text" class="input" placeholder="1******" title="두번쨰 번호를 확인할수있습니다" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">                                    
                                  </div>                           
                               </div>   
                            </div>
@@ -124,10 +121,7 @@
                            <div class="inp-box">
                               <div class="form-group medium mw-390">                  
                                  <div class="form-conts">
-                                    <div class="password-area">
-                                       <input type="password" class="input password-input" id="ex1" autocomplete="off">   
-                                       <div class="psbox-number"></div>                                       
-                                    </div>
+                                    <input type="text" class="input" title="사전신청 비밀번호를 입력해주세요" data-ui="hidden-input">
                                  </div>                           
                               </div>
                            </div>  
