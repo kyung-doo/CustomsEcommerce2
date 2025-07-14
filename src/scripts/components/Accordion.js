@@ -31,20 +31,23 @@ class Accordion {
                 target.find('.accordion-btn').attr('title','열기');                
             }
         });
-        
-        $(window).resize(function() {
-            if($(window).width() <= 480) {
-                $('.accordion-wrap').removeClass('active');
-                $('.accordion-body').removeAttr('style');                
-                $('.accordion-header .accordion-btn').attr('title','열기')
-            }
-        });
     }
     
     destroy () {
         this.ele.find('.accordion-header > a').off('click');
     }
 }
+
+$(() => {
+    $(window).resize(function() {
+        if($(window).width() <= 480) {
+            $('.accordion-wrap').removeClass('active');
+            $('.accordion-body').removeAttr('style');                
+            $('.accordion-header .accordion-btn').attr('title','열기')
+        }
+    });
+});
+
 
 $.fn.accordion = Plugin;
 $.fn.accordion.Constructor = Accordion;
