@@ -15,66 +15,159 @@
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">고객센터</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">질의응답</a></li>                  
                   </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="switch9" name="radio-switch1" checked>
-                     <label for="switch9" class="kr">한글</label>
-                     <input type="radio" id="switch10" name="radio-switch1">
-                     <label for="switch10" class="en">English</label>
-                  </div>
-               </div>
+               </nav>               
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">질의응답</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>질의응답 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">질의응답 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               컨텐츠               
+               <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">
+                  <button class="tab-menu active" title="선택됨">문의등록</button>
+                  <button class="tab-menu">문의 내역</button>                  
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col1">
+                           <label for="ex1" class="tit">제목</label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-1216">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex1" title="제목을 입력해주세요" placeholder="제목을 입력하세요">
+                                 </div>                              
+                              </div>
+                           </div>   
+                        </li>
+                        <li class="col2">
+                           <label for="ex1" class="tit">등록자 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-298">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input mw-298" id="ex1" title="등록자 입력해주세요" value="홍길동" disabled>
+                                 </div>                              
+                              </div>
+                           </div>   
+                        </li>
+                        <li class="col2">
+                           <label for="ex1" class="tit">등록일자 <i class="compulsory">필수</i></label>
+                           <div class="inp-box nowrap-list">
+                              <div class="form-group medium mw-140">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex1" title="년도 입력해주세요" value="2025" disabled>
+                                 </div>                              
+                              </div>
+                              <div class="form-group medium mw-140">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" title="월 입력해주세요" value="04" disabled>
+                                 </div>                              
+                              </div>
+                              <div class="form-group medium mw-140">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" title="일 입력해주세요" value="15" disabled>
+                                 </div>                              
+                              </div>
+                           </div>   
+                        </li>
+                        <li class="col1">
+                           <label for="ex3" class="tit">연락처 <i class="compulsory">필수</i></label>
+                           <div class="inp-box nowrap-list-type1">
+                              <div class="form-group medium mw-147">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex3" required="" title="첫번쨰 번호를 선택해주세요">
+                                    <option value="" disabled="" hidden="">번호를 선택해주세요</option>
+                                    <option value="02" selected="">02</option>                              
+                                    </select>
+                                 </div>                           
+                              </div>
+                              <i class="hy">-</i>
+                              <div class="form-group medium mw-147">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" value="1234" title="두번쨰 번호를 입력해주세요">
+                                 </div>                           
+                              </div>     
+                              <i class="hy">-</i>
+                              <div class="form-group medium mw-147">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" value="1234" title="마지막 번호를 입력해주세요">
+                                 </div>                           
+                              </div>     
+                           </div>
+                        </li>
+                        <li class="col1">
+                           <label for="ex5" class="tit">이메일 주소 <i class="compulsory">필수</i></label>
+                           <div class="inp-box nowrap-list-type2">
+                              <div class="form-group medium mw-283">                     
+                                 <div class="form-conts">
+                                    <input type="text" id="ex5" class="input" title="아이디를 입력해주세요">
+                                 </div>                           
+                              </div>
+                              <i class="hy">@</i>
+                              <div class="form-group medium mw-283">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" title="이메일 입력해주세요">
+                                 </div>                           
+                              </div>
+                              <div class="form-group medium mw-283">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" required="" title="이메일 선택해주세요">
+                                       <option value="" disabled="" hidden="" selected="">직접입력</option>                                 
+                                       <option value="직접입력">직접입력</option>
+                                    </select>
+                                 </div>                           
+                              </div>
+                              <button type="button" class="btn secondary medium">이메일 인증</button>                                 
+                           </div>                        
+                        </li>
+                        <li class="col1">
+                           <label for="textarea1" class="tit">내용 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group">                              
+                                 <div class="form-conts">
+                                    <div class="textarea-wrap">
+                                       <textarea class="input" placeholder="개인통관고유부호 발급/조회/변경/갱신/정지/해제  및 직구 통관진행 문의는 카카오톡 상담(친구명 : 관세청 유니패스 기술지원상담센터)를 이용해 주시기 바랍니다." id="textarea1" title="내용을 입력해주세요"></textarea>
+                                       <p class="textarea-count"><span class="count-now">0</span><span class="count-total">/100</span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>  
+                        </li>
+                        <li class="col1">
+                           <strong class="tit">공개여부</strong>
+                           <div class="inp-box">
+                              <div class="check-list-box">
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio" id="radio1" checked="">
+                                    <label for="radio1">공개</label>
+                                 </div>
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio" id="radio2">
+                                    <label for="radio2">비공개</label>
+                                 </div>                                 
+                              </div>
+                           </div>  
+                        </li>
+                     </ul>                  
+                  </div>   
+               </div>
+               <div class="btn-area btn-end">
+                  <div class="align">                            
+                     <button type="button" class="btn primary large">저장</button>                 
+                  </div>
+               </div>
+
+
+
             </div>
             <!--// 내용 -->
          </div>

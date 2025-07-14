@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">마이페이지</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">마이페이지</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">나의 개인통관고유부호</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>나의 개인통관고유부호는?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">나의 개인통관고유부호는? 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="wrap-mypages">
+                  <div class="left-area">
+                     <div class="tit-box">
+                        <strong class="tit">안녕하세요 홍길동님</strong>
+                        <span class="txt">발급회수 <span>3회</span></span>
+                     </div>             
+                     <div class="circle-box">
+                        그래프?
+                     </div>
+                     <div class="txt-box">
+                        <strong> <i class="icon time small"></i>잔여 유효기간 <span class="cl-8">69일</span></strong>
+                        <p class="data">2025-05-01 ~ 2026-04-30</p>
+                     </div>      
+                     <div class="board-top no-wrap dotted-line-bottom f-no-wrap">
+                        <div class="left-box">
+                           <p class="font-3 cl-5 lin-h1">개인통관고유부호가 <strong class="cl-2">정지</strong>되었습니다. 정지해제 또는 부호변경(재발급)해 주시기 바랍니다.</p>
+                        </div>   
+                        <div class="right-box">
+                           <button type="button" class="btn tertiary small">갱신하기</button>
+                        </div>               
+                     </div>
+                     <div class="btn-area">
+                        <div class="align">
+                           <button type="button" class="btn primary medium">개인통관고유부호 정보변경</button>
+                           <button type="button" class="btn tertiary medium">문의하기</button>
+                        </div>
+                     </div>                          
+                     <ul class="register-box">
+                        <li><i class="icon info-fill1 medium"></i>현재 등록된 주소등록 건수는 <a href="#none">3건</a> 입니다</li>
+                        <li><i class="icon info-fill1 medium"></i>현재 진행중인 통관건수는 <a href="#none">3건</a> 입니다</li>
+                        <li><i class="icon info-fill1 medium"></i>현재 진행중인 환급건수는 <a href="#none">3건</a> 입니다</li>
+                        <li><i class="icon info-fill1 medium"></i>현재 진행중인 납부건수는 <a href="#none">3건</a> 입니다</li>
+                     </ul>
+                  </div>
+                  <div class="right-area fpc">
+                     <div class="box">
+                        <h5 class="title-type3">개인통관고유부호 발급내역</h5>
+                        <div class="wrap-check-tbl">
+                           <div class="table-wrap">
+                              <table class="tbl col check">
+                                 <caption>개인통관고유부호 발급내역에 대한 표로 NO,개인통관고유부호,발급일자,유효기간,상태로 구성되어있다.</caption>
+                                 <colgroup>
+                                    <col style="width: 60px;">
+                                    <col>                                    
+                                    <col>                                    
+                                    <col style="width: 31%;">                                    
+                                    <col style="width: 100px;">                                    
+                                 </colgroup>
+                                 <thead>
+                                    <tr>                                                
+                                       <th scope="col">NO</th>
+                                       <th scope="col">개인통관고유부호</th>
+                                       <th scope="col">발급일자</th>
+                                       <th scope="col">유효기간</th>
+                                       <th scope="col">상태</th>                                       
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>1</td>                                       
+                                       <td>P202503146220</td>
+                                       <td>2025-01-01</td>
+                                       <td>2025-01-01 ~ 2026-01-01</td>
+                                       <td><strong class="cl-1">사용중</strong></td>
+                                    </tr>
+                                    <tr>
+                                       <td>2</td>                                       
+                                       <td>P202503146220</td>
+                                       <td>2025-01-01</td>
+                                       <td>2025-01-01 ~ 2026-01-01</td>
+                                       <td><strong class="cl-3">해지</strong></td>
+                                    </tr>    
+                                    <tr>
+                                       <td>3</td>                                       
+                                       <td>P202503146220</td>
+                                       <td>2025-01-01</td>
+                                       <td>2025-01-01 ~ 2026-01-01</td>
+                                       <td><strong class="cl-3">해지</strong></td>
+                                    </tr>  
+                                    <tr>
+                                       <td>4</td>                                       
+                                       <td>P202503146220</td>
+                                       <td>2025-01-01</td>
+                                       <td>2025-01-01 ~ 2026-01-01</td>
+                                       <td><strong class="cl-3">해지</strong></td>
+                                    </tr>  
+                                    <tr>
+                                       <td>5</td>                                       
+                                       <td>P202503146220</td>
+                                       <td>2025-01-01</td>
+                                       <td>2025-01-01 ~ 2026-01-01</td>
+                                       <td><strong class="cl-3">해지</strong></td>
+                                    </tr>                                                                                                                                                                               
+                                 </tbody>
+                              </table>
+                           </div>                           
+                        </div>
+                     </div>
+                     <div class="box">
+                        <h5 class="title-type3 my-tit">총 <strong>9</strong> 건의 미확인 메시지가 있습니다.</h5>
+                        <div class="wrap-check-tbl">
+                           <div class="table-wrap">
+                              <table class="tbl col check">
+                                 <caption>나의 개인통관고유부호에 대한 표로 NO,구분,메시지 수신 일시,메시지 내용 상태로 구성되어있다.</caption>
+                                 <colgroup>
+                                    <col style="width: 60px;">
+                                    <col style="width: 20%;">                                    
+                                    <col style="width: 26%;">                                    
+                                    <col>                                                                                              
+                                 </colgroup>
+                                 <thead>
+                                    <tr>                                                
+                                       <th scope="col">NO</th>
+                                       <th scope="col">구분</th>
+                                       <th scope="col">메시지 수신 일시</th>
+                                       <th scope="col">메시지 내용</th>                                              
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>1</td>                                       
+                                       <td>개인통관고유부호</td>
+                                       <td>2027-06-01 18:15:61</td>
+                                       <td><p class="tb-title">개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급</p></td>                                       
+                                    </tr>
+                                    <tr>
+                                       <td>2</td>                                       
+                                       <td>개인통관고유부호</td>
+                                       <td>2027-06-01 18:15:61</td>
+                                       <td><p class="tb-title">개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급</p></td>                                       
+                                    </tr>
+                                    <tr>
+                                       <td>3</td>                                       
+                                       <td>개인통관고유부호</td>
+                                       <td>2027-06-01 18:15:61</td>
+                                       <td><p class="tb-title">개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급</p></td>                                       
+                                    </tr>
+                                    <tr>
+                                       <td>4</td>                                       
+                                       <td>개인통관고유부호</td>
+                                       <td>2027-06-01 18:15:61</td>
+                                       <td><p class="tb-title">개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급</p></td>                                       
+                                    </tr>
+                                    <tr>
+                                       <td>5</td>                                       
+                                       <td>개인통관고유부호</td>
+                                       <td>2027-06-01 18:15:61</td>
+                                       <td><p class="tb-title">개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급개인통관고유부호 P2400000002 새로 발급</p></td>                                       
+                                    </tr>                                                                                                                                                                                 
+                                 </tbody>
+                              </table>
+                           </div>                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

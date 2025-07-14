@@ -253,5 +253,14 @@
     }  
     &.file {
         background-image: url('/assets/icons/file.svg'); 
-    }            
+    }   
+    &.check-circle1 {
+        background-image: url('/assets/icons/check-circle1.svg'); 
+    }
+    &.info-fill1 {
+        background-image: url('/assets/icons/info-fill1.svg'); 
+    }
+    &.warning {
+        background-image: url('/assets/icons/warning.svg'); 
+    }     
 }

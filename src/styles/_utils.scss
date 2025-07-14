@@ -1,57 +1,52 @@
-.d-none{
-    display: none;
-}
+/** 개발 들어가면 삭제 **/
+.testtest{margin-top: 100px;}
 
-.sr-only,caption{
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    left: -5000px !important;
-    top: -5000px !important;
-    overflow: hidden;
-}
+.d-none{display: none;}
+.sr-only,caption{width: 1px;height: 1px;position: absolute;left: -5000px !important;top: -5000px !important;overflow: hidden;}
 
-.text-center {
-    text-align: center !important;
-}
-.text-left {
-    text-align: left !important;
-}
-.text-right {
-    text-align: right !important;
-}
+/** 텍스트 위치 **/
+.text-center {text-align: center !important;}
+.text-left {text-align: left !important;}
+.text-right {text-align: right !important;}
 
-.f-0{
-    font-size:0 !important;
-}
+/** font-size **/
+.font-0{font-size:0 !important;}
+.font-1{font-size:21px !important;}
+.font-2{font-size:19px !important;}
+.font-3{font-size:17px !important;}
+.font-4{font-size:15px !important;}
 
-.d-flex {
-    display: flex !important;
-}
+/** flex **/
+.d-flex {display: flex !important;}
+.f-center{justify-content: center !important;}
+.f-no-wrap{flex-wrap: nowrap !important;}
 
-.d-flex-nowrap{
-    flex-wrap: nowrap !important;
-}
+/** 선 **/
+.bor-right{border-right:1px solid #B1B8BE !important;}
+.bor-left-no{border-left:none !important;}
+.bor-right-no{border-right:none !important;}
+.bor-col-sep{border-collapse: separate !important;}
 
-.flex-start{
-    align-items: flex-start !important;
-}
+/** text-decoration **/
+.no-dec{text-decoration: none !important;}
 
-.bor-right{
-    border-right:1px solid #B1B8BE !important;
-}
+/** color **/
+.cl-1{color:#2768FF !important;}
+.cl-2{color:#EB003B !important;}
+.cl-3{color:#E71825 !important;}
+.cl-4{color:#1D56BC !important;}
+.cl-5{color:#1D1D1D !important;}
+.cl-6{color:#555 !important;}
+.cl-7{color:#246BEB !important;}
+.cl-8{color:#C6C6C6 !important;}
 
-.bor-left-no{
-    border-left:none !important;
-}
+/** font-weight **/
+.font-w1{font-weight: 700 !important;}
+.font-w2{font-weight: 600 !important;}
+.font-w3{font-weight: 400 !important;}
 
-.bor-right-no{
-    border-right:none !important;
-}
-
-.bor-col-sep{
-    border-collapse: separate !important;
-}
+/** line-height **/
+.lin-h1{line-height: 150% !important;}
 
 .w100per{
     width:100% !important
@@ -84,7 +79,7 @@
     }
 }
 
-@for $i from 1 to 2000 {
+@for $i from 1 to 3000 {
     .mw-#{$i} {
         max-width: #{$i}px !important;
     }    

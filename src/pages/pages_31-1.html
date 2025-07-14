@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      <div class="content-wrap">
+         <div class="cont-head">
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">마이페이지</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">구매이력 조회</a></li>                  
+                  </ol>
+               </nav>               
+            </div>
+            <h3 class="head-tit">구매이력 조회</h3>            
+         </div>
+         <div class="cont-body">
+            <div class="accordion">
+               <a href="#none">
+                  <strong>해외직구 통관정보란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">해외직구 통관정보란? 열기</i><i class="icon btn-arrow-down medium"></i></span>
+               </a>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="search-box"> 
+                  <ul>
+                     <li class="col1">
+                        <strong class="tit">발급기간</strong>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">시작 달력보기</button>
+                              </div>
+                              <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1" checked="">
+                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                              <label class="form-chip-outline" for="chk_chip_2">전일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                              <label class="form-chip-outline" for="chk_chip_3">1주일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
+                              <label class="form-chip-outline" for="chk_chip_4">1개월</label>
+                           </div>
+                        </div>                        
+                     </li>     
+                     <li class="col2">
+                        <label class="tit" for="ex1">품명</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" id="ex1" placeholder="내용을 입력해주세요." title="품명 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex1">판매업체 상호</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" id="ex1" placeholder="내용을 입력해주세요." title="판매업체 상호 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>             
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="button" class="btn secondary medium">조회</button>                        
+                     </div>
+                  </div>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<span>240</span>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+               </div>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>구매이력 조회 대한 NO,HBL번호,주문번호,구매일시,주문자명,전자상거래 업체명,품명,판매업체 상호,총상품 수량,총상품 금액,처리상태 표로 로 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width:80px;">
+                           <col style="width:8.59375%;">
+                           <col style="width:10.15625%;">
+                           <col style="width:10.15625%;">
+                           <col style="width:7.03125%;">
+                           <col style="width:9.375%;">
+                           <col style="width:14.0625%;">
+                           <col style="width:10.9375%;">
+                           <col style="width:6.25%;">
+                           <col style="width:9.375%;">
+                           <col style="width:7.8125%;">                                                      
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">NO</th>                                                                                       
+                              <th scope="col">HBL번호</th>                                                                                       
+                              <th scope="col">주문번호</th>                                                                                       
+                              <th scope="col">구매일시</th>                                                                                       
+                              <th scope="col">주문자명</th>                                                                                       
+                              <th scope="col">전자상거래 업체명</th>                                                                                       
+                              <th scope="col">품명</th>                                                                                       
+                              <th scope="col">판매업체 상호</th>                                                                                       
+                              <th scope="col">총상품 수량</th>                                                                                       
+                              <th scope="col">총상품 금액</th>                                                                                       
+                              <th scope="col">처리상태</th>                                                                                       
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>1</td>                                                            
+                              <td>598941820554</td>
+                              <td>20221229580000000</td>
+                              <td>2025-02-27</td>
+                              <td>홍길동</td>
+                              <td>11번가</td>
+                              <td>Dell UltraSharp U2723QE</td>
+                              <td>아마존글로벌스토어</td>
+                              <td>1</td>
+                              <td>700 USB</td>
+                              <td>통관완료 후 반출</td>
+                           </tr>   
+                           <tr>
+                              <td>1</td>                                                            
+                              <td>598941820554</td>
+                              <td>20221229580000000</td>
+                              <td>2025-02-27</td>
+                              <td>홍길동</td>
+                              <td>11번가</td>
+                              <td>Dell UltraSharp U2723QE</td>
+                              <td>아마존글로벌스토어</td>
+                              <td>1</td>
+                              <td>700 USB</td>
+                              <td>통관완료 후 반출</td>
+                           </tr>                                                                                                                                                             
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mo">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">1</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">H B/L번호</strong>
+                                 <span class="txt">598941820554</span>
+                              </li>
+                              <li>
+                                 <strong class="title">주문번호</strong>
+                                 <span class="txt">20221229580000001</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">구매일시</strong>
+                                 <span class="txt">2025-02-27</span>
+                              </li>
+                              <li>
+                                 <strong class="title">주문자명</strong>
+                                 <span class="txt">홍길동</span>
+                              </li>
+                              <li>
+                                 <strong class="title">전자상거래업체명</strong>
+                                 <span class="txt">쿠팡</span>
+                              </li>       
+                              <li>
+                                 <strong class="title">품명</strong>
+                                 <span class="txt">Samsung Galaxy S24</span>
+                              </li> 
+                              <li>
+                                 <strong class="title">판매업체 상호</strong>
+                                 <span class="txt">아마존글로벌 스토어</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">총상품수량</strong>
+                                 <span class="txt">1</span>
+                              </li>
+                              <li>
+                                 <strong class="title">총상품금액</strong>
+                                 <span class="txt">700USD</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">통관완료 후 반출</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                           
+                           </ul>
+                        </li>   
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">1</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">H B/L번호</strong>
+                                 <span class="txt">598941820554</span>
+                              </li>
+                              <li>
+                                 <strong class="title">주문번호</strong>
+                                 <span class="txt">20221229580000001</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">구매일시</strong>
+                                 <span class="txt">2025-02-27</span>
+                              </li>
+                              <li>
+                                 <strong class="title">주문자명</strong>
+                                 <span class="txt">홍길동</span>
+                              </li>
+                              <li>
+                                 <strong class="title">전자상거래업체명</strong>
+                                 <span class="txt">쿠팡</span>
+                              </li>       
+                              <li>
+                                 <strong class="title">품명</strong>
+                                 <span class="txt">Samsung Galaxy S24</span>
+                              </li> 
+                              <li>
+                                 <strong class="title">판매업체 상호</strong>
+                                 <span class="txt">아마존글로벌 스토어</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">총상품수량</strong>
+                                 <span class="txt">1</span>
+                              </li>
+                              <li>
+                                 <strong class="title">총상품금액</strong>
+                                 <span class="txt">700USD</span>
+                              </li>                                                                                                                                                                                                                 
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">통관완료 후 반출</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                           
+                           </ul>
+                        </li>                                                                       
+                     </ul>
+                  </div>
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+
+                       
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

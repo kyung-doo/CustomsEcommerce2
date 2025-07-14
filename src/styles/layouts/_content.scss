@@ -6,8 +6,9 @@
   .title-type2{margin-top: 48px;margin-bottom: 14px;}
   .compulsory-txt{margin-top: 45px;margin-bottom: 13px;}
   [class*=txt-box-type].type2{margin-top: 48px;margin-bottom: 24px;}
-  .txt-box-type{margin-top: 24px;}  
+  .txt-box-type{margin-top: 24px;}
   .txt-box-type.type2 + .txt-box-type.type2{margin-top: 24px;}
+  .txt-box-type.type2:first-child{margin-top: 0;}  
   .txt-box-type.type3 + .wrap-check-tbl{margin-top: 24px;}
   .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
   .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
@@ -27,6 +28,7 @@
   [class*=tabmenu-]{margin-top: 48px;}    
   [class*=tabmenu-] + .search-box{margin-top: 48px;}
   [class*=tabmenu-] + .wrap-graph{margin-top: 48px;}
+  [class*=tabmenu-] + .board-top.tbl-top{margin-top: 48px;}
   .wrap-check-tbl + .wrap-form-area{margin-top: 24px;}      
   .wrap-cont-tbl table:first-child{margin-top: 0;}  
   .accordion:nth-child(n+2){margin-top: 8px;}
@@ -35,12 +37,15 @@
   .wrap-form-area + .wrap-cont-tbl{margin-top: 48px;}  
   .title-type.medium + .txt-box-type.type1{margin-top: 20px;}
   .wrap-graph + .compulsory-txt{margin-top: 24px;}
-  .add-title{margin-top: 48px;margin-bottom: 14px;}  
+  .add-title{margin-top: 48px;margin-bottom: 14px;}    
+  .tb-tit{margin-top: 53px;margin-bottom: 14px;}
+  .wrap-mypages{margin-top: 24px;}
 }
 
 .wrap-form-area .inp-form:first-child{margin-top: 0;}
 .wrap-form-area .inp-form{margin-top: 8px;}
 .pagination{margin-top: 40px;}
+.accordion + .cont-area .txt-box-type.type2:first-child{margin-top: 48px;}
 
 .modal-cont{
   .search-box + .compulsory-txt{margin-top: 24px;margin-bottom: 49px;}
@@ -113,6 +118,7 @@
   /** 컨텐츠 여백 **/
   .cont-body{
     .search-box + .tbl-top{margin-top: 48px;}
+    .wrap-mypages{margin-top: 48px;}
   }  
 
   .modal-body{
