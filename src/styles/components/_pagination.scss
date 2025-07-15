@@ -1,7 +1,6 @@
 @use "../mixin" as *;
 
-.pagination {display: flex;gap: 8px;align-items: center;justify-content: center;
-  a {text-decoration: none;}
+.pagination {display: flex;gap: 8px;align-items: center;justify-content: center;padding-bottom: 2px;  
   * {background-repeat: no-repeat;}
   .page-navi {display: flex;min-width: 62px;height: 40px;align-items: center;position: relative;font-size: 17px;color: #555;padding: 6px 8px 6px 4px;border-radius: 4px;}
   .prev {justify-content: flex-end;padding-right: 2px;}
@@ -30,7 +29,7 @@
 }
 
 @media (max-width: 767px) {
-  .pagination {min-width: 100px;position: relative;padding: 63px 0 0 0;    
+  .pagination {min-width: 100px;position: relative;padding: 63px 0 2px 0;    
     .mobile-dot {display: flex;}
     a.page-link:not(.mobile-link) {display: none;}
     .page-navi {position: absolute;top: 0;}

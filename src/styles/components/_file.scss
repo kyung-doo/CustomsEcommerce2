@@ -1,287 +1,77 @@
 @use "../mixin" as *;
 
-.file-upload.line {
-  padding: 32px;
-  border:1px solid #E4E4E4;
-  border-radius: 8px;
-
-  &.list{
-    border:0;
-    padding: 0;
-  }
-
+.file-upload.line {padding: 32px;border:1px solid #E4E4E4;border-radius: 8px;
+  &.list{border:0;padding: 0;}
   .file-head {
-    .tit {
-      font-size: 25px;
-      font-weight: 700;
-      color: #1D1D1D;
-    }
-
-    p {
-      font-size: 17px;
-      color: #555;
-      margin-top: 28px;
-    }
+    .tit {font-size: 25px;font-weight: 700;color: #1D1D1D;}
+    p {font-size: 17px;color: #555;margin-top: 28px;}
   }
-
-  .file-upload {
-    display: flex;
-    border: 1px dashed #C6C6C6;
-    background-color: #F0F0F0;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 24px 32px;
-    margin: 24px 0;
-    border-radius: 8px;
-
-    .txt {
-      font-size: 19px;
-      color: #1D1D1D;
-    }    
+  .file-upload {display: flex;border: 1px dashed #C6C6C6;background-color: #F0F0F0;align-items: center;justify-content: center;gap: 40px;padding: 24px 32px;margin: 24px 0;border-radius: 8px;
+    .txt {font-size: 19px;color: #1D1D1D;}    
   }
-
-  .file-list {
-    position: relative;
-    line-height: 150%;    
-
-    .total {
-      font-size: 17px;
-      font-weight: 700;
-      color: #1D1D1D;
-      margin-bottom: 24px;
-    }
-
-    .current {
-      color: #1D56BC;
-    }
+  .file-list {position: relative;line-height: 150%;    
+    .total {font-size: 17px;font-weight: 700;color: #1D1D1D;margin-bottom: 24px;}
+    .current {color: #1D56BC;}
   }
-
-  .upload-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;    
-
-    .file-name {
-      font-size: 17px;
-      color: #1D1D1D;
-      padding-right: 20px;
-      margin: 8px 0;
+  .upload-list {display: flex;flex-direction: column;gap: 16px;    
+    .file-name {font-size: 17px;color: #1D1D1D;padding-right: 20px;margin: 8px 0;}
+    .file-info {border: 1px solid #D8D8D8;border-radius: 4px;padding: 8px 16px 8px 16px;position: relative;display: flex;justify-content: space-between;
+      .btn-wrap{display: flex;align-items: center;}
+      &.file-down{flex-wrap: wrap;justify-content: space-between;}
     }
-
-    .file-info {
-      border: 1px solid #D8D8D8;
-      border-radius: 4px;
-      padding: 8px 16px 8px 16px;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-
-      .btn-wrap{
-        display: flex;
-        align-items: center;
-      }
-
-      &.file-down{
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-    }
-
     .btn-wrap {
-      button {
-        display: flex;
-        background-color: rgba(0, 0, 0, 0);
-        font-size: 17px;
-        color: #1D1D1D;
-        align-items: center;
-      }
+      button {display: flex;background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;align-items: center;}
     }
-
-    .spinner {
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url("/assets/icons/spinner.svg");
-      animation: spin 1s infinite linear;      
+    .spinner {display: block;width: 20px;height: 20px;background-image: url("/assets/icons/spinner.svg");animation: spin 1s infinite linear;}
+    .complete {display: block;width: 20px;height: 20px;background-image: url("/assets/icons/check-circle.svg");}
+    .is-error {padding: 16px;border: 2px solid #EB003B;border-radius: 4px;background-color: #FDF2F3;flex-direction: column;
+      .file-info {padding: 0;border: 0;padding-bottom: 16px;}
     }
-
-    .complete {
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url("/assets/icons/check-circle.svg");
-    }
-
-    .is-error {
-      padding: 16px;
-      border: 2px solid #EB003B;
-      border-radius: 4px;
-      background-color: #FDF2F3;
-      flex-direction: column;
-
-      .file-info {
-        padding: 0;
-        border: 0;
-        padding-bottom: 16px;
-      }
-    }
-
-    .file-hint-invalid {
-      display: flex;
-      border-top: 1px solid #D8D8D8;
-      padding-top: 12px;
-
-      .txt {
-        font-size: 15px;
-        color: #D50136;
-        padding-left: 4px;
-      }
+    .file-hint-invalid {display: flex;border-top: 1px solid #D8D8D8;padding-top: 12px;align-items: flex-start;;
+      .txt {font-size: 15px;color: #D50136;padding-left: 4px;}
+      .danger{margin-top: 2px;}
     }   
-
     .file-down {      
-      button, a {
-        font-size: 17px;
-        color: #1D1D1D;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 0;   
-        
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-
-      .btn-wrap {        
-        gap: 16px;
-        justify-content: flex-end;
-        flex: 1;
-        margin: 8px 0;
-      }
+      button, a {font-size: 17px;color: #1D1D1D;display: flex;align-items: center;gap: 4px;padding: 0;}
+      .btn-wrap {gap: 16px;justify-content: flex-end;flex: 1;margin: 8px 0;}
     }
   }
-
-  .upload-delete-btn {
-    position: absolute;
-    top: -4px;
-    right: 0;
-
-    button {
-      background-color: rgba(0, 0, 0, 0);
-      font-size: 17px;
-      color: #1D1D1D;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      border: 0;
-    }
+  .upload-delete-btn {position: absolute;top: -4px;right: 0;
+    button {background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;display: flex;align-items: center;gap: 4px;border: 0;}
   }
 }
 
-.file-upload-mobile{
-  padding: 24px;
-  border:1px solid #E4E4E4;
-  border-radius: 8px;
-
+.file-upload-mobile{padding: 24px;border:1px solid #E4E4E4;border-radius: 8px;
   .btn-area{margin-top: 0 !important;}
-
-  .btn-area .align{
-    width:100%;   
-
-    button{
-      width:100%;
-    }
+  .btn-area .align{width:100%;   
+    button{width:100%;}
   }
-
-  .file-list{    
-    margin-top: 24px;
-    padding-top: 24px;
-    position: relative;        
-
-    ul{
-      display: flex;
-      flex-wrap: wrap;    
-      margin-left: -8px;
-      margin-top: -8px;
-
-      li{
-        width:calc(33.3333% - 8px);        
-        margin-left: 8px;
-        margin-top: 8px;;
-        position: relative;
-
-        a{
-          display: block;
-          width:100%;
-          height: 100%;
-          padding-top: 100%;
-          border:1px solid red;
-          position: relative;
-
-          img{
-            position: absolute;
-            top:0;
-            left:0;
-            display: block;
-            width:100%;
-            height: 100%;
-            background-color: #717171;
-          }
+  .file-list{margin-top: 24px;padding-top: 24px;position: relative;        
+    ul{display: flex;flex-wrap: wrap;margin-left: -8px;margin-top: -8px;
+      li{width:calc(33.3333% - 8px);margin-left: 8px;margin-top: 8px;;position: relative;
+        a{display: block;width:100%;height: 100%;padding-top: 100%;border:1px solid red;position: relative;
+          img{position: absolute;top:0;left:0;display: block;width:100%;height: 100%;background-color: #717171;}
         }
-
-        button{
-          position: absolute;
-          top:0;
-          right:0;
-          z-index: 1;
-          font-size:0;
-          background-color: rgba(0,0,0,0.0);
-        }
+        button{position: absolute;top:0;right:0;z-index: 1;font-size:0;background-color: rgba(0,0,0,0.0);}
       }
     }
-
-    &::before{
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-image: url(/assets/icons/dotted.svg);
-    }
+    &::before{content: "";display: block;position: absolute;top: 0;left: 0;width: 100%;height: 1px;background-image: url(/assets/icons/dotted.svg);}
   }
 }
-
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
 }
 
 @media (max-width: 767px) {
   .file-upload.line{
-    .file-upload{
-      flex-direction: column;
-      gap: 24px;
-
-      .txt{
-        font-size:17px;
-        line-height: 150%;
-      }
+    .file-upload{flex-direction: column;gap: 24px;
+      .txt{font-size:17px;line-height: 150%;}
     }
   }  
 }
 
 @media (max-width: 480px) {
-  .file-upload.line{
-    padding: 24px;
-  }  
+  .file-upload.line{padding: 24px;}  
 }

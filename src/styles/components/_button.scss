@@ -124,13 +124,7 @@ button[class*=btn],label[class*=btn] {
     &.xsmall{
       height: 20px;
       font-size: 15px;
-    }    
-
-    &:hover{
-      background-color: #EDF1F5;
-      border-color: #EDF1F5;
-      color: #1D1D1D;
-    }
+    }        
 
     &:active{
       background-color: #CDD7E4;

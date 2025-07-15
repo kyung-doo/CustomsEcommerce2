@@ -37,7 +37,7 @@ button {border: 0;}
       .inform {background-color: #246beb;color: #fff;}
       .time {background-color: #cdd1d5;}
     }
-    .btn-navi {padding: 13px 8px 13px 36px;background-color: rgba(0, 0, 0, 0);font-size: 17px;font-weight: 700;display: flex;justify-content: center;align-items: center;color: #1d1d1d;text-decoration: none;position: relative;margin-left: 8px;border: 0;line-height: 1px;
+    .btn-navi {padding: 13px 8px 13px 36px;background-color: rgba(0, 0, 0, 0);font-size: 17px;font-weight: 700;display: flex;justify-content: center;align-items: center;color: #1d1d1d;position: relative;margin-left: 8px;border: 0;line-height: 1px;
       &:before {content: "";display: block;position: absolute;top: 50%;left: 8px;width: 20px;height: 20px;transform: translateY(-50%);background-repeat: no-repeat;background-position: center;}
       &.popup.active, &:hover {background-color: #cdd7e4;border-radius: 4px;}
       &.mobile-all-menu{display: none;}
@@ -83,7 +83,7 @@ button {border: 0;}
       .conts-area {display: flex;}
       .menu-list {width: 312px;padding: 16px;height:455px;
         ul {overflow-y: auto;height: 100%;}
-        a {padding: 18px 16px;display: block;text-decoration: none;font-size: 17px;color: #060606;font-weight: 400;}
+        a {padding: 18px 16px;display: block;font-size: 17px;color: #060606;font-weight: 400;}
         li.active a {background-color: #cdd7e4;border-radius: 6px;font-weight: bold;color: #16408d;}
       }
       .contents {width:calc(100% - 312px);padding: 24px;background-color: #f4f5f6;

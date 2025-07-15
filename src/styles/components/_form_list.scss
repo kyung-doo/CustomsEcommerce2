@@ -10,7 +10,7 @@
     &:has(.step-area.type1):has(.form-btn-area){padding: 32px 130px 32px 239px;}
     
     > ul {display:flex;flex-direction:row;flex-wrap:wrap;margin-left:-40px;margin-top: -25px;
-      .tit {font-size:15px;font-weight:700;color:#1d1d1d;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;
+      .tit {font-size:15px;font-weight:700;color:#1d1d1d;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;word-break: break-all;
         + .form-group {display:flex;align-items:center;gap:8px;margin-top:9px;}
       }      
 
@@ -36,7 +36,7 @@
         .txt {font-size: 17px;line-height: 150%;color: #1D1D1D;word-break: break-word;display: block;
           button{margin-left: 15px;}
         }
-        a {color: #1D1D1D;text-decoration: none;}
+        a {color: #1D1D1D;}
       }
     }    
 
@@ -64,7 +64,7 @@
     }  
 
     .form-group, .wrap-form-group {width: 100%;}
-    .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 5px;
+    .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 20px;
       button.text {font-size: 17px;background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;
         &.refresh-btn:disabled{
           i{background-image: url('/assets/icons/refresh-d.svg');}
@@ -170,6 +170,8 @@
 
   //서브 리스트 유형
   .sub-form{    
+    &.dotted-line-bottom{margin-bottom: 0 !important;}
+    .calendar{margin-right: 0;}
     .sub-form-box{width:100%;
       ul{display: flex;margin-left: -40px;}
       .sub-list-wrap{display: flex;gap:24px}

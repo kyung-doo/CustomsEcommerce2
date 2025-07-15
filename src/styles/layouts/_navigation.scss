@@ -39,7 +39,7 @@
       }
       a.sub-title{display: none;}
       .depth2 {
-        a {display: block;text-decoration: none;padding: 12px 8px 12px 20px;color: #1D1D1D;
+        a {display: block;padding: 12px 8px 12px 20px;color: #1D1D1D;
           &:hover, &:focus {background-color: #EDF1F5;border-radius: 4px;}
           i {font-style: normal;position: relative;display: inline-block;line-height: 150%;font-weight: 400;font-size: 17px;
             &:before {content: "";display: block;position: absolute;top: 12px;left: -13px;width: 4px;height: 4px;border-radius: 50%;background-color: #2d2d2d;transform: translateY(-50%);}
@@ -157,7 +157,7 @@
         }
         .gnb-list {display: flex;margin-left: 0;padding: 0;position: absolute;top: 110px;right: 0;padding: 0px 24px 0 24px;
           > li {margin-left: 0;width: 100%;padding: 20px 0 12px 8px;}
-          .sub-title {padding: 0 21px 0 0;font-size: 15px;border-bottom: 0;color: #1D1D1D;text-decoration: none;position: relative;
+          .sub-title {padding: 0 21px 0 0;font-size: 15px;border-bottom: 0;color: #1D1D1D;position: relative;
             &.active i {transform: rotate(180deg);}
             i {position: absolute;top: 0;right: 0;display: block;width: 16px;height: 16px;}
           }
