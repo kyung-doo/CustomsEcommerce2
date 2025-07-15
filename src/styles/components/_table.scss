@@ -40,7 +40,7 @@
 
   table {table-layout: fixed;width: 100%;border-spacing: 0;}
 
-  th {font-size: 15px;font-weight: 700;color: #1D1D1D;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 10px 16px;;
+  th {font-size: 15px;font-weight: 700;color: #1D1D1D;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 13px 16px;;
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}
       .contextual-help{bottom:2px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
@@ -50,7 +50,7 @@
     }        
   }
 
-  td {border-bottom: 1px solid #E4E4E4;font-size: 17px;color: #1D1D1D;vertical-align: middle;text-align: center;line-height: 150%;padding: 21px 16px;
+  td {border-bottom: 1px solid #E4E4E4;font-size: 17px;color: #1D1D1D;vertical-align: middle;text-align: center;line-height: 150%;padding: 14px 16px;
     * {color: #1D1D1D;}
   } 
   /**
@@ -309,4 +309,8 @@
       }  
     }  
   }
+}
+@media (max-width: 480px) {
+  /** FAQ **/
+  [class*=title-type].title-type3.faq-tit{flex-direction: row;font-size: 18px;display: flex;}
 }

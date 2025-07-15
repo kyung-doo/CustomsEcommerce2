@@ -5,10 +5,11 @@
 .sr-only,caption{width: 1px;height: 1px;position: absolute;left: -5000px !important;top: -5000px !important;overflow: hidden;}
 
 /** hover **/
-a:not([target=_blank]):hover{text-decoration:underline;}
+a:not([target=_blank]):not(.copy):hover{text-decoration:underline;}
 
 /** a태그 **/
-a:not([target=_blank]){text-decoration: none;}
+a:not([target=_blank]),
+.file-info [target=_blank]{text-decoration: none;}
 a[class*=cl-]{text-decoration: underline;}
 
 /** 텍스트 위치 **/

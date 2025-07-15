@@ -154,7 +154,7 @@
         .add-txt{font-size: 17px;color:#555;line-height: 150%;}
       }  
     }  
-    .form-btn-area{top:24px !important}
+    .form-btn-area{top:29px !important}
   }
 
   .batch-list{width: 100%;display: flex;align-items: center;justify-content: flex-end;gap: 24px;
@@ -261,7 +261,7 @@
 
         /** 주소 **/
         &.address-list .inp-box {flex-wrap: wrap;          
-          .first-add{width:calc(100% - 158px)}
+          .first-add{width:calc(100% - 160px)}
           button{margin-right: 0;}          
         }
 
