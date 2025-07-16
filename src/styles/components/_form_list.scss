@@ -10,7 +10,8 @@
     &:has(.step-area.type1):has(.form-btn-area){padding: 32px 130px 32px 239px;}
     
     > ul {display:flex;flex-direction:row;flex-wrap:wrap;margin-left:-40px;margin-top: -25px;
-      .tit {font-size:15px;font-weight:700;color:#1d1d1d;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;word-break: break-all;
+      .tit {font-size:15px;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;word-break: break-all;font-weight: 700;
+        .title > strong{font-size:15px}
         + .form-group {display:flex;align-items:center;gap:8px;margin-top:9px;}
       }      
 
@@ -30,13 +31,12 @@
 
     /** 텍스트 리스트 **/
     .txt-list {display: flex;margin-left: 40px;align-items: flex-start;
-      .tit{width:160px;line-height:150%;padding-right: 0;}
+      .tit{width:200px;line-height:150%;padding-right: 0;}
       .title {display: flex;position: relative;}
       .inp-box {display: block;padding-left: 24px;flex:1;margin-top: 0;
-        .txt {font-size: 17px;line-height: 150%;color: #1D1D1D;word-break: break-word;display: block;
+        .txt {line-height: 150%;word-break: break-word;display: block;
           button{margin-left: 15px;}
-        }
-        a {color: #1D1D1D;}
+        }        
       }
     }    
 
@@ -65,7 +65,7 @@
 
     .form-group, .wrap-form-group {width: 100%;}
     .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 20px;
-      button.text {font-size: 17px;background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;
+      button.text {background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;
         &.refresh-btn:disabled{
           i{background-image: url('/assets/icons/refresh-d.svg');}
         }      
@@ -95,8 +95,7 @@
             li{background-color: rgba(0,0,0,0.0);border-radius: 0;align-items: flex-start;                        
               &:not(.txt-list){flex-direction: column;}                        
               .inp-box{width:100%;}
-              label{width:auto;padding-right: 12px;}
-              .txt{font-weight: 400;}
+              label{width:auto;padding-right: 12px;}              
               .compulsory-txt{margin-top: 2px;margin-bottom: 0;}
               .return-btn{width:121px}              
             }
@@ -112,8 +111,7 @@
           .inp-form{padding: 0;border:0;border-top:1px solid #D8D8D8;border-radius: 0;padding-top: 24px;}
           ul{border-top:0;}
           li{
-            label{width:auto;padding-right: 12px;}
-            .txt{font-weight: 400;}
+            label{width:auto;padding-right: 12px;}            
             &:not(.txt-list){flex-direction: column;}          
             .inp-box{width:100%;}
           }        
@@ -137,8 +135,8 @@
 
  /** 리스트 합계 **/
   .total-area{display:flex;justify-content:flex-end;align-items:center;margin-top:24px;padding:24px 0;border-top:1px solid #717171;
-    p{font-size: 19px;color:#1D1D1D;}
-    strong{margin-left: 24px;font-size: 25px;color:#1D1D1D;
+    p{font-size: 19px;}
+    strong{margin-left: 24px;font-size: 25px;
       span{margin-left: 4px;}
     }
   }
@@ -148,17 +146,17 @@
     .inp-form{padding: 24px !important;
       li.txt-list{flex-direction: column;
         .inp-box{text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}
-        .add-tit{font-size:19px;font-weight:600;color:#1d1d1d;display:flex;align-items:center;width:100%;padding-right: 75px;line-height: 150%;
+        .add-tit{font-size:19px;display:flex;align-items:center;width:100%;padding-right: 75px;line-height: 150%;
           .add-modify-btn{font-size:0;width:0;background-color: rgba(0,0,0,0.0);margin-left: 8px;}        
         }
-        .add-txt{font-size: 17px;color:#555;line-height: 150%;}
+        .add-txt{color:#555;line-height: 150%;}
       }  
     }  
     .form-btn-area{top:29px !important}
   }
 
   .batch-list{width: 100%;display: flex;align-items: center;justify-content: flex-end;gap: 24px;
-    .txt{font-size: 17px;color:#1D1D1D;line-height: 150%;}
+    .txt{line-height: 150%;}
   }
 
   .nowrap-box{display: flex;gap: 8px;}
@@ -177,9 +175,9 @@
       .sub-list-wrap{display: flex;gap:24px}
       label{font-size:15px;}
       .sub-box{margin-top: 12px;display: flex;align-items: center;gap: 8px;}
-      .sub-list-box{width:100%;min-width: 100px;}      
-    } 
-    .sub-tit{font-size: 17px;}
+      .sub-list-box{width:100%;min-width: 100px;}
+      label{font-weight: 700;}      
+    }     
   }
 
   //주소

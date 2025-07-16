@@ -76,7 +76,7 @@
 
   &.medium input[type=checkbox] {
     + label {
-      font-size: 17px;
+      
       padding-left: 40px;
 
       &:before {
@@ -127,8 +127,7 @@
       }
 
       &:checked + label {
-        background-color: #fff;
-        font-weight: 700;
+        background-color: #fff;        
         color: #003675;
       }
     }

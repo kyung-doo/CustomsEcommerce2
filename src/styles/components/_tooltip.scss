@@ -108,26 +108,20 @@
   }
 
   .tooltip-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #1D1D1D;
+    font-size: 15px;      
   }  
 
   .tooltip-contents {
     margin-top: 22px;
 
     p {
-      font-size: 15px;
-      color: #1D1D1D;
-      line-height: 150%;
-      font-weight: 400;
+      font-size: 15px;      
+      line-height: 150%;      
     }
 
     .btn.link {
-      font-size: 15px;
-      color: #1D1D1D;      
-      position: relative;
-      font-weight: 400;
+      font-size: 15px;         
+      position: relative;      
 
       &:before {
         content: "";

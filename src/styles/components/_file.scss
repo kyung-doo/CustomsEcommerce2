@@ -3,24 +3,24 @@
 .file-upload.line {padding: 32px;border:1px solid #E4E4E4;border-radius: 8px;
   &.list{border:0;padding: 0;}
   .file-head {
-    .tit {font-size: 25px;font-weight: 700;color: #1D1D1D;}
-    p {font-size: 17px;color: #555;margin-top: 28px;}
+    .tit {font-size: 25px;}
+    p {color: #555;margin-top: 28px;}
   }
   .file-upload {display: flex;border: 1px dashed #C6C6C6;background-color: #F0F0F0;align-items: center;justify-content: center;gap: 40px;padding: 24px 32px;margin: 24px 0;border-radius: 8px;
-    .txt {font-size: 19px;color: #1D1D1D;}    
+    .txt {font-size: 19px;}    
   }
   .file-list {position: relative;line-height: 150%;    
-    .total {font-size: 17px;font-weight: 700;color: #1D1D1D;margin-bottom: 24px;}
+    .total {margin-bottom: 24px;}
     .current {color: #1D56BC;}
   }
   .upload-list {display: flex;flex-direction: column;gap: 16px;    
-    .file-name {font-size: 17px;color: #1D1D1D;padding-right: 20px;margin: 8px 0;}
+    .file-name {padding-right: 20px;margin: 8px 0;}
     .file-info {border: 1px solid #D8D8D8;border-radius: 4px;padding: 8px 16px 8px 16px;position: relative;display: flex;justify-content: space-between;
       .btn-wrap{display: flex;align-items: center;}
       &.file-down{flex-wrap: wrap;justify-content: space-between;}
     }
     .btn-wrap {
-      button {display: flex;background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;align-items: center;}
+      button {display: flex;background-color: rgba(0, 0, 0, 0);align-items: center;}
     }
     .spinner {display: block;width: 20px;height: 20px;background-image: url("/assets/icons/spinner.svg");animation: spin 1s infinite linear;}
     .complete {display: block;width: 20px;height: 20px;background-image: url("/assets/icons/check-circle.svg");}
@@ -32,12 +32,12 @@
       .danger{margin-top: 2px;}
     }   
     .file-down {      
-      button, a {font-size: 17px;color: #1D1D1D;display: flex;align-items: center;gap: 4px;padding: 0;}
+      button, a {display: flex;align-items: center;gap: 4px;padding: 0;}
       .btn-wrap {gap: 16px;justify-content: flex-end;flex: 1;margin: 8px 0;}
     }
   }
   .upload-delete-btn {position: absolute;top: -4px;right: 0;
-    button {background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;display: flex;align-items: center;gap: 4px;border: 0;}
+    button {background-color: rgba(0, 0, 0, 0);display: flex;align-items: center;gap: 4px;border: 0;}
   }
 }
 
@@ -67,7 +67,7 @@
 @media (max-width: 767px) {
   .file-upload.line{
     .file-upload{flex-direction: column;gap: 24px;
-      .txt{font-size:17px;line-height: 150%;}
+      .txt{line-height: 150%;}
     }
   }  
 }

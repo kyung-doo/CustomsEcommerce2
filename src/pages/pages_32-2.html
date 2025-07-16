@@ -15,66 +15,220 @@
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">마이페이지</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">메시지조회</a></li>                  
                   </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="kr" name="language" checked>
-                     <label for="kr" class="kr">한글</label>
-                     <input type="radio" id="en" name="language">
-                     <label for="en" class="en">English</label>
-                  </div>
-               </div>
+               </nav>               
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">메시지조회</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>메시지란?</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">메시지란? 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               컨텐츠               
+               <div class="search-box">
+                  <ul>
+                     <li class="col1">
+                        <label class="tit" for="ex1">검색</label>
+                        <div class="search-area nowrap type1">
+                           <div class="form-group medium mw-140">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex1" required="" title="검색 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">전체</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                           <div class="form-group medium mw-948">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" placeholder="내용을 입력해주세요" title="검색 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>                     
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">          
+                        <button type="button" class="btn tertiary medium">초기화</button>              
+                        <button type="button" class="btn secondary medium">검색</button>                        
+                     </div>
+                  </div>
+               </div>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+                  <div class="right-box">
+                     <!-- 모바일 체크박스 -->
+                     <div class="form-check medium mo">
+                        <input type="checkbox" id="m-all-chk">
+                        <label for="m-all-chk">전체선택</label>
+                     </div>
+                     <!-- // 모바일 체크박스 -->
+                     <button type="button" class="btn tertiary medium">메시지 삭제</button>
+                  </div>
+               </div>
+               <div class="wrap-faq type1">
+                  <ul class="header">
+                     <li style="min-width: 52px;">                        
+                        <div class="form-check medium">
+                           <input type="checkbox" id="pc-all-chk">
+                           <label for="pc-all-chk"><span class="sr-only">전체선택</span></label>
+                        </div>                        
+                     </li>
+                     <li style="min-width:80px">NO</li>
+                     <li style="min-width:160px">구분</li>
+                     <li style="min-width:200px">메시지 수신 일시</li>
+                     <li style="min-width:calc(100% - 492px)">제목</li>                     
+                  </ul>                  
+                  <div class="body">
+                     <!-- q1 -->                     
+                     <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header">
+                           <ul>
+                              <li class="number" style="min-width: 52px;">
+                                 <div class="txt">
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk1">
+                                       <label for="chk1"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="num" style="min-width:80px">
+                                 <span class="txt">1</span>
+                              </li>
+                              <li style="min-width:160px">
+                                 <span class="txt">개인통관고유부호</span>
+                              </li>
+                              <!-- pc 날짜 -->
+                              <li class="pc" style="min-width:200px">
+                                 <span class="txt">2027-06-01 18:15:61</span>
+                              </li>
+                              <!-- // pc 날짜 -->
+                              <li style="min-width:calc(100% - 492px)">
+                                 <div class="wrap-accordion-btn">
+                                    <a href="javascript: void(0);" class="accordion-btn tb-title txt" title="열기">
+                                       개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.
+                                    </a>                                 
+                                    <i class="icon btn-arrow-down small"></i>
+                                    <!-- 모바일 날짜 -->
+                                    <span class="data mo">2027-06-01 18:15:61</span>
+                                    <!-- // 모바일 날짜 -->
+                                 </div>
+                                 <div class="accordion-body d-none">
+                                    <p>개인통관고유부호는 만료일자는2027-06-12일 이고 2027-07-12 이전 까지 유효기간 갱신을 하지 않을 시 기존 개인통관고유부호는 사용하지 못하고 재발급은 받아야 합니다.</p>
+                                 </div>
+                              </li>
+                           </ul>                           
+                        </div>                        
+                     </div>
+                     <!-- q1 -->  
+                     <!-- q2 -->                     
+                     <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header">
+                           <ul>
+                              <li class="number" style="min-width: 52px;">
+                                 <div class="txt">
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk1">
+                                       <label for="chk1"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="num" style="min-width:80px">
+                                 <span class="txt">2</span>
+                              </li>
+                              <li style="min-width:160px">
+                                 <span class="txt">개인통관고유부호</span>
+                              </li>
+                              <!-- pc 날짜 -->
+                              <li class="pc" style="min-width:200px">
+                                 <span class="txt">2027-06-01 18:15:61</span>
+                              </li>
+                              <!-- // pc 날짜 -->
+                              <li style="min-width:calc(100% - 492px)">
+                                 <div class="wrap-accordion-btn">
+                                    <a href="javascript: void(0);" class="accordion-btn tb-title txt" title="열기">
+                                       개인통관고유부호 신청 방법이 궁금합니다.
+                                    </a>                                 
+                                    <i class="icon btn-arrow-down small"></i>
+                                    <!-- 모바일 날짜 -->
+                                    <span class="data mo">2027-06-01 18:15:61</span>
+                                    <!-- // 모바일 날짜 -->
+                                 </div>
+                                 <div class="accordion-body d-none">
+                                    <p>개인통관고유부호는 만료일자는2027-06-12일 이고 2027-07-12 이전 까지 유효기간 갱신을 하지 않을 시 기존 개인통관고유부호는 사용하지 못하고 재발급은 받아야 합니다.</p>
+                                 </div>
+                              </li>
+                           </ul>                           
+                        </div>                        
+                     </div>
+                     <!-- q2 -->                                           
+                  </div>
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">메시지 삭제</button>   
+                  <div id="modal1" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-358">
+                        <div class="modal-header">
+                           <h5>메시지 삭제</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">                           
+                           <div class="modal-cont">
+                              해당 메시지를 삭제하시겠습니까?
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn tertiary medium">아니요</button>
+                              <button type="button" class="btn primary medium">예</button>
+                        </div>
+                     </div>
+                  </div>
+
+
+
+               </div>
+               <!-- // 팝업 사용후 삭제해주세요 -->
+               
+
+
+
             </div>
             <!--// 내용 -->
          </div>

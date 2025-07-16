@@ -22,8 +22,7 @@ button[class*=btn],label[class*=btn] {
 
   &.medium{
     padding: 0 16px; 
-    height: 48px;
-    font-size: 17px;
+    height: 48px;    
   }
 
   &.small{
@@ -80,26 +79,22 @@ button[class*=btn],label[class*=btn] {
 
   &.tertiary{
     background-color: #FFFFFF;    
-    border:1px solid #1D1D1D;  
-    color: #1D1D1D;
+    border:1px solid #1D1D1D;      
 
     &:hover{
       background-color: #F8F8F8;
-      border-color: #1D1D1D;
-      color: #1D1D1D;
+      border-color: #1D1D1D;      
     }
 
     &:active{
       background-color: #F0F0F0;
-      border-color: #1D1D1D;
-      color: #1D1D1D;
+      border-color: #1D1D1D;      
     }    
   }
 
   &.text{
     padding: 0;
-    background-color: #fff;    
-    color: #1D1D1D;
+    background-color: #fff;        
 
     &.xlarge,&.large{
       height: 40px;
@@ -107,18 +102,15 @@ button[class*=btn],label[class*=btn] {
     }
 
     &.medium{
-      height: 32px;
-      font-size: 17px;
+      height: 32px;      
     }
 
     &.medium{
-      height: 32px;
-      font-size: 17px;
+      height: 32px;      
     }
 
     &.small{
-      height: 24px;
-      font-size: 17px;
+      height: 24px;      
     }
 
     &.xsmall{
@@ -128,8 +120,7 @@ button[class*=btn],label[class*=btn] {
 
     &:active{
       background-color: #CDD7E4;
-      border-color: #CDD7E4;
-      color: #1D1D1D;
+      border-color: #CDD7E4;      
     }
 
     &:disabled{

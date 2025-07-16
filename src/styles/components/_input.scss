@@ -1,25 +1,26 @@
 @use "../mixin" as *;
 
 .form-group {
-  input[type=text], input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;color: #1D1D1D;padding: 0px 16px;}    
+  input[type=text], input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;padding: 0px 16px;}    
   .form-hint-invalid {font-size: 15px;color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
   input[type=text],select,textarea, input[type=password]{width:100%;min-width: 10px;}
 
    &.form-tit-group {border: 1px solid #C6C6C6;display: flex;height: 46px;padding: 0 16px;align-items: center;position: relative;border-radius: 4px;
-    input[type=text], input[type=password] {border: 0;background-color: rgba(0, 0, 0, 0);font-size: 17px;color: #1D1D1D;padding: 0;height: 100%;padding-left: 15px;width: 100%;}
-    label {font-size: 17px;color: #1D1D1D;position: relative;      
+    input[type=text], input[type=password] {border: 0;background-color: rgba(0, 0, 0, 0);padding: 0;height: 100%;padding-left: 15px;width: 100%;}
+    label {position: relative;      
       &:before {content: "";display: block;position: absolute;top: 50%;right: -8px;width: 1px;height: 16px;background-color: #C6C6C6;transform: translateY(-50%);}
     }
     .form-hint-invalid {margin-top: 0;}
+    .form-conts{height:100%;}
   }
-  textarea {height: 144px;padding: 16px;border-radius: 4px;border: 1px solid #717171;resize: none;font-size: 17px;color: #1D1D1D;}
-  .form-tit-txt label {font-size: 15px;color: #1D1D1D;margin-bottom: 8px;display: block;}
+  textarea {height: 144px;padding: 16px;border-radius: 4px;border: 1px solid #717171;resize: none;}
+  .form-tit-txt label {font-size: 15px;margin-bottom: 8px;display: block;}
   .textarea-count {display: flex;justify-content: flex-end;margin-top: 9px;
     span {font-size: 15px;color: #555;}
     .count-now {color: #246BEB;}
   }
   .wrap-textarea-count {display: flex;justify-content: space-between;align-items: center;margin-top: 1px;}
-  select {border-color: #C6C6C6;-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("/assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 14px;background-color: #fff;color: #1D1D1D;padding: 0px 35px 0 16px;border-radius: 4px;border: 1px solid #717171;text-overflow: ellipsis;white-space: nowrap;
+  select {border-color: #C6C6C6;-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("/assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 14px;background-color: #fff;padding: 0px 35px 0 16px;border-radius: 4px;border: 1px solid #717171;text-overflow: ellipsis;white-space: nowrap;
     &:invalid {color: #8E8E8E;}
   }
   .form-conts.is-success input[type=text],.form-conts.is-success input[type=password] {outline: 2px solid #246BEB;border-color: #246BEB;}
@@ -35,16 +36,16 @@
   }
   &.form-tit-group.is-error {outline: 2px solid #EB003B;border-color: #EB003B;}  
   &.form-tit-group:focus-within {outline:2px solid #000;}  
-  textarea::placeholder {font-size: 17px;color: #8E8E8E;}
+  textarea::placeholder {color: #8E8E8E;}
   input[type=text]::placeholder, input[type=password]::placeholder {color: #8E8E8E;}
   &.form-tit-group input[type=text], &.form-tit-group input[type=password] {
-    &::placeholder {font-size: 17px;color: #8E8E8E;}
+    &::placeholder {color: #8E8E8E;}
   }
   &.large {
     input[type=text], select, input[type=password] {height: 56px;font-size: 19px;}
   }
   &.medium {
-    input[type=text], select, input[type=password] {height: 48px;font-size: 17px;}
+    input[type=text], select, input[type=password] {height: 48px;}
   }
   &.small {
     input[type=text], select, input[type=password] {height: 40px;font-size: 15px;}
@@ -52,7 +53,7 @@
 
   //비밀번호
   .password-area{position: relative;padding: 0;    
-    input[type=password]{overflow: hidden;white-space: nowrap;width:100%;height: 48px;display: flex;align-items: center;padding-top: 6px;font-size: 17px;color:#1D1D1D;font-weight: 400;}  
+    input[type=password]{overflow: hidden;white-space: nowrap;width:100%;height: 48px;display: flex;align-items: center;padding-top: 6px;}  
     input[type=password]{position: absolute;top:0;left:0;background-color: rgba(0,0,0,0.0);width:100%;height: 100%;color:transparent;border:0;padding: 0 16px;border:0;}
     input[type=password]{font-size:16px}    
   }
@@ -64,10 +65,10 @@
 }
 .wrap-form-group .form-hint-invalid:before {background-image: url("/assets/icons/danger.svg");}
 .form-group .form-hint-invalid.txt-error, .wrap-form-group .form-hint-invalid {color: #EB003B;}
-.form-select-sort {-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("/assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;border: 0;color: #1D1D1D;background-color: #fff;
-  &.large {font-size: 17px;padding: 0 29px 0 5px;height: 27px;background-position: center right 3px;background-size: 18px;}
+.form-select-sort {-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("/assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;border: 0;background-color: #fff;
+  &.large {padding: 0 29px 0 5px;height: 27px;background-position: center right 3px;background-size: 18px;}
   &.medium {font-size: 15px;padding: 0 17px 0 5px;height: 27px;background-position: center right 3px;background-size: 14px;}
 }
 
 /** disabled **/
-input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + input[type=password]{background-color: #D8D8D8;color:#1D1D1D;opacity:1;border-color:#C6C6C6;}
+input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + input[type=password],.form-tit-group:has(input:disabled){background-color: #D8D8D8 !important;opacity:1 !important;border-color:#C6C6C6 !important;}

@@ -9,8 +9,8 @@
       }
     }
     .accordion-header{      
-      a{padding: 24px;font-size: 17px;color:#1D1D1D;font-weight: 700;display: flex;justify-content: space-between;align-items: center;        
-        .data{display: block;font-size: 15px;color:#2D2D2D;margin-top: 5px;font-weight: 400;}
+      a{padding: 24px;display: flex;justify-content: space-between;align-items: center;        
+        .data{display: block;font-size: 15px;color:#2D2D2D;margin-top: 5px;}
         i{font-size:0;}
       }
     }
@@ -22,8 +22,8 @@
             .form-group{margin-top: 12px;}
             .acc-tit{width:100%;text-align: left;}
           }
-          .acc-tit{font-size: 15px;font-weight: 700;color:#1D1D1D;width:150px;min-width:150px;}
-          .acc-txt{font-size: 17px;font-weight: 400;color:#1D1D1D;text-align: right;}
+          .acc-tit{font-size: 15px;width:150px;min-width:150px;}
+          .acc-txt{text-align: right;}
          /* .txt{text-align: left;padding-left: 0;font-size: 15px;font-weight: 700;color:#1D1D1D;}*/
         }
       }

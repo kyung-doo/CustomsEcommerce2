@@ -6,7 +6,7 @@ input {
   &[type=radio]:focus + label,&[type=checkbox]:focus + label{outline:2px solid #000;}
 }
 .form-check {position: relative;  
-  label {position: relative;display: flex;align-items: center;white-space: nowrap;font-size:17px;color:#1D1D1D;cursor: pointer;  
+  label {position: relative;display: flex;align-items: center;white-space: nowrap;cursor: pointer;  
     &:before {content: "";display: block;position: absolute;top: 50%;transform: translateY(-50%);border-radius: 50%;background-color: #fff;}
     &:after {content: "";display: block;position: absolute;top: 50%;transform: translateY(-50%);border-radius: 50%;background-color: #246beb;display: none;}
     &:before {border: 1px solid #717171;padding: 5px;left: 0;}
@@ -22,7 +22,7 @@ input {
     &:before, &:after {width: 12px;height: 12px;}
     &:after{left: 6px;}
   }
-  &.medium label {font-size: 17px;padding: 0 0 0 29px;height: 20px;
+  &.medium label {padding: 0 0 0 29px;height: 20px;
     &:before{width: 8px;height: 8px;}
      &:after {width: 10px;height: 10px;left: 5px;}
   }
@@ -35,7 +35,7 @@ input {
     &[type=radio]:disabled + label, &[type=checkbox]:disabled + label {border-color: #c6c6c6;background-color: #d8d8d8;color: #717171;}
   }
   &.large {
-    label {padding: 12px 16px;font-size: 17px;line-height: 22px;}
+    label {padding: 12px 16px;line-height: 22px;}
     input {
       &[type=radio]:checked + label, &[type=checkbox]:checked + label {padding-left: 36px;}
       &[type=radio]:checked + label:before, &[type=checkbox]:checked + label:before {left: 18px;}
@@ -44,7 +44,7 @@ input {
   }
 
   &.medium {
-    label {padding: 12px;font-size: 17px;line-height: 14px;}
+    label {padding: 12px;line-height: 14px;}
     input {
       &[type=radio]:checked + label, &[type=checkbox]:checked + label {padding-left: 32px;}
       &[type=radio]:checked + label:before, &[type=checkbox]:checked + label:before {left: 14px;}

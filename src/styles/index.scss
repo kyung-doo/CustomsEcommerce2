@@ -44,80 +44,65 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;	
-}
+time, mark, audio, video {margin: 0;padding: 0;border: 0;vertical-align: baseline;}
 
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
+footer, header, hgroup, menu, nav, section {display: block;}
+
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+button, a {cursor: pointer;}
+html, body {overflow-y: auto;width: 100%;height: 100%;word-break: keep-all;word-wrap: break-word;-webkit-tap-highlight-color: transparent;scroll-behavior: smooth;}
+*{color:#1D1D1D;font-weight: 400;font-size:17px;}
+strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
+html *, body * {font-family: 'Pretendard';box-sizing: border-box;}
+#wrap {position: relative;width: 100%;background-color: #fff;}
+.blind {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.7);}
+.content-wrap {position: relative;width: 100%;overflow: hidden;}
 
-button, a {
-	cursor: pointer;
-}
+/** 개발 들어가면 삭제 **/
+.testtest{margin-top: 100px;}
 
+.d-none{display: none;}
+.sr-only,caption{width: 1px;height: 1px;position: absolute;left: -5000px !important;top: -5000px !important;overflow: hidden;}
 
-html, body {
-	overflow-y: auto;
-	width: 100%;
-	height: 100%;	
-	font-weight: 400;
-	word-break: keep-all;
-    word-wrap: break-word;
-    -webkit-tap-highlight-color: transparent;
-    scroll-behavior: smooth;
-}
+/** 텍스트 위치 **/
+.text-center {text-align: center !important;}
+.text-left {text-align: left !important;}
+.text-right {text-align: right !important;}
 
-html *, body * {
-	font-family: 'Pretendard';	
-	box-sizing: border-box;
-}
+/** font-size **/
+.font-0{font-size:0 !important;}
+.font-1{font-size:21px !important;}
+.font-2{font-size:19px !important;}
+.font-3{font-size:17px !important;}
+.font-4{font-size:15px !important;}
 
-#wrap {
-	position: relative;
-	width: 100%;
-	background-color: #fff;
-	// overflow: hidden;
-}
+/** flex **/
+.d-flex {display: flex !important;}
+.f-center{justify-content: center !important;}
+.f-no-wrap{flex-wrap: nowrap !important;}
 
-.blind {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
-}
-.content-wrap {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-}
-/*
-*[inert] {
-    interactivity: inert;
-}
-	*/
+/** 선 **/
+.bor-right{border-right:1px solid #B1B8BE !important;}
+.bor-left-no{border-left:none !important;}
+.bor-right-no{border-right:none !important;}
+.bor-col-sep{border-collapse: separate !important;}
+
+/** color **/
+.cl-1{color:#2768FF !important;}
+.cl-2{color:#EB003B !important;}
+.cl-3{color:#E71825 !important;}
+.cl-4{color:#1D56BC !important;}
+.cl-6{color:#555 !important;}
+.cl-7{color:#246BEB !important;}
+.cl-8{color:#C6C6C6 !important;}
+
+/** line-height **/
+.lin-h1{line-height: 150% !important;}
+
+.w100per{width:100% !important}

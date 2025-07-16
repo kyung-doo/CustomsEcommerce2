@@ -15,66 +15,222 @@
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">마이페이지</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개명신청</a></li>                  
                   </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="kr" name="language" checked>
-                     <label for="kr" class="kr">한글</label>
-                     <input type="radio" id="en" name="language">
-                     <label for="en" class="en">English</label>
-                  </div>
-               </div>
+               </nav>               
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">개명신청</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>개명신청 안내</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">개명신청 안내 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
-            <div class="cont-area">
-               컨텐츠               
+            <div class="cont-area">               
+               <h5 class="title-type3">기본 정보 입력 <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p></h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2">
+                           <strong class="tit">변경전 이름</strong>
+                           <div class="inp-box nowrap-list">
+                              <div class="wrap-form-group mw-190">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit1" class="form-title">성</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit1" disabled class="input" value="홍" title="성을 확인해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                              <div class="wrap-form-group mw-190">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit2" class="form-title">이름</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit2" disabled class="input" value="길동" title="이름을 확인해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col2">
+                           <strong class="tit">변경전 영문 이름</strong>
+                           <div class="inp-box">
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit3" class="form-title">Last</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit3" disabled class="input" value="GilDong" title="마지막 이름을 확인해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>                              
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit4" class="form-title">First</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit4" disabled class="input" value="Hong" title="첫번쨰 이름을 확인해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col2">
+                           <strong class="tit">변경후 이름 <i class="compulsory">필수</i></strong>
+                           <div class="inp-box nowrap-list">
+                              <div class="wrap-form-group mw-190">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit5" class="form-title">성</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit5" class="input" placeholder="홍" title="성을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                              <div class="wrap-form-group mw-190">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit6" class="form-title">이름</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit6" class="input" placeholder="길동" title="이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col2">
+                           <strong class="tit">변경후 영문 이름 <i class="compulsory">필수</i></strong>
+                           <div class="inp-box">
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit7" class="form-title">Last</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit7" class="input" placeholder="GilDong" title="마지막 이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>                              
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit8" class="form-title">First</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit8" class="input" placeholder="Hong" title="첫번쨰 이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col1">
+                           <label for="ex1" class="tit">주민등록번호</label>
+                           <div class="inp-box nowrap-list">
+                              <div class="form-group medium mw-185">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex1" value="991231" disabled="" title="주민등록번호 앞자리를 확인할수있습니다">
+                                 </div>                           
+                              </div>   
+                              <i class="hy">-</i>
+                              <div class="form-group medium mw-185">                     
+                                 <div class="form-conts">                                    
+                                    <input type="text" class="input" title="주민등록번호 뒷자리를 확인할수있습니다" disabled="" data-ui="hidden-input" value="1234567" data-props="showNum: 1;numberOnly: true">
+                                 </div>                           
+                              </div>   
+                           </div>
+                        </li>
+                     </ul>                  
+                  </div>   
+               </div>
+               <div class="btn-area btn-end">
+                  <div class="align">                            
+                     <button type="button" class="btn primary large">저장하기</button>                 
+                  </div>
+               </div>
+
+
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+
+                  <!-- 개명신청 -->
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">개명신청</button>   
+
+                  <div id="modal1" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>개명신청</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <p class="txt-type">본인인증하신 이름과 기존에 관세청에 저장된 이름<br>이 다릅니다.</p>
+                              <p class="txt-type">정보변경(개명신청)을 하시겠습니까?</p>
+                              <p class="advice-txt type1">정보변경이 되지 않는 경우 통관에 제약이 있을 수 있습니다.</p>
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn tertiary medium">아니요</button>
+                           <button type="button" class="btn primary medium">예</button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- // 개명신청 -->
+
+                  <!-- 개명신청 -->
+                  <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">개명신청</button>   
+
+                  <div id="modal2" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>개명신청</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <p class="txt-type">입력하신 이름이 맞습니까?</p>
+                              <div class="txt-box-type">
+                                 <p class="txt-type">변경 할 이름 : 홍길동</p>
+                              </div>
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn tertiary medium">아니요</button>
+                           <button type="button" class="btn primary medium">예</button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- // 개명신청 -->
+
+
+                  <!-- 개명신청 결과 -->
+                  <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">개명신청 결과</button>   
+
+                  <div id="modal3" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>개명신청 결과</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <strong class="txt-type cl-7">개명 신청이 접수되었습니다.</strong>
+                              <p class="txt-type">처리완료시에 고객님의 이메일로 처리결과를 안내 드리겠습니다. 감사합니다.</p>                              
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn tertiary medium">아니요</button>
+                           <button type="button" class="btn primary medium">예</button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- // 개명신청 결과 -->
+
+               </div>
+               <!-- // 팝업 사용후 삭제해주세요 -->
+
+
+
+
+
+
+
+
+
+               
+               
             </div>
             <!--// 내용 -->
          </div>
