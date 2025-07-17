@@ -42,14 +42,17 @@
   .tb-tit{margin-top: 53px;margin-bottom: 14px;}
   .tb-tit .compulsory-txt{margin: 0;}
   .wrap-mypages{margin-top: 24px;}
-  .wrap-customs-info + .wrap-graph{margin-top: 24px;}
-  .txt-box-type.end:first-child{margin-top: 0;}
+  .wrap-customs-info + .wrap-graph{margin-top: 24px;}  
 }
 
 .wrap-form-area .inp-form:first-child{margin-top: 0;}
 .wrap-form-area .inp-form{margin-top: 8px;}
 .pagination{margin-top: 40px;}
 .accordion + .cont-area .txt-box-type.type2:first-child{margin-top: 48px;}
+.txt-box-type.end:first-child{margin-top: 0;}
+.cont-body:has(.accordion) .cont-area .txt-box-type.end:first-child{margin-top: 24px;}
+
+
 
 .modal-cont{
   .search-box + .compulsory-txt{margin-top: 24px;margin-bottom: 49px;}
@@ -82,8 +85,20 @@
       .step-tit {margin-top: 12px;}
     }
   }
-  .cont-body .accordion a {display: flex;width: 100%;height: 100%;padding: 24px 24px;background-color: #EDF1F5;border-radius: 8px;font-size: 19px;justify-content: space-between;align-items: center;line-height: 150%;
-    strong {padding-right: 20px;color: #003675;}
+
+  //페이지 도움말
+  .cont-body .cont-advice{position: relative;background-color: #EDF1F5;border-radius: 8px;    
+    &.active{border-radius: 8px 8px 0 0;
+      i{transform: rotate(180deg);}
+    }
+    .accordion-btn {display: flex;width: 100%;height: 100%;padding: 24px;justify-content: space-between;align-items: center;
+      strong{font-size: 19px;color: #003675;line-height: 150%;padding-right: 30px;}
+      i{min-width: 16px;height: 16px;width:16px}
+    }     
+    .accordion-body{position: absolute;top:100%;left:0;width:100%;padding: 24px;border-radius: 0px 0px 8px 8px;background-color: #EDF1F5;z-index: 1;
+      &::before{top:0;content:"";display:block;position:absolute;left:0;width:100%;height:2px;background-image:url(/assets/icons/dotted.svg)}
+      p{color:#003675;line-height: 150%;}
+    }
   }
 }
 /** 반응형 **/
@@ -114,8 +129,12 @@
   .content-wrap {
     .cont-head .step-area{margin-bottom: 46px;
       .tit-box .tit {font-size: 21px;line-height: 150%;}
-    }    
-    .cont-body .accordion a {padding: 20px;    }
+    }        
+
+    //페이지 도움말
+    .cont-body .cont-advice{      
+      .accordion-btn,.accordion-body {padding: 20px;}                 
+    }
   }  
 
 
