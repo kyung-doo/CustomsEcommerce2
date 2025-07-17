@@ -37,11 +37,13 @@
   .wrap-form-area + .board-top.no-wrap.title-top{margin-top: 24px;}
   .wrap-form-area + .wrap-cont-tbl{margin-top: 48px;}  
   .title-type.medium + .txt-box-type.type1{margin-top: 20px;}
-  .wrap-graph + .compulsory-txt{margin-top: 24px;}
+  .wrap-graph + .compulsory-txt{margin-top: 24px;}  
   .add-title{margin-top: 48px;margin-bottom: 14px;}    
   .tb-tit{margin-top: 53px;margin-bottom: 14px;}
   .tb-tit .compulsory-txt{margin: 0;}
   .wrap-mypages{margin-top: 24px;}
+  .wrap-customs-info + .wrap-graph{margin-top: 24px;}
+  .txt-box-type.end:first-child{margin-top: 0;}
 }
 
 .wrap-form-area .inp-form:first-child{margin-top: 0;}

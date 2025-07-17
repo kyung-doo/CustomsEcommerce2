@@ -15,66 +15,155 @@
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회</a></li>                  
+                     <li><span class="txt">마이페이지</span></li>                     
+                     <li class="last-li"><a href="#" class="txt" title="현재페이지">통관·납부·환급내역 조회</a></li>                  
                   </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="kr" name="language" checked>
-                     <label for="kr" class="kr">한글</label>
-                     <input type="radio" id="en" name="language">
-                     <label for="en" class="en">English</label>
-                  </div>
-               </div>
+               </nav>               
             </div>
-            <h3 class="head-tit">개인통관고유부호 조회</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">기본 정보 입력</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">통관·납부·환급내역 조회</h3>            
          </div>
          <div class="cont-body">
             <div class="accordion">
                <a href="#none">
-                  <strong>개인통관고유부호란?</strong>
-                  <span class="accordion-drop-down"><i class="sr-only">개인통관고유부호 재발급 신청 방법 열기</i><i class="icon btn-arrow-down medium"></i></span>
+                  <strong>통관·납부·환급내역</strong>
+                  <span class="accordion-drop-down"><i class="sr-only">통관·납부·환급내역 열기</i><i class="icon btn-arrow-down medium"></i></span>
                </a>
             </div>
             <!-- 내용 -->
             <div class="cont-area">
-               컨텐츠               
+               <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">
+                  <button class="tab-menu active" title="선택됨">나의 통관내역</button>
+                  <button class="tab-menu">나의 납부내역</button>
+                  <button class="tab-menu">나의 환급내역</button>                  
+               </div>
+               <h5 class="title-type3">나의 통관내역</h5>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>나의 통관내역에 대한 NO,B/L번호,품명,판매업체 상호,신고일자,통관형태,처리상태 표로 로 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width: 80px;">                                                      
+                           <col style="width: 25%;">
+                           <col style="width: 23.4375%;">
+                           <col style="width: 15.625%;">
+                           <col style="width: 10.15625%;">
+                           <col style="width: 7.8125%;">
+                           <col style="width: 11.71875%;">
+                        </colgroup>                        
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">NO</th>                                                            
+                              <th scope="col">B/L번호</th>                                                            
+                              <th scope="col">품명</th>                                                            
+                              <th scope="col">판매업체 상호</th>                                                            
+                              <th scope="col">신고일자</th>                                                            
+                              <th scope="col">통관형태</th>                                                            
+                              <th scope="col">처리상태</th>                                                            
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>999</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">수입신고</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr>
+                           <tr>
+                              <td>999</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr>
+                           <tr>
+                              <td>999</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr>                                                                                                                                                                                                                                                                                                                                                 
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mo">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">B/L번호</strong>
+                                 <span class="txt"><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">품명</strong>
+                                 <span class="txt">Dell UltraSharp U2723QE 등</span>
+                              </li>
+                              <li>
+                                 <strong class="title">판매업체 상호</strong>
+                                 <span class="txt">아마존글로벌스토어</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">신고일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">통관형태</strong>
+                                 <span class="txt"><a href="#none" class="cl-7">수입신고</a></span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">통관완료 후 반출</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                           </ul>
+                        </li>
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">B/L번호</strong>
+                                 <span class="txt"><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">품명</strong>
+                                 <span class="txt">Dell UltraSharp U2723QE 등</span>
+                              </li>  
+                               <li>
+                                 <strong class="title">판매업체 상호</strong>
+                                 <span class="txt">아마존글로벌스토어</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                              <li>
+                                 <strong class="title">신고일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">통관형태</strong>
+                                 <span class="txt"><a href="#none" class="cl-7">수입신고</a></span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">통관완료 후 반출</span>
+                              </li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                           </ul>
+                        </li>                                                        
+                     </ul>
+                  </div>
+               </div>
+               
+               
+
             </div>
             <!--// 내용 -->
          </div>

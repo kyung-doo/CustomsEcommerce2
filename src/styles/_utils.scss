@@ -31,8 +31,14 @@
     }    
 }
 
-@for $i from 1 to 2000 {
+@for $i from 1 to 3000 {
     .minw-#{$i} {
         min-width: #{$i}px !important;
+    }    
+}
+
+@for $i from 1 to 3000 {
+    .w-#{$i} {
+        width: #{$i}px !important;
     }    
 }
