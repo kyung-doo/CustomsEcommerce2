@@ -12,7 +12,7 @@ button {border: 0;}
 #masthead {position: relative;background-color: #4f6280;z-index: 8;padding: 0 16px;
   .toggle-wrap {max-width: 1280px;height: 32px;display: flex;align-items: center;margin: 0 auto;}
   .nuri-txt {font-size: 15px;color: #FFF;position: relative;padding-left: 29px;
-    &:before {content: "";display: block;position: absolute;top: 49%;left: 0;width: 24px;height: 16px;background-image: url("/assets/icons/medium.svg");background-size: 100%;transform: translateY(-50%);}
+    &:before {content: "";display: block;position: absolute;top: 49%;left: 0;width: 24px;height: 16px;background-image: url("../assets/icons/medium.svg");background-size: 100%;transform: translateY(-50%);}
   }
 }
 
@@ -23,20 +23,20 @@ button {border: 0;}
   }
   .header-branding {width: 100%;display: flex;justify-content: space-between;align-items: center;}
   .logo {width: 145px;height: 47px;
-    a {background-image: url("/assets/icons/logo.svg");display: flex;width: 100%;height: 100%;}
+    a {background-image: url("../assets/icons/logo.svg");display: flex;width: 100%;height: 100%;}
   }
-  .header-actions {display: flex;align-items: center;       
+  .header-actions {display: flex;align-items: center;height: 28px;       
     &.mobile-top-area{display: none;}
-    .name-box {display: flex;gap: 36px;margin-right: 15px;
+    .name-box {display: flex;gap: 36px;margin-right: 15px;margin-left: 12px;line-height: 1;height: 100%;align-items: center;
       .name {line-height: 20px;}
       .inform, .time {height: 20px;display: flex;align-items: center;padding: 0 7px;border-radius: 30px;font-size: 15px;position: relative;line-height: 150%;}
       .inform:before, .time:before {content: "";display: block;
         position: absolute;top: 0;left: -24px;width: 20px;height: 20px;background-repeat: no-repeat;background-position: center;}
       .inform {background-color: #246beb;color: #fff;}
       .time {background-color: #cdd1d5;}
-    }
-    .btn-navi {padding: 13px 8px 13px 36px;background-color: rgba(0, 0, 0, 0);display: flex;justify-content: center;align-items: center;position: relative;margin-left: 8px;border: 0;line-height: 1px;font-weight: 700;
-      &:before {content: "";display: block;position: absolute;top: 50%;left: 8px;width: 20px;height: 20px;transform: translateY(-50%);background-repeat: no-repeat;background-position: center;}
+    }    
+    .btn-navi {background-color: rgba(0, 0, 0, 0);display: flex;justify-content: center;align-items: center;position: relative;margin-left: 8px;border: 0;font-weight: 700;padding: 0 8px 0 35px;height: 100%;
+      &:before {content: "";display: block;position: absolute;top: 50%;left: 8px;min-width: 20px;height: 20px;transform: translateY(-50%);background-repeat: no-repeat;background-position: center;}
       &.popup.active, &:hover {background-color: #cdd7e4;border-radius: 4px;}
       &.mobile-all-menu{display: none;}
     }
@@ -45,39 +45,58 @@ button {border: 0;}
 
 /** 로그인전 **/
 #header.login .header-container {
+  //로그인 유저 정보
   .name-box{display: none;}
+
+  //로그아웃 버튼
+  .btn-navi.loginout{display: none;}
+
+  //로그인
+  .btn-navi.login{display: flex;}
+
+  //로그인 전 팝업 위치
+  .modal{left: -779px;}
 }   
 
 /** 로그인후 **/
 #header.logout .header-container{
+  //로그인 유저 정보
   .name-box{display: flex;}
-}
-  
+
+  //로그아웃 버튼
+  .btn-navi.loginout{display: flex;}
+
+  //로그인
+  .btn-navi.login{display: none;}
+
+  //로그인 후 팝업 위치
+  .modal{left: -200px;}
+}  
 
 .header-actions .btn-navi:focus {background-color: #cdd7e4;border-radius: 4px;}
 
 #header .header-actions {
-  .sch:before {background-image: url("/assets/icons/search.svg");}
-  .join:before {background-image: url("/assets/icons/join.svg");}
-  .login:before {background-image: url("/assets/icons/login.svg");}
-  .loginout:before {background-image: url("/assets/icons/logout.svg");}
-  .popup:before {background-image: url("/assets/icons/vector.svg");}
-  .inform:before {background-image: url("/assets/icons/inform.svg");}
-  .time:before {background-image: url("/assets/icons/time.svg");}
-  .mobile-all-menu:before {background-image: url("/assets/icons/menu.svg");}
+  .sch:before {background-image: url("../assets/icons/search.svg");}
+  .join:before {background-image: url("../assets/icons/join.svg");}
+  .login:before {background-image: url("../assets/icons/login.svg");}
+  .loginout:before {background-image: url("../assets/icons/logout.svg");}
+  .popup:before {background-image: url("../assets/icons/vector.svg");}
+  .inform:before {background-image: url("../assets/icons/inform.svg");}
+  .time:before {background-image: url("../assets/icons/time.svg");}
+  .mobile-all-menu:before {background-image: url("../assets/icons/menu.svg");}
 
   /** 팝업 **/
-  .popup-box {position: relative;
+  .popup-box {position: relative;height: 100%;
     .btn-navi.popup{position: relative;
-      &.active::after {content: "";display: block;position: absolute;top: 37px;right: 28px;width: 12px;height: 12px;border: 1px solid #e4e4e4;border-right: 0;border-top: 0;transform: rotate(135deg);background-color: #fff;z-index: 9999;}
+      &.active::after {content: "";display: block;position: absolute;top: calc(100% - -10px);left: 40%;width: 12px;height: 12px;border: 1px solid #e4e4e4;border-right: 0;border-top: 0;transform: rotate(135deg);background-color: #fff;z-index: 9999;}
       &.active + .modal{display: block !important;}
     }
-    .modal {position: absolute;top: 43px;left: -779px;z-index: 1;width: 859px;border-radius: 11px;background-color: rgba(0,0,0,0.0);      
+    .modal {position: absolute;top:calc(100% - -16px);z-index: 1;width: 859px;border-radius: 11px;background-color: rgba(0,0,0,0.0); 
       .modal-dialog {overflow: hidden;border-radius: 11px;border: 1px solid #e4e4e4;background-color: #fff;box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.08);
         .modal-header{padding: 16px 24px;border-bottom:1px solid #E4E4E4;margin-bottom: 0;}
       }     
       .modal-title {font-size: 19px;}
-      .close-modal {position: absolute;top: 16px;right: 24px;width: 20px;height: 20px;padding: 0;background-image: url("/assets/icons/close.svg");background-color: rgba(0, 0, 0, 0);border: 0;}
+      .close-modal {position: absolute;top: 16px;right: 24px;width: 20px;height: 20px;padding: 0;background-image: url("../assets/icons/close.svg");background-color: rgba(0, 0, 0, 0);border: 0;}
       .conts-area {display: flex;}
       .menu-list {width: 312px;padding: 16px;height:455px;
         ul {overflow-y: auto;height: 100%;}
@@ -97,11 +116,11 @@ button {border: 0;}
 
 @media (max-width: 1200px) {
   #header{
+    //로그인전
+    &.login .popup-box .modal{left: -579px;}
+
     .header-actions{
-      .btn-navi {font-size: 16px;} 
-      .popup-box .modal{
-        &::before{right: 145px;}
-      }      
+      .btn-navi {font-size: 16px;}             
     }
   } 
 }
@@ -112,8 +131,9 @@ button {border: 0;}
     .logo {width: 120px;
       a {background-size: contain;background-repeat: no-repeat;background-position: center;}
     }
-    .header-actions .btn-navi {margin-left: 8px;padding: 34px 10px 10px 10px;text-align: center;font-size: 15px;
-      &:before {left: 50%;top: 3px;transform: translateX(-50%);}
+    .header-actions{height:48px}
+    .header-actions .btn-navi {margin-left: 8px;text-align: center;font-size: 15px;padding: 0;flex-direction: column;gap:8px;padding: 0 10px;
+      &:before {transform: translateX(0);position: static;}
     }
     .header-container .inner {height: 64px;}
     .header-actions .btn-navi {
@@ -124,10 +144,16 @@ button {border: 0;}
       .login {margin-left: 0;padding: 10px 0 10px 32px;width: auto;height: auto;line-height: 1;text-align: left;margin-top: 32px;
         &::before {top: 8px !important;}
       }
-      .btn-navi:before {left: 5px;top: 0;transform: translateX(0);}
-      .name-box .name {font-size: 19px;}
+      .btn-navi:before {left: 5px;top: 0;transform: translateX(0);}      
       .login-area {display: flex;padding-left: 23px;margin-top: 21px;gap: 35px;}
-      .name-box {position: absolute;bottom: 26px;left: 25px;padding-left: 0;flex-direction: column;gap:0;}   
+      .name-box {height:auto;display: flex;flex-wrap: wrap;gap: 20px;margin: 0;padding-bottom: 10px;
+        .name{width:100%;
+          *{font-size: 19px;}
+        }              
+        .inform,.time{line-height: 1px;}
+        .inform{margin-left: 23px;}
+        .time{margin-left: 15px;}
+      }   
     }
 
     &.logout  .header-container .name-box{display: none;}
@@ -141,16 +167,16 @@ button {border: 0;}
       .modal{width: 95%;top:79px;left: 50%;height:auto;transform: translateX(-50%);}
     }   
 
+
     /** 로그인전 **/
     &.login {
       .mobile-top-area {height: 108px;display: flex;
-        .name-box{display: none !important;}   
+        .name-box{display: none;}   
       }
       .main-menu {
         .gnb-toggle-wrap {top: 108px;height: calc(100% - 120px);}
         &:before {top: 108px;}
-      }            
-      .testtest{display: block;}      
+      }                      
     }
 
     /** 로그인후 **/
@@ -161,13 +187,13 @@ button {border: 0;}
         &:before {top: 153px;}
       }  
       
-      .testtest{display: none;}         
+      .login-work{display: none;}         
     }
   }
 }
 
 @media (max-width: 767px) {
-  #header .header-actions .btn-navi {padding: 34px 10px 10px 10px;font-size: 13px;}
+  #header .header-actions .btn-navi {font-size: 13px;}
 
   /** 팝업 **/
   #header .header-actions .popup-box{
@@ -186,7 +212,7 @@ button {border: 0;}
   #masthead .nuri-txt {font-size: 13px;}
 
   #header {
-    .header-actions .btn-navi {height: 42px;margin-left: -5px;
+    .header-actions .btn-navi {margin-left: 0;padding: 0 7px;
       &:before {width: 16px;height: 16px;}
     }
     .logo {width: 97px;}

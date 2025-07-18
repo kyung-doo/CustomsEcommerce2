@@ -45,21 +45,21 @@
 
     &.home {
       &:before {
-        background-image: url("/assets/icons/home.svg");
+        background-image: url("../assets/icons/home.svg");
         width: 12px;
         height: 12px;
         background-size: 100%;
       }
 
       &:after {
-        background-image: url("/assets/icons/btn-arrow-right.svg");
+        background-image: url("../assets/icons/btn-arrow-right.svg");
         width: 12px;
         height: 12px;
       }
     }
 
     &:last-child:before, &:before {
-      background-image: url("/assets/icons/btn-arrow-right.svg");
+      background-image: url("../assets/icons/btn-arrow-right.svg");
       width: 12px;
       height: 12px;
     }
@@ -88,7 +88,7 @@
           display: block;
           width: 12px;
           height: 2px;
-          background-image: url("/assets/icons/breadcrumb.svg");
+          background-image: url("../assets/icons/breadcrumb.svg");
           position: absolute;
           top: 50%;
           left: -40px;

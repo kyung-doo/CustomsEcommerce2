@@ -31,7 +31,7 @@ input {
   label {display: inline-block;border-radius: 4px;border: 1px solid #c6c6c6;background-color: #fff;display: inline-flex;align-items: center;gap: 6px;cursor: pointer}
   input {
     &[type=radio]:checked + label, &[type=checkbox]:checked + label {color: #1d56bc;border-color: #246beb;background-color: #eff5ff;}
-    &[type=radio]:checked + label:before, &[type=checkbox]:checked + label:before {content: "";display: block;background-image: url("/assets/icons/chips.svg");background-size: cover;position: absolute;}
+    &[type=radio]:checked + label:before, &[type=checkbox]:checked + label:before {content: "";display: block;background-image: url("../assets/icons/chips.svg");background-size: cover;position: absolute;}
     &[type=radio]:disabled + label, &[type=checkbox]:disabled + label {border-color: #c6c6c6;background-color: #d8d8d8;color: #717171;}
   }
   &.large {
@@ -66,17 +66,17 @@ input {
     + label {padding-left: 28px;
       &:before {width: 14px;height: 14px;padding: 2px;border-radius: 4px;}
     }
-    &:checked + label:before {background-color: #246BEB;background-repeat: no-repeat;background-position: center;background-image: url('/assets/icons/check-a.svg');z-index: 1;}
+    &:checked + label:before {background-color: #246BEB;background-repeat: no-repeat;background-position: center;background-image: url('../assets/icons/check-a.svg');z-index: 1;}
   }
-  &.check-type1 input[type="checkbox"]:checked + label:before {background-image: url('/assets/icons/check-m.svg');}
+  &.check-type1 input[type="checkbox"]:checked + label:before {background-image: url('../assets/icons/check-m.svg');}
   input[type=checkbox]:disabled + label {
     &:before {border-color: #C6C6C6;background-color: #D8D8D8;}
-    &:after {background-image: url('/assets/icons/check-d.svg');width: 14px;height: 14px;padding: 2px;border-radius: 0;background-position: center;left: 1px;background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;}
+    &:after {background-image: url('../assets/icons/check-d.svg');width: 14px;height: 14px;padding: 2px;border-radius: 0;background-position: center;left: 1px;background-color: rgba(0, 0, 0, 0);background-repeat: no-repeat;}
   }
-  &.check-type1 input[type=checkbox]:disabled + label:after {background-image: url('/assets/icons/check-d-m.svg');width: 11px;height: 2px;left: 3px;}
+  &.check-type1 input[type=checkbox]:disabled + label:after {background-image: url('../assets/icons/check-d-m.svg');width: 11px;height: 2px;left: 3px;}
 }
 .form-chip {
-  input[type=checkbox] + label:before {background-image: url(/assets/icons/chips-chk.svg);content: "";display: block;position: absolute;background-size: cover;}
+  input[type=checkbox] + label:before {background-image: url(../assets/icons/chips-chk.svg);content: "";display: block;position: absolute;background-size: cover;}
   &.large input {
     &[type=checkbox] + label {padding-left: 36px;
       &:before {left: 14px;}

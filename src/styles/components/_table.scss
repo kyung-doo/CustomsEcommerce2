@@ -45,7 +45,7 @@
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}
       .contextual-help{bottom:2px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
-        .tooltip-ico{background-image: url(/assets/icons/tb-exclamation.svg);}
+        .tooltip-ico{background-image: url(../assets/icons/tb-exclamation.svg);}
         .tooltip-popover{text-align: left;}
       }
     }        
@@ -75,7 +75,7 @@
   }   
     **/ 
 
-  .th-turn {width: 20px;height: 20px;position: absolute;top: 50%;right: 0;background-image: url(/assets/icons/tb-turn.svg);background-position: center;background-color: rgba(0, 0, 0, 0);transition: all 0.3s;transform: translateY(-50%);padding: 0;
+  .th-turn {width: 20px;height: 20px;position: absolute;top: 50%;right: 0;background-image: url(../assets/icons/tb-turn.svg);background-position: center;background-color: rgba(0, 0, 0, 0);transition: all 0.3s;transform: translateY(-50%);padding: 0;
     &.active {transform: rotate(180deg);}
   }
 
@@ -83,7 +83,7 @@
 
   a.txt {display: block;width: 100%;height: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 
-  .file-down {width: 24px;height: 24px;font-size: 0;background-image: url("/assets/icons/file.svg");background-position: center;background-color: #fff;}  
+  .file-down {width: 24px;height: 24px;font-size: 0;background-image: url("../assets/icons/file.svg");background-position: center;background-color: #fff;}  
 
   // 단순형 선 
   table.cont {    
@@ -231,7 +231,7 @@
     // 아코디언 내용
     .accordion-body{padding: 32px 24px 32px 104px;background-color: #F4F5F6;border-bottom:1px solid #E4E4E4;position: relative;
       .faq-box{padding-bottom: 32px;margin-bottom: 32px;position: relative;
-        &::before{content:"";display: block;width: 100%;height: 2px;background-image:url(/assets/icons/dotted.svg);position: absolute;bottom: 0;left: 0;}
+        &::before{content:"";display: block;width: 100%;height: 2px;background-image:url(../assets/icons/dotted.svg);position: absolute;bottom: 0;left: 0;}
       }
       .number{position: absolute;top:42px;left:29px;font-size: 15px;color:#246BEB;letter-spacing: 4px;}
       .title{font-size: 19px;line-height: 150%;}
@@ -333,7 +333,7 @@
           } 
         } 
         .accordion-body{padding: 24px 0 0 0;margin-top: 24px;
-          &::before{top:0;content:"";display:block;position:absolute;left:0;width:100%;height:2px;background-image:url(/assets/icons/dotted.svg)}
+          &::before{top:0;content:"";display:block;position:absolute;left:0;width:100%;height:2px;background-image:url(../assets/icons/dotted.svg)}
         }
       } 
     }

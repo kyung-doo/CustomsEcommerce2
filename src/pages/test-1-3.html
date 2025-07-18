@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/logout.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- main -->
+      <div id="main-body" style="text-align: center;">
+         <img src="/assets/image/main_02.png" alt="" style="width: 100%;height: 100%;">
+      </div>
+      <!-- //main -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

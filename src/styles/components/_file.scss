@@ -22,8 +22,8 @@
     .btn-wrap {
       button {display: flex;background-color: rgba(0, 0, 0, 0);align-items: center;}
     }
-    .spinner {display: block;width: 20px;height: 20px;background-image: url("/assets/icons/spinner.svg");animation: spin 1s infinite linear;}
-    .complete {display: block;width: 20px;height: 20px;background-image: url("/assets/icons/check-circle.svg");}
+    .spinner {display: block;width: 20px;height: 20px;background-image: url("../assets/icons/spinner.svg");animation: spin 1s infinite linear;}
+    .complete {display: block;width: 20px;height: 20px;background-image: url("../assets/icons/check-circle.svg");}
     .is-error {padding: 16px;border: 2px solid #EB003B;border-radius: 4px;background-color: #FDF2F3;flex-direction: column;
       .file-info {padding: 0;border: 0;padding-bottom: 16px;}
     }
@@ -55,7 +55,7 @@
         button{position: absolute;top:0;right:0;z-index: 1;font-size:0;background-color: rgba(0,0,0,0.0);}
       }
     }
-    &::before{content: "";display: block;position: absolute;top: 0;left: 0;width: 100%;height: 1px;background-image: url(/assets/icons/dotted.svg);}
+    &::before{content: "";display: block;position: absolute;top: 0;left: 0;width: 100%;height: 1px;background-image: url(../assets/icons/dotted.svg);}
   }
 }
 
