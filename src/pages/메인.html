@@ -8,11 +8,11 @@
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
-      <!-- main -->
-      <div id="main-body">
-         <img src="" alt="">
+      <!-- content-wrap -->
+      <div class="content-wrap" id="main">
+         메인
       </div>
-      <!-- //main -->
+      <!-- //content-wrap -->
       <!-- footer -->
       <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
       <!-- //footer -->
