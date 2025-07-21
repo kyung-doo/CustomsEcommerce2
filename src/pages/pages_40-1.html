@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">통합검색</h3>            
+         </div>         
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="wrap-search-pages">
+                  <div class="search-area">
+                     <div class="sch-box">
+                        <input type="text" placeholder="검색어를 입력해주세요" title="검색어를 입력해주세요">
+                        <button class="pages-sch"><i class="icon search xxx-large">검색</i></button>                              
+                     </div>
+                  </div>
+                  <div class="search-result">
+                     <div class="left-box">
+                        <strong class="tit">검색어<strong><em>‘</em>개인통관고유부호<em>’</em></strong> / 검색 결과 <strong>855</strong>개 </strong>
+                     </div>
+                     <div class="right-box">
+                        <strong class="tit">정렬기준</strong>
+                        <ul>
+                           <li><a href="#none">최신순</a></li>
+                           <li><a href="#none" class="on">정확도순</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="search-list">
+                     <div class="menu-list">
+                        <span class="tit">메뉴</span>
+                        <ul> 
+                           <li><a href="#none">개인통관고유부호 신청 > <span>개인통관고유부호</span> 신규/재발급</a></li>
+                           <li><a href="#none">개인통관고유부호 신청 > <span>개인통관고유부호</span> 신규/재발급</a></li>
+                           <li><a href="#none">개인통관고유부호 신청 > <span>개인통관고유부호</span> 신규/재발급</a></li>
+                        </ul>
+                     </div>
+                     <div class="cont-list">
+                        <!-- faq -->
+                        <div class="cont-area">
+                           <div class="cont">
+                              <a href="#none">
+                                 <span class="tit">FAQ</span>
+                                 <strong class="tit"><strong>개인통관고유부호</strong> 신청 방법이 궁금합니다.</strong>
+                                 <p class="txt">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다. 개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</p>
+                                 <div class="p-menu">
+                                    <span class="menu">고객센터 > 자주찾는 질문</span>
+                                    <span class="view">자세히보기 <i class="icon arrow-right small"></i></span>
+                                 </div>                           
+                              </a>
+                           </div>
+                           <div class="cont">
+                              <a href="#none">
+                                 <span class="tit">FAQ</span>
+                                 <strong class="tit"><strong>개인통관고유부호</strong> 신청 방법이 궁금합니다.</strong>
+                                 <p class="txt">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다. 개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</p>
+                                 <div class="p-menu">
+                                    <span class="menu">고객센터 > 자주찾는 질문</span>
+                                    <span class="view">자세히보기 <i class="icon arrow-right small"></i></span>
+                                 </div>                           
+                              </a>
+                           </div>
+                           <div class="cont">
+                              <a href="#none">
+                                 <span class="tit">FAQ</span>
+                                 <strong class="tit"><strong>개인통관고유부호</strong> 신청 방법이 궁금합니다.</strong>
+                                 <p class="txt">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다. 개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</p>
+                                 <div class="p-menu">
+                                    <span class="menu">고객센터 > 자주찾는 질문</span>
+                                    <span class="view">자세히보기 <i class="icon arrow-right small"></i></span>
+                                 </div>                           
+                              </a>
+                           </div>
+                        </div>
+                        <!-- faq -->
+
+                        <!-- 공지사항 -->
+                        <div class="cont-area">
+                           <div class="cont">
+                              <a href="#none">
+                                 <span class="tit">공지사항</span>
+                                 <strong class="tit"><strong>개인통관고유부호</strong> 신청 방법이 궁금합니다.</strong>
+                                 <p class="txt">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다. 개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</p>
+                                 <div class="p-menu">
+                                    <span class="menu">고객센터 > 자주찾는 질문</span>
+                                    <span class="view">자세히보기 <i class="icon arrow-right small"></i></span>
+                                 </div>                           
+                              </a>
+                           </div>
+                           <div class="cont">
+                              <a href="#none">
+                                 <span class="tit">공지사항</span>
+                                 <strong class="tit"><strong>개인통관고유부호</strong> 신청 방법이 궁금합니다.</strong>
+                                 <p class="txt">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다. 개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</p>
+                                 <div class="p-menu">
+                                    <span class="menu">고객센터 > 자주찾는 질문</span>
+                                    <span class="view">자세히보기 <i class="icon arrow-right small"></i></span>
+                                 </div>                           
+                              </a>
+                           </div>
+                           <div class="cont">
+                              <a href="#none">
+                                 <span class="tit">공지사항</span>
+                                 <strong class="tit"><strong>개인통관고유부호</strong> 신청 방법이 궁금합니다.</strong>
+                                 <p class="txt">개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다. 개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.</p>
+                                 <div class="p-menu">
+                                    <span class="menu">고객센터 > 자주찾는 질문</span>
+                                    <span class="view">자세히보기 <i class="icon arrow-right small"></i></span>
+                                 </div>                           
+                              </a>
+                           </div>
+                        </div>
+                        <!-- 공지사항 -->
+                     </div>
+                  </div>                  
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+               
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

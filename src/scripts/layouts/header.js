@@ -190,27 +190,18 @@ $(() => {
                 */            
         })
     });
+
+    //통합검색 
+    $(document).on('keyup','.wrap-in-sch .in-sch-box .sch-box input',function(){
+        var deleteBtn = $('.wrap-in-sch .in-sch-box .sch-box button.sch-delete');        
+        if($(this).val() !== ""){            
+            deleteBtn.show();
+        }else{
+            deleteBtn.hide();
+        }        
+    })
 });
 
 
 
 
-/****
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 텍스트가 길면 ..... 처리 px:no,체크박스,라디오박스
- * 
- * 로그인전 전체메뉴,팝업,통합검색
- * 로그인후 팝업,통합검색,전체메뉴
- * 
- * 
- */

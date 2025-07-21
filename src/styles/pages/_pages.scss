@@ -378,6 +378,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
     }
     .left-box{gap:10px;flex:1;
       .title-type{font-size: 19px;white-space: nowrap;}
+      .form-toggle-switch label{padding-left: 32px;}
     }
     .right-box{gap:24px !important;flex-wrap: wrap;
       .user-box{display: flex;align-items: center;gap: 12px;flex-wrap: wrap;
@@ -440,6 +441,68 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   }
 }
 
+//통합검색 페이지
+.wrap-search-pages{
+  .search-area{padding: 48px 0;position: relative;z-index: 1;display: flex;justify-content: center;
+    &::before{content:"";display: block;position: absolute;top:0;left:-1000px;width: 10000px;height: 100%;background-color: #EDF1F5;z-index: -1;}
+    .sch-box{border:1px solid #58616A;width:100%;min-width: 10px;max-width:846px;height: 80px;border-radius: 8px;background-color: #fff;position: relative;
+      input[type=text]{width:100%;height: 100%;border:0;font-size: 25px;color:#1D1D1D;font-weight: 700;padding-left: 16px;background-color: rgba(0,0,0,0.0);}
+      button.pages-sch{position: absolute;top:50%;right:16px;width:40px;height:40px;background-color: rgba(0,0,0,0.0);padding: 0;transform: translateY(-50%);
+        i{font-size:0;display: block;width:100%;height: 100%;min-width:100%;min-height: 100%;}
+      }
+    }
+  }
+  .search-result{border-bottom:1px solid #D8D8D8;padding: 64px 0 24px 0;display: flex;justify-content: space-between;
+    .left-box{flex:1;padding-right: 20px;
+      *{font-size: 21px;}
+      .tit{
+        strong{color:#246BEB;margin-left:5px;}
+        em{font-style: normal;}
+      }
+    }
+    .right-box{display: flex;      
+      .tit{padding-right: 12px;position: relative;
+        &::before{content:"";display: block;position: absolute;top:0;right:0;width:2px;height: 16px;background-color: #E4E4E4;}
+      }
+      ul{display: flex;gap:8px;padding-left: 12px;        
+        a.on{text-decoration: underline;}
+      }
+    }    
+  }
+  .search-list{
+    > div[class*=-list]{padding: 32px 0;
+      span.tit{font-size: 15px;color:#1D56BC;padding: 0 8px;background-color: #EFF5FF;border-radius: 4px;height: 24px;display: inline-flex;align-items: center;margin-bottom: 24px;}
+      strong.tit{display: flex;}
+      &.menu-list{border-bottom:1px solid #D8D8D8;
+        ul{display: flex;gap:15px;flex-direction: column;
+          a{text-decoration: underline;line-height: 150%;            
+            span{color:#246BEB}
+          } 
+        }
+      } 
+      &.cont-list{padding: 0;
+        .cont-area{border-bottom:1px solid #D8D8D8;
+            .cont{position: relative;
+              &::before{bottom:0;content:"";display:block;position:absolute;left:0;width:100%;height:2px;background-image:url(../assets/icons/dotted.svg)}
+              &:last-child::before{display: none;}
+            }
+            a{padding: 32px 0;display: block;
+            &:hover .txt{text-decoration: underline;}
+            strong.tit{font-size: 21px;line-height: 150%;margin-bottom: 13px;flex-wrap: wrap;
+              strong{color:#246BEB;margin-right: 5px;font-size: 21px;}
+            }
+            .txt{line-height: 150%;margin-bottom: 32px;}
+            .p-menu{display: flex;justify-content: space-between;align-items: center;
+              .menu{font-size: 15px;color: #555;}
+              .view{display: flex;align-items: center;gap: 4px;}
+            }
+          }        
+        }        
+      }
+    }
+  }
+}
+
 @media (max-width: 1280px) {
   .search-box{
     ul{
@@ -455,6 +518,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 }
 
 @media (max-width: 1023px) {
+  //마이페이지
   .wrap-mypages{  
     .right-area{padding-right: 25px;
         .wrap-check-tbl{overflow-x: auto;
@@ -462,7 +526,6 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       }
     }      
   }
-
 
   //관세납부합계
   .wrap-customs-info{flex-direction: column;    
@@ -502,6 +565,12 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   }
 }
 
+@media (min-width: 767px) and (max-width: 1023px) {
+  .wrap-login .login-box .right-box .certification-list li a{padding: 24px 60px 24px 24px;
+    .tit{padding-left: 40px;}
+    &::before{top: 19px;}
+  }
+}
 
 @media (max-width: 767px) {
   //step 
@@ -582,6 +651,11 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       .left-box{width:100%;}
     }
   }
+
+  //통합검색 페이지
+  .wrap-search-pages .search-result{flex-direction: column-reverse;gap:24px;    
+    .right-box{justify-content: flex-end;}
+  }  
 }
 
 @media (max-width: 600px) {  
@@ -687,6 +761,12 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 
   //로그인
   .wrap-login{
+    .login-list-box{
+      .list2{
+        .form-check,.txt{display: none;}
+      }
+    }
+    .login-box .right-box .certification-list li a .tit{font-size: 19px;}
     .title-top{gap: 0;
       .right-box{
         .user-box{flex-direction: column;align-items: flex-start;
@@ -694,17 +774,19 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
         }
       }
     }
-    .title-type3{margin-top: 20px;}
+    .title-type3{margin-top: 20px;font-size:21px;margin-bottom: 25px;}
   }
 
-  //로그인  
-  .wrap-login{
-    .login-box .right-box .certification-list li a .tit{font-size: 19px;}
-    .login-list-box{
-      .list2{
-        .form-check,.txt{display: none;}
-      }
-    }
-    .title-type3{font-size:21px;margin-bottom: 25px;}
-  }  
+  //통합검색 페이지
+  .wrap-search-pages .search-area{padding: 32px 0;}
+  .wrap-search-pages .search-area .sch-box{height:64px;}
+  .wrap-search-pages .search-area .sch-box input[type=text]{font-size: 21px;}
+  .wrap-search-pages .search-area .sch-box button.pages-sch{width:32px;height: 32px;}
+  .wrap-search-pages .search-result{padding: 48px 0 24px 0;}
+  .wrap-search-pages .search-result .left-box *{line-height: 150%;}
+  .wrap-search-pages .search-result .left-box *,
+  .wrap-search-pages .search-list > div[class*=-list].cont-list .cont-area a strong.tit{font-size:19px;}
+  .wrap-search-pages .search-list > div[class*=-list],
+  .wrap-search-pages .search-list > div[class*=-list].cont-list .cont-area a{padding: 32px 8px;}
+  .wrap-search-pages .search-list > div[class*=-list].cont-list .cont-area a .p-menu{flex-direction: column;align-items: flex-start;gap: 24px;}
 }

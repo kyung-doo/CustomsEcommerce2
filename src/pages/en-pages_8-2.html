@@ -9,26 +9,6 @@
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-      <div class="content-wrap">
-         <div class="cont-head">
-            <div class="head-util">
-               <nav class="breadcrumb-wrap" id="breadcrumb">
-                  <ol class="breadcrumb">
-                     <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
-                     <li><span class="txt">개인통관고유부호</span></li>                     
-                     <li><span class="txt">개인통관고유부호 도용신고</span></li>                     
-                     <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 신고내역 조회</a></li>                  
-                  </ol>
-               </nav>
-               <div class="language-area">
-                  <div class="form-toggle-switch language-switch">
-                     <input type="radio" id="kr" name="language">
-                     <label for="kr" class="kr">한글</label>
-                     <input type="radio" id="en" name="language" checked>
-                     <label for="en" class="en">English</label>
-                  </div>
-               </div>
-            </div>
             <h3 class="head-tit">Personal customs cleance code report details inquiry</h3>            
          </div>
          <div class="cont-body">

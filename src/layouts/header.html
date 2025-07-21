@@ -79,16 +79,33 @@
                      <span class="inform">+999</span>             
                      <span class="time">38:12</span>             
                   </div>                  
-                  <button type="button" class="btn-navi sch">통합검색1</button>
+                  <button type="button" class="btn-navi sch" data-modal-target="#in-search">통합검색</button>
                   <!-- 통합검색 -->
-                  <div class="wrap-integrate-sch">
-                     <div class="integrate-sch-box">
-                        <strong>검색어를 입력해주세요</strong>
-                        <div class="sch-box">
-                           <input type="text" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요">
-                        </div>
+                  <div id="in-search" class="modal d-none wrap-in-sch" data-ui="modal">
+                     <div class="modal-wrap in-sch-box">                        
+                        <div class="modal-body" tabindex="0">                           
+                           <strong class="tit">검색어를 입력해주세요</strong>
+                           <div class="sch-box">
+                              <input type="text" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요">
+                              <button class="sch-delete"><i class="icon delete-circle xx-large">검색어 삭제</i></button>
+                              <button class="sch"><i class="icon search xxx-large">검색</i></button>                              
+                           </div>
+                           <div class="popular-sch-box">
+                              <strong class="tit">인기검색어</strong>
+                              <ul>
+                                 <li><a href="#none"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1000</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num decrease"><i class="icon decrease x-small">하락</i>10</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num">-</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num decrease"><i class="icon decrease x-small">하락</i>100</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
+                                 <li><a href="#none"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
+                              </ul>
+                           </div>                                
+                        </div>                        
                      </div>
-                  </div>
+                  </div>                  
                   <!-- // 통합검색 -->
                   <!--
                   <button type="button" class="btn-navi join">회원가입</button>
@@ -638,3 +655,23 @@
       <!-- 전체메뉴 -->
    </div>   
 </header>
+<div class="content-wrap">
+   <div class="cont-head">
+      <div class="head-util">
+         <nav class="breadcrumb-wrap" id="breadcrumb">
+            <ol class="breadcrumb">
+               <li class="home"><a href="#" class="txt" title="홈으로 바로가기">홈</a></li>
+               <li><span class="txt">개인통관고유부호</span></li>                     
+               <li><span class="txt">개인통관고유부호 조회</span></li>                     
+               <li class="last-li"><a href="#" class="txt" title="현재페이지">개인통관고유부호 조회/정보변경</a></li>                  
+            </ol>
+         </nav>         
+         <div class="language-area">
+            <div class="form-toggle-switch language-switch">
+               <input type="radio" id="kr" name="language" checked>
+               <label for="kr" class="kr">한글</label>
+               <input type="radio" id="en" name="language">
+               <label for="en" class="en">English</label>
+            </div>
+         </div>
+      </div>

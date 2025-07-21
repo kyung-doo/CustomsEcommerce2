@@ -13,9 +13,9 @@ function getHtmlFiles(dir) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     if (stat.isDirectory()) {
-      if(!filePath.includes('layouts')){
+      //if(!filePath.includes('layouts')){
         files = files.concat(getHtmlFiles(filePath));
-      }
+      //}
     } else if (file.endsWith('.html')) {
       files.push(filePath);
     }
