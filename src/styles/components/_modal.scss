@@ -3,10 +3,11 @@
 .modal {position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 999;background-color: rgba(0, 0, 0, 0.5);transition: all .3s;}
 .modal-wrap {position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);border-radius: 8px;background-color: #fff;padding: 32px;width:95%;min-width: 100px;max-height:95%;}
 .modal-header {display: flex;flex-direction: column;justify-content: center;align-items: flex-start;position: relative;box-sizing: border-box;margin-bottom: 25px;padding-right: 40px;
-  > h5 {margin-top: 15px;line-height: 150%;}
+  h5 {margin-top: 15px;line-height: 150%;}
 }
 .modal-body {box-sizing: border-box;overflow-y: auto;overflow-x: hidden;max-height: calc(100vh - 300px);
   .modal-cont {line-height: 150%;margin-bottom: 32px;   
+    //madal-cont 마지막 영역은 밑에 영역 x
     > *:last-child{margin-bottom: 0;} 
     .cer-txt{margin-top: 12px;}
     [class*=-type]{width:100%;line-height: 150%;}

@@ -2,7 +2,7 @@
 
 // 테이블 기본 타이틀
 .board-top {display: flex;justify-content: space-between;flex-wrap: wrap;
-  > div {display: flex;align-items: center;
+  div[class*=t-box] {display: flex;align-items: center;
     .compulsory-txt{margin: 10px 6px 0 0;}
   }
 
@@ -167,7 +167,8 @@
     }
   }  
 
-  .acc-tit span,.accordion-btn > strong > span{color:#555 !important}
+  .acc-tit span,
+  .accordion-btn span{color:#555 !important}
 } 
 
 // 조회형 반응형

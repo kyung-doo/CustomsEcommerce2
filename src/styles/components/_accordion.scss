@@ -1,5 +1,5 @@
 [class*=cont-acc-]{border-top:1px solid #1D1D1D;margin-top: 20px;padding-top: 8px;    
-  .mo-cont-wrap > li{margin-top: 8px;background-color: #F4F5F6;border-radius: 8px;}
+  .mo-cont-wrap li{margin-top: 8px;background-color: #F4F5F6;border-radius: 8px;}
   .accordion-wrap{                        
     &.active{
       .accordion-header{
@@ -10,7 +10,7 @@
     }
     .accordion-header{      
       a{padding: 24px;display: flex;justify-content: space-between;align-items: center;        
-        .data{display: block;font-size: 15px;color:#2D2D2D;margin-top: 5px;}
+        .data{display: block;font-size: 15px;color:#555;margin-top: 5px;}
         i{font-size:0;}
       }
     }

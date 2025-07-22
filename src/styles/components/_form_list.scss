@@ -15,12 +15,7 @@
         + .form-group {display:flex;align-items:center;gap:8px;margin-top:9px;}
       }      
 
-      li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;
-
-        /** 리스트 타입이 텍스트일 경우 여백 
-        &.txt-list{padding-top: 15px;}
-        &.txt-list:first-child{margin-top: 10px;}**/
-      }          
+      li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;}          
     }    
     
     /** 넓이 **/
@@ -31,7 +26,7 @@
 
     /** 텍스트 리스트 **/
     .txt-list {display: flex;margin-left: 40px;align-items: flex-start;
-      .tit{width:200px;line-height:150%;padding-right: 0;}
+      .tit{width:160px;line-height:150%;padding-right: 0;}
       .title {display: flex;position: relative;}
       .inp-box {display: block;padding-left: 24px;flex:1;margin-top: 0;
         .txt {line-height: 150%;word-break: break-word;display: block;
@@ -45,7 +40,7 @@
 
     /** 파일첨부 **/
     .file-form {margin-left: -16px;
-      > li{margin-left: 16px;flex:1;
+      [class*=col]{margin-left: 16px;flex:1;
         .file-upload{width:100%;display: flex;gap:8px;
           .txt-box{border:1px solid #c6c6c6;background-color:#fff;border-radius:4px;width:100%;height:48px;min-width:10px;max-width:570px;display:flex;align-items:center;                            
             .txt{display:block;padding:0 16px;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none}

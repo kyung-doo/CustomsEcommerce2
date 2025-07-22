@@ -111,8 +111,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 .title-top:has(.advice-txt){align-items: flex-start;gap: 15px;}
 .title-top{
   &.type1{
-    .form-toggle-switch{margin-right: 24px;}
-    //.right-box{flex-wrap: nowrap;}
+    .form-toggle-switch{margin-right: 24px;}    
     button{width:auto !important;}
   }
 }
@@ -365,11 +364,6 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   }
 }
 
-//이메일 인증 페이지
-#wrap.email-pages{border:1px solid red;
-  #skip-link,#masthead,.header-actions,.main-menu,.main-allmenu,.foot-quick{display: none;}
-}
-
 //로그인
 .wrap-login{
   .title-top{margin: 0 0 0 0;flex-wrap: wrap;overflow: hidden;
@@ -466,6 +460,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       }
       ul{display: flex;gap:8px;padding-left: 12px;        
         a.on{text-decoration: underline;}
+        a:hover{font-weight: 700;}
       }
     }    
   }
@@ -475,8 +470,9 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       strong.tit{display: flex;}
       &.menu-list{border-bottom:1px solid #D8D8D8;
         ul{display: flex;gap:15px;flex-direction: column;
-          a{text-decoration: underline;line-height: 150%;            
+          a{text-decoration: underline;line-height: 150%;display: block;            
             span{color:#246BEB}
+            &:hover,&:hover *{font-weight: 700;}
           } 
         }
       } 
@@ -487,7 +483,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
               &:last-child::before{display: none;}
             }
             a{padding: 32px 0;display: block;
-            &:hover .txt{text-decoration: underline;}
+            &:hover .txt{text-decoration: underline;}            
             strong.tit{font-size: 21px;line-height: 150%;margin-bottom: 13px;flex-wrap: wrap;
               strong{color:#246BEB;margin-right: 5px;font-size: 21px;}
             }
@@ -509,7 +505,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       li{
         .search-area{
           &.nowrap:not(.type1){flex-wrap: wrap;
-            .form-group{max-width:100%;}
+            .form-group{max-width:100% !important;}
           }
         }
       } 
@@ -575,7 +571,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 @media (max-width: 767px) {
   //step 
   .step-area {
-    i.step, .step-tit {display: none;}
+    i.step, .step-tit {display: none !important;}
     .step-wrap {height: 100%;align-items: center;
       &.step-type2 li {min-width: 50px;}
     }
@@ -778,15 +774,24 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   }
 
   //통합검색 페이지
-  .wrap-search-pages .search-area{padding: 32px 0;}
-  .wrap-search-pages .search-area .sch-box{height:64px;}
-  .wrap-search-pages .search-area .sch-box input[type=text]{font-size: 21px;}
-  .wrap-search-pages .search-area .sch-box button.pages-sch{width:32px;height: 32px;}
-  .wrap-search-pages .search-result{padding: 48px 0 24px 0;}
-  .wrap-search-pages .search-result .left-box *{line-height: 150%;}
-  .wrap-search-pages .search-result .left-box *,
-  .wrap-search-pages .search-list > div[class*=-list].cont-list .cont-area a strong.tit{font-size:19px;}
-  .wrap-search-pages .search-list > div[class*=-list],
-  .wrap-search-pages .search-list > div[class*=-list].cont-list .cont-area a{padding: 32px 8px;}
-  .wrap-search-pages .search-list > div[class*=-list].cont-list .cont-area a .p-menu{flex-direction: column;align-items: flex-start;gap: 24px;}
+  .wrap-search-pages {
+    .search-area {padding: 32px 0;
+      .sch-box {height: 64px;
+        input[type=text] {font-size: 21px;}
+        button.pages-sch {width: 32px;height: 32px;}
+      }
+    }
+    .search-result {padding: 48px 0 24px 0;
+      .left-box * {line-height: 150%;font-size: 19px;}
+    }
+    .search-list > div[class*=-list] {
+      &.cont-list .cont-area a {
+        strong.tit {font-size: 19px;}
+        padding: 32px 8px;
+        .p-menu {flex-direction: column;align-items: flex-start;gap: 24px;}
+      }
+      padding: 32px 8px;
+    }
+  }
+
 }

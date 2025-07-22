@@ -26,6 +26,8 @@
 @use "./layouts/footer";
 @use "./layouts/navigation";
 @use "./layouts/content";
+@use "./layouts/main";
+
 
 @use "./pages/pages";
 @use "./pages/pages-modal";
@@ -106,4 +108,3 @@ html *, body * {font-family: 'Pretendard';box-sizing: border-box;}
 .lin-h1{line-height: 150% !important;}
 
 .w100per{width:100% !important}
-

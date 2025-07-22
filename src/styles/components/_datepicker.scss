@@ -34,10 +34,10 @@
     }
     .calendar-content {position: relative;padding: 0 8px;
         .week-con {@include flex($direction: row);   
-            > div {flex: 1;@include flex($direction: row);width:48px;height:40px;font-size: 15px;}
+            div {flex: 1;@include flex($direction: row);width:48px;height:40px;font-size: 15px;}
         }
         .day-con {@include flex($direction: row);flex-wrap: wrap;width: 100%;
-            > div {display: flex;align-items: center;justify-content: center;width: calc(100% / 7);height: 48px;                              
+            .day {display: flex;align-items: center;justify-content: center;width: calc(100% / 7);height: 48px;                              
                 button {width: 40px;height: 40px;border-radius: 50%;}
 
                 /** 오늘 **/
@@ -53,7 +53,7 @@
             }
         }
         .year-con {@include absolute();width: 100%;height: 100%;overflow-y: scroll;text-align: center;padding: 8px 0;            
-            > button {display:block;text-align:center;height:40px;width:100%;background-color:#fff;position:relative;z-index:1;                
+            .btn-year-select {display:block;text-align:center;height:40px;width:100%;background-color:#fff;position:relative;z-index:1;                
                 &.active {color: #fff;}                
                 &.btn-year-select:hover::before,&.active::before{content:"";display:block;width:140px;height:100%;position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:-1;border-radius:4px;}
                 &.btn-year-select:hover::before{background-color: #EDF1F5;}
@@ -61,7 +61,7 @@
             }
         }
         .month-con {@include absolute();@include flex($direction: row);flex-wrap:wrap;width:100%;height:100%;background-color:#fff;padding:8px 20px;gap:8px;
-            > button {@include flex();width:calc(100% / 3 - 8px);height:40px;background-color:#fff;padding:0;
+            .btn-month-select {@include flex();width:calc(100% / 3 - 8px);height:40px;background-color:#fff;padding:0;
                 &.active,&.active:hover {background-color: #246BEB;color: #fff;}
                 &:hover{background-color: #EDF1F5;}
                 &:disabled {pointer-events: none;opacity: 0.5;color:#717171;

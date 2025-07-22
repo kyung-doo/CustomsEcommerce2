@@ -3,7 +3,7 @@
 .step-wrap {
   display: flex;
 
-  li > span {
+  li span:not(.stop-tit) {
     display: flex;
     flex-direction: column;
   }

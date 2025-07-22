@@ -8,6 +8,7 @@ import './components/Datepicker';
 import './components/Accordion';
 import './components/Hiddeninput';
 import './layouts/header';
+import './layouts/main';
 
 // 전역변수
 global.isMobile = false;
