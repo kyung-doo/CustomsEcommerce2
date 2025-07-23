@@ -6,12 +6,14 @@ import gsap, { Cubic } from 'gsap';
 class Datepicker {
 
     static DEFAULT_PROPS = {
+        maxDate: new Date(),
         minInput: null,
         maxInput: null,
         target: '',
     }
 
     static MINIMUM_DATE = new Date('1930-01-01');
+    static MAXIMUM_DATE = dayjs().add(30, 'year').month(11).endOf('month').toDate();
 
     constructor( ele, props ) {
         this.ele = ele;
@@ -25,6 +27,7 @@ class Datepicker {
         this.isShow = false;
         this.currentYear = null;
         this.currentMonth = null;
+        if(!this.props.maxDate) this.props.maxDate = Datepicker.MAXIMUM_DATE;
         this.init();
     }
 
@@ -58,7 +61,7 @@ class Datepicker {
                 this.input.val('').focus(); 
             } else {
                 this.selectDate = new Date(this.input.val());
-                if(new Date(val) > this.today) {
+                if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
                     alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                     this.input.val('').focus(); 
                     return;
@@ -251,7 +254,7 @@ class Datepicker {
         this.calendar.find(".btn-next").removeAttr('disabled');
         this.calendar.find(".btn-prev").removeAttr('disabled');
 
-        if(this.currentYear === toDay.getFullYear()) {
+        if(this.currentYear === this.props.maxDate.getFullYear()) {
             if(this.currentMonth === toDay.getMonth()+1) {
                 this.calendar.find(".btn-next").attr('disabled', 'disabled');
             }
@@ -289,7 +292,7 @@ class Datepicker {
                     x.type += ' active';
                 }
             }
-            if(new Date(x.year+'-'+x.month+'-'+x.day) > toDay) {
+            if(this.props.maxDate && new Date(x.year+'-'+x.month+'-'+x.day) > this.props.maxDate) {
                 x.type += ' disabled';
             }
             if(this.props.maxInput && $(this.props.maxInput).val()) {
@@ -339,6 +342,9 @@ class Datepicker {
                 this.calendar.find(".year-con").append(`<button class="btn-year-select" data-year="${i}">${i}</button>`)
             }
         }
+        for(let i = new Date().getFullYear()+1; i <= this.props.maxDate.getFullYear(); i++) {
+            this.calendar.find(".year-con").prepend(`<button class="btn-year-select" data-year="${i}">${i}</button>`)
+        }
         this.calendar.find(".year-con button").on('click', (e) => {
             this.currentYear = $(e.currentTarget).data('year');
             this.calendar.find(".year-con").hide();                        
@@ -363,7 +369,7 @@ class Datepicker {
                 this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}월</button>`)
             }
         }
-        if(this.currentYear === new Date().getFullYear()) {
+        if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && this.currentYear === new Date().getFullYear()) {
             this.calendar.find(".month-con button").each(function () {
                 if($(this).data('month') > new Date().getMonth() +1) {
                     $(this).attr('disabled', 'disabled');
