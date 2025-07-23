@@ -12,7 +12,8 @@
   .txt-box-type.type3 + .wrap-check-tbl{margin-top: 24px;}
   .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
   .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
-  .txt-box-type.type1 + .wrap-form-area{margin-top: 24px;}  
+  .txt-box-type.type1 + .wrap-form-area,
+  .txt-box-type.type1 + form{margin-top: 24px;}  
   .agree-title{margin-top: 43px;margin-bottom: 16px;}  
   .title-type3{margin-top: 58px;margin-bottom: 17px;}
   .title-type3 + .compulsory-txt{margin-top: -3px;}
@@ -30,12 +31,15 @@
   [class*=tabmenu-] + .search-box{margin-top: 48px;}
   [class*=tabmenu-] + .wrap-graph{margin-top: 48px;}
   [class*=tabmenu-] + .board-top.tbl-top{margin-top: 48px;}
-  .wrap-check-tbl + .wrap-form-area{margin-top: 24px;}      
+  .wrap-check-tbl + .wrap-form-area,
+  .wrap-check-tbl + form{margin-top: 24px;}      
   .wrap-cont-tbl table:first-child{margin-top: 0;}  
   .accordion:nth-child(n+2){margin-top: 8px;}
   .title.mo{margin-top: 41px;margin-bottom: 24px;}
-  .wrap-form-area + .board-top.no-wrap.title-top{margin-top: 24px;}
-  .wrap-form-area + .wrap-cont-tbl{margin-top: 48px;}  
+  .wrap-form-area + .board-top.no-wrap.title-top,
+  form + .board-top.no-wrap.title-top{margin-top: 24px;}
+  .wrap-form-area + .wrap-cont-tbl,
+  .form + .wrap-cont-tbl{margin-top: 48px;}  
   .title-type.medium + .txt-box-type.type1{margin-top: 20px;}
   .wrap-graph + .compulsory-txt{margin-top: 24px;}  
   .add-title{margin-top: 48px;margin-bottom: 14px;}    
@@ -115,8 +119,21 @@
       .head-util {flex-wrap: wrap;gap: 10px;
         .breadcrumb-wrap, .language-area {width: 100%;}
       }
-      .head-tit {padding: 28px 0 38px 0;font-size: 25px;}
-      .step-box{margin-top: 30px;}
+      .head-tit {padding: 28px 0 38px 0;font-size: 25px;}      
+
+      .step-area{
+        .step-box{margin-top: 30px;}
+        i.step, .step-tit {display: none !important;}
+        .step-wrap {height: 100%;align-items: center;
+          &.step-type2 li {min-width: 50px;}
+        }
+
+        li {
+          &:last-child:before {display: block;}
+          &:first-child::before {display: none;}
+          &:after {left: auto;right: 0;}
+        }
+      }
     }
     .cont-head .head-util {margin-top: 16px;}
   } 

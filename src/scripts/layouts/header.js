@@ -199,7 +199,16 @@ $(() => {
         }else{
             deleteBtn.hide();
         }        
-    })
+    });
+
+    $(document).on('click','.wrap-in-sch .in-sch-box .sch-box button.sch-delete',function(){
+        var th = $(this);        
+        var closestBox = $('.wrap-in-sch .in-sch-box .sch-box');
+        var inputBox = $('.wrap-in-sch .in-sch-box .sch-box input[type=text]')
+        
+        th.closest(closestBox).find(inputBox).val('');
+        $(this).hide();
+    });    
 });
 
 

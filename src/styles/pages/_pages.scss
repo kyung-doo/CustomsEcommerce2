@@ -569,20 +569,6 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 }
 
 @media (max-width: 767px) {
-  //step 
-  .step-area {
-    i.step, .step-tit {display: none !important;}
-    .step-wrap {height: 100%;align-items: center;
-      &.step-type2 li {min-width: 50px;}
-    }
-
-    li {
-      &:last-child:before {display: block;}
-      &:first-child::before {display: none;}
-      &:after {left: auto;right: 0;}
-    }
-  }  
-
   //검색 
   .search-box {padding: 24px;
     li[class*=col] {width: 100% !important;flex-direction: column;align-items: flex-start;
