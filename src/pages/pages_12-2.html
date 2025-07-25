@@ -4,7 +4,7 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -187,7 +187,7 @@
                   <div class="align">      
                      <div class="full-btn">
                         <button type="button" class="btn secondary large">임시저장</button>
-                        <button type="button" class="btn primary large btn-margin">다음</button>                 
+                        <button type="button" class="btn primary large btn-margin" disabled>다음</button>                 
                      </div>                                           
                   </div>
                </div>

@@ -4,7 +4,7 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -60,7 +60,7 @@
                <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>       
                <div class="wrap-form-area">
                   <div class="inp-form">
-                     <ul>                                                         
+                     <ul>                                       
                         <li class="col2">
                            <label for="ex1" class="tit">국적</label>
                            <div class="inp-box">
@@ -212,7 +212,7 @@
                </div>
                <div class="btn-area btn-end">
                   <div class="align">                            
-                     <button type="button" class="btn primary large">다음</button>                 
+                     <button type="button" class="btn primary large" disabled>다음</button>                 
                   </div>
                </div>        
                <!-- 팝업 사용후 삭제해주세요 -->

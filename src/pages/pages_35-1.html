@@ -4,12 +4,13 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">통관·납부·환급내역 조회</h3>            
+            <h3 class="head-tit">통관·납부·환급내역 조회</h3>    
+            <h4 class="sr-only">빈텍스트</h4>        
          </div>
          <div class="cont-body">
             <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
@@ -54,7 +55,7 @@
                         </thead>
                         <tbody>
                            <tr>
-                              <td>999</td>                                                                                                                       
+                              <td>1</td>                                                                                                                       
                               <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
                               <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
                               <td>아마존글로벌스토어</td>                                                                                                                       
@@ -63,7 +64,7 @@
                               <td>통관완료 후 반출</td>                                                                                                                       
                            </tr>
                            <tr>
-                              <td>999</td>                                                                                                                       
+                              <td>2</td>                                                                                                                       
                               <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
                               <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
                               <td>아마존글로벌스토어</td>                                                                                                                       
@@ -72,14 +73,77 @@
                               <td>통관완료 후 반출</td>                                                                                                                       
                            </tr>
                            <tr>
-                              <td>999</td>                                                                                                                       
+                              <td>3</td>                                                                                                                       
                               <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
                               <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
                               <td>아마존글로벌스토어</td>                                                                                                                       
                               <td>2025-12-05</td>                                                                                                                       
                               <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
                               <td>통관완료 후 반출</td>                                                                                                                       
-                           </tr>                                                                                                                                                                                                                                                                                                                                                 
+                           </tr>    
+                           <tr>
+                              <td>4</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr> 
+                           <tr>
+                              <td>5</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr> 
+                           <tr>
+                              <td>6</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr> 
+                           <tr>
+                              <td>7</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr> 
+                           <tr>
+                              <td>8</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr> 
+                           <tr>
+                              <td>9</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr> 
+                           <tr>
+                              <td>10</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">HDFC25E6902978A-598941820554</a></td>                                                                                                                       
+                              <td>Dell UltraSharp U2723QE 등</td>                                                                                                                       
+                              <td>아마존글로벌스토어</td>                                                                                                                       
+                              <td>2025-12-05</td>                                                                                                                       
+                              <td><a href="#none" class="cl-7">목록통관</a></td>                                                                                                                       
+                              <td>통관완료 후 반출</td>                                                                                                                       
+                           </tr>                                                                                                                                                                                                                                                                                                                                              
                         </tbody>
                      </table>
                   </div>

@@ -70,6 +70,9 @@ a{color:#000}
 .en-txt{color:red; font-weight: 700;}
 .en-list{display: none;}
 .pages-acc a{color: blue;}
+.open{color: green;}
+.testtest1 > li{font-size:15px;}
+.testtest2 > li{font-size:14px;}
 </style>
 </head>
 <body>
@@ -83,6 +86,7 @@ a{color:#000}
 	</script>
 	<h1><a href="pages/" target="contentframe" title="우측 새창에서 열기">관세청 전자상거래포털</a></h1>			
 	
+	<!-- contentframe _blank
 	<h2>메인 (확인용)</h2>
 	<ul>
 		<li><a href="pages/test-1-1.html" target="contentframe">1.메인[로그인전]</a><span class="state_03"></span></li>
@@ -91,25 +95,52 @@ a{color:#000}
 		<li><a href="pages/test-1-4.html" target="contentframe">4.통합검색[검색전]</a><span class="state_03"></span></li>
 		<li><a href="pages/test-1-5.html" target="contentframe">5.통합검색[검색후]</a><span class="state_03"></span></li>
 	</ul>	
+	-->
+	<p>
+		메모
+	</p>
+	<h2>작업</h2>
+	<ul class="testtest1">		
+		<li>국민비서팝업 [완료]</li>						
+		<li>메인페이지 [보류]</li>
+		<li>로그인 페이지 [보류]</li>
+		<li>SDS 작업 [완료]
+			<ul class="testtest2">
+				<li>- 테이블 넘버 1~10 [완료]</li>
+				<li>- NO에 오름차순 내림차순 아이콘 모두 삭제 [완료]</li>
+				<li>- 검색영역 날짜 5:5 정렬 체크 480때 한줄정렬 [완료]</li>
+				<li>- step 페이지중에 다음버튼 막기 [완료]</li>
+				<li>- 메인페이지 로그인후 자세히 버튼 삭제하고 도용신고 버튼 100% [완료]</li>				
+			</ul>
+		</li>
+		<li>form태그 확인</li>
+		<li>이메일 작업</li>
+		<li>관세청 관리자 페이지 ???</li>		
+		<li>해외전자상거래업체 MYC 8월초 작업예정</li>	
+	</ul>	
 	
 	<h2>메인</h2>
 	<ul>
-		<li><a href="pages/메인.html" target="contentframe">메인</a><span class="state_02"></span></li>		
+		<li><a href="pages/1.메인.html" target="contentframe">1.메인 로그인전</a><span class="state_02"></span></li>		
+		<li><a href="pages/2.메인.html" target="contentframe">2.메인 로그인후</a><span class="state_02"></span></li>		
+		<li><a href="pages/3.메인.html" target="contentframe">3.메인 로그인후 [유효기간 기본]</a><span class="state_02"></span></li>		
+		<li><a href="pages/4.메인.html" target="contentframe">4.메인 로그인후 [유효기간 위험]</a><span class="state_02"></span></li>		
+		<li><a href="pages/5.메인.html" target="contentframe">5.메인 로그인후 [유효기간 안전]</a><span class="state_02"></span></li>		
 	</ul>
 
 	<h2>서브 레이아웃</h2>
 	<ul>		
-		<li><a href="pages/서브레이아웃.html" target="contentframe">서브레이아웃</a><span class="state_02"></span></li>						
+		<li><a href="pages/서브레이아웃.html" target="contentframe">서브레이아웃</a><span class="state_03"></span></li>						
 	</ul>	
 
 	<h2>레이어팝업 모음</h2>
 	<ul>
-		<li><a href="pages/레이어팝업.html" target="contentframe">1.레이어팝업</a><span class="state_02"></span></li>		
+		<li><a href="pages/레이어팝업.html" target="contentframe">1.레이어팝업</a><span class="state_03"></span></li>		
 	</ul>
 	
 	<h2>스타일가이드</h2>
 	<ul>
-		<li><a href="style-guide.html" target="contentframe">스타일가이드</a><span class="state_02"></span></li>		
+		<li><a href="style-guide.html" target="contentframe">스타일가이드</a><span class="state_03"></span></li>		
 	</ul>
 
 	<h2>개인통관고유부호</h2>
@@ -147,7 +178,7 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 신규/재발급[3]</strong>
 					<ul>
-						<li class="pages-acc"><a href="pages/pages_3-1.html" target="contentframe">1.개인통관고유부호 신규/부호변경 1단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_3-1.html" target="contentframe">1.개인통관고유부호 신규/부호변경 1단계</a><span class="state_03"></span></li>						
 						<li><a href="pages/pages_3-2.html" target="contentframe">2.개인통관고유부호 신규/부호변경 2단계</a><span class="state_03"></span></li>						
 						<li><a href="pages/pages_3-3.html" target="contentframe">3.개인통관고유부호 신규/부호변경 3단계</a><span class="state_03"></span></li>						
 						<li><a href="pages/pages_3-4.html" target="contentframe">4.개인통관고유부호 신규/부호변경 4단계</a><span class="state_03"></span></li>						
@@ -528,13 +559,14 @@ a{color:#000}
 		<li>
 			<strong class="tit2">국민비서팝업[38]</strong>
 			<ul>
-				<li><a href="pages/pages_38-1.html" target="contentframe">1.국민비서팝업</a><span class="state_01"></span></li>										
+				<li><a href="pages/pages_38-1.html" target="contentframe">1.국민비서팝업</a><span class="state_03"></span></li>										
 			</ul>					
 		</li>		
 		<li>
 			<strong class="tit2">로그인[39]</strong>
 			<ul>
-				<li><a href="pages/pages_39-1.html" target="contentframe">1.로그인</a><span class="state_03"></span></li>										
+				<li><a href="pages/pages_39-1.html" target="contentframe">1.실명인증</a><span class="state_01"></span></li>										
+				<li><a href="pages/pages_39-2.html" target="contentframe">2.로그인</a><span class="state_01"></span></li>										
 			</ul>					
 		</li>		
 		<li>

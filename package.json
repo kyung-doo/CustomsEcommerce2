@@ -33,6 +33,7 @@
   "dependencies": {
     "dayjs": "^1.11.13",
     "gsap": "^3.13.0",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "swiper": "^11.2.10"
   }
 }

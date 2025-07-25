@@ -4,12 +4,13 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">개인통관고유부호 개인전자 납부 내역 조회</h3>            
+            <h3 class="head-tit">개인통관고유부호 개인전자 납부 내역 조회</h3>  
+            <h4 class="sr-only">빈텍스트</h4>          
          </div>
          <div class="cont-body">
             <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
@@ -189,7 +190,7 @@
                         </thead>
                         <tbody>
                            <tr>
-                              <td>999</td>                                                            
+                              <td>1</td>                                                            
                               <td>인천공항세관</td>                                                            
                               <td>11126-15-04774PM</td>                                                            
                               <td>0127)040-11-15-90337618</td>                                                            
@@ -202,7 +203,7 @@
                               <td><button type="button" class="btn tertiary small">조회</button></td>                                                            
                            </tr>   
                            <tr>
-                              <td>999</td>                                                            
+                              <td>2</td>                                                            
                               <td>인천공항세관</td>                                                            
                               <td>11126-15-04774PM</td>                                                            
                               <td>0127)040-11-15-90337618</td>                                                            
@@ -215,7 +216,7 @@
                               <td><button type="button" class="btn secondary small">납부</button></td>                                                            
                            </tr>                                                                                                                                                                                                                                                                                               
                            <tr>
-                              <td>999</td>                                                            
+                              <td>3</td>                                                            
                               <td>인천공항세관</td>                                                            
                               <td>11126-15-04774PM</td>                                                            
                               <td>0127)040-11-15-90337618</td>                                                            
@@ -227,8 +228,86 @@
                               <td><strong class="txt cl-2">체납</strong></td>                                                            
                               <td><button type="button" class="btn secondary small">납부</button></td>                                                            
                            </tr>    
-                            <tr>
-                              <td>999</td>                                                            
+                           <tr>
+                              <td>4</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>
+                           <tr>
+                              <td>5</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>
+                           <tr>
+                              <td>6</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>
+                           <tr>
+                              <td>7</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>
+                           <tr>
+                              <td>8</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>
+                           <tr>
+                              <td>9</td>                                                            
+                              <td>인천공항세관</td>                                                            
+                              <td>11126-15-04774PM</td>                                                            
+                              <td>0127)040-11-15-90337618</td>                                                            
+                              <td>홍길동</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>2025-12-05</td>                                                            
+                              <td>100,000</td>                                                            
+                              <td>수납</td>                                                            
+                              <td><button type="button" class="btn tertiary small">보기</button></td>    
+                           </tr>
+                           <tr>
+                              <td>10</td>                                                            
                               <td>인천공항세관</td>                                                            
                               <td>11126-15-04774PM</td>                                                            
                               <td>0127)040-11-15-90337618</td>                                                            

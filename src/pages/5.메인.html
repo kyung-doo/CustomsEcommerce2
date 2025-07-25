@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <!-- 로그인전 - login / 로그인후 - logout -->
+   <div id="wrap" class="main logout">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+      </div>      
+      <div id="main">
+         <div class="box1">
+            <div class="tit-box">
+               <strong class="tit">관세청 전자상거래포털에 오신 것을 환영합니다.</strong>
+               <button class="unipass-go"><i>Unipass 바로가기</i></button>
+            </div>
+            <div class="cont-box">  
+               <div class="wrap-slide-box">                  
+                  <div class="slide-box list-slide">            
+                     <div class="swiper" id="list-slide">            
+                        <div class="swiper-wrapper">               
+                           <div class="swiper-slide">
+                              <a href="#none">
+                                 <p class="kr-txt">1.개인통관 고유부호가<br> 필요하시나요?</p>                                 
+                              </a>
+                           </div>
+                           <div class="swiper-slide">
+                              <a href="#none">
+                                 <p class="kr-txt">2.개인통관 고유부호가<br> 필요하시나요?</p>
+                                 <p class="en-txt">Do you need<br> Personal Customs Code?</p>
+                              </a>
+                           </div>
+                           <div class="swiper-slide">
+                              <a href="#none">
+                                 <p class="kr-txt">3.개인통관 고유부호가 필요하시나요?</p>
+                                 <p class="en-txt">Do you need<br> Personal Customs Code?</p>
+                              </a>
+                           </div>
+                           <div class="swiper-slide">
+                              <a href="#none">
+                                 <p class="kr-txt">4.개인통관<br> 고유부호가 필요하시나요?</p>
+                                 <p class="en-txt">Do you need Personal Customs Code?</p>
+                              </a>
+                           </div>
+                           <div class="swiper-slide">
+                              <a href="#none">
+                                 <p class="kr-txt">5.개인통관 고유부호가 필요하시나요?</p>
+                                 <p class="en-txt">Do you need Personal Customs Code?</p>
+                              </a>
+                           </div>
+                           <div class="swiper-slide">
+                              <a href="#none">
+                                 <p class="kr-txt">6.개인통관 고유부호가 필요하시나요?</p>
+                                 <p class="en-txt">Do you need Personal Customs Code?</p>
+                              </a>
+                           </div>
+                        </div>                                            
+                     </div>               
+                     <div class="wrap-swiper-btn">
+                        <button class="swiper-button-prev"></button>
+                        <button class="swiper-button-next"></button>                                    
+                        <button class="swiper-stop">정지</button>    
+                        <div class="swiper-pagination"></div>        
+                     </div> 
+                  </div>                                      
+                  <div class="slide-show-box">
+                     <div id="tab01" class="tab-cont">
+                        111
+                     </div>
+                     <div id="tab02" class="tab-cont">
+                        222
+                     </div>
+                     <div id="tab03" class="tab-cont">
+                        333
+                     </div>
+                     <div id="tab04" class="tab-cont">
+                        444
+                     </div>
+                     <div id="tab05" class="tab-cont">
+                        555
+                     </div>
+                     <div id="tab06" class="tab-cont">
+                        666
+                     </div>
+                  </div>                  
+               </div>               
+               <!-- 로그인전 -->
+               <div class="login-box login">
+                  <div class="tit-box">
+                     <strong class="tit">로그인</strong>                                          
+                  </div>                  
+                  <div class="txt-box">
+                     <strong class="txt">로그인을 하시면<br> 보다 더 많은 정보와 서비스를<br> 이용하실 수 있습니다.</strong>                     
+                  </div>                  
+                  <div class="btn-box">
+                     <button class="btn login"><i>로그인</i></button>                     
+                  </div>                  
+               </div>
+               <!-- 로그인전 -->               
+
+               <!-- 로그인후 danger-chtxt[위험] safety-chtxt[안전] 아무것도 없으면 기본 -->               
+               <div class="login-box logout safety-chtxt">
+                  <div class="tit-box">
+                     <strong class="tit">김관세님</strong>                     
+                     <a href="#none" class="mypages">마이페이지 <i class="icon btn-arrow-right medium"></i></a>
+                  </div>                  
+                  <div class="txt-box">                     
+                     <div class="txt-area">
+                        <div class="tit-area">
+                           <strong class="tit">개인통관고유부호</strong>
+                           <span class="txt">personal customs code</span>
+                        </div>
+                        <a href="#none" class="info-txt"><strong>P000000000000</strong><i class="icon copy small"></i> 복사</a>
+                        <p  class="info-txt">개인통관고유부호가 없습니다.</p>
+                     </div>                     
+                     <ul class="cust-list">
+                        <li>
+                           <strong class="tit">유효기간</strong>
+                           <div class="info-box">
+                              <strong class="day">29일</strong>
+                              <button type="button" class="btn tertiary small">갱신하기</button>
+                           </div>
+                        </li>
+                        <li class="dotted-line-top">
+                           <strong class="tit">주소</strong>
+                           <div class="info-box">
+                              <strong>10개</strong>
+                              <button type="button" class="btn tertiary small">등록하기</button>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>                  
+                  <div class="btn-box">                     
+                     <button class="btn apply"><i>개인통관고유부호 신청하기</i></button>
+                     <button class="btn plagiarism"><i>도용신고</i></button>                     
+                  </div>                  
+               </div>               
+               <!-- 로그인후 -->
+            </div>
+         </div>
+         <div class="box2">
+            <div class="slide-box images-slide">            
+               <div class="swiper" id="images-slide">            
+                 <div class="swiper-wrapper">               
+                     <div class="swiper-slide"><a href="#none"><img src="../assets/image/slide-img2-1.png" alt="통관정보조회 관세청 전자상거래포털 신규오픈!"></a></div>
+                     <div class="swiper-slide"><a href="#none"><img src="../assets/image/slide-img2-1.png" alt="통관정보조회 관세청 전자상거래포털 신규오픈!"></a></div>
+                     <div class="swiper-slide"><a href="#none"><img src="../assets/image/slide-img2-1.png" alt="통관정보조회 관세청 전자상거래포털 신규오픈!"></a></div>
+                  </div>                   
+               </div>    
+               <div class="wrap-swiper-btn">
+                  <div class="swiper-pagination"></div>        
+                  <button class="swiper-stop">정지</button>    
+                  <button class="swiper-button-prev"></button>
+                  <button class="swiper-button-next"></button>                                    
+               </div>                                                              
+            </div>
+            <div class="wrap-notice">
+               <div class="notice-box">
+                  <!-- 공지사항 -->
+                  <div class="area on">
+                     <a href="#none" class="tit" title="선택됨">공지사항</a>
+                     <div class="box">
+                        <ul class="list">
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">1.2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>
+                                    <span class="new">새글</span>
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청</span>                                 
+                                    <span class="new">새글</span>
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                        </ul>
+                        <a href="#none" class="more"><span>공지사항</span> 더보기 <i class="icon plus medium"></i></a>
+                     </div>                  
+                  </div>
+                  <!-- // 공지사항 -->               
+
+                  <!-- 자료실 -->
+                  <div class="area">
+                     <a href="#none" class="tit">자료실</a>
+                     <div class="box">
+                        <ul class="list">
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2.2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>
+                                    <span class="new">새글</span>
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                        </ul>
+                        <a href="#none" class="more"><span>자료실</span> 더보기 <i class="icon plus medium"></i></a>
+                     </div>                
+                  </div>
+                  <!-- // 자료실 -->               
+
+                  <!-- 메세지 -->
+                  <div class="area">
+                     <a href="#none" class="tit">메세지</a>
+                     <div class="box">
+                        <ul class="list">
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">3.2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>
+                                    <span class="new">새글</span>
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                           <li>
+                              <a href="#none">
+                                 <span class="txt-atea">
+                                    <span class="txt">2025년도 관세청 공무직근로자(영문에디터) 서류전형 합격자2025년도 관세청 공무직근로자(영문에디터)</span>                                 
+                                 </span>
+                                 <span class="data">2025-03-31</span>
+                              </a>                           
+                           </li>
+                        </ul>
+                        <a href="#none" class="more"><span>메세지</span> 더보기 <i class="icon plus medium"></i></a>
+                     </div>                 
+                  </div>
+                  <!-- // 메세지 -->               
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

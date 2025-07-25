@@ -41,6 +41,7 @@
       .f-btm-text {padding: 22px 2px 0 2px;display: flex;justify-content: space-between;}
       .f-menu {margin-left: -24px;
         a {margin-left: 24px;
+          &:hover{text-decoration: underline;}
           &.point {color: #003675;font-weight: 700;  }
         }
       }

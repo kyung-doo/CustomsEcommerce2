@@ -4,7 +4,7 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -171,7 +171,7 @@
                   <div class="align">
                      <button type="button" class="btn tertiary large">미리보기</button>                     
                      <button type="button" class="btn secondary large">임시저장</button>
-                     <button type="button" class="btn primary large">다음</button>                     
+                     <button type="button" class="btn primary large" disabled>다음</button>                     
                   </div>
                </div>
                <div class="btn-area btn-between btn-area-type mo">
@@ -181,7 +181,7 @@
                   </div>
                   <div class="align">                     
                      <button type="button" class="btn tertiary large btn-margin">이전</button>                     
-                     <button type="button" class="btn primary large btn-margin">다음</button>                     
+                     <button type="button" class="btn primary large btn-margin" disabled>다음</button>                     
                   </div>
                </div>                    
                <!-- 팝업 사용후 삭제해주세요 -->

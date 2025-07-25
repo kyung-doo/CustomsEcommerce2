@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->      
-            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+            <h3 class="head-tit">개인통관고유부호 조회</h3>    
+            <h4 class="sr-only">빈텍스트</h4>        
          </div>
          <div class="cont-body">
             <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
@@ -219,7 +221,17 @@
                      </ul>                  
                   </div>
                </div>
-               <div class="btn-area btn-end btn-area-type">
+               <div class="btn-area btn-end btn-area-type fpc">
+                  <div class="align">                     
+                     <button type="button" class="btn tertiary medium">해지</button>
+                     <button type="button" class="btn tertiary medium">사용정지</button>
+                     <button type="button" class="btn tertiary medium">갱신</button>
+                     <button type="button" class="btn tertiary medium">부호변경</button>                                          
+                     <button type="button" class="btn secondary medium">정보변경</button>
+                  </div>
+               </div>
+
+               <div class="btn-area btn-end btn-area-type fmo">
                   <div class="align">
                      <div class="full-btn">
                         <button type="button" class="btn secondary medium">정보변경</button>
@@ -251,7 +263,7 @@
                         </colgroup>
                         <thead>
                            <tr>                                                
-                              <th scope="col"><span class="arr-ico">No <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col">NO</th>
                               <th scope="col"><span class="arr-ico">배송지명 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
                               <th scope="col">우편번호</th>
                               <th scope="col">기본주소</th>
@@ -260,7 +272,35 @@
                         </thead>
                         <tbody>
                            <tr>
-                              <td>6</td>
+                              <td>1</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>2</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>3</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>4</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>5</td>
                               <td class="text-left">우리집1</td>
                               <td>35351</td>
                               <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
@@ -268,11 +308,39 @@
                            </tr>
                            <tr>
                               <td>6</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>7</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>8</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>9</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>
+                           <tr>
+                              <td>10</td>
                               <td><p class="tb-title text-left">우리집1우리집1우리집1우리집1우리집1</p></td>
                               <td>35351</td>
                               <td><p class="tb-title text-left">대전광역시 서구 월평동123대전광역시 서구 월평동123대전광역시 서구 월평동123대전광역시 서구 월평동123</p></td>                        
                               <td><p class="tb-title text-left">우리집빌라 301호우리집빌라 301호우리집빌라 301호우리집빌라 301호</p></td>                        
-                           </tr>                                                                                                         
+                           </tr>                           
                         </tbody>
                      </table>
                   </div>

@@ -4,12 +4,13 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">환급신청 처리결과 상세조회</h3>            
+            <h3 class="head-tit">환급신청 처리결과 상세조회</h3>    
+            <h4 class="sr-only">빈텍스트</h4>        
          </div>
          <div class="cont-body">
             <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
@@ -69,11 +70,128 @@
                            <tr>
                               <td>
                                  <div class="form-check medium">
-                                    <input type="radio" id="d" name="e">
-                                    <label for="d"><span class="sr-only">선택</span></label>
+                                    <input type="radio" id="radio1" name="radio">
+                                    <label for="radio1"><span class="sr-only">선택</span></label>
                                  </div>
                               </td>
                               <td>001</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio2" name="radio">
+                                    <label for="radio2"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>002</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio3" name="radio">
+                                    <label for="radio3"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>003</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio4" name="radio">
+                                    <label for="radio4"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>004</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio5" name="radio">
+                                    <label for="radio5"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>005</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio6" name="radio">
+                                    <label for="radio6"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>006</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio7" name="radio">
+                                    <label for="radio7"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>007</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio8" name="radio">
+                                    <label for="radio8"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>008</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio9" name="radio">
+                                    <label for="radio9"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>009</td>                              
+                              <td>434124231M</td>                              
+                              <td>001</td>                              
+                              <td class="text-right">1</td>                              
+                              <td class="text-right">145,0.60</td>                              
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="form-check medium">
+                                    <input type="radio" id="radio10" name="radio">
+                                    <label for="radio10"><span class="sr-only">선택</span></label>
+                                 </div>
+                              </td>
+                              <td>010</td>                              
                               <td>434124231M</td>                              
                               <td>001</td>                              
                               <td class="text-right">1</td>                              

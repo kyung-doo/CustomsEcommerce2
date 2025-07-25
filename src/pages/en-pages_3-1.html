@@ -4,7 +4,8 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <!-- 로그인전 - login / 로그인후 - logout -->
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -212,7 +213,7 @@
                </div> 
                <div class="btn-area btn-end">
                   <div class="align">                            
-                     <button type="button" class="btn primary large">Next</button>                 
+                     <button type="button" class="btn primary large" disabled>Next</button>                 
                   </div>
                </div>  
                <!-- 팝업 사용후 삭제해주세요 -->
@@ -268,7 +269,7 @@
                         <div class="modal-body" tabindex="0">
                            <div class="modal-cont">                                    
                               <p class="txt-type">Email verification has been completed. Please complete the remaining personal customs clearance code information changes.</p>
-                           </div>                                  
+                           </div>                                
                         </div>
                         <div class="modal-footer">                        
                            <button type="button" class="btn primary medium">Check</button>

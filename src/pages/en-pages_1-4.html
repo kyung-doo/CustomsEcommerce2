@@ -4,7 +4,8 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <!-- 로그인전 - login / 로그인후 - logout -->
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -216,7 +217,7 @@
                      <button type="button" class="btn tertiary large">이전</button>                 
                   </div>
                   <div class="align">                            
-                     <button type="button" class="btn primary large">다음</button>                 
+                     <button type="button" class="btn primary large" disabled>다음</button>                 
                   </div>
                </div>
                <!-- 팝업 사용후 삭제해주세요 -->

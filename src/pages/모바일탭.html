@@ -11,12 +11,13 @@
    </script>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- main -->
             <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <h4 class="sr-only">빈텍스트</h4>
         </div>
         <div class="cont-body">
             <div class="tabmenu tabmenu-line1" data-ui="tabmenu" data-props="">

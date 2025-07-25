@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">필수 설치 프로그램 안내</h3>            
+            <h3 class="head-tit">필수 설치 프로그램 안내</h3>   
+            <h4 class="sr-only">빈텍스트</h4>         
          </div>
          <div class="cont-body">            
             <!-- 내용 -->

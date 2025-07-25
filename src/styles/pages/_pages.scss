@@ -124,7 +124,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 }
 
 //알림동의 
-.agree-title{display: inline-block;align-items: center;position: relative;padding-left: 45px;
+.agree-title{display: inline-block;align-items: center;position: relative;padding-left: 53px;
   .title-type{    
     > strong{margin-right: 8px;position: absolute;left: 0;}
   } 
@@ -221,6 +221,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       &:has(.search-area-box){
         .tit{margin-top: -30px;}
       }
+      .wrap-form-chip{display: flex;gap: 8px;}
     }    
   }
   .btn-area {margin-top: 24px;padding-top: 24px;border-top: 1px solid #E6E8EA;}
@@ -232,7 +233,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 
 //상세페이지 
 .wrap-detail{  
-  h4.title{font-size: 25px;padding: 48px 0 32px 0;line-height: 150%;}
+  h5.title{font-size: 25px;padding: 48px 0 32px 0;line-height: 150%;}
   .detail-list{border-top:1px solid #58616A;border-bottom:1px solid #E4E4E4;padding: 22px 0;display: flex; flex-wrap: wrap;overflow: hidden;
     li{padding: 0 32px 0 0;position: relative;margin: 7px 0;    
       &::before{content:"";display: block;position: absolute;top:3px;left:-17px;width:1px;height:12px;background-color: #D8D8D8;}
@@ -384,8 +385,9 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
     }    
   }
   .title-type3{font-size: 25px;margin-bottom: 32px;margin-top: 48px;}
-  .login-box{display: flex;gap:40px;
-    .left-box{width:50%;
+  .login-box{display: flex;gap:24px;margin-top: 40px;
+    .left-box{width:32%;
+      .title-type3{margin: 0;}
       .login-list-box{display: flex;gap:32px 0;flex-direction: column;padding: 63px 10%;border-radius: 8px;border:1px solid #E4E4E4;
         li{display: flex;align-items: flex-start;
           > label{min-width:120px;width:120px;font-size: 15px;font-weight: 700;line-height: 150%;margin-top: 12px;}
@@ -419,10 +421,10 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
             &::before,
             &::after{content:"";display: block;position: absolute;}
             &::before{top:32px;left:32px;width:40px;height:40px;background-position: center;background-size: contain;}
-            &::after{top:50%;right:32px;width:20px;height: 20px;background-image: url('/assets/icons/btn-arrow-right.svg');transform: translateY(-50%);transition: all .3s;}
-            &.list1::before{background-image: url('/assets/icons/login-ico1.svg');}
-            &.list2::before{background-image: url('/assets/icons/login-ico2.svg');}
-            &.list3::before{background-image: url('/assets/icons/login-ico3.svg');}
+            &::after{top:50%;right:32px;width:20px;height: 20px;background-image: url('../assets/icons/btn-arrow-right.svg');transform: translateY(-50%);transition: all .3s;}
+            &.list1::before{background-image: url('../assets/icons/login-ico1.svg');}
+            &.list2::before{background-image: url('../assets/icons/login-ico2.svg');}
+            &.list3::before{background-image: url('../assets/icons/login-ico3.svg');}
 
             &:hover::after{right: 25px;}
 
@@ -573,7 +575,11 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
   .search-box {padding: 24px;
     li[class*=col] {width: 100% !important;flex-direction: column;align-items: flex-start;
       .search-area, strong {width: 100%;}
-      .search-area {margin-top: 10px;padding-left: 0;}
+      .search-area {margin-top: 10px;padding-left: 0;
+        .calendar{width:100%;
+          .calendar-form{max-width:100%;}
+        }
+      }
       .form-group {max-width: 100% !important;}
       .tit{width:100%;}
       .nowrap.type1{flex-direction: column;}
@@ -629,8 +635,11 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 
   //로그인
   .wrap-login{
-    .login-box{flex-direction: column;
+    .login-box{flex-direction: column;margin-top: 16px;
       .left-box{width:100%;}
+      .right-box{
+        .certification-list{gap:8px}
+      }
     }
   }
 
@@ -715,6 +724,9 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
       .search-area{margin-top: 8px !important;}
     }            
     .advice-txt{display: block;width: 100%;}
+    .form-chip{width:calc(50% - 4px);
+      .form-chip-outline{width:100%;display: flex;}
+    }
   }
   
   //텍스트 박스 

@@ -4,12 +4,14 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <!-- 로그인전 - login / 로그인후 - logout -->
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->    
-            <h3 class="head-tit">Personal customs clearance code inquiry</h3>            
+            <h3 class="head-tit">Personal customs clearance code inquiry</h3>   
+            <h4 class="sr-only">빈텍스트</h4>         
          </div>
          <div class="cont-body">
             <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
@@ -251,7 +253,7 @@
                         </colgroup>
                         <thead>
                            <tr>                                                
-                              <th scope="col"><span class="arr-ico">NO <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col">NO</th>
                               <th scope="col"><span class="arr-ico">Delivery address <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
                               <th scope="col">zip code</th>
                               <th scope="col">Basic address</th>
@@ -260,7 +262,70 @@
                         </thead>
                         <tbody>
                            <tr>
+                              <td>1</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>2</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>3</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>4</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>5</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
                               <td>6</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>7</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>8</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>9</td>
+                              <td class="text-left">우리집1</td>
+                              <td>35351</td>
+                              <td class="text-left">대전광역시 서구 월평동123</td>                        
+                              <td class="text-left">우리집빌라 301호</td>                        
+                           </tr>                                                                                                         
+                           <tr>
+                              <td>10</td>
                               <td class="text-left">우리집1</td>
                               <td>35351</td>
                               <td class="text-left">대전광역시 서구 월평동123</td>                        

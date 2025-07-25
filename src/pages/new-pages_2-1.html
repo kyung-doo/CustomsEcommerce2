@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -221,7 +222,7 @@
                            <strong class="tit">방문예정 일자 <i class="compulsory">필수</i></strong>
                            <div class="inp-box">
                                <div class="calendar w100per">
-                                 <div class="calendar-form mw-390" data-ui="datepicker" maxDate: null>
+                                 <div class="calendar-form mw-390" data-ui="datepicker" data-props="maxDate: null">
                                     <input type="text" title="방문예정 일자 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
                                     <button class="calendar-btn">방문예정 일자 달력보기</button>
                                  </div>                        
@@ -259,7 +260,7 @@
                </div>
                <div class="btn-area btn-end">
                   <div class="align">                            
-                     <button type="button" class="btn primary large">다음</button>                 
+                     <button type="button" class="btn primary large" disabled>다음</button>                 
                   </div>
                </div>  
             </div>

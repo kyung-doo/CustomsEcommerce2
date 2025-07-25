@@ -4,12 +4,13 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">Report of theft of personal customs clearance code</h3>            
+            <h3 class="head-tit">Report of theft of personal customs clearance code</h3>    
+            <h4 class="sr-only">빈텍스트</h4>        
          </div>
          <div class="cont-body">
             <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
@@ -114,7 +115,7 @@
                                        <label for="all_chk_11"><span class="sr-only">전체선택</span></label>
                                     </div>
                                  </th>                                 
-                                 <th scope="col"><span class="arr-ico">NO <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                                 <th scope="col">NO</th>
                                  <th scope="col"><span class="arr-ico">Report date <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>                                 
                                  <th scope="col">Waybill number</th>                                 
                                  <th scope="col">Order number</th>                                 
@@ -127,11 +128,146 @@
                               <tr>
                                  <td>
                                     <div class="form-check medium">
-                                       <input type="checkbox" id="tb_2">
-                                       <label for="tb_2"><span class="sr-only">행선택</span></label>
+                                       <input type="checkbox" id="chk1">
+                                       <label for="chk1"><span class="sr-only">선택</span></label>
                                     </div>
                                  </td>                                 
-                                 <td>999</td>                                 
+                                 <td>1</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>                              
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk2">
+                                       <label for="chk2"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>2</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk3">
+                                       <label for="chk3"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>3</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk4">
+                                       <label for="chk4"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>4</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk5">
+                                       <label for="chk5"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>5</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk6">
+                                       <label for="chk6"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>6</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk7">
+                                       <label for="chk7"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>7</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk8">
+                                       <label for="chk8"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>8</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk9">
+                                       <label for="chk9"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>9</td>                                 
+                                 <td>2025-12-05</td>                                 
+                                 <td>1234123412-123456789101</td>                                 
+                                 <td>Abc123456789 외 1건</td>                                 
+                                 <td>판매자명이들어갑니다</td>                                 
+                                 <td>물품명이들어갑니다다</td>                                 
+                                 <td>반출완료</td>                                                                                            
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div class="form-check medium">
+                                       <input type="checkbox" id="chk10">
+                                       <label for="chk10"><span class="sr-only">선택</span></label>
+                                    </div>
+                                 </td>                                 
+                                 <td>10</td>                                 
                                  <td>2025-12-05</td>                                 
                                  <td>1234123412-123456789101</td>                                 
                                  <td>Abc123456789 외 1건</td>                                 

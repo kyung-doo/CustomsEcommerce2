@@ -17,6 +17,14 @@
   .total-area{border-top:1px solid #717171;margin-top: 24px;padding-top: 24px;display: flex;    
     p{font-size: 15px;}
   }     
+
+  //국민비서 가입절차
+  .population-list{
+    li:first-child .title-type3{margin-top: 0;}     
+    img{width:100%;height:auto;}
+    strong{color:#246BEB;}
+    p{margin-top: 12px;display: flex;gap:13px;margin-bottom: 25px;}
+  }
 }
 .modal-wrap:has(.address-list){padding: 24px;
   .inp-form{border:0;padding: 60px 0 0 0;border-top:1px solid #E4E4E4;border-radius: 0;          
@@ -32,11 +40,20 @@
   .compulsory-txt{margin-bottom: 14px;}
 }
 
+@media (max-width: 767px) {
+  //국민비서 가입절차
+  .population-box{
+    .modal-body{max-height: calc(100vh - 350px);}
+            
+    .modal-footer button{width:100%;}
+  }
+}
+
 @media (max-width: 480px) {
   .modal-body{
     .certification-number{padding: 22px 10px;}        
     .reforwarding{flex-direction: column;
       button{width:100%;margin-top: 21px;}
-    }
-  }  
+    }    
+  }    
 }

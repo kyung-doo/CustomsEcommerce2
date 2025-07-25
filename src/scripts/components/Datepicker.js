@@ -413,10 +413,10 @@ class Datepicker {
     hideCalendar () {
         $("html, body").off('scroll.datepicker');
         $(window).off('resize.datepicker');
-        this.input.removeAttr('disabled');
+        this.input.removeAttr('disabled');        
         $('.calendar-form').removeClass('on');   
         $(document).off('keydown.datepicker');     
-        if(this.calendar) {
+        if(this.calendar) {                        
             this.calendar.find(".btn-cancel").off('click');
             this.calendar.find(".btn-enter").off('click');
             this.calendar.find(".btn-next").off('click');

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">로그인 방식을 선택해주세요. <strong class="txt">정부 통합로그인은 한 번의 로그인으로 연계된 모든 공공 웹서비스를 이용할 수 있는 인증 서비스 입니다.</strong></h3>            
+            <h4 class="sr-only">빈텍스트</h4>
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="wrap-login">
+                  <div class="board-top no-wrap title-top">
+                     <div class="left-box">
+                        <h5 class="title-type">정부 통합 로그인</h5>      
+                        <div class="form-toggle-switch medium">
+                           <input type="checkbox" id="switch5">
+                           <label for="switch5"></label>
+                        </div>
+                     </div>   
+                     <div class="right-box">
+                        <div class="user-box">
+                           <strong>아직 정부 통합인증(Any –ID) 사용자가 아니신가요?</strong>
+                           <button class="user-btn">사용자 등록 <i class="icon btn-arrow-right x-small"></i></button>
+                        </div>
+                        <div class="user-box">
+                           <strong>정부 통합인증(Any-ID)</strong>
+                           <button class="user-btn">사용자 관리 <i class="icon btn-arrow-right x-small"></i></button>
+                        </div>                        
+                     </div>               
+                  </div>                  
+                  <div class="login-box">
+                     <div class="left-box">
+                        <h5 class="title-type3">한 번에 본인인증하고<br> 모든 서비스 이용하기</h5>
+                        <!--
+                        <ul class="login-list-box">      
+                           <li class="list1">
+                              <label for="ex1" class="tit">이름</label>
+                              <div class="inp-box">
+                                 <div class="form-group medium mw-390">                  
+                                    <div class="form-conts">
+                                       <input type="text" id="ex1" class="input" placeholder="홍길동" title="이름을 입력해주세요">
+                                    </div>                           
+                                 </div>
+                              </div>  
+                           </li>                                                   
+                           <li class="list2">
+                              <label for="ex2" class="tit">주민등록번호</label>
+                              <div class="inp-box">
+                                 <div class="build">
+                                    <div class="form-group medium mw-185">                     
+                                       <div class="form-conts">
+                                          <input type="text" class="input" id="ex2" placeholder="991231" title="주민등록번호 앞자리를 입력해주세요">
+                                       </div>                           
+                                    </div>   
+                                    <i class="hy">-</i>
+                                    <div class="form-group medium mw-185">                     
+                                       <div class="form-conts">                                    
+                                          <input type="text" class="input" placeholder="1******" title="주민등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">  
+                                       </div>                           
+                                    </div>   
+                                 </div>
+                                 <div class="form-check">
+                                    <input type="checkbox" name="chk_1" id="chk_1">
+                                    <label for="chk_1">가상키패드 사용</label>
+                                 </div>
+                                 <p class="txt">- 외국인의 경우 외국인등록번호를 입력해주세요.</p>
+                                 <p class="txt">- 관세법시행령 제289조에 따라 주민등록번호 수집이 가능합니다.</p>
+                              </div>                              
+                           </li>
+                           <li class="list3">
+                              <label for="ex3" class="tit">자동입력<br> 방지코드</label>
+                              <div class="inp-box">
+                                 <div class="build">
+                                    <div class="form-group medium mw-200">                     
+                                       <div class="form-conts">
+                                          <input type="text" class="input" id="ex3" title="자동입력 방지코드를 확인할수있습니다" disabled>
+                                       </div>                           
+                                    </div>   
+                                    <div class="form-btn-area">
+                                       <button class="refresh-btn text">초기화<i class="icon refresh small"></i></button>
+                                       <button class="voice-btn text">음성<i class="icon voice small"></i></button>
+                                    </div>
+                                 </div>
+                                 <div class="form-group medium mw-390">                     
+                                    <div class="form-conts">                                    
+                                       <input type="text" class="input" placeholder="자동입력방지코드" title="자동입력방지코드를 입력해주세요">  
+                                    </div>                           
+                                 </div>   
+                              </div>
+                           </li>
+                        </ul>
+                        --> 
+                     </div>
+                     <div class="right-box">
+                        <ul class="certification-list">
+                           <li>
+                              <a href="#none" class="list1">
+                                 <strong class="tit">간편인증</strong>
+                                 <p class="txt">네이버, 카카오, 금융기관 등의 민간 전자서명 사업자가 제공하는 전자서명으로 로그인하기</p>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#none" class="list2">
+                                 <strong class="tit">공동 인증서</strong>
+                                 <p class="txt">공동인증서(구 공인인증서)는 개인용 컴퓨터 또는 USB, 스마트폰에 보관되어 있는 인증서를 이용하여 로그인하기</p>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#none" class="list3">
+                                 <strong class="tit">금융 인증서</strong>
+                                 <p class="txt">은행 앱 또는 인터넷뱅킹 사이트에서 발급한 금융결제원의 인증서로 로그인하기</p>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

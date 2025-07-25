@@ -44,7 +44,7 @@ button {border: 0;}
 }
 
 /** 로그인전 **/
-#header.login .header-container {
+#wrap.login #header .header-container {
   //로그인 유저 정보
   .name-box{display: none;}
 
@@ -59,7 +59,7 @@ button {border: 0;}
 }   
 
 /** 로그인후 **/
-#header.logout .header-container{
+#wrap.logout #header .header-container{
   //로그인 유저 정보
   .name-box{display: flex;}
 
@@ -154,10 +154,9 @@ button {border: 0;}
 }
 
 @media (max-width: 1200px) {
+  //로그인전
+  #wrap.login .popup-box .modal{left: -579px !important;}
   #header{
-    //로그인전
-    &.login .popup-box .modal{left: -579px;}
-
     .header-actions{
       .btn-navi {font-size: 16px;}             
     }
@@ -165,6 +164,28 @@ button {border: 0;}
 }
 
 @media (max-width: 1023px) {
+  #wrap.logout  .header-container .name-box{display: none !important;}
+  /** 로그인전 **/
+  #wrap.login {
+    .mobile-top-area {height: 108px;display: flex;
+      .name-box{display: none;}   
+    }
+    .main-menu {
+      .gnb-toggle-wrap {top: 108px;height: calc(100% - 120px);}
+      &:before {top: 108px;}
+    }                      
+  }
+
+  /** 로그인후 **/
+  #wrap.logout {
+    .mobile-top-area {height: 153px;display: flex;}
+    .main-menu {
+      .gnb-toggle-wrap {top: 153px;height: calc(100% - 150px);}
+      &:before {top: 153px;}
+    }  
+    
+    .login-work{display: none;}         
+  }
   #masthead .nuri-txt {font-size: 14px;}
   #header {
     .logo {width: 120px;
@@ -193,9 +214,7 @@ button {border: 0;}
         .inform{margin-left: 23px;}
         .time{margin-left: 15px;}
       }   
-    }
-
-    &.logout  .header-container .name-box{display: none;}
+    }   
 
     /** 팝업 **/
     .header-actions .popup-box{
@@ -203,31 +222,8 @@ button {border: 0;}
       .btn-navi.popup{
         &.active::after{right: 17px;top: 63px;}
       }
-      .modal{width: 95%;top:79px;left: 50%;height:auto;transform: translateX(-50%);}
+      .modal{width: 95%;top:79px;left: 50% !important;height:auto;transform: translateX(-50%);}
     }   
-
-
-    /** 로그인전 **/
-    &.login {
-      .mobile-top-area {height: 108px;display: flex;
-        .name-box{display: none;}   
-      }
-      .main-menu {
-        .gnb-toggle-wrap {top: 108px;height: calc(100% - 120px);}
-        &:before {top: 108px;}
-      }                      
-    }
-
-    /** 로그인후 **/
-    &.logout {
-      .mobile-top-area {height: 153px;display: flex;}
-      .main-menu {
-        .gnb-toggle-wrap {top: 153px;height: calc(100% - 150px);}
-        &:before {top: 153px;}
-      }  
-      
-      .login-work{display: none;}         
-    }
   }
 }
 
