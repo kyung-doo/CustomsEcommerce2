@@ -28,6 +28,7 @@ class Datepicker {
         this.currentYear = null;
         this.currentMonth = null;
         if(!this.props.maxDate) this.props.maxDate = Datepicker.MAXIMUM_DATE;
+        else                    this.props.maxDate = new Date(this.props.maxDate);
         this.init();
     }
 
