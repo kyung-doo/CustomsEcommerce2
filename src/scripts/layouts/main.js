@@ -13,95 +13,58 @@ $(() => {
             box.removeClass('on')
             th.closest(box).addClass('on')            
         })
-    });
+    });    
 
-    function slide(){
-        
-    }
+    function slide(slideName,direction,pagination,slidesPerView,spaceBetween,page,next,prev){        
+        $('.slide-box').each(function(i){
+            var i = i + 1
+            var speed = 5000;
+            var stopBtn = $(slideName).closest('.slide-box').find('.swiper-stop')
+            $(this).find('.swiper-pagination').addClass('pagination'+i)
+            $(this).find('.swiper-button-next').addClass('next-btn'+i)
+            $(this).find('.swiper-button-prev').addClass('prev-btn'+i)
 
-    //슬라이드
-    $(function(){     
-        $('.slide-box').each(function(i){  
-                                                             
-            //리스트 슬라이드
-            var swiper1 = new Swiper('#list-slide', {            
+            var swiper = new Swiper(slideName, {            
                 loop: true,     
-                slidesPerView: 4,
-                direction: 'vertical', 
+                slidesPerView: slidesPerView,
+                direction: direction, 
                 autoHeight : true,
-                spaceBetween: 12,  
+                spaceBetween: spaceBetween,  
                 freeMode:true,
                 autoplay:{
-                    delay: 1000,
-                    disableOnInteraction: false,
-                    reverseDirection: false,
-                }, 
+                    delay: speed,
+                    disableOnInteraction: false,                    
+                },                 
 
                 pagination: {
-                    el: '.list-slide .swiper-pagination',
-                    type: 'bullets',
+                    el: page,
+                    type: pagination,
                 },
                 
                 navigation: {
-                    nextEl: '.list-slide .swiper-button-next',
-                    prevEl: '.list-slide .swiper-button-prev',
+                    nextEl: next,
+                    prevEl: prev,
                 },
             });
-
-            var sw = 0;    
-            $('.list-slide .swiper-stop').click(function(){
-                if(sw==0){
-                    $(this).addClass('on');
-                    $(this).text('재생');
-                    swiper1.autoplay.stop();            
-                    sw = 1;
-                }else{
-                    $(this).removeClass('on');
-                    $(this).text('정지');
-                    swiper1.autoplay.start();
-                    sw = 0;
-                }
-            });
-
-
-            //이미지 슬라이드
-            var swiper2 = new Swiper('#images-slide', {            
-                loop: true,     
-                slidesPerView: 1,
-                direction: 'horizontal',   
-                autoplay:{
-                    delay: 1000,
-                    disableOnInteraction: false,
-                    reverseDirection: false,
-                }, 
-
-                pagination: {
-                    el: '.images-slide .swiper-pagination',
-                    type: 'fraction',
-                },
-                
-                navigation: {
-                    nextEl: '.images-slide .swiper-button-next',
-                    prevEl: '.images-slide .swiper-button-prev',
-                },
-            });
-        
+            
             var sw1 = 0;    
-            $('.images-slide .swiper-stop').click(function(){
+            stopBtn.click(function(){                
                 if(sw1==0){
                     $(this).addClass('on');
-                    $(this).text('재생');
-                    swiper2.autoplay.stop();            
+                    $(this).text('재생');                    
+                    swiper.autoplay.stop();     
                     sw1 = 1;
                 }else{
                     $(this).removeClass('on');
                     $(this).text('정지');
-                    swiper2.autoplay.start();
+                    swiper.autoplay.start();
                     sw1 = 0;
                 }
             }); 
             
-        });           
-    });
+        });
+    }
 
+    slide('#list-slide','vertical','bullets',4,12,'.pagination1','.next-btn1','.prev-btn1');
+    slide('#images-slide','horizontal','fraction',1,0,'.pagination2','.next-btn2','.prev-btn2');
 });
