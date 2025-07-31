@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">기본 정보 입력</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="active">
+                        <span>
+                              <em class="sr-only">현재단계</em>
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">배송지 주소 등록</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">알림 동의</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>                     
+                              <i class="step">Step 4</i>
+                              <span class="step-tit">확인 및 등록</span>
+                        </span>
+                     </li>               
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+               <div class="accordion-header">
+                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호 정보변경 방법</strong> <i class="icon btn-arrow-down medium"></i></a>
+               </div>
+               <div class="accordion-body d-none">
+                  <p class="txt">개인통관고유부호 정보변경 방법</p>                  
+               </div>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">기본 정보</h5>     
+
+
+
+               <!-- 주소검색 팝업 1 -->
+               <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">주소검색 팝업 1</button>
+               <div id="modal1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-640 mh-844">
+                     <div class="modal-header">
+                        <h5>주소 검색</h5>                     
+                     </div>
+                     <div class="modal-body wrap-add-modal" tabindex="0">                        
+                        <div class="modal-cont">
+                           <div class="form-group large wrap-search-area">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" placeholder="주소를 입력해주세요" title="주소를 입력해주세요">
+                              </div>
+                              <button class="sch-delete"><i class="icon delete-circle medium">검색어 삭제</i></button>
+                              <button class="sach"><i class="icon search x-large">주소검색</i></button>                              
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>                           
+                     </div>
+                  </div>
+               </div> 
+               <!-- 주소검색 팝업 1 -->
+
+               <!-- 주소검색 팝업 2 -->
+               <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">주소검색 팝업 2</button>
+               <div id="modal2" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-640 mh-844">
+                     <div class="modal-header">
+                        <h5>주소 검색</h5>                     
+                     </div>
+                     <div class="modal-body wrap-add-modal" tabindex="0">                        
+                        <div class="modal-cont">
+                           <div class="form-group large wrap-search-area">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" value="중앙박물관" placeholder="주소를 입력해주세요" title="주소를 입력해주세요">
+                              </div>
+                              <button class="sch-delete"><i class="icon delete-circle medium">검색어 삭제</i></button>
+                              <button class="sach"><i class="icon search x-large">주소검색</i></button>                              
+                           </div>
+                           <div class="wrap-check-tbl">
+                              <div class="table-wrap pc">
+                                 <table class="tbl col check">
+                                    <caption>주소 검색에 대한 우편번호,도명주소  표로 로 구성되어있다.</caption>
+                                    <colgroup>
+                                       <col style="width: 90PX;">                                       
+                                       <col>                                       
+                                    </colgroup>
+                                    <thead>
+                                       <tr>                                                
+                                          <th scope="col">우편번호</th>                                          
+                                          <th scope="col">도로명주소</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>04383</td>
+                                          <td>
+                                             <a href="#none">
+                                                <p class="text-left">서울특별시 용산구 서빙고로 137 (용산동6가)</p>
+                                                <p class="font-4 cl-6 text-left">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>
+                                             </a>
+                                          </td>                                          
+                                       </tr>
+                                       <tr>
+                                          <td>04383</td>
+                                          <td>
+                                             <a href="#none">
+                                                <p class="text-left">서울특별시 용산구 서빙고로 137 (용산동6가)</p>
+                                                <p class="font-4 cl-6 text-left">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>
+                                             </a>
+                                          </td>                                          
+                                       </tr>
+                                       <tr>
+                                          <td>04383</td>
+                                          <td>
+                                             <a href="#none">
+                                                <p class="text-left">서울특별시 용산구 서빙고로 137 (용산동6가)</p>
+                                                <p class="font-4 cl-6 text-left">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>
+                                             </a>
+                                          </td>                                          
+                                       </tr>
+                                       <tr>
+                                          <td>04383</td>
+                                          <td>
+                                             <a href="#none">
+                                                <p class="text-left">서울특별시 용산구 서빙고로 137 (용산동6가)</p>
+                                                <p class="font-4 cl-6 text-left">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>
+                                             </a>
+                                          </td>                                          
+                                       </tr>
+                                       <tr>
+                                          <td>04383</td>
+                                          <td>
+                                             <a href="#none">
+                                                <p class="text-left">서울특별시 용산구 서빙고로 137 (용산동6가)</p>
+                                                <p class="font-4 cl-6 text-left">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>
+                                             </a>
+                                          </td>                                          
+                                       </tr>                                                              
+                                    </tbody>
+                                 </table>
+                              </div>
+                              <div class="table-wrap mo">                     
+                                 <ul class="wrap-body box-line">
+                                    <li>
+                                       <ul class="body">                                                            
+                                          <li>                                 
+                                             <span class="font-4 cl-6">04383</span>
+                                             <div class="txt-area">
+                                                <span class="txt cl-5">
+                                                   서울특별시 용산구 서빙고로 137 (용산동6가)
+                                                </span>                                    
+                                             </div>    
+                                             <p class="font-4 cl-6">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>                             
+                                          </li>                                                                                          
+                                       </ul>
+                                    </li>   
+                                    <li>
+                                       <ul class="body">                                                            
+                                          <li>                                 
+                                             <span class="font-4 cl-6">04383</span>
+                                             <div class="txt-area">
+                                                <span class="txt cl-5">
+                                                   서울특별시 용산구 서빙고로 137 (용산동6가)
+                                                </span>                                    
+                                             </div>    
+                                             <p class="font-4 cl-6">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>                             
+                                          </li>                                                                                          
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="body">                                                            
+                                          <li>                                 
+                                             <span class="font-4 cl-6">04383</span>
+                                             <div class="txt-area">
+                                                <span class="txt cl-5">
+                                                   서울특별시 용산구 서빙고로 137 (용산동6가)
+                                                </span>                                    
+                                             </div>    
+                                             <p class="font-4 cl-6">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>                             
+                                          </li>                                                                                          
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="body">                                                            
+                                          <li>                                 
+                                             <span class="font-4 cl-6">04383</span>
+                                             <div class="txt-area">
+                                                <span class="txt cl-5">
+                                                   서울특별시 용산구 서빙고로 137 (용산동6가)
+                                                </span>                                    
+                                             </div>    
+                                             <p class="font-4 cl-6">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>                             
+                                          </li>                                                                                          
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="body">                                                            
+                                          <li>                                 
+                                             <span class="font-4 cl-6">04383</span>
+                                             <div class="txt-area">
+                                                <span class="txt cl-5">
+                                                   서울특별시 용산구 서빙고로 137 (용산동6가)
+                                                </span>                                    
+                                             </div>    
+                                             <p class="font-4 cl-6">[지번] 서울특별시 용산구 용산동6가 168-6 국립중앙박물관</p>                             
+                                          </li>                                                                                          
+                                       </ul>
+                                    </li>                                                                                                                                                                                                                                                                         
+                                 </ul>
+                              </div> 
+                           </div>
+                           <div class="pagination pagination-type1">               
+                              <button class="page-navi prev" disabled="">이전</button>
+                              <div class="page-links">
+                                 <a class="page-link mobile-link" href="#">1</a>
+                                 <span class="page-link link-dot mobile-dot"></span>
+                                 <a class="page-link" href="#">2</a>
+                                 <a class="page-link mobile-link" href="#">3</a>
+                                 <a class="page-link mobile-link" href="#">4</a>
+                                 <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>5</a>                                                 
+                                 <span class="page-link link-dot"></span>
+                                 <a class="page-link mobile-link" href="#">120</a>
+                              </div>
+                              <button class="page-navi next">다음</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>                           
+                     </div>
+                  </div>
+               </div> 
+               <!-- 주소검색 팝업 2 -->
+
+               <!-- 주소검색 팝업 3 -->
+               <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">주소검색 팝업 3</button>
+               <div id="modal3" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-640 mh-844">
+                     <div class="modal-header">
+                        <h5>주소 검색</h5>                     
+                     </div>
+                     <div class="modal-body wrap-add-modal" tabindex="0">                        
+                        <div class="modal-cont">
+                           <div class="form-group large wrap-search-area">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" value="중앙박물관" placeholder="주소를 입력해주세요" title="주소를 입력해주세요">
+                              </div>
+                              <button class="sch-delete"><i class="icon delete-circle medium">검색어 삭제</i></button>
+                              <button class="sach"><i class="icon search x-large">주소검색</i></button>                              
+                           </div>
+                           <h5 class="title-type3 font-2">상세주소 입력</h5>
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>                                                         
+                                    <li class="col1">
+                                       <strong class="tit">도로명<br>주소</strong>
+                                       <div class="inp-box">
+                                          <p>서울특별시 용산구 서빙고로 137</p>
+                                       </div>   
+                                    </li>                                                         
+                                    <li class="col1">
+                                       <strong class="tit">상세주소<br>입력</strong>
+                                       <div class="inp-box">
+                                          <div class="box1">
+                                             <div class="form-check medium">
+                                                <input type="radio" name="radio" id="radio1" checked>
+                                                <label for="radio1">동층호 선택</label>
+                                             </div>
+                                             <div class="form-check medium">
+                                                <input type="radio" name="radio" id="radio2">
+                                                <label for="radio2">직접입력</label>
+                                             </div>
+                                          </div>
+                                          <div class="box2">
+                                             <div class="form-group medium mw-140">                  
+                                                <div class="form-conts">
+                                                   <select class="form-select" required="" title="상세주소를 선택해주세요">
+                                                   <option value="" selected="" disabled="" hidden="">등 표기 없음</option>
+                                                   <option value="항목1">항목1</option>
+                                                   <option value="항목2">항목2</option>
+                                                   <option value="항목3">항목3</option>
+                                                   </select>
+                                                </div>                              
+                                             </div>
+                                             <div class="form-group medium mw-140">                  
+                                                <div class="form-conts">
+                                                   <select class="form-select" required="" title="상세주소를 선택해주세요">
+                                                   <option value="" selected="" disabled="" hidden="">층 표기 없음</option>
+                                                   <option value="항목1">항목1</option>
+                                                   <option value="항목2">항목2</option>
+                                                   <option value="항목3">항목3</option>
+                                                   </select>
+                                                </div>                              
+                                             </div>
+                                             <div class="form-group medium mw-140">                  
+                                                <div class="form-conts">
+                                                   <select class="form-select" required="" title="상세주소를 선택해주세요">
+                                                   <option value="" selected="" disabled="" hidden="">호 표기 없음</option>
+                                                   <option value="항목1">항목1</option>
+                                                   <option value="항목2">항목2</option>
+                                                   <option value="항목3">항목3</option>
+                                                   </select>
+                                                </div>                              
+                                             </div>
+                                          </div>
+                                          <p>(용산동6가)</p>
+                                       </div>   
+                                    </li>                                                         
+                                 </ul>                  
+                              </div>   
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>     
+                           <button type="button" class="btn primary medium">주소입력</button>                      
+                     </div>
+                  </div>
+               </div> 
+               <!-- 주소검색 팝업 3 -->
+
+               <!-- 주소검색 팝업 4 -->
+               <button type="button" data-modal-target="#modal4" style="width:100%;height:50px;margin-bottom:20px">주소검색 팝업 4</button>
+               <div id="modal4" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-640 mh-844">
+                     <div class="modal-header">
+                        <h5>주소 검색</h5>                     
+                     </div>
+                     <div class="modal-body wrap-add-modal" tabindex="0">                        
+                        <div class="modal-cont">
+                           <div class="form-group large wrap-search-area">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" value="중앙박물관" placeholder="주소를 입력해주세요" title="주소를 입력해주세요">
+                              </div>
+                              <button class="sch-delete"><i class="icon delete-circle medium">검색어 삭제</i></button>
+                              <button class="sach"><i class="icon search x-large">주소검색</i></button>                              
+                           </div>
+                           <h5 class="title-type3 font-2">상세주소 입력</h5>
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>                                                         
+                                    <li class="col1">
+                                       <strong class="tit">도로명<br>주소</strong>
+                                       <div class="inp-box">
+                                          <p>서울특별시 용산구 서빙고로 137</p>
+                                       </div>   
+                                    </li>                                                         
+                                    <li class="col1">
+                                       <strong class="tit">상세주소<br>입력</strong>
+                                       <div class="inp-box">
+                                          <div class="box1">
+                                             <div class="form-check medium">
+                                                <input type="radio" name="radio1" id="radio11">
+                                                <label for="radio11">동층호 선택</label>
+                                             </div>
+                                             <div class="form-check medium">
+                                                <input type="radio" name="radio1" id="radio22" checked>
+                                                <label for="radio22">직접입력</label>
+                                             </div>
+                                          </div>
+                                          <div class="box2">
+                                             <div class="form-group medium mw-436">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" title="상세주소를 입력해주세요">
+                                                </div>                                                
+                                             </div>
+                                          </div>
+                                          <p>(용산동6가)</p>
+                                       </div>   
+                                    </li>                                                         
+                                 </ul>                  
+                              </div>   
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>     
+                           <button type="button" class="btn primary medium">주소입력</button>                      
+                     </div>
+                  </div>
+               </div> 
+               <!-- 주소검색 팝업 4 -->
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

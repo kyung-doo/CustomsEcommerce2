@@ -61,12 +61,16 @@
 .modal-cont{
   .search-box + .compulsory-txt{margin-top: 24px;margin-bottom: 49px;}
   .title-type3{margin-top: 48px;margin-bottom: 17px;}
-  .title-type3:first-child{margin-top: 20px;}
+  .title-type3:first-child{margin-top: 5px;}
   .advice-txt{margin-top: 16px;}
   .modal-cont{margin-bottom: 32px;}
   .modal-cont .title-type3:first-child{margin-top: 0;}
   .board-top.tbl-top{margin-bottom: 19px;}
   //.board-top.tbl-top:first-child{margin-bottom: 0;}
+  .title-type3 + .wrap-cont-tbl .tbl.col.cont{margin-top: 0;}
+  .title-type3 + .wrap-cont-tbl.pc + .wrap-cont-tbl.mo .tbl.col.cont{margin-top: 0;}
+  .wrap-form-area + .board-top.tbl-top{margin-top: 48px;}
+  .form-group.large + .wrap-check-tbl{margin-top: 24px;}
   
 }
 

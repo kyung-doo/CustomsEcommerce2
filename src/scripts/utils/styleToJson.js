@@ -37,44 +37,40 @@ export default function (el, style) {
     return obj;
 }
 
-//접근성
-function accessibility(){
-    $('input,select').each(function(i){
-        var title = $(this).attr('title');               
-        
-        $('.form-group').eq(i).append('<div style="color:red;margin-top:10px;">타이틀 : '+title+'</div>')                            
-    })
-    
-     $('label').each(function(i){        
-        var info = $(this).attr('for');     
-        $(this).eq(i).append('<div style="color:red;width:100%;">for정보 : '+info+'</div>')                        
-    })
-    /*
-    $('.cont-area caption').each(function(i){        
-        var caption = $(this).text();     
+// 로그인
+$(function(){
+    var loginSwitch = $('.wrap-login .title-top .left-box .form-toggle-switch input[type=checkbox]');
+    var loginBtn = $('.wrap-login .title-top .left-box .form-toggle-switch label');
+    var loginTxt = $('.wrap-login .title-top .left-box .form-toggle-switch label span');   
+    var titHide = $('.wrap-login .title-top.hide');     
+    var cerHide = $('.wrap-login .certification-list.hide');     
 
-        $('.table-wrap').eq(i).append('<div style="color:red;width:100%:margin-top:10px;">'+caption+'</div>')                
-    })
+    loginBtn.click(function(){
+        if (loginSwitch.is(":checked")) {
+            loginTxt.text('미사용');
+            titHide.show();
+            cerHide.show();
+        } else {
+            loginTxt.text('사용');
+            titHide.hide();
+            cerHide.hide();
+        } 
+    });
 
-   
-        */
-}
-
-//리스트 타입 제일큰 넓이값 구하기
-function formList() {
-    var title = $(".wrap-form-area .inp-form .txt-list .tit");
-    var width_array = title.map(function () {
-        return $(this).width();
-    }).get();
-
-    var max_width = Math.max.apply(Math, width_array);
-    
-    if(max_width >= 180){
-        title.css({"width":"180px"})
-    }else{
-        title.width(max_width);
-    }        
-}
+    loginSwitch.keyup(function(e){        
+        if (event.keyCode  == 32) {            
+            if (loginSwitch.is(":checked")) {
+                loginTxt.text('미사용');
+                titHide.show();
+                cerHide.show();
+            } else {
+                loginTxt.text('사용');
+                titHide.hide();
+                cerHide.hide();
+            }    
+        }        
+    });
+})
 
 //반응형 확인
 function windowR(){
@@ -92,10 +88,6 @@ function windowR(){
     });
 }
 
-$(function(){
-  //accessibility()  
-  //formList() 
-  windowR()
- // passwordInput()
-  
+$(function(){  
+  windowR()   
 })

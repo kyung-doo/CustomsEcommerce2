@@ -5,7 +5,7 @@
 </head>
 <body>
    <!-- 로그인전 - login / 로그인후 - logout -->
-   <div id="wrap" class="main logout">
+   <div id="wrap" class="main login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -19,40 +19,40 @@
             </div>
             <div class="cont-box">  
                <div class="wrap-slide-box">                  
-                  <div class="slide-box list-slide">            
+                  <div class="slide-box slide-area1">            
                      <div class="swiper" id="list-slide">            
                         <div class="swiper-wrapper">               
                            <div class="swiper-slide">
-                              <a href="#none">
+                              <a href="javascript: void(0);" class="tab01">
                                  <p class="kr-txt">1.개인통관 고유부호가<br> 필요하시나요?</p>                                 
                               </a>
                            </div>
                            <div class="swiper-slide">
-                              <a href="#none">
+                              <a href="javascript: void(0);" class="tab02">
                                  <p class="kr-txt">2.개인통관 고유부호가<br> 필요하시나요?</p>
                                  <p class="en-txt">Do you need<br> Personal Customs Code?</p>
                               </a>
                            </div>
                            <div class="swiper-slide">
-                              <a href="#none">
+                              <a href="javascript: void(0);" class="tab03">
                                  <p class="kr-txt">3.개인통관 고유부호가 필요하시나요?</p>
                                  <p class="en-txt">Do you need<br> Personal Customs Code?</p>
                               </a>
                            </div>
                            <div class="swiper-slide">
-                              <a href="#none">
+                              <a href="javascript: void(0);" class="tab04">
                                  <p class="kr-txt">4.개인통관<br> 고유부호가 필요하시나요?</p>
                                  <p class="en-txt">Do you need Personal Customs Code?</p>
                               </a>
                            </div>
                            <div class="swiper-slide">
-                              <a href="#none">
+                              <a href="javascript: void(0);" class="tab05">
                                  <p class="kr-txt">5.개인통관 고유부호가 필요하시나요?</p>
                                  <p class="en-txt">Do you need Personal Customs Code?</p>
                               </a>
                            </div>
                            <div class="swiper-slide">
-                              <a href="#none">
+                              <a href="javascript: void(0);" class="tab06">
                                  <p class="kr-txt">6.개인통관 고유부호가 필요하시나요?</p>
                                  <p class="en-txt">Do you need Personal Customs Code?</p>
                               </a>
@@ -67,22 +67,22 @@
                      </div> 
                   </div>                                      
                   <div class="slide-show-box">
-                     <div id="tab01" class="tab-cont">
+                     <div class="tab-cont tab01">
                         111
                      </div>
-                     <div id="tab02" class="tab-cont">
+                     <div class="tab-cont tab02">
                         222
                      </div>
-                     <div id="tab03" class="tab-cont">
+                     <div class="tab-cont tab03">
                         333
                      </div>
-                     <div id="tab04" class="tab-cont">
+                     <div class="tab-cont tab04">
                         444
                      </div>
-                     <div id="tab05" class="tab-cont">
+                     <div class="tab-cont tab05">
                         555
                      </div>
-                     <div id="tab06" class="tab-cont">
+                     <div class="tab-cont tab06">
                         666
                      </div>
                   </div>                  
@@ -102,7 +102,7 @@
                <!-- 로그인전 -->               
 
                <!-- 로그인후 danger-chtxt[위험] safety-chtxt[안전] 아무것도 없으면 기본 -->               
-               <div class="login-box logout danger-chtxt">
+               <div class="login-box logout">
                   <div class="tit-box">
                      <strong class="tit">김관세님</strong>                     
                      <a href="#none" class="mypages">마이페이지 <i class="icon btn-arrow-right medium"></i></a>
@@ -135,14 +135,15 @@
                   </div>                  
                   <div class="btn-box">                     
                      <button class="btn apply"><i>개인통관고유부호 신청하기</i></button>
-                     <button class="btn plagiarism"><i>도용신고</i></button>                     
+                     <button class="btn plagiarism"><i>도용신고</i></button>
+                     <button class="btn detail"><i>자세히</i></button>
                   </div>                  
                </div>               
                <!-- 로그인후 -->
             </div>
          </div>
          <div class="box2">
-            <div class="slide-box images-slide">            
+            <div class="slide-box slide-area2">            
                <div class="swiper" id="images-slide">            
                  <div class="swiper-wrapper">               
                      <div class="swiper-slide"><a href="#none"><img src="../assets/image/slide-img2-1.png" alt="통관정보조회 관세청 전자상거래포털 신규오픈!"></a></div>

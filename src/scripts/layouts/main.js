@@ -17,7 +17,7 @@ $(() => {
         })
     });    
 
-    //
+    //리스트 슬라이드 tab
     $(function(){
         var btn = $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide a');
 

@@ -10,8 +10,8 @@
     .txt {font-size: 19px;}    
   }
   .file-list {position: relative;line-height: 150%;    
-    .total {margin-bottom: 24px;}
-    .current {color: #1D56BC;}
+    .total {margin-bottom: 24px;font-weight: 700;}
+    .current {color: #1D56BC;font-weight: 700;}
   }
   .upload-list {display: flex;flex-direction: column;gap: 16px;    
     .file-name {padding-right: 20px;margin: 8px 0;}

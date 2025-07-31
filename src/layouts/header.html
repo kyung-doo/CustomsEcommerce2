@@ -83,7 +83,7 @@
                      <div class="modal-wrap in-sch-box">                        
                         <div class="modal-body" tabindex="0">                           
                            <strong class="tit">검색어를 입력해주세요</strong>
-                           <div class="sch-box">
+                           <div class="sch-box wrap-search-area">
                               <input type="text" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요">
                               <button class="sch-delete"><i class="icon delete-circle xx-large">검색어 삭제</i></button>
                               <button class="sch"><i class="icon search xxx-large">검색</i></button>                              
@@ -164,7 +164,7 @@
                                     <strong class="sub-title">개인통관고유부호 신청 <span>Application for personal customs clearance code</span></strong>
                                     <a href="javascript: void(0);" class="sub-title mobile-dep-menu" title="메뉴열기">개인통관고유부호 신청 <span>Application for personal customs clearance code</span> <i class="icon btn-arrow-down small"></i></a>
                                     <ul class="depth2">
-                                       <li><a href="javascript: void(0);"><i>개인통관고유부호 신규/재발급</i> <span>New personal customs clearance code clearance code</span></a></li>
+                                       <li><a href="javascript: void(0);"><i>개인통관고유부호 신규/부호변경</i> <span>New personal customs clearance code clearance code</span></a></li>
                                        <li><a href="javascript: void(0);"><i>개인통관고유부호 사용정지/해제</i> <span>Suspension/Release of Personal Customs Code</span></a></li>
                                        <li><a href="javascript: void(0);"><i>개인통관고유부호 유효기간 갱신</i> <span>Renewal of validity period of personal customs clearance code</span></a></li>
                                        <li><a href="javascript: void(0);"><i>개인통관고유부호 해지 신청</i> <span>Application for cancellation of personal customs clearance code</span></a></li>
@@ -191,6 +191,18 @@
                                     <a href="javascript: void(0);" class="sub-title mobile-dep-menu" title="메뉴열기">해외직구 인증번호 발급내역 <span>Overseas direct purchase authentication number issuance details</span> <i class="icon btn-arrow-down small"></i></a>
                                     <ul class="depth2">
                                        <li><a href="javascript: void(0);"><i>일회용 인증번호/개인통관고유부호<br>발급 내역 조회</i> <span>Inquiry on issuance history of one-time authentication number/personal customs code</span></a></li>                                    
+                                    </ul>
+                                 </div>                              
+                              </div>                              
+                           </li>
+                           <li class="last-menu right-menu">                                                         
+                              <div class="gnb-sub-list">
+                                 <div class="gnb-sub-content">
+                                    <strong class="sub-title">개인통관고유부호 방문발급 사전 신청 <span>Pre-application for issuance of personal customs clearance code</span></strong>
+                                    <a href="javascript: void(0);" class="sub-title mobile-dep-menu" title="메뉴열기">개인통관고유부호 방문발급 사전 신청 <span>Pre-application for issuance of personal customs clearance code</span> <i class="icon btn-arrow-down small"></i></a>
+                                    <ul class="depth2">
+                                       <li><a href="javascript: void(0);"><i class="no-ico">사전신청 등록</i> <span>Pre-application registration</span></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">사전신청 사항 조회/정보변경</i> <span>Check pre-application details/change information</span></a></li>                                    
                                     </ul>
                                  </div>                              
                               </div>                              
@@ -296,17 +308,15 @@
                            </div>                        
                         </div>
                         <ul class="gnb-list">
-                           <li>                                                         
+                           <li class="w-auto">                                                         
                               <div class="gnb-sub-list">
                                  <div class="gnb-sub-content">
                                     <strong class="sub-title">통계</strong>
                                     <a href="javascript: void(0);"  class="sub-title mobile-dep-menu" title="메뉴열기">통계 <i class="icon btn-arrow-down small"></i></a>
                                     <ul class="depth2">
-                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별 수입통관</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">물품별 수입통관</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">통관 단계별 소요시간</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별 소요시간</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">발송국별 소요시간</i></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">년도별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 통관 소요시간 현황</i></a></li>                                                                           
                                     </ul>
                                  </div>                              
                               </div>                              
@@ -381,13 +391,9 @@
                               <div class="gnb-sub-list">
                                  <div class="gnb-sub-content">                                 
                                     <ul class="depth2">
-                                       <li><a href="javascript: void(0);"><i class="no-ico">마이페이지</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">구매이력조회</i></a></li>                                                                           
-                                       <li><a href="javascript: void(0);"><i class="no-ico">메세지조회</i></a></li>   
-                                       <li><a href="javascript: void(0);"><i class="no-ico">개명신청</i></a></li>   
-                                       <li><a href="javascript: void(0);"><i class="no-ico">관세납부현황</i></a></li>   
-                                       <li><a href="javascript: void(0);"><i class="no-ico">통관·납부·환급내역 조회</i></a></li>   
-                                       <li><a href="javascript: void(0);"><i class="no-ico">개인정보 및 약관동의[기타]</i></a></li>                                                                        
+                                       <li><a href="javascript: void(0);"><i class="no-ico">나의 개인통관고유부호</i></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">나의 메시지</i></a></li>                                                                           
+                                       <li><a href="javascript: void(0);"><i class="no-ico">통관 현황</i></a></li>                                          
                                     </ul>
                                  </div>                              
                               </div>                              
@@ -431,7 +437,7 @@
                               <div class="gnb-sub-content">
                                  <strong class="sub-title">개인통관고유부호 신청 <span>Application for personal customs clearance code</span></strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i>개인통관고유부호 신규/재발급</i> <span>New personal customs clearance code clearance code</span></a></li>
+                                    <li><a href="javascript: void(0);"><i>개인통관고유부호 신규/부호변경</i> <span>New personal customs clearance code clearance code</span></a></li>
                                     <li><a href="javascript: void(0);"><i>개인통관고유부호 사용정지/해제</i> <span>Suspension/Release of Personal Customs Code</span></a></li>
                                     <li><a href="javascript: void(0);"><i>개인통관고유부호 유효기간 갱신</i> <span>Renewal of validity period of personal customs clearance code</span></a></li>
                                     <li><a href="javascript: void(0);"><i>개인통관고유부호 해지 신청</i> <span>Application for cancellation of personal customs clearance code</span></a></li>
@@ -450,13 +456,25 @@
                               </div>                              
                            </div>                           
                         </li>                      
-                        <li class="last-menu">                                                      
+                        <li class="last-menu ml-0">                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">
                                  <strong class="sub-title">해외직구 인증번호 발급내역 <span>Overseas purchase authentication number details</span></strong>
                                  <a href="javascript: void(0);"  class="sub-title">해외직구 인증번호 발급내역 <span>Overseas purchase authentication number details</span></a>
                                  <ul class="depth2">
                                     <li><a href="javascript: void(0);"><i>일회용 인증번호/개인통관고유부호 발급 내역 조회</i> <span>Inquiry on issuance history of one-time authentication number/personal customs code</span></a></li>                                    
+                                 </ul>
+                              </div>                              
+                           </div>                           
+                        </li>                                                                   
+                        <li class="last-menu">                                                      
+                           <div class="gnb-sub-list">
+                              <div class="gnb-sub-content">
+                                 <strong class="sub-title">개인통관고유부호 방문발급 사전 신청 <span>Pre-application for issuance of personal customs clearance code</span></strong>
+                                 <a href="javascript: void(0);"  class="sub-title">개인통관고유부호 방문발급 사전 신청 <span>Pre-application for issuance of personal customs clearance code</span></a>
+                                 <ul class="depth2">
+                                    <li><a href="javascript: void(0);"><i>사전신청 등록</i> <span>Pre-application registration</span></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i>사전신청 사항 조회/정보변경</i> <span>Check pre-application details/change information</span></a></li>                                    
                                  </ul>
                               </div>                              
                            </div>                           
@@ -470,16 +488,16 @@
                   <div class="gnb-main-list">
                      <div class="gnb-title">
                         <div class="gnb-title-box">
-                           <strong class="left-title">해외직구 납부·고지·환급 <span>Overseas direct purchase paymentnotification refund</span></strong>                        
+                           <strong class="left-title">해외직구 납부·고지·환급</strong>                        
                         </div>                        
                      </div>
                      <ul class="gnb-list">
                         <li>                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">
-                                 <strong class="sub-title">수입신고 내역 <span>Import declaration details</span></strong>                                 
+                                 <strong class="sub-title">수입신고 내역</strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i>수입신고 내역 조회</i> <span>Check import declaration details</span></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i>수입신고 내역 조회</i></a></li>                                    
                                  </ul>
                               </div>                              
                            </div>                           
@@ -487,9 +505,9 @@
                         <li>                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">
-                                 <strong class="sub-title">관세 납부 <span>Duty payment</span></strong>                                 
+                                 <strong class="sub-title">관세 납부</strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i>개인전자납부/납부내역 조회</i> <span>Personal electronic payment/payment history Inquiry</span></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i>개인전자납부/납부내역 조회</i></a></li>                                    
                                  </ul>
                               </div>                              
                            </div>                           
@@ -497,10 +515,10 @@
                         <li>                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">
-                                 <strong class="sub-title">관세환급 <span>customs refund</span></strong>                                 
+                                 <strong class="sub-title">관세환급</strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i>관세환급 신청</i> <span>Apply for customs refund</span></a></li>
-                                    <li><a href="javascript: void(0);"><i>관세환급 신청 결과 조회</i> <span>Check the results of your customs refund application</span></a></li>
+                                    <li><a href="javascript: void(0);"><i>관세환급 신청</i></a></li>
+                                    <li><a href="javascript: void(0);"><i>관세환급 신청 결과 조회</i></a></li>
                                  </ul>
                               </div>                              
                            </div>                           
@@ -514,17 +532,17 @@
                   <div class="gnb-main-list">
                      <div class="gnb-title">
                         <div class="gnb-title-box">
-                           <strong class="left-title">해외직구 수입통관 정보 <span>Overseas direct purchase import customs clearance information</span></strong>                        
+                           <strong class="left-title">해외직구 수입통관 정보</strong>                        
                         </div>                        
                      </div>
                      <ul class="gnb-list">
                         <li>                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">
-                                 <strong class="sub-title">통관정보 <span>Customs clearance information</span></strong>                                 
+                                 <strong class="sub-title">통관정보</strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i>수입통관 내역 조회</i> <span>Import customs clearance details inquiry</span></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i>해외직구 거래 내역 조회</i> <span>Overseas direct purchase transaction history inquiry</span></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i>수입통관 내역 조회</i></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i>해외직구 거래 내역 조회</i></a></li>                                    
                                  </ul>
                               </div>                              
                            </div>                           
@@ -532,9 +550,9 @@
                         <li>                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">
-                                 <strong class="sub-title">화물진행 정보 <span>purchase cargo progress information</span></strong>                                 
+                                 <strong class="sub-title">화물진행 정보</strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i>수입화물 진행정보 조회</i> <span>Check import cargo progress information</span></a></li>                                                                        
+                                    <li><a href="javascript: void(0);"><i>수입화물 진행정보 조회</i></a></li>                                                                        
                                  </ul>
                               </div>                              
                            </div>                           
@@ -557,11 +575,9 @@
                               <div class="gnb-sub-content">
                                  <strong class="sub-title">통계</strong>                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별 수입통관</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">물품별 수입통관</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">통관 단계별 소요시간</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별 소요시간</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">발송국별 소요시간</i></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i class="no-ico">년도별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 통관 소요시간 현황</i></a></li>                                                                        
                                  </ul>
                               </div>                              
                            </div>                           
@@ -629,12 +645,9 @@
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">                                 
                                  <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i class="no-ico">나의 메시지</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">통관·납부·환급내역 조회</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">통관 현황</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">관세납부 현황</i></a></li>                                                                        
-                                    <li><a href="javascript: void(0);"><i class="no-ico">물품분류별 통관현황</i></a></li>                                                                        
-                                    <li><a href="javascript: void(0);"><i class="no-ico">회원정보 수정</i></a></li>                                                                        
+                                    <li><a href="javascript: void(0);"><i class="no-ico">나의 개인통관고유부호</i></a></li>                                                                        
+                                    <li><a href="javascript: void(0);"><i class="no-ico">나의 메시지</i></a></li>      
+                                    <li><a href="javascript: void(0);"><i class="no-ico">통관현황</i></a></li>      
                                  </ul>
                               </div>                              
                            </div>                           

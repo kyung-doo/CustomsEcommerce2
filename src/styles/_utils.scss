@@ -32,6 +32,12 @@
 }
 
 @for $i from 1 to 3000 {
+    .mh-#{$i} {
+        max-height: #{$i}px !important;
+    }    
+}
+
+@for $i from 1 to 3000 {
     .minw-#{$i} {
         min-width: #{$i}px !important;
     }    

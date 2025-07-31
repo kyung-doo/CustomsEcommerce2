@@ -57,7 +57,8 @@
                      <li>수출신고번호 미 입력 시 환급 신청이 기각될 수 있습니다.</li>
                      <li>환급신청할란번호의 체크박스를 선택한 후 각  규격의 환급신청 할 수량을 입력 후 환급세액을 입력하셔야 신청이 가능합니다.</li>
                   </ul>
-               </div>                    
+               </div>            
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>        
                <div class="wrap-form-area">
                   <div class="inp-form">
                      <div class="form-check medium">
@@ -145,33 +146,7 @@
                                           </div>
                                           <button type="button" class="btn secondary medium return-btn">환급세액입력</button>
                                        </div>                                                                     
-                                    </li>
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex2">수출신고번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex2" required="" title="수출신고번호 선택해주세요">
-                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
-                                                <option value="02" selected="">434124321M(선적완료)</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex3">수출신고 란번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex3" required="" title="수출신고 란번호를 선택해주세요">
-                                                <option value="" disabled="" hidden="">번호를 선택해주세요</option>
-                                                <option value="02" selected="">001</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
+                                    </li>                                    
                                     <li class="col1">
                                        <label for="drop-ex4" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
                                        <div class="inp-box nowrap-list">
@@ -182,8 +157,63 @@
                                              </div>                           
                                           </div>                                             
                                        </div>
-                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>
-                                       <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>                                       
+                                    </li>
+                                    <li class="col1">
+                                       <label class="tit" for="drop-ex2-21">수출신고구분 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="drop-ex2-21" required="" title="수출신고번호 선택해주세요">
+                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
+                                                <option value="수출신고" selected="">수출신고</option>                              
+                                                <option value="수출통관목록">수출통관목록</option>  
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-1">수출신고번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-1" class="input" disabled value="434124321M(선적완료)" title="수출신고번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-2">수출신고 란번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-2" class="input" disabled value="001" title="수출신고 란번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-12">수출통관목록번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-12" class="input" disabled value="" title="수출통관목록번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-22">운송장 번호(H.B/L) <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-22" class="input" disabled value="" title="운송장 번호(H.B/L)를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
                                     </li>
                                  </ul> 
                               </div>
@@ -278,33 +308,7 @@
                                           </div>
                                           <button type="button" class="btn secondary medium return-btn">환급세액입력</button>
                                        </div>                                                                     
-                                    </li>
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex2-2">수출신고번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex2-2" required="" title="수출신고번호 선택해주세요">
-                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
-                                                <option value="02" selected="">434124321M(선적완료)</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex3-3">수출신고 란번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex3-3" required="" title="수출신고 란번호를 선택해주세요">
-                                                <option value="" disabled="" hidden="">번호를 선택해주세요</option>
-                                                <option value="02" selected="">001</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
+                                    </li>                                    
                                     <li class="col1">
                                        <label for="drop-ex4-4" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
                                        <div class="inp-box nowrap-list">
@@ -315,8 +319,63 @@
                                              </div>                           
                                           </div>                                             
                                        </div>
-                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>
-                                       <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>                                       
+                                    </li>
+                                    <li class="col1">
+                                       <label class="tit" for="drop-ex2-2">수출신고구분 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="drop-ex2-2" required="" title="수출신고번호 선택해주세요">
+                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
+                                                <option value="수출신고" selected="">수출신고</option>                              
+                                                <option value="수출통관목록">수출통관목록</option>  
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-13">수출신고번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-13" class="input" disabled value="434124321M(선적완료)" title="수출신고번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-23">수출신고 란번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-23" class="input" disabled value="001" title="수출신고 란번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-11">수출통관목록번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-11" class="input" disabled value="" title="수출통관목록번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-25">운송장 번호(H.B/L) <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-25" class="input" disabled value="" title="운송장 번호(H.B/L)를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
                                     </li>
                                  </ul> 
                               </div>

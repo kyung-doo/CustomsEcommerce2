@@ -125,7 +125,7 @@ $(() => {
         oldTop = top;
     });
 
-    // 리사이즈 이벤트
+    // 리사이즈 이벤트        
     $(window).on('resize', () => {
         if($(window).width() < 1023) {
             if($(".gnb-menu li.active").length > 0) {
@@ -158,7 +158,7 @@ $(() => {
             $('.sub-title').removeClass('mobile-active');
             $('.blind').hide();
         }
-    });
+    });    
 
 
     // 팝업
@@ -191,24 +191,43 @@ $(() => {
         })
     });
 
-    //통합검색 
-    $(document).on('keyup','.wrap-in-sch .in-sch-box .sch-box input',function(){
-        var deleteBtn = $('.wrap-in-sch .in-sch-box .sch-box button.sch-delete');        
-        if($(this).val() !== ""){            
-            deleteBtn.show();
-        }else{
-            deleteBtn.hide();
-        }        
-    });
 
-    $(document).on('click','.wrap-in-sch .in-sch-box .sch-box button.sch-delete',function(){
-        var th = $(this);        
-        var closestBox = $('.wrap-in-sch .in-sch-box .sch-box');
-        var inputBox = $('.wrap-in-sch .in-sch-box .sch-box input[type=text]')
+    $(function(){        
+        //기본
+        $(document).ready(function() {        
+            var seachInp = $('.wrap-search-area input');
+            var deleteBtn = $('.wrap-search-area button.sch-delete');          
         
-        th.closest(closestBox).find(inputBox).val('');
-        $(this).hide();
-    });    
+            if (seachInp.val()) {            
+                deleteBtn.show();
+            } else {            
+                deleteBtn.hide();
+            }
+        });
+
+        //검색 입력할떄
+        $(document).on('keyup','.wrap-search-area input',function(){       
+            var deleteBtn = $('.wrap-search-area button.sch-delete');        
+            
+            if($(this).val() !== ""){            
+                deleteBtn.show(); 
+                console.log()           
+            }else{
+                deleteBtn.hide();            
+            }        
+        });    
+
+        //삭제버튼 클릭하면 내용삭제
+        $(document).on('click','.wrap-search-area button.sch-delete',function(){        
+            var closestBox = $('.wrap-search-area');        
+            var inputBox = $('.wrap-search-area input')
+            
+            
+            $(this).closest(closestBox).find(inputBox).val('');        
+            $(this).hide();
+        });    
+    })
+    
 });
 
 

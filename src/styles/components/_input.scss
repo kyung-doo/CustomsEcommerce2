@@ -7,7 +7,7 @@
 
    &.form-tit-group {border: 1px solid #C6C6C6;display: flex;height: 46px;padding: 0 16px;align-items: center;position: relative;border-radius: 4px;
     input[type=text], input[type=password] {border: 0;background-color: rgba(0, 0, 0, 0);padding: 0;height: 100%;padding-left: 15px;width: 100%;}
-    label {position: relative;      
+    label {position: relative;color:#8E8E8E;      
       &:before {content: "";display: block;position: absolute;top: 50%;right: -8px;width: 1px;height: 16px;background-color: #C6C6C6;transform: translateY(-50%);}
     }
     .form-hint-invalid {margin-top: 0;}

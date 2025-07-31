@@ -28,7 +28,7 @@
     .txt-list {display: flex;margin-left: 40px;align-items: flex-start;
       .tit{width:160px;line-height:150%;padding-right: 0;}
       .title {display: flex;position: relative;}
-      .inp-box {display: block;padding-left: 24px;flex:1;margin-top: 0;
+      .inp-box {display: block;padding-left: 30px;flex:1;margin-top: 0;
         .txt {line-height: 150%;word-break: break-word;display: block;
           button{margin-left: 15px;}
         }        
@@ -51,9 +51,8 @@
       /** 첨부파일 초기화,삭제 버튼 위치 **/
       & + .form-btn-area{top: 66px;}
     }   
-
-    /** 리스트 영역 **/
-    .inp-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;      
+    
+    .inp-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;width:100%;      
       .area-group{display: flex;align-items: center;gap: 8px;width: 100%;min-width: 100px;}
       .check-list-box{display: flex;gap:24px;flex-wrap: wrap;margin-top: 10px;width:100%;}
     }  
@@ -172,7 +171,8 @@
       .sub-box{margin-top: 12px;display: flex;align-items: center;gap: 8px;}
       .sub-list-box{width:100%;min-width: 100px;}
       label{font-weight: 700;}      
-    }     
+    }   
+    .sub-tit{position: relative;}  
   }
 
   //주소
@@ -247,8 +247,7 @@
 
       li {
         /** 텍스트 타입 **/
-        &.txt-list {
-          .inp-box .txt {text-align: right !important;}
+        &.txt-list {          
           .tit{width:120px !important;}
         }      
 
@@ -303,8 +302,12 @@
 @media (max-width: 480px) {
   /** 리스트 **/
   .wrap-form-area{    
-    .inp-form ul {      
-      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico):not(.add-modify-btn) {width: 100%;}      
+    .inp-form ul {   
+      .inp-box{gap:12px 8px;
+        &:has(.hy){gap:12px 2px;}
+      }      
+      
+      button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico):not(.add-modify-btn):not(.inquiry){width: 100%;}      
       
       /** 란번호 자세히 버튼 **/
       .number-box{
@@ -349,7 +352,7 @@
     .inp-box:not(.nowrap-list):not([class*=nowrap-list-type]){flex-direction: column;}      
 
     /** 입력폼 반응형 타입1 **/
-    .inp-box[class*=nowrap-list-],
+    .inp-box[class*=nowrap-list-]:not(.nowrap-list-type1),
     .sub-box[class*=nowrap-list-]{display: flex;flex-wrap: wrap;
       .form-group:first-child{width: calc(100% - 23px);}
       .form-group{width: calc(50% - 16px);}                 
@@ -357,8 +360,11 @@
       &.nowrap-list-type2{            
         .form-group:first-child{width: calc(100% - 23px);}
         .form-group{width: 100%;}          
-      }
-    }                
+      }      
+    }  
+    .nowrap-list-type1{
+      .form-group:first-child{width:98px;min-width:98px}
+    }              
   }
   
   /** 드롭다운 **/

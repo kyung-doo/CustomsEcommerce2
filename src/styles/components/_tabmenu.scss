@@ -10,9 +10,7 @@
     &:disabled {color: #8E8E8E;pointer-events: none;}
   }
 
-  .btn-next,.btn-prev {position: absolute;top: 12px;width: 32px;height: 32px;z-index: 1;border-radius: 50%;background-color: rgba(0, 0, 0, 0.8);@include flex();
-    i {filter: invert(100%) brightness(200%);}
-  }
+  .btn-next,.btn-prev {position: absolute;border:1px solid #D8D8D8;top: 12px;width: 32px;height: 32px;z-index: 1;border-radius: 50%;background-color: #fff;@include flex();}
   .btn-prev {left: 0;}
   .btn-next {right: 0;}
 }

@@ -58,6 +58,7 @@
                      <li>환급신청할란번호의 체크박스를 선택한 후 각  규격의 환급신청 할 수량을 입력 후 환급세액을 입력하셔야 신청이 가능합니다.</li>
                   </ul>
                </div>     
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
                <div class="wrap-form-area">                  
                   <div class="inp-form type1">
                      <div class="form-check medium">
@@ -266,33 +267,7 @@
                            </div>
                            <div class="accordion-body d-none">
                               <div class="inp-form">
-                                 <ul>                                                                                                                                 
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex2">수출신고번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex2" required="" title="수출신고번호 선택해주세요">
-                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
-                                                <option value="02" selected="">434124321M(선적완료)</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex3">수출신고 란번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex3" required="" title="수출신고 란번호를 선택해주세요">
-                                                <option value="" disabled="" hidden="">번호를 선택해주세요</option>
-                                                <option value="02" selected="">001</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
+                                 <ul>                                                                                                                                                                     
                                     <li class="col1">
                                        <label for="drop-ex4" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
                                        <div class="inp-box nowrap-list">                                          
@@ -303,8 +278,63 @@
                                              </div>                           
                                           </div>                                             
                                        </div>
-                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>
-                                       <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>                                       
+                                    </li>
+                                    <li class="col1">
+                                       <label class="tit" for="drop-ex2-22">수출신고구분 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="drop-ex2-22" required="" title="수출신고번호 선택해주세요">
+                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
+                                                <option value="수출신고" selected="">수출신고</option>                              
+                                                <option value="수출통관목록">수출통관목록</option>  
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-12">수출신고번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-12" class="input" disabled value="434124321M(선적완료)" title="수출신고번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-21">수출신고 란번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-21" class="input" disabled value="001" title="수출신고 란번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-13">수출통관목록번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-13" class="input" disabled value="" title="수출통관목록번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-22">운송장 번호(H.B/L) <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-22" class="input" disabled value="001" title="운송장 번호(H.B/L)를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
                                     </li>
                                  </ul> 
                               </div>
@@ -520,33 +550,7 @@
                            </div>
                            <div class="accordion-body d-none">
                               <div class="inp-form">
-                                 <ul>                                                                                                                                 
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex2-1">수출신고번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex2-1" required="" title="수출신고번호 선택해주세요">
-                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
-                                                <option value="02" selected="">434124321M(선적완료)</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
-                                    <li class="col2">
-                                       <label class="tit" for="drop-ex3-1">수출신고 란번호 <i class="compulsory">필수</i></label>   
-                                       <div class="inp-box">
-                                          <div class="form-group medium mw-390">                  
-                                             <div class="form-conts">
-                                                <select class="form-select" id="drop-ex3-1" required="" title="수출신고 란번호를 선택해주세요">
-                                                <option value="" disabled="" hidden="">번호를 선택해주세요</option>
-                                                <option value="02" selected="">001</option>                              
-                                                </select>
-                                             </div>                           
-                                          </div>
-                                       </div>                                                                     
-                                    </li>
+                                 <ul>                                                                                                                                                                     
                                     <li class="col1">
                                        <label for="drop-ex4-1" class="tit">란사항 신청액 합계 <i class="compulsory">필수</i></label>
                                        <div class="inp-box nowrap-list">                                          
@@ -557,8 +561,63 @@
                                              </div>                           
                                           </div>                                             
                                        </div>
-                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>
-                                       <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                                       <p class="advice-txt">환급 신청 수량 입력 후 환급세액입력 버튼을 클릭하여 환급세액을 입력 하여야 합니다.</p>                                       
+                                    </li>
+                                    <li class="col1">
+                                       <label class="tit" for="drop-ex2-21">수출신고구분 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="drop-ex2-21" required="" title="수출신고번호 선택해주세요">
+                                                <option value="" disabled="" hidden="">수출신고번호를 선택해주세요</option>
+                                                <option value="수출신고" selected="">수출신고</option>                              
+                                                <option value="수출통관목록">수출통관목록</option>  
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-14">수출신고번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-14" class="input" disabled value="434124321M(선적완료)" title="수출신고번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-23">수출신고 란번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-23" class="input" disabled value="001" title="수출신고 란번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-15">수출통관목록번호 <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-15" class="input" disabled value="" title="수출통관목록번호를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium inquiry">조회</button>
+                                       </div>                                                                     
+                                    </li>
+                                    <li class="col2">
+                                       <label class="tit" for="new-24">운송장 번호(H.B/L) <i class="compulsory">필수</i></label>   
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="new-24" class="input" disabled value="001" title="운송장 번호(H.B/L)를 확인해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                                                                     
                                     </li>
                                  </ul> 
                               </div>
@@ -1536,6 +1595,652 @@
                      </div>
                   </div>
                   <!-- 환급세액정보 -->
+
+
+                  <!-- 환급신청 수출신고정보 조회 -->
+                  <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">환급신청 수출신고정보 조회</button>
+                  <div id="modal2" class="modal d-none" data-ui="modal">
+                     <div class="modal-wrap mw-1280">
+                        <div class="modal-header">
+                           <h5>환급신청 수출신고정보 조회</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">                           
+                           <div class="modal-cont">
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                                         
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">수입신고번호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">434124321M</p>
+                                          </div>                        
+                                       </li>
+                                       <li class="col2 txt-list">
+                                          <strong class="tit">수입신고 란번호</strong>
+                                          <div class="inp-box">
+                                             <p class="txt">001</p>
+                                          </div>                        
+                                       </li>                                      
+                                    </ul>                  
+                                 </div>
+                              </div>
+                              <div class="board-top tbl-top">
+                                 <div class="left-box">
+                                    <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                                    <div class="top-txt">
+                                       <select class="form-select-sort large" title="정보 구분 선택">                           
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                       </select>
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                              <div class="wrap-check-tbl">                  
+                                 <div class="table-wrap pc">
+                                    <table class="tbl col check">
+                                       <caption>환급신청 수출신고정보 조회에 대한 NO,신고일시,수출신고번호,수입신고 란번호,품명,처리상태로 구성되어있다.</caption>
+                                       <colgroup>
+                                             <col style="width: 52px">                                             
+                                             <col style="width: 80px">                                             
+                                             <col style="width: 15.625%">                                             
+                                             <col style="width: 13%">                                             
+                                             <col style="width: 10.9375%">                                             
+                                             <col>                                             
+                                             <col style="width: 7.8125%">                                                                                          
+                                       </colgroup>                        
+                                       <thead>
+                                             <tr>                                 
+                                                <th scope="col"></th>                                                                                 
+                                                <th scope="col">NO</th>                                                                                 
+                                                <th scope="col">신고일시</th>                                                                                 
+                                                <th scope="col">수출신고번호</th>                                                                                 
+                                                <th scope="col">수입신고 란번호</th>                                                                                 
+                                                <th scope="col">품명</th>                                                                                 
+                                                <th scope="col">처리상태</th>                                                                                                                                 
+                                             </tr>
+                                       </thead>
+                                       <tbody>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk1">
+                                                      <label for="n-chk1"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>1</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk2">
+                                                      <label for="n-chk2"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>2</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk3">
+                                                      <label for="n-chk3"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>3</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk4">
+                                                      <label for="n-chk4"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>4</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk5">
+                                                      <label for="n-chk5"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>5</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk6">
+                                                      <label for="n-chk6"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>6</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk7">
+                                                      <label for="n-chk7"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>7</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk8">
+                                                      <label for="n-chk8"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>8</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk9">
+                                                      <label for="n-chk9"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>9</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n-chk10">
+                                                      <label for="n-chk10"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>10</td>                                                                                 
+                                                <td>2025-01-01 11:11:11</td>                                                                                 
+                                                <td>4343521231M</td>                                                                                 
+                                                <td>001</td>                                                                                 
+                                                <td>전신 안마기</td>                                                                                 
+                                                <td>신고수리</td>                                                                         
+                                             </tr>                                                                                          
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 <div class="table-wrap mo">                     
+                                    <ul class="wrap-body">
+                                       <li>
+                                          <ul class="body">                              
+                                             <li>
+                                                <div class="form-check medium">
+                                                   <input type="radio" name="n-chk" id="m-chk1">
+                                                   <label for="m-chk1"><span class="sr-only">선택</span></label>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <strong class="title">NO</strong>
+                                                <span class="txt">1</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">신고일시</strong>
+                                                <span class="txt">2025-01-01 11:11:11</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수출신고번호</strong>
+                                                <span class="txt">4343521231M</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수입신고 란번호</strong>
+                                                <span class="txt">001</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">품명</strong>
+                                                <span class="txt">전신 안마기</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">처리상태</strong>
+                                                <span class="txt">신고수리</span>
+                                             </li>                                                                                                                                    
+                                          </ul>
+                                       </li>                                                                                                                                                                                                                           
+                                       <li>
+                                          <ul class="body">                              
+                                             <li>
+                                                <div class="form-check medium">
+                                                   <input type="radio" name="n-chk" id="m-chk2">
+                                                   <label for="m-chk2"><span class="sr-only">선택</span></label>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <strong class="title">NO</strong>
+                                                <span class="txt">2</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">신고일시</strong>
+                                                <span class="txt">2025-01-01 11:11:11</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수출신고번호</strong>
+                                                <span class="txt">4343521231M</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수입신고 란번호</strong>
+                                                <span class="txt">001</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">품명</strong>
+                                                <span class="txt">전신 안마기</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">처리상태</strong>
+                                                <span class="txt">신고수리</span>
+                                             </li>                                                                                                                                    
+                                          </ul>
+                                       </li>                                                                                                                                                                                                                           
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="pagination pagination-type1">               
+                                 <button class="page-navi prev" disabled="">이전</button>
+                                 <div class="page-links">
+                                    <a class="page-link mobile-link" href="#">1</a>
+                                    <span class="page-link link-dot mobile-dot"></span>
+                                    <a class="page-link" href="#">2</a>
+                                    <a class="page-link" href="#">3</a>
+                                    <a class="page-link" href="#">4</a>
+                                    <a class="page-link mobile-link" href="#">5</a>
+                                    <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                                    <a class="page-link mobile-link" href="#">7</a>
+                                    <a class="page-link" href="#">8</a>
+                                    <a class="page-link" href="#">9</a>
+                                    <span class="page-link link-dot"></span>
+                                    <a class="page-link mobile-link" href="#">120</a>
+                                 </div>
+                                 <button class="page-navi next">다음</button>
+                              </div>
+
+
+                           </div>
+                        </div>
+                        <div class="modal-footer">                              
+                              <button type="button" class="btn modal-enter primary medium">적용</button>
+                        </div>
+                     </div>
+                  </div> 
+                  <!-- 환급신청 수출신고정보 조회 -->
+
+                  <!-- 환급신청 수출통관목록정보 조회 -->
+                  <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">환급신청 수출통관목록정보 조회</button>
+                  <div id="modal3" class="modal d-none" data-ui="modal">
+                     <div class="modal-wrap mw-1280">
+                        <div class="modal-header">
+                           <h5>환급신청 수출통관목록정보 조회</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">                           
+                           <div class="modal-cont">
+                              <div class="search-box">
+                                 <ul>                                    
+                                    <li class="col1">
+                                       <label class="tit" for="ex00">운송장번호(H.B/L) <i class="compulsory">필수</i></label>
+                                       <div class="search-area">
+                                          <div class="form-group medium mw-390">                     
+                                             <div class="form-conts">
+                                                <input type="text" id="ex00" class="input" placeholder="예) 12341234123" title="운송장번호(H.B/L)를 입력해주세요">
+                                             </div>                              
+                                          </div> 
+                                       </div>                        
+                                    </li>                     
+                                 </ul>
+                                 <div class="btn-area btn-end">
+                                    <div class="align">
+                                       <button type="button" class="btn tertiary medium">초기화</button>
+                                       <button type="button" class="btn secondary medium">조회</button>                        
+                                    </div>
+                                 </div>
+                              </div>
+                              <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                              <div class="board-top tbl-top">
+                                 <div class="left-box">
+                                    <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                                    <div class="top-txt">
+                                       <select class="form-select-sort large" title="정보 구분 선택">                           
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                       </select>
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                              <div class="wrap-check-tbl">                  
+                                 <div class="table-wrap pc">
+                                    <table class="tbl col check">
+                                       <caption>환급신청 수출통관목록정보 조회에 대한 NO,접수일자,수출통관목록번호,수출자명,특송업체명,운송장번호(H.B/L),처리상태로 구성되어있다.</caption>
+                                       <colgroup>
+                                             <col style="width: 52px">                                                                                          
+                                             <col style="width: 80px">                                                                                          
+                                             <col style="width: 10.9375%">                                                                                          
+                                             <col style="width: 12.5%">                                                                                          
+                                             <col style="width: 12.5%">                                                                                          
+                                             <col style="width: 17.5%">                                                                                          
+                                             <col>                                                                                          
+                                             <col style="width: 7.8125%">                                                                                          
+                                       </colgroup>                        
+                                       <thead>
+                                             <tr>                                 
+                                                <th scope="col"></th>   
+                                                <th scope="col">NO</th>                                                                                                                                 
+                                                <th scope="col">접수일자</th>                                                                                                                                 
+                                                <th scope="col">수출통관목록번호</th>                                                                                                                                 
+                                                <th scope="col">수출자명</th>                                                                                                                                 
+                                                <th scope="col">특송업체명</th>                                                                                                                                 
+                                                <th scope="col">운송장번호(H.B/L)</th>                                                                                                                                 
+                                                <th scope="col">처리상태</th>                                                                                                                                 
+                                                                                                                                                                                                                           </tr>
+                                       </thead>
+                                       <tbody>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk1">
+                                                      <label for="n1-chk1"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>1</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk2">
+                                                      <label for="n1-chk2"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>2</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk3">
+                                                      <label for="n1-chk3"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>3</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk4">
+                                                      <label for="n1-chk4"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>4</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk5">
+                                                      <label for="n1-chk5"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>5</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk6">
+                                                      <label for="n1-chk6"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>6</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk7">
+                                                      <label for="n1-chk7"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>7</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk8">
+                                                      <label for="n1-chk8"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>8</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk9">
+                                                      <label for="n1-chk9"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>9</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>
+                                             <tr>                                 
+                                                <td>
+                                                   <div class="form-check medium">
+                                                      <input type="radio" name="n-chk" id="n1-chk10">
+                                                      <label for="n1-chk10"><span class="sr-only">선택</span></label>
+                                                   </div>
+                                                </td>                                                                                 
+                                                <td>10</td>
+                                                <td>2025-01-01</td>
+                                                <td>4343521231M</td>
+                                                <td>홍길동</td>
+                                                <td>FedEx</td>
+                                                <td>1234123412-123456789101</td>
+                                                <td>신고수리</td>                                                                                                                                 
+                                             </tr>                                                                                                                                                                                                                              
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 <div class="table-wrap mo">                     
+                                    <ul class="wrap-body">
+                                       <li>
+                                          <ul class="body">                              
+                                             <li>
+                                                <div class="form-check medium">
+                                                   <input type="radio" name="n-chk" id="m1-chk1">
+                                                   <label for="m1-chk1"><span class="sr-only">선택</span></label>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <strong class="title">NO</strong>
+                                                <span class="txt">1</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">접수일자</strong>
+                                                <span class="txt">2025-01-01</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수출통관목록번호</strong>
+                                                <span class="txt">4343521231M</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수출자명</strong>
+                                                <span class="txt">홍길동</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">특송업체명</strong>
+                                                <span class="txt">FedEx</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">운송장번호(H.B/L)</strong>
+                                                <span class="txt">1234123412-123456789101</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">처리상태</strong>
+                                                <span class="txt">신고수리</span>
+                                             </li>                                                                                                                                                                              
+                                          </ul>
+                                       </li>  
+                                       <li>
+                                          <ul class="body">                              
+                                             <li>
+                                                <div class="form-check medium">
+                                                   <input type="radio" name="n-chk" id="m1-chk2">
+                                                   <label for="m1-chk2"><span class="sr-only">선택</span></label>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <strong class="title">NO</strong>
+                                                <span class="txt">2</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">접수일자</strong>
+                                                <span class="txt">2025-01-01</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수출통관목록번호</strong>
+                                                <span class="txt">4343521231M</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">수출자명</strong>
+                                                <span class="txt">홍길동</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">특송업체명</strong>
+                                                <span class="txt">FedEx</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">운송장번호(H.B/L)</strong>
+                                                <span class="txt">1234123412-123456789101</span>
+                                             </li>
+                                             <li>
+                                                <strong class="title">처리상태</strong>
+                                                <span class="txt">신고수리</span>
+                                             </li>                                                                                                                                                                              
+                                          </ul>
+                                       </li>                                                                                                                                                                                                                           
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="pagination pagination-type1">               
+                                 <button class="page-navi prev" disabled="">이전</button>
+                                 <div class="page-links">
+                                    <a class="page-link mobile-link" href="#">1</a>
+                                    <span class="page-link link-dot mobile-dot"></span>
+                                    <a class="page-link" href="#">2</a>
+                                    <a class="page-link" href="#">3</a>
+                                    <a class="page-link" href="#">4</a>
+                                    <a class="page-link mobile-link" href="#">5</a>
+                                    <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                                    <a class="page-link mobile-link" href="#">7</a>
+                                    <a class="page-link" href="#">8</a>
+                                    <a class="page-link" href="#">9</a>
+                                    <span class="page-link link-dot"></span>
+                                    <a class="page-link mobile-link" href="#">120</a>
+                                 </div>
+                                 <button class="page-navi next">다음</button>
+                              </div>
+
+
+                           </div>
+                        </div>
+                        <div class="modal-footer">                              
+                              <button type="button" class="btn modal-enter primary medium">적용</button>
+                        </div>
+                     </div>
+                  </div> 
+                  <!-- 환급신청 수출통관목록정보 조회 -->
+
+
                </div>
                <!-- 팝업 사용후 삭제해주세요 -->   
             </div>

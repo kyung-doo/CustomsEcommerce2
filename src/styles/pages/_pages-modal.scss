@@ -25,6 +25,32 @@
     strong{color:#246BEB;}
     p{margin-top: 12px;display: flex;gap:13px;margin-bottom: 25px;}
   }
+
+  //주소검색 팝업
+  &.wrap-add-modal{height:642px;
+    .form-group{position: relative;
+      input{padding-right: 80px;}
+      button.sach,button.sch-delete{position: absolute;top:0;right:16px;width:24px;height:100%;background-color: rgba(0,0,0,0.0);padding: 0;
+        i{font-size:0;height:100%;display: block;}
+      }
+      button.sch-delete{right:47px;width:20px;display: none;}      
+    }
+    .wrap-form-area{border-top:1px solid #58616A;margin-top: 0;
+      .inp-form{border:0;padding: 0;border-radius: 0;
+        ul{margin: 0;
+          li{margin: 0;padding: 0;display: flex;
+            .tit{min-width:97px;width:97px;padding:5px 16px;background-color: #E6E8EA;height:100%;border-bottom:1px solid #CDD1D5;}
+            .inp-box{width:calc(100% - 97px);padding: 16px 16px;flex-direction: column;align-items: flex-start;margin: 0;height: 100%;border-bottom:1px solid #E4E4E4;
+              input{padding-right: 16px;}
+              [class*=box]{display: flex;width:100%;}
+              .box1{gap:24px}
+              .box2{gap: 8px;margin: 15px 0 4px 0;}
+            }
+          }
+        } 
+      }
+    }
+  }
 }
 .modal-wrap:has(.address-list){padding: 24px;
   .inp-form{border:0;padding: 60px 0 0 0;border-top:1px solid #E4E4E4;border-radius: 0;          
@@ -47,6 +73,15 @@
             
     .modal-footer button{width:100%;}
   }
+
+  //주소검색
+  .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li {
+    .inp-box .box2 {flex-direction: column;}
+    .tit {width: 90px;min-width: 90px;}
+    .inp-box {width: calc(100% - 90px);
+      .box1 {gap: 8px;}
+    }
+  }  
 }
 
 @media (max-width: 480px) {

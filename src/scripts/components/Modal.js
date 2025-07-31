@@ -33,6 +33,15 @@ class Modal {
         // gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
         // gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut, onComplete: () => {
             this.ele.trigger('modal-show');
+            
+            var seachInp = $('.wrap-search-area input');
+            var deleteBtn = $('.wrap-search-area button.sch-delete');          
+        
+            if (seachInp.val()) {            
+                deleteBtn.show();
+            } else {            
+                deleteBtn.hide();
+            }
         // }});
         
 

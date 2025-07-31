@@ -29,7 +29,7 @@
 
 // 테이블 배송주소 타이틀 
 .add-title,.tb-tit{line-height: 150%;font-size: 21px;display: flex;align-items: center;flex-wrap: wrap;
-  .txt{font-size: 15px;margin-left: 6px;display: flex;flex-wrap: wrap;}
+  .txt{margin-left: 6px;display: flex;flex-wrap: wrap;}
   .num-area{display: flex;align-items: center;line-height: 1;}
   .number{display: inline-block;color: #1D56BC;font-style: normal;margin-left: 6px;}
   .max-num{margin: 8px 0 8px 6px;}
@@ -125,8 +125,7 @@
         .contextual-help{top:50%;transform: translateY(-50%);}
       }
     }
-    .txt {text-align: right;padding-left: 20px;line-height: 150%;}
-    .box-line .txt{color:#555;}
+    .txt {padding-left: 20px;line-height: 150%;width:100%;}    
     .number {font-size: 15px;color:#555;}
   }
 
@@ -164,7 +163,7 @@
   .table-wrap.mo{
     .modal-tit{display: block;margin-top: 48px;
       &:first-child{margin-top: 26px;}       
-    }
+    }    
   }  
 
   .acc-tit span,
@@ -176,7 +175,7 @@
   .mo .wrap-body{border-top: 1px solid #58616A;     
     &.box-line{display: flex;gap: 8px 0;flex-direction: column;border-top: 0;
       .body{border:0;padding: 0;
-        li{padding: 0;flex-direction: column;gap:24px 0;border:1px solid #E4E4E4;border-radius: 8px;padding: 24px;
+        li{padding: 0;flex-direction: column;gap:14px 0;border:1px solid #E4E4E4;border-radius: 8px;padding: 24px;
           .number{
             &.type1{
               span{font-size: 15px;margin-right: 5px;}                            
@@ -188,7 +187,7 @@
             a{padding-right: 20px;}
           }
           .txt-area{display: flex;justify-content: space-between;align-items: center;width: 100%;
-            .txt{padding-left: 0;text-align: left;}
+            .txt{padding-left: 0;text-align: left;color:#555;}
             .date{min-width: 106px;width:106px;padding-left: 10px;color:#555}
           }
         }
@@ -278,7 +277,7 @@
   
   // 테이블 타이틀 주소 
   .add-title{flex-direction: column;align-items: flex-start;
-    .txt{width: 100%;margin-left: 0;background-color: #f4f5f6;padding: 24px;border-radius: 8px;padding-right: 10px;margin-top: 20px;}    
+    .txt{width: 100%;margin-left: 0;background-color: #f4f5f6;padding: 13px 24px;border-radius: 8px;padding-right: 10px;margin-top: 20px;}    
   }
 
   // 테이블 타이틀 
@@ -304,7 +303,7 @@
             &.number .txt{padding-left: 0;position: relative;}    
             &.number .txt::before{content:"";display: block;position: absolute;top:0;right:0;width: 1px;height:12px;background-color: #D8D8D8;}
             &:has(.accordion-btn){width: 100%;}
-            .accordion-btn{font-size:19px;white-space: normal;line-height: 150%;padding: 0 10% 0 0;width:100%;}
+            .accordion-btn{font-size:19px;white-space: normal;line-height: 150%;padding: 0 10% 0 0;width:100%;font-weight: 700;}
             .btn-arrow-down{width: 20px;right:0;}   
           }
         }        
@@ -323,7 +322,7 @@
           ul li{
             &.number .txt::before{display: none;}   
             .txt:not(.accordion-btn){height:22px;line-height: 20px;}   
-            &.num .txt::before{content:"NO.";font-size: 15px;margin-right: 4px;}
+            &.num .txt::before{content:"NO.";font-size: 15px;margin-right: 4px;font-weight: 700;}
             &.num .txt::after{content:"";display: block;position: absolute;top:4px;right:0;width: 1px;height: 12px;background-color: #D8D8D8;}
             &.data{position: absolute;left:0;bottom:0;width:100%;display: none;
               .txt{padding: 0;text-align: left;padding-left: 24px;}

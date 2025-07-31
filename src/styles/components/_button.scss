@@ -1,167 +1,44 @@
 @use "../mixin" as *;
 
-button[class*=btn],label[class*=btn] {
-  cursor: pointer;    
-  display: inline-flex;
-  align-items: center;
-  border-radius: 4px;
-  justify-content: center;    
-  white-space: nowrap;
+button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align-items: center;border-radius: 4px;justify-content: center;white-space: nowrap;
 
-  &.xlarge {
-    padding: 0 24px;    
-    height: 64px;
-    font-size: 19px;
+  &.xlarge {padding: 0 24px;height: 64px;font-size: 19px;}
+  &.large{padding: 0 20px;height: 56px;font-size: 19px;}
+  &.medium{padding: 0 16px;height: 48px;}
+  &.small{padding: 0 12px;height: 40px;font-size: 15px;}
+  &.xsmall{padding: 0 10px;height: 32px;font-size: 15px;}  
+  &.primary{background-color: #246BEB;border:1px solid #246BEB;color: #fff;
+    &:hover{background-color: #1D56BC;border-color: #1D56BC;}
+    &:active{background-color: #16408D;border-color: #16408D;}
+    &:disabled{background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;}
   }
-
-  &.large{
-    padding: 0 20px;  
-    height: 56px;
-    font-size: 19px;
+  &.secondary{background-color: #EFF5FF;border:1px solid #246BEB;color: #1D56BC;
+    &:hover{background-color: #D3E1FB;border-color: #246BEB;color: #1D56BC;}
+    &:active{background-color: #A7C4F7;border-color: #246BEB;color: #16408D;}    
   }
-
-  &.medium{
-    padding: 0 16px; 
-    height: 48px;    
+  &.tertiary{background-color: #FFFFFF;border:1px solid #1D1D1D;      
+    &:hover{background-color: #F8F8F8;border-color: #1D1D1D;}
+    &:active{background-color: #F0F0F0;border-color: #1D1D1D;}    
   }
-
-  &.small{
-    padding: 0 12px;  
-    height: 40px;
-    font-size: 15px;
+  &.text{padding: 0;background-color: #fff;        
+    &.xlarge,&.large{height: 40px;font-size: 19px;}
+    &.medium{height: 32px;}    
+    &.small{height: 24px;}
+    &.xsmall{height: 20px;font-size: 15px;}        
+    &:active{background-color: #CDD7E4;border-color: #CDD7E4;}
+    &:disabled{background-color: #fff;border-color: #fff;color: #8E8E8E;}
   }
-
-  &.xsmall{
-    padding: 0 10px;  
-    height: 32px;
-    font-size: 15px;
-  }  
-
-  &.primary{
-    background-color: #246BEB;
-    border:1px solid #246BEB;      
-    color: #fff;
-
-    &:hover{
-      background-color: #1D56BC;
-      border-color: #1D56BC;
-    }
-
-    &:active{
-      background-color: #16408D;
-      border-color: #16408D;
-    }
-
-    &:disabled{
-      background-color: #D8D8D8;
-      border-color: #D8D8D8;
-      color: #717171;
-    }
-  }
-
-  &.secondary{
-    background-color: #EFF5FF;
-    border:1px solid #246BEB;      
-    color: #1D56BC;
-
-    &:hover{
-      background-color: #D3E1FB;
-      border-color: #246BEB;
-      color: #1D56BC;
-    }
-
-    &:active{
-      background-color: #A7C4F7;
-      border-color: #246BEB;
-      color: #16408D;
-    }    
-  }
-
-  &.tertiary{
-    background-color: #FFFFFF;    
-    border:1px solid #1D1D1D;      
-
-    &:hover{
-      background-color: #F8F8F8;
-      border-color: #1D1D1D;      
-    }
-
-    &:active{
-      background-color: #F0F0F0;
-      border-color: #1D1D1D;      
-    }    
-  }
-
-  &.text{
-    padding: 0;
-    background-color: #fff;        
-
-    &.xlarge,&.large{
-      height: 40px;
-      font-size: 19px;
-    }
-
-    &.medium{
-      height: 32px;      
-    }
-
-    &.medium{
-      height: 32px;      
-    }
-
-    &.small{
-      height: 24px;      
-    }
-
-    &.xsmall{
-      height: 20px;
-      font-size: 15px;
-    }        
-
-    &:active{
-      background-color: #CDD7E4;
-      border-color: #CDD7E4;      
-    }
-
-    &:disabled{
-      background-color: #fff;
-      border-color: #fff;
-      color: #8E8E8E;
-    }
-  }
-
-  &:disabled {
-    cursor: default;
-    pointer-events: none;
-    background-color: #D8D8D8;
-    border-color: #D8D8D8;
-    color: #717171;
+  &:disabled {cursor: default;pointer-events: none;background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;
   }
 }
 
-.btn-area {
-  display: flex;
-  gap: 8px;  
-    &.btn-end {
-      justify-content: flex-end;
-    }
-
-    &.btn-center {
-      justify-content: center;
-    }
-
-    &.btn-between {
-      justify-content: space-between;
-    }
-
-  .align {
-    display: flex;
-    gap:8px;        
-  }
+.btn-area {display: flex;gap: 8px;  
+    &.btn-end {justify-content: flex-end;}
+    &.btn-center {justify-content: center;}
+    &.btn-between {justify-content: space-between;}
+  .align {display: flex;gap:8px;}
 }
 
 [class*=btn-area-type]{    
-    .align{
-      flex-wrap: wrap;
-    }  
-  } 
+    .align{flex-wrap: wrap;}  
+} 

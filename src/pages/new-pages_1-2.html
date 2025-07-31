@@ -40,29 +40,8 @@
                                  </div>                           
                               </div>
                            </div>  
-                        </li>               
-                        <li class="col2">
-                           <strong class="tit">한글성명 <i class="compulsory">필수</i></strong>
-                           <div class="inp-box nowrap-list">
-                              <div class="wrap-form-group mw-191">
-                                 <div class="form-group form-tit-group">  
-                                    <label for="tit1" class="form-title">성</label>                   
-                                    <div class="form-conts">
-                                       <input type="text" id="tit1" class="input" value="홍" title="성을 입력해주세요">
-                                    </div>                     
-                                 </div>                  
-                              </div>
-                              <div class="wrap-form-group mw-191">
-                                 <div class="form-group form-tit-group">  
-                                    <label for="tit2" class="form-title">이름</label>                   
-                                    <div class="form-conts">
-                                       <input type="text" id="tit2" class="input" value="길동" title="이름을 입력해주세요">
-                                    </div>                     
-                                 </div>                  
-                              </div>
-                           </div>
-                        </li>
-                        <li class="col2">
+                        </li>                                       
+                        <li class="col1">
                            <strong class="tit">영문성명 <i class="compulsory">필수</i></strong>
                            <div class="inp-box">
                               <div class="wrap-form-group mw-232">
@@ -83,24 +62,60 @@
                               </div>
                            </div>
                         </li>
-                        <li class="col1">
-                           <label for="ex2" class="tit">주민등록번호 <i class="compulsory">필수</i></label>
-                           <div class="inp-box nowrap-list">
-                              <div class="form-group medium mw-186">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" id="ex2" value="991231" title="주민등록번호 앞자리를 입력해주세요">
-                                 </div>                           
-                              </div>   
-                              <i class="hy">-</i>
-                              <div class="form-group medium mw-186">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" value="1234567" title="주민등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">
-  
-                                 </div>                           
-                              </div>   
-                           </div>
-                           <p class="advice-txt">신청시 입력하신 주민등록번호를 입력하세요.</p>
-                        </li>
+                        <li class="col1 sub-form dotted-line-top dotted-line-bottom">
+                           <strong class="sub-tit">개인식별번호 <i class="compulsory">필수</i></strong>
+                           <div class="sub-form-box">
+                              <ul>
+                                 <li class="col2">
+                                    <div class="form-check medium tit">
+                                       <input type="radio" name="rdo_11" id="radio5">
+                                       <label for="radio5">외국인 등록번호</label>
+                                    </div>
+                                    <div class="sub-box nowrap-list">
+                                       <div class="form-group medium mw-186">                     
+                                          <div class="form-conts">
+                                             <input type="text" class="input" title="외국인 등록번호 앞자리를 입력해주세요">
+                                          </div>                           
+                                       </div>
+                                       <i class="hy">-</i>
+                                       <div class="form-group medium mw-186">                     
+                                          <div class="form-conts">                                    
+                                             <input type="text" class="input" title="외국인 등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">  
+                                          </div>                           
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li class="col2">      
+                                    <div class="sub-list-wrap">
+                                       <div class="sub-list-box mw-274">
+                                          <div class="form-check medium tit">
+                                             <input type="radio" name="rdo_11" id="radio6">
+                                             <label for="radio6">여권번호</label>
+                                          </div>
+                                          <div class="sub-box">
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" disabled="" title="여권번호를 입력해주세요">
+                                                </div>                           
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="sub-list-box">
+                                          <strong class="tit">여권만료일</strong>
+                                          <div class="sub-box">
+                                             <div class="calendar w100per">
+                                                <div class="calendar-form mw-172" data-ui="datepicker">
+                                                   <input type="text" title="여권만료일을 입력해주세요" disabled="" placeholder="YYYY-MM-DD" maxlength="10">
+                                                   <button class="calendar-btn" disabled="">여권만료일 달력보기</button>
+                                                </div>                        
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>                           
+                                 </li>
+                              </ul>    
+                           </div>                       
+                        </li>                        
                         <li class="col1">
                            <label for="ex3" class="tit">사전신청 비밀번호 <i class="compulsory">필수</i></label>
                            <div class="inp-box">

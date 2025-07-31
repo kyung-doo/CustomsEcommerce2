@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="logout">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">기본 정보 입력</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="active">
+                        <span>
+                              <em class="sr-only">현재단계</em>
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">배송지 주소 등록</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">알림 동의</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>                     
+                              <i class="step">Step 4</i>
+                              <span class="step-tit">확인 및 등록</span>
+                        </span>
+                     </li>               
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+               <div class="accordion-header">
+                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호 정보변경 방법</strong> <i class="icon btn-arrow-down medium"></i></a>
+               </div>
+               <div class="accordion-body d-none">
+                  <p class="txt">개인통관고유부호 정보변경 방법</p>                  
+               </div>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">기본 정보</h5>     
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
