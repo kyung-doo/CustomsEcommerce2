@@ -25,7 +25,8 @@ button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align
     &.medium{height: 32px;}    
     &.small{height: 24px;}
     &.xsmall{height: 20px;font-size: 15px;}        
-    &:active{background-color: #CDD7E4;border-color: #CDD7E4;}
+    &:hover{background-color: #EDF1F5 !important;}
+    &:active{background-color: #CDD7E4 !important;}    
     &:disabled{background-color: #fff;border-color: #fff;color: #8E8E8E;}
   }
   &:disabled {cursor: default;pointer-events: none;background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;

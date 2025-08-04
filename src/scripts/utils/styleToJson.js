@@ -78,7 +78,7 @@ function windowR(){
         var w = $(this).width();
         var h = $(this).height();        
         $('.windowR').remove()
-        $('#wrap').append(`<div class="windowR" style="position: fixed;top:0;left:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}<br>${h}</div>`);                
+        $('#wrap').append(`<div class="windowR" style="position: fixed;bottom:0;left:0;width:100px;font-size:20px;background-color: red;z-index: 99999;">${w}<br>${h}</div>`);                
 
         if(w <= 390){
             $('#wrap').css({"border":"3px solid blue"})

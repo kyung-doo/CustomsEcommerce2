@@ -70,5 +70,8 @@
   &.medium {font-size: 15px;padding: 0 17px 0 5px;height: 27px;background-position: center right 3px;background-size: 14px;}
 }
 
-/** disabled **/
+//disabled
 input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + input[type=password],.form-tit-group:has(input:disabled){background-color: #D8D8D8 !important;opacity:1 !important;border-color:#C6C6C6 !important;}
+
+//비밀번호
+input[data-ui=hidden-input]{line-height:48px}
