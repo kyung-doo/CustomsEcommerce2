@@ -130,7 +130,7 @@ input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;widt
 //알림동의 
 .agree-title{display: inline-block;align-items: center;position: relative;padding-left: 53px;
   .title-type{    
-    > strong{margin-right: 8px;position: absolute;left: 0;}
+    > strong{margin-right: 8px;position: absolute;left: 0;top:0;}
   } 
   .contextual-help{bottom: 5px;}
 }

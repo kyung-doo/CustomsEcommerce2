@@ -60,11 +60,11 @@
     .form-group, .wrap-form-group {width: 100%;}
     .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 20px;
       button.text {background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;
-        &.refresh-btn:disabled{
-          i{background-image: url('../assets/icons/refresh-d.svg');}
+        &:disabled{
+          i.refresh{background-image: url('../assets/icons/refresh-d.svg');}
         }      
-        &.close-btn:disabled{
-          i{background-image: url('../assets/icons/close-d.svg');}
+        &:disabled{
+          i.close{background-image: url('../assets/icons/close-d.svg');}
         }      
       }
     }  
