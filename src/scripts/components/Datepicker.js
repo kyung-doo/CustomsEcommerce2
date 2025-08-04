@@ -327,7 +327,7 @@ class Datepicker {
 
         this.calendar.find('.day-con .day button').on('click', ( e ) => {
             const target = $(e.currentTarget).parent();
-            this.selectDate = new Date(target.data('date'));
+            this.selectDate = dayjs(target.data('date')).toDate();
             this.renderCalendar();
         });
         this.renderYear();
