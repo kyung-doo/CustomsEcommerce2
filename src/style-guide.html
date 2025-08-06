@@ -2052,8 +2052,11 @@
 
          <!-- 페이지네이션 -->
          <h2 class="mt-50" id="PAGINATION">페이지네이션</h2>           
-         <div class="guide-content">                        
-            <div class="pagination pagination-type1">               
+         <div class="guide-content">
+            
+            <div class="pagination pagination-type1" data-ui="pagination" data-props="viewCount: 9;totalPages: 50;initPage: 1"></div>
+            
+            <!-- <div class="pagination pagination-type1">               
                <button class="page-navi prev" disabled>이전</button>
                <div class="page-links">
                   <a class="page-link mobile-link" href="#">1</a>
@@ -2095,56 +2098,18 @@
                   <span class="page-num">/22</span>
                   <button type="button" class="btn secondary small">이동</button>
                </div>   
-            </div>            
+            </div>             -->
          </div>
          <pre>
             <code class="html"> 
-               - 타입1에서 .mobile-link는 반응형에서 display:block 처리
-               - 타입1
-               &lt;div class="pagination pagination-type1"&gt;               
-                  &lt;button class="page-navi prev" disabled&gt;이전&lt;/button&gt;
-                  &lt;div class="page-links"&gt;
-                     &lt;a class="page-link mobile-link" href="#"&gt;1&lt;/a&gt;
-                     &lt;span class="page-link link-dot mobile-dot"&gt;&lt;/span&gt;
-                     &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
-                     &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
-                     &lt;a class="page-link" href="#"&gt;4&lt;/a&gt;
-                     &lt;a class="page-link mobile-link" href="#"&gt;5&lt;/a&gt;
-                     &lt;a class="page-link active mobile-link" href="#"&gt;&lt;span class="sr-only"&gt;현재페이지 &lt;/span&gt;6&lt;/a&gt;                  
-                     &lt;a class="page-link mobile-link" href="#"&gt;7&lt;/a&gt;
-                     &lt;a class="page-link" href="#"&gt;8&lt;/a&gt;
-                     &lt;a class="page-link" href="#"&gt;9&lt;/a&gt;
-                     &lt;span class="page-link link-dot"&gt;&lt;/span&gt;
-                     &lt;a class="page-link mobile-link" href="#"&gt;120&lt;/a&gt;
-                  &lt;/div&gt;
-                  &lt;button class="page-navi next" &gt;다음&lt;/button&gt;
-               &lt;/div&gt;
-
-               - 타입2
-               &lt;div class="wrap-pagination pagination-type2"&gt;
-                  &lt;div class="pagination"&gt;                  
-                     &lt;button class="page-navi prev" disabled&gt;이전&lt;/button&gt;
-                     &lt;div class="page-links"&gt;
-                           &lt;a class="page-link active" href="#"&gt;&lt;span class="sr-only"&gt;현재페이지 &lt;/span&gt;1&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;5&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;6&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;7&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;8&lt;/a&gt;
-                           &lt;a class="page-link" href="#"&gt;9&lt;/a&gt;
-                           &lt;span class="page-link link-dot"&gt;&lt;/span&gt;
-                           &lt;a class="page-link" href="#"&gt;120&lt;/a&gt;
-                     &lt;/div&gt;
-                     &lt;button class="page-navi next"&gt;다음&lt;/button&gt;
-                  &lt;/div&gt;
-                  &lt;div class="pagination-btn-area"&gt;
-                     &lt;input type="text" value="5" title="이동하고 싶은 페이지 숫자를 입력해주세요"&gt;
-                     &lt;span class="page-num"&gt;/22&lt;/span&gt;
-                     &lt;button type="button" class="btn secondary small"&gt;이동&lt;/button&gt;
-                  &lt;/div&gt;   
-               &lt;/div&gt;
+               - data-props
+                  - viewCount: 보여질 페이지 개수
+                  - totalPages: 총 페이지
+                  - initPage: 초기페이지 숫자
+               - events
+                  $(".pagination").on('change', function (e, page) {});
+               
+               &lt;div class="pagination pagination-type1" data-ui="pagination" data-props="viewCount: 9;totalPages: 50;initPage: 1"&gt;&lt;/div&gt;
             </code>
          </pre>
          <!-- //페이지네이션 -->
