@@ -74,11 +74,6 @@ a[class*=cl-]{text-decoration: underline;}
   //a.tb-title:hover{text-decoration: underline;}  
 }   
 
-//파일찾기 
-input[type=file]{display:block;position:absolute;top:-10000px;left:-10000px;width:0;height:0;
-    &:focus + label{outline: 2px solid #000;}
-}
-
 //툴팁 아이콘 
 .tooltip-ico{width:16px;height:16px;background-image:url("../assets/icons/exclamation.svg");background-size:contain;font-size:0;background-color:rgba(0,0,0,0);font-size:0 !important}
 .contextual-help{display:inline-block;height:16px;line-height:0;position:absolute;bottom:4px;margin-left:5px}

@@ -10,7 +10,6 @@ import './components/Hiddeninput';
 import './components/Pagination';
 import './layouts/header';
 import './layouts/main';
-import './layouts/footer';
 
 // 전역변수
 global.isMobile = false;
