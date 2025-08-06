@@ -50,8 +50,14 @@ class Modal {
         });
         this.ele.find(".modal-close").on("click", () => {
             this.hide();
-        });
-        $("body").css({'overflow': 'hidden'});
+        });        
+
+        if(this.ele.attr('id') === 'homepage' || this.ele.attr('id') === 'customs'){
+            $("body").css({'overflow': 'auto'});            
+        }else{
+            $("body").css({'overflow': 'hidden'});            
+        }
+        
         this.ele.find(".btn-close").on("focusin", e => {
             $(document).on('keydown.modal', (e) => {
                 if(e.key === 'Tab' && !e.shiftKey) {

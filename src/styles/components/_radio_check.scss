@@ -2,7 +2,7 @@
 
 
 input {
-  &[type=radio], &[type=checkbox] {width: 0;height: 0;position: absolute;overflow: hidden;top:-10000px;left: -10000px;}
+  &[type=radio], &[type=checkbox] {width: 0;height: 0;position: absolute;overflow: hidden;}
   &[type=radio]:focus + label,&[type=checkbox]:focus + label{outline:2px solid #000;}
 }
 .form-check {position: relative;  
