@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --config config/webpack.dev.js --mode=development",
+    "testapi": "node config/testApiServer.js",
     "build": "webpack --config config/webpack.prod.js"
   },
   "keywords": [],
@@ -21,6 +22,7 @@
     "html-webpack-plugin": "^5.6.3",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.9.2",
+    "npm-run-all": "^4.1.5",
     "paths": "^0.1.1",
     "postcss-loader": "^8.1.1",
     "react-styleguidist": "^13.1.4",
@@ -32,6 +34,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.13",
+    "express": "^5.1.0",
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
     "swiper": "^11.2.10"

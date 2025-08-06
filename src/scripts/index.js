@@ -7,6 +7,7 @@ import './components/Tooltip';
 import './components/Datepicker';
 import './components/Accordion';
 import './components/Hiddeninput';
+import './components/Pagination';
 import './layouts/header';
 import './layouts/main';
 
@@ -76,5 +77,11 @@ function createUI () {
     $(`*[data-ui="hidden-input"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).hiddeninput(props);
+    });
+
+    // 페이지네이션
+    $(`*[data-ui="pagination"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).pagination(props);
     });
 }

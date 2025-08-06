@@ -16,5 +16,11 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     port: 9000,
+    proxy: {
+      "/api": {
+        target: "http://localhost:9001",
+        pathRewrite: { "^/api": "" },
+      },
+    },
   },
 })
