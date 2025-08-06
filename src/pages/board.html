@@ -31,8 +31,87 @@
             </div>                                                      
             <!-- 내용 -->
             <div class="cont-area">               
+               
+               <h1 class="mt-50" style="font-size: 50px;">CRUD형</h1>
+               <div 
+                  class="table" 
+                  data-ui="table" 
+                  data-props="apiPath: '/api/board1';apiType: 'get';tableType: 'crud';caption: '개인통관고유부호 도용신고에 대한 표로 NO,신고일자,운송장번호(H.B/L),주문번호,판매자명,물품명,처리상태으로 구성되어있다.'"
+               >
 
-               <div class="pagination pagination-type1" data-ui="pagination" data-props="viewCount: 9;totalPages: 50;initPage: 1"></div>
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="wrap-crud-tbl mt-20">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo">
+                        <!-- <div class="header">
+                           <div class="form-check medium">
+                              <input type="checkbox" id="m-all-chk">
+                              <label for="m-all-chk">전체선택</label>
+                           </div>
+                        </div>
+                        <ul class="wrap-body">
+                           <li>
+                              <ul class="body">
+                                 <li>
+                                    <div class="title">
+                                       <div class="form-check medium">
+                                          <input type="checkbox" id="m-chk1">
+                                          <label for="m-chk1"><span class="sr-only">선택</span></label>
+                                       </div>
+                                    </div>                                 
+                                 </li>
+                                 <li>
+                                    <strong class="title">NO</strong>
+                                    <span class="txt">999</span>
+                                 </li>                              
+                                 <li>
+                                    <strong class="title">신고일자</strong>
+                                    <span class="txt">2025-12-05</span>
+                                 </li>                              
+                                 <li>
+                                    <strong class="title">운송장번호(H.B/L)</strong>
+                                    <span class="txt">1234123412-123456789101</span>
+                                 </li>                              
+                                 <li>
+                                    <strong class="title">주문번호</strong>
+                                    <span class="txt">Abc123456789 외 1건</span>
+                                 </li>                              
+                                 <li>
+                                    <strong class="title">판매자명</strong>
+                                    <span class="txt">판매자명이들어갑니다</span>
+                                 </li>                              
+                                 <li>
+                                    <strong class="title">물품명</strong>
+                                    <span class="txt">물품명이들어갑니다다</span>
+                                 </li>                              
+                                 <li>
+                                    <strong class="title">처리상태</strong>
+                                    <span class="txt">반출완료</span>
+                                 </li>                              
+                              </ul>
+                           </li>                                                           
+                        </ul> -->
+                     </div>
+                  </div>
+                  <!-- //게시판 -->
+
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
 
             </div>
             <!--// 내용 -->

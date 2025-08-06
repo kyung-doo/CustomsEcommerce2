@@ -76,7 +76,7 @@
     **/ 
 
   .th-turn {width: 20px;height: 20px;position: absolute;top: 50%;right: 0;background-image: url(../assets/icons/tb-turn.svg);background-position: center;background-color: rgba(0, 0, 0, 0);transition: all 0.3s;transform: translateY(-50%);padding: 0;
-    &.active {transform: rotate(180deg);}
+    &.active {transform: rotate(180deg);transform-origin: 50% 30%;}
   }
 
   .arr-ico {position: relative;padding-right: 25px;display: inline-block;}

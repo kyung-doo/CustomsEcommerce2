@@ -125,6 +125,12 @@ class Pagination {
             owner.ele.trigger('change', [owner.page]);
         });
     }
+
+    setPage( value ) {
+        this.page = value[0];
+        this.props.totalPages = value[1];
+        this.renderPage();
+    }
 }
 
 $.fn.pagination = Plugin;
