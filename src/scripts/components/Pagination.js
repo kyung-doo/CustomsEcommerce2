@@ -12,7 +12,7 @@ class Pagination {
         this.ele = ele;
         this.props = props;
         this.page = this.props.initPage;
-        this.viewCount = this.props.viewCount;
+        this.viewCount = $(window).width() > 767 ? this.props.viewCount : 3;
         this.mode = $(window).width() > 767 ? 'pc' : 'mobile';
         this.init();
     }
