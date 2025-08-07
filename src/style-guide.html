@@ -137,7 +137,8 @@
             <li data-id="FILE">첨부파일</li>
             <li data-id="CALENDAR">달력</li>       
             <li data-id="ACCORDION">아코디언</li>  
-            <li data-id="PASSWORD">비밀번호</li>  
+            <li data-id="PASSWORD">비밀번호</li>
+            <li data-id="GRID">그리드</li>  
          </ul>
       </div>
       <div class="main">
@@ -6060,6 +6061,78 @@
          </code>
          </pre>
          <!-- //비밀번호 -->
+
+         <!-- 그리드 -->
+         <h2 class="mt-50" id="GRID">그리드</h2>
+         <div class="guide-content" style="overflow: hidden;">
+            테스트 페이지<br />
+            <a href="/pages/board.html" target="_blank">/pages/board.html</a>
+            <br />
+            <br />
+            샘플 api<br />
+            <a href="/api/board1?page=1&limit=10" target="_blank">/api/board1?page=1&limit=10</a>
+         </div>
+         <pre>
+         <code class="html"> 
+
+            - data-props
+              - apiPath: api 경로
+              - apiType: get, post (기본 get)
+              - tableType: 테이블 종류
+              - caption: 테이블 캡션
+              - noLimit: 페이지네이션과 limit 없이 전부 불러 올 경우 사용
+              - useHashParam: 히스토리 저장을 위한 해시 파라메터 사용. (경로뒤에 #page=1&limit=10)
+
+            - api
+               - page: 현제페이지
+               - limit: 보여질 리스트 개수
+               - listLength: 전체 리스트 개수
+               - totalPages: 전체 페이지 개수
+               - pagingCount: 페이지네이션 보여질 개수 (모바일은 3개 고정)
+               - head[]: 테이블 상단 데이터 배열
+                  - text: 타이틀 제목
+                  - width: 넓이값
+                  - useSort: 소팅기능 사용 유무 (boolean)
+                  - style: css 값
+                  - tooltip: {
+                        - title: 툴팁 제목
+                        - content: 툴팁 내용
+                        - link: 툴팁 링크
+                        - arrow: 방향값 (ex bottom left) 모바일은 top right 고정
+                     }
+               - body[]: 테이블 내용 데이터 배열
+                  - uid: 목록 유니크 값 (CRUD형에만 필요)
+                  - text: 텍스트 유형 값
+                  - button: 버튼유형 값
+                  - image: 이미지 유형 값 (스타일 가이드의 아이콘 명 ex icon download large)
+                  - link: 텍스트, 이미지, 버튼 링크 있는경우 사용
+                  - style: css 값
+
+            - CRUD 형
+            &lt;div id="table1" class="table" data-ui="table" data-props="apiPath: '/api/board1';apiType: 'get';tableType: 'crud';useHashParam: true;noLimit: false;caption: ''"&gt;
+                  &lt;!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) --&gt;
+                  &lt;div class="board-top tbl-top mt-50"&gt;
+                     &lt;div class="left-box"&gt;
+                        &lt;strong class="tit top-txt"&gt;전체&lt;strong&gt;&lt;/strong&gt;개&lt;/strong&gt;
+                        &lt;div class="top-txt"&gt;
+                           &lt;select class="form-select-sort large" title="정보 구분 선택"&gt;&lt;/select&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;                  
+                  &lt;/div&gt;
+                  &lt;!-- //전체 목록 개수 및 목록 보기 개수 --&gt;
+                  &lt;!-- 게시판 --&gt;
+                  &lt;div class="wrap-crud-tbl mt-20"&gt;                  
+                     &lt;div class="table-wrap pc"&gt;&lt;/div&gt;
+                     &lt;div class="table-wrap mo"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;!-- //게시판 --&gt;
+                  &lt;!-- 페이지네이션 (안쓰는 경우 삭제) --&gt;
+                  &lt;div class="pagination pagination-type1"&gt;&lt;/div&gt;
+                  &lt;!-- //페이지네이션 --&gt;
+               &lt;/div&gt;
+         </code>
+         </pre>
+         <!-- //그리드 -->
 
 
 

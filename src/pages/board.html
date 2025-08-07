@@ -5,6 +5,14 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
    <script>
       $(() => {
+         // 체크된 목록 가져오기
+         $("#getUid").on('click', () => {
+            $("#table1").table('getCheckData', (checkIds) => {
+               alert(checkIds)
+            });
+         });
+
+         // 페이지네이션 변경
          $(".pagination").on('change', (e, page) => {
             console.log('~~~~', page)
          });
@@ -31,8 +39,43 @@
             </div>                                                      
             <!-- 내용 -->
             <div class="cont-area">               
+               
+               <h1 class="mt-50" style="font-size: 50px;">CRUD형</h1>
+               <div class="mt-20 text-right">
+                  <button type="button" id="getUid" class="btn primary medium">체크된 목록 uid 가져오기</button>
+               </div>
 
-               <div class="pagination pagination-type1" data-ui="pagination" data-props="viewCount: 9;totalPages: 50;initPage: 1"></div>
+               <div 
+                  id="table1"
+                  class="table" 
+                  data-ui="table" 
+                  data-props="apiPath: '/api/board1';apiType: 'get';tableType: 'crud';useHashParam: true;noLimit: false;caption: '개인통관고유부호 도용신고에 대한 표로 NO,신고일자,운송장번호(H.B/L),주문번호,판매자명,물품명,처리상태으로 구성되어있다.'"
+               >
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="wrap-crud-tbl mt-20">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
 
             </div>
             <!--// 내용 -->

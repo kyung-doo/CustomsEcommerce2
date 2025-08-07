@@ -16696,7 +16696,6 @@ html, body {
   word-break: keep-all;
   word-wrap: break-word;
   -webkit-tap-highlight-color: transparent;
-  scroll-behavior: smooth;
 }
 
 html *, body * {

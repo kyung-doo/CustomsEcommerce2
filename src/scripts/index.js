@@ -8,6 +8,7 @@ import './components/Datepicker';
 import './components/Accordion';
 import './components/Hiddeninput';
 import './components/Pagination';
+import './components/Table';
 import './layouts/header';
 import './layouts/main';
 
@@ -31,6 +32,8 @@ $(() => {
         childList: true, 
         characterData: true
     });
+    
+
 });
 
 // 컴포넌트 UI 생성
@@ -83,5 +86,11 @@ function createUI () {
     $(`*[data-ui="pagination"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).pagination(props);
+    });
+
+    // 테이블
+    $(`*[data-ui="table"]`).each(function () {
+        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
+        $(this).table(props);
     });
 }
