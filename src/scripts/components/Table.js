@@ -5,16 +5,22 @@ class Table {
     static DEFAULT_PROPS = {
         apiPath: '',
         apiType: 'get',
-        tableType: 'default1',
+        tableType: 'default',
         caption: '',
         noLimit: false,
-        useHashParam: false
+        useHashParam: false,
+        head: [],
+        body: []
     }
 
     constructor( ele, props ) {
         this.ele = ele;
         this.props = props;
-        this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
+        if(props.useHashParam) {
+            this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
+        } else {
+            this.page = 1;
+        }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
         this.data;
         this.startX = 0;
@@ -29,16 +35,18 @@ class Table {
                 this.onHashChange();
             });
         }
-        await this.loadData();
-        if(this.ele.find('.board-top').length > 0) {
-            this.setBoardTop();
-        }
-        if(this.ele.find('.pagination').length > 0) {
-            this.setPagination();
-        }
-        if(this.props.tableType === 'crud') {
-            this.setCrudTable();
-        }
+        this.setHead();
+
+        try {
+            await this.loadData();
+            if(this.ele.find('.board-top').length > 0) {
+                this.setBoardTop();
+            }
+            if(this.ele.find('.pagination').length > 0) {
+                this.setPagination();
+            }
+            this.setBody();
+        } catch(e) {}
     }
 
     async onHashChange  () {
@@ -46,11 +54,12 @@ class Table {
         this.limit = this.getHashParam("limit");
         this.ele.find('.board-top select').val(this.limit);
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-        await this.loadData();
-        this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-        if(this.props.tableType === 'crud') {
-            this.setCrudTable();
-        }
+        try {
+            await this.loadData();
+            this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+            this.setHead();
+            this.setBody();
+        } catch(e) {}
     }
 
     loadData () {
@@ -99,11 +108,12 @@ class Table {
             } else {
                 this.ele.find('.board-top select').val(this.limit);
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                await this.loadData();
-                this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                if(this.props.tableType === 'crud') {
-                    this.setCrudTable();
-                }
+                try {
+                    await this.loadData();
+                    this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+                    this.setHead();
+                    this.setBody();
+                } catch( e ) {}
             }
         });
     }
@@ -122,32 +132,40 @@ class Table {
             } else {
                 this.ele.find('.board-top select').val(this.limit);
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                await this.loadData();
-                this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                if(this.props.tableType === 'crud') {
-                    this.setCrudTable();
-                }
+                try {
+                    await this.loadData();
+                    this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+                    this.setHead();
+                    this.setBody();
+                } catch( e ) {}
             }
         });
     }
 
-    setCrudTable (onlyBody) {
-        const table = this.ele.find('.wrap-crud-tbl');
+    setHead () {
+        let table;
+
+        if(this.props.tableType === 'crud') {
+            table = this.ele.find('.wrap-crud-tbl');
+        }else {
+            table = this.ele.find('.wrap-check-tbl');
+        }
+
         const tablePC = table.find('.table-wrap.pc');
         const tableM = table.find('.table-wrap.mo');
-        
-        if(!onlyBody) {
-            const htmlPC = `
-                <table class="tbl col crud">
+
+        const htmlPC = `
+            <table class="tbl col crud">
                 <caption>${this.props.caption}</caption> 
                 <colgroup></colgroup>
                 <thead></thead>
                 <tbody></tbody>
-                </table>
-            `;
-            tablePC.empty().html(htmlPC);
+            </table>
+        `;
+        tablePC.empty().html(htmlPC);
+        tablePC.find('thead').append(`<tr></tr>`);
+        if(this.props.tableType === 'crud') {
             tablePC.find('colgroup').append(`<col style="width: 52px;">`);
-            tablePC.find('thead').append(`<tr></tr>`);
             tablePC.find('thead tr').append(`
                 <th scope="col">
                     <div class="form-check medium">
@@ -156,43 +174,52 @@ class Table {
                     </div>
                 </th>
             `);
-            this.data.head.forEach((head, i) => {
-                tablePC.find('colgroup').append(`<col style="width: ${head.width};">`);
-                if(head.useSort) {
-                    tablePC.find('thead tr').append(`<th style="${head.style ?? ''}"><span class="arr-ico">${head.text}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
-                } else {
-                    tablePC.find('thead tr').append(`<th style="${head.style ?? ''}">${head.text}</th>`);
-                }
-                if(head.tooltip) {
-                    this.addToolTip(tablePC.find('thead tr th').eq(i+1), head.tooltip);
-                }
-            });
-            const owner = this;
-            tablePC.find('.th-turn').each(function ( i ) {
-                $(this).off('click').on('click', function () {
-                    tablePC.find('.th-turn').each(function ( j ) {
-                        if(i !== j) {
-                            tablePC.find('.th-turn').eq(j).removeClass('active');
-                        } else {
-                            if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
-                                tablePC.find('.th-turn').eq(j).addClass('active');
-                                owner.sortData('desc', tablePC.find('.th-turn').eq(j).parent().parent().index());
+        }
+
+        this.props.head.forEach((head, i) => {
+            tablePC.find('colgroup').append(`<col style="width: ${head.width};">`);
+            if(head.sort) {
+                tablePC.find('thead tr').append(`<th><span class="arr-ico">${head.name}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
+            } else {
+                tablePC.find('thead tr').append(`<th>${head.name}</th>`);
+            }
+            if(head.tooltip) {
+                this.addToolTip(tablePC.find('thead tr th').eq(i+1), head.tooltip);
+            }
+        });
+
+        // sorting
+        const owner = this;
+        tablePC.find('.th-turn').each(function ( i ) {
+            $(this).off('click').on('click', function () {
+                tablePC.find('.th-turn').each(function ( j ) {
+                    if(i !== j) {
+                        tablePC.find('.th-turn').eq(j).removeClass('active');
+                    } else {
+                        const idx = tablePC.find('.th-turn').eq(j).parent().parent().index();
+                        if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
+                            tablePC.find('.th-turn').eq(j).addClass('active');
+                            if(owner.props.tableType === 'crud') {
+                                owner.sortData('desc', owner.props.body[idx-1].label);
                             } else {
-                                tablePC.find('.th-turn').eq(j).removeClass('active');
-                                owner.sortData('asc', tablePC.find('.th-turn').eq(j).parent().parent().index());
+                                owner.sortData('desc', owner.props.body[idx].label);
+                            }
+                        } else {
+                            tablePC.find('.th-turn').eq(j).removeClass('active');
+                            if(owner.props.tableType === 'crud') {
+                                owner.sortData('asc', owner.props.body[idx-1].label);
+                            } else {
+                                owner.sortData('asc', owner.props.body[idx].label);
                             }
                         }
-                    });
+                    }
                 });
             });
+        });
 
-            tablePC.find('th input[type="checkbox"]').on('change', function ( e ) {
-                tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('.header input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-            });
-
-            const htmlM = `
+        let htmlM ='' 
+        if(this.props.tableType === 'crud') {
+            htmlM = `
                 <div class="header">
                     <div class="form-check medium">
                         <input type="checkbox" id="m-all-chk">
@@ -201,141 +228,131 @@ class Table {
                 </div>
                 <ul class="wrap-body"></ul>
             `;
-            tableM.empty().html(htmlM);
+        } else if(this.props.tableType === 'address') {
+            htmlM = `<ul class="wrap-body box-line"></ul>`;
+        } else {
+            htmlM = `<ul class="wrap-body"></ul>`;
+        }
+
+        tableM.empty().html(htmlM);
+
+        if(this.props.tableType === 'crud') {
+            tablePC.find('th input[type="checkbox"]').on('change', function ( e ) {
+                tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                tableM.find('.header input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+            });
             tableM.find('.header input[type="checkbox"]').on('change', function ( e ) {
                 tablePC.find('th input[type="checkbox"]').prop('checked', $(this).is(':checked'));
                 tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
                 tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
             });
-
-            this.setReisze(table);
-        } else {
-            tablePC.find('th input[type="checkbox"]').prop('checked', false);
-            tableM.find('.header input[type="checkbox"]').prop('checked', false);
         }
+        this.setReisze(table);
+    }
+
+    setBody () {
+        let table;
+        if(this.props.tableType === 'crud') {
+            table = this.ele.find('.wrap-crud-tbl');
+        } else {
+            table = this.ele.find('.wrap-check-tbl');
+        }
+        const tablePC = table.find('.table-wrap.pc');
+        const tableM = table.find('.table-wrap.mo');
 
         tablePC.find('tbody').empty();
-        this.data.body.forEach((body, i) => {
-            const tr = $(`<tr></tr>`)
+        tableM.find('.wrap-body').empty();
+        this.data.data.forEach((data, i) => {
+            const tr = $(`<tr></tr>`);
             tablePC.find('tbody').append(tr);
-            
-            body.forEach((data, j) => {
-                if(j === 0) {
-                    tr.append(`
-                        <td>
-                            <div class="form-check medium">
-                                <input type="checkbox" id="chk${i}">
-                                <label for="chk${i}"><span class="sr-only">선택</span></label>
-                            </div>
-                        </td>  
-                    `);
-                } else {
-                    if(data.button) {
-                        tr.append(`<td style="${data.style ?? ''}"><button class="${data.class}" onclick="location.href='${data.link}'">${data.button}</button></td>`);
-                    } else if(data.image) {
-                        if(data.link) {
-                            tr.append(`<td style="${data.style ?? ''}"><a href="${data.link}"><i class="${data.image}"></i></a></td>`);
-                        } else {
-                            tr.append(`<td style="${data.style ?? ''}"><i class="${data.image}"></i></td>`);
-                        }
-                    } else {
-                        if(data.link) {
-                            tr.append(`<td style="${data.style ?? ''}"><a class="cl-7" href="${data.link}">${data.text}</a></td>`);
-                        } else {
-                            tr.append(`<td style="${data.style ?? ''}">${data.text}</td>`);
-                        }
-                    }
-                }
-            });
-        });
-
-        tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
-            let idx = $(e.target).parent().parent().parent().index();
-            tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-            if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.body.length) {
-                tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                tableM.find('.header input[type="checkbox"]').prop('checked', true);
-            } else {
-                tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                tableM.find('.header input[type="checkbox"]').prop('checked', false);
-            }
-        });
-
-        tableM.find('tbody').empty();
-        this.data.body.forEach((body, i) => {
             const li = $('<li><ul class="body"></ul></li>');
             tableM.find('.wrap-body').append(li);
-            body.forEach((data, j) => {
-                if(j === 0) {
-                    li.find('ul').append(`
-                        <li>
-                            <div class="title">
-                                <div class="form-check medium">
-                                    <input type="checkbox" id="m-chk${i}">
-                                    <label for="m-chk${i}"><span class="sr-only">선택</span></label>
-                                </div>
-                            </div>                                 
-                        </li>
-                    `);
-                } else {
-                    if(data.button) {
+
+            if(this.props.tableType === 'crud') {
+                tr.append(`
+                    <td>
+                        <div class="form-check medium">
+                            <input type="checkbox" id="chk${i}">
+                            <label for="chk${i}"><span class="sr-only">선택</span></label>
+                        </div>
+                    </td>  
+                `);
+                li.find('ul').append(`
+                    <li>
+                        <div class="title">
+                            <div class="form-check medium">
+                                <input type="checkbox" id="m-chk${i}">
+                                <label for="m-chk${i}"><span class="sr-only">선택</span></label>
+                            </div>
+                        </div>                                 
+                    </li>
+                `);
+            }
+            this.props.body.forEach((body, j) => {
+                tr.append(`
+                    <td class="${body.align === 'left' ? 'text-left' : body.align === 'right' ? 'text-right' : ''}">
+                        ${body.fomatter ? body.fomatter(data[body.label], data, false) : data[body.label]}
+                    </td>
+                `);
+                if(this.props.tableType !== 'address') {
+                    if(this.props.head[j].mobileHidden) {
                         li.find('ul').append(`
                             <li>
-                                <strong class="title">${this.data.head[j-1].text}</strong>
-                                <span class="txt" style="${data.style}"><button onclick="location.href='${data.link}'" class="${data.class}">${data.button}</button></span>
+                                ${body.fomatter ? body.fomatter(data[body.label], data, true) : data[body.label]}
                             </li> 
-                        `);
-                    } else if(data.image) {
-                        if(data.link) {
-                            li.find('ul').append(`
-                                <li>
-                                    <strong class="title">${this.data.head[j-1].text}</strong>
-                                    <span class="txt" style="${data.style}"><a href="${data.link}"><i class="${data.image}"></i></a></span>
-                                </li> 
-                            `);
-                        } else {
-                            li.find('ul').append(`
-                            <li>
-                                <strong class="title">${this.data.head[j-1].text}</strong>
-                                <span class="txt" style="${data.style}"><i class="${data.image}"></i></span>
-                            </li> 
-                        `);
-                        }
+                        `); 
                     } else {
-                        if(data.link) {
-                            li.find('ul').append(`
-                                <li>
-                                    <strong class="title">${this.data.head[j-1].text}</strong>
-                                    <span class="txt" style="${data.style}"><a class="cl-7" href="${data.link}">${data.text}</a></span>
-                                </li> 
-                            `);
-                        } else {
-                            li.find('ul').append(`
-                                <li>
-                                    <strong class="title">${this.data.head[j-1].text}</strong>
-                                    <span class="txt" style="${data.style}">${data.text}</span>
-                                </li> 
-                            `);
-                        }
-                    }
-                    if(this.data.head[j-1].tooltip) {
-                        this.addToolTip(li.find('ul li').eq(j).find('.title'), this.data.head[j-1].tooltip, 'top right');
+                        li.find('ul').append(`
+                            <li>
+                                <strong class="title">${this.props.head[j].name}</strong>
+                                <span class="txt">${body.fomatter ? body.fomatter(data[body.label], data, true) : data[body.label]}</span>
+                            </li> 
+                        `);
                     }
                 }
             });
+
+            if(this.props.tableType === 'address') {
+                li.find('ul').append(`
+                    <li>
+                        <strong>${data[this.props.body[1].label]}</strong>
+                        <div class="txt-area">
+                            <span class="txt">
+                                (${data[this.props.body[2].label]}) ${data[this.props.body[3].label]}<br>
+                                ${data[this.props.body[4].label]}
+                            </span>                                    
+                        </div>
+                    </li> 
+                `); 
+            }
+
         });
 
-        tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
-            let idx = $(e.target).parent().parent().parent().parent().parent().index();
-            tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-            if(tableM.find('li input[type="checkbox"]:checked').length === this.data.body.length) {
-                tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                tableM.find('.header input[type="checkbox"]').prop('checked', true);
-            } else {
-                tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                tableM.find('.header input[type="checkbox"]').prop('checked', false);
-            }
-        });
+        if(this.props.tableType === 'crud') {
+            tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
+                let idx = $(e.target).parent().parent().parent().index();
+                tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
+                if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.data.length) {
+                    tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                    tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                } else {
+                    tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                    tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                }
+            });
+            tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
+                let idx = $(e.target).parent().parent().parent().parent().parent().index();
+                tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
+                if(tableM.find('li input[type="checkbox"]:checked').length === this.data.data.length) {
+                    tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                    tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                } else {
+                    tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                    tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                }
+            });
+        }
     }
 
     addToolTip ( target, data, arrow ) {
@@ -372,19 +389,18 @@ class Table {
         
     }
 
-    sortData (type, index) {
+    sortData (type, key) {
+        if(!this.data) return;
         if(type === 'desc') {
-            this.data.body.sort((a, b) => {
-                return String(a[index].text).localeCompare(String(b[index].text));
+            this.data.data.sort((a, b) => {
+                return String(a[key]).localeCompare(String(b[key]));
             });
         } else {
-            this.data.body.sort((a, b) => {
-                return String(b[index].text).localeCompare(String(a[index].text));
+            this.data.data.sort((a, b) => {
+                return String(b[key]).localeCompare(String(a[key]));
             });
         }
-        if(this.props.tableType === 'crud') {
-            this.setCrudTable(true);
-        }
+        this.setBody();
     }
 
     setReisze ( table ) {
@@ -436,7 +452,7 @@ class Table {
         tablePC.find('td input[type="checkbox"]').each(function () {
             if($(this).is(':checked')) {
                 let idx = $(this).parent().parent().parent().index();
-                checked.push(owner.data.body[idx][0].uid)
+                checked.push(owner.data.data[idx]);
             }
         });
         callback(checked);

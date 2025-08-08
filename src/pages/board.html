@@ -5,17 +5,121 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
    <script>
       $(() => {
+         
+         $("#table1").table({
+            apiPath: '/api/board1',
+            apiType: 'get',
+            tableType: 'crud',
+            useHashParam: true,
+            noLimit: false,
+            caption: '개인통관고유부호 도용신고에 대한 표로 NO,신고일자,운송장번호(H.B/L),주문번호,판매자명,물품명,처리상태으로 구성되어있다.',
+            head: [
+               {name: 'NO', width: '80px'},
+               {name: '신고일자', width: '131px', sort: true},
+               {name: '운송장번호(H.B/L)', width: '22.7031%'},
+               {name: '주문번호', width: '18.4062%', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},
+               {name: '판매자명', width: '19.8437%'},
+               {name: '물품명', width: '6.8437%'},
+               {name: '처리상태', width: '12.5%', mobileHidden: true}
+            ],
+            body: [
+               {label: 'no'},
+               {label: 'date'},
+               {label: 'key1', fomatter: (value, rowData, isMobile) => {
+                  return `<a class="cl-7" href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;
+               }},
+               {label: 'key2'},
+               {label: 'key3', align: 'right'},
+               {label: 'key4', fomatter: ( value, rowData, isMobile ) => {
+                  return `<a href="${value}"><i class="icon download large"></i></a>`;
+               }},
+               {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
+                  if(!isMobile) {
+                     return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                  } else {
+                     return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                  }
+               }},
+            ]
+         });
+
+         $("#table2").table({
+            apiPath: '/api/board2',
+            apiType: 'get',
+            tableType: 'default',
+            useHashParam: false,
+            noLimit: false,
+            caption: '환급신청 란사항 정보에 대한 표로 선택,란번호,품명,수입신고번호,관세,부가세등,환급신청수량 구성되어있다.',
+            head: [
+               {name: '선택', width: '60px', mobileHidden: true},
+               {name: '란번호', width: '80px'},
+               {name: '품명', width: '43.75%'},
+               {name: '수입신고번호', width: '17.1875%'},
+               {name: '관세', width: '9.375%'},
+               {name: '부가세등', width: '9.375%'},
+               {name: '환급신청수량', width: '9.375%'},
+               
+            ],
+            body: [
+               {label: 'uid', fomatter: (value, rowData, isMobile) => {
+                  if(!isMobile) {
+                     return `<div class="form-check medium">
+                              <input type="radio" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
+                              <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
+                           </div>`;
+                  } else {
+                     return `<div class="form-check medium">
+                              <input type="radio" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
+                              <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
+                           </div>`;
+                  }
+               }},
+               {label: 'key1'},
+               {label: 'key2', align: 'left'},
+               {label: 'key3'},
+               {label: 'key4'},
+               {label: 'key5'},
+               {label: 'key6', align: 'right'},
+            ]
+         });
+
+
+         $("#table3").table({
+            apiPath: '/api/board3',
+            apiType: 'get',
+            tableType: 'address',
+            useHashParam: false,
+            noLimit: true,
+            caption: '배송주소에 대한 NO,배송지명,우편번호,기본주소,상세주소 표로 로 구성되어있다.',
+            head: [
+               {name: 'NO', width: '80px'},
+               {name: '배송지명', width: '15.625%'},
+               {name: '우편번호', width: '9.375%'},
+               {name: '기본주소', width: '34.375%'},
+               {name: '상세주소', width: '34.375%'},
+            ],
+            body: [
+               {label: 'no'},
+               {label: 'key1', align: 'left'},
+               {label: 'key2'},
+               {label: 'key3', align: 'left'},
+               {label: 'key4', align: 'left'},
+            ]
+         });
+
+
          // 체크된 목록 가져오기
          $("#getUid").on('click', () => {
-            $("#table1").table('getCheckData', (checkIds) => {
-               alert(checkIds)
+            $("#table1").table('getCheckData', (checkDatas) => {
+               alert(checkDatas.map(x => x.uid));
             });
          });
 
          // 페이지네이션 변경
          $(".pagination").on('change', (e, page) => {
-            console.log('~~~~', page)
+            console.log('페이지 change: ', page)
          });
+
       });
    </script>
 </head>
@@ -40,17 +144,13 @@
             <!-- 내용 -->
             <div class="cont-area">               
                
-               <h1 class="mt-50" style="font-size: 50px;">CRUD형</h1>
+               <h1 class="mt-50" style="font-size: 40px;">CRUD형</h1>
                <div class="mt-20 text-right">
-                  <button type="button" id="getUid" class="btn primary medium">체크된 목록 uid 가져오기</button>
+                  <button type="button" id="getUid" class="btn primary medium">체크된 목록 data 가져오기</button>
                </div>
 
-               <div 
-                  id="table1"
-                  class="table" 
-                  data-ui="table" 
-                  data-props="apiPath: '/api/board1';apiType: 'get';tableType: 'crud';useHashParam: true;noLimit: false;caption: '개인통관고유부호 도용신고에 대한 표로 NO,신고일자,운송장번호(H.B/L),주문번호,판매자명,물품명,처리상태으로 구성되어있다.'"
-               >
+               <!-- CRUD형 테이블 -->
+               <div id="table1"class="table" >
 
                   <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
                   <div class="board-top tbl-top mt-50">
@@ -76,6 +176,54 @@
                   <!-- //페이지네이션 -->
 
                </div>
+               <!-- CRUD형 테이블 -->
+
+
+               <h1 class="mt-50 mb-30" style="font-size: 40px;">조회형 - 일반형</h1>
+
+               <!-- 조회형 일반형 -->
+               <div id="table2" class="table">
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+               <!-- 조회형 일반형 -->
+
+
+               <h1 class="mt-50 mb-30" style="font-size: 40px;">조회형 - 배송주소</h1>
+
+               <!-- 조회형 배송주소 -->
+               <div id="table3" class="table" >
+
+                  <!-- 게시판 -->
+                  <div class="wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+               </div>
+               <!-- 조회형 배송주소 -->
 
             </div>
             <!--// 내용 -->

@@ -226,6 +226,10 @@
   }  
 }
 
+.wrap-crud-tbl .mo .wrap-body {
+  button:not(.tooltip-ico):not(.tooltip-close){width:100%;} 
+}
+
 // FAQ
 .wrap-faq{  
   .btn-arrow-down{position: absolute;height:100%;top:0;right:30px;transition: all .3s;z-index: 1;}

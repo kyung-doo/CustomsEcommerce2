@@ -87,10 +87,4 @@ function createUI () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).pagination(props);
     });
-
-    // 테이블
-    $(`*[data-ui="table"]`).each(function () {
-        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
-        $(this).table(props);
-    });
 }
