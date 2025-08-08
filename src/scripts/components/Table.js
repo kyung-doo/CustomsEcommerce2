@@ -375,11 +375,11 @@ class Table {
     sortData (type, index) {
         if(type === 'desc') {
             this.data.body.sort((a, b) => {
-                return a[index].text.localeCompare(b[index].text);
+                return String(a[index].text).localeCompare(String(b[index].text));
             });
         } else {
             this.data.body.sort((a, b) => {
-                return b[index].text.localeCompare(a[index].text);
+                return String(b[index].text).localeCompare(String(a[index].text));
             });
         }
         if(this.props.tableType === 'crud') {

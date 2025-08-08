@@ -6074,43 +6074,63 @@
          </div>
          <pre>
          <code class="html"> 
+            -api 
+               - page: 현재 페이지
+               - limit: 보여질 리스트 개수 
+               - limitList: 보여질 리스트 개수 배열
+               - listLength: 총 목록 수
+               - totalPages: 총 페이지 수
+               - pagingCount: 페이지네이션 보여질 개수(모바일은 3개 고정)
+               - data[]: { key: string } 구조의 데이터 배열
 
             - data-props
-              - apiPath: api 경로
-              - apiType: get, post (기본 get)
-              - tableType: 테이블 종류
-              - caption: 테이블 캡션
-              - noLimit: 페이지네이션과 limit 없이 전부 불러 올 경우 사용
-              - useHashParam: 히스토리 저장을 위한 해시 파라메터 사용. (경로뒤에 #page=1&limit=10)
-
-            - api
-               - page: 현제페이지
-               - limit: 보여질 리스트 개수
-               - limitList: 보여질 리스트 몇개씩 보일지 배열 
-               - listLength: 전체 리스트 개수
-               - totalPages: 전체 페이지 개수
-               - pagingCount: 페이지네이션 보여질 개수 (모바일은 3개 고정)
-               - head[]: 테이블 상단 데이터 배열
-                  - text: 타이틀 제목
-                  - width: 넓이값
-                  - useSort: 소팅기능 사용 유무 (boolean)
-                  - style: css 값
+               - apiPath: api 주소
+               - apiType: api 메소드 (get, post)
+               - tableType: 테이블 타입
+               - useHashParam: 해시파라메터 사용 유무
+               - noLimit: 페이징없이 전부 노출 유무
+               - caption: 테이블 캡션
+               - head[]: 헤더 정보
+                  - name: 헤더명
+                  - width: 칼럼 넓이
+                  - sort: 정렬 사용 유무
                   - tooltip: {
-                        - title: 툴팁 제목
-                        - content: 툴팁 내용
-                        - link: 툴팁 링크
-                        - arrow: 방향값 (ex bottom left) 모바일은 top right 고정
-                     }
-               - body[]: 테이블 내용 데이터 배열
-                  - uid: 목록 유니크 값 (CRUD형에만 필요)
-                  - text: 텍스트 유형 값
-                  - button: 버튼유형 값
-                  - image: 이미지 유형 값 (스타일 가이드의 아이콘 명 ex icon download large)
-                  - link: 텍스트, 이미지, 버튼 링크 있는경우 사용
-                  - style: css 값
+                     title: 툴팁 타이틀
+                     content: '툴팁 내용'
+                     link: 툴팁 바로가기 경로
+                  }
+                  -mobileHidden: 모바일 시 안보여야 할 경우 유무
+               - body[]: 바디 정보
+                  - label: api data 키값
+                  - align: 텍스트 정렬 (left, center, right)
+                  - fommater: 칼럼 포맷 함수 (value: 키에 해당하는 값, rowData: 한줄 데이터, isMobile: 모바일 유무)
 
-            - CRUD 형
-            &lt;div id="table1" class="table" data-ui="table" data-props="apiPath: '/api/board1';apiType: 'get';tableType: 'crud';useHashParam: true;noLimit: false;caption: ''"&gt;
+            - script
+            $('#table1').table({
+               apiPath: '/api/board1',
+               apiType: 'get',
+               tableType: 'crud',
+               useHashParam: true,
+               noLimit: false,
+               caption: '테이블 캡션',
+               head: [ 
+                  {name: 'NO', width: '80px'},
+                  {name: '신고일자', width: '131px', sort: true},
+                  {name: '운송장번호(H.B/L)', width: '20.7031%', tootip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},
+                  {name: '물품명', width: '20.7031%'},
+                  {name: '처리상태', width: '20.7031%', mobileHidden: true}
+               ],
+               body: [ 
+                  {label: 'no'},
+                  {label: 'date'},
+                  {label: 'key1', align: 'right'},
+                  {label: 'key2', fomatter: ( value, rowData, isMobile ) => {}},
+                  {label: 'key3', fomatter: ( value, rowData, isMobile ) => {}}, 
+               ]
+            });
+
+            - CRUD 타입
+            &lt;div id="table1" class="table""&gt;
                   &lt;!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) --&gt;
                   &lt;div class="board-top tbl-top mt-50"&gt;
                      &lt;div class="left-box"&gt;
