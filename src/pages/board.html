@@ -109,15 +109,15 @@
             },
             rowCreated: ( pcElement, mobileElement, rowData, index) => {
                $(mobileElement).find('.body').empty().html(`
-                     <li>
-                        <strong>${rowData.key1}</strong>
-                        <div class="txt-area">
-                            <span class="txt">
-                                (${rowData.key2}) ${rowData.key3}<br>
-                                ${rowData.key4}
-                            </span>                                    
-                        </div>
-                    </li> 
+                  <li>
+                     <strong>${rowData.key1}</strong>
+                     <div class="txt-area">
+                           <span class="txt">
+                              (${rowData.key2}) ${rowData.key3}<br>
+                              ${rowData.key4}
+                           </span>                                    
+                     </div>
+                  </li> 
                `);
             }
          });
@@ -149,14 +149,14 @@
             },
             rowCreated: ( pcElement, mobileElement, rowData, index) => {
                $(mobileElement).find('.body').empty().html(`
-                     <li>
-                        <strong class="font-4">NO. <span>${rowData.no}</span></strong>
-                        <strong class="title"><a href="/pages/pages_7-2.html#${rowData.uid}">${rowData.key1}</a><i class="icon btn-arrow-right medium"></i></strong>
-                        <div class="txt-area">
-                           <span>${rowData.key2}</span>
-                           <span>${rowData.key3}</span>
-                        </div>                                 
-                     </li> 
+                  <li>
+                     <strong class="font-4">NO. <span>${rowData.no}</span></strong>
+                     <strong class="title"><a href="/pages/pages_7-2.html#${rowData.uid}">${rowData.key1}</a><i class="icon btn-arrow-right medium"></i></strong>
+                     <div class="txt-area">
+                        <span>${rowData.key2}</span>
+                        <span>${rowData.key3}</span>
+                     </div>                                 
+                  </li> 
                `);
             }
          });
