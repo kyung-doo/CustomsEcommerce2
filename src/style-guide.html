@@ -6076,11 +6076,12 @@
          </div>
          <pre>
          <code class="html"> 
-            - 테이블 타입은 crdu형 default형이 있다
-              기본 api 텍스트 그대로 넣을경우 body에 label에 맞는 key값 설정
-              바디에 포맷을 직접 넣어야 할경우 fommater 함수를 사용
-              기본 바디 fommater로 안될 경우(모바일 구조가 다른 경우) rowCreated 함수를 사용하여 2차 수정 및 추가
-              헤드 또한 headCreated로 2차 수정 사용 할 수 있다.
+            - 테이블 타입은 crdu, default, faq 형이 있다
+              기본 api 텍스트 그대로 넣을 경우 body에 label에 맞는 key값 설정
+              바디에 포맷을 직접 넣어야 할 경우 fommater 함수를 사용
+              기본 바디 fommater로 안 될 경우(구조가 다른 경우) rowCreated 함수를 사용하여 재 수정 할 수 있다.
+              헤드 또한 headCreated로 재 수정 할 수 있다.
+              created 함수로 전체 태그 및 전체 데이터를 가져와서 전체를 재 수정 할 수 있다.
 
             -api 
                - page: 현재 페이지
@@ -6094,7 +6095,7 @@
             - data-props
                - apiPath: api 주소
                - apiType: api 메소드 (get, post)
-               - tableType: 테이블 타입 ( crud, default )
+               - tableType: 테이블 타입 ( crud, default, faq )
                - useHashParam: 해시파라메터 사용 유무
                - noLimit: 페이징없이 전부 노출 유무
                - useResize: 칼럼 리사이징 유무
@@ -6114,8 +6115,12 @@
                   - align: 텍스트 정렬 (left, center, right)
                   - fommater: 칼럼 포맷 함수 (value: 키에 해당하는 값, rowData: 한줄 데이터, isMobile: 모바일 유무)
                - headCreated: 헤더 생성 완료 (pcElement: pc용 헤드 엘레멘트, mobileElement: 모바일 헤드 엘레멘트, headDate: 헤드 설정 데이터)
-               - rowCreated: row 리스트 생성 완료 (pcElement: pc용 헤드 엘레멘트, mobileElement: 모바일 헤드 엘레멘트, rowData: 한줄 데이터, index: 리스트 인덱스 )
+               - rowCreated: 한줄 리스트 생성 완료 (pcElement: pc용 헤드 엘레멘트, mobileElement: 모바일 헤드 엘레멘트, rowData: 한줄 데이터, index: 리스트 인덱스 )
                - created: 전체 생성 완료 (element: 전체 엘레멘트, data: 전체 데이터, head: 헤드 설정 데이터, body: 바디 설정 데이터)
+
+            - method
+               - $("#table1").table('update'); // 테이블 업데이트
+               - $("#table1").table('getCheckData', (checkDatas) => {}); // crud형 선택된 체크박스 가져오기
 
             - script
             $('#table1').table({

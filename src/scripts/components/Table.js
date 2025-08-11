@@ -466,6 +466,17 @@ class Table {
         });
         callback(checked);
     }
+
+    async update () {
+        this.ele.find('.board-top select').val(this.limit);
+        this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+        try {
+            await this.loadData();
+            this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+            this.setHead();
+            this.setBody();
+        } catch( e ) {}
+    }
 }
 
 $.fn.table = Plugin;
