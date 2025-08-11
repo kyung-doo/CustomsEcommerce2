@@ -87,6 +87,74 @@ app.get("/board3", (req, res) => {
     });
 });
 
+const data4 = Array.from({ length: listLength }, (_, i) => (
+    { 
+      uid: `id-${i+1}`,
+      no : i+1,
+      key1 : i+'_개인통관고유부호 갱신 안내개인통관고유부호 갱신 안내개인통관고유부호 갱신 안내개인통관고유부호 갱신 안내개인통관고유부호 갱신 안내',
+      key2 : '2025-05-30',
+      key3 : '접수대기',
+    }
+));
+
+app.get("/board4", (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    const results = data4.slice(startIndex, endIndex);
+    res.json({
+        page,
+        limit,
+        limitList: [10, 20, 30],
+        listLength: listLength,
+        totalPages: Math.ceil(data4.length / limit),
+        pagingCount: 9,
+        data: results,
+    });
+});
+
+
+const data5 = Array.from({ length: 5 }, (_, i) => (
+    { 
+      uid: `id-${i+1}`,
+      key1 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key2 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key3 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key4 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key5 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key6 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key7 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key8 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+    }
+));
+
+app.get("/board5", (req, res) => {
+    res.json({
+        listLength: data5.length,
+        data: data5,
+    });
+});
+
+
+const data6 = Array.from({ length: 12 }, (_, i) => (
+    { 
+      uid: `id-${i+1}`,
+      key1 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key2 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key3 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key4 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+    }
+));
+
+app.get("/board6", (req, res) => {
+    res.json({
+        listLength: data6.length,
+        data: data6,
+    });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Dummy API server running on http://localhost:${PORT}`);
 });

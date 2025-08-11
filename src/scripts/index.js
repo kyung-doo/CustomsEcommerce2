@@ -20,7 +20,7 @@ if('ontouchstart' in window){
 global.$ = $;
 
 $(() => {
-
+    
     createUI();
 
     // dom 변경 시 UI 다시 생성
@@ -30,7 +30,8 @@ $(() => {
     domObserver.observe(document.body, {
         attributes: true, 
         childList: true, 
-        characterData: true
+        characterData: true,
+        subtree: true
     });
     
 

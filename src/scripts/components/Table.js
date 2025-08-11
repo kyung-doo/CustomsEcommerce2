@@ -8,9 +8,13 @@ class Table {
         tableType: 'default',
         caption: '',
         noLimit: false,
+        useResize: true,
         useHashParam: false,
         head: [],
-        body: []
+        body: [],
+        headCreaed: null,
+        rowCreated: null,
+        created: null
     }
 
     constructor( ele, props ) {
@@ -143,16 +147,10 @@ class Table {
     }
 
     setHead () {
-        let table;
-
-        if(this.props.tableType === 'crud') {
-            table = this.ele.find('.wrap-crud-tbl');
-        }else {
-            table = this.ele.find('.wrap-check-tbl');
-        }
-
-        const tablePC = table.find('.table-wrap.pc');
-        const tableM = table.find('.table-wrap.mo');
+        
+        const table = this.ele.find('.table-content');
+        const tablePC = table.find('.table-wrap').eq(0);
+        const tableM = table.find('.table-wrap').eq(1);
 
         const htmlPC = `
             <table class="tbl col crud">
@@ -217,57 +215,65 @@ class Table {
             });
         });
 
-        let htmlM ='' 
-        if(this.props.tableType === 'crud') {
-            htmlM = `
-                <div class="header">
-                    <div class="form-check medium">
-                        <input type="checkbox" id="m-all-chk">
-                        <label for="m-all-chk">전체선택</label>
+        if(tableM.length > 0) {
+            let htmlM ='' 
+            if(this.props.tableType === 'crud') {
+                htmlM = `
+                    <div class="header">
+                        <div class="form-check medium">
+                            <input type="checkbox" id="m-all-chk">
+                            <label for="m-all-chk">전체선택</label>
+                        </div>
                     </div>
-                </div>
-                <ul class="wrap-body"></ul>
-            `;
-        } else if(this.props.tableType === 'address') {
-            htmlM = `<ul class="wrap-body box-line"></ul>`;
-        } else {
-            htmlM = `<ul class="wrap-body"></ul>`;
+                    <ul class="wrap-body"></ul>
+                `;
+            } 
+            // else if(this.props.tableType === 'address') {
+            //     htmlM = `<ul class="wrap-body box-line"></ul>`;
+            // } 
+            else {
+                htmlM = `<ul class="wrap-body"></ul>`;
+            }
+
+            tableM.empty().html(htmlM);
         }
 
-        tableM.empty().html(htmlM);
+        if(this.props.headCreated) {
+            this.props.headCreated(tablePC.find('thead tr')[0], tableM.length > 0 ? tableM.find('.wrap-body')[0] : null, this.props.head);
+        }
 
         if(this.props.tableType === 'crud') {
             tablePC.find('th input[type="checkbox"]').on('change', function ( e ) {
                 tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('.header input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                if(tableM.length > 0) {
+                    tableM.find('.header input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                    tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                }
             });
             tableM.find('.header input[type="checkbox"]').on('change', function ( e ) {
                 tablePC.find('th input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
                 tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
             });
         }
-        this.setReisze(table);
+
+        if(this.props.useResize) {
+            this.setResize(table);
+        }
     }
 
     setBody () {
-        let table;
-        if(this.props.tableType === 'crud') {
-            table = this.ele.find('.wrap-crud-tbl');
-        } else {
-            table = this.ele.find('.wrap-check-tbl');
-        }
-        const tablePC = table.find('.table-wrap.pc');
-        const tableM = table.find('.table-wrap.mo');
+        const table = this.ele.find('.table-content');
+        const tablePC = table.find('.table-wrap').eq(0);
+        const tableM = table.find('.table-wrap').eq(1);
 
         tablePC.find('tbody').empty();
-        tableM.find('.wrap-body').empty();
+        if(tableM.length > 0)   tableM.find('.wrap-body').empty();
         this.data.data.forEach((data, i) => {
             const tr = $(`<tr></tr>`);
             tablePC.find('tbody').append(tr);
             const li = $('<li><ul class="body"></ul></li>');
-            tableM.find('.wrap-body').append(li);
+            if(tableM.length > 0)   tableM.find('.wrap-body').append(li);
 
             if(this.props.tableType === 'crud') {
                 tr.append(`
@@ -278,16 +284,18 @@ class Table {
                         </div>
                     </td>  
                 `);
-                li.find('ul').append(`
-                    <li>
-                        <div class="title">
-                            <div class="form-check medium">
-                                <input type="checkbox" id="m-chk${i}">
-                                <label for="m-chk${i}"><span class="sr-only">선택</span></label>
-                            </div>
-                        </div>                                 
-                    </li>
-                `);
+                if(tableM.length > 0) {
+                    li.find('ul').append(`
+                        <li>
+                            <div class="title">
+                                <div class="form-check medium">
+                                    <input type="checkbox" id="m-chk${i}">
+                                    <label for="m-chk${i}"><span class="sr-only">선택</span></label>
+                                </div>
+                            </div>                                 
+                        </li>
+                    `);
+                }
             }
             this.props.body.forEach((body, j) => {
                 tr.append(`
@@ -295,7 +303,8 @@ class Table {
                         ${body.fomatter ? body.fomatter(data[body.label], data, false) : data[body.label]}
                     </td>
                 `);
-                if(this.props.tableType !== 'address') {
+                
+                if(tableM.length > 0) {
                     if(this.props.head[j].mobileHidden) {
                         li.find('ul').append(`
                             <li>
@@ -311,20 +320,14 @@ class Table {
                         `);
                     }
                 }
+
+                if(this.props.head[j].tooltip) {
+                    this.addToolTip(li.find('ul li').eq(j+1).find('.title'), this.props.head[j].tooltip, 'top right');
+                }
             });
 
-            if(this.props.tableType === 'address') {
-                li.find('ul').append(`
-                    <li>
-                        <strong>${data[this.props.body[1].label]}</strong>
-                        <div class="txt-area">
-                            <span class="txt">
-                                (${data[this.props.body[2].label]}) ${data[this.props.body[3].label]}<br>
-                                ${data[this.props.body[4].label]}
-                            </span>                                    
-                        </div>
-                    </li> 
-                `); 
+            if(this.props.rowCreated) {
+                this.props.rowCreated(tr, tableM.length > 0 ? li : null, data, i);
             }
 
         });
@@ -332,26 +335,32 @@ class Table {
         if(this.props.tableType === 'crud') {
             tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
                 let idx = $(e.target).parent().parent().parent().index();
-                tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
+                if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
                 if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.data.length) {
                     tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                    tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                    if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', true);
                 } else {
                     tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                    tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                    if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', false);
                 }
             });
-            tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
-                let idx = $(e.target).parent().parent().parent().parent().parent().index();
-                tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-                if(tableM.find('li input[type="checkbox"]:checked').length === this.data.data.length) {
-                    tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                    tableM.find('.header input[type="checkbox"]').prop('checked', true);
-                } else {
-                    tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                    tableM.find('.header input[type="checkbox"]').prop('checked', false);
-                }
-            });
+            if(tableM.length > 0) {
+                tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
+                    let idx = $(e.target).parent().parent().parent().parent().parent().index();
+                    tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
+                    if(tableM.find('li input[type="checkbox"]:checked').length === this.data.data.length) {
+                        tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                        tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                    } else {
+                        tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                        tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                    }
+                });
+            }
+        }
+
+        if(this.props.created) {
+            this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
         }
     }
 
@@ -403,7 +412,7 @@ class Table {
         this.setBody();
     }
 
-    setReisze ( table ) {
+    setResize ( table ) {
         table.find('th:not(:last-child)').append(`<span class="resize-point"></span`);
         table.find('.resize-point').on('mousedown', ( e ) => {
             this.onResizeDown(e, table)
@@ -446,7 +455,7 @@ class Table {
 
 
     getCheckData ( callback ) {
-        const tablePC = this.ele.find('.table-wrap.pc');
+        const tablePC = this.ele.find('.table-wrap').eq(0);
         const checked = [];
         const owner = this;
         tablePC.find('td input[type="checkbox"]').each(function () {

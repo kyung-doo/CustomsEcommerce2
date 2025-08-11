@@ -5,13 +5,13 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
    <script>
       $(() => {
-         
          $("#table1").table({
             apiPath: '/api/board1',
             apiType: 'get',
             tableType: 'crud',
             useHashParam: true,
             noLimit: false,
+            useResize: true,
             caption: '개인통관고유부호 도용신고에 대한 표로 NO,신고일자,운송장번호(H.B/L),주문번호,판매자명,물품명,처리상태으로 구성되어있다.',
             head: [
                {name: 'NO', width: '80px'},
@@ -34,11 +34,8 @@
                   return `<a href="${value}"><i class="icon download large"></i></a>`;
                }},
                {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
-                  if(!isMobile) {
-                     return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
-                  } else {
-                     return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
-                  }
+                  if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                  else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
                }},
             ]
          });
@@ -49,6 +46,7 @@
             tableType: 'default',
             useHashParam: false,
             noLimit: false,
+            useResize: true,
             caption: '환급신청 란사항 정보에 대한 표로 선택,란번호,품명,수입신고번호,관세,부가세등,환급신청수량 구성되어있다.',
             head: [
                {name: '선택', width: '60px', mobileHidden: true},
@@ -87,9 +85,10 @@
          $("#table3").table({
             apiPath: '/api/board3',
             apiType: 'get',
-            tableType: 'address',
+            tableType: 'default',
             useHashParam: false,
             noLimit: true,
+            useResize: true,
             caption: '배송주소에 대한 NO,배송지명,우편번호,기본주소,상세주소 표로 로 구성되어있다.',
             head: [
                {name: 'NO', width: '80px'},
@@ -104,7 +103,177 @@
                {label: 'key2'},
                {label: 'key3', align: 'left'},
                {label: 'key4', align: 'left'},
-            ]
+            ],
+            headCreated: (pcElement, mobileElement, headData) => {
+               $(mobileElement).addClass('box-line');
+            },
+            rowCreated: ( pcElement, mobileElement, rowData, index) => {
+               $(mobileElement).find('.body').empty().html(`
+                     <li>
+                        <strong>${rowData.key1}</strong>
+                        <div class="txt-area">
+                            <span class="txt">
+                                (${rowData.key2}) ${rowData.key3}<br>
+                                ${rowData.key4}
+                            </span>                                    
+                        </div>
+                    </li> 
+               `);
+            }
+         });
+
+         $("#table4").table({
+            apiPath: '/api/board4',
+            apiType: 'get',
+            tableType: 'default',
+            useHashParam: false,
+            noLimit: false,
+            useResize: true,
+            caption: '질의응답 표로 NO,제목,등록일자,상태구분 구성되어있다.',
+            head: [
+               {name: 'NO', width: '80px'},
+               {name: '제목', width: ''},
+               {name: '등록일자', width: '130px'},
+               {name: '상태구분', width: '130px'}
+            ],
+            body: [
+               {label: 'no'},
+               {label: 'key1', align: 'left', fomatter: ( value, rowData, isMobile) => {
+                  return `<a href="/pages/pages_7-2.html#${rowData.uid}" class="tb-title">${value}</a>`;
+               }},
+               {label: 'key2'},
+               {label: 'key3'},
+            ],
+            headCreated: (pcElement, mobileElement, headData) => {
+               $(mobileElement).addClass('box-line');
+            },
+            rowCreated: ( pcElement, mobileElement, rowData, index) => {
+               $(mobileElement).find('.body').empty().html(`
+                     <li>
+                        <strong class="font-4">NO. <span>${rowData.no}</span></strong>
+                        <strong class="title"><a href="/pages/pages_7-2.html#${rowData.uid}">${rowData.key1}</a><i class="icon btn-arrow-right medium"></i></strong>
+                        <div class="txt-area">
+                           <span>${rowData.key2}</span>
+                           <span>${rowData.key3}</span>
+                        </div>                                 
+                     </li> 
+               `);
+            }
+         });
+
+
+         $("#table5").table({
+            apiPath: '/api/board5',
+            apiType: 'get',
+            tableType: 'default',
+            useHashParam: false,
+            noLimit: true,
+            useResize: false,
+            caption: '세액정보에 대한 표로 세액구분,본세,가산세,가산금,계,관세,부가가치세,개별소비세,주세,미신고가산세,교통에너지환경세,교육세,농어촌특별세,신고지연가산세,합계, 구성되어있다.',
+            head: [
+               {name: '세액구분', width: '11%'},
+               {name: '본세', width: ''},
+               {name: '가산세', width: ''},
+               {name: '가산금', width: ''},
+               {name: '계', width: ''},
+
+               {name: '세액구분', width: '11%'},
+               {name: '본세', width: ''},
+               {name: '가산세', width: ''},
+               {name: '가산금', width: ''},
+               {name: '계', width: ''},
+            ],
+            body: [
+               {label: 'key1', align: 'right'},
+               {label: 'key2', align: 'right'},
+               {label: 'key3', align: 'right'},
+               {label: 'key4', align: 'right'},
+
+               {label: 'key5', align: 'right'},
+               {label: 'key6', align: 'right'},
+               {label: 'key7', align: 'right'},
+               {label: 'key8', align: 'right'},
+            ],
+            headCreated: (pcElement, mobileElement, headData) => {
+               $(pcElement).addClass('line2 tr-first');
+            },
+            rowCreated: ( pcElement, mobileElement, rowData, index) => {
+               $(pcElement).find('td').eq(3).addClass('bor-right');
+               $(`<th>${['관세', '부가가치세', '개별소비세', '주세', '미신고가산세'][index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
+               $(`<th>${['교통에너지환경세', '교육세', '농어촌특별세', '신고지연가산세', '합계'][index]}</th>`).insertBefore($(pcElement).find('td').eq(4));
+            },
+            created: (element, data, head, body) => {
+               $(element).find('table').removeClass('crud').addClass('cont');
+            }
+         });
+
+         const table6titles = ['관세', '개별 소비세', '교통에너지환경세', '주세', '교육세', '농특세', '부가세', '신고지연가산세', '미신고가산세', '납기경과가산세', '세외수입금액', '환급 신청액합계'];
+
+         $("#table6").table({
+            apiPath: '/api/board6',
+            apiType: 'get',
+            tableType: 'default',
+            useHashParam: false,
+            noLimit: true,
+            useResize: false,
+            caption: '세액정보에 대한 표로 세액구분,본세,가산세,가산금,계,관세,부가가치세,개별소비세,주세,미신고가산세,교통에너지환경세,교육세,농어촌특별세,신고지연가산세,합계, 구성되어있다.',
+            head: [
+               {name: '구분', width: '20%'},
+               {name: '기납부 금액(원)', width: '20%'},
+               {name: '기환급 금액(원)', width: '20%'},
+               {name: '환급신청 가능금액(원) <span>(기납부-기환급)</span>', width: '20%'},
+               {name: '환급 신청액(원)', width: '20%'},
+            ],
+            body: [
+               {label: 'key1', align: 'right'},
+               {label: 'key2', align: 'right'},
+               {label: 'key3', align: 'right'},
+               {label: 'key4', align: 'right'},
+            ],
+            headCreated: (pcElement, mobileElement, headData) => {
+               $(pcElement).addClass('line2');
+               $(pcElement).find('th').eq(0).attr('rowspan', 2);
+               const newHead = $(`<tr class="line2 tr-first"></tr>`);
+               newHead.append($(pcElement).find('th').eq(0)).append(`<th colspan="4">본세</th>`);
+               newHead.insertBefore($(pcElement));
+            },
+            rowCreated: ( pcElement, mobileElement, rowData, index) => {
+               $(`<th>${table6titles[index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
+            },
+            created: (element, data, head, body) => {
+               $(element).find('table').removeClass('crud').addClass('cont');
+               $(element).find('.table-content').append(`
+                  <div class="table-wrap mo">
+                  <strong class="modal-tit">본세</strong>
+                  <div class="cont-acc-tbl">
+                     <ul class="mo-cont-wrap"></ul>
+                  </div>
+               `);
+               data.forEach((data, i) => {
+                  const list = $(`
+                     <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                        <div class="accordion-header">
+                           <a href="javascript: void(0);" class="accordion-btn" title="열기">
+                              <p>${table6titles[i]}</p>
+                              <i class="icon btn-arrow-down medium"></i>
+                           </a>
+                        </div>
+                        <div class="accordion-body d-none">
+                           <ul></ul>
+                        </div>                                             
+                     </li>
+                  `);
+                  $(element).find('.mo-cont-wrap').append(list);
+                  head.slice(1).forEach((head, j) => {
+                     list.find('.accordion-body ul').append(`
+                        <li>
+                           <p class="acc-tit">${head.name}</p>
+                           <p class="acc-txt">${data[body[j].label]}</p>
+                        </li>
+                     `);
+                  });
+               });
+            }
          });
 
 
@@ -144,12 +313,14 @@
             <!-- 내용 -->
             <div class="cont-area">               
                
+
+
                <h1 class="mt-50" style="font-size: 40px;">CRUD형</h1>
                <div class="mt-20 text-right">
                   <button type="button" id="getUid" class="btn primary medium">체크된 목록 data 가져오기</button>
                </div>
 
-               <!-- CRUD형 테이블 -->
+               <!-- CRUD형 -->
                <div id="table1"class="table" >
 
                   <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
@@ -164,7 +335,7 @@
                   <!-- //전체 목록 개수 및 목록 보기 개수 -->
 
                   <!-- 게시판 -->
-                  <div class="wrap-crud-tbl mt-20">                  
+                  <div class="table-content wrap-crud-tbl mt-20">                  
                      <div class="table-wrap pc"></div>
                      <div class="table-wrap mo"></div>
                   </div>
@@ -176,12 +347,16 @@
                   <!-- //페이지네이션 -->
 
                </div>
-               <!-- CRUD형 테이블 -->
+               <!-- CRUD형 -->
+
+
+
+               
 
 
                <h1 class="mt-50 mb-30" style="font-size: 40px;">조회형 - 일반형</h1>
 
-               <!-- 조회형 일반형 -->
+               <!-- 조회형 - 일반형 -->
                <div id="table2" class="table">
 
                   <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
@@ -196,7 +371,7 @@
                   <!-- //전체 목록 개수 및 목록 보기 개수 -->
 
                   <!-- 게시판 -->
-                  <div class="wrap-check-tbl">                  
+                  <div class="table-content wrap-check-tbl">                  
                      <div class="table-wrap pc"></div>
                      <div class="table-wrap mo"></div>
                   </div>
@@ -207,23 +382,92 @@
                   <!-- //페이지네이션 -->
 
                </div>
-               <!-- 조회형 일반형 -->
+               <!-- 조회형 - 일반형 -->
 
 
                <h1 class="mt-50 mb-30" style="font-size: 40px;">조회형 - 배송주소</h1>
 
-               <!-- 조회형 배송주소 -->
+               <!-- 조회형 - 배송주소 -->
                <div id="table3" class="table" >
 
                   <!-- 게시판 -->
-                  <div class="wrap-check-tbl">                  
+                  <div class="table-content wrap-check-tbl">                  
                      <div class="table-wrap pc"></div>
                      <div class="table-wrap mo"></div>
                   </div>
                   <!-- //게시판 -->
 
                </div>
-               <!-- 조회형 배송주소 -->
+               <!-- 조회형 - 배송주소 -->
+
+
+
+
+
+               <h1 class="mt-50 mb-30" style="font-size: 40px;">조회형 - 공지사항</h1>
+
+               <!-- 조회형 - 공지사항 -->
+               <div id="table4" class="table" >
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+               <!-- 조회형 - 공지사항 -->
+
+
+
+
+
+               <h1 class="mt-50 mb-30" style="font-size: 40px;">단순형 - 스크롤 타입</h1>
+
+               <!-- 단순형 - 스크롤 타입 -->
+               <div id="table5" class="table" >
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-cont-tbl">                  
+                     <div class="table-wrap scorll"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+               </div>
+               <!-- 단순형 - 스크롤 타입 -->
+
+
+
+
+               <h1 class="mt-50 mb-30" style="font-size: 40px;">단순형 - 아코디언 타입</h1>
+
+               <!-- 단순형 - 스크롤 타입 -->
+               <div id="table6" class="table" >
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-cont-tbl">                  
+                     <div class="table-wrap pc"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+               </div>
+               <!-- 단순형 - 아코디언 타입 -->
 
             </div>
             <!--// 내용 -->
