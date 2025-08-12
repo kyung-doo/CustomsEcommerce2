@@ -296,29 +296,15 @@
                scrollTop: false,
                caption: '환급신청 란사항 정보에 대한 표로 선택,란번호,품명,수입신고번호,관세,부가세등,환급신청수량 구성되어있다.',
                head: [
-                  {name: '선택', width: '60px', mobileHidden: true},
                   {name: '란번호', width: '80px'},
                   {name: '품명', width: '43.75%'},
-                  {name: '수입신고번호', width: '17.1875%'},
+                  {name: '수입신고번호', width: ''},
                   {name: '관세', width: '9.375%'},
                   {name: '부가세등', width: '9.375%'},
                   {name: '환급신청수량', width: '9.375%'},
                   
                ],
                body: [
-                  {label: 'uid', fomatter: (value, rowData, isMobile) => {
-                     if(!isMobile) {
-                        return `<div class="form-check medium">
-                                 <input type="radio" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
-                                 <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
-                              </div>`;
-                     } else {
-                        return `<div class="form-check medium">
-                                 <input type="radio" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
-                                 <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
-                              </div>`;
-                     }
-                  }},
                   {label: 'key1'},
                   {label: 'key2', align: 'left'},
                   {label: 'key3'},
