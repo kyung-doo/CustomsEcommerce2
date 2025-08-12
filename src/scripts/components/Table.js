@@ -17,7 +17,8 @@ class Table {
         fileLabel: '',
         headCreaed: null,
         rowCreated: null,
-        created: null
+        created: null,
+        scrollTop: false,
     }
 
     constructor( ele, props ) {
@@ -63,6 +64,7 @@ class Table {
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
+            this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             this.setBody();
@@ -117,6 +119,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
+                    this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     this.setBody();
@@ -141,6 +144,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
+                    this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     this.setBody();
@@ -555,6 +559,12 @@ class Table {
         $(element).remove();
     }
 
+    scrollTop () {
+        if(this.props.scrollTop) {
+            $('html, body').scrollTop(this.ele.position().top + $("#header").height());
+        }
+    }   
+
 
     getCheckData ( callback ) {
         const tablePC = this.ele.find('.table-wrap').eq(0);
@@ -568,12 +578,14 @@ class Table {
         });
         callback(checked);
     }
+    
 
     async update () {
         this.ele.find('.board-top select').val(this.limit);
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
+            this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             this.setBody();

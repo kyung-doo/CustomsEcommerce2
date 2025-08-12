@@ -6101,6 +6101,7 @@
                - noLimit: 페이징없이 전부 노출 유무
                - useResize: 칼럼 리사이징 유무
                - caption: 테이블 캡션
+               - scrollTop: 데이터 로드 후 상단으로 이동 유무
                - head[]: 헤더 정보
                   - name: 헤더명 ( html 태그 가능 )
                   - width: 칼럼 넓이
@@ -6133,6 +6134,7 @@
                useHashParam: true,
                noLimit: false,
                useResize: true,
+               scrollTop: true,
                caption: '테이블 캡션',
                head: [ 
                   {name: 'NO', width: '80px'},
@@ -6167,6 +6169,7 @@
                tableType: 'faq',
                useHashParam: false,
                noLimit: false,
+               scrollTop: true,
                head: [
                   {name: 'NO', width: '80px'},
                   {name: '구분', width: '131px'},
