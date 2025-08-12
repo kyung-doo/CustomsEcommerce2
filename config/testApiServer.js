@@ -137,7 +137,7 @@ app.get("/board5", (req, res) => {
 });
 
 
-const data6 = Array.from({ length: 12 }, (_, i) => (
+const data6 = () => Array.from({ length: 12 }, (_, i) => (
     { 
       uid: `id-${i+1}`,
       key1 : String(parseInt(Math.random() * 10000000)).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
@@ -150,10 +150,52 @@ const data6 = Array.from({ length: 12 }, (_, i) => (
 app.get("/board6", (req, res) => {
     res.json({
         listLength: data6.length,
-        data: data6,
+        data: data6(),
     });
 });
 
+
+const data7 = Array.from({ length: listLength }, (_, i) => (
+    { 
+      uid: `id-${i+1}`,
+      no : i+1,
+      key1 : '개인통관고유부호-'+i,
+      key2 : '개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.개인통관고유부호 신청 방법이 궁금합니다.',
+      key3 : '개인통관고유부호 신청 방법은 아래의 게시글을 확인하시고 본인인증 후 서비스를 이용하시기 바랍니다.',
+      key4: '소학교 때 책상을 같이 했던 아이들의 이름과 패, 경, 옥 이런 이국소녀들의 이름과 벌써 아기 어머니된 계집애들의 이름과, 가난한 이웃 사람들의 이름과, 비둘기, 강아지, 토끼, 노새, 노루, 프랑시스 잠, 라이너 마리아 릴케 이런 시인의 이름을 불러 봅니다. 가슴 속에 하나 둘 새겨지는 별을 이제 다 못 헤는 것은 쉬이 아침이 오는 까닭이요, 내일 밤이 남은 까닭이요, 아직 나의 청춘이 다하지 않은 까닭입니다.',
+      files: i % 2 === 0 ? [
+        {
+          name: '위임장(주민등록법 시행령 별지 제15호의2호서식)',
+          format: 'hwp',
+          size: '17KB',
+          url: '위임장(주민등록법 시행령 별지 제15호의2호서식).hwp'
+        },
+        {
+          name: '위임장(주민등록법 시행령 별지 제15호의2호서식)',
+          format: 'hwp',
+          size: '17KB',
+          url: '위임장(주민등록법 시행령 별지 제15호의2호서식).hwp'
+        }
+      ] : []
+    }
+));
+
+app.get("/faq", (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    const results = data7.slice(startIndex, endIndex);
+    res.json({
+        page,
+        limit,
+        limitList: [10, 20, 30],
+        listLength: listLength,
+        totalPages: Math.ceil(data7.length / limit),
+        pagingCount: 9,
+        data: results,
+    });
+});
 
 app.listen(PORT, () => {
   console.log(`Dummy API server running on http://localhost:${PORT}`);

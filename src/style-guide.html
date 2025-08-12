@@ -6073,6 +6073,7 @@
             <a href="/api/board1?page=1&limit=10" target="_blank">/api/board1?page=1&limit=10</a><br />
             <a href="/api/board2?page=1&limit=10" target="_blank">/api/board2?page=1&limit=10</a><br />
             <a href="/api/board3" target="_blank">/api/board3</a>
+            <a href="/api/faq?page=1&limit=10" target="_blank">/api/faq?page=1&limit=10</a>
          </div>
          <pre>
          <code class="html"> 
@@ -6114,6 +6115,7 @@
                   - label: api data 키값
                   - align: 텍스트 정렬 (left, center, right)
                   - fommater: 칼럼 포맷 함수 (value: 키에 해당하는 값, rowData: 한줄 데이터, isMobile: 모바일 유무)
+               - body1, body2, fileLabel -> faq 전용
                - headCreated: 헤더 생성 완료 (pcElement: pc용 헤드 엘레멘트, mobileElement: 모바일 헤드 엘레멘트, headDate: 헤드 설정 데이터)
                - rowCreated: 한줄 리스트 생성 완료 (pcElement: pc용 헤드 엘레멘트, mobileElement: 모바일 헤드 엘레멘트, rowData: 한줄 데이터, index: 리스트 인덱스 )
                - created: 전체 생성 완료 (element: 전체 엘레멘트, data: 전체 데이터, head: 헤드 설정 데이터, body: 바디 설정 데이터)
@@ -6123,7 +6125,8 @@
                - $("#table1").table('getCheckData', (checkDatas) => {}); // crud형 선택된 체크박스 가져오기
 
             - script
-            $('#table1').table({
+             - 기본 -
+            $('#table').table({
                apiPath: '/api/board1',
                apiType: 'get',
                tableType: 'crud',
@@ -6157,11 +6160,35 @@
 
                }
             });
+             - faq -
+            $("#table").table({
+               apiPath: '/api/faq',
+               apiType: 'get',
+               tableType: 'faq',
+               useHashParam: false,
+               noLimit: false,
+               head: [
+                  {name: 'NO', width: '80px'},
+                  {name: '구분', width: '131px'},
+                  {name: '제목', width: '22.7031%'},
+               ],
+               body1: [
+                  {label: 'no'},
+                  {label: 'key1'},
+                  {label: 'key2'},
+               ],
+               body2: [
+                  {label: 'no'},
+                  {label: 'key3'},
+                  {label: 'key4'},
+               ],
+               fileLabel: 'files'
+            });
 
             - CRUD 타입
             &lt;div id="table1" class="table""&gt;
                   &lt;!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) --&gt;
-                  &lt;div class="board-top tbl-top mt-50"&gt;
+                  &lt;div class="board-top tbl-top"&gt;
                      &lt;div class="left-box"&gt;
                         &lt;strong class="tit top-txt"&gt;전체&lt;strong&gt;&lt;/strong&gt;개&lt;/strong&gt;
                         &lt;div class="top-txt"&gt;
@@ -6171,9 +6198,62 @@
                   &lt;/div&gt;
                   &lt;!-- //전체 목록 개수 및 목록 보기 개수 --&gt;
                   &lt;!-- 게시판 --&gt;
-                  &lt;div class="table-content wrap-crud-tbl mt-20"&gt;                  
+                  &lt;div class="table-content wrap-crud-tbl"&gt;                  
                      &lt;div class="table-wrap pc"&gt;&lt;/div&gt;
                      &lt;div class="table-wrap mo"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;!-- //게시판 --&gt;
+                  &lt;!-- 페이지네이션 (안쓰는 경우 삭제) --&gt;
+                  &lt;div class="pagination pagination-type1"&gt;&lt;/div&gt;
+                  &lt;!-- //페이지네이션 --&gt;
+               &lt;/div&gt;
+
+               - 일반 타입
+               &lt;div id="table2" class="table"&gt;
+                  &lt;!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) --&gt;
+                  &lt;div class="board-top tbl-top"&gt;
+                     &lt;div class="left-box"&gt;
+                        &lt;strong class="tit top-txt"&gt;전체&lt;strong&gt;&lt;/strong&gt;개&lt;/strong&gt;
+                        &lt;div class="top-txt"&gt;
+                           &lt;select class="form-select-sort large" title="정보 구분 선택"&gt;&lt;/select&gt;
+                        &lt;/div&gt;                     
+                     &lt;/div&gt;                  
+                  &lt;/div&gt;
+                  &lt;!-- //전체 목록 개수 및 목록 보기 개수 --&gt;
+                  &lt;!-- 게시판 --&gt;
+                  &lt;div class="table-content wrap-check-tbl"&gt;                  
+                     &lt;div class="table-wrap pc"&gt;&lt;/div&gt;
+                     &lt;div class="table-wrap mo"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;!-- //게시판 --&gt;
+                  &lt;!-- 페이지네이션 (안쓰는 경우 삭제) --&gt;
+                  &lt;div class="pagination pagination-type1"&gt;&lt;/div&gt;
+                  &lt;!-- //페이지네이션 --&gt;
+               &lt;/div&gt;
+
+               - 단순형 스크롤 타입
+               &lt;div class="table"&gt;
+                  &lt;!-- 게시판 --&gt;
+                  &lt;div class="table-content wrap-cont-tbl"&gt;                  
+                     &lt;div class="table-wrap scorll"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;!-- //게시판 --&gt;
+               &lt;/div&gt;
+
+               - 단순형 아코디언 타입
+               &lt;div class="table"&gt;
+                  &lt;!-- 게시판 --&gt;
+                  &lt;div class="table-content wrap-cont-tbl"&gt;                  
+                     &lt;div class="table-wrap pc"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;!-- //게시판 --&gt;
+               &lt;/div&gt;
+
+               - faq 타입
+               &lt;div class="table"&gt;
+                  &lt;!-- 게시판 --&gt;
+                  &lt;div class="table-content"&gt;                  
+                     &lt;div class="wrap-faq"&gt;&lt;/div&gt;
                   &lt;/div&gt;
                   &lt;!-- //게시판 --&gt;
                   &lt;!-- 페이지네이션 (안쓰는 경우 삭제) --&gt;

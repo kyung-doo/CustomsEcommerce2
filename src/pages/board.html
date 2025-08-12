@@ -242,11 +242,13 @@
             },
             created: (element, data, head, body) => {
                $(element).find('table').removeClass('crud').addClass('cont');
+               $(element).find('.table-wrap.mo').remove();
                $(element).find('.table-content').append(`
                   <div class="table-wrap mo">
-                  <strong class="modal-tit">본세</strong>
-                  <div class="cont-acc-tbl">
-                     <ul class="mo-cont-wrap"></ul>
+                     <strong class="modal-tit">본세</strong>
+                     <div class="cont-acc-tbl">
+                        <ul class="mo-cont-wrap"></ul>
+                     </div>
                   </div>
                `);
                data.forEach((data, i) => {
@@ -274,6 +276,30 @@
                   });
                });
             }
+         });
+
+         $("#table7").table({
+            apiPath: '/api/faq',
+            apiType: 'get',
+            tableType: 'faq',
+            useHashParam: false,
+            noLimit: false,
+            head: [
+               {name: 'NO', width: '80px'},
+               {name: '구분', width: '131px'},
+               {name: '제목', width: '22.7031%'},
+            ],
+            body1: [
+               {label: 'no'},
+               {label: 'key1'},
+               {label: 'key2'},
+            ],
+            body2: [
+               {label: 'no'},
+               {label: 'key3'},
+               {label: 'key4'},
+            ],
+            fileLabel: 'files'
          });
 
 
@@ -468,6 +494,25 @@
 
                </div>
                <!-- 단순형 - 아코디언 타입 -->
+
+
+               <h1 class="mt-50 mb-30" style="font-size: 40px;">FAQ 타입</h1>
+
+               <!-- FAQ 타입 -->
+               <div id="table7" class="table" >
+
+                  <!-- 게시판 -->
+                  <div class="table-content">                  
+                     <div class="wrap-faq"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+               <!-- FAQ 타입 -->
 
             </div>
             <!--// 내용 -->
