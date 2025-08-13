@@ -5,16 +5,30 @@ class Table {
     static DEFAULT_PROPS = {
         apiPath: '',
         apiType: 'get',
-        tableType: 'default1',
+        tableType: 'default',
         caption: '',
         noLimit: false,
-        useHashParam: false
+        useResize: true,
+        useHashParam: false,
+        head: [],
+        body: [],
+        body1: [],
+        body2: [],
+        fileLabel: '',
+        headCreaed: null,
+        rowCreated: null,
+        created: null,
+        scrollTop: false,
     }
 
     constructor( ele, props ) {
         this.ele = ele;
         this.props = props;
-        this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
+        if(props.useHashParam) {
+            this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
+        } else {
+            this.page = 1;
+        }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
         this.data;
         this.startX = 0;
@@ -29,16 +43,18 @@ class Table {
                 this.onHashChange();
             });
         }
-        await this.loadData();
-        if(this.ele.find('.board-top').length > 0) {
-            this.setBoardTop();
-        }
-        if(this.ele.find('.pagination').length > 0) {
-            this.setPagination();
-        }
-        if(this.props.tableType === 'crud') {
-            this.setCrudTable();
-        }
+        this.setHead();
+
+        try {
+            await this.loadData();
+            if(this.ele.find('.board-top').length > 0) {
+                this.setBoardTop();
+            }
+            if(this.ele.find('.pagination').length > 0) {
+                this.setPagination();
+            }
+            this.setBody();
+        } catch(e) {}
     }
 
     async onHashChange  () {
@@ -46,11 +62,13 @@ class Table {
         this.limit = this.getHashParam("limit");
         this.ele.find('.board-top select').val(this.limit);
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-        await this.loadData();
-        this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-        if(this.props.tableType === 'crud') {
-            this.setCrudTable();
-        }
+        try {
+            await this.loadData();
+            this.scrollTop();
+            this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+            this.setHead();
+            this.setBody();
+        } catch(e) {}
     }
 
     loadData () {
@@ -99,11 +117,13 @@ class Table {
             } else {
                 this.ele.find('.board-top select').val(this.limit);
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                await this.loadData();
-                this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                if(this.props.tableType === 'crud') {
-                    this.setCrudTable();
-                }
+                try {
+                    await this.loadData();
+                    this.scrollTop();
+                    this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+                    this.setHead();
+                    this.setBody();
+                } catch( e ) {}
             }
         });
     }
@@ -122,51 +142,59 @@ class Table {
             } else {
                 this.ele.find('.board-top select').val(this.limit);
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                await this.loadData();
-                this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
-                if(this.props.tableType === 'crud') {
-                    this.setCrudTable();
-                }
+                try {
+                    await this.loadData();
+                    this.scrollTop();
+                    this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+                    this.setHead();
+                    this.setBody();
+                } catch( e ) {}
             }
         });
     }
 
-    setCrudTable (onlyBody) {
-        const table = this.ele.find('.wrap-crud-tbl');
-        const tablePC = table.find('.table-wrap.pc');
-        const tableM = table.find('.table-wrap.mo');
+    setHead () {
         
-        if(!onlyBody) {
+        const table = this.ele.find(this.props.tableType !== 'faq' ? '.table-content' : '.wrap-faq');
+        if(this.props.tableType !== 'faq') {
+            const tablePC = table.find('.table-wrap').eq(0);
+            const tableM = table.find('.table-wrap').eq(1);
+
             const htmlPC = `
                 <table class="tbl col crud">
-                <caption>${this.props.caption}</caption> 
-                <colgroup></colgroup>
-                <thead></thead>
-                <tbody></tbody>
+                    <caption>${this.props.caption}</caption> 
+                    <colgroup></colgroup>
+                    <thead></thead>
+                    <tbody></tbody>
                 </table>
             `;
             tablePC.empty().html(htmlPC);
-            tablePC.find('colgroup').append(`<col style="width: 52px;">`);
             tablePC.find('thead').append(`<tr></tr>`);
-            tablePC.find('thead tr').append(`
-                <th scope="col">
-                    <div class="form-check medium">
-                        <input type="checkbox" id="all-chk">
-                        <label for="all-chk"><span class="sr-only">전체선택</span></label>
-                    </div>
-                </th>
-            `);
-            this.data.head.forEach((head, i) => {
+            if(this.props.tableType === 'crud') {
+                tablePC.find('colgroup').append(`<col style="width: 52px;">`);
+                tablePC.find('thead tr').append(`
+                    <th scope="col">
+                        <div class="form-check medium">
+                            <input type="checkbox" id="all-chk">
+                            <label for="all-chk"><span class="sr-only">전체선택</span></label>
+                        </div>
+                    </th>
+                `);
+            }
+
+            this.props.head.forEach((head, i) => {
                 tablePC.find('colgroup').append(`<col style="width: ${head.width};">`);
-                if(head.useSort) {
-                    tablePC.find('thead tr').append(`<th style="${head.style ?? ''}"><span class="arr-ico">${head.text}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
+                if(head.sort) {
+                    tablePC.find('thead tr').append(`<th><span class="arr-ico">${head.name}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
                 } else {
-                    tablePC.find('thead tr').append(`<th style="${head.style ?? ''}">${head.text}</th>`);
+                    tablePC.find('thead tr').append(`<th>${head.name}</th>`);
                 }
                 if(head.tooltip) {
                     this.addToolTip(tablePC.find('thead tr th').eq(i+1), head.tooltip);
                 }
             });
+
+            // sorting
             const owner = this;
             tablePC.find('.th-turn').each(function ( i ) {
                 $(this).off('click').on('click', function () {
@@ -174,53 +202,99 @@ class Table {
                         if(i !== j) {
                             tablePC.find('.th-turn').eq(j).removeClass('active');
                         } else {
+                            const idx = tablePC.find('.th-turn').eq(j).parent().parent().index();
                             if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
                                 tablePC.find('.th-turn').eq(j).addClass('active');
-                                owner.sortData('desc', tablePC.find('.th-turn').eq(j).parent().parent().index());
+                                if(owner.props.tableType === 'crud') {
+                                    owner.sortData('desc', owner.props.body[idx-1].label);
+                                } else {
+                                    owner.sortData('desc', owner.props.body[idx].label);
+                                }
                             } else {
                                 tablePC.find('.th-turn').eq(j).removeClass('active');
-                                owner.sortData('asc', tablePC.find('.th-turn').eq(j).parent().parent().index());
+                                if(owner.props.tableType === 'crud') {
+                                    owner.sortData('asc', owner.props.body[idx-1].label);
+                                } else {
+                                    owner.sortData('asc', owner.props.body[idx].label);
+                                }
                             }
                         }
                     });
                 });
             });
 
-            tablePC.find('th input[type="checkbox"]').on('change', function ( e ) {
-                tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('.header input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-            });
+            if(tableM.length > 0) {
+                let htmlM ='' 
+                if(this.props.tableType === 'crud') {
+                    htmlM = `
+                        <div class="header">
+                            <div class="form-check medium">
+                                <input type="checkbox" id="m-all-chk">
+                                <label for="m-all-chk">전체선택</label>
+                            </div>
+                        </div>
+                        <ul class="wrap-body"></ul>
+                    `;
+                } else {
+                    htmlM = `<ul class="wrap-body"></ul>`;
+                }
 
-            const htmlM = `
-                <div class="header">
-                    <div class="form-check medium">
-                        <input type="checkbox" id="m-all-chk">
-                        <label for="m-all-chk">전체선택</label>
-                    </div>
-                </div>
-                <ul class="wrap-body"></ul>
-            `;
-            tableM.empty().html(htmlM);
-            tableM.find('.header input[type="checkbox"]').on('change', function ( e ) {
-                tablePC.find('th input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-                tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
-            });
+                tableM.empty().html(htmlM);
+            }
 
-            this.setReisze(table);
+            if(this.props.headCreated) {
+                this.props.headCreated(tablePC.find('thead tr')[0], tableM.length > 0 ? tableM.find('.wrap-body')[0] : null, this.props.head);
+            }
+
+            if(this.props.tableType === 'crud') {
+                tablePC.find('th input[type="checkbox"]').on('change', function ( e ) {
+                    tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                    if(tableM.length > 0) {
+                        tableM.find('.header input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                        tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                    }
+                });
+                tableM.find('.header input[type="checkbox"]').on('change', function ( e ) {
+                    tablePC.find('th input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                    if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                    tablePC.find('td input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+                });
+            }
+
+            if(this.props.useResize) {
+                this.setResize(table);
+            }
         } else {
-            tablePC.find('th input[type="checkbox"]').prop('checked', false);
-            tableM.find('.header input[type="checkbox"]').prop('checked', false);
-        }
+            const html = `
+                <ul class="header"></ul>
+                <div class="body"></div>
+            `;
+            table.empty().html(html);
+            this.props.head.forEach((head, i) => {
+                table.find('.header').append(`<li style="min-width: ${head.width};">${head.name}</li>`);
+            });
 
-        tablePC.find('tbody').empty();
-        this.data.body.forEach((body, i) => {
-            const tr = $(`<tr></tr>`)
-            tablePC.find('tbody').append(tr);
-            
-            body.forEach((data, j) => {
-                if(j === 0) {
+            if(this.props.headCreated) {
+                this.props.headCreated(table.find('.header'), null, this.props.head);
+            }
+        }
+    }
+
+    setBody () {
+        const table = this.ele.find(this.props.tableType !== 'faq' ? '.table-content' : '.wrap-faq');
+        if(this.props.tableType !== 'faq') {
+            const tablePC = table.find('.table-wrap').eq(0);
+            const tableM = table.find('.table-wrap').eq(1);
+
+            tablePC.find('tbody').empty();
+            if(tableM.length > 0)   tableM.find('.wrap-body').empty();
+            this.data.data.forEach((data, i) => {
+                const tr = $(`<tr></tr>`);
+                tablePC.find('tbody').append(tr);
+                const li = $('<li><ul class="body"></ul></li>');
+                if(tableM.length > 0)   tableM.find('.wrap-body').append(li);
+
+                if(this.props.tableType === 'crud') {
                     tr.append(`
                         <td>
                             <div class="form-check medium">
@@ -229,113 +303,163 @@ class Table {
                             </div>
                         </td>  
                     `);
-                } else {
-                    if(data.button) {
-                        tr.append(`<td style="${data.style ?? ''}"><button class="${data.class}" onclick="location.href='${data.link}'">${data.button}</button></td>`);
-                    } else if(data.image) {
-                        if(data.link) {
-                            tr.append(`<td style="${data.style ?? ''}"><a href="${data.link}"><i class="${data.image}"></i></a></td>`);
-                        } else {
-                            tr.append(`<td style="${data.style ?? ''}"><i class="${data.image}"></i></td>`);
-                        }
-                    } else {
-                        if(data.link) {
-                            tr.append(`<td style="${data.style ?? ''}"><a class="cl-7" href="${data.link}">${data.text}</a></td>`);
-                        } else {
-                            tr.append(`<td style="${data.style ?? ''}">${data.text}</td>`);
-                        }
-                    }
-                }
-            });
-        });
-
-        tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
-            let idx = $(e.target).parent().parent().parent().index();
-            tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-            if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.body.length) {
-                tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                tableM.find('.header input[type="checkbox"]').prop('checked', true);
-            } else {
-                tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                tableM.find('.header input[type="checkbox"]').prop('checked', false);
-            }
-        });
-
-        tableM.find('tbody').empty();
-        this.data.body.forEach((body, i) => {
-            const li = $('<li><ul class="body"></ul></li>');
-            tableM.find('.wrap-body').append(li);
-            body.forEach((data, j) => {
-                if(j === 0) {
-                    li.find('ul').append(`
-                        <li>
-                            <div class="title">
-                                <div class="form-check medium">
-                                    <input type="checkbox" id="m-chk${i}">
-                                    <label for="m-chk${i}"><span class="sr-only">선택</span></label>
-                                </div>
-                            </div>                                 
-                        </li>
-                    `);
-                } else {
-                    if(data.button) {
+                    if(tableM.length > 0) {
                         li.find('ul').append(`
                             <li>
-                                <strong class="title">${this.data.head[j-1].text}</strong>
-                                <span class="txt" style="${data.style}"><button onclick="location.href='${data.link}'" class="${data.class}">${data.button}</button></span>
-                            </li> 
+                                <div class="title">
+                                    <div class="form-check medium">
+                                        <input type="checkbox" id="m-chk${i}">
+                                        <label for="m-chk${i}"><span class="sr-only">선택</span></label>
+                                    </div>
+                                </div>                                 
+                            </li>
                         `);
-                    } else if(data.image) {
-                        if(data.link) {
-                            li.find('ul').append(`
-                                <li>
-                                    <strong class="title">${this.data.head[j-1].text}</strong>
-                                    <span class="txt" style="${data.style}"><a href="${data.link}"><i class="${data.image}"></i></a></span>
-                                </li> 
-                            `);
-                        } else {
-                            li.find('ul').append(`
-                            <li>
-                                <strong class="title">${this.data.head[j-1].text}</strong>
-                                <span class="txt" style="${data.style}"><i class="${data.image}"></i></span>
-                            </li> 
-                        `);
-                        }
-                    } else {
-                        if(data.link) {
-                            li.find('ul').append(`
-                                <li>
-                                    <strong class="title">${this.data.head[j-1].text}</strong>
-                                    <span class="txt" style="${data.style}"><a class="cl-7" href="${data.link}">${data.text}</a></span>
-                                </li> 
-                            `);
-                        } else {
-                            li.find('ul').append(`
-                                <li>
-                                    <strong class="title">${this.data.head[j-1].text}</strong>
-                                    <span class="txt" style="${data.style}">${data.text}</span>
-                                </li> 
-                            `);
-                        }
-                    }
-                    if(this.data.head[j-1].tooltip) {
-                        this.addToolTip(li.find('ul li').eq(j).find('.title'), this.data.head[j-1].tooltip, 'top right');
                     }
                 }
-            });
-        });
+                this.props.body.forEach((body, j) => {
+                    tr.append(`
+                        <td class="${body.align === 'left' ? 'text-left' : body.align === 'right' ? 'text-right' : ''}">
+                            ${body.fomatter ? body.fomatter(data[body.label], data, false) : data[body.label]}
+                        </td>
+                    `);
+                    
+                    if(tableM.length > 0) {
+                        if(this.props.head[j].mobileHidden) {
+                            li.find('ul').append(`
+                                <li>
+                                    ${body.fomatter ? body.fomatter(data[body.label], data, true) : data[body.label]}
+                                </li> 
+                            `); 
+                        } else {
+                            li.find('ul').append(`
+                                <li>
+                                    <strong class="title">${this.props.head[j].name}</strong>
+                                    <span class="txt">${body.fomatter ? body.fomatter(data[body.label], data, true) : data[body.label]}</span>
+                                </li> 
+                            `);
+                        }
+                    }
 
-        tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
-            let idx = $(e.target).parent().parent().parent().parent().parent().index();
-            tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-            if(tableM.find('li input[type="checkbox"]:checked').length === this.data.body.length) {
-                tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                tableM.find('.header input[type="checkbox"]').prop('checked', true);
-            } else {
-                tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                    if(this.props.head[j].tooltip) {
+                        this.addToolTip(li.find('ul li').eq(j+1).find('.title'), this.props.head[j].tooltip, 'top right');
+                    }
+                });
+
+                if(this.props.rowCreated) {
+                    this.props.rowCreated(tr, tableM.length > 0 ? li : null, data, i);
+                }
+
+            });
+
+            if(this.props.tableType === 'crud') {
+                tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
+                    let idx = $(e.target).parent().parent().parent().index();
+                    if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
+                    if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.data.length) {
+                        tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                        if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                    } else {
+                        tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                        if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                    }
+                });
+                if(tableM.length > 0) {
+                    tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
+                        let idx = $(e.target).parent().parent().parent().parent().parent().index();
+                        tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
+                        if(tableM.find('li input[type="checkbox"]:checked').length === this.data.data.length) {
+                            tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                            tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                        } else {
+                            tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                            tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                        }
+                    });
+                }
             }
-        });
+
+            if(this.props.created) {
+                this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
+            }
+        } else {
+            table.find('.body').empty();
+            this.data.data.forEach((data, i) => {
+                const li = $(`
+                    <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
+                        <div class="accordion-header"><ul></ul></div>
+                        <div class="accordion-body d-none"></div>
+                    </div
+                `);
+                table.find('.body').append(li);
+                this.props.body1.forEach((body, j) => {
+                    if(j === 0) {
+                        li.find('.accordion-header ul').append(`
+                            <li style="min-width: ${this.props.head[j].width}">
+                                <strong class="txt">Q${data[body.label]}</strong>
+                            </li>
+                        `);
+                    } else if(j === 1) {
+                        li.find('.accordion-header ul').append(`
+                            <li style="min-width: ${this.props.head[j].width}">
+                                <span class="txt">${data[body.label]}</span>
+                            </li>
+                        `);
+                    } else {
+                        li.find('.accordion-header ul').append(`
+                            <li style="min-width: ${this.props.head[j].width}">
+                            <a href="javascript: void(0);" class="accordion-btn tb-title txt" title="열기">${data[body.label]}</a>
+                            <i class="icon btn-arrow-down small"></i>
+                            </li>
+                        `);
+                    }
+                });
+                li.find('.accordion-body').append(`
+                    <strong class="number">A${data[this.props.body2[0].label]}</strong>
+                    <div class="faq-box">
+                        <strong class="title">${data[this.props.body2[1].label]}</strong>
+                        <p class="txt">${data[this.props.body2[2].label]}</p>                              
+                    </div>
+                `);
+                if(this.props.fileLabel) {
+                    if(data[this.props.fileLabel].length > 0) {
+                        li.find('.accordion-body').append(`
+                            <h5 class="title-type3">첨부파일</h5>
+                            <div class="file-upload line list">                              
+                                <div class="file-list">                     
+                                     <ul class="upload-list"></ul>
+                                </div>
+                            </div>
+                        `);
+                        data[this.props.fileLabel].forEach((file) => {
+                            const fileList = $(`
+                                <li>
+                                    <div class="file-info m-column file-down">
+                                        <div class="file-name">${file.name} [${file.format}, ${file.size}]</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="btn text medium">
+                                                <i class="icon download medium"></i> 다운로드
+                                            </button>                                 
+                                        </div>
+                                    </div>
+                                </li>
+                            `);
+                            li.find('.upload-list').append(fileList);
+                            fileList.on('click', () => this.fileDown(file));
+                        });
+                    } else {
+                        li.find('.faq-box').addClass('nofile');    
+                    }
+
+                } else {
+                    li.find('.faq-box').addClass('nofile');
+                }
+
+                if(this.props.rowCreated) {
+                    this.props.rowCreated(li, null, data, i);
+                }
+
+            });
+        }
     }
 
     addToolTip ( target, data, arrow ) {
@@ -372,22 +496,21 @@ class Table {
         
     }
 
-    sortData (type, index) {
+    sortData (type, key) {
+        if(!this.data) return;
         if(type === 'desc') {
-            this.data.body.sort((a, b) => {
-                return a[index].text.localeCompare(b[index].text);
+            this.data.data.sort((a, b) => {
+                return String(a[key]).localeCompare(String(b[key]));
             });
         } else {
-            this.data.body.sort((a, b) => {
-                return b[index].text.localeCompare(a[index].text);
+            this.data.data.sort((a, b) => {
+                return String(b[key]).localeCompare(String(a[key]));
             });
         }
-        if(this.props.tableType === 'crud') {
-            this.setCrudTable(true);
-        }
+        this.setBody();
     }
 
-    setReisze ( table ) {
+    setResize ( table ) {
         table.find('th:not(:last-child)').append(`<span class="resize-point"></span`);
         table.find('.resize-point').on('mousedown', ( e ) => {
             this.onResizeDown(e, table)
@@ -428,18 +551,45 @@ class Table {
         $(window).off('mouseup.table');
     }
 
+    fileDown ( file ) {
+        const element = document.createElement('a');
+        element.setAttribute('href', file.url);
+        element.setAttribute('download', file.name+'.'+file.format);
+        element.click();
+        $(element).remove();
+    }
+
+    scrollTop () {
+        if(this.props.scrollTop) {
+            $('html, body').scrollTop(this.ele.position().top + $("#header").height());
+        }
+    }   
+
 
     getCheckData ( callback ) {
-        const tablePC = this.ele.find('.table-wrap.pc');
+        const tablePC = this.ele.find('.table-wrap').eq(0);
         const checked = [];
         const owner = this;
         tablePC.find('td input[type="checkbox"]').each(function () {
             if($(this).is(':checked')) {
                 let idx = $(this).parent().parent().parent().index();
-                checked.push(owner.data.body[idx][0].uid)
+                checked.push(owner.data.data[idx]);
             }
         });
         callback(checked);
+    }
+    
+
+    async update () {
+        this.ele.find('.board-top select').val(this.limit);
+        this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+        try {
+            await this.loadData();
+            this.scrollTop();
+            this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+            this.setHead();
+            this.setBody();
+        } catch( e ) {}
     }
 }
 

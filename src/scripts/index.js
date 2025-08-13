@@ -20,7 +20,7 @@ if('ontouchstart' in window){
 global.$ = $;
 
 $(() => {
-
+    
     createUI();
 
     // dom 변경 시 UI 다시 생성
@@ -30,7 +30,8 @@ $(() => {
     domObserver.observe(document.body, {
         attributes: true, 
         childList: true, 
-        characterData: true
+        characterData: true,
+        subtree: true
     });
     
 
@@ -86,11 +87,5 @@ function createUI () {
     $(`*[data-ui="pagination"]`).each(function () {
         const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
         $(this).pagination(props);
-    });
-
-    // 테이블
-    $(`*[data-ui="table"]`).each(function () {
-        const props = $(this).data('props') ? styleToJson($(this)[0], $(this).data('props')) : {};
-        $(this).table(props);
     });
 }
