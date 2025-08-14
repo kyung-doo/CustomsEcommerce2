@@ -28,7 +28,7 @@ class Table {
         if(props.useHashParam) {
             this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
         } else {
-            this.page = 1;
+            this.page = this.props.data ? this.props.data.page ?? 1 : 1;
         }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
         this.data = this.props.data ?? {};
