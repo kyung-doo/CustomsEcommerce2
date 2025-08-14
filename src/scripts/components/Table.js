@@ -6,6 +6,7 @@ class Table {
         apiPath: '',
         apiType: 'get',
         tableType: 'default',
+        data: null,
         caption: '',
         noLimit: false,
         useResize: true,
@@ -30,7 +31,7 @@ class Table {
             this.page = 1;
         }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
-        this.data;
+        this.data = this.props.data ?? {};
         this.startX = 0;
         this.startWidth = 0;
         this.touchIndex = 0;
@@ -73,26 +74,30 @@ class Table {
 
     loadData () {
         return new Promise((resolve, reject) => {
-            let data = null;
-            if(!this.props.noLimit) {
-                data = { 
-                    page: this.page,
-                    limit: this.limit
+            if(!this.props.data) {
+                let data = null;
+                if(!this.props.noLimit) {
+                    data = { 
+                        page: this.page,
+                        limit: this.limit
+                    }
                 }
+                $.ajax({
+                    type: this.props.apiType,
+                    url: this.props.apiPath,
+                    dataType: 'json',
+                    data: data,
+                    success: ( res ) => {
+                        this.data = res;
+                        resolve();
+                    },
+                    error: (request, status, error) => {
+                        reject();
+                    }
+                });
+            } else {
+                resolve();
             }
-            $.ajax({
-                type: this.props.apiType,
-                url: this.props.apiPath,
-                dataType: 'json',
-                data: data,
-                success: ( res ) => {
-                    this.data = res;
-                    resolve();
-                },
-                error: (request, status, error) => {
-                    reject();
-                }
-            });
         });
     }
 
