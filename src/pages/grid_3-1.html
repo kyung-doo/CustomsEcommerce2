@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<style>
+   textarea{height:500px !important}
+   .form-group{margin-top: 50px;}
+   .form-group label{font-size:30px !important;}
+   .title-type3{font-size:40px !important}
+</style>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">단순형 - 스크롤 타입</h5>    
+               
+               <script>
+                  $(() => {
+                     const data5 = {
+                        "listLength": 5,
+                        "data": [
+                           {
+                              "uid": "id-1",
+                              "key1": "9,042,306",
+                              "key2": "4,232,894",
+                              "key3": "4,022,681",
+                              "key4": "848,629",
+                              "key5": "4,356,684",
+                              "key6": "9,755,607",
+                              "key7": "7,046,079",
+                              "key8": "5,262,658"
+                           },
+                           {
+                              "uid": "id-2",
+                              "key1": "1,196,394",
+                              "key2": "7,483,724",
+                              "key3": "4,091,953",
+                              "key4": "3,673,515",
+                              "key5": "9,766,722",
+                              "key6": "4,106,188",
+                              "key7": "5,457,911",
+                              "key8": "5,211,530"
+                           },
+                           {
+                              "uid": "id-3",
+                              "key1": "8,908,245",
+                              "key2": "8,982,329",
+                              "key3": "6,433,797",
+                              "key4": "3,935,491",
+                              "key5": "2,452,875",
+                              "key6": "7,778,751",
+                              "key7": "1,368,911",
+                              "key8": "4,781,779"
+                           },
+                           {
+                              "uid": "id-4",
+                              "key1": "3,966,018",
+                              "key2": "9,645,501",
+                              "key3": "4,442,522",
+                              "key4": "2,413,694",
+                              "key5": "3,143,110",
+                              "key6": "4,521,831",
+                              "key7": "4,259,230",
+                              "key8": "7,592,403"
+                           },
+                           {
+                              "uid": "id-5",
+                              "key1": "5,312,184",
+                              "key2": "3,647,167",
+                              "key3": "1,843,104",
+                              "key4": "6,359,761",
+                              "key5": "972,865",
+                              "key6": "4,750,059",
+                              "key7": "9,285,643",
+                              "key8": "3,424,672"
+                           }
+                        ]
+                     }
+                     
+                     $("#table5").table({
+                        data: data5,
+                        tableType: 'default',
+                        useHashParam: false,
+                        noLimit: true,
+                        useResize: false,
+                        scrollTop: false,
+                        caption: '세액정보에 대한 표로 세액구분,본세,가산세,가산금,계,관세,부가가치세,개별소비세,주세,미신고가산세,교통에너지환경세,교육세,농어촌특별세,신고지연가산세,합계, 구성되어있다.',
+                        head: [
+                           {name: '세액구분', width: '11%'},
+                           {name: '본세', width: ''},
+                           {name: '가산세', width: ''},
+                           {name: '가산금', width: ''},
+                           {name: '계', width: ''},
+
+                           {name: '세액구분', width: '11%'},
+                           {name: '본세', width: ''},
+                           {name: '가산세', width: ''},
+                           {name: '가산금', width: ''},
+                           {name: '계', width: ''},
+                        ],
+                        body: [
+                           {label: 'key1', align: 'right'},
+                           {label: 'key2', align: 'right'},
+                           {label: 'key3', align: 'right'},
+                           {label: 'key4', align: 'right'},
+
+                           {label: 'key5', align: 'right'},
+                           {label: 'key6', align: 'right'},
+                           {label: 'key7', align: 'right'},
+                           {label: 'key8', align: 'right'},
+                        ],
+                        headCreated: (pcElement, mobileElement, headData) => {
+                           $(pcElement).addClass('line2 tr-first');
+                        },
+                        rowCreated: ( pcElement, mobileElement, rowData, index) => {
+                           $(pcElement).find('td').eq(3).addClass('bor-right');
+                           $(`<th>${['관세', '부가가치세', '개별소비세', '주세', '미신고가산세'][index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
+                           $(`<th>${['교통에너지환경세', '교육세', '농어촌특별세', '신고지연가산세', '합계'][index]}</th>`).insertBefore($(pcElement).find('td').eq(4));
+                        },
+                        created: (element, data, head, body) => {
+                           $(element).find('table').removeClass('crud').addClass('cont');
+                        }
+                     });
+                  });
+               </script>
+
+
+               <!-- tb html -->
+               <div id="table5" class="table" >
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-cont-tbl">                  
+                     <div class="table-wrap scorll"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+               </div>
+               <!-- tb html -->
+
+               
+
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">js</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">html</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

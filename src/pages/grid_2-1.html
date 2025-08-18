@@ -20,7 +20,7 @@
          <div class="cont-body">            
             <!-- 내용 -->
             <div class="cont-area">
-               <h5 class="title-type3">조회형 - 일반형</h5>    
+               <h5 class="title-type3">조회형 - 일반형 (1. 모바일에서 툴팁 사라짐, 2. 선택된 다운로드 개수)</h5>    
                
                <script>
                   $(() => {
@@ -36,7 +36,7 @@
                         head: [
                            {name: '선택', width: '60px', mobileHidden: true},
                            {name: '란번호', width: '180px', sort: true},
-                           {name: '품명', width: '30%', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},                           
+                           {name: '품명', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},                           
                            {name: '관세', width: '9.375%'},
                            {name: '부가세등', width: '9.375%'},
                            {name: '환급신청수량', width: '9.375%'},
@@ -47,21 +47,27 @@
                            {label: 'uid', fomatter: (value, rowData, isMobile) => {
                               if(!isMobile) {
                                  return `<div class="form-check medium">
-                                          <input type="radio" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
+                                          <input type="checkbox" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
                                           <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
                                        </div>`;
                               } else {
                                  return `<div class="form-check medium">
-                                          <input type="radio" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
+                                          <input type="checkbox" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
                                           <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
                                        </div>`;
                               }
                            }},
                            {label: 'key1'},
                            {label: 'key2', align: 'left'},                           
-                           {label: 'key3'},
-                           {label: 'key4'},
-                           {label: 'key5', align: 'right'},
+                           {label: 'key3', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-1">${value}</strong>`;
+                           }},
+                           {label: 'key4', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-2">${value}</strong>`;
+                           }},
+                           {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong>${value}</strong>`;
+                           }},
                            {label: 'key6', fomatter: ( value, rowData, isMobile ) => {
                               if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
                               else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
@@ -72,6 +78,13 @@
                </script>
 
                <div id="table2" class="table">
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="txt-box-type type1 fpc">
+                     <p>선택된 파일을 다운로드 합니다. <strong><strong class="cl-4">3개</strong><i>/</i>20개</strong></p>
+                     <button type="button" class="btn secondary medium">다운로드</button>
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
 
                   <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
                   <div class="board-top tbl-top mt-50">

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<style>
+   
+</style>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">단순형 - 아코디언 타입(1. input태그 들어가면 반응형일때 html변경)</h5>    
+               
+               <script>
+                  $(() => {
+                     const table6titles = ['관세', '개별 소비세', '교통에너지환경세', '주세', '교육세', '농특세', '부가세', '신고지연가산세', '미신고가산세', '납기경과가산세', '세외수입금액', '환급 신청액합계'];
+
+                     $("#table6").table({
+                        apiPath: '/api/board6',
+                        apiType: 'get',
+                        tableType: 'default',
+                        useHashParam: false,
+                        noLimit: true,
+                        useResize: false,
+                        scrollTop: false,
+                        caption: '세액정보에 대한 표로 세액구분,본세,가산세,가산금,계,관세,부가가치세,개별소비세,주세,미신고가산세,교통에너지환경세,교육세,농어촌특별세,신고지연가산세,합계, 구성되어있다.',
+                        head: [
+                           {name: '구분', width: '20%'},
+                           {name: '기납부 금액(원)', width: '20%'},
+                           {name: '기환급 금액(원)', width: '20%'},
+                           {name: '환급신청 가능금액(원) <span>(기납부-기환급)</span>', width: '20%'},
+                           {name: '환급 신청액(원)', width: '20%'},
+                        ],
+                        body: [
+                           {label: 'key1', align: 'right'},
+                           {label: 'key2', align: 'right'},
+                           {label: 'key3', align: 'right', class:'1'},                           
+                           {label: 'key4', fomatter: ( value, rowData, isMobile ) => {                              
+                              return `
+                                 <div class="form-group medium">                     
+                                    <div class="form-conts">
+                                       <input type="text" class="input text-right" placeholder="0" title="환급 신청액(원) 입력해주세요">
+                                    </div>                                                   
+                                 </div>
+                              `;
+                           }},
+                        ],
+                        headCreated: (pcElement, mobileElement, headData) => {
+                           $(pcElement).addClass('line2');
+                           $(pcElement).find('th').eq(0).attr('rowspan', 2);
+                           const newHead = $(`<tr class="line2 tr-first"></tr>`);
+                           newHead.append($(pcElement).find('th').eq(0)).append(`<th colspan="4">본세</th>`);
+                           newHead.insertBefore($(pcElement));
+                        },
+                        rowCreated: ( pcElement, mobileElement, rowData, index) => {
+                           $(`<th>${table6titles[index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
+                        },
+                        created: (element, data, head, body) => {
+                           $(element).find('table').removeClass('crud').addClass('cont');
+                           $(element).find('.table-wrap.mo').remove();
+                           $(element).find('.table-content').append(`
+                              <div class="table-wrap mo">
+                                 <strong class="modal-tit">본세</strong>
+                                 <div class="cont-acc-tbl">
+                                    <ul class="mo-cont-wrap"></ul>
+                                 </div>
+                              </div>
+                           `);
+                           data.forEach((data, i) => {
+                              const list = $(`
+                                 <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
+                                    <div class="accordion-header">
+                                       <a href="javascript: void(0);" class="accordion-btn" title="열기">
+                                          <strong>${table6titles[i]}</strong>
+                                          <i class="icon btn-arrow-down medium"></i>
+                                       </a>
+                                    </div>
+                                    <div class="accordion-body d-none">
+                                       <ul></ul>
+                                    </div>                                             
+                                 </li>
+                              `);
+                              $(element).find('.mo-cont-wrap').append(list);
+                              head.slice(1).forEach((head, j) => {
+                                 console.log(list)
+                                 
+                                 list.find('.accordion-body ul').append(`
+                                    <li>
+                                       <strong class="acc-tit">${head.name}</strong>
+                                       <p class="acc-txt">${data[body[j].label]}</p>
+                                    </li>
+                                 `);
+                              });
+                           });
+                        }
+                     });
+                  });
+               </script>
+
+               <!-- tb html -->
+               <div id="table6" class="table" >
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-cont-tbl">                  
+                     <div class="table-wrap pc"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+               </div>
+               <!-- tb html -->
+
+               
+
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">js</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">html</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        
+                     </div>
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
