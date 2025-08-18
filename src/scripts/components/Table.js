@@ -28,7 +28,7 @@ class Table {
         if(props.useHashParam) {
             this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
         } else {
-            this.page = 1;
+            this.page = this.props.data ? this.props.data.page ?? 1 : 1;
         }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
         this.data = this.props.data ?? {};
@@ -195,7 +195,7 @@ class Table {
                     tablePC.find('thead tr').append(`<th>${head.name}</th>`);
                 }
                 if(head.tooltip) {
-                    this.addToolTip(tablePC.find('thead tr th').eq(i+1), head.tooltip);
+                    this.addToolTip(tablePC.find('thead tr th').eq(this.props.tableType === 'crud' ? i+1 : i), head.tooltip);
                 }
             });
 
