@@ -91,13 +91,21 @@
                               $(element).find('.mo-cont-wrap').append(list);
                               head.slice(1).forEach((head, j) => {
                                  console.log(list)
-                                 
-                                 list.find('.accordion-body ul').append(`
-                                    <li>
-                                       <strong class="acc-tit">${head.name}</strong>
-                                       <p class="acc-txt">${data[body[j].label]}</p>
-                                    </li>
-                                 `);
+                                 if(head.name !== '환급 신청액(원)') {
+                                    list.find('.accordion-body ul').append(`
+                                       <li>
+                                          <strong class="acc-tit">${head.name}</strong>
+                                          <p class="acc-txt">${data[body[j].label]}</p>
+                                       </li>
+                                    `);
+                                 } else {
+                                    list.find('.accordion-body ul').append(`
+                                       <li>
+                                          <input type="text" class="input text-right" placeholder="0" title="환급 신청액(원) 입력해주세요" value="${data[body[j].label]}">
+                                       </li>
+                                    `);
+                                 }
+
                               });
                            });
                         }
