@@ -42,7 +42,7 @@
                         body: [
                            {label: 'key1', align: 'right'},
                            {label: 'key2', align: 'right'},
-                           {label: 'key3', align: 'right', class:'1'},                           
+                           {label: 'key3', align: 'right'},                           
                            {label: 'key4', fomatter: ( value, rowData, isMobile ) => {                              
                               return `
                                  <div class="form-group medium">                     
@@ -90,7 +90,7 @@
                               `);
                               $(element).find('.mo-cont-wrap').append(list);
                               head.slice(1).forEach((head, j) => {
-                                 console.log(list)
+                                 console.log(list.has())
                                  
                                  list.find('.accordion-body ul').append(`
                                     <li>
