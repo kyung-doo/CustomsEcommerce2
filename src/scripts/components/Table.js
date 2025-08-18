@@ -195,7 +195,7 @@ class Table {
                     tablePC.find('thead tr').append(`<th>${head.name}</th>`);
                 }
                 if(head.tooltip) {
-                    this.addToolTip(tablePC.find('thead tr th').eq(i+1), head.tooltip);
+                    this.addToolTip(tablePC.find('thead tr th').eq(this.props.tableType === 'crud' ? i+1 : i), head.tooltip);
                 }
             });
 
