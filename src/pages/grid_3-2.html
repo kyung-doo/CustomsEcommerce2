@@ -90,16 +90,6 @@
                               `);
                               $(element).find('.mo-cont-wrap').append(list);
                               head.slice(1).forEach((head, j) => {
-<<<<<<< HEAD
-                                 console.log(list.has())
-                                 
-                                 list.find('.accordion-body ul').append(`
-                                    <li>
-                                       <strong class="acc-tit">${head.name}</strong>
-                                       <p class="acc-txt">${data[body[j].label]}</p>
-                                    </li>
-                                 `);
-=======
                                  console.log(list)
                                  if(head.name !== '환급 신청액(원)') {
                                     list.find('.accordion-body ul').append(`
@@ -116,7 +106,6 @@
                                     `);
                                  }
 
->>>>>>> 881e7760bdd1919a0a86b1edbad42702b3530005
                               });
                            });
                         }
