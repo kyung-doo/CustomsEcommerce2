@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<style>
+   textarea{height:500px !important}
+   .form-group{margin-top: 50px;}
+   .form-group label{font-size:30px !important;}
+   .title-type3{font-size:40px !important}
+</style>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">CRUD형</h5>    
+               
+               <script>
+                  $(() => {
+                     $("#table1").table({
+                        apiPath: '/api/board1',
+                        apiType: 'get',
+                        tableType: 'crud',
+                        useHashParam: true,
+                        noLimit: false,
+                        useResize: true,
+                        scrollTop: true,
+                        caption: '개인통관고유부호 도용신고에 대한 표로 NO,신고일자,운송장번호(H.B/L),주문번호,판매자명,물품명,처리상태으로 구성되어있다.',
+                        head: [
+                           {name: 'NO', width: '80px'},
+                           {name: '신고일자', width: '131px', sort: true},
+                           {name: '운송장번호(H.B/L)', width: '22.7031%'},
+                           {name: '주문번호', width: '18.4062%', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},
+                           {name: '판매자명', width: '19.8437%'},
+                           {name: '물품명', width: '6.8437%'},
+                           {name: '처리상태', width: '12.5%', mobileHidden: true}
+                        ],
+                        body: [
+                           {label: 'no'},
+                           {label: 'date'},
+                           {label: 'key1', fomatter: (value, rowData, isMobile) => {
+                              return `<a class="cl-7" href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;
+                           }},
+                           {label: 'key2'},
+                           {label: 'key3', align: 'right'},
+                           {label: 'key4', fomatter: ( value, rowData, isMobile ) => {
+                              return `<a href="${value}"><i class="icon download large"></i></a>`;
+                           }},
+                           {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
+                              if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                           }},
+                        ]
+                     });
+                  });
+               </script>
+
+               <div id="table1"class="table" >
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-crud-tbl mt-20">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">js</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">html</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

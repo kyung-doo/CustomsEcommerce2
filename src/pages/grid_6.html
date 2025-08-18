@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<style>
+   textarea{height:500px !important}
+   .form-group{margin-top: 50px;}
+   .form-group label{font-size:30px !important;}
+   .title-type3{font-size:40px !important}
+</style>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <h5 class="title-type3">CRUD형</h5>    
+               
+               <script>
+                  $(() => {
+                     
+                  });
+               </script>
+
+               
+
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">js</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <label for="textarea1">html</label>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        
+                     </div>
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
