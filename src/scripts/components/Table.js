@@ -510,7 +510,7 @@ class Table {
         if(sort === 'desc') {
             this.data.data.sort((a, b) => {
                 if(sortType === 'string') {
-                    return String(a[key]).localeCompare(String(b[key]));
+                    return String(b[key]).localeCompare(String(a[key]));
                 } else {
                     return parseInt(b[key].replace(/[^0-9]/g, "")) - parseInt(a[key].replace(/[^0-9]/g, ""));
                 }
@@ -518,7 +518,7 @@ class Table {
         } else {
             this.data.data.sort((a, b) => {
                 if(sortType === 'string') {
-                    return String(b[key]).localeCompare(String(a[key]));
+                    return String(a[key]).localeCompare(String(b[key]));
                 } else {
                     return parseInt(a[key].replace(/[^0-9]/g, "")) - parseInt(b[key].replace(/[^0-9]/g, ""));
                 }
