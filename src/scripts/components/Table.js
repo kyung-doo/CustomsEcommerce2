@@ -346,7 +346,7 @@ class Table {
                     }
 
                     if(this.props.head[j].tooltip) {
-                        this.addToolTip(li.find('ul li').eq(j+1).find('.title'), this.props.head[j].tooltip, 'top right');
+                        this.addToolTip(li.find('ul li').eq(this.props.tableType === 'crud' ? j+1 : j).find('.title'), this.props.head[j].tooltip, 'top right');
                     }
                 });
 

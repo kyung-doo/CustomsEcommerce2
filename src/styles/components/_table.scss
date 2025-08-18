@@ -299,7 +299,8 @@
     } 
   }
 
-  .table-wrap {display: block;overflow-x: auto;}
+  .table-wrap.pc {display: block;overflow-x: auto;}
+  .table-wrap.mo {display: block;overflow: visible;}
 
   .tbl {
     &.check, &.cont {width: 1110px;}
