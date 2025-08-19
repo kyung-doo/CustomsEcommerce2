@@ -144,26 +144,19 @@
                            }},                         
                         ],    
                         created: (element, data, head, body) => {
+                           var checkboxs = $(element).find('.table-wrap.mo').find('.form-check');
                            $(element).find('.table-wrap.mo').remove();
                            $(element).find('.table-content').append(`
                               <div class="wrap-faq type1 mo">                                       
                                  <div class="body"></div>
                               </div>
                            `);
-
                            data.forEach((data, i) => {
                               const list = $(`
                                  <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
                                     <div class="accordion-header">
                                        <ul>
-                                          <li class="number" style="min-width: 52px;">
-                                             <div class="txt">
-                                                <div class="form-check medium">
-                                                   <input type="checkbox" id="chk1">
-                                                   <label for="chk1"><span class="sr-only">선택</span></label>
-                                                </div>
-                                             </div>
-                                          </li>
+                                          <li class="number" style="min-width: 52px;"><div class="txt"></div></li>
                                           <li class="num" style="min-width:80px">
                                              <span class="txt">${data.no}</span>
                                           </li>
@@ -186,8 +179,7 @@
                                     </div>                        
                                  </div>
                               `);
-
-
+                              list.find('.number .txt').append(checkboxs[i]);
                               $(element).find('.body').append(list);                              
                            });
                         }                                            
