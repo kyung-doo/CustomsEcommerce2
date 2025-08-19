@@ -3,27 +3,18 @@
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
-<style>
-   textarea{height:500px !important}
-   .form-group{margin-top: 50px;}
-   .form-group label{font-size:30px !important;}
-   .title-type3{font-size:40px !important}
-</style>
 <body>
    <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
-      <!-- content-wrap -->
-            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+      <!-- content-wrap -->                  
          </div>
          <div class="cont-body">            
             <!-- 내용 -->
             <div class="cont-area">
-               <h5 class="title-type3">조회형 - 아코디언 타입</h5>    
-               
                <script>
-                  const data1 = {
+                  const data = {
                      "page": 1,
                      "limit": 10,
                      "limitList": [10, 20, 30],
@@ -159,19 +150,18 @@
 
 
                   $(() => {                     
-                     $(() => {
-                        const table1titles = ['통관목록심사완료','반출신고','반입신고','하선신고 수리','입항적재화물목록 운항정보 정정','입항보고 수리','입항적재화물목록 심사완료','입항적재화물목록 제출','통관목록접수'];
+                     $(() => {                       
 
-                        $("#table1").table({
+                        $("#table").table({
                            //apiPath: '/api/board2',
                            //apiType: 'get',
-                           data: data1,
+                           data: data,
                            tableType: 'default',
                            useHashParam: false,
                            noLimit: false,
                            useResize: false,
                            scrollTop: true,
-                           caption: '환급신청 란사항 정보에 대한 표로 선택,란번호,품명,수입신고번호,관세,부가세등,환급신청수량 구성되어있다.',
+                           caption: '테이블제목 에 대한 표로 th1,th2,th3 구성되어있다.',
                            head: [
                               {name: 'NO', width: '80px'},
                               {name: '처리단계', width: ''},
@@ -279,11 +269,10 @@
                   });
                </script>
 
-               <div id="table1" class="table">
+               <div id="table" class="table wrap-grid-tbl">
                   <!-- 게시판 -->
                   <div class="table-content wrap-check-tbl">                  
-                     <div class="table-wrap pc"></div>
-                     <div class="table-wrap mo"></div>
+                     <div class="table-wrap pc"></div>                     
                   </div>
                   <!-- //게시판 -->
 
@@ -295,23 +284,229 @@
 
                <div class="form-group">
                   <div class="form-tit-txt">
-                     <label for="textarea1">js</label>
+                     <strong>js</strong>
                   </div>
                   <div class="form-conts">
                      <div class="textarea-wrap">
                         <textarea class="input">
-                           
+                           const data = {
+                     "page": 1,
+                     "limit": 10,
+                     "limitList": [10, 20, 30],
+                     "listLength": 500,
+                     "totalPages": 10,
+                     "pagingCount": 5,
+                     "listLength": 5,
+                     "data": [
+                        {                           
+                           "uid": "id-1",
+                           "no": 1,
+                           "key1": "1반출신고",
+                           "key2": "12077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-2",
+                           "no": 2,
+                           "key1": "2반출신고",
+                           "key2": "22077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-3",
+                           "no": 3,
+                           "key1": "3반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-4",
+                           "no": 4,
+                           "key1": "4반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-5",
+                           "no": 5,
+                           "key1": "5반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-6",
+                           "no": 6,
+                           "key1": "6반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-7",
+                           "no": 7,
+                           "key1": "7반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-8",
+                           "no": 8,
+                           "key1": "8반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출"
+                        },
+                        {                           
+                           "uid": "id-9",
+                           "no": 9,
+                           "key1": "9반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출",
+                           "notice": "허브넷로지스틱스(인천항 4부두) 은 수입신고 수리일로부터 15이내에 물품을 반출하여야하며, 미반출시 과태료가 부과됩니다.",  
+                        },
+                        {                           
+                           "uid": "id-10",
+                           "no": 10,
+                           "key1": "10반출신고",
+                           "key2": "02077024",
+                           "key3": "1 GT",
+                           "key4": "2025-02-27 07:20:45",
+                           "key5": "2025-02-27 07:20:46",
+                           "key6": "허브넷로지스틱스(인청항 4부두)",
+                           "key7": "0.2 KG",
+                           "key8": "수입신고 수리후 반출",                           
+                           "notice": "허브넷로지스틱스(인천항 4부두) 은 수입신고 수리일로부터 15이내에 물품을 반출하여야하며, 미반출시 과태료가 부과됩니다.",  
+                        }                                                              
+                     ]
+                  }
+
+
+                  $(() => {                     
+                     $(() => {                       
+
+                        $("#table").table({
+                           //apiPath: '/api/board2',
+                           //apiType: 'get',
+                           data: data,
+                           tableType: 'default',
+                           useHashParam: false,
+                           noLimit: false,
+                           useResize: false,
+                           scrollTop: true,
+                           caption: '테이블제목 에 대한 표로 th1,th2,th3 구성되어있다.',
+                           head: [
+                              {name: 'NO', width: '80px'},
+                              {name: '처리단계', width: ''},
+                              {name: '장치장/장치위치', width:''},                           
+                              {name: '포장개수', width: ''},
+                              {name: '반출입(처리)일시', width: ''},
+                              {name: '처리일시', width: ''},
+                              {name: '장치장명', width: ''},
+                              {name: '중량', width: ''},                           
+                              {name: '반출입(처리)내용', width: ''}                              
+                           ],
+                           body: [
+                              {label: 'no'},
+                              {label: 'key1'},
+                              {label: 'key2'},
+                              {label: 'key3'},
+                              {label: 'key4'},
+                              {label: 'key5'},
+                              {label: 'key6'},
+                              {label: 'key7'},
+                              {label: 'key8'},                              
+                           ],
+                           headCreated: (pcElement, mobileElement, headData) => {
+                              $(pcElement).addClass('line2  tr-first');
+                              $(pcElement).find('th').eq(0).attr('rowspan', 2);
+                              const newHead = $(`<tr class="line2"></tr>`);
+                              Array.from(Array(4), () => newHead.append($(pcElement).find('th').eq(5)));
+                              newHead.insertAfter($(pcElement));
+                           },
+                           rowCreated: ( pcElement, mobileElement, rowData, index) => {                              
+                              $(pcElement).find('td').eq(0).attr('rowspan', 2);
+                              const newBody = $(`<tr class="last-tr"></tr>`);
+                              Array.from(Array(4), () => newBody.append($(pcElement).find('td').eq(5)));
+                              newBody.insertAfter($(pcElement));
+                              if(rowData.notice) {                                 
+                                 $(pcElement).find('td').eq(0).attr('rowspan', 3);
+                                 newBody.removeClass('last-tr');
+                                 $(`<tr class="last-tr"><td colspan="4">[안내사항] ${rowData.notice}</td></tr>`).insertAfter(newBody)
+                              }
+                           },
+                           created: (element, data, head, body) => {
+                              $(element).find('table').attr('class', 'tbl col cont type1 bor-col-sep');
+                              Array.from(Array(4), () => $(element).find('col').eq(5).remove());                              
+                           }
+                        });
+                     });
+                  });
                         </textarea>  
                      </div>
                   </div>
                </div>
                <div class="form-group">
                   <div class="form-tit-txt">
-                     <label for="textarea1">html</label>
+                     <strong>html</strong>
                   </div>
                   <div class="form-conts">
                      <div class="textarea-wrap">
-                        
+                        <textarea class="input">
+                           <div id="table" class="table wrap-grid-tbl">
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>                     
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+               </div>
+                        </textarea>
                      </div>
                   </div>
                </div>

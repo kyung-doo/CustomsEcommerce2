@@ -2,6 +2,9 @@
 a{text-decoration: none;}
 a[class*=cl-]{text-decoration: underline;}
 
+//점삭제
+li{ list-style-type: none;}
+
 //마우스 올렸을때 밑줄 
 .table-wrap a:hover,
 .wrap-pages-move a:hover,
