@@ -1,5 +1,24 @@
 /** 컨텐츠 여백 **/
 .cont-body{
+  .txt-box-type.type3 + .wrap-check-tbl{margin-top: 24px;}
+  .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
+  .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
+  .wrap-check-tbl + .wrap-form-area,
+  .wrap-check-tbl + form{margin-top: 24px;}      
+  .wrap-cont-tbl table:first-child{margin-top: 0;}
+  .wrap-form-area + .wrap-cont-tbl,
+  .form + .wrap-cont-tbl{margin-top: 48px;}  
+
+  //그리드
+  .txt-box-type.type3 + .wrap-grid-tbl{margin-top: 24px;}
+  .txt-box-type.type1 + .wrap-grid-tbl{margin-top: 24px;}
+  .txt-box-type.type1 + .wrap-grid-tbl{margin-top: 24px;}   
+  .wrap-grid-tbl + .wrap-form-area,
+  .wrap-grid-tbl + form{margin-top: 24px;}      
+  .wrap-grid-tbl table:first-child{margin-top: 0;}     
+  .wrap-form-area + .wrap-grid-tbl,
+  .form + .wrap-grid-tbl{margin-top: 48px;}  
+
   .title-type1{margin-top:42px;margin-bottom:19px;}
   .btn-area:has(.medium){margin-top: 24px;}
   .btn-area:has(.large){margin-top: 48px;}  
@@ -8,15 +27,7 @@
   [class*=txt-box-type].type2{margin-top: 48px;margin-bottom: 24px;}
   .txt-box-type{margin-top: 24px;}
   .txt-box-type.type2 + .txt-box-type.type2{margin-top: 24px;}
-  .txt-box-type.type2:first-child{margin-top: 0;}  
-  .txt-box-type.type3 + .wrap-check-tbl{margin-top: 24px;}
-  .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
-  .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
-
-  //그리드
-  .txt-box-type.type3 + .table{margin-top: 24px;}
-  .txt-box-type.type1 + .table{margin-top: 24px;}
-  .txt-box-type.type1 + .table{margin-top: 24px;}
+  .txt-box-type.type2:first-child{margin-top: 0;}   
 
   .txt-box-type.type1 + .wrap-form-area,
   .txt-box-type.type1 + form{margin-top: 24px;}  
@@ -37,27 +48,10 @@
   [class*=tabmenu-] + .search-box{margin-top: 48px;}
   [class*=tabmenu-] + .wrap-graph{margin-top: 48px;}
   [class*=tabmenu-] + .board-top.tbl-top{margin-top: 48px;}
-  .wrap-check-tbl + .wrap-form-area,
-  .wrap-check-tbl + form{margin-top: 24px;}      
-  .wrap-cont-tbl table:first-child{margin-top: 0;} 
-  
-  //그리드
-  .table + .wrap-form-area,
-  .table + form{margin-top: 24px;}      
-  .table table:first-child{margin-top: 0;} 
-
-
   .accordion:nth-child(n+2){margin-top: 8px;}
   .title.mo{margin-top: 41px;margin-bottom: 24px;}
   .wrap-form-area + .board-top.no-wrap.title-top,
   form + .board-top.no-wrap.title-top{margin-top: 24px;}
-  .wrap-form-area + .wrap-cont-tbl,
-  .form + .wrap-cont-tbl{margin-top: 48px;}  
-
-  //그리드
-  .wrap-form-area + .table,
-  .form + .table{margin-top: 48px;}  
-  
   .title-type.medium + .txt-box-type.type1{margin-top: 20px;}
   .wrap-graph + .compulsory-txt{margin-top: 24px;}  
   .add-title{margin-top: 48px;margin-bottom: 14px;}    
@@ -77,6 +71,16 @@
 
 
 .modal-cont{
+  .title-type3 + .wrap-cont-tbl .tbl.col.cont{margin-top: 0;}
+  .title-type3 + .wrap-cont-tbl.pc + .wrap-cont-tbl.mo .tbl.col.cont{margin-top: 0;}
+  .form-group.large + .wrap-check-tbl{margin-top: 24px;}
+
+  //그리드
+  .title-type3 + .wrap-grid-tbl .tbl.col.cont{margin-top: 0;}
+  .title-type3 + .wrap-grid-tbl + .wrap-grid-tbl .tbl.col.cont{margin-top: 0;}
+  .form-group.large + .wrap-grid-tbl{margin-top: 24px;}
+
+
   .search-box + .compulsory-txt{margin-top: 24px;margin-bottom: 49px;}
   .title-type3{margin-top: 48px;margin-bottom: 17px;}
   .title-type3:first-child{margin-top: 5px;}
@@ -84,15 +88,7 @@
   .modal-cont{margin-bottom: 32px;}
   .modal-cont .title-type3:first-child{margin-top: 0;}
   .board-top.tbl-top{margin-bottom: 19px;}
-  //.board-top.tbl-top:first-child{margin-bottom: 0;}
-  .title-type3 + .wrap-cont-tbl .tbl.col.cont{margin-top: 0;}
-  .title-type3 + .wrap-cont-tbl.pc + .wrap-cont-tbl.mo .tbl.col.cont{margin-top: 0;}
-  .form-group.large + .wrap-check-tbl{margin-top: 24px;}
-
-  //그리드
-  .title-type3 + .table .tbl.col.cont{margin-top: 0;}
-  .title-type3 + .table + .table .tbl.col.cont{margin-top: 0;}
-  .form-group.large + .table{margin-top: 24px;}
+  //.board-top.tbl-top:first-child{margin-bottom: 0;}  
 
 
   .wrap-form-area + .board-top.tbl-top{margin-top: 48px;}

@@ -279,20 +279,28 @@
     .txt{margin-top: 12px;}    
   }
 
-  // FAQ
+  // FAQ  
+  .board-top.tbl-top.faq{position: relative;margin-bottom: 0;
+    button{position: absolute;bottom:-43px;right:0;z-index: 1;}
+  } 
   .wrap-faq{     
     //th
     .header{display: none;}
 
     //td
-    .body{
+    .body{border-bottom:0 !important;padding: 0 !important;
+
+      li{padding: 0 !important;}
+
       //아코디언 박스
-      .accordion-wrap{border:1px solid #E4E4E4;border-radius: 8px;margin-top: 8px;}
+      .accordion-wrap{border:1px solid #E4E4E4;border-radius: 8px;margin-top: 8px;
+        &:first-child{margin-top: 0;}
+      }
 
       //아코디언 제목
       .accordion-header{border-bottom:0;padding: 24px;
         ul{flex-wrap: wrap;
-          li{min-width:auto !important;             
+          li{min-width:auto !important;display: block;             
             .txt:not(.accordion-btn){padding: 0 8px;margin-bottom: 23px;display: block;}  
             &.number .txt{padding-left: 0;position: relative;}    
             &.number .txt::before{content:"";display: block;position: absolute;top:0;right:0;width: 1px;height:12px;background-color: #D8D8D8;}
@@ -311,6 +319,7 @@
     }  
 
     &.type1{
+      .header{display: inline-block;background-color: rgba(0,0,0,0.0);border-bottom:0;padding: 11px 0 35px 0;}
       .body{
         .accordion-header{position: relative;
           ul li{
