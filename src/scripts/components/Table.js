@@ -356,35 +356,38 @@ class Table {
 
             });
 
-            if(this.props.tableType === 'crud') {
-                tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
-                    let idx = $(e.target).parent().parent().parent().index();
-                    if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-                    if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.data.length) {
-                        tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                        if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', true);
-                    } else {
-                        tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                        if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', false);
-                    }
-                });
-                if(tableM.length > 0) {
-                    tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
-                        let idx = $(e.target).parent().parent().parent().parent().parent().index();
-                        tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-                        if(tableM.find('li input[type="checkbox"]:checked').length === this.data.data.length) {
-                            tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                            tableM.find('.header input[type="checkbox"]').prop('checked', true);
-                        } else {
-                            tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                            tableM.find('.header input[type="checkbox"]').prop('checked', false);
-                        }
-                    });
-                }
-            }
-
             if(this.props.created) {
                 this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
+            }
+            const owner = this;
+            if(this.props.tableType === 'crud') {
+                tablePC.find('td input[type="checkbox"]').each(function ( i ) {
+                    $(this).off('change').on('change', ( e ) => {
+                        if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').eq(i).prop('checked', $(e.target).is(':checked'));
+                        if(tablePC.find('td input[type="checkbox"]:checked').length === owner.data.data.length) {
+                            tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                            if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                        } else {
+                            tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                            if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                        }
+                    });
+                })
+                
+                if(tableM.length > 0) {
+                    tableM.find('li input[type="checkbox"]').each(function (i) {
+                        $(this).off('change').on('change', (e) => {
+                            tablePC.find('td input[type="checkbox"]').eq(i).prop('checked', $(e.target).is(':checked'));
+                            if(tableM.find('li input[type="checkbox"]:checked').length === owner.data.data.length) {
+                                tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                                tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                            } else {
+                                tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                                tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                            }
+                        });
+                    });
+                }
             }
         } else {
             table.find('.body').empty();
