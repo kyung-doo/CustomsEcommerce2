@@ -198,13 +198,13 @@
                               $(pcElement).addClass('line2  tr-first');
                               $(pcElement).find('th').eq(0).attr('rowspan', 2);
                               const newHead = $(`<tr class="line2"></tr>`);
-                              Array.from(Array(4), () => newHead.append($(pcElement).find('th').eq(4)));
+                              Array.from(Array(4), () => newHead.append($(pcElement).find('th').eq(5)));
                               newHead.insertAfter($(pcElement));
                            },
                            rowCreated: ( pcElement, mobileElement, rowData, index) => {                              
                               $(pcElement).find('td').eq(0).attr('rowspan', 2);
                               const newBody = $(`<tr class="last-tr"></tr>`);
-                              Array.from(Array(4), () => newBody.append($(pcElement).find('td').eq(4)));
+                              Array.from(Array(4), () => newBody.append($(pcElement).find('td').eq(5)));
                               newBody.insertAfter($(pcElement));
                               if(rowData.notice) {                                 
                                  $(pcElement).find('td').eq(0).attr('rowspan', 3);
@@ -214,17 +214,17 @@
                            },
                            created: (element, data, head, body) => {
                               $(element).find('table').attr('class', 'tbl col cont type1 bor-col-sep');
-                              Array.from(Array(4), () => $(element).find('col').eq(4).remove());
+                              Array.from(Array(4), () => $(element).find('col').eq(5).remove());
 
                               $(element).find('table').removeClass('crud').addClass('cont');
-                                 $(element).find('.table-wrap.mo').remove();
-                                 $(element).find('.table-content').append(`
-                                    <div class="table-wrap mo">                                       
-                                       <div class="cont-acc-tbl">
-                                          <ul class="mo-cont-wrap"></ul>
-                                       </div>
+                              $(element).find('.table-wrap.mo').remove();
+                              $(element).find('.table-content').append(`
+                                 <div class="table-wrap mo">                                       
+                                    <div class="cont-acc-tbl">
+                                       <ul class="mo-cont-wrap"></ul>
                                     </div>
-                                 `);
+                                 </div>
+                              `);
 
                               data.forEach((data, i) => {
                                  
