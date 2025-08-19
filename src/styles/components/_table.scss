@@ -50,51 +50,12 @@
       }
     }
     .title > span {font-size: 15px;font-weight: 700;}
-    .resize-point {
-        position: absolute;
-        right: -5px;
-        top: 0;
-        width: 10px;
-        height: 100%;
-        cursor: col-resize;
-        pointer-events: all;
-
-        &::after {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 40%;
-          background-color: #b7b7b7;
-          z-index: 1;
-          top: 50%;
-          transform: translateY(-50%);
-        }
+    .resize-point {position: absolute;right: -5px;top: 0;width: 10px;height: 100%;cursor: col-resize;pointer-events: all;
+        &::after {content: "";position: absolute;width: 1px;height: 40%;background-color: #b7b7b7;z-index: 1;top: 50%;transform: translateY(-50%);}
     }        
   }
 
-  td {border-bottom: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 14px 16px;} 
-  /**
-  table {
-    카드형
-    &.crud {
-      th {padding: 16px 16px;}
-      td {padding: 16px 16px;}
-    }
-
-    조회형
-    &.check {
-      th {padding: 16px 16px;}
-      td {padding: 16px 16px;}
-    }
-
-    단순형
-    &.cont {
-      th {padding: 16px 16px;}
-      td {padding: 16px 16px;}
-    }
-      
-  }   
-    **/ 
+  td {border-bottom: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 14px 16px;}   
 
   .th-turn {width: 20px;height: 20px;position: absolute;top: 50%;right: 0;background-image: url(../assets/icons/tb-turn.svg);background-position: center;background-color: rgba(0, 0, 0, 0);transition: all 0.3s;transform: translateY(-50%);padding: 0;overflow:hidden;
     &.active {transform: rotate(180deg);transform-origin: 50% 30%;}
@@ -232,7 +193,7 @@
 
 // FAQ
 .wrap-faq{  
-  .btn-arrow-down{position: absolute;height:100%;top:0;right:30px;transition: all .3s;z-index: 1;}
+  .btn-arrow-down{position: absolute;height:100%;top:0;right:16px;transition: all .3s;z-index: 1;}
   .accordion-wrap.active .btn-arrow-down{transform: rotate(180deg);}     
   &.type1 .accordion-wrap.on .accordion-btn{font-weight: 700;}       
 
@@ -274,7 +235,9 @@
   }   
   
   &.type1{   
+    .wrap-accordion-btn{position: relative;}
     .accordion-wrap.on .accordion-btn{font-weight: 700;}     
+    .accordion-wrap .accordion-btn{padding: 10px 50px 10px 16px;}     
     .accordion-body{padding: 0 50px 16px 16px;background-color: #fff;
       p{text-align: left;line-height: 150%;}
     }

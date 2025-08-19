@@ -399,7 +399,7 @@ class Table {
                 this.props.body1.forEach((body, j) => {
                     if(j === 0) {
                         li.find('.accordion-header ul').append(`
-                            <li style="min-width: ${this.props.head[j].width}">
+                            <li class="number" style="min-width: ${this.props.head[j].width}">
                                 <strong class="txt">Q${data[body.label]}</strong>
                             </li>
                         `);
