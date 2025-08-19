@@ -144,13 +144,7 @@
                            }},                         
                         ],    
                         created: (element, data, head, body) => {
-                           $(element).find('.table-wrap.mo').remove();
-                           $(element).find('.table-content').append(`
-                              <div class="wrap-faq type1 mo">                                       
-                                 <div class="body"></div>
-                              </div>
-                           `);
-
+                           $(element).find('.table-wrap.mo .wrap-body').addClass('wrap-faq type1').empty().append('<div class="body"></div>');
                            data.forEach((data, i) => {
                               const list = $(`
                                  <div class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">
@@ -159,8 +153,8 @@
                                           <li class="number" style="min-width: 52px;">
                                              <div class="txt">
                                                 <div class="form-check medium">
-                                                   <input type="checkbox" id="chk1">
-                                                   <label for="chk1"><span class="sr-only">선택</span></label>
+                                                   <input type="checkbox" id="mobileChk${i}">
+                                                   <label for="mobileChk${i}"><span class="sr-only">선택</span></label>
                                                 </div>
                                              </div>
                                           </li>
@@ -186,9 +180,7 @@
                                     </div>                        
                                  </div>
                               `);
-
-
-                              $(element).find('.body').append(list);                              
+                              $(element).find('.table-wrap.mo .wrap-body .body').append(list);                              
                            });
                         }                                            
                      });
@@ -215,10 +207,10 @@
                         </div>                     
                      </div>  
                      <div class="right-box">    
-                        <div class="form-check medium mo">
+                        <!-- <div class="form-check medium mo">
                            <input type="checkbox" id="m-all-chk">
                            <label for="m-all-chk">전체선택</label>
-                        </div>                    
+                        </div>                     -->
                         <button type="button" id="getUid" class="btn tertiary medium">메시지 삭제</button>
                      </div>                
                   </div>
