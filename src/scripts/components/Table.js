@@ -235,7 +235,7 @@ class Table {
                         <div class="header">
                             <div class="form-check medium">
                                 <input type="checkbox" id="m-all-chk">
-                                <label for="m-all-chk">전체선택</label>
+                                <label for="m-all-chk">전체선택1</label>
                             </div>
                         </div>
                         <ul class="wrap-body"></ul>

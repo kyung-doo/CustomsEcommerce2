@@ -35,8 +35,8 @@
                         {                           
                            "uid": "id-1",
                            "no": 1,
-                           "key1": "반출신고",
-                           "key2": "02077024",
+                           "key1": "1반출신고",
+                           "key2": "12077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
                            "key5": "2025-02-27 07:20:46",
@@ -47,8 +47,8 @@
                         {                           
                            "uid": "id-2",
                            "no": 2,
-                           "key1": "반출신고",
-                           "key2": "02077024",
+                           "key1": "2반출신고",
+                           "key2": "22077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
                            "key5": "2025-02-27 07:20:46",
@@ -59,7 +59,7 @@
                         {                           
                            "uid": "id-3",
                            "no": 3,
-                           "key1": "반출신고",
+                           "key1": "3반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -71,7 +71,7 @@
                         {                           
                            "uid": "id-4",
                            "no": 4,
-                           "key1": "반출신고",
+                           "key1": "4반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -83,7 +83,7 @@
                         {                           
                            "uid": "id-5",
                            "no": 5,
-                           "key1": "반출신고",
+                           "key1": "5반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -95,7 +95,7 @@
                         {                           
                            "uid": "id-6",
                            "no": 6,
-                           "key1": "반출신고",
+                           "key1": "6반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -107,7 +107,7 @@
                         {                           
                            "uid": "id-7",
                            "no": 7,
-                           "key1": "반출신고",
+                           "key1": "7반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -119,7 +119,7 @@
                         {                           
                            "uid": "id-8",
                            "no": 8,
-                           "key1": "반출신고",
+                           "key1": "8반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -131,7 +131,7 @@
                         {                           
                            "uid": "id-9",
                            "no": 9,
-                           "key1": "반출신고",
+                           "key1": "9반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -144,7 +144,7 @@
                         {                           
                            "uid": "id-10",
                            "no": 10,
-                           "key1": "반출신고",
+                           "key1": "10반출신고",
                            "key2": "02077024",
                            "key3": "1 GT",
                            "key4": "2025-02-27 07:20:45",
@@ -198,13 +198,13 @@
                               $(pcElement).addClass('line2  tr-first');
                               $(pcElement).find('th').eq(0).attr('rowspan', 2);
                               const newHead = $(`<tr class="line2"></tr>`);
-                              Array.from(Array(4), () => newHead.append($(pcElement).find('th').eq(4)));
+                              Array.from(Array(4), () => newHead.append($(pcElement).find('th').eq(5)));
                               newHead.insertAfter($(pcElement));
                            },
                            rowCreated: ( pcElement, mobileElement, rowData, index) => {                              
                               $(pcElement).find('td').eq(0).attr('rowspan', 2);
                               const newBody = $(`<tr class="last-tr"></tr>`);
-                              Array.from(Array(4), () => newBody.append($(pcElement).find('td').eq(4)));
+                              Array.from(Array(4), () => newBody.append($(pcElement).find('td').eq(5)));
                               newBody.insertAfter($(pcElement));
                               if(rowData.notice) {                                 
                                  $(pcElement).find('td').eq(0).attr('rowspan', 3);
@@ -214,7 +214,7 @@
                            },
                            created: (element, data, head, body) => {
                               $(element).find('table').attr('class', 'tbl col cont type1 bor-col-sep');
-                              Array.from(Array(4), () => $(element).find('col').eq(4).remove());
+                              Array.from(Array(4), () => $(element).find('col').eq(5).remove());
 
                               $(element).find('table').removeClass('crud').addClass('cont');
                                  $(element).find('.table-wrap.mo').remove();
@@ -224,13 +224,13 @@
                                           <ul class="mo-cont-wrap"></ul>
                                        </div>
                                     </div>
-                                 `);
+                                 `);           
+                                 
+                                 
+
+
 
                               data.forEach((data, i) => {
-                                 
-                                 if($('.accordion-btn > strong').text() == 'undefined'){
-                                    console.log($(this))
-                                 }
                                  const list = $(`
                                     <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
                                        <div class="accordion-header">
@@ -240,34 +240,42 @@
                                           </a>
                                        </div>
                                        <div class="accordion-body d-none">
-                                          <ul></ul>
+                                          <ul>
+                                             <li>
+                                                <strong class="acc-tit">장치장/장치위치</strong>
+                                                <p class="acc-txt">${data.key2}</p>
+                                             </li>
+                                             <li>
+                                                <strong class="acc-tit">장치장명</strong>
+                                                <p class="acc-txt">${data.key6}</p>
+                                             </li>
+                                             <li>
+                                                <strong class="acc-tit">포장개수/중량</strong>
+                                                <p class="acc-txt">${data.key3} / ${data.key7}</p>
+                                             </li>
+                                             <li>
+                                                <strong class="acc-tit">신고번호</strong>
+                                                <p class="acc-txt">${data.key2}</p>
+                                             </li>
+                                             <li>
+                                                <strong class="acc-tit">반출입(처리)일시</strong>
+                                                <p class="acc-txt">${data.key4}</p>
+                                             </li>
+                                             <li>
+                                                <strong class="acc-tit">반출입(처리)내용</strong>
+                                                <p class="acc-txt">${data.key8}</p>
+                                             </li>
+                                             <li>
+                                                <strong class="acc-tit">비고</strong>
+                                                <p class="acc-txt">${data.notice}</p>
+                                             </li>   
+                                          </ul>
                                        </div>                                             
                                     </li>
                                  `);
 
 
-                                 $(element).find('.mo-cont-wrap').append(list);
-                                 head.slice(1).forEach((head, j) => {                                    
-                                    if(head.name !== '환급 신청액(원)') {
-                                       list.find('.accordion-body ul').append(`
-                                          <li>
-                                             <strong class="acc-tit">${head.name}</strong>
-                                             <p class="acc-txt">${data[body[j].label]}</p>
-                                          </li>
-                                       `);
-                                    } else {
-                                       list.find('.accordion-body ul').append(`                                       
-                                          <li class="form-list dotted-line-top">
-                                             <strong class="acc-tit">환급 신청액(원)</strong>
-                                             <div class="form-group medium">                     
-                                                <div class="form-conts">
-                                                   <input type="text" class="input text-right" placeholder="0" title="환급 신청액(원) 입력해주세요" value="${data[body[j].label]}">
-                                                </div>                                                   
-                                             </div>
-                                          </li>
-                                       `);
-                                    }
-                                 });
+                                 $(element).find('.mo-cont-wrap').append(list);                                 
                               });
                            }
                         });
