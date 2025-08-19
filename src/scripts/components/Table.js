@@ -211,16 +211,16 @@ class Table {
                             if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
                                 tablePC.find('.th-turn').eq(j).addClass('active');
                                 if(owner.props.tableType === 'crud') {
-                                    owner.sortData('desc', owner.props.body[idx-1].label);
+                                    owner.sortData('desc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
                                 } else {
-                                    owner.sortData('desc', owner.props.body[idx].label);
+                                    owner.sortData('desc', owner.props.body[idx].label, owner.props.head[idx].sort);
                                 }
                             } else {
                                 tablePC.find('.th-turn').eq(j).removeClass('active');
                                 if(owner.props.tableType === 'crud') {
-                                    owner.sortData('asc', owner.props.body[idx-1].label);
+                                    owner.sortData('asc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
                                 } else {
-                                    owner.sortData('asc', owner.props.body[idx].label);
+                                    owner.sortData('asc', owner.props.body[idx].label, owner.props.head[idx].sort);
                                 }
                             }
                         }
@@ -501,15 +501,27 @@ class Table {
         
     }
 
-    sortData (type, key) {
+    sortData (sort, key, type) {
+        let sortType = 'string';
+        if(type === 'number')  {
+            sortType = 'number';
+        }
         if(!this.data) return;
-        if(type === 'desc') {
+        if(sort === 'desc') {
             this.data.data.sort((a, b) => {
-                return String(a[key]).localeCompare(String(b[key]));
+                if(sortType === 'string') {
+                    return String(a[key]).localeCompare(String(b[key]));
+                } else {
+                    return parseInt(a[key].replace(/[^0-9]/g, "")) - parseInt(b[key].replace(/[^0-9]/g, ""));
+                }
             });
         } else {
             this.data.data.sort((a, b) => {
-                return String(b[key]).localeCompare(String(a[key]));
+                if(sortType === 'string') {
+                    return String(b[key]).localeCompare(String(a[key]));
+                } else {
+                    return parseInt(b[key].replace(/[^0-9]/g, "")) - parseInt(a[key].replace(/[^0-9]/g, ""));
+                }
             });
         }
         this.setBody();

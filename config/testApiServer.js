@@ -45,8 +45,8 @@ const data2 = Array.from({ length: listLength }, (_, i) => (
       key1 : i < 10 ? "00" + i : i < 100 ? "0" + i : i.toString(),
       key2 : 'TELEVISION 1234567890 TELEVISION 1234567890'+i,
       key3 : '434124231M'+i,
-      key4 : '113,421',
-      key5 : '113,421',
+      key4 : String(parseInt(Math.abs(Math.random() * 10000000 - 500000))).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+      key5 : String(parseInt(Math.abs(Math.random() * 10000000 - 500000))).replace(/\B(?=(\d{3})+(?!\d))/g, ","),
       key6 : i
     }
 ));
