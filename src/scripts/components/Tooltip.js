@@ -29,7 +29,7 @@ class Tooltip {
     }
 }
 
-$.fn.tooltip = function Plugin (option, params) {
+$.fn.tooltip = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('tooltip');

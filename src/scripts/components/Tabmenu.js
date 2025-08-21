@@ -171,7 +171,7 @@ class Tabmenu {
 
 }
 
-$.fn.tabmenu = function Plugin (option, params) {
+$.fn.tabmenu = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('tabmenu');

@@ -613,7 +613,7 @@ class Table {
     }
 }
 
-$.fn.table = function Plugin (option, params) {
+$.fn.table = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('table');
