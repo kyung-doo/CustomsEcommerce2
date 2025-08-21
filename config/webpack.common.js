@@ -27,6 +27,75 @@ function getHtmlFiles(dir) {
 
 console.log('html 파일들', getHtmlFiles('./src'))
 
+
+class MergeFolderPlugin {
+  constructor(options) {
+    this.folder = options.folder;
+    this.output = options.output || 'merged.js';
+    this.extensions = options.extensions || ['.js'];
+  }
+
+  apply(compiler) {
+    compiler.hooks.thisCompilation.tap('MergeFolderPlugin', (compilation) => {
+      compilation.hooks.processAssets.tap(
+        {
+          name: 'MergeFolderPlugin',
+          stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
+        },
+        () => {
+          const folderPath = path.resolve(compiler.context, this.folder);
+
+          // 병합 대상 파일 목록
+          const files = fs.readdirSync(folderPath)
+            .filter(file => this.extensions.includes(path.extname(file)))
+            .sort();
+
+          // ✅ 변경 감지 대상 등록
+          files.forEach(file => {
+            const filePath = path.join(folderPath, file);
+            compilation.fileDependencies.add(filePath);
+          });
+
+          // 병합 수행
+          let mergedContent = '';
+          files.forEach(file => {
+            const filePath = path.join(folderPath, file);
+            const content = fs.readFileSync(filePath, 'utf-8');
+            mergedContent += `\n/* ${file} */\n` + content;
+          });
+
+          // 변경 감지 보장: 기존 자산 삭제 후 새로 등록
+          if (compilation.getAsset(this.output)) {
+            compilation.deleteAsset(this.output);
+          }
+
+          compilation.emitAsset(
+            this.output,
+            new compiler.webpack.sources.RawSource(mergedContent),
+            {
+              immutable: false,
+              size: mergedContent.length,
+            }
+          );
+
+          console.log(`[MergeFolderPlugin] 메모리에 병합 완료: ${this.output}`);
+        }
+      );
+    });
+
+    // dev 모드에서 watch 시 로그 출력 (디버깅용)
+    compiler.hooks.watchRun.tapAsync('MergeFolderPlugin', (comp, callback) => {
+      console.log(`[MergeFolderPlugin] watchRun triggered`);
+      callback();
+    });
+  }
+}
+
+
+
+
+
+
 module.exports = {
   // Where webpack looks to start building the bundle
   entry: {
@@ -68,15 +137,16 @@ module.exports = {
       ],
     }),
 
-    new MergeIntoSingleFilePlugin({
-      files: {
-        'js/components.js': [
-          'src/scripts/components/**/*.js'
-        ],
-        'js/layouts.js': [
-          'src/scripts/layouts/**/*.js'
-        ]
-      }
+    new MergeFolderPlugin({
+      folder: 'src/scripts/components',
+      output: 'js/components.js',
+      extensions: ['.js']
+    }),
+
+    new MergeFolderPlugin({
+      folder: 'src/scripts/layouts',
+      output: 'js/layouts.js',
+      extensions: ['.js']
     }),
 
     new MiniCssExtractPlugin({
