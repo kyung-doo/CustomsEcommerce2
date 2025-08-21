@@ -60,6 +60,10 @@ module.exports = {
         {
           from: 'src/scripts/index.js',
           to: 'js/index.js'
+        },
+        {
+          from: 'src/libs',
+          to: 'libs'
         }
       ],
     }),
