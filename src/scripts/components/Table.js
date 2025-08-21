@@ -1,4 +1,4 @@
-import $ from 'jquery';
+
 
 class Table {
 
@@ -613,10 +613,7 @@ class Table {
     }
 }
 
-$.fn.table = Plugin;
-$.fn.table.Constructor = Table;
-
-function Plugin (option, params) {
+$.fn.table = function Plugin (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('table');
@@ -624,4 +621,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('table', (data = new Table($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.table.Constructor = Table;

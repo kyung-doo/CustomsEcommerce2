@@ -1,4 +1,3 @@
-import $ from 'jquery';
 
 
 class Tabmenu {
@@ -172,10 +171,7 @@ class Tabmenu {
 
 }
 
-$.fn.tabmenu = Plugin;
-$.fn.tabmenu.Constructor = Tabmenu;
-
-function Plugin (option, params) {
+$.fn.tabmenu = function Plugin (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('tabmenu');
@@ -183,4 +179,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('tabmenu', (data = new Tabmenu($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.tabmenu.Constructor = Tabmenu;

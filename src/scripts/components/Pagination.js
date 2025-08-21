@@ -1,4 +1,3 @@
-import $ from 'jquery';
 
 class Pagination {
 
@@ -133,10 +132,7 @@ class Pagination {
     }
 }
 
-$.fn.pagination = Plugin;
-$.fn.pagination.Constructor = Pagination;
-
-function Plugin (option, params) {
+$.fn.pagination = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('pagination');
@@ -144,4 +140,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('pagination', (data = new Pagination($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.pagination.Constructor = Pagination;

@@ -1,7 +1,3 @@
-import $ from 'jquery';
-import dayjs from 'dayjs';
-import gsap, { Cubic } from 'gsap';
-
 
 class Datepicker {
 
@@ -439,10 +435,7 @@ class Datepicker {
     }
 }
 
-$.fn.datepicker = Plugin;
-$.fn.datepicker.Constructor = Datepicker;
-
-function Plugin (option, params) {
+$.fn.datepicker = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('datepicker');
@@ -450,4 +443,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('datepicker', (data = new Datepicker($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.datepicker.Constructor = Datepicker;

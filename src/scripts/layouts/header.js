@@ -1,7 +1,3 @@
-import $ from 'jquery';
-import gsap, { Expo } from 'gsap';
-import { divide } from 'lodash';
-
 
 $(() => {
     let moveArrow = '';
