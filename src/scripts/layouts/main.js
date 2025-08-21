@@ -11,34 +11,36 @@ $(() => {
             box.removeClass('on');
             btn.removeAttr('title');
             th.closest(box).addClass('on');            
-            th.attr('title','선택됨');
+            th.attr('title','선택됨');     
         })
     });    
 
     //상단 리스트
+    /*
     $(function(){
-        var btn = $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide a');
+        var btn = $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide');
 
         btn.click(function(){
             var th = $(this);
             var btnClass = th.attr('data-btn');
-            var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');
+            var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');           
             
-            $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide a').removeClass('on')
-            th.addClass('on');
-            $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide a').removeAttr('title')
+            $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide').removeAttr('title')
             th.attr('title','선택됨')
             
             box.removeClass('on');
             $('#'+btnClass).addClass('on');                 
         });
     })
+        */
+
+    
 
     //슬라이드
     function slide(slideName,direction,pagination,slidesPerView,spaceBetween,page,next,prev){        
         $('.slide-box').each(function(i){
             var i = i + 1
-            var speed = 5000;
+            var speed = 500000000;
             var stopBtn = $(slideName).closest('.slide-box').find('.swiper-stop')
             $(this).find('.swiper-pagination').addClass('pagination'+i)
             $(this).find('.swiper-button-next').addClass('next-btn'+i)
@@ -62,61 +64,113 @@ $(() => {
                 },
                 
                 navigation: {
-                    nextEl: next,
+                    nextEl: next,                    
                     prevEl: prev,
                 },
-                on:{       
-                    slideChange: function () {                       
-                        
-                        document.querySelectorAll('.swiper-slide').forEach(slide => {
-                            slide.style.height = ''; // 초기화
-                        });
+                onClick: function (swiper, event) {
+                    // 클릭된 슬라이드 요소
+                    const slide = event.target.closest('.swiper-slide');
 
-                        $('#list-slide .swiper-slide a').focus(function(){
-                            document.querySelector('.swiper-slide-active a').style.padding = '19px 24px';
-                        });
-                        
-                        $('#list-slide .swiper-slide a').focusout(function(){
-                            document.querySelector('.swiper-slide a').style.padding = '9px 16px';
-                        });                    
+                    // 모든 슬라이드에서 swiper-slide-active 클래스 제거
+                    swiper.slides.forEach(function(s) {
+                        s.classList.remove('swiper-slide-active');
+                    });
+
+                    // 클릭된 슬라이드에 swiper-slide-active 클래스 추가
+                    slide.classList.add('swiper-slide-active');
+
+                    // 필요하다면 슬라이드 이동 (예: 슬라이드 인덱스 확인 후 이동)
+                    // swiper.slideTo(swiper.clickedIndex);
+                },
+                on:{
+                    activeIndexChange:function(){
+                       
                     },
+                
 
                     slideNextTransitionStart: function() {
-                        var btnData = $('.box1 .swiper-slide-active > a').attr('data-btn');
-                        var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');
-                        $('.box1 .swiper-slide > a').removeClass('on');
-                        $('.box1 .swiper-slide-active > a').addClass('on');
+                        var tabBtn = $('#list-slide .swiper-slide.swiper-slide-active').attr('data-btn');
+                        var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');           
+
+                        $('#list-slide .swiper-slide').removeClass('on')
+                        box.removeClass('on');
+                        $('#'+tabBtn).addClass('on')
+
+
+                        /*
+                        var btnData = $('.box1 .swiper-slide-active').attr('data-btn');
+                        var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                        
                         
                         box.removeClass('on');
-                        $('#'+btnData).addClass('on')
-                                              
+                        $('#'+btnData).addClass('on');       
+                        */
+                        
+                        
+                        console.log()
+                        			
+
+
+
+                        
                     },
 
-                    slidePrevTransitionStart: function() {
-                        var btnData = $('.box1 .swiper-slide-active > a').attr('data-btn');
-                        var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');
-                        $('.box1 .swiper-slide > a').removeClass('on');
-                        $('.box1 .swiper-slide-active > a').addClass('on');
+                    slidePrevTransitionEnd: function() {   
+                       var tabBtn = $('#list-slide .swiper-slide.swiper-slide-active').attr('data-btn');
+                        var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');           
+
+                        $('#list-slide .swiper-slide').removeClass('on')
+                        box.removeClass('on');
+                        $('#'+tabBtn).addClass('on')
+
+
+                        /*
+                        var btnData = $('.box1 .swiper-slide-active').attr('data-btn');
+                        var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                        
                         
                         box.removeClass('on');
-                        $('#'+btnData).addClass('on')
-                                              
+                        $('#'+btnData).addClass('on');       
+                        */
+                        
+                        
+                        console.log()
+             
                     }
                         
                 }
                 
-            });        
+            });   
+
+           
             
+            
+            $('#list-slide .swiper-slide').click(function(){
+				var slideIndex = $(this).attr('data-swiper-slide-index');						
+				var slideLoop = slideIndex++;				
+                $('#list-slide .swiper-slide').removeClass('on')
+                $(this).addClass('on')		
+
+				swiper.slideToLoop(slideLoop,300,true)
+			});
+            
+            
+            /*
+            $('#list-slide .swiper-slide a').click(function(){
+                $(this).closest('.swiper-slide').addClass('on');
+            })
+                */
             
             //리스트 슬라이드 접근성
+            /*
             $('#list-slide .swiper-slide a').focusout(function(){
                 var index = $(this).closest('.swiper-slide').attr('data-swiper-slide-index');
-                var total = $('#list-slide .swiper-slide a').length - 1;                
+                var total = $('#list-slide .swiper-slide a').length - 1;   
+                $(this).closest('.swiper-slide').addClass('on');
 
                 if(index == total){                    
                     $(this).closest('.wrap-slide-box').find('.swiper-button-prev').focus();
                 }
             })
+                */
 
             //정지 재생
             var stopNum = 0;    
