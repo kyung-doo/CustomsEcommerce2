@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 
 class Accordion {
 
@@ -52,10 +50,7 @@ $(() => {
 });
 
 
-$.fn.accordion = Plugin;
-$.fn.accordion.Constructor = Accordion;
-
-function Plugin (option, params) {
+$.fn.accordion = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('accordion');
@@ -63,4 +58,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('accordion', (data = new Accordion($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.accordion.Constructor = Accordion;

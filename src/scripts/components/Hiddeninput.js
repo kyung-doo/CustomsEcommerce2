@@ -1,4 +1,3 @@
-import $ from 'jquery';
 
 class Hiddeninput {
 
@@ -75,10 +74,7 @@ class Hiddeninput {
     }
 }
 
-$.fn.hiddeninput = Plugin;
-$.fn.hiddeninput.Constructor = Hiddeninput;
-
-function Plugin (option, params) {
+$.fn.hiddeninput = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('hiddeninput');
@@ -86,4 +82,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('hiddeninput', (data = new Hiddeninput($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.hiddeninput.Constructor = Hiddeninput;

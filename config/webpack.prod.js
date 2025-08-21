@@ -6,16 +6,16 @@ const paths = require('./paths')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: 'development',
   devtool: false,
   watch: true,
   optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin(), '...'],
+    minimize: false,
+    // minimizer: [new CssMinimizerPlugin(), '...'],
   },
   performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
+    // hints: false,
+    // maxEntrypointSize: 512000,
+    // maxAssetSize: 512000,
   },
 })

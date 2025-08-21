@@ -1,36 +1,5 @@
-@use "./mixin";
 @use "./utils";
-@use "./font";
-@use "./variable";
 
-@use "./components/icon";
-@use "./components/button";
-@use "./components/tabmenu";
-@use "./components/modal";
-@use "./components/breadcrumb";
-@use "./components/link";
-@use "./components/tag";
-@use "./components/_radio_check";
-@use "./components/switch";
-@use "./components/input";
-@use "./components/pagination";
-@use "./components/step";
-@use "./components/tooltip";
-@use "./components/table";
-@use "./components/form_list";
-@use "./components/file";
-@use "./components/datepicker";
-@use "./components/accordion";
-
-@use "./layouts/header";
-@use "./layouts/footer";
-@use "./layouts/navigation";
-@use "./layouts/content";
-@use "./layouts/main";
-
-
-@use "./pages/pages";
-@use "./pages/pages-modal";
 
 
 

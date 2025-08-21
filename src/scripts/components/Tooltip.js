@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import gsap, { Cubic } from 'gsap';
 
 class Tooltip {
 
@@ -31,10 +29,7 @@ class Tooltip {
     }
 }
 
-$.fn.tooltip = Plugin;
-$.fn.tooltip.Constructor = Tooltip;
-
-function Plugin (option, params) {
+$.fn.tooltip = function Plugin (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('tooltip');
@@ -42,4 +37,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('tooltip', (data = new Tooltip($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.tooltip.Constructor = Tooltip;

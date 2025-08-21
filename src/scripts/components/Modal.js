@@ -1,6 +1,3 @@
-import $ from 'jquery';
-import gsap, { Back } from 'gsap';
-
 
 class Modal {
 
@@ -97,10 +94,7 @@ class Modal {
 
 }
 
-$.fn.modal = Plugin;
-$.fn.modal.Constructor = Modal;
-
-function Plugin (option, params) {
+$.fn.modal = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('modal');
@@ -108,4 +102,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('modal', (data = new Modal($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.modal.Constructor = Modal;

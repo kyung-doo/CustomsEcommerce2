@@ -1,6 +1,4 @@
-import $ from 'jquery';
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+
 
 $(() => {
     //공지사항
