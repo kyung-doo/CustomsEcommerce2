@@ -35,6 +35,8 @@ class Table {
         this.startX = 0;
         this.startWidth = 0;
         this.touchIndex = 0;
+        this.colwidths = [];
+        this.sort = { key: '', sort: '', index: 0};
         this.init();
     }
 
@@ -68,7 +70,9 @@ class Table {
             this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
-            this.setBody();
+            if(!this.sort.key) {
+                this.setBody();
+            }
         } catch(e) {}
     }
 
@@ -117,6 +121,7 @@ class Table {
         boardTop.find('select').on('change', async () => {
             this.limit = boardTop.find('select').val();
             this.page = 1;
+            this.sort = {key: '', sort: '', index: 0};
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
             } else {
@@ -152,7 +157,9 @@ class Table {
                     this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
-                    this.setBody();
+                    if(!this.sort.key) {
+                        this.setBody();
+                    }
                 } catch( e ) {}
             }
         });
@@ -176,7 +183,13 @@ class Table {
             tablePC.empty().html(htmlPC);
             tablePC.find('thead').append(`<tr></tr>`);
             if(this.props.tableType === 'crud') {
-                tablePC.find('colgroup').append(`<col style="width: 52px;">`);
+                if(this.colwidths.length === 0) {
+                    this.colwidths[0] = '52px';
+                    tablePC.find('colgroup').append(`<col style="width: 52px;">`);
+                } else {
+                    tablePC.find('colgroup').append(`<col style="width: ${this.colwidths[0]};">`);
+                }
+                
                 tablePC.find('thead tr').append(`
                     <th scope="col">
                         <div class="form-check medium">
@@ -188,7 +201,18 @@ class Table {
             }
 
             this.props.head.forEach((head, i) => {
-                tablePC.find('colgroup').append(`<col style="width: ${head.width};">`);
+                
+                if(this.colwidths.length <= 1) {
+                    this.colwidths.push(head.width);
+                    tablePC.find('colgroup').append(`<col style="width: ${head.width};">`);
+                } else {
+                    if(this.props.tableType !== 'crud') {
+                        tablePC.find('colgroup').append(`<col style="width: ${this.colwidths[i]};">`);
+                    } else {
+                        tablePC.find('colgroup').append(`<col style="width: ${this.colwidths[i+1]};">`);
+                    }
+                }
+
                 if(head.sort) {
                     tablePC.find('thead tr').append(`<th><span class="arr-ico">${head.name}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
                 } else {
@@ -198,6 +222,16 @@ class Table {
                     this.addToolTip(tablePC.find('thead tr th').eq(this.props.tableType === 'crud' ? i+1 : i), head.tooltip);
                 }
             });
+            
+            if( this.sort.key ) {
+                if(this.sort.sort === 'desc') {
+                    if(this.props.tableType === 'crud') 
+                        tablePC.find('th').eq(this.sort.index+1).find('.th-turn').addClass('active');
+                    else 
+                        tablePC.find('th').eq(this.sort.index).find('.th-turn').addClass('active');
+                }
+                this.sortData(this.sort.sort, this.sort.key, this.props.head[this.sort.index].sort);
+            }
 
             // sorting
             const owner = this;
@@ -211,15 +245,19 @@ class Table {
                             if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
                                 tablePC.find('.th-turn').eq(j).addClass('active');
                                 if(owner.props.tableType === 'crud') {
+                                    owner.sort = { key: owner.props.body[idx-1].label, sort: 'desc', index: idx-1 };
                                     owner.sortData('desc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
                                 } else {
+                                    owner.sort = { key: owner.props.body[idx].label, sort: 'desc', index: idx };
                                     owner.sortData('desc', owner.props.body[idx].label, owner.props.head[idx].sort);
                                 }
                             } else {
                                 tablePC.find('.th-turn').eq(j).removeClass('active');
                                 if(owner.props.tableType === 'crud') {
+                                    owner.sort = { key: owner.props.body[idx-1].label, sort: 'asc', index: idx-1 };
                                     owner.sortData('asc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
                                 } else {
+                                    owner.sort = { key: owner.props.body[idx].label, sort: 'asc', index: idx };
                                     owner.sortData('asc', owner.props.body[idx].label, owner.props.head[idx].sort);
                                 }
                             }
@@ -286,6 +324,7 @@ class Table {
     }
 
     setBody () {
+        
         const table = this.ele.find(this.props.tableType !== 'faq' ? '.table-content' : '.wrap-faq');
         if(this.props.tableType !== 'faq') {
             const tablePC = table.find('.table-wrap').eq(0);
@@ -548,7 +587,7 @@ class Table {
             this.onResizeMove(e, table);
         });
         $(window).on('mouseup.table', ( e ) => {
-            this.onResizeUp(e)
+            this.onResizeUp(e, table)
         });
         e.preventDefault();
     }
@@ -566,9 +605,12 @@ class Table {
         e.preventDefault();
     }
 
-    onResizeUp ( e ) {
+    onResizeUp ( e, table ) {
         $(window).off('mousemove.table');
         $(window).off('mouseup.table');
+        table.find('colgroup col').each((i) => {
+            this.colwidths[i] = table.find('colgroup col').eq(i).css('width');
+        });
     }
 
     fileDown ( file ) {
