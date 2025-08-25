@@ -640,11 +640,13 @@ class Table {
         });
         callback(checked);
     }
-    
 
-    async update () {
+    async update ( data ) {
         this.ele.find('.board-top select').val(this.limit);
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+        if(data) {
+            this.props.data = this.data = data;
+        }
         try {
             await this.loadData();
             this.scrollTop();
