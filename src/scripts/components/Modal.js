@@ -25,6 +25,7 @@ class Modal {
 
     show () {
         this.ele.empty().append(this.copyHtml);
+        console.log(this.copyHtml)
         this.ele.removeClass('d-none');
         
         // gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
