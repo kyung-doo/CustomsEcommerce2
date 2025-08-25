@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+   <script>
+
+      var data1 = {
+         "page": 1,
+         "limit": 10,
+         "limitList": [10, 20, 30],
+         "listLength": 15,
+         "totalPages": 2,
+         "pagingCount": 9,
+         "data": [
+            {
+               "uid": "id-1",
+               "key1": "000",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678900",
+               "key3": "434124231M0",
+               "key4": "6,840,963",
+               "key5": "4,778,983",
+               "key6": 0
+            },
+            {
+               "uid": "id-2",
+               "key1": "001",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678901",
+               "key3": "434124231M1",
+               "key4": "4,348,429",
+               "key5": "7,156,294",
+               "key6": 1
+            },
+            {
+               "uid": "id-3",
+               "key1": "002",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678902",
+               "key3": "434124231M2",
+               "key4": "1,638,910",
+               "key5": "2,373,227",
+               "key6": 2
+            },
+            {
+               "uid": "id-4",
+               "key1": "003",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678903",
+               "key3": "434124231M3",
+               "key4": "5,456,102",
+               "key5": "2,700,985",
+               "key6": 3
+            },
+            {
+               "uid": "id-5",
+               "key1": "004",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678904",
+               "key3": "434124231M4",
+               "key4": "164,619",
+               "key5": "2,187,121",
+               "key6": 4
+            },
+            {
+               "uid": "id-6",
+               "key1": "005",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678905",
+               "key3": "434124231M5",
+               "key4": "5,294,200",
+               "key5": "8,322,007",
+               "key6": 5
+            },
+            {
+               "uid": "id-7",
+               "key1": "006",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678906",
+               "key3": "434124231M6",
+               "key4": "7,059,235",
+               "key5": "7,084,680",
+               "key6": 6
+            },
+            {
+               "uid": "id-8",
+               "key1": "007",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678907",
+               "key3": "434124231M7",
+               "key4": "5,149,086",
+               "key5": "2,795,973",
+               "key6": 7
+            },
+            {
+               "uid": "id-9",
+               "key1": "008",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678908",
+               "key3": "434124231M8",
+               "key4": "3,717,831",
+               "key5": "2,251,428",
+               "key6": 8
+            },
+            {
+               "uid": "id-10",
+               "key1": "009",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678909",
+               "key3": "434124231M9",
+               "key4": "3,257,008",
+               "key5": "5,593,377",
+               "key6": 9
+            }
+         ]
+      }
+
+      var data2 = {
+         "page": 2,
+         "limit": 10,
+         "limitList": [10, 20, 30],
+         "listLength": 15,
+         "totalPages": 2,
+         "pagingCount": 9,
+         "data": [
+            {
+               "uid": "id-11",
+               "key1": "010",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678900",
+               "key3": "434124231M0",
+               "key4": "6,840,963",
+               "key5": "4,778,983",
+               "key6": 10
+            },
+            {
+               "uid": "id-12",
+               "key1": "011",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678901",
+               "key3": "434124231M1",
+               "key4": "4,348,429",
+               "key5": "7,156,294",
+               "key6": 11
+            },
+            {
+               "uid": "id-13",
+               "key1": "012",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678902",
+               "key3": "434124231M2",
+               "key4": "1,638,910",
+               "key5": "2,373,227",
+               "key6": 12
+            },
+            {
+               "uid": "id-14",
+               "key1": "013",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678903",
+               "key3": "434124231M3",
+               "key4": "5,456,102",
+               "key5": "2,700,985",
+               "key6": 13
+            },
+            {
+               "uid": "id-15",
+               "key1": "014",
+               "key2": "TELEVISION 1234567890 TELEVISION 12345678904",
+               "key3": "434124231M4",
+               "key4": "164,619",
+               "key5": "2,187,121",
+               "key6": 14
+            },
+         ]
+      }
+      
+      $(() => {
+         createTable();
+
+         // 테이블 생성 버튼 클릭
+         $("#createBtn").on('click', () => {
+            createTable();
+         });
+
+         // 테이블 삭제 버튼 클릭
+         $("#deleteBtn").on('click', () => {
+            $("#table").table('destroy');
+         });
+      });
+
+      function createTable () {
+
+         // 테이블 객체가 있는 경우 삭제
+         if($("#table").data('table')) {
+            $("#table").table('destroy');
+         }
+
+         // 테이블 객체 생성
+         $("#table").table({
+            data: data1,
+            tableType: 'default',
+            useHashParam: false,
+            noLimit: false,
+            useResize: true,
+            scrollTop: true,
+            caption: '환급신청 란사항 정보에 대한 표로 선택,란번호,품명,수입신고번호,관세,부가세등,환급신청수량 구성되어있다.',
+            head: [
+               {name: '선택', width: '60px', mobileHidden: true},
+               {name: '란번호', width: '80px'},
+               {name: '품명', width: '43.75%'},
+               {name: '수입신고번호', width: '17.1875%'},
+               {name: '관세', width: '9.375%', sort: 'number'},
+               {name: '부가세등', width: '9.375%', sort: 'number'},
+               {name: '환급신청수량', width: '9.375%'},
+               
+            ],
+            body: [
+               {label: 'uid', fomatter: (value, rowData, isMobile) => {
+                  if(!isMobile) {
+                     return `<div class="form-check medium">
+                              <input type="radio" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
+                              <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
+                           </div>`;
+                  } else {
+                     return `<div class="form-check medium">
+                              <input type="radio" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
+                              <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
+                           </div>`;
+                  }
+               }},
+               {label: 'key1'},
+               {label: 'key2', align: 'left'},
+               {label: 'key3'},
+               {label: 'key4'},
+               {label: 'key5'},
+               {label: 'key6', align: 'right'},
+            ]
+         });
+
+         $("#table .pagination").on('change', (e, page) => {
+            $("#table").table('update', page === 1 ? data1 : data2);
+         });
+      }
+
+   </script>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->      
+            <h3 class="head-tit">개인통관고유부호 조회</h3>    
+            <h4 class="sr-only">빈텍스트</h4>        
+         </div>
+         <div class="cont-body">
+            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+               <div class="accordion-header">
+                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호란?</strong> <i class="icon btn-arrow-down medium"></i></a>
+               </div>
+               <div class="accordion-body d-none">
+                  <p class="txt">개인통관고유부호란?</p>                  
+               </div>
+            </div>                                                      
+            <!-- 내용 -->
+            <div class="cont-area">               
+               
+               <div class="mt-50 mb-30 text-right">
+                  <button type="button" id="createBtn" class="btn primary medium">테이블 객체 생성</button>
+                  <button type="button" id="deleteBtn" class="btn secondary medium">테이블 객체 삭제</button>
+               </div>
+
+               <!-- 조회형 - 일반형 -->
+               <div id="table" class="table">
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+               <!-- 조회형 - 일반형 -->
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
