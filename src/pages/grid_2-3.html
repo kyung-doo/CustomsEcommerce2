@@ -205,64 +205,6 @@
                            created: (element, data, head, body) => {
                               $(element).find('table').attr('class', 'tbl col cont type1 bor-col-sep');
                               Array.from(Array(4), () => $(element).find('col').eq(5).remove());
-
-                              $(element).find('table').removeClass('crud').addClass('cont');
-                              $(element).find('.table-wrap.mo').remove();
-                              $(element).find('.table-content').append(`
-                                 <div class="table-wrap mo">                                       
-                                    <div class="cont-acc-tbl">
-                                       <ul class="mo-cont-wrap"></ul>
-                                    </div>
-                                 </div>
-                              `);
-
-                              data.forEach((data, i) => {
-                                 const list = $(`
-                                    <li class="accordion-wrap" data-ui="accordion" data-props="beforeClose: true;">                                             
-                                       <div class="accordion-header">
-                                          <a href="javascript: void(0);" class="accordion-btn" title="열기">
-                                             <strong>${table1titles[i]}</strong>
-                                             <i class="icon btn-arrow-down medium"></i>
-                                          </a>
-                                       </div>
-                                       <div class="accordion-body d-none">
-                                          <ul>
-                                             <li>
-                                                <strong class="acc-tit">장치장/장치위치</strong>
-                                                <p class="acc-txt">${data.key2}</p>
-                                             </li>
-                                             <li>
-                                                <strong class="acc-tit">장치장명</strong>
-                                                <p class="acc-txt">${data.key6}</p>
-                                             </li>
-                                             <li>
-                                                <strong class="acc-tit">포장개수/중량</strong>
-                                                <p class="acc-txt">${data.key3} / ${data.key7}</p>
-                                             </li>
-                                             <li>
-                                                <strong class="acc-tit">신고번호</strong>
-                                                <p class="acc-txt">${data.key2}</p>
-                                             </li>
-                                             <li>
-                                                <strong class="acc-tit">반출입(처리)일시</strong>
-                                                <p class="acc-txt">${data.key4}</p>
-                                             </li>
-                                             <li>
-                                                <strong class="acc-tit">반출입(처리)내용</strong>
-                                                <p class="acc-txt">${data.key8}</p>
-                                             </li>
-                                             <li>
-                                                <strong class="acc-tit">비고</strong>
-                                                <p class="acc-txt">${data.notice}</p>
-                                             </li>   
-                                          </ul>
-                                       </div>                                             
-                                    </li>
-                                 `);
-
-
-                                 $(element).find('.mo-cont-wrap').append(list);                                 
-                              });
                            }
                         });
                      });
