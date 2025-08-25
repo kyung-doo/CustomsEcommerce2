@@ -121,6 +121,19 @@ $(() => {
         oldTop = top;
     });
 
+    if($(window).width() < 1023) {
+        $('#header .main-menu .gnb-main-list .gnb-list .depth2 a').click(function(){
+            $("#wrap").removeClass('mobile-open');
+            $("#wrap > .blind").hide();
+            $('body').css({'overflow': 'auto'});
+        })
+    } else {
+        $('#header .main-menu .gnb-main-list .gnb-list .depth2 a').click(function(){
+            $('.gnb-menu > li').removeClass('active');
+            $('.blind').hide();
+            $('body').css({'overflow': 'auto'});
+        })
+    }
     // 리사이즈 이벤트        
     $(window).on('resize', () => {
         if($(window).width() < 1023) {
@@ -137,9 +150,14 @@ $(() => {
             $('.sub-title').removeClass('mobile-active');            
             $('.gnb-main-trigger').on('click',function(e){
                 $('.sub-title').removeClass('mobile-active');
-                $('.sub-title').siblings('depth2').hide();
-
-            })            
+                $('.sub-title').siblings('depth2').hide();                
+            })    
+            
+            $('#header .main-menu .gnb-main-list .gnb-list .depth2 a').click(function(){
+                $("#wrap").removeClass('mobile-open');
+                $("#wrap > .blind").hide();
+                $('body').css({'overflow': 'auto'});
+            })
         } else {
             $("#wrap").removeClass('mobile-open');
             gsap.set($("#header .main-menu"), {x: 0});
@@ -153,8 +171,18 @@ $(() => {
             $('.gnb-menu > li').removeClass('active');
             $('.sub-title').removeClass('mobile-active');
             $('.blind').hide();
+
+            $('#header .main-menu .gnb-main-list .gnb-list .depth2 a').click(function(){
+                $('.gnb-menu > li').removeClass('active');
+                $('.blind').hide();
+                $('body').css({'overflow': 'auto'});
+            })
+            
         }
     });    
+
+
+   
 
 
     // 팝업
