@@ -37,12 +37,13 @@ class Table {
         this.touchIndex = 0;
         this.colwidths = [];
         this.sort = { key: '', sort: '', index: 0};
+        this.html = ele.html();
         this.init();
     }
 
     async init () {
         if(this.props.useHashParam) {
-            $(window).on("hashchange", async () => {
+            $(window).on(`hashchange.table${this.ele.attr('id')}`, async () => {
                 this.onHashChange();
             });
         }
@@ -118,7 +119,7 @@ class Table {
         });
         boardTop.find('.tit strong').text(this.data.listLength)
         boardTop.find('select').val(this.limit);
-        boardTop.find('select').on('change', async () => {
+        boardTop.find('select').on('change.table', async () => {
             this.limit = boardTop.find('select').val();
             this.page = 1;
             this.sort = {key: '', sort: '', index: 0};
@@ -145,7 +146,7 @@ class Table {
             totalPages: this.data.totalPages,
             initPage: this.page
         });
-        pagination.on('change', async (e, page) => {
+        pagination.on('change.table', async (e, page) => {
             this.page = page;
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
@@ -654,6 +655,18 @@ class Table {
             this.setHead();
             this.setBody();
         } catch( e ) {}
+    }
+
+    destroy () {
+        $(window).off(`hashchange.table${this.ele.attr('id')}`);
+        if(this.ele.find('.board-top').length > 0) {
+            this.ele.find('.board-top').find('select').off('change.table');
+        }
+        if(this.ele.find('.pagination').length > 0) {
+            this.ele.find('.pagination').off('change.table');
+        }
+        this.ele.html(this.html);
+        this.ele.data('table', null);
     }
 }
 

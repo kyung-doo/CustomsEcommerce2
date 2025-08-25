@@ -438,6 +438,10 @@
                ]
             });
          });
+         
+         $("#modal1").on("modal-hide", () => {
+            $("#table7").table('destroy');
+         });
 
 
          $("#table8").table({
