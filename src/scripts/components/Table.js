@@ -678,15 +678,12 @@ class Table {
     }
 
     async update ( data ) {
-        this.ele.find('.board-top select').val(this.limit);
-        this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         if(data) {
-            this.props.data = this.data = this.data = JSON.parse(JSON.stringify(data));
+            this.props.data = this.data = JSON.parse(JSON.stringify(data));
         }
         try {
             await this.loadData();
             this.scrollTop();
-            this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             this.setBody();
         } catch( e ) {}
