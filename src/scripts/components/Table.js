@@ -679,7 +679,7 @@ class Table {
 
     async update ( data ) {
         if(data) {
-            this.props.data = this.data = this.data = JSON.parse(JSON.stringify(data));
+            this.props.data = this.data = JSON.parse(JSON.stringify(data));
         }
         try {
             await this.loadData();
