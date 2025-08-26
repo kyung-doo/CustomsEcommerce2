@@ -21,7 +21,7 @@ class Table {
         created: null,
         scrollTop: false,
         nodata: false,
-        nodateMsg: '데이터없음'
+        nodataMsg: '데이터없음'
     }
 
     constructor( ele, props ) {
@@ -416,9 +416,9 @@ class Table {
             });
 
             if(this.data.data.length === 0 && this.props.nodata) {
-                tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.props.nodateMsg}</td></tr>`);
+                tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.props.nodataMsg}</td></tr>`);
                 if(tableM.length > 0) {
-                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.props.nodateMsg}</li></ul></li>`);
+                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.props.nodataMsg}</li></ul></li>`);
                 }
             }
 
@@ -538,7 +538,7 @@ class Table {
             });
             
             if(this.data.data.length === 0 && this.props.nodata) {
-                table.find('.body').html(`<div class="no-data"><p>${this.props.nodateMsg}</p></div>`);
+                table.find('.body').html(`<div class="no-data"><p>${this.props.nodataMsg}</p></div>`);
             }
         }
     }
