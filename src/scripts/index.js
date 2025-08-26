@@ -2,7 +2,7 @@
 $(() => {
     
     createUI();
-    windowR();
+    //windowR();
     setLogin();
 
     // dom 변경 시 UI 다시 생성
