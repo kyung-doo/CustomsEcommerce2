@@ -203,9 +203,11 @@ class Table {
                 `);
             }
 
+            const len = this.colwidths.length;
+
             this.props.head.forEach((head, i) => {
                 
-                if(this.colwidths.length <= 1) {
+                if(len <= 1) {
                     this.colwidths.push(head.width);
                     tablePC.find('colgroup').append(`<col style="width: ${head.width};">`);
                 } else {
@@ -415,15 +417,15 @@ class Table {
 
             });
 
+            if(this.props.created) {
+                this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
+            }
+
             if(this.data.data.length === 0 && this.props.nodata) {
                 tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.props.nodataMsg}</td></tr>`);
                 if(tableM.length > 0) {
                     tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.props.nodataMsg}</li></ul></li>`);
                 }
-            }
-
-            if(this.props.created) {
-                this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
             }
             
 
