@@ -268,7 +268,7 @@ class Table {
             });
 
             if(tableM.length > 0) {
-                let htmlM ='' 
+                let htmlM =''                 
                 if(this.props.tableType === 'crud') {
                     htmlM = `
                         <div class="header">
@@ -277,11 +277,28 @@ class Table {
                                 <label for="m-all-chk">전체선택</label>
                             </div>
                         </div>
-                        <div class="wrap-body"></div>
+                        <ul class="wrap-body"></ul>
                     `;
+
+
+                    //메시지조회
+                    if(this.props.tableType === 'crud') {
+
+                        if($('.wrap-faq').hasClass('type1')){
+                            htmlM = `
+                                <div class="header">
+                                    <div class="form-check medium">
+                                        <input type="checkbox" id="m-all-chk">
+                                        <label for="m-all-chk">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="wrap-body"></div>
+                            `;
+                        }
+                    }
                 } else {
-                    htmlM = `<div class="wrap-body"></div>`;
-                }
+                    htmlM = `<ul class="wrap-body"></ul>`;
+                }               
 
                 tableM.empty().html(htmlM);
             }
