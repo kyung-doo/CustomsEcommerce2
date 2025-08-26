@@ -31,7 +31,7 @@ class Table {
             this.page = this.props.data ? this.props.data.page ?? 1 : 1;
         }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
-        this.data = JSON.parse(JSON.stringify(this.props.data)) ?? {};
+        this.data = this.props.data ? JSON.parse(JSON.stringify(this.props.data)) : {};
         this.startX = 0;
         this.startWidth = 0;
         this.touchIndex = 0;
