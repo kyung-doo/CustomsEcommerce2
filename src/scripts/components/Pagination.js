@@ -57,15 +57,20 @@ class Pagination {
     renderPage () {
         this.ele.find('.page-link').off('click');
         this.ele.find('.page-links').empty();
-        if(this.page === 1) {
-            this.ele.find('.page-navi.prev').attr('disabled', 'disabled');
-            this.ele.find('.page-navi.next').removeAttr('disabled');
-        } else if(this.page === this.props.totalPages) {
-            this.ele.find('.page-navi.prev').removeAttr('disabled');
+        if(this.props.totalPages < 1) {
             this.ele.find('.page-navi.next').attr('disabled', 'disabled');
+            this.ele.find('.page-navi.prev').attr('disabled', 'disabled');
         } else {
-            this.ele.find('.page-navi.prev').removeAttr('disabled');
-            this.ele.find('.page-navi.next').removeAttr('disabled');
+            if(this.page === 1) {
+                this.ele.find('.page-navi.prev').attr('disabled', 'disabled');
+                this.ele.find('.page-navi.next').removeAttr('disabled');
+            } else if(this.page === this.props.totalPages) {
+                this.ele.find('.page-navi.prev').removeAttr('disabled');
+                this.ele.find('.page-navi.next').attr('disabled', 'disabled');
+            } else {
+                this.ele.find('.page-navi.prev').removeAttr('disabled');
+                this.ele.find('.page-navi.next').removeAttr('disabled');
+            }
         }
         if(this.props.totalPages < this.viewCount) {
             for(let i = 1; i<=this.props.totalPages; i++) {

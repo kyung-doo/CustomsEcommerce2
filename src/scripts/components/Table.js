@@ -20,6 +20,8 @@ class Table {
         rowCreated: null,
         created: null,
         scrollTop: false,
+        nodata: false,
+        nodateMsg: '데이터없음'
     }
 
     constructor( ele, props ) {
@@ -413,9 +415,18 @@ class Table {
 
             });
 
+            if(this.data.data.length === 0 && this.props.nodata) {
+                tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.props.nodateMsg}</td></tr>`);
+                if(tableM.length > 0) {
+                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.props.nodateMsg}</li></ul></li>`);
+                }
+            }
+
             if(this.props.created) {
                 this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
             }
+            
+
             const owner = this;
             if(this.props.tableType === 'crud') {
                 tablePC.find('td input[type="checkbox"]').each(function ( i ) {
@@ -447,6 +458,7 @@ class Table {
                 }
             }
         } else {
+            
             table.find('.body').empty();
             this.data.data.forEach((data, i) => {
                 const li = $(`
@@ -524,6 +536,10 @@ class Table {
                 }
 
             });
+            
+            if(this.data.data.length === 0 && this.props.nodata) {
+                table.find('.body').html(`<div class="no-data"><p>${this.props.nodateMsg}</p></div>`);
+            }
         }
     }
 
