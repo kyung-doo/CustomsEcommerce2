@@ -31,7 +31,7 @@ class Table {
             this.page = this.props.data ? this.props.data.page ?? 1 : 1;
         }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
-        this.data = this.props.data ?? {};
+        this.data = this.props.data ? JSON.parse(JSON.stringify(this.props.data)) : {};
         this.startX = 0;
         this.startWidth = 0;
         this.touchIndex = 0;
@@ -663,7 +663,7 @@ class Table {
         this.ele.find('.board-top select').val(this.limit);
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         if(data) {
-            this.props.data = this.data = data;
+            this.props.data = this.data = this.data = JSON.parse(JSON.stringify(data));
         }
         try {
             await this.loadData();
