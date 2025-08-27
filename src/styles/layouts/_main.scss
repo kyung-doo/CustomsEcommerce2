@@ -77,8 +77,8 @@
                         button{background-color: #FFF;
                             &.swiper-button-next, 
                             &.swiper-button-prev{background-image: url("../assets/icons/btn-arrow-right.svg");}
-                            &.swiper-stop{background-image: url("../assets/icons/play-2.svg");}
-                            &.swiper-stop.on{background-image: url("../assets/icons/stop-2.svg");}
+                            &.swiper-stop{background-image: url("../assets/icons/stop-2.svg");}
+                            &.swiper-stop.on{background-image: url("../assets/icons/play-2.svg");}                            
                         }
                         .swiper-pagination{height: 100%;transform: translate(0);margin-left: 10px;
                             .swiper-pagination-bullet.swiper-pagination-bullet-active{width: 20px;background-color: #246BEB;border-radius: 8px;}
@@ -252,8 +252,8 @@
             }
             button{width:32px;height: 32px;font-size:0;border-radius: 40px;background: rgba(0, 0, 0, 0.70);padding: 6px;margin-top: 0;background-repeat: no-repeat;background-position: center;                
                 &:after{display: none;}                
-                &.swiper-stop{background-image: url('../assets/icons/play-1.svg');}
-                &.swiper-stop.on{background-image: url('../assets/icons/stop-1.svg');}
+                &.swiper-stop{background-image: url('../assets/icons/stop-1.svg');}
+                &.swiper-stop.on{background-image: url('../assets/icons/play-1.svg');}
                 &.swiper-button-next,&.swiper-button-prev{background-image: url('../assets/icons/btn-arrow-right-f.svg');}
                 &.swiper-button-prev{transform: rotate(180deg);}
             }
@@ -389,11 +389,9 @@
             }
 
             button {
-                &.swiper-stop {background-image: url('../assets/icons/play-2.svg');
-
-                    &.on {background-image: url('../assets/icons/stop-2.svg');}
+                &.swiper-stop {background-image: url('../assets/icons/stop-2.svg');
+                    &.on {background-image: url('../assets/icons/play-2.svg');}
                 }
-
                 &.swiper-button-next, &.swiper-button-prev {background-image: url('../assets/icons/btn-arrow-right.svg');}
             }
         }
