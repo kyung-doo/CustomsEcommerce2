@@ -711,4 +711,4 @@ $.fn.table = function (option, params) {
         if(typeof option == 'string') data[option](params);
     });
 };
-$.fn.table.Constructor = Table;
+$.fn.table.Constructor = Table;                     
