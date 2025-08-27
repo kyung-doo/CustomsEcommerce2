@@ -180,7 +180,7 @@ class Table {
                     <caption>${this.props.caption}</caption> 
                     <colgroup></colgroup>
                     <thead></thead>
-                    <tbody></tbody>
+                    <tbody class="${tablePC.find('tbody').hasClass('common-loading') ? 'common-loading' : ''}"></tbody>
                 </table>
             `;
             tablePC.empty().html(htmlPC);
@@ -281,7 +281,7 @@ class Table {
                                 <label for="m-all-chk">전체선택</label>
                             </div>
                         </div>
-                        <ul class="wrap-body"></ul>
+                        <ul class="wrap-body ${tableM.find('.wrap-body').hasClass('common-loading') ? 'common-loading' : ''}"></ul>
                     `;
 
 
@@ -296,12 +296,12 @@ class Table {
                                         <label for="m-all-chk">전체선택</label>
                                     </div>
                                 </div>
-                                <div class="wrap-body"></div>
+                                <div class="wrap-body ${tableM.find('.wrap-body').hasClass('common-loading') ? 'common-loading' : ''}"></div>
                             `;
                         }
                     }
                 } else {
-                    htmlM = `<ul class="wrap-body"></ul>`;
+                    htmlM = `<ul class="wrap-body ${tableM.find('.wrap-body').hasClass('common-loading') ? 'common-loading' : ''}"></ul>`;
                 }               
 
                 tableM.empty().html(htmlM);
@@ -675,6 +675,14 @@ class Table {
             }
         });
         callback(checked);
+    }
+
+    showLoading () {
+        this.ele.find('.table-wrap tbody, .table-wrap .wrap-body').addClass('common-loading');
+    }
+
+    hideLoading () {
+        this.ele.find('.table-wrap tbody, .table-wrap .wrap-body').removeClass('common-loading');
     }
 
     async update ( data ) {

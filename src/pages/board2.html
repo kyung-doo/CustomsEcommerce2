@@ -227,10 +227,21 @@
          });
 
          $("#table .pagination").on('change', (e, page) => {
-            $("#table").table('update', page === 1 ? data1 : data2);
+            $("#table").table('showLoading');
+            // 데이터 로딩
+            setTimeout(() => {
+               $("#table").table('update', page === 1 ? data1 : data2);
+               $("#table").table('hideLoading');
+            }, 500); 
          });
+
          $("#table .board-top select").on('change', function () {
-            $("#table").table('update', data1);
+            $("#table").table('showLoading');
+            // 데이터 로딩
+            setTimeout(() => {
+               $("#table").table('update', data1);
+               $("#table").table('hideLoading');
+            }, 500);
          });
       }
 
