@@ -232,7 +232,7 @@
             setTimeout(() => {
                $("#table").table('update', page === 1 ? data1 : data2);
                $("#table").table('hideLoading');
-            }, 500); 
+            }, 1000); 
          });
 
          $("#table .board-top select").on('change', function () {
@@ -241,7 +241,7 @@
             setTimeout(() => {
                $("#table").table('update', data1);
                $("#table").table('hideLoading');
-            }, 500);
+            }, 1000);
          });
       }
 

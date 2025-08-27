@@ -180,7 +180,7 @@ class Table {
                     <caption>${this.props.caption}</caption> 
                     <colgroup></colgroup>
                     <thead></thead>
-                    <tbody class="${tablePC.find('tbody').hasClass('common-loading') ? 'common-loading' : ''}"></tbody>
+                    <tbody></tbody>
                 </table>
             `;
             tablePC.empty().html(htmlPC);
@@ -281,7 +281,7 @@ class Table {
                                 <label for="m-all-chk">전체선택</label>
                             </div>
                         </div>
-                        <ul class="wrap-body ${tableM.find('.wrap-body').hasClass('common-loading') ? 'common-loading' : ''}"></ul>
+                        <ul class="wrap-body"></ul>
                     `;
 
 
@@ -296,12 +296,12 @@ class Table {
                                         <label for="m-all-chk">전체선택</label>
                                     </div>
                                 </div>
-                                <div class="wrap-body ${tableM.find('.wrap-body').hasClass('common-loading') ? 'common-loading' : ''}"></div>
+                                <div class="wrap-body"></div>
                             `;
                         }
                     }
                 } else {
-                    htmlM = `<ul class="wrap-body ${tableM.find('.wrap-body').hasClass('common-loading') ? 'common-loading' : ''}"></ul>`;
+                    htmlM = `<ul class="wrap-body"></ul>`;
                 }               
 
                 tableM.empty().html(htmlM);
@@ -678,11 +678,11 @@ class Table {
     }
 
     showLoading () {
-        this.ele.find('.table-wrap tbody, .table-wrap .wrap-body').addClass('common-loading');
+        this.ele.find('.table-content').addClass('common-loading');
     }
 
     hideLoading () {
-        this.ele.find('.table-wrap tbody, .table-wrap .wrap-body').removeClass('common-loading');
+        this.ele.find('.table-content').removeClass('common-loading');
     }
 
     async update ( data ) {
@@ -719,4 +719,4 @@ $.fn.table = function (option, params) {
         if(typeof option == 'string') data[option](params);
     });
 };
-$.fn.table.Constructor = Table;                     
+$.fn.table.Constructor = Table;
