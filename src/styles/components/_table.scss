@@ -38,7 +38,7 @@
 }
 
 // 테이블 
-.table-wrap {position: relative;min-width: 100%;width: 100%;word-break: break-all;overflow-x: auto;overflow-y: hidden;  
+.table-wrap {position: relative;min-width: 100%;width: 100%;word-break: break-all;overflow-x: auto;overflow-y: hidden;min-height: 125px;
 
   //데이터없음
   .no-data{align-items: center !important;justify-content: center !important;}
