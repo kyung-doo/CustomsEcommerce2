@@ -29,7 +29,7 @@
   &.type1 .modal-footer {border-top: 0;padding: 0;}
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .modal-wrap{padding: 24px;
     .btn-close{top:24px;right:24px;}    
     .modal-body{max-height: calc(100vh - 305px);

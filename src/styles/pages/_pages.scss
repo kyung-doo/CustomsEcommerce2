@@ -532,7 +532,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
   }
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   //검색영역
   .search-box{
     ul{
@@ -547,7 +547,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
   } 
 }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   //마이페이지
   .wrap-mypages{  
     .right-area{padding-right: 25px;
@@ -587,14 +587,14 @@ body.common-loading,html.common-loading{overflow: hidden;}
   }
 }
 
-@media (min-width: 767px) and (max-width: 1023px) {
+@media screen and (min-width: 767px) and (max-width: 1023px) {
   .wrap-login .login-box .right-box .certification-list li a{padding: 24px 60px 24px 24px;
     .tit{padding-left: 40px;}
     &::before{top: 19px;}
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   //검색 
   .search-box {padding: 24px;
     li[class*=col] {width: 100% !important;flex-direction: column;align-items: flex-start;
@@ -674,7 +674,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
   .common-loading:not(.wrap-cont-tbl):after {position: fixed;top:50vh;}
 }
 
-@media (max-width: 600px) {  
+@media screen and (max-width: 600px) {  
   //관세납부합계
   .wrap-customs-info{padding: 24px;
     .left-box{
@@ -690,7 +690,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
   }
 }
 
-@media (max-width: 550px) {  
+@media screen and (max-width: 550px) {  
   //하단버튼 
   .btn-area {
     .align {width: 100%;
@@ -717,7 +717,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
   .btn-area-type.mo{display: flex !important;}    
 }
 
-@media (max-width: 480px) {  
+@media screen and (max-width: 480px) {  
   //제목 
   [class*=title-type]{font-size: 19px;    
     &.title-type3{margin-top: 43px;display: flex;flex-direction: column;

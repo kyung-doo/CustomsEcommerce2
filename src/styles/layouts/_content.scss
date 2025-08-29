@@ -137,7 +137,7 @@
 .mo{display: none !important;}
 .fmo{display: none !important;}
 
-@media (max-width: 767px) {  
+@media screen and (max-width: 767px) {  
   .content-wrap {
     .cont-head {
       .head-util {flex-wrap: wrap;gap: 10px;
@@ -168,7 +168,7 @@
   .fmo{display: flex !important;}
 }
 
-@media (max-width: 480px) {  
+@media screen and (max-width: 480px) {  
   //제목
   .head-tit{
     .txt{font-size:17px;font-weight: 400;}

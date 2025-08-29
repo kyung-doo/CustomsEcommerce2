@@ -184,7 +184,7 @@
   }
 }
 
-@media (max-width: 1312px) {  
+@media screen and (max-width: 1312px) {  
   .wrap-form-area{
     /** 버튼이 있는 리스트 **/
     .inp-form:has(.form-btn-area){padding: 72px 24px 34px 24px;}   
@@ -200,7 +200,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   /** step **/
   .wrap-form-area{
     .inp-form{      
@@ -225,7 +225,7 @@
   } 
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   /** 리스트 **/
   .wrap-form-area{
     .inp-form {padding: 34px 24px;
@@ -293,13 +293,13 @@
   }
 }
 
-@media (min-width: 481px) {
+@media screen and (min-width: 481px) {
   .cont-acc-list.type1{
     .accordion-body{display: block;}
   } 
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   /** 리스트 **/
   .wrap-form-area{    
     .inp-form ul {   

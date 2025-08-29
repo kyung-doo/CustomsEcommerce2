@@ -28,7 +28,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .pagination {min-width: 100px;position: relative;padding: 63px 0 2px 0;    
     .mobile-dot {display: flex;}
     a.page-link:not(.mobile-link) {display: none;}
@@ -46,6 +46,6 @@
   }  
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .pagination .page-link{width: 35px;height:35px;}
 }
