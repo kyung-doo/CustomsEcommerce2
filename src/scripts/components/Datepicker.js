@@ -272,7 +272,7 @@ class Datepicker {
         }
         if (PLDay !== 6) {
             for (let i = 0; i < PLDay + 1; i++) {
-                prevDates.unshift({year:month === 1 ? year-1 : year, month: month === 1 ? 12 : month, day: PLDate - i, type: 'prev'});
+                prevDates.unshift({year:month === 1 ? year-1 : year, month: month === 1 ? 12 : month-1, day: PLDate - i, type: 'prev'});
             }
         }
         for (let i = 1; i < 7 - TLDay; i++) {
@@ -285,7 +285,7 @@ class Datepicker {
         
         dates.forEach((x, i) => {
             if(this.selectDate) {
-                if(x.year === this.selectDate.getFullYear() && x.month === this.selectDate.getMonth()+1 && x.day === this.selectDate.getDate() && x.type.includes('normal')) {
+                if(x.year === this.selectDate.getFullYear() && x.month === this.selectDate.getMonth()+1 && x.day === this.selectDate.getDate()) {
                     x.type += ' active';
                 }
             }
