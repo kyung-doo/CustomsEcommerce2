@@ -2,7 +2,12 @@
 @use "./utils";
 
 
-
+@media print {
+	* {-webkit-print-color-adjust: exact;print-color-adjust:exact;}
+    body, html {height: auto !important;overflow: visible !important;margin: 0;}
+   #printArea {height: auto !important;max-height: none !important;overflow: visible !important;}
+    .no-print {display: none !important;}     
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
