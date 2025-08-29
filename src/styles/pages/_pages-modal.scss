@@ -66,7 +66,7 @@
   .compulsory-txt{margin-bottom: 14px;}
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   //국민비서 가입절차
   .population-box{
     .modal-body{max-height: calc(100vh - 350px);}
@@ -84,7 +84,7 @@
   }  
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .modal-body{
     .certification-number{padding: 22px 10px;}        
     .reforwarding{flex-direction: column;

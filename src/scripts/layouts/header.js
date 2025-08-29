@@ -250,8 +250,50 @@ $(() => {
             $(this).closest(closestBox).find(inputBox).val('');        
             $(this).hide();
         });    
-    })
-    
+    });
+
+    //프린트
+    $(document).ready(function() {
+        $('#printButton').on('click', function() {
+            // 인쇄할 영역 가져오기
+            var content = $('#printArea').html();
+
+            // 임시 iframe 생성 및 설정
+            var iframe = $('<iframe/>').attr('id', 'printFrame').css({
+                'position': 'absolute',
+                'top': '-9999px',
+                'left': '-9999px'
+            });
+
+            // iframe에 내용 삽입
+            $('body').append(iframe);
+            var win = iframe[0].contentWindow;
+            win.document.write(`
+                <html>
+                    <head>
+                        <title>인쇄</title>
+                        <link rel="stylesheet" href="../css/common.css">
+                        <link rel="stylesheet" href="../css/components.css">
+                        <link rel="stylesheet" href="../css/layouts.css">
+                        <link rel="stylesheet" href="../css/pages.css">
+                    </head>
+                    <body>
+                        ${content}
+                    </body>
+                </html>
+            `)            
+            win.document.close();
+
+            // 인쇄 실행
+            win.focus();
+            win.print();
+
+            // 인쇄 후 iframe 삭제
+            setTimeout(function() {
+                iframe.remove();
+            }, 1000); // 인쇄 후 잠시 기다렸다가 삭제
+        });
+    });
 });
 
 

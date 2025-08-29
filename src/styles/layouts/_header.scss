@@ -153,7 +153,7 @@ button {border: 0;}
   }  
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   //로그인전
   #wrap.login .popup-box .modal{left: -579px !important;}
   #header{
@@ -163,7 +163,7 @@ button {border: 0;}
   } 
 }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   #wrap.logout  .header-container .name-box{display: none !important;}
   /** 로그인전 **/
   #wrap.login {
@@ -227,7 +227,7 @@ button {border: 0;}
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   #header .header-actions .btn-navi {font-size: 13px;}
 
   /** 팝업 **/
@@ -249,7 +249,7 @@ button {border: 0;}
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   #masthead .nuri-txt {font-size: 13px;padding-left: 25px;}
 
   #header {

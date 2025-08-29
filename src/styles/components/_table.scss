@@ -252,14 +252,14 @@
   .no-data{width:100%;height: 62px;display: flex;justify-content: center;align-items: center;border-bottom: 1px solid #E4E4E4;border-top: 1px solid #E4E4E4}
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .table-wrap table.check{
     th{padding:16px 10px;}
     td{padding: 16px 10px;font-size:15px;}
   }  
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .board-top {flex-direction: column;
     .choice {display: none;}
     button {width: calc(50% - 4px);}
@@ -350,7 +350,7 @@
     }
   }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   // FAQ 
   [class*=title-type].title-type3.faq-tit{flex-direction: row;font-size: 18px;display: flex;}
 }
