@@ -636,6 +636,7 @@ class Table {
         if (cwidth < minWidth) cwidth = minWidth;
         let bwidth = table.find('colgroup col').eq(this.touchIndex+1).width() + (table.find('colgroup col').eq(this.touchIndex).width() - cwidth);
         if (bwidth < minWidth) bwidth = minWidth;
+        if(bwidth === minWidth) return;
         table.find('colgroup col').eq(this.touchIndex).css('width', cwidth);
         table.find('colgroup col').eq(this.touchIndex+1).css('width',  bwidth);
         e.preventDefault();
