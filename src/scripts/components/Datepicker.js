@@ -285,7 +285,7 @@ class Datepicker {
         
         dates.forEach((x, i) => {
             if(this.selectDate) {
-                if(x.year === this.selectDate.getFullYear() && x.month === this.selectDate.getMonth()+1 && x.day === this.selectDate.getDate()) {
+                if(x.year === this.selectDate.getFullYear() && x.month === this.selectDate.getMonth()+1 && x.day === this.selectDate.getDate() && x.type.includes('normal')) {
                     x.type += ' active';
                 }
             }
