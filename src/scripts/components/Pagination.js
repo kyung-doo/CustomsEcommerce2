@@ -57,7 +57,7 @@ class Pagination {
     renderPage () {
         this.ele.find('.page-link').off('click');
         this.ele.find('.page-links').empty();
-        if(this.props.totalPages < 1) {
+        if(this.props.totalPages <= 1) {
             this.ele.find('.page-navi.next').attr('disabled', 'disabled');
             this.ele.find('.page-navi.prev').attr('disabled', 'disabled');
         } else {

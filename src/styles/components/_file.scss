@@ -1,4 +1,6 @@
 @use "../mixin" as *;
+
+/** file **/
 input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
     &:focus + label{outline: 2px solid #000;}
 }
@@ -77,3 +79,4 @@ input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
 @media screen and (max-width: 480px) {
   .file-upload.line{padding: 24px;}  
 }
+/** //file **/
