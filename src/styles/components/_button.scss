@@ -1,5 +1,6 @@
 @use "../mixin" as *;
 
+/** button **/
 button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align-items: center;border-radius: 4px;justify-content: center;white-space: nowrap;
 
   &.xlarge {padding: 0 24px;height: 64px;font-size: 19px;}
@@ -43,3 +44,4 @@ button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align
 [class*=btn-area-type]{    
     .align{flex-wrap: wrap;}  
 } 
+/** //button **/

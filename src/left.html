@@ -67,7 +67,7 @@ ul ul ul ul li:before{content:'·';top:-3px}
 .tip{margin-left:2px;color:#1594ed;font-size:12px !important;}
 .modify_cont{display:none;position:absolute;top:100%;right:0;min-height:20px;padding:5px;color:#fff;font-size:12px;background:#000;z-index:100;}
 .modify_cont:before{content:'';display:block;position:absolute;top:-10px;right:20px;border:5px solid transparent;border-bottom-color:#000;}
-[target="_blank"].on{color:green;font-weight: 700;}
+[target="contentframe"].on{color:green;font-weight: 700;}
 a{color:#000}
 .en-txt{color:red; font-weight: 700;}
 .en-list{display: none;}
@@ -80,46 +80,43 @@ a{color:#000}
 <body>
 	<script>		
 		$(function(){
-			$('[target="_blank"]').click(function(){
-				$('[target="_blank"]').removeClass('on')
+			$('[target="contentframe"]').click(function(){
+				$('[target="contentframe"]').removeClass('on')
 				$(this).addClass('on');
 			})
 		})
 	</script>
-
-	<h1><a href="pages/" target="_blank" title="우측 새창에서 열기">관세청 전자상거래포털</a></h1>			
-
 	<!--
-	<h2>스타일가이드</h2>
-	<ul>
-		<li><a href="style-guide.html" target="_blank">스타일가이드</a><span class="state_03"></span></li>		
-	</ul>
-	-->	
+	target="contentframe"
+	target="contentframe"
+	-->
+
+	<h1><a href="pages/" target="contentframe" title="우측 새창에서 열기">관세청 전자상거래포털</a></h1>				
 
 	<h2>그리드</h2>
 	<ul>
-		<li><a href="pages/board2.html" target="_blank">그리드 수정 샘플</a><span class="state_03"></span></li>				
-		<li><a href="pages/grid_1-1.html" target="_blank">1-1.CRUD형</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_2-1.html" target="_blank">2-1.조회형 - 일반형</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_2-2.html" target="_blank">2-2.조회형 - 배송주소 타입</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_2-3.html" target="_blank">2-3.조회형 - header두줄 타입</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_2-4.html" target="_blank">2-4.조회형 - 카드 타입</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_2-5.html" target="_blank">2-5.조회형 - 주소검색 타입</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_3-1.html" target="_blank">3-1.단순형 - 스크롤 타입</a><span class="state_03"></span></li>				
-		<li><a href="pages/grid_3-2.html" target="_blank">3-2.단순형 - 아코디언 타입</a><span class="state_03"></span></li>				
-		<li><a href="pages/grid_4-1.html" target="_blank">4-1.FAQ</a><span class="state_03"></span></li>				
-		<li><a href="pages/grid_5-1.html" target="_blank">5-1.메시지조회</a><span class="state_03"></span></li>								
+		<li><a href="pages/board2.html" target="contentframe">그리드 수정 샘플</a><span class="state_03"></span></li>				
+		<li><a href="pages/grid_1-1.html" target="contentframe">1-1.CRUD형</a><span class="state_03"></span></li>		
+		<li><a href="pages/grid_2-1.html" target="contentframe">2-1.조회형 - 일반형</a><span class="state_03"></span></li>		
+		<li><a href="pages/grid_2-2.html" target="contentframe">2-2.조회형 - 배송주소 타입</a><span class="state_03"></span></li>		
+		<li><a href="pages/grid_2-3.html" target="contentframe">2-3.조회형 - header두줄 타입</a><span class="state_03"></span></li>		
+		<li><a href="pages/grid_2-4.html" target="contentframe">2-4.조회형 - 카드 타입</a><span class="state_03"></span></li>		
+		<li><a href="pages/grid_2-5.html" target="contentframe">2-5.조회형 - 주소검색 타입</a><span class="state_03"></span></li>		
+		<li><a href="pages/grid_3-1.html" target="contentframe">3-1.단순형 - 스크롤 타입</a><span class="state_03"></span></li>				
+		<li><a href="pages/grid_3-2.html" target="contentframe">3-2.단순형 - 아코디언 타입</a><span class="state_03"></span></li>				
+		<li><a href="pages/grid_4-1.html" target="contentframe">4-1.FAQ</a><span class="state_03"></span></li>				
+		<li><a href="pages/grid_5-1.html" target="contentframe">5-1.메시지조회</a><span class="state_03"></span></li>								
 	</ul>	
 	
 
 	<h2>레이아웃</h2>
 	<ul>		
-		<li><a href="pages/1.layout.html" target="_blank">1.메인 로그인전</a><span class="state_03"></span></li>				
-		<li><a href="pages/2.layout.html" target="_blank">2.메인 로그인후 [유효기간 기본]</a><span class="state_03"></span></li>		
-		<li><a href="pages/3.layout.html" target="_blank">3.메인 로그인후 [유효기간 위험]</a><span class="state_03"></span></li>		
-		<li><a href="pages/4.layout.html" target="_blank">4.메인 로그인후 [유효기간 안전]</a><span class="state_03"></span></li>		
-		<li><a href="pages/5.layout.html" target="_blank">5.서브레이아웃 로그인전</a><span class="state_03"></span></li>						
-		<li><a href="pages/6.layout.html" target="_blank">6.서브레이아웃 로그인후</a><span class="state_03"></span></li>						
+		<li><a href="pages/1.layout.html" target="contentframe">1.메인 로그인전</a><span class="state_03"></span></li>				
+		<li><a href="pages/2.layout.html" target="contentframe">2.메인 로그인후 [유효기간 기본]</a><span class="state_03"></span></li>		
+		<li><a href="pages/3.layout.html" target="contentframe">3.메인 로그인후 [유효기간 위험]</a><span class="state_03"></span></li>		
+		<li><a href="pages/4.layout.html" target="contentframe">4.메인 로그인후 [유효기간 안전]</a><span class="state_03"></span></li>		
+		<li><a href="pages/5.layout.html" target="contentframe">5.서브레이아웃 로그인전</a><span class="state_03"></span></li>						
+		<li><a href="pages/6.layout.html" target="contentframe">6.서브레이아웃 로그인후</a><span class="state_03"></span></li>						
 	</ul>			
 
 	<h2>개인통관고유부호</h2>
@@ -130,23 +127,23 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">개인통관 고유부호 조회/정보변경[1]</strong>
 					<ul>
-						<li><a href="pages/pages_1-1.html" target="_blank">1.개인통관고유부호 조회</a><span class="state_04"></span></li>
-						<li><a href="pages/pages_1-2.html" target="_blank">2.개인통관고유부호 정보변경 1단계</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_1-3.html" target="_blank">3.개인통관고유부호 정보변경 2단계</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_1-4.html" target="_blank">4.개인통관고유부호 정보변경 3단계</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_1-5.html" target="_blank">5.개인통관고유부호 정보변경 4단계</a><span class="state_03"></span></li>
-						<li><a href="pages/en-pages_1-1.html" target="_blank">1.개인통관고유부호 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_1-2.html" target="_blank">2.개인통관고유부호 정보변경 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_1-3.html" target="_blank">3.개인통관고유부호 정보변경 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_1-4.html" target="_blank">4.개인통관고유부호 정보변경 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_1-5.html" target="_blank">5.개인통관고유부호 정보변경 4단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>			
+						<li><a href="pages/pages_1-1.html" target="contentframe">1.개인통관고유부호 조회</a><span class="state_04"></span></li>
+						<li><a href="pages/pages_1-2.html" target="contentframe">2.개인통관고유부호 정보변경 1단계</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_1-3.html" target="contentframe">3.개인통관고유부호 정보변경 2단계</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_1-4.html" target="contentframe">4.개인통관고유부호 정보변경 3단계</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_1-5.html" target="contentframe">5.개인통관고유부호 정보변경 4단계</a><span class="state_03"></span></li>
+						<li><a href="pages/en-pages_1-1.html" target="contentframe">1.개인통관고유부호 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_1-2.html" target="contentframe">2.개인통관고유부호 정보변경 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_1-3.html" target="contentframe">3.개인통관고유부호 정보변경 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_1-4.html" target="contentframe">4.개인통관고유부호 정보변경 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_1-5.html" target="contentframe">5.개인통관고유부호 정보변경 4단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>			
 					</ul>					
 				</li>
 				<li class="3depth1">
 					<strong class="tit3">개인통관 고유부호 발급/이력조회[2]</strong>
 					<ul>
-						<li><a href="pages/pages_2-1.html" target="_blank">1.개인통관고유부호 발급 이력조회</a><span class="state_03"></span></li>
-						<li><a href="pages/en-pages_2-1.html" target="_blank">1.개인통관고유부호 발급 이력조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/pages_2-1.html" target="contentframe">1.개인통관고유부호 발급 이력조회</a><span class="state_03"></span></li>
+						<li><a href="pages/en-pages_2-1.html" target="contentframe">1.개인통관고유부호 발급 이력조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
 					</ul>					
 				</li>				
 			</ul>
@@ -157,37 +154,37 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 신규/재발급[3]</strong>
 					<ul>
-						<li><a href="pages/pages_3-1.html" target="_blank">1.개인통관고유부호 신규/부호변경 1단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_3-2.html" target="_blank">2.개인통관고유부호 신규/부호변경 2단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_3-3.html" target="_blank">3.개인통관고유부호 신규/부호변경 3단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_3-4.html" target="_blank">4.개인통관고유부호 신규/부호변경 4단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_3-5.html" target="_blank">5.개인통관고유부호 부호변경</a><span class="state_03"></span></li>						
-						<li><a href="pages/en-pages_3-1.html" target="_blank">1.개인통관고유부호 신규/부호변경 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-pages_3-2.html" target="_blank">2.개인통관고유부호 신규/부호변경 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-pages_3-3.html" target="_blank">3.개인통관고유부호 신규/부호변경 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-pages_3-4.html" target="_blank">4.개인통관고유부호 신규/부호변경 4단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-pages_3-5.html" target="_blank">5.개인통관고유부호 부호변경<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/pages_3-1.html" target="contentframe">1.개인통관고유부호 신규/부호변경 1단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_3-2.html" target="contentframe">2.개인통관고유부호 신규/부호변경 2단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_3-3.html" target="contentframe">3.개인통관고유부호 신규/부호변경 3단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_3-4.html" target="contentframe">4.개인통관고유부호 신규/부호변경 4단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_3-5.html" target="contentframe">5.개인통관고유부호 부호변경</a><span class="state_03"></span></li>						
+						<li><a href="pages/en-pages_3-1.html" target="contentframe">1.개인통관고유부호 신규/부호변경 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-pages_3-2.html" target="contentframe">2.개인통관고유부호 신규/부호변경 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-pages_3-3.html" target="contentframe">3.개인통관고유부호 신규/부호변경 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-pages_3-4.html" target="contentframe">4.개인통관고유부호 신규/부호변경 4단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-pages_3-5.html" target="contentframe">5.개인통관고유부호 부호변경<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
 					</ul>					
 				</li>				
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 사용정지/해제[4]</strong>
 					<ul>
-						<li><a href="pages/pages_4-1.html" target="_blank">1.개인통관고유부호 사용정지/해제</a><span class="state_03"></span></li>												
-						<li><a href="pages/en-pages_4-1.html" target="_blank">1.개인통관고유부호 사용정지/해제<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/pages_4-1.html" target="contentframe">1.개인통관고유부호 사용정지/해제</a><span class="state_03"></span></li>												
+						<li><a href="pages/en-pages_4-1.html" target="contentframe">1.개인통관고유부호 사용정지/해제<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
 					</ul>					
 				</li>				
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 유효기간 갱신[5]</strong>
 					<ul>
-						<li><a href="pages/pages_5-1.html" target="_blank">1.개인통관고유부호 갱신</a><span class="state_03"></span></li>																		
-						<li><a href="pages/en-pages_5-1.html" target="_blank">1.개인통관고유부호 갱신<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>																		
+						<li><a href="pages/pages_5-1.html" target="contentframe">1.개인통관고유부호 갱신</a><span class="state_03"></span></li>																		
+						<li><a href="pages/en-pages_5-1.html" target="contentframe">1.개인통관고유부호 갱신<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>																		
 					</ul>					
 				</li>				
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 해지 신청[6]</strong>
 					<ul>
-						<li><a href="pages/pages_6-1.html" target="_blank">1.개인통관고유부호 해지 신청</a><span class="state_03"></span></li>																		
-						<li><a href="pages/en-pages_6-1.html" target="_blank">1.개인통관고유부호 해지 신청<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>																		
+						<li><a href="pages/pages_6-1.html" target="contentframe">1.개인통관고유부호 해지 신청</a><span class="state_03"></span></li>																		
+						<li><a href="pages/en-pages_6-1.html" target="contentframe">1.개인통관고유부호 해지 신청<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>																		
 					</ul>					
 				</li>				
 			</ul>
@@ -198,19 +195,19 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 도용신고[7]</strong>
 					<ul>
-						<li><a href="pages/pages_7-1.html" target="_blank">1.개인통관고유부호 도용신고</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_7-2.html" target="_blank">2.개인통관고유부호 도용신고 상세</a><span class="state_03"></span></li>
-						<li><a href="pages/en-pages_7-1.html" target="_blank">1.개인통관고유부호 도용신고<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_7-2.html" target="_blank">2.개인통관고유부호 도용신고 상세<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/pages_7-1.html" target="contentframe">1.개인통관고유부호 도용신고</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_7-2.html" target="contentframe">2.개인통관고유부호 도용신고 상세</a><span class="state_03"></span></li>
+						<li><a href="pages/en-pages_7-1.html" target="contentframe">1.개인통관고유부호 도용신고<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_7-2.html" target="contentframe">2.개인통관고유부호 도용신고 상세<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
 					</ul>					
 				</li>
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 신고내역 조회[8]</strong>
 					<ul>
-						<li><a href="pages/pages_8-1.html" target="_blank">1.개인통관고유부호 신고내역 조회</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_8-2.html" target="_blank">2.개인통관고유부호 신고내역 조회 상세</a><span class="state_03"></span></li>
-						<li><a href="pages/en-pages_8-1.html" target="_blank">1.개인통관고유부호 신고내역 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_8-2.html" target="_blank">2.개인통관고유부호 신고내역 조회 상세<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/pages_8-1.html" target="contentframe">1.개인통관고유부호 신고내역 조회</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_8-2.html" target="contentframe">2.개인통관고유부호 신고내역 조회 상세</a><span class="state_03"></span></li>
+						<li><a href="pages/en-pages_8-1.html" target="contentframe">1.개인통관고유부호 신고내역 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_8-2.html" target="contentframe">2.개인통관고유부호 신고내역 조회 상세<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
 					</ul>					
 				</li>				
 			</ul>
@@ -221,9 +218,9 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">일회용 인증번호/개인통관고유부호 발급 내역 조회[9]</strong>
 					<ul>
-						<li><a href="pages/pages_9-1.html" target="_blank">1.일회용 인증번호/개인통관고유부호 발급내역</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_9-1.html" target="contentframe">1.일회용 인증번호/개인통관고유부호 발급내역</a><span class="state_03"></span></li>						
 
-						<li><a href="pages/en-pages_9-1.html" target="_blank">1.일회용 인증번호/개인통관고유부호 발급내역<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-pages_9-1.html" target="contentframe">1.일회용 인증번호/개인통관고유부호 발급내역<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
 					</ul>					
 				</li>				
 			</ul>
@@ -234,29 +231,29 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 방문발급사전신청 조회[new-1]</strong>
 					<ul>
-						<li><a href="pages/new-pages_1-1.html" target="_blank">1.개인통관고유부호 방문발급사전신청 조회</a><span class="state_03"></span></li>						
-						<li><a href="pages/new-pages_1-2.html" target="_blank">2.개인통관고유부호 방문발급사전신청 조회</a><span class="state_03"></span></li>						
-						<li><a href="pages/new-pages_1-3.html" target="_blank">3.개인통관고유부호 방문발급사전신청 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_1-1.html" target="contentframe">1.개인통관고유부호 방문발급사전신청 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_1-2.html" target="contentframe">2.개인통관고유부호 방문발급사전신청 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_1-3.html" target="contentframe">3.개인통관고유부호 방문발급사전신청 조회</a><span class="state_03"></span></li>						
 
-						<li><a href="pages/en-new-pages_1-1.html" target="_blank">1.개인통관고유부호 방문발급사전신청 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-new-pages_1-2.html" target="_blank">2.개인통관고유부호 방문발급사전신청 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-new-pages_1-3.html" target="_blank">3.개인통관고유부호 방문발급사전신청 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_1-1.html" target="contentframe">1.개인통관고유부호 방문발급사전신청 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_1-2.html" target="contentframe">2.개인통관고유부호 방문발급사전신청 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_1-3.html" target="contentframe">3.개인통관고유부호 방문발급사전신청 조회<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
 					</ul>					
 				</li>
 				<li class="3depth1">
 					<strong class="tit3">개인통관고유부호 방문발급 사전신청[new-2]</strong>
 					<ul>
-						<li><a href="pages/new-pages_2-1.html" target="_blank">1.개인통관고유부호 방문발급 사전신청 1단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/new-pages_2-2.html" target="_blank">2.개인통관고유부호 방문발급 사전신청 1단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/new-pages_2-3.html" target="_blank">3.개인통관고유부호 방문발급 사전신청 2단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/new-pages_2-4.html" target="_blank">4.개인통관고유부호 방문발급 사전신청 3단계</a><span class="state_03"></span></li>						
-						<li><a href="pages/new-pages_2-5.html" target="_blank">5.개인통관고유부호 방문발급 사전신청 4단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_2-1.html" target="contentframe">1.개인통관고유부호 방문발급 사전신청 1단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_2-2.html" target="contentframe">2.개인통관고유부호 방문발급 사전신청 1단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_2-3.html" target="contentframe">3.개인통관고유부호 방문발급 사전신청 2단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_2-4.html" target="contentframe">4.개인통관고유부호 방문발급 사전신청 3단계</a><span class="state_03"></span></li>						
+						<li><a href="pages/new-pages_2-5.html" target="contentframe">5.개인통관고유부호 방문발급 사전신청 4단계</a><span class="state_03"></span></li>						
 
-						<li><a href="pages/en-new-pages_2-1.html" target="_blank">1.개인통관고유부호 방문발급 사전신청 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-new-pages_2-2.html" target="_blank">2.개인통관고유부호 방문발급 사전신청 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-new-pages_2-3.html" target="_blank">3.개인통관고유부호 방문발급 사전신청 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-new-pages_2-4.html" target="_blank">4.개인통관고유부호 방문발급 사전신청 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
-						<li><a href="pages/en-new-pages_2-5.html" target="_blank">5.개인통관고유부호 방문발급 사전신청 4단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_2-1.html" target="contentframe">1.개인통관고유부호 방문발급 사전신청 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_2-2.html" target="contentframe">2.개인통관고유부호 방문발급 사전신청 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_2-3.html" target="contentframe">3.개인통관고유부호 방문발급 사전신청 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_2-4.html" target="contentframe">4.개인통관고유부호 방문발급 사전신청 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
+						<li><a href="pages/en-new-pages_2-5.html" target="contentframe">5.개인통관고유부호 방문발급 사전신청 4단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>						
 					</ul>					
 				</li>				
 			</ul>
@@ -271,12 +268,12 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">수입신고 내역 조회[10]</strong>
 					<ul>
-						<li><a href="pages/pages_10-1.html" target="_blank">1.전자상거래 신고현황 목록 조회</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_10-2.html" target="_blank">2.전자상거래 신고 상세 조회[수입신고공통사항]</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_10-3.html" target="_blank">3.전자상거래 신고 상세 조회[수입신고 거래내역]</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_10-4.html" target="_blank">4.전자상거래 신고 상세 조회[제출서류내역]</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_10-5.html" target="_blank">5.전자상거래 신고 보완서류 등록</a><span class="state_03"></span></li>
-						<li><a href="pages/pages_10-6.html" target="_blank">6.전자상거래 수입신고 정정이력 조회</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_10-1.html" target="contentframe">1.전자상거래 신고현황 목록 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_10-2.html" target="contentframe">2.전자상거래 신고 상세 조회[수입신고공통사항]</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_10-3.html" target="contentframe">3.전자상거래 신고 상세 조회[수입신고 거래내역]</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_10-4.html" target="contentframe">4.전자상거래 신고 상세 조회[제출서류내역]</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_10-5.html" target="contentframe">5.전자상거래 신고 보완서류 등록</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_10-6.html" target="contentframe">6.전자상거래 수입신고 정정이력 조회</a><span class="state_03"></span></li>
 					</ul>					
 				</li>
 			</ul>
@@ -287,8 +284,8 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">개인전자납부/납부내역 조회[11]</strong>
 					<ul>
-						<li><a href="pages/pages_11-1.html" target="_blank">1.개인통관고유부호 개인전자 납부 내역 조회</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_11-2.html" target="_blank">2.개인통관고유부호 개인전자 납부 내역 조회 상세</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_11-1.html" target="contentframe">1.개인통관고유부호 개인전자 납부 내역 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_11-2.html" target="contentframe">2.개인통관고유부호 개인전자 납부 내역 조회 상세</a><span class="state_03"></span></li>						
 					</ul>					
 				</li>
 			</ul>
@@ -299,31 +296,31 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">관세환급 신청[12]</strong>
 					<ul>
-						<li><a href="pages/pages_12-1.html" target="_blank">1.환급신청 대상 목록 조회</a><span class="state_03"></span></li>												
-						<li><a href="pages/pages_12-2.html" target="_blank">2.해외직구 환급신청 1단계</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_12-3.html" target="_blank">3.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_12-4.html" target="_blank">4.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_12-5.html" target="_blank">5.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_12-6.html" target="_blank">6.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_12-7.html" target="_blank">7.해외직구 환급신청 3단계</a><span class="state_03"></span></li>							
+						<li><a href="pages/pages_12-1.html" target="contentframe">1.환급신청 대상 목록 조회</a><span class="state_03"></span></li>												
+						<li><a href="pages/pages_12-2.html" target="contentframe">2.해외직구 환급신청 1단계</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_12-3.html" target="contentframe">3.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_12-4.html" target="contentframe">4.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_12-5.html" target="contentframe">5.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_12-6.html" target="contentframe">6.해외직구 환급신청 2단계</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_12-7.html" target="contentframe">7.해외직구 환급신청 3단계</a><span class="state_03"></span></li>							
 					</ul>					
 				</li>
 				<li class="3depth1">
 					<strong class="tit3">관세환급 신청 결과 조회[13]</strong>
 					<ul>
-						<li><a href="pages/pages_13-1.html" target="_blank">1.환급신청 처리결과 상세조회[기본정보] 이체정상</a><span class="state_03"></span></li>												
-						<li><a href="pages/pages_13-2.html" target="_blank">2.환급신청 처리결과 상세조회[기본정보] 기각</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-3.html" target="_blank">3.환급신청 처리결과 상세조회[기본정보] 통보</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-4.html" target="_blank">4.환급신청 처리결과 상세조회[물품정보]</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-5.html" target="_blank">5.환급신청 처리결과 상세조회[환급세액]</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-6.html" target="_blank">6.환급신청 처리결과 상세조회[제출서류]</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-7.html" target="_blank">7.환급신청 결과 및 오류 통보 조회</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-8.html" target="_blank">8.환급신청 처리결과 상세조회 이체정상</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-9.html" target="_blank">9.환급신청 처리결과 상세조회 기각통보</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-10.html" target="_blank">10.환급신청 처리결과 상세조회 통보</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-11.html" target="_blank">11.환급신청 처리결과 상세조회 기각통보</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-12.html" target="_blank">12.환급신청 처리결과 상세조회 기각</a><span class="state_03"></span></li>	
-						<li><a href="pages/pages_13-13.html" target="_blank">13.환급신청 결과 및 오류 통보 조회</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-1.html" target="contentframe">1.환급신청 처리결과 상세조회[기본정보] 이체정상</a><span class="state_03"></span></li>												
+						<li><a href="pages/pages_13-2.html" target="contentframe">2.환급신청 처리결과 상세조회[기본정보] 기각</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-3.html" target="contentframe">3.환급신청 처리결과 상세조회[기본정보] 통보</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-4.html" target="contentframe">4.환급신청 처리결과 상세조회[물품정보]</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-5.html" target="contentframe">5.환급신청 처리결과 상세조회[환급세액]</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-6.html" target="contentframe">6.환급신청 처리결과 상세조회[제출서류]</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-7.html" target="contentframe">7.환급신청 결과 및 오류 통보 조회</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-8.html" target="contentframe">8.환급신청 처리결과 상세조회 이체정상</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-9.html" target="contentframe">9.환급신청 처리결과 상세조회 기각통보</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-10.html" target="contentframe">10.환급신청 처리결과 상세조회 통보</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-11.html" target="contentframe">11.환급신청 처리결과 상세조회 기각통보</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-12.html" target="contentframe">12.환급신청 처리결과 상세조회 기각</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_13-13.html" target="contentframe">13.환급신청 결과 및 오류 통보 조회</a><span class="state_03"></span></li>	
 					</ul>					
 				</li>
 			</ul>
@@ -338,15 +335,15 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">수입통관 내역 조회[14]</strong>
 					<ul>
-						<li><a href="pages/pages_14-1.html" target="_blank">1.수입신고내역 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_14-1.html" target="contentframe">1.수입신고내역 조회</a><span class="state_03"></span></li>						
 					</ul>					
 				</li>
 				
 				<li class="3depth1">
 					<strong class="tit3">해외직구 거래 내역 조회[15]</strong>
 					<ul>
-						<li><a href="pages/pages_15-1.html" target="_blank">1.해외직구 통관정보 내역 조회</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_15-2.html" target="_blank">2.수입화물 진행정보 조회</a><span class="state_03"></span></li>	
+						<li><a href="pages/pages_15-1.html" target="contentframe">1.해외직구 통관정보 내역 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_15-2.html" target="contentframe">2.수입화물 진행정보 조회</a><span class="state_03"></span></li>	
 					</ul>					
 				</li>
 			</ul>
@@ -357,8 +354,8 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">수입화물 진행정보 조회[16]</strong>
 					<ul>
-						<li><a href="pages/pages_16-1.html" target="_blank">1.수입화물진행정보(BL화물정보) 조회</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_16-2.html" target="_blank">2.수입화물진행정보(BL화물정보) 조회</a><span class="state_03"></span></li>
+						<li><a href="pages/pages_16-1.html" target="contentframe">1.수입화물진행정보(BL화물정보) 조회</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_16-2.html" target="contentframe">2.수입화물진행정보(BL화물정보) 조회</a><span class="state_03"></span></li>
 					</ul>					
 				</li>				
 			</ul>
@@ -373,25 +370,25 @@ a{color:#000}
 				<li class="3depth1">
 					<strong class="tit3">세관별 수입통관[17]</strong>
 					<ul>
-						<li><a href="pages/pages_17-1.html" target="_blank">1.세관, 발송국별 전자상거래 물품 수입통관 현황</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_17-2.html" target="_blank">2.세관, 발송국별 전자상거래 물품 수입통관 현황</a><span class="state_03"></span></li>		
+						<li><a href="pages/pages_17-1.html" target="contentframe">1.세관, 발송국별 전자상거래 물품 수입통관 현황</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_17-2.html" target="contentframe">2.세관, 발송국별 전자상거래 물품 수입통관 현황</a><span class="state_03"></span></li>		
 					</ul>					
 				</li>
 
 				<li class="3depth1">
 					<strong class="tit3">물품별 수입통관[18]</strong>
 					<ul>
-						<li><a href="pages/pages_18-1.html" target="_blank">1.년도별 전자상거래 물품 수입통관 현황[금액]</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_18-2.html" target="_blank">2.년도별 전자상거래 물품 수입통관 현황[건수]</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_18-1.html" target="contentframe">1.년도별 전자상거래 물품 수입통관 현황[금액]</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_18-2.html" target="contentframe">2.년도별 전자상거래 물품 수입통관 현황[건수]</a><span class="state_03"></span></li>						
 					</ul>					
 				</li>
 				<li class="3depth1">
 					<strong class="tit3">발송국별 소요시간[21]</strong>
 					<ul>
-						<li><a href="pages/pages_21-1.html" target="_blank">1.발송국,세관 별 전자상거래 수입통관 소요시간[전체 소요시간]</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_21-2.html" target="_blank">2.발송국,세관 별 전자상거래 수입통관 소요시간[전체 소요시간]</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_21-3.html" target="_blank">3.발송국,세관 별 전자상거래 수입통관 소요시간[통관 단계별]</a><span class="state_03"></span></li>						
-						<li><a href="pages/pages_21-4.html" target="_blank">4.발송국,세관 별 전자상거래 수입통관 소요시간[통관 단계별]</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_21-1.html" target="contentframe">1.발송국,세관 별 전자상거래 수입통관 소요시간[전체 소요시간]</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_21-2.html" target="contentframe">2.발송국,세관 별 전자상거래 수입통관 소요시간[전체 소요시간]</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_21-3.html" target="contentframe">3.발송국,세관 별 전자상거래 수입통관 소요시간[통관 단계별]</a><span class="state_03"></span></li>						
+						<li><a href="pages/pages_21-4.html" target="contentframe">4.발송국,세관 별 전자상거래 수입통관 소요시간[통관 단계별]</a><span class="state_03"></span></li>						
 					</ul>					
 				</li>
 			</ul>
@@ -403,29 +400,29 @@ a{color:#000}
 		<li>
 			<strong class="tit2">주간 환율[22]</strong>
 			<ul>
-				<li><a href="pages/pages_22-1.html" target="_blank">1.환율 정보 조회</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_22-1.html" target="contentframe">1.환율 정보 조회</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>		
 		<li>
 			<strong class="tit2">해외직구물품 예상세액 조회[23]</strong>
 			<ul>
-				<li><a href="pages/pages_23-1.html" target="_blank">1.해외직구 예상세액 조회</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_23-2.html" target="_blank">2.해외직구 예상세액 조회</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_23-1.html" target="contentframe">1.해외직구 예상세액 조회</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_23-2.html" target="contentframe">2.해외직구 예상세액 조회</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">해외직구 등록업체 조회[24]</strong>
 			<ul>
-				<li><a href="pages/pages_24-1.html" target="_blank">1.해외직구 등록업체 조회[전자상거래 업체]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_24-2.html" target="_blank">2.해외직구 등록업체 조회[관세사]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_24-3.html" target="_blank">3.해외직구 등록업체 조회[특송업체]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_24-1.html" target="contentframe">1.해외직구 등록업체 조회[전자상거래 업체]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_24-2.html" target="contentframe">2.해외직구 등록업체 조회[관세사]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_24-3.html" target="contentframe">3.해외직구 등록업체 조회[특송업체]</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">업무 안내[25]</strong>
 			<ul>
-				<li><a href="pages/pages_25-1.html" target="_blank">1.전자상거래포털 이용안내</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_25-2.html" target="_blank">2.전자상거래포털 이용안내 상세보기</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_25-1.html" target="contentframe">1.전자상거래포털 이용안내</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_25-2.html" target="contentframe">2.전자상거래포털 이용안내 상세보기</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 	</ul>
@@ -435,37 +432,37 @@ a{color:#000}
 		<li>
 			<strong class="tit2">공지사항[26]</strong>
 			<ul>
-				<li><a href="pages/pages_26-1.html" target="_blank">1.공지사항</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_26-2.html" target="_blank">2.공지사항 상세보기</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_26-1.html" target="contentframe">1.공지사항</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_26-2.html" target="contentframe">2.공지사항 상세보기</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">자주묻는 질문[27]</strong>
 			<ul>
-				<li><a href="pages/pages_27-1.html" target="_blank">1.자주찾는 질문(FAQ)</a><span class="state_03"></span></li>														
-				<li><a href="pages/pages_27-2.html" target="_blank">2.자주찾는 질문(FAQ)</a><span class="state_03"></span></li>
+				<li><a href="pages/pages_27-1.html" target="contentframe">1.자주찾는 질문(FAQ)</a><span class="state_03"></span></li>														
+				<li><a href="pages/pages_27-2.html" target="contentframe">2.자주찾는 질문(FAQ)</a><span class="state_03"></span></li>
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">필수 설치 프로그램 안내[new-3]</strong>
 			<ul>
-				<li><a href="pages/new-pages_3-1.html" target="_blank">1.필수 설치 프로그램 안내</a><span class="state_03"></span></li>						
+				<li><a href="pages/new-pages_3-1.html" target="contentframe">1.필수 설치 프로그램 안내</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">자료실[28]</strong>
 			<ul>
-				<li><a href="pages/pages_28-1.html" target="_blank">1.자료실</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_28-2.html" target="_blank">2.자료실 상세보기</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_28-1.html" target="contentframe">1.자료실</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_28-2.html" target="contentframe">2.자료실 상세보기</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">질의응답[29]</strong>
 			<ul>
-				<li><a href="pages/pages_29-1.html" target="_blank">1.질의응답[문의등록]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_29-2.html" target="_blank">2.질의응답[문의 내역]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_29-3.html" target="_blank">3.질의응답 상세보기</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_29-4.html" target="_blank">4.질의응답 상세보기</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_29-1.html" target="contentframe">1.질의응답[문의등록]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_29-2.html" target="contentframe">2.질의응답[문의 내역]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_29-3.html" target="contentframe">3.질의응답 상세보기</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_29-4.html" target="contentframe">4.질의응답 상세보기</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 	</ul>
@@ -475,47 +472,47 @@ a{color:#000}
 		<li>
 			<strong class="tit2">마이페이지[30]</strong>
 			<ul>
-				<li><a href="pages/pages_30-1.html" target="_blank">1.나의 개인통관고유부호</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_30-2.html" target="_blank">2.나의 개인통관고유부호</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_30-3.html" target="_blank">3.나의 개인통관고유부호</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_30-4.html" target="_blank">4.나의 개인통관고유부호</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_30-5.html" target="_blank">5.나의 개인통관고유부호</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_30-1.html" target="contentframe">1.나의 개인통관고유부호</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_30-2.html" target="contentframe">2.나의 개인통관고유부호</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_30-3.html" target="contentframe">3.나의 개인통관고유부호</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_30-4.html" target="contentframe">4.나의 개인통관고유부호</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_30-5.html" target="contentframe">5.나의 개인통관고유부호</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">구매이력조회[31]</strong>
 			<ul>
-				<li><a href="pages/pages_31-1.html" target="_blank">1.구매이력 조회</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_31-1.html" target="contentframe">1.구매이력 조회</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">메세지조회[32]</strong>
 			<ul>
-				<li><a href="pages/pages_32-1.html" target="_blank">1.메시지조회</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_32-2.html" target="_blank">2.메시지조회</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_32-1.html" target="contentframe">1.메시지조회</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_32-2.html" target="contentframe">2.메시지조회</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">개명신청[33]</strong>
 			<ul>
-				<li><a href="pages/pages_33-1.html" target="_blank">1.개명신청</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_33-1.html" target="contentframe">1.개명신청</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">관세납부현황[34]</strong>
 			<ul>
-				<li><a href="pages/pages_34-1.html" target="_blank">1.통관현황 그래프[금액]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_34-2.html" target="_blank">2.통관현황 표[금액]</a><span class="state_03"></span></li>		
-				<li><a href="pages/pages_34-3.html" target="_blank">3.통관현황 그래프[건수]</a><span class="state_03"></span></li>		
-				<li><a href="pages/pages_34-4.html" target="_blank">4.통관현황 표[건수]</a><span class="state_03"></span></li>		
+				<li><a href="pages/pages_34-1.html" target="contentframe">1.통관현황 그래프[금액]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_34-2.html" target="contentframe">2.통관현황 표[금액]</a><span class="state_03"></span></li>		
+				<li><a href="pages/pages_34-3.html" target="contentframe">3.통관현황 그래프[건수]</a><span class="state_03"></span></li>		
+				<li><a href="pages/pages_34-4.html" target="contentframe">4.통관현황 표[건수]</a><span class="state_03"></span></li>		
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">통관·납부·환급내역 조회[35]</strong>
 			<ul>
-				<li><a href="pages/pages_35-1.html" target="_blank">1.통관·납부·환급내역 조회<br>[나의 통관내역]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_35-2.html" target="_blank">2.통관·납부·환급내역 조회<br>[나의 납부내역]</a><span class="state_03"></span></li>						
-				<li><a href="pages/pages_35-3.html" target="_blank">3.통관·납부·환급내역 조회<br>[나의 환급내역]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_35-1.html" target="contentframe">1.통관·납부·환급내역 조회<br>[나의 통관내역]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_35-2.html" target="contentframe">2.통관·납부·환급내역 조회<br>[나의 납부내역]</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_35-3.html" target="contentframe">3.통관·납부·환급내역 조회<br>[나의 환급내역]</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 	</ul>	
@@ -525,46 +522,46 @@ a{color:#000}
 		<li>
 			<strong class="tit2">개인정보 및 약관동의[36]</strong>
 			<ul>
-				<li><a href="pages/pages_36-1.html" target="_blank">1.개인정보 및 약관동의</a><span class="state_03"></span></li>						
+				<li><a href="pages/pages_36-1.html" target="contentframe">1.개인정보 및 약관동의</a><span class="state_03"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">이메일[37]</strong>
 			<ul>
-				<li><a href="pages/pages_37-1.html" target="_blank">1.이메일[인증]</a><span class="state_02"></span></li>						
-				<li><a href="pages/pages_37-2.html" target="_blank">2.이메일[유효기간]</a><span class="state_02"></span></li>						
+				<li><a href="pages/pages_37-1.html" target="contentframe">1.이메일[인증]</a><span class="state_02"></span></li>						
+				<li><a href="pages/pages_37-2.html" target="contentframe">2.이메일[유효기간]</a><span class="state_02"></span></li>						
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">국민비서팝업[38]</strong>
 			<ul>
-				<li><a href="pages/pages_38-1.html" target="_blank">1.국민비서팝업</a><span class="state_03"></span></li>										
+				<li><a href="pages/pages_38-1.html" target="contentframe">1.국민비서팝업</a><span class="state_03"></span></li>										
 			</ul>					
 		</li>		
 		<li>
 			<strong class="tit2">로그인[39]</strong>
 			<ul>
-				<li><a href="pages/pages_39-1.html" target="_blank">1.실명인증</a><span class="state_03"></span></li>										
-				<li><a href="pages/pages_39-2.html" target="_blank">2.로그인</a><span class="state_03"></span></li>										
+				<li><a href="pages/pages_39-1.html" target="contentframe">1.실명인증</a><span class="state_03"></span></li>										
+				<li><a href="pages/pages_39-2.html" target="contentframe">2.로그인</a><span class="state_03"></span></li>										
 			</ul>					
 		</li>		
 		<li>
 			<strong class="tit2">통합검색[40]</strong>
 			<ul>
-				<li><a href="pages/pages_40-1.html" target="_blank">1.통합검색</a><span class="state_03"></span></li>										
+				<li><a href="pages/pages_40-1.html" target="contentframe">1.통합검색</a><span class="state_03"></span></li>										
 			</ul>					
 		</li>
 		<li>
 			<strong class="tit2">주소검색[41]</strong>
 			<ul>
-				<li><a href="pages/pages_41-1.html" target="_blank">1.주소검색 팝업</a><span class="state_03"></span></li>										
+				<li><a href="pages/pages_41-1.html" target="contentframe">1.주소검색 팝업</a><span class="state_03"></span></li>										
 			</ul>					
 		</li>				
 	</ul>	
 	
 	<h2>레이어팝업 모음</h2>
 	<ul>
-		<li><a href="pages/layerpopup.html" target="_blank">1.레이어팝업</a><span class="state_03"></span></li>		
+		<li><a href="pages/layerpopup.html" target="contentframe">1.레이어팝업</a><span class="state_03"></span></li>		
 	</ul>	
 </body>
 </html>

@@ -1,5 +1,6 @@
 @use "../mixin" as *;
 
+/** breadcrumb **/
 .breadcrumb {display: flex;
   li {position: relative;margin: 0 8px;display: flex;    
     * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;
@@ -38,3 +39,4 @@
     }
   }
 }
+/** //breadcrumb **/
