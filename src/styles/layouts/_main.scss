@@ -56,19 +56,21 @@
                     &.list3 a::before{background-image: url("../assets/icons/m-list2.svg");}
                     &.list4 a::before{background-image: url("../assets/icons/m-list3.svg");}                   
                 }
-
             }
             
 
             //리스트 pc
             .wrap-slide-box{flex:1;min-width: 300px;width:500px;display: flex;gap:12px;padding-top: 40px;
-                .slide-box{height: 100%;min-width: 352px;width:352px;padding: 15px 0 59px 0;;                                                      
+                .slide-box{height: 100%;min-width: 352px;width:352px;padding: 20px 0 59px 0;
                     .swiper-wrapper{align-items: center !important;}
                     .swiper{height:100%;}                    
-                        a{display: flex;flex-direction: column;justify-content: center;padding: 9px 16px;border:1px solid #8FC8FF;background-color: #EBF5FF;min-width:320px;width:320px;border-radius: 8px;
-                            &.on,&[title=선택됨],&.ov{border-radius: 12px;background: linear-gradient(0deg, #1D56BC 0%, #246BEB 100%);padding: 19px 24px;min-width:100%;width:100%;box-shadow: 4px 4px 16px 0 rgba(29, 86, 188, 0.40);height:auto !important;
-                                .kr-txt{font-size:19px;color:#FFF;}                            
-                                .en-txt{color:#D3E1FB;}    
+                        a{display: flex;flex-direction: column;justify-content: center;min-width:320px;width:320px;border-radius: 8px;border:1px solid #8FC8FF;background-color: #EBF5FF;
+                            p{padding: 10px 16px;}
+                            &.on,&[title=선택됨],&.ov{border-radius: 12px;background: linear-gradient(0deg, #1D56BC 0%, #246BEB 100%);padding: 20px;min-width:100%;width:100%;box-shadow: 4px 4px 16px 0 rgba(29, 86, 188, 0.40);
+                                .kr-txt{padding: 0;font-size:19px;color:#FFF;
+                                    .en-txt{color:#D3E1FB;}    
+                                }
+                                                        
                             }
                             [class*=-txt]{line-height: 150%;}                            
                             .en-txt{font-size: 15px;color:#555;}                            
@@ -81,6 +83,7 @@
                             &.swiper-stop.on{background-image: url("../assets/icons/play-2.svg");}                            
                         }
                         .swiper-pagination{height: 100%;transform: translate(0);margin-left: 10px;
+                            &.swiper-pagination-lock{display: none;}
                             .swiper-pagination-bullet.swiper-pagination-bullet-active{width: 20px;background-color: #246BEB;border-radius: 8px;}
                             .swiper-pagination-bullet{width:8px;height: 8px;background-color: #8E8E8E;}
                         }
@@ -302,10 +305,10 @@
 
 @media screen and (max-width: 1023px) {        
     .main {
-        .box1 .cont-box {padding-bottom: 330px;position: relative;
+        .box1 .cont-box {padding-bottom: 280px;position: relative;
             .login-box {padding: 32px 21px;}
             .wrap-slide-box {flex-direction: column;padding-top: 0;                
-                .slide-show-box {margin-left: 0;min-width: 100%;width: 100%;position: absolute;bottom:0;left:0;height:300px;
+                .slide-show-box {margin-left: 0;min-width: 100%;width: 100%;position: absolute;bottom:0;left:0;height:250px;
                     &::before{top: -31%;left: 50%;transform: translate(-50%, -50%);}
                 }
                 .slide-box {min-width: 100%;width: 100%;padding-top: 0;
@@ -330,22 +333,50 @@
 }
 
 @media screen and (max-width: 767px) {            
-    .main .box1 {
-        .cont-box {gap: 40px;padding-bottom: 0;
-            .login-box {width: 100%;max-height: 100%;min-width: 100%;}
-        }
-
-        .tit-box .tit {font-size: 30px;}
-
-        .cont-box {
-            .wrap-slide-box{
-                .slide-box .wrap-swiper-btn {margin-left: 0;justify-content: center;}
-                .slide-show-box{position: static;height: auto;
-                    &::before{top: 18%;left: 50%;}
+    .main {
+        .box1 {padding: 48px 0 97px 0;
+            .cont-box {gap: 40px;padding-bottom: 0;
+                .login-box {width: 100%;max-height: 100%;min-width: 100%;}
+                .mo-list {display: flex;}
+                .wrap-slide-box {display: none;}
+            }
+            .tit-box {
+                .tit {font-size: 30px;}
+                .unipass-go {display: none;}
+            }
+            .cont-box .login-box {
+                .txt-box .txt {
+                    &::before, br {display: none;}
+                    padding-top: 0;margin-top: 32px;font-size: 17px;font-weight: 400;
                 }
-            } 
-            .login-box.logout .txt-box .txt-area a strong {font-size: 25px;}
+                &.login {height: auto;}
+                .btn-box {margin-top: 32px;}
+            }
         }
+        .box2 {padding: 48px 0 64px 0;gap: 48px;
+            .wrap-notice .notice-box {height: 392px;
+                .area .more {position: static;height: 48px;border-radius: 8px;border: 1px solid #1D1D1D;justify-content: center;font-size: 17px;margin-top: 18px;}
+                .icon.plus {background-image: url('../assets/icons/btn-arrow-right.svg');}
+            }
+        }
+        .slide-box .wrap-swiper-btn {margin-top: 16px;justify-content: center;position: static;margin-left: 0;justify-content: center;
+            button {background-color: #FFF;border: 1px solid #C6C6C6;}
+            .swiper-pagination-fraction {background-color: #FFF;border: 1px solid #C6C6C6;
+                .swiper-pagination-current, .swiper-pagination-total {color: #1D1D1D;}
+                color: #1D1D1D;
+            }
+            button {
+                &.swiper-stop {background-image: url('../assets/icons/stop-2.svg');
+                    &.on {background-image: url('../assets/icons/play-2.svg');}
+                }
+                &.swiper-button-next, &.swiper-button-prev {background-image: url('../assets/icons/btn-arrow-right.svg');}
+            }
+        }
+        .slide-show-box{position: static;height: auto;
+            &::before{top: 18%;left: 50%;}
+        }
+        .login-box.logout .txt-box .txt-area a strong {font-size: 25px;}
+        .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a img {border-radius: 12px;}
     }
 }
 
@@ -356,45 +387,31 @@
                 .mo-list {display: flex;}
                 .wrap-slide-box {display: none;}
             }
-
             .tit-box {
                 .tit {font-size: 25px;}
                 .unipass-go {display: none;}
             }
-
             .cont-box .login-box {
                 .txt-box .txt {
                     &::before, br {display: none;}
                     padding-top: 0;margin-top: 32px;font-size: 17px;font-weight: 400;
                 }
-
                 &.login {height: auto;}
-
                 .btn-box {margin-top: 32px;}
             }
         }
-
         .box2 {padding: 48px 0 64px 0;gap: 48px;
-
             .wrap-notice .notice-box {height: 392px;
-
                 .area .more {position: static;height: 48px;border-radius: 8px;border: 1px solid #1D1D1D;justify-content: center;font-size: 17px;margin-top: 18px;}
-
                 .icon.plus {background-image: url('../assets/icons/btn-arrow-right.svg');}
             }
         }
-
         .slide-box .wrap-swiper-btn {margin-top: 16px;justify-content: center;position: static;
-
             button {background-color: #FFF;border: 1px solid #C6C6C6;}
-
             .swiper-pagination-fraction {background-color: #FFF;border: 1px solid #C6C6C6;
-
                 .swiper-pagination-current, .swiper-pagination-total {color: #1D1D1D;}
-
                 color: #1D1D1D;
             }
-
             button {
                 &.swiper-stop {background-image: url('../assets/icons/stop-2.svg');
                     &.on {background-image: url('../assets/icons/play-2.svg');}
@@ -402,7 +419,6 @@
                 &.swiper-button-next, &.swiper-button-prev {background-image: url('../assets/icons/btn-arrow-right.svg');}
             }
         }
-
         .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a img {border-radius: 12px;}
     }
 

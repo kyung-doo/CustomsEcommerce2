@@ -19,8 +19,7 @@ $(() => {
             setTimeout(function(){
                 printWindow.print();
                 printWindow.close();
-            },300)
-            
-         });
+            },300)            
+        });
     });
 });

@@ -46,7 +46,7 @@
                 &.today button:hover {background-color: #EDF1F5;}
 
                 /** 선택 **/
-                &.active button {background-color: #246BEB !important;color: #fff !important;}                
+                &.active:not(.prev) button {background-color: #246BEB !important;color: #fff !important;}                
 
                 /** hover **/
                 &.btn:hover:not(.today){background-color: #EDF1F5;border-color:#EDF1F5;}

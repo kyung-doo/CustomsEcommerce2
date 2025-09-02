@@ -6,19 +6,36 @@ $(() => {
 
     $("#wrap").append('<div class="blind d-none"></div>');    
 
+
+    //스크롤 막기
+    function preventDefault(e) {
+        e.preventDefault();
+    }    
+
+    function disableScroll() {
+        document.addEventListener('wheel', preventDefault, { passive: false });
+        document.addEventListener('touchmove', preventDefault, { passive: false });        
+    }
+
+    function enableScroll() {
+        document.removeEventListener('wheel', preventDefault, { passive: false });
+        document.removeEventListener('touchmove', preventDefault, { passive: false });        
+    }
+
     // 메인 네비
     $(".gnb-menu li").each(function () {
         const btn = $(this).find("button");
         btn.on('click', function (){
             $(".gnb-menu li").removeClass('active');
             $(this).parent().addClass('active');
-            $('body').css({'overflow': 'hidden'});
+            $('body').addClass('no-scroll')
             $(".main-allmenu").hide();
             $("#header .allmenu").removeClass('active');
             $(".mobile-dep-menu").removeClass('mobile-active');
             if($(window).width() >= 1023) {
                 $("#wrap > .blind").show();
-            }
+            }              
+            disableScroll();
         });
     });
 
@@ -39,7 +56,8 @@ $(() => {
     $("#wrap > .blind").on('click', function () {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        $('body').css({'overflow': ''});        
+        $('body').removeClass('no-scroll')       
+        enableScroll();
     });
 
     $('#header .main-menu .allmenu').on('focus',function(){

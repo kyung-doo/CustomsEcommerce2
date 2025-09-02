@@ -12,16 +12,17 @@ $(() => {
             th.attr('title','선택됨');     
         })
     });   
+    
     var stopNum = 0;      
-    var slideSpeed = 5000;  
-
+    var slideSpeed = 1000000;  
+    
     //리스트 슬라이드
     const swiper1 = new Swiper('#list-slide', {
         slidesPerView: 'auto',
         spaceBetween: 14,      
         direction: 'vertical',
-        autoHeight : true,
-        loop: true,           
+        autoHeight : true,               
+        loop: true,             
         autoplay: {
             delay: slideSpeed,
             disableOnInteraction: false,
@@ -35,33 +36,47 @@ $(() => {
             nextEl: '.slide-area1 .swiper-button-next',
             prevEl: '.slide-area1 .swiper-button-prev',
         },
-        on: {            
+        on: { 
+            swiperCreated: function() {
+                let offset = 0;
+                for (let i = 0; i < swiper1.activeIndex; i++) {
+                    offset += swiper1.slides[i].offsetHeight + 14;
+                }                  
+                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;
+            },                   
             init: function () {
-                //슬라이드 load
-                var tabBox = $('.slide-area1 .swiper-slide-active').attr('data-btn');
+                //이미지슬라이드 개수가 적으면 정지버튼 삭제
+                if($('.slide-area1 .swiper-button-next').hasClass('swiper-button-lock')){                    
+                    $('.swiper-stop').addClass('swiper-button-lock');                    
+                }else{                    
+                    $('.swiper-stop').removeClass('swiper-button-lock');                    
+                }     
+
+                //슬라이드 load                
+                var tabBox = $('.slide-area1 .swiper-slide-active').attr('data-btn');                                
 
                 $('#'+tabBox).addClass('on')
                 $('.slide-area1 .swiper-slide-active').addClass('on');  
                 $('.slide-area1').attr('tabindex','0');
-
+    
                 //리스트 클릭했을때
                 $('.slide-area1 .swiper-slide').click(function(){
                     var slideIndex = $(this).attr('data-swiper-slide-index');						
                     var slideLoop = slideIndex++;		
-                    var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
+                    var tabBtn = $(this).attr('data-btn');
                     var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                                      
 
                     $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide').removeAttr('title')
                     $(this).attr('title','선택됨');
+
                     $('.slide-area1 .swiper-slide').removeClass('on')
                     $(this).addClass('on');
+
                     box.removeClass('on');
                     $('#'+tabBtn).addClass('on');
-                    swiper1.slideToLoop(slideLoop,0,true);
-                    console.log(slideIndex)
                     
-                    swiper1.updateAutoHeight();
-                });
+                    swiper1.slideToLoop(slideLoop,0,true);
+                });                
                 
                 //슬라이드 mouseenter
                 $('.slide-area1').mouseenter(function(){
@@ -97,23 +112,27 @@ $(() => {
                     $('.slide-area1 .swiper-stop').removeClass('on');
                     $('.slide-area1 .swiper-stop').text('정지');
                     swiper1.autoplay.start();     
-                });
-            },            
+                });    
+            },   
+            reachEnd: function() {
+                //swiper1.slideTo(0, 500);
+            },         
             slideNextTransitionStart: function() {
                 var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
-                var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');           
-                var offset = 0;                
+                var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                       
                 
                 $('.slide-area1 .swiper-slide').removeAttr('title');
                 $('.slide-area1 .swiper-slide').removeClass('on')
                 $('.slide-area1 .swiper-slide.swiper-slide-active').addClass('on')
                 $('.slide-area1 .swiper-slide.swiper-slide-active').attr('title','선택됨');
                 box.removeClass('on');
-                $('#'+tabBtn).addClass('on');                                                    
-                for (var i = 0; i < swiper1.activeIndex; i++) {
-                    offset += swiper1.slides[i].offsetHeight;
-                }
-                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset + 10}px, 0px)`;
+                $('#'+tabBtn).addClass('on');     
+                
+                let offset = 0;
+                for (let i = 0; i < swiper1.activeIndex; i++) {
+                    offset += swiper1.slides[i].offsetHeight + 14;
+                }                  
+                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;                
             },
             slidePrevTransitionEnd: function() {  
                 var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
@@ -124,10 +143,12 @@ $(() => {
                 $('.slide-area1 .swiper-slide.swiper-slide-active').addClass('on')
                 $('.slide-area1 .swiper-slide.swiper-slide-active').attr('title','선택됨');
                 box.removeClass('on');
-                $('#'+tabBtn).addClass('on');                                    
-            }
-        }        
-    });
+                $('#'+tabBtn).addClass('on');                                                    
+            },
+            
+        },        
+    });                  
+
 
     $('.slide-area1 .swiper-stop').click(function(){                
         if(stopNum==0){
