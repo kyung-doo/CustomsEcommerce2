@@ -1,5 +1,6 @@
 @use "../mixin" as *;
 
+/** 공통 tag css **/
 .tag-wrap {
   [class*=btn-] {
     display: inline-flex;

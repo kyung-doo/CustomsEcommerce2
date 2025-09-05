@@ -14,7 +14,7 @@ $(() => {
     });   
     
     var stopNum = 0;      
-    var slideSpeed = 1000000;  
+    var slideSpeed = 5000;  
     
     //리스트 슬라이드
     const swiper1 = new Swiper('#list-slide', {
@@ -147,8 +147,7 @@ $(() => {
             },
             
         },        
-    });                  
-
+    });   
 
     $('.slide-area1 .swiper-stop').click(function(){                
         if(stopNum==0){
@@ -231,5 +230,5 @@ $(() => {
             swiper2.autoplay.start();
             stopNum = 0;
         }
-    });
+    });    
 });

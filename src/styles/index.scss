@@ -1,6 +1,9 @@
 @use "./font";
 @use "./utils";
 
+/** 공통 css **/
+
+
 //print
 @media print {
 	* {-webkit-print-color-adjust: exact;print-color-adjust:exact;}

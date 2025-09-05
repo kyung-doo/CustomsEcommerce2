@@ -1,7 +1,7 @@
 @use "../mixin" as *;
 @use "../variable" as *;
 
-
+/** 공통 layout navigation css **/
 #header .main-menu {border-bottom: 1px solid #d8d8d8;padding: 0 16px;transform: translate(0px, 0px);
   .inner {max-width: 1280px;margin: 0 auto;display: flex;justify-content: space-between;height: 64px;}
   .gnb-menu {display: flex;max-width: 1202px;width: 1202px;align-items: center;justify-content: space-between;

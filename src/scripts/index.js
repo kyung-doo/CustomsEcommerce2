@@ -108,6 +108,7 @@ function styleToJson (el, style) {
     return obj;
 }
 
+
 // 로그인
 function setLogin() {
     var loginSwitch = $('.wrap-login .title-top .left-box .form-toggle-switch input[type=checkbox]');

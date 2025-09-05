@@ -1,6 +1,7 @@
 @use "../mixin" as *;
 @use "../variable" as *;
 
+/** 공통 layout footer css **/
 .footer-quick-pop{box-shadow: 4px 4px 24px 0 rgba(0, 0, 0, 0.16);padding: 24px 32px 32px 32px;
   strong.title{padding: 10px 0 32px 0;display: block;}
   a.title{border-radius: 4px;background-color: #F4F5F6;display: block;padding: 16px;color:#1D1D1D;font-weight: 700;}

@@ -1,5 +1,5 @@
 @use "../mixin" as *;
-
+/** 공통 입력 css **/
 .form-group {
   input[type=text], input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;padding: 0px 16px;}    
   .form-hint-invalid {font-size: 15px;color: #555;position: relative;margin-top: 12px;padding-left: 24px;}

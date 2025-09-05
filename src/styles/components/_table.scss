@@ -1,5 +1,7 @@
 @use "../mixin" as *;
 
+/** 공통 테이블 css **/
+
 // 테이블 기본 타이틀
 .board-top {display: flex;justify-content: space-between;flex-wrap: wrap;
   div[class*=t-box] {display: flex;align-items: center;
@@ -26,8 +28,6 @@
     }
   }
 }
-
-
 
 // 테이블 배송주소 타이틀 
 .add-title,.tb-tit{line-height: 150%;font-size: 21px;display: flex;align-items: center;flex-wrap: wrap;

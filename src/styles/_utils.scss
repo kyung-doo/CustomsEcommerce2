@@ -1,3 +1,6 @@
+
+/** 공통 css **/
+
 @for $i from 0 to 100 {
     .mt-#{$i} {
         margin-top: #{$i}px !important;

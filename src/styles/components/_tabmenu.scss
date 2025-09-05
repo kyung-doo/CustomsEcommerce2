@@ -1,5 +1,6 @@
 @use "../mixin" as *;
 
+/** 공통 tabmenu css **/
 [class*="tabmenu-"] {position: relative;
   .tabmenu-wrap {display: flex;overflow-x: auto;overflow-y: hidden;
     &::-webkit-scrollbar {display: none;}

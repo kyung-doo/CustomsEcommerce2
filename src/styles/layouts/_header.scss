@@ -1,6 +1,7 @@
 @use "../mixin" as *;
 @use "../variable" as *;
 
+/** 공통 layout header css **/
 button {border: 0;}
 .gnb-toggle-wrap {display: none;}
 #skip-link {  position: absolute;top: 0;right: 0;left: 0;margin: 0 auto;z-index: 99999;       
@@ -9,9 +10,9 @@ button {border: 0;}
   }
 }
 
-#masthead {position: relative;background-color: #4f6280;z-index: 8;padding: 0 16px;
+#masthead {position: relative;background-color: #EDF1F5;z-index: 8;padding: 0 16px;
   .toggle-wrap {max-width: 1280px;height: 32px;display: flex;align-items: center;margin: 0 auto;}
-  .nuri-txt {font-size: 15px;color: #FFF;position: relative;padding-left: 29px;background-image: url("../assets/icons/medium.svg");background-repeat: no-repeat;background-size:contain;
+  .nuri-txt {font-size: 15px;position: relative;padding-left: 29px;background-image: url("../assets/icons/medium.svg");background-repeat: no-repeat;background-size:contain;
     //&:before {content: "";display: block;position: absolute;top: 49%;left: 0;width: 24px;height: 16px;background-image: url("../assets/icons/medium.svg");background-size: 100%;transform: translateY(-50%);}
   }
 }
@@ -85,7 +86,7 @@ button {border: 0;}
   .time:before {background-image: url("../assets/icons/time.svg");}
   .mobile-all-menu:before {background-image: url("../assets/icons/menu.svg");}
 
-  /** 팝업 **/
+  // 팝업 
   .popup-box {position: relative;height: 100%;
     .btn-navi.popup{position: relative;
       &.active::after {content: "";display: block;position: absolute;top: calc(100% - -10px);left: 40%;width: 12px;height: 12px;border: 1px solid #e4e4e4;border-right: 0;border-top: 0;transform: rotate(135deg);background-color: #fff;z-index: 9999;}
@@ -165,7 +166,7 @@ button {border: 0;}
 
 @media screen and (max-width: 1023px) {
   #wrap.logout  .header-container .name-box{display: none !important;}
-  /** 로그인전 **/
+  // 로그인전 
   #wrap.login {
     .mobile-top-area {height: 108px;display: flex;
       .name-box{display: none;}   
@@ -176,7 +177,7 @@ button {border: 0;}
     }                      
   }
 
-  /** 로그인후 **/
+  // 로그인후 
   #wrap.logout {
     .mobile-top-area {height: 153px;display: flex;}
     .main-menu {
@@ -216,7 +217,7 @@ button {border: 0;}
       }   
     }   
 
-    /** 팝업 **/
+    // 팝업 
     .header-actions .popup-box{
       position: static;
       .btn-navi.popup{
@@ -230,7 +231,7 @@ button {border: 0;}
 @media screen and (max-width: 767px) {
   #header .header-actions .btn-navi {font-size: 13px;}
 
-  /** 팝업 **/
+  // 팝업 
   #header .header-actions .popup-box{
     .modal{
       .conts-area{flex-direction: column;height:auto !important;}

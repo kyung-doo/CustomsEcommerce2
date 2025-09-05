@@ -1,4 +1,4 @@
-/** 컨텐츠 여백 **/
+/** 공통 layout content css **/
 .cont-body{
   .txt-box-type.type3 + .wrap-check-tbl{margin-top: 24px;}
   .txt-box-type.type1 + .wrap-check-tbl{margin-top: 24px;}
@@ -131,7 +131,8 @@
     }
   }
 }
-/** 반응형 **/
+
+// 반응형
 .fpc{display: flex !important;}
 .pc{display: block !important;}
 .mo{display: none !important;}
@@ -161,7 +162,7 @@
     }
     .cont-head .head-util {margin-top: 16px;}
   } 
-  /** 반응형 **/
+  // 반응형 
   .fpc{display: none !important;}
   .pc{display: none !important;}
   .mo{display: block !important;}
@@ -185,7 +186,7 @@
     }
   }  
 
-  /** 컨텐츠 여백 **/
+  // 컨텐츠 여백 
   .cont-body{
     .search-box + .tbl-top{margin-top: 48px;}
     .wrap-mypages{margin-top: 48px;}

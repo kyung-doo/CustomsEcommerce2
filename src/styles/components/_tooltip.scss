@@ -1,5 +1,6 @@
 @use "../mixin" as *;
 
+/** 공통 툴팁 css **/
 .contextual-help {
   .tooltip-btn-area {display: inline-block;position: relative;}
   .tooltip-action {display: none;
