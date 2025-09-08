@@ -1,8 +1,7 @@
 
 $(() => {
     
-    createUI();    
-    setLogin();
+    createUI();        
 
     // dom 변경 시 UI 다시 생성
     const domObserver = new MutationObserver(() => {
@@ -106,40 +105,4 @@ function styleToJson (el, style) {
         console.error("잘못된 옵션 형식. 옵션값이 제대로 들어가 있는지 확인해주세요.", el);
     }
     return obj;
-}
-
-
-// 로그인
-function setLogin() {
-    var loginSwitch = $('.wrap-login .title-top .left-box .form-toggle-switch input[type=checkbox]');
-    var loginBtn = $('.wrap-login .title-top .left-box .form-toggle-switch label');
-    var loginTxt = $('.wrap-login .title-top .left-box .form-toggle-switch label span');   
-    var titHide = $('.wrap-login .title-top.hide');     
-    var cerHide = $('.wrap-login .certification-list.hide');     
-
-    loginBtn.click(function(){
-        if (loginSwitch.is(":checked")) {
-            loginTxt.text('미사용');
-            titHide.show();
-            cerHide.show();
-        } else {
-            loginTxt.text('사용');
-            titHide.hide();
-            cerHide.hide();
-        } 
-    });
-
-    loginSwitch.keyup(function(e){        
-        if (event.keyCode  == 32) {            
-            if (loginSwitch.is(":checked")) {
-                loginTxt.text('미사용');
-                titHide.show();
-                cerHide.show();
-            } else {
-                loginTxt.text('사용');
-                titHide.hide();
-                cerHide.hide();
-            }    
-        }        
-    });
 }

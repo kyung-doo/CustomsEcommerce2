@@ -80,15 +80,17 @@ class Datepicker {
                     }
                 }
             }
-        });
+        });    
 
-        this.btn.on('click', () => {
-            if(!this.isShow) {
-                this.isShow = true;
+        this.btn.on('click', (e) => {
+            console.log('click')
+            if(!this.isShow) {                
+                this.isShow = true;                
                 this.showCalendar();                                
-            }
-            this.btn.closest('.calendar-form').addClass('on');
-        });
+                
+            }   
+            this.btn.closest('.calendar-form').addClass('on');                             
+        });            
     }
 
     showCalendar () {
@@ -145,7 +147,8 @@ class Datepicker {
         $(window).on('resize.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
-        $("html, body").trigger('scroll.datepicker');
+        $("html, body").trigger('scroll.datepicker');                        
+
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
         });
@@ -272,7 +275,7 @@ class Datepicker {
         }
         if (PLDay !== 6) {
             for (let i = 0; i < PLDay + 1; i++) {
-                prevDates.unshift({year:month === 1 ? year-1 : year, month: month === 1 ? 12 : month-1, day: PLDate - i, type: 'prev'});
+                prevDates.unshift({year:month === 1 ? year-1 : year, month: month === 1 ? 12 : month, day: PLDate - i, type: 'prev'});
             }
         }
         for (let i = 1; i < 7 - TLDay; i++) {
@@ -445,3 +448,8 @@ $.fn.datepicker = function (option, params) {
     });
 };
 $.fn.datepicker.Constructor = Datepicker;
+
+
+ $(document).ready(function () {
+              
+});
