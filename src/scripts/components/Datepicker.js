@@ -83,15 +83,27 @@ class Datepicker {
             }
         });    
 
-        this.btn.on('click', (e) => {
-            console.log('click')
+        $("#wrap").append('<div class="calendar-blind d-none"></div>');
+
+        this.btn.on('click', (e) => {            
             if(!this.isShow) {                
                 this.isShow = true;                
                 this.showCalendar();                                
                 
             }   
             this.btn.closest('.calendar-form').addClass('on');                             
-        });            
+            
+            $('.calendar-blind').show();
+        });    
+        
+        $(".calendar-blind").on('click', function () {
+            $('.datepicker').hide();
+            $('.calendar-form').removeClass('on')
+            $('.calendar-form input').removeAttr('disabled')
+            $('.calendar-blind').hide();
+        });
+
+       
     }
 
     showCalendar () {
@@ -152,12 +164,14 @@ class Datepicker {
 
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
+            $('.calendar-blind').hide();
         });
         this.calendar.find(".btn-enter").on('click', () => {
             if(this.selectDate) {
                 this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
             }
             this.hideCalendar();
+            $('.calendar-blind').hide();
         });
         this.calendar.find(".btn-prev").css({'pointer-events': ''}).on('click', () => {
             this.prevCalendar();
@@ -165,6 +179,20 @@ class Datepicker {
         this.calendar.find(".btn-next").css({'pointer-events': ''}).on('click', () => {
             this.nextCalendar();
         });
+
+        // const exceptions = ['.calendar-form','.calendar-wrap','button'];
+
+        // $(document).on('click', function(e) {
+        //     let isInsideException = exceptions.some(selector =>
+        //         $(e.target).closest(selector).length > 0
+        //     );
+
+        //     if (!isInsideException) {
+        //         $('.datepicker').hide();
+        //         $('.calendar-form').removeClass('on')
+        //         $('.calendar-form input').removeAttr('disabled')
+        //     }           
+        // });     
 
         this.calendar.find(".day-con button").attr('disabled', '');
 
@@ -451,6 +479,7 @@ $.fn.datepicker = function (option, params) {
 $.fn.datepicker.Constructor = Datepicker;
 
 
- $(document).ready(function () {
-              
+ $(document).ready(function () {       
+
+      
 });

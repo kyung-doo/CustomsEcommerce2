@@ -12,7 +12,7 @@
     .hr {min-width: 15px;display: flex;justify-content: center;}
 }
 
-.datepicker {width:360px;position:fixed;left:0;top:0;border:1px solid #ccc;z-index:8;background-color:#fff;
+.datepicker {width:360px;position:fixed;left:0;top:0;border:1px solid #ccc;z-index:10;background-color:#fff;
     @include tablet {left: 0 !important;top: 0 !important;width: 100%;height: 100%;z-index: 999;background-color: rgba(0,0,0,0.5);
         .calendar-wrap {@include absolute($left: 50%, $top: 50%);width: 360px;background-color: #fff;transform: translate(-50%, -50%);}
     }
