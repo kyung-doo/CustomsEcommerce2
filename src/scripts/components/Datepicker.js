@@ -16,6 +16,7 @@ class Datepicker {
         this.props = props;
         this.input = this.ele.find('input');
         this.btn = this.ele.find('.calendar-btn');
+        this.btn.attr('type', 'button');
         this.today = new Date();
         this.selectDate = null;
         this.minDate = null;
@@ -92,7 +93,7 @@ class Datepicker {
     }
 
     showCalendar () {
-
+        
         $('*[data-ui="datepicker"]').each(function () {
             $(this).datepicker('hideCalendar');
         });
