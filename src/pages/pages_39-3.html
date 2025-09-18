@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">
+               <strong class="font-2 cl-5">디지털 정부 서비스 사용자 로그인</strong>
+               로그인 방식을 선택해주세요.
+            </h3>            
+            <h4 class="sr-only">빈텍스트</h4>
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="wrap-login type1">                  
+                  <ul class="certification-list">
+                     <li>
+                        <a href="#none" class="list1">
+                           <strong class="tit">간편인증</strong>
+                           <p class="txt">네이버, 카카오, 금융기관 등의 민간 전자서명 사업자가 제공하는 전자서명으로 로그인하기</p>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#none" class="list2">
+                           <strong class="tit">공동 인증서</strong>
+                           <p class="txt">공동인증서(구 공인인증서)는 개인용 컴퓨터 또는 USB, 스마트폰에 보관되어 있는 인증서를 이용하여 로그인하기</p>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#none" class="list3">
+                           <strong class="tit">금융 인증서</strong>
+                           <p class="txt">은행 앱 또는 인터넷뱅킹 사이트에서 발급한 금융결제원의 인증서로 로그인하기</p>
+                        </a>
+                     </li>
+                  </ul>
+                  <div class="board-top no-wrap title-top">
+                     <div class="left-box">
+                        <h5 class="title-type">관세청 로그인</h5>                              
+                     </div>                                     
+                  </div>
+                  <ul class="certification-list">
+                     <li>
+                        <a href="#none" class="list4">
+                           <strong class="tit">휴대폰 인증</strong>
+                           <p class="txt">성명, 주민등록번호, 휴대폰 번호를 이용하여 로그인하기</p>
+                        </a>
+                     </li>                    
+                  </ul>
+                  <div class="board-top no-wrap title-top b-bottom">
+                     <div class="left-box">
+                        <h5 class="title-type">아직 관세청 전자상거래 포털 회원이 아니신가요?</h5>    
+                        <button class="user-btn">회원가입 <i class="icon btn-arrow-right x-small"></i></button>                          
+                     </div>                                     
+                  </div>
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

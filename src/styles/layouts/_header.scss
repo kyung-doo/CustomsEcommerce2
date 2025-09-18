@@ -105,10 +105,18 @@ button {border: 0;}
         li.active a {background-color: #cdd7e4;border-radius: 6px;color: #16408d;font-weight: 700;}
       }
       .contents {width:calc(100% - 312px);padding: 24px;background-color: #f4f5f6;
-        .box {height: 294px;background-color: #cdd1d5;display: flex;justify-content: center;align-items: center;}
+        .box {height: 294px;background-color: #fff;display: flex;flex-direction: column;align-items: flex-start;overflow-y: auto;overflow-x: hidden;justify-content: flex-start;
+          span{display: block;word-break: break-all;line-height: 150%;}
+        }
       }      
       .madal-btn-area{margin-top: 24px;
         .btn-area {margin-top: 24px;display: flex;justify-content: flex-end;}        
+      }
+    }
+
+    #popUpAttc{display: flex;justify-content: space-between;flex-wrap: wrap;
+      > div{display: block;margin-top: 15px;width: 50%;
+        &:nth-child(2n){padding-left: 10px;}
       }
     }
   }
@@ -258,6 +266,10 @@ button {border: 0;}
       &:before {width: 16px;height: 16px;}
     }
     .logo {width: 97px;}
+
+    .header-actions .popup-box #popUpAttc > div{width:100%;
+      &:nth-child(2n){padding-left: 0;}
+    }
   }
 
   //통합검색 
@@ -274,5 +286,5 @@ button {border: 0;}
       } 
     }
     .btn-close{width: 24px;height: 24px;top: -64px;}
-  }
+  }  
 }

@@ -233,7 +233,7 @@
                                 .txt-atea{display: flex;width: calc(100% - 120px);
                                     .txt{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;display: block;}                                
                                 }   
-                                .data{min-width:83px;width:83px;font-size: 15px;color:#555;}
+                                .data{min-width:90px;width:90px;font-size: 15px;color:#555;text-align: right;}
                                 .new{font-size:0;min-width:16px;height: 16px;background-image: url('../assets/icons/Badge-number.svg');background-size: contain;margin-left: 8px;}
                             }
                             

@@ -100,7 +100,7 @@
   }
   &.main-allmenu {display: none;border-bottom: 0;background-color: #fff;position: absolute;left: 0;width: 100%;overflow-y: scroll;height: calc(100vh - 178px);
     &.large {height: calc(100vh - 146px);}
-    .gnb-toggle-wrap{border-top:0;}
+    .gnb-toggle-wrap{border-top:0;top:0 !important;}
     .gnb-main-list .gnb-title .left-title{font-size: 32px;}
   }
   .allmenu.active {background-image: url("../assets/icons/close.svg");}

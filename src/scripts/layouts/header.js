@@ -144,12 +144,14 @@ $(() => {
             $("#wrap").removeClass('mobile-open');
             $("#wrap > .blind").hide();
             $('body').css({'overflow': 'auto'});
+            enableScroll()
         })
     } else {
         $('#header .main-menu .gnb-main-list .gnb-list .depth2 a').click(function(){
             $('.gnb-menu > li').removeClass('active');
             $('.blind').hide();
             $('body').css({'overflow': 'auto'});
+            enableScroll()
         })
     }
     // 리사이즈 이벤트        
@@ -175,6 +177,7 @@ $(() => {
                 $("#wrap").removeClass('mobile-open');
                 $("#wrap > .blind").hide();
                 $('body').css({'overflow': 'auto'});
+                enableScroll()
             })
         } else {
             $("#wrap").removeClass('mobile-open');
@@ -194,6 +197,7 @@ $(() => {
                 $('.gnb-menu > li').removeClass('active');
                 $('.blind').hide();
                 $('body').css({'overflow': 'auto'});
+                enableScroll()
             })
             
         }
