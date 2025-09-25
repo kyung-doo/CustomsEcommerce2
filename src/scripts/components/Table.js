@@ -1,5 +1,3 @@
-
-
 class Table {
 
     static DEFAULT_PROPS = {
@@ -116,11 +114,21 @@ class Table {
 
     setBoardTop () {
         const boardTop = this.ele.find('.board-top');
-        this.data.limitList.forEach(limit => {
+		
+		//2025.09.11 일반게시판과 faq게시판 분리 start
+		if(this.ele.find('.tit').length > 0) {
+			this.data.limitList.forEach(limit => {
             boardTop.find('select').append(`<option value="${limit}">${limit}개씩 보기</option>`);
-        });
-        boardTop.find('.tit strong').text(this.data.listLength)
-        boardTop.find('select').val(this.limit);
+        	});
+        	boardTop.find('.tit strong').text(this.data.listLength)
+        	boardTop.find('select').val(this.limit);
+		}
+		if(this.ele.find('#faqTitle').length > 0) {
+			boardTop.find('#faqTitle').text(this.data.listLength)
+		}	
+		//2025.09.11 일반게시판과 faq게시판 분리 end
+		
+       /* 2025.09.11 페이징 중복기능 삭제
         boardTop.find('select').on('change.table', async () => {
             this.limit = boardTop.find('select').val();
             this.page = 1;
@@ -139,6 +147,7 @@ class Table {
                 } catch( e ) {}
             }
         });
+	  */
     }
 
     setPagination () {
@@ -153,7 +162,8 @@ class Table {
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
             } else {
-                this.ele.find('.board-top select').val(this.limit);
+                /* 2025.09.11 페이징오류 주석처리  
+                this.ele.find('.board-top select').val(this.limit); */
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
@@ -384,8 +394,9 @@ class Table {
                 }
                 this.props.body.forEach((body, j) => {
                     tr.append(`
-                        <td class="${body.align === 'left' ? 'text-left' : body.align === 'right' ? 'text-right' : ''}">
-                            ${body.fomatter ? body.fomatter(data[body.label], data, false) : data[body.label]}
+                         <td class="${body.align === 'left' ? 'text-left' : body.align === 'right' ? 'text-right' : ''}">
+                            ${body.fomatter ? body.fomatter((data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label], data, false) 
+							: (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}
                         </td>
                     `);
                     
@@ -393,14 +404,16 @@ class Table {
                         if(this.props.head[j].mobileHidden) {
                             li.find('ul').append(`
                                 <li>
-                                    ${body.fomatter ? body.fomatter(data[body.label], data, true) : data[body.label]}
-                                </li> 
+                                    ${body.fomatter ? body.fomatter((data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label], data, true) 
+									: (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}
+                                </li>  
                             `); 
                         } else {
                             li.find('ul').append(`
                                 <li>
                                     <strong class="title">${this.props.head[j].name}</strong>
-                                    <span class="txt">${body.fomatter ? body.fomatter(data[body.label], data, true) : data[body.label]}</span>
+                                    <span class="txt">${body.fomatter ? body.fomatter((data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label], data, true) 
+									: (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}</span>
                                 </li> 
                             `);
                         }
@@ -421,7 +434,9 @@ class Table {
                 this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
             }
 
-            if(this.data.data.length === 0 && this.props.nodata) {
+            /* 2025.09.11 데이터없음 수정 시작 */
+            if(this.data.data.length === 0) {
+			/* 2025.09.11 데이터없음 수정 끝 */
                 tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.props.nodataMsg}</td></tr>`);
                 if(tableM.length > 0) {
                     tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.props.nodataMsg}</li></ul></li>`);
@@ -538,8 +553,9 @@ class Table {
                 }
 
             });
-            
-            if(this.data.data.length === 0 && this.props.nodata) {
+             /* 2025.09.11 데이터없음 수정 시작 */
+            if(this.data.data.length === 0 ) {
+			 /* 2025.09.11 데이터없음 수정 끝 */
                 table.find('.body').html(`<div class="no-data"><p>${this.props.nodataMsg}</p></div>`);
             }
         }
@@ -693,6 +709,9 @@ class Table {
         try {
             await this.loadData();
             this.scrollTop();
+			/* 2025.09.11 페이징 중복기능 오류 수정 시작 */
+			this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+			/* 2025.09.11 페이징 중복기능 오류 수정 끝 */
             this.setHead();
             this.setBody();
         } catch( e ) {}

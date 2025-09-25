@@ -129,9 +129,163 @@
                               <button type="button" class="btn modal-enter primary medium">확인</button>
                         </div>
                      </div>
-                  </div>
-                  
+                  </div>                  
                   <!-- 인증 성공 -->
+
+
+                  <!-- 개인통관고유부호 신규발급 인증 -->
+                  <button type="button" data-modal-target="#modal2" style="width:100%;height:50px;margin-bottom:20px">개인통관고유부호 신규발급 인증</button>
+                  <div id="modal2" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-760">
+                        <div class="modal-header">
+                           <h5>개인통관고유부호 신규발급 인증</h5>                     
+                        </div>
+                        <div class="modal-body wrap-login" tabindex="0">
+                           <ul class="certification-list">
+                              <li>
+                                 <a href="#none" class="list1">
+                                    <strong class="tit">간편인증</strong>
+                                    <p class="txt">네이버, 카카오, 금융기관 등의 민간 전자서명 사업자가 제공하는 전자서명으로 로그인하기</p>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#none" class="list2">
+                                    <strong class="tit">공동 인증서</strong>
+                                    <p class="txt">공동인증서(구 공인인증서)는 개인용 컴퓨터 또는 USB, 스마트폰에 보관되어 있는 인증서를 이용하여 로그인하기</p>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#none" class="list3">
+                                    <strong class="tit">금융 인증서</strong>
+                                    <p class="txt">은행 앱 또는 인터넷뱅킹 사이트에서 발급한 금융결제원의 인증서로 로그인하기</p>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#none" class="list4">
+                                    <strong class="tit">휴대폰 인증</strong>
+                                    <p class="txt">성명, 주민등록번호, 휴대폰 번호를 이용하여 로그인하기</p>
+                                 </a>
+                              </li>                    
+                           </ul>                                                            
+                        </div>                        
+                     </div>
+                  </div>
+                  <!-- 개인통관고유부호 신규발급 인증 -->
+
+
+                  <!-- 실명 확인 -->
+                  <button type="button" data-modal-target="#modal3" style="width:100%;height:50px;margin-bottom:20px">실명 확인</button>
+                  <div id="modal3" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap aut-pages mw-400">
+                        <div class="modal-header">
+                           <h5>실명 확인</h5>                     
+                        </div>
+                        <div class="modal-body content-wrap" tabindex="0">
+                           <div class="wrap-login">                                
+                              <div class="wrap-form-area">
+                                 <div class="inp-form">
+                                    <ul>                                       
+                                       <li class="col1 list1">
+                                          <label for="ex11" class="tit">이름 <i class="compulsory">필수</i></label>
+                                          <div class="inp-box">
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">
+                                                   <input type="text" id="ex11" class="input" value="홍길동" title="이름을 입력해주세요">
+                                                </div>                           
+                                             </div>
+                                          </div>  
+                                       </li>  
+                                       <li class="col1 list2">
+                                          <label for="ex22" class="tit">주민등록번호 <i class="compulsory">필수</i></label>
+                                          <div class="inp-box nowrap-list">
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" id="ex22" value="991231" title="주민등록번호 앞자리를 입력해주세요">
+                                                </div>                           
+                                             </div>   
+                                             <i class="hy">-</i>
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">                                    
+                                                   <input type="text" class="input" title="주민등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" value="1234567" data-props="showNum: 1;numberOnly: true">
+                                                </div>                           
+                                             </div>   
+                                          </div>
+                                          <div class="form-check medium">
+                                             <input type="checkbox" id="chk11">
+                                             <label for="chk11">가상키패드 사용</label>
+                                          </div>
+                                          <div class="txt-box-type type2">                              
+                                             <ul class="top-list-box"> 
+                                                <li>외국인의 경우 외국인등록번호를 입력해주세요.</li>                     
+                                                <li>관세법시행령 제289조에 따라 주민등록번호 수집이 가능합니다.</li>
+                                             </ul>
+                                          </div>
+                                       </li>                                         
+                                       <li class="col1 list3">
+                                          <label for="ex211" class="tit">자동입력방지코드 <i class="compulsory">필수</i></label>
+                                          <div class="inp-box">
+                                             <div class="box1">
+                                                <div class="form-group medium">                     
+                                                   <div class="form-conts">
+                                                      <input type="text" disabled class="input" id="ex211" title="자동입력방지코드를 확인할수있습니다">
+                                                   </div>                                          
+                                                </div>          
+                                                <button type="button" class="btn text medium">초기화 <i class="icon refresh medium"></i></button>
+                                                <button type="button" class="btn text medium">음성 <i class="icon voice medium"></i></button>                                                           
+                                             </div>
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" value="123456" title="자동입력방지코드를 입력해주세요" placeholder="자동입력방지코드">
+                                                </div>                                          
+                                             </div>                                 
+                                          </div>
+                                       </li>                   
+                                    </ul>                  
+                                 </div>   
+                              </div>     
+                              <div class="btn-area btn-end">
+                                 <div class="align">                        
+                                    <button type="button" class="btn primary large">인증번호 전송</button>                   
+                                 </div>
+                              </div>      
+                           </div>                                                           
+                        </div>                        
+                     </div>
+                  </div>
+                  <!-- 실명 확인 -->
+
+                  <!-- 인증서 등록 -->
+                  <button type="button" data-modal-target="#modal4" style="width:100%;height:50px;margin-bottom:20px">인증서 등록</button>
+                  <div id="modal4" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-760">
+                        <div class="modal-header">
+                           <h5>인증서 등록</h5>                     
+                        </div>
+                        <div class="modal-body wrap-login" tabindex="0">
+                           <ul class="certification-list">                              
+                              <li>
+                                 <a href="#none" class="list2">
+                                    <strong class="tit">공동 인증서</strong>
+                                    <p class="txt">공동인증서(구 공인인증서)는 개인용 컴퓨터 또는 USB, 스마트폰에 보관되어 있는 인증서를 이용하여 로그인하기</p>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#none" class="list3">
+                                    <strong class="tit">금융 인증서</strong>
+                                    <p class="txt">은행 앱 또는 인터넷뱅킹 사이트에서 발급한 금융결제원의 인증서로 로그인하기</p>
+                                 </a>
+                              </li>                              
+                           </ul>                                                            
+                        </div>                        
+                     </div>
+                  </div>
+                  <!-- 인증서 등록 -->
+
+
+
+
+
+
                </div>
                <!-- 팝업 사용후 삭제해주세요 -->
 

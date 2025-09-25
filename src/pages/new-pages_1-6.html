@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 방문발급사전신청 조회</h3>    
+            <h4 class="sr-only">빈텍스트</h4>        
+         </div>
+         <div class="cont-body">
+            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+               <div class="accordion-header">
+                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호란?</strong> <i class="icon btn-arrow-down medium"></i></a>
+               </div>
+               <div class="accordion-body d-none">
+                  <p class="txt">개인통관고유부호란?</p>                  
+               </div>
+            </div>                                                      
+            <!-- 내용 -->
+            <div class="cont-area">
+               
+               <!-- 팝업 사용후 삭제해주세요 -->
+               <div class="testtest">
+                  <!-- 인증 성공 -->
+                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">인증 성공</button>
+                  <div id="modal1" class="modal type1 d-none" data-ui="modal">
+                     <div class="modal-wrap mw-400">
+                        <div class="modal-header">
+                           <h5>인증번호 전송 성공</h5>                     
+                        </div>
+                        <div class="modal-body" tabindex="0">
+                           <div class="modal-cont">
+                              <p class="txt-type">인증번호를 전송했습니다.</p>
+                           </div>                           
+                        </div>
+                        <div class="modal-footer">                              
+                              <button type="button" class="btn modal-enter primary medium">확인</button>
+                        </div>
+                     </div>
+                  </div>                  
+                  <!-- 인증 성공 -->
+               </div>
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

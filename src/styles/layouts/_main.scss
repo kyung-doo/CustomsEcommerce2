@@ -22,11 +22,12 @@
 
         .cont-box{margin-top: 27px;display: flex;gap:40px;flex-wrap: wrap;
 
+            .wrap-slide-box{height: 387px;}
             //로그인 전 리스트 슬라이드 높이값
-            &:has(.login-box.login) .wrap-slide-box{height: 400px;}
-            &:has(.login-box.logout) .wrap-slide-box{height: 402px;}
-            &:has(.login-box.logout.danger-chtxt) .wrap-slide-box,
-            &:has(.login-box.logout.safety-chtxt) .wrap-slide-box{height: 412px;}
+            // &:has(.login-box.login) .wrap-slide-box{height: 400px;}
+            // &:has(.login-box.logout) .wrap-slide-box{height: 402px;}
+            // &:has(.login-box.logout.danger-chtxt) .wrap-slide-box,
+            // &:has(.login-box.logout.safety-chtxt) .wrap-slide-box{height: 412px;}
             
 
             //리스트 mo
@@ -61,7 +62,7 @@
             
 
             //리스트 pc
-            .wrap-slide-box{flex:1;min-width: 300px;width:500px;display: flex;gap:12px;padding-top: 40px;
+            .wrap-slide-box{flex:1;min-width: 300px;width:500px;display: flex;gap:12px;padding-top: 25px;
                 .slide-box{height: 100%;min-width: 352px;width:352px;padding: 20px 0 59px 0;
                     .swiper-wrapper{align-items: center !important;}
                     .swiper{height:100%;}                    
@@ -113,21 +114,33 @@
             }           
             
             .login-box{width:31.3%;min-width:300px;max-height: 431px;padding: 32px;background-color: #fff;border-radius: 12px;box-shadow: 16px 16px 40px 0px rgba(86, 172, 255, 0.12);position: relative;                                                
+
+                //로그인전 로그인후 공통
                 .tit-box{
                     .tit{font-size: 21px;color:#1D1D1D;}
                     .mypages{display: flex;align-items: center;}
                 }                
                 .txt-box{
-                    .txt{font-size: 19px;line-height: 150%;text-align: center;display: block;padding-top: 66px;position: relative;margin-top: 52px;
-                        &::before{content:"";position: absolute;top:0;left:0;width:100%;height:48px;background-image: url('../assets/icons/login-user.svg');background-position: center;background-repeat: no-repeat;}
-                    }
+                    .txt{font-size: 19px;line-height: 150%;text-align: center;display: block;padding-top: 66px;position: relative;margin-top: 52px;}
                 }
                 .btn-box{display: flex;flex-wrap: nowrap;gap:8px;margin-top: 51px;                    
                     button{width:100%;border-radius: 8px;height:48px;width:100%;}
                 }       
                 
                 //로그인전
-                &.login{height:399px}
+                &.login{height:auto;max-height: 100%;
+
+                    .txt-box .txt{margin-top: 0;font-weight: 400;text-align: left;padding: 27px 32px 27px 93px;font-size: 19px;
+                        &::before{content:"";position: absolute;top:50%;left:32px;width:47px;height:47px;background-image: url('../assets/icons/');background-position: center;background-repeat: no-repeat;transform: translateY(-50%);border-radius: 50%;background-color: #CDD1D5;}
+                        span{font-weight: 600;color:#1D56BC;font-size: 19px;white-space: nowrap;}
+                    }                    
+                    .btn-box{margin-top: 0;}
+
+                    .area1 .txt-box .txt::before{background-image: url('../assets/icons/login-sign.svg');}
+                    .area2{margin-top: 24px;
+                        .txt-box .txt::before{background-image: url('../assets/icons/login-user.svg');}
+                    } 
+                }
 
                 //로그인후
                 &.logout{
@@ -273,16 +286,19 @@
 
 @media screen and (min-width: 1023px) and (max-width: 1312px) {
     .main {
-        &.login .box1 .cont-box .wrap-slide-box {min-height: 398px !important;height: 398px !important;}
-        &.logout .box1 .cont-box .wrap-slide-box {min-height: 427px !important;height: 427px !important;}
+        // &.login .box1 .cont-box .wrap-slide-box {min-height: 398px !important;height: 398px !important;}
+        // &.logout .box1 .cont-box .wrap-slide-box {min-height: 427px !important;height: 427px !important;}
     }
 }
 
 @media screen and (max-width: 1312px) {    
-    .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont {
-        &::before {display: none;}
-        padding: 32px;
-    }
+    .main .box1 .cont-box{
+        .wrap-slide-box .slide-show-box .tab-cont {
+            &::before {display: none;}
+            padding: 32px;
+        } 
+    }    
+    
 }
 
 @media screen and (max-width: 1200px) {         
@@ -307,15 +323,19 @@
 @media screen and (max-width: 1023px) {        
     .main {
         .box1 .cont-box {padding-bottom: 280px;position: relative;
-            .login-box {padding: 32px 21px;}
+            .login-box {padding: 32px 21px;
+                &.login{
+                    .txt-box .txt{padding: 0px 16px 0px 79px;margin-bottom: 24px;}
+                    .txt-box .txt::before{left: 16px;}                    
+                }
+            }
             .wrap-slide-box {flex-direction: column;padding-top: 0;                
                 .slide-show-box {margin-left: 0;min-width: 100%;width: 100%;position: absolute;bottom:0;left:0;height:250px;
                     &::before{top: -31%;left: 50%;transform: translate(-50%, -50%);}
                 }
-                .slide-box {min-width: 100%;width: 100%;padding-top: 0;
+                .slide-box {min-width: 100%;width: 100%;padding-top: 0;padding-bottom: 0;
                     .swiper {height: 300px;}
-                    a {min-width: 100%;width: 100%;}
-                    padding-bottom: 30px;
+                    a {min-width: 100%;width: 100%;}                    
                 }
 
                 .slide-show-box .tab-cont .btn {margin-top: 32px;position: sticky;width: 100%;}
@@ -329,13 +349,12 @@
             .slide-box {width: 100%;padding-top: 56%;}
             .wrap-notice {width: 100%;}
         }
-    }
-
+    }    
 }
 
 @media screen and (max-width: 767px) {            
     .main {
-        .box1 {padding: 48px 0 97px 0;
+        .box1 {
             .cont-box {gap: 40px;padding-bottom: 0;
                 .login-box {width: 100%;max-height: 100%;min-width: 100%;}
                 .mo-list {display: flex;}
@@ -347,10 +366,9 @@
             }
             .cont-box .login-box {
                 .txt-box .txt {
-                    &::before, br {display: none;}
+                    br {display: none;}
                     padding-top: 0;margin-top: 32px;font-size: 17px;font-weight: 400;
-                }
-                &.login {height: auto;}
+                }                
                 .btn-box {margin-top: 32px;}
             }
         }
@@ -383,7 +401,7 @@
 
 @media screen and (max-width: 480px) {  
     .main {
-        .box1 {padding: 48px 0 97px 0;
+        .box1 {padding: 48px 0;
             .cont-box {
                 .mo-list {display: flex;}
                 .wrap-slide-box {display: none;}
@@ -393,8 +411,7 @@
                 .unipass-go {display: none;}
             }
             .cont-box .login-box {
-                .txt-box .txt {
-                    &::before, br {display: none;}
+                .txt-box .txt {                    
                     padding-top: 0;margin-top: 32px;font-size: 17px;font-weight: 400;
                 }
                 &.login {height: auto;}
@@ -405,6 +422,7 @@
             .wrap-notice .notice-box {height: 392px;
                 .area .more {position: static;height: 48px;border-radius: 8px;border: 1px solid #1D1D1D;justify-content: center;font-size: 17px;margin-top: 18px;}
                 .icon.plus {background-image: url('../assets/icons/btn-arrow-right.svg');}
+                .area .tit{font-size:17px;}
             }
         }
         .slide-box .wrap-swiper-btn {margin-top: 16px;justify-content: center;position: static;
@@ -423,4 +441,6 @@
         .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a img {border-radius: 12px;}
     }
 
+
+    
 }

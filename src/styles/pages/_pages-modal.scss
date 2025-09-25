@@ -53,7 +53,27 @@
       }
     }
   }
+
+
+  //간편인증
+  &.wrap-login{
+    margin-top: 0;
+    .certification-list{
+      flex-wrap: wrap;flex-direction: row;gap:24px;
+      li{width:calc(50% - 12px)}
+    }
+    .inp-form{padding: 0;}
+  }  
 }
+
+//실명확인
+.modal-wrap.aut-pages{min-height: 0 !important;
+  h5{font-size:25px;}
+  .content-wrap,.wrap-login{padding: 0 !important;}
+  .content-wrap .wrap-login .wrap-form-area .inp-form ul li:first-child{margin-top: 0 !important;}
+  .btn-area{margin-top: 48px;}
+}
+
 .modal-wrap:has(.address-list){padding: 24px;
   .inp-form{border:0;padding: 60px 0 0 0;border-top:1px solid #E4E4E4;border-radius: 0;          
     .address-list{        
@@ -84,6 +104,17 @@
       .box1 {gap: 8px;}
     }
   }  
+}
+
+@media screen and (max-width: 550px) {
+  //간편인증
+  .modal-body{    
+    &.wrap-login{      
+      .certification-list{        
+        li{width:100%}
+      }
+    }  
+  }
 }
 
 @media screen and (max-width: 480px) {
