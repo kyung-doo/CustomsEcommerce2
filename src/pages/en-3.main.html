@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
@@ -7,15 +7,15 @@
    <!-- 로그인전 - login / 로그인후 - logout -->
    <div id="wrap" class="main logout">
       <!-- header -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <%= _.template(require('fs').readFileSync('./src/layouts/en-header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
       </div>      
       <div id="main">
          <div class="box1">
             <div class="tit-box">
-               <strong class="tit">관세청 전자상거래포털에 오신 것을 환영합니다.</strong>
-               <button class="unipass-go">Unipass 바로가기</button>
+               <strong class="tit">Welcome to the Korea Customs Service e-commerce portal.</strong>
+               <button class="unipass-go">Go to Unipass</button>
             </div>
             <div class="cont-box">  
                <!-- pc -->
@@ -24,25 +24,25 @@
                      <div class="swiper" id="list-slide">
                         <div class="swiper-wrapper">               
                            <a href="#none" class="swiper-slide on" title="선택됨" data-btn="tab01">
-                              <p class="kr-txt">1.개인통관 고유부호가 필요하시나요?</p>                                     
+                              <p class="kr-txt">1.Personal Customs Code Renew is needed?</p>                                     
                            </a>
                            <a href="#none" class="swiper-slide" data-btn="tab02">
-                              <p class="kr-txt">2.직구용 인증문자를 모바일로 간편하게 받기</p>                                                               
+                              <p class="kr-txt">2.Do you need a personal customs clearance code?</p>                                                               
                            </a>                                                      
                            <a href="#none" class="swiper-slide" data-btn="tab03">
-                              <p class="kr-txt">3.구매한 물건의 통관진행정보를 찾으세요?</p>                                                               
+                              <p class="kr-txt">3.Do you need a personal customs clearance code?</p>                                                               
                            </a>                                                                                                          
                            <a href="#none" class="swiper-slide" data-btn="tab04">
-                              <p class="kr-txt">4.구매한 물건의 통관진행정보를 찾으세요?</p>                                                               
+                              <p class="kr-txt">4.Do you need a personal customs clearance code?</p>                                                               
                            </a>                           
                            <a href="#none" class="swiper-slide" data-btn="tab05">
-                              <p class="kr-txt">5.혹시 개인통관고유부호가 도용되었나요?</p>                                                               
+                              <p class="kr-txt">5.Do you need a personal customs clearance code?</p>                                                               
                            </a>                            
                            <a href="#none" class="swiper-slide" data-btn="tab06">
-                              <p class="kr-txt">6.혹시 해외 전자상거래 업체이신가요?</p>                                                               
+                              <p class="kr-txt">6.Do you need a personal customs clearance code?</p>                                                               
                            </a>
                            <a href="#none" class="swiper-slide" data-btn="tab07">
-                              <p class="kr-txt">7.혹시 관세 납부 현황이 궁금하신가요?</p>                                                               
+                              <p class="kr-txt">7.Do you need a personal customs clearance code?</p>                                                               
                            </a>
                         </div>                           
                      </div>               
@@ -56,64 +56,64 @@
                   <div class="slide-show-box">
                      <div class="tab-cont on ov" id="tab01">
                         <div class="tit-box">
-                           <strong class="kr-tit">1.본인인증만 하면 <strong class="cl-7 kr-tit">바로 발급 가능</strong>합니다.</strong>                           
+                           <strong class="kr-tit">1.You can get started right away with just identify verification</strong>                           
                         </div>                        
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                                                      
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>
                      <div class="tab-cont" id="tab02">
                         <div class="tit-box">
-                           <strong class="kr-tit">2.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
+                           <strong class="kr-tit">2.You can get started right away with just identify verification</strong>                           
                         </div>
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                           
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>
                      <div class="tab-cont" id="tab03">
                         <div class="tit-box">
-                           <strong class="kr-tit">3.본인인증 후 통관정보 또는 마이페이지를 통해 구매한 물건의 통관 진행 정보 확인이 가능합니다</strong>                           
+                           <strong class="kr-tit">3.You can get started right away with just identify verification</strong>                           
                         </div>
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                           
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>
                      <div class="tab-cont" id="tab04">
                         <div class="tit-box">
-                           <strong class="kr-tit">4.해외전자상거래 업체 담당자인 경우 별도의 해외전자상거래 업체 전용 홈페이지로 이동합니다</strong>                           
+                           <strong class="kr-tit">4.You can get started right away with just identify verification</strong>                           
                         </div>
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                           
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>                                        
                      <div class="tab-cont" id="tab05">
                         <div class="tit-box">
-                           <strong class="kr-tit">5.해외전자상거래 업체 담당자인 경우 별도의 해외전자상거래 업체 전용 홈페이지로 이동합니다</strong>                           
+                           <strong class="kr-tit">5.You can get started right away with just identify verification</strong>                           
                         </div>
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                           
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>                                        
                      <div class="tab-cont" id="tab06">
                         <div class="tit-box">
-                           <strong class="kr-tit">6.해외전자상거래 업체 담당자인 경우 별도의 해외전자상거래 업체 전용 홈페이지로 이동합니다</strong>                           
+                           <strong class="kr-tit">6.You can get started right away with just identify verification</strong>                           
                         </div>
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                           
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>                                        
                      <div class="tab-cont" id="tab07">
                         <div class="tit-box">
-                           <strong class="kr-tit">7.해외전자상거래 업체 담당자인 경우 별도의 해외전자상거래 업체 전용 홈페이지로 이동합니다전용</strong>                           
+                           <strong class="kr-tit">7.You can get started right away with just identify verification</strong>                           
                         </div>
                         <button class="btn secondary">
-                           <strong class="kr-tit">간편 인증 하고 개인통관고유부호 발급 하기</strong>                           
+                           <strong class="kr-tit">Authentificate easily and Receive code</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>                                        
@@ -125,22 +125,23 @@
                <ul class="mo-list">
                   <li class="list1">
                      <a href="#none">
-                        <p class="kr-txt">개인통관 고유부호 갱신이 필요합니다.</p>                                                         
+                        <p class="kr-txt">Personal Customs Code Renew is needed?</p>                                 
+                        
                      </a>
                   </li>
                   <li class="list2">
                      <a href="#none">
-                        <p class="kr-txt">개인통관 고유부호를 잊으셨나요?</p>                                                         
+                        <p class="kr-txt">Do you need a personal customs clearance code?</p>                                                         
                      </a>
                   </li>
                   <li class="list3">
                      <a href="#none">
-                        <p class="kr-txt">구매한 물건의 통관진행정보를 찾으세요?</p>                                                         
+                        <p class="kr-txt">Do you need a personal customs clearance code?</p>                                                         
                      </a>
                   </li>
                   <li class="list4">
                      <a href="#none">
-                        <p class="kr-txt">직구용 인증문자를 모바일로 간편하게 받기</p>                                                         
+                        <p class="kr-txt">Do you need a personal customs clearance code?</p>                                                         
                      </a>
                   </li>
                </ul>
@@ -163,38 +164,37 @@
                <!-- 로그인후 danger-chtxt[위험] safety-chtxt[안전] 아무것도 없으면 기본 -->               
                <div class="login-box logout danger-chtxt">
                   <div class="tit-box">
-                     <strong class="tit">김관세님</strong>                     
-                     <a href="#none" class="mypages">마이페이지 <i class="icon btn-arrow-right medium"></i></a>
+                     <strong class="tit">Hong Gil-dong</strong>                     
+                     <a href="#none" class="mypages">My page <i class="icon btn-arrow-right medium"></i></a>
                   </div>                  
                   <div class="txt-box">                     
                      <div class="txt-area">
                         <div class="tit-area">
-                           <strong class="tit">개인통관고유부호</strong>
-                           <span class="txt">personal customs code</span>
+                           <strong class="tit">Personal customs code</strong>                           
                         </div>
-                        <a href="#none" class="info-txt"><strong>P000000000000</strong><i class="icon copy small"></i> 복사</a>
+                        <a href="#none" class="info-txt"><strong>P000000000000</strong><i class="icon copy small"></i> copy</a>
                         <p  class="info-txt">개인통관고유부호가 없습니다.</p>
                      </div>                     
                      <ul class="cust-list">
                         <li>
-                           <strong class="tit">유효기간</strong>
+                           <strong class="tit">expiration period</strong>
                            <div class="info-box">
-                              <strong class="day">29일</strong>
-                              <button type="button" class="btn tertiary small">갱신하기</button>
+                              <strong class="day">D-29</strong>
+                              <button type="button" class="btn tertiary small w-80">Renew</button>
                            </div>
                         </li>
                         <li class="dotted-line-top">
-                           <strong class="tit">주소</strong>
+                           <strong class="tit">Registered Address</strong>
                            <div class="info-box">
                               <strong>10개</strong>
-                              <button type="button" class="btn tertiary small">등록하기</button>
+                              <button type="button" class="btn tertiary small">Register</button>
                            </div>
                         </li>
                      </ul>
                   </div>                  
                   <div class="btn-box">                     
                      <button class="btn primary apply">개인통관고유부호 신청하기</button>
-                     <button class="btn plagiarism">도용신고</button>     
+                     <button class="btn plagiarism">Report theft</button>     
                   </div>                  
                </div>               
                <!-- 로그인후 -->
@@ -220,7 +220,7 @@
                <div class="notice-box">
                   <!-- 공지사항 -->
                   <div class="area on">
-                     <a href="#none" class="tit" title="선택됨">공지사항</a>
+                     <a href="#none" class="tit" title="선택됨">Notice</a>
                      <div class="box">
                         <ul class="list">
                            <li>
@@ -266,14 +266,14 @@
                               </a>                           
                            </li>
                         </ul>
-                        <a href="#none" class="more"><span>공지사항</span> 더보기 <i class="icon plus medium"></i></a>
+                        <a href="#none" class="more"><span>Notice</span> See more <i class="icon plus medium"></i></a>
                      </div>                  
                   </div>
                   <!-- // 공지사항 -->               
 
                   <!-- 자료실 -->
                   <div class="area">
-                     <a href="#none" class="tit">자료실</a>
+                     <a href="#none" class="tit">Archives</a>
                      <div class="box">
                         <ul class="list">
                            <li>
@@ -318,14 +318,14 @@
                               </a>                           
                            </li>
                         </ul>
-                        <a href="#none" class="more"><span>자료실</span> 더보기 <i class="icon plus medium"></i></a>
+                        <a href="#none" class="more"><span>Archives</span> See more <i class="icon plus medium"></i></a>
                      </div>                
                   </div>
                   <!-- // 자료실 -->               
 
                   <!-- 메세지 -->
                   <div class="area">
-                     <a href="#none" class="tit">메세지</a>
+                     <a href="#none" class="tit">Message</a>
                      <div class="box">
                         <ul class="list">
                            <li>
@@ -370,7 +370,7 @@
                               </a>                           
                            </li>
                         </ul>
-                        <a href="#none" class="more"><span>메세지</span> 더보기 <i class="icon plus medium"></i></a>
+                        <a href="#none" class="more"><span>Message</span> See more <i class="icon plus medium"></i></a>
                      </div>                 
                   </div>
                   <!-- // 메세지 -->               
@@ -381,7 +381,7 @@
       </div>
       <!-- //content-wrap -->
       <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <%= _.template(require('fs').readFileSync('./src/layouts/en-footer.html', 'utf8'))({}) %>
       <!-- //footer -->
    </div>
 </body>

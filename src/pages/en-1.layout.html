@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap" class="login en-pages">
+   <div id="wrap" class="login">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/en-header.html', 'utf8'))({}) %>
       <!-- //header -->
@@ -64,7 +64,7 @@
       </div>
       <!-- //content-wrap -->
       <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <%= _.template(require('fs').readFileSync('./src/layouts/en-footer.html', 'utf8'))({}) %>
       <!-- //footer -->
    </div>
 </body>

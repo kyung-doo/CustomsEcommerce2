@@ -14,7 +14,7 @@ $(() => {
     });   
     
     var stopNum = 0;      
-    var slideSpeed = 5000;  
+    var slideSpeed = 3000;  
     
     //리스트 슬라이드
     const swiper1 = new Swiper('#list-slide', {

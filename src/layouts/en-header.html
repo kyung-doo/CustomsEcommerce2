@@ -23,7 +23,7 @@
                <h2 class="sr-only">빈텍스트</h2>                          
                <div class="header-actions">
                   <div class="popup-box">                  
-                     <button type="button" class="btn-navi popup">팝업</button>                                    
+                     <button type="button" class="btn-navi popup">Pop-up</button>                                    
                      <div class="modal d-none">
                         <div class="modal-dialog">
                            <div class="modal-content">                        
@@ -73,11 +73,11 @@
                      </div>                  
                   </div> 
                   <div class="name-box">
-                     <p class="name"><strong>김관세</strong><span>님 환영합니다.</span></p>     
+                     <p class="name"><span>Welcome,</span><strong>Hong Gil-dong</strong></p>     
                      <span class="inform">+999</span>             
                      <span class="time">38:12</span>             
                   </div>                  
-                  <button type="button" class="btn-navi sch" data-modal-target="#in-search">통합검색</button>
+                  <button type="button" class="btn-navi sch" data-modal-target="#in-search">Search</button>
                   <!-- 통합검색 -->
                   <div id="in-search" class="modal d-none wrap-in-sch" data-ui="modal">
                      <div class="modal-wrap in-sch-box">                        
@@ -108,9 +108,17 @@
                   <!--
                   <button type="button" class="btn-navi join">회원가입</button>
                   -->
-                  <a href="javascript: void(0);" class="btn-navi login">로그인</a>                                               
-                  <a href="javascript: void(0);" class="btn-navi loginout">로그인아웃</a>                  
-                  <button type="button" class="btn-navi mobile-all-menu">전체메뉴</button>
+                  <a href="javascript: void(0);" class="btn-navi login">log in</a>                                               
+                  <a href="javascript: void(0);" class="btn-navi loginout">log out</a>     
+                  <div class="language-area">
+                     <div class="form-toggle-switch language-switch">
+                        <input type="radio" id="kr" name="language">
+                        <label for="kr" class="kr">한글</label>
+                        <input type="radio" id="en" name="language" checked>
+                        <label for="en" class="en">English</label>
+                     </div>
+                  </div>             
+                  <button type="button" class="btn-navi mobile-all-menu">menu</button>
                </div>
             </div>
          </div>
@@ -125,8 +133,16 @@
             </div>
             <!-- 로그인 전 -->     
             <!-- 로그인 후 -->
+             <div class="language-area">
+               <div class="form-toggle-switch language-switch">
+                  <input type="radio" id="m-kr" name="language">
+                  <label for="m-kr" class="kr">한글</label>
+                  <input type="radio" id="m-en" name="language" checked>
+                  <label for="m-en" class="en">English</label>
+               </div>
+            </div>
             <div class="name-box">
-               <p class="name"><strong>김관세</strong><span>님 환영합니다.</span></p>     
+               <p class="name"><span>Welcome,</span><strong>Hong Gil-dong</strong></p>     
                <span class="inform">+999</span>             
                <span class="time">38:12</span>             
             </div>                  
@@ -136,7 +152,7 @@
          <div class="inner">
             <ul class="gnb-menu">               
                <li class="dep1">
-                  <button type="button" class="gnb-main-trigger">Personal customs clearance code</button>                  
+                  <button type="button" class="gnb-main-trigger">Personal customs<br> clearance code</button>                  
                   <div class="gnb-toggle-wrap">                     
                      <div class="gnb-main-list">
                         <div class="gnb-title">
@@ -324,7 +340,7 @@
                   </div>                  
                </li>
             </ul>            
-            <button class="allmenu">전체메뉴</button>
+            <button class="allmenu">menu</button>
          </div>
          <p class="info-area">간편, 공동 본인인증 후 이용이 가능합니다.</p>
          <a href="javascript: void(0);" class="mobile-close"> <i class="icon close medium"></i>모바일 메뉴 닫기</a>
@@ -519,13 +535,5 @@
                <li><span class="txt">개인통관고유부호 조회</span></li>                     
                <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">개인통관고유부호 조회/정보변경</a></li>                  
             </ol>
-         </nav>         
-         <div class="language-area">
-            <div class="form-toggle-switch language-switch">
-               <input type="radio" id="kr" name="language" checked>
-               <label for="kr" class="kr">한글</label>
-               <input type="radio" id="en" name="language">
-               <label for="en" class="en">English</label>
-            </div>
-         </div>
+         </nav>                  
       </div>

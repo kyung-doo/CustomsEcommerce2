@@ -24,9 +24,10 @@ button {border: 0;}
   }
   .header-branding {width: 100%;display: flex;justify-content: space-between;align-items: center;}
   .logo {width: 145px;height: 47px;
-    a {background-image: url("../assets/icons/logo.svg");display: flex;width: 100%;height: 100%;}
+    a {background-image: url("../assets/icons/logo.svg");display: flex;width: 100%;height: 100%;background-size: contain;background-repeat: no-repeat;}
   }
-  .header-actions {display: flex;align-items: center;height: 28px;       
+  .header-actions {display: flex;align-items: center;height: 28px;     
+    .language-area {width: auto;display: flex;justify-content: flex-end;margin-left: 20px;}  
     &.mobile-top-area{display: none;}
     .name-box {display: flex;gap: 36px;margin-right: 15px;margin-left: 12px;line-height: 1;height: 100%;align-items: center;
       .name {line-height: 20px;}
@@ -36,7 +37,7 @@ button {border: 0;}
       .inform {background-color: #246beb;color: #fff;}
       .time {background-color: #cdd1d5;}
     }    
-    .btn-navi {background-color: rgba(0, 0, 0, 0);display: flex;justify-content: center;align-items: center;position: relative;margin-left: 8px;border: 0;font-weight: 700;padding: 0 8px 0 35px;height: 100%;
+    .btn-navi {background-color: rgba(0, 0, 0, 0);display: flex;justify-content: center;align-items: center;position: relative;margin-left: 2px;border: 0;font-weight: 700;padding: 0 8px 0 35px;height: 100%;
       &:before {content: "";display: block;position: absolute;top: 50%;left: 8px;min-width: 20px;height: 20px;transform: translateY(-50%);background-repeat: no-repeat;background-position: center;}
       &.popup.active, &:hover {background-color: #cdd7e4;border-radius: 4px;}
       &.mobile-all-menu{display: none;}
@@ -106,7 +107,7 @@ button {border: 0;}
       }
       .contents {width:calc(100% - 312px);padding: 24px;background-color: #f4f5f6;
         .box {height: 294px;background-color: #fff;display: flex;flex-direction: column;align-items: flex-start;overflow-y: auto;overflow-x: hidden;justify-content: flex-start;
-          span{display: block;word-break: break-all;line-height: 150%;}
+          //span{display: block;word-break: break-all;line-height: 150%;}
         }
       }      
       .madal-btn-area{margin-top: 24px;

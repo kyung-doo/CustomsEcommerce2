@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
@@ -7,7 +7,7 @@
    <!-- 로그인전 - login / 로그인후 - logout -->
    <div id="wrap" class="login">
       <!-- header -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <%= _.template(require('fs').readFileSync('./src/layouts/en-header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->    
             <h3 class="head-tit">Personal customs clearance code inquiry</h3>   
@@ -422,7 +422,7 @@
       </div>
       <!-- //content-wrap -->
       <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <%= _.template(require('fs').readFileSync('./src/layouts/en-footer.html', 'utf8'))({}) %>
       <!-- //footer -->
    </div>
 </body>
