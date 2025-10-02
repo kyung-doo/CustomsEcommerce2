@@ -113,6 +113,14 @@ $(() => {
                     $('.slide-area1 .swiper-stop').text('정지');
                     swiper1.autoplay.start();     
                 });    
+
+                //페이징 클릭했을때 부드럽게 넘어가는 이미지
+                document.querySelectorAll('.swiper-pagination .swiper-pagination-bullet').forEach((bullet, index) => {
+                    bullet.addEventListener('click', (e) => {
+                        console.log(1)
+                    });
+                });
+
             },   
             reachEnd: function() {
                 //swiper1.slideTo(0, 500);
