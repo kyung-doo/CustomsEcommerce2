@@ -12,6 +12,23 @@ $(() => {
             th.attr('title','선택됨');     
         })
     });   
+
+    //개인통관고유부호 복사
+    $(function(){
+        var btn = $('.main .box1 .cont-box .login-box.logout[class*=-chtxt] .txt-box .txt-area a');
+
+        btn.click(function(){
+            var html = `
+                <p class="copy-txt">개인통관고유부호가 복사되었습니다</p>
+            `
+
+            $(this).after(html)
+
+            setTimeout(function(){
+              $('.copy-txt').animate({"opacity":"0"},500)
+            },500)            
+        })
+    })
     
     var stopNum = 0;      
     var slideSpeed = 3000;  
@@ -29,7 +46,7 @@ $(() => {
         },
         pagination: {
             el: '.slide-area1 .swiper-pagination',
-            clickable: true,    
+            clickable: false,    
             type: 'bullets',
         },
         navigation: {
@@ -113,14 +130,6 @@ $(() => {
                     $('.slide-area1 .swiper-stop').text('정지');
                     swiper1.autoplay.start();     
                 });    
-
-                //페이징 클릭했을때 부드럽게 넘어가는 이미지
-                document.querySelectorAll('.swiper-pagination .swiper-pagination-bullet').forEach((bullet, index) => {
-                    bullet.addEventListener('click', (e) => {
-                        console.log(1)
-                    });
-                });
-
             },   
             reachEnd: function() {
                 //swiper1.slideTo(0, 500);

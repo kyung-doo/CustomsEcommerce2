@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 스위치 css **/
+/** 공통 스위치 css 시작 **/
 .form-toggle-switch {display: flex;position: relative;
   input[type=checkbox] {
     + label {position: relative;
@@ -49,3 +49,4 @@
     }
   }
 }
+/** 공통 스위치 css 끝 **/

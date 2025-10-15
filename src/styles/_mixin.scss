@@ -1,6 +1,5 @@
 @use "./variable" as *;
 
-/** 공통 css **/
 @mixin flex ($direction : column, $alignItems : center , $justifyContents : center) {
     display: flex;
     flex-direction: $direction;

@@ -1,5 +1,6 @@
 @use "../mixin" as *;
-/** 공통 입력 css **/
+
+/** 공통 입력폼 css 시작 **/
 .form-group {
   input[type=text], input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;padding: 0px 16px;}    
   .form-hint-invalid {font-size: 15px;color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
@@ -75,3 +76,5 @@ input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled opti
 
 //비밀번호
 input[data-ui=hidden-input]{line-height:48px}
+
+/** 공통 입력폼 css 끝 **/

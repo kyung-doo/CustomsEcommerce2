@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 툴팁 css **/
+/** 공통 툴팁 css 시작 **/
 .contextual-help {
   .tooltip-btn-area {display: inline-block;position: relative;}
   .tooltip-action {display: none;
@@ -45,3 +45,4 @@
   .btn-wrap {margin-top: 25px;}
   .tooltip-close {position: absolute;top: 17px;right: 24px;width: 16px;height: 16px;border-radius: 0;background-image: url("../assets/icons/close.svg");background-position: center;background-size: 16px;background-color: rgba(0, 0, 0, 0);border: 0;}
 }
+/** 공통 툴팁 css 끝 **/

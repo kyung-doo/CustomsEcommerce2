@@ -25,7 +25,7 @@
                         {
                            "uid": "id-1",
                            "key1": '001',                                                      
-                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890TELEVISION 1234567890 TELEVISION 1234567890TELEVISION 1234567890 TELEVISION 1234567890TELEVISION 1234567890 TELEVISION 1234567890",
                            "key3": '434124231M',
                            "key4": '113,421',
                            "key5": '113,421',
@@ -155,7 +155,7 @@
                            }},
                            {label: 'key1'},
                            {label: 'key2', align: 'left', fomatter: ( value, rowData, isMobile ) => {                              
-                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}" class="tb-title">${value}</a>`;
+                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}"><span  class="tb-title">${value}</span> <span class="new">새글</span></a>`;
                               else           return `<a href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;                              
                            }},
                            {label: 'key3', fomatter: ( value, rowData, isMobile ) => {
@@ -191,7 +191,7 @@
                   <!-- //전체 목록 개수 및 목록 보기 개수 -->
 
                   <!-- 게시판 -->
-                  <div class="table-content wrap-check-tbl common-loading">                  
+                  <div class="table-content wrap-check-tbl">                  
                      <div class="table-wrap pc"></div>
                      <div class="table-wrap mo"></div>
                   </div>

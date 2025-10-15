@@ -1,5 +1,5 @@
 
-/** 모달전용 페이지 css **/
+/** 모달전용 페이지 css 시작 **/
 .modal-body{
   .reforwarding {display: flex;justify-content: space-between;align-items: center;      
     .txt-type{padding-right: 20px;margin-bottom: 0;}
@@ -27,6 +27,15 @@
     strong{color:#246BEB;}
     p{margin-top: 12px;display: flex;gap:13px;margin-bottom: 25px;}
   }
+
+.population-txt-box {border-radius: 12px;background-color:#EFF5FF;padding:56px 340px 56px 40px;position: relative;margin-bottom: 48px;}
+.population-txt-box .txt{font-size: 25px;color:#16408D;}
+.population-txt-box .main-txt{font-size: 19px;line-height:150%;margin-top:20px;}
+.population-txt-box .main-txt span{font-weight: 700;color: #246BEB;}
+.population-txt-box .img-box{border:1px solid red;position: absolute;top:50%;right:40px;transform: translateY(-50%);}
+.population-txt-box .sub-txt{margin-top: 30px;display: flex;gap: 8px;}
+.population-txt-box .sub-txt span{font-size: 15px;color:#464C53;position: relative;line-height: 150%;}
+.population-txt-box .sub-txt i{opacity: 0.4;margin-top: 3px;}
 
   //주소검색 팝업
   &.wrap-add-modal{height:642px;
@@ -125,3 +134,4 @@
     }    
   }    
 }
+/** 모달전용 페이지 css 끝 **/

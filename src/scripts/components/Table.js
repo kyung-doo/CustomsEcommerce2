@@ -121,7 +121,8 @@ class Table {
             boardTop.find('select').append(`<option value="${limit}">${limit}개씩 보기</option>`);
         	});
         	boardTop.find('.tit strong').text(this.data.listLength)
-        	boardTop.find('select').val(this.limit);
+        	//boardTop.find('select').val(this.limit);
+            boardTop.find('select').val(this.data.limit);
 		}
 		if(this.ele.find('#faqTitle').length > 0) {
 			boardTop.find('#faqTitle').text(this.data.listLength)
@@ -501,8 +502,7 @@ class Table {
                     } else {
                         li.find('.accordion-header ul').append(`
                             <li style="min-width: ${this.props.head[j].width}">
-                            <a href="javascript: void(0);" class="accordion-btn tb-title txt" title="열기">${data[body.label]}</a>
-                            <i class="icon btn-arrow-down small"></i>
+                            <a href="javascript: void(0);" class="accordion-btn tb-title txt" title="열기">${data[body.label]} <i class="icon btn-arrow-down small"></i></a>                            
                             </li>
                         `);
                     }

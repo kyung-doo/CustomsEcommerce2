@@ -1,7 +1,7 @@
 @use "../mixin" as *;
 @use "../variable" as *;
 
-/** 공통 layout navigation css **/
+/** 공통 layout navigation css 시작 **/
 #header .main-menu {border-bottom: 1px solid #d8d8d8;padding: 0 16px;transform: translate(0px, 0px);
   .inner {max-width: 1280px;margin: 0 auto;display: flex;justify-content: space-between;}
   .gnb-menu {display: flex;max-width: 1202px;width: 1202px;align-items: center;justify-content: space-between;
@@ -12,7 +12,7 @@
     &:hover::before{width:100%;left: 0;}
     span {display: flex;font-size: 13px;color: #555;margin-top: -1px;justify-content: center;}
   }
-  .allmenu {background-color: rgba(0, 0, 0, 0);background-image: url("../assets/icons/menu.svg");min-width: 109px;background-repeat: no-repeat;background-position: right;font-weight: 700;}
+  .allmenu {background-color: rgba(0, 0, 0, 0);background-image: url("../assets/icons/menu.svg");min-width: 120px;background-repeat: no-repeat;background-position: right;font-weight: 700;font-size:19px;}
   .gnb-toggle-wrap {display: none;position: absolute;top: 65px;left: 0;width: 100%;background-color: #fff;z-index: 100;    border-top: 1px solid #d8d8d8;}
   .gnb-main-list {max-width: 1280px;margin: 0 auto;display: flex;
     .gnb-title {background-color: #f4f5f6;position: relative;min-width: 281px;
@@ -140,6 +140,7 @@
       .gnb-toggle-wrap {padding: 50px 0;top:61px;}
       .gnb-main-list .gnb-title h2 {font-size: 32px;}
     }
+    .allmenu{font-size: 17px;}
   }
 }
 
@@ -276,8 +277,8 @@ html[lang=en] {
 }
 
 @media screen and (max-width: 1200px) {
-  html[lang=en] #header .main-menu .gnb-toggle-wrap {
-    //top: 153px;
+  html[lang=en] #header .main-menu .gnb-toggle-wrap{
+    top:87px;
   }
 }
 
@@ -329,3 +330,4 @@ html[lang=en] {
     }
   }
 }
+/** 공통 layout navigation css 끝 **/

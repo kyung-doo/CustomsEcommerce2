@@ -1,5 +1,6 @@
 @use "../mixin" as *;
-/** 공통 step css **/
+
+/** 공통 step css 시작 **/
 .step-wrap {
   display: flex;
 
@@ -94,3 +95,4 @@
     min-width: 191px;
   }
 }
+/** 공통 step css 끝 **/

@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 테이블 css **/
+/** 공통 그리드 css 시작 **/
 
 // 테이블 기본 타이틀
 .board-top {display: flex;justify-content: space-between;flex-wrap: wrap;
@@ -42,6 +42,10 @@
 
   //데이터없음
   .no-data{align-items: center !important;justify-content: center !important;}
+
+  //새글
+  .new{font-size:0;min-width:16px;height: 16px;background-image: url('../assets/icons/Badge-number.svg');background-size: contain;margin-left: 8px;display: inline-block;}
+  td:has(.new) a{display: flex;align-items: center;}  
 
   table {table-layout: fixed;width: 100%;border-spacing: 0;}
 
@@ -354,3 +358,5 @@
   // FAQ 
   [class*=title-type].title-type3.faq-tit{flex-direction: row;font-size: 18px;display: flex;}
 }
+
+/** 공통 그리드 css 끝 **/
