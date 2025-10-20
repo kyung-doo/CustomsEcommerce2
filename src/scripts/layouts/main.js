@@ -147,7 +147,7 @@ $(() => {
                 
                 let offset = 0;
                 for (let i = 0; i < swiper1.activeIndex; i++) {
-                    offset += swiper1.slides[i].offsetHeight + 14;
+                    offset += swiper1.slides[i].offsetHeight + 13;
                 }                  
                 swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;                
             },

@@ -105,7 +105,24 @@
                             [class*=-tit]{color:#1D56BC;padding-right: 30px;    white-space: break-spaces;text-align: left;}                            
                             .en-tit{font-size: 15px;margin-top: 10px;}
                             i.icon{position: absolute;top:50%;right:24px;transform: translateY(-50%);background-image: url("../assets/icons/btn-arrow-right-main.svg");}                            
-                        }                        
+                        }     
+                        
+                        //리스트 슬라이드 이미지
+                        @for $i from 1 through 20 {
+                            &.illust-people#{$i}::before {
+                                background-image: url('../assets/image/illust-people-img#{$i}.png');
+                            }
+                        }
+                        // &.ico1::before{background-image: url('../assets/image/slide-list-img1.png');}                
+                        // &.ico2::before{background-image: url('../assets/image/slide-list-img2.png');}                
+                        // &.ico3::before{background-image: url('../assets/image/slide-list-img3.png');}                
+                        // &.ico4::before{background-image: url('../assets/image/slide-list-img4.png');}                
+                        // &.ico5::before{background-image: url('../assets/image/slide-list-img5.png');}                
+                        // &.ico6::before{background-image: url('../assets/image/slide-list-img6.png');}                
+                        // &.ico7::before{background-image: url('../assets/image/slide-list-img7.png');}                
+                        // &.ico8::before{background-image: url('../assets/image/slide-list-img8.png');}                
+                        // &.ico9::before{background-image: url('../assets/image/slide-list-img9.png');}                
+                        // &.ico10::before{background-image: url('../assets/image/slide-list-img10.png');}                
                     }
                     .tab-cont.on{display: flex;}                    
                     .tab-cont{display: none;}
@@ -125,7 +142,7 @@
                 }
                 .btn-box{display: flex;flex-wrap: nowrap;gap:8px;margin-top: 51px;                    
                     button{width:100%;border-radius: 8px;height:48px;width:100%;}
-                }       
+                }                       
                 
                 //로그인전
                 &.login{height:auto;max-height: 100%;
@@ -279,12 +296,6 @@
             }
         }
     }
-    
-    //로그인전 리스트 슬라이드 이미지
-    &.login .tab-cont::before{background-image: url('../assets/image/slide-img1-1.png');}
-
-    //로그인후 리스트 슬라이드 이미지
-    &.logout .tab-cont::before{background-image: url('../assets/image/slide-img1-2.png');}
 }
 
 @media screen and (min-width: 1023px) and (max-width: 1312px) {

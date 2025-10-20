@@ -71,17 +71,17 @@
     }  
 
     // 체크박스 타입
-    &:has(>.form-check){padding-left: 76px;
+    &:has(>.form-check){padding-left: 76px;padding-right: 76px;
       > .form-check{position: absolute;top:32px;left:32px;
         label{padding: 0;padding-left: 0 !important;width:20px;}
       }
       
-    }
+    }    
 
     // 드롭다운 메뉴 타입1
     &.type1 .cont-acc-list.type1 .accordion-body{border-top:0;margin-top: 0;}
     .cont-acc-list.type1{margin: 0;border-top:0; padding: 0;   
-      .accordion-header{display: none;
+      .accordion-header{position: absolute;top:32px;right:24px;padding:0 !important;        
         a{padding: 0;}
       }
       .accordion-body{margin-top: 24px;padding: 0; padding-top: 24px;border-top:1px solid #D8D8D8;      
@@ -96,8 +96,11 @@
             }
           }
         }      
-      }
+      }      
     }
+
+    .acc-btn{position: absolute;top: 34px;right: 34px;}
+    .acc-btn.active i{transform: rotate(180deg);transition: all 0.3s;}
 
     // 드롭다운 메뉴 타입2
     .cont-acc-list.type2{margin: 0;padding: 0;border-top:0;margin-top: 11px;
@@ -291,12 +294,14 @@
         li{width:calc(100% - 40px) !important}  
       }       
     }
+
+    .acc-btn{right: 24px;}    
   }
 }
 
 @media screen and (min-width: 481px) {
   .cont-acc-list.type1{
-    .accordion-body{display: block;}
+    //.accordion-body{display: block;}
   } 
 }
 
@@ -376,7 +381,7 @@
   
   // 드롭다운 
   .cont-acc-list.type1{
-    .accordion-header{display: block !important;position: absolute;top:32px;right:24px;padding:0 !important;}    
+    //.accordion-header{display: block !important;position: absolute;top:32px;right:24px;padding:0 !important;}    
   } 
   
   .nowrap-box{width:100%;}

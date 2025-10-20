@@ -24,8 +24,7 @@ class Modal {
     }
 
     show () {
-        this.ele.empty().append(this.copyHtml);
-        console.log(this.copyHtml)
+        this.ele.empty().append(this.copyHtml);        
         this.ele.removeClass('d-none');
         
         // gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
@@ -59,12 +58,12 @@ class Modal {
         this.ele.find(".btn-close").on("focusin", e => {
             $(document).on('keydown.modal', (e) => {
                 if(e.key === 'Tab' && !e.shiftKey) {
-                    this.ele.find(".modal-body").focus();
+                    this.ele.find(".modal-wrap").focus();
                     e.preventDefault();
                 }
             });
         });
-        this.ele.find(".modal-body").on("focusin", e => {
+        this.ele.find(".modal-wrap").on("focusin", e => {
             $(document).on('keydown.modal', (e) => {
                 if(e.key === 'Tab' && e.shiftKey) {
                     this.ele.find(".btn-close").focus();
@@ -75,10 +74,11 @@ class Modal {
         this.ele.find(".btn-close").on("focusout", e => {
             $(document).off('keydown.modal');
         });
-        this.ele.find(".modal-body").on("focusout", e => {
+        this.ele.find(".modal-wrap").on("focusout", e => {
             $(document).off('keydown.modal');
         });
-        this.ele.find(".modal-body").attr("tabindex", 0).focus();        
+        this.ele.find('*').removeAttr('tabindex')
+        this.ele.find(".modal-wrap").attr("tabindex", 0).focus();                
     }
     
     hide () {

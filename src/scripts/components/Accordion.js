@@ -40,6 +40,24 @@ class Accordion {
 }
 
 $(() => {
+    //아코디언 타입2
+    $(function(){
+        $('.accordion-wrap-box').hide();
+        $('.acc-btn').click(function(){            
+            if(!$(this).hasClass('active')) {                
+                //열기                
+                $(this).closest('.inp-form.type1').find('.accordion-wrap-box').slideDown(100);
+                $(this).addClass('active');                
+                $(this).attr('title','닫기');                
+            } else {                
+                //닫기
+                $(this).closest('.inp-form.type1').find('.accordion-wrap-box').slideUp(100);
+                $(this).removeClass('active');
+                $(this).attr('title','열기');                
+            }
+        })
+    })    
+
     $(window).resize(function() {
         if($(window).width() <= 480) {
             $('.accordion-wrap').removeClass('active');
