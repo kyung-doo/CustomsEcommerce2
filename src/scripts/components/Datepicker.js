@@ -55,29 +55,33 @@ class Datepicker {
             }
 
             if(isNaN(Date.parse(val))) {
-                alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
-                this.input.val('').focus(); 
+                //alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
+                //this.input.val('').focus();
+                ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
-                    alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
-                    this.input.val('').focus(); 
+                    //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
+                    //this.input.val('').focus(); 
+                    ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
                     return;
                 }
 
                 if(this.props.minInput && $(this.props.minInput).val()) {
                     this.minDate = new Date($(this.props.minInput).val());
                     if(this.selectDate < this.minDate) {
-                        alert('시작날짜는 종료날짜보다 클 수 없습니다.');
-                        this.input.val('').focus(); 
+                        //alert('시작날짜는 종료날짜보다 클 수 없습니다.');
+                        //this.input.val('').focus(); 
+                        ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
                     }
                 }
 
                 if(this.props.maxInput && $(this.props.maxInput).val()) {
                     this.maxDate = new Date($(this.props.maxInput).val());
                     if(this.selectDate > this.maxDate) {
-                        alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
-                        this.input.val('').focus(); 
+                        //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
+                        //this.input.val('').focus(); 
+                        ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
                     }
                 }
             }
@@ -123,13 +127,13 @@ class Datepicker {
                     </div>
                     <div class="calendar-content">
                         <div class="week-con">
-                            <div>Su</div>
-                            <div>Mo</div>
-                            <div>Tu</div>
-                            <div>We</div>
-                            <div>Th</div>
-                            <div>Fr</div>
-                            <div>Sa</div>
+                            <div>일</div>
+                            <div>월</div>
+                            <div>화</div>
+                            <div>수</div>
+                            <div>목</div>
+                            <div>금</div>
+                            <div>토</div>
                         </div>
                         <div class="day-con"></div>
                         <div class="year-con d-none"></div>

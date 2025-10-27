@@ -438,9 +438,9 @@ class Table {
             /* 2025.09.11 데이터없음 수정 시작 */
             if(this.data.data.length === 0) {
 			/* 2025.09.11 데이터없음 수정 끝 */
-                tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.props.nodataMsg}</td></tr>`);
+                tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.data.nodataMsg}</td></tr>`);
                 if(tableM.length > 0) {
-                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.props.nodataMsg}</li></ul></li>`);
+                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.data.nodataMsg}</li></ul></li>`);
                 }
             }
             
@@ -556,7 +556,7 @@ class Table {
              /* 2025.09.11 데이터없음 수정 시작 */
             if(this.data.data.length === 0 ) {
 			 /* 2025.09.11 데이터없음 수정 끝 */
-                table.find('.body').html(`<div class="no-data"><p>${this.props.nodataMsg}</p></div>`);
+                table.find('.body').html(`<div class="no-data"><p>${this.data.nodataMsg}</p></div>`);
             }
         }
     }

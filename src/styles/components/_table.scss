@@ -204,7 +204,7 @@
 .wrap-faq{  
   .btn-arrow-down{position: absolute;height:100%;top:0;right:16px;transition: all .3s;z-index: 1;}
   .accordion-wrap.active .btn-arrow-down{transform: rotate(180deg);}     
-  &.type1 .accordion-wrap.on .accordion-btn{font-weight: 700;}       
+  //&.type1 .accordion-wrap.on .accordion-btn{font-weight: 700;}       
 
   // th
   .header{display: flex;background-color: #E6E8EA;border-bottom:1px solid #58616A;
@@ -245,7 +245,7 @@
   
   &.type1{   
     .wrap-accordion-btn{position: relative;}
-    .accordion-wrap.on .accordion-btn{font-weight: 700;}     
+    //.accordion-wrap.on .accordion-btn{font-weight: 700;}     
     .accordion-wrap .accordion-btn{padding: 10px 50px 10px 16px;}     
     .accordion-body{padding: 0 50px 16px 16px;background-color: #fff;
       p{text-align: left;line-height: 150%;}
