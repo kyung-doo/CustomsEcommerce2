@@ -37,7 +37,7 @@ button {border: 0;}
       .inform {background-color: #246beb;color: #fff;}
       .time {background-color: #cdd1d5;}
     }    
-    .btn-navi {background-color: rgba(0, 0, 0, 0);display: flex;justify-content: center;align-items: center;position: relative;margin-left: 2px;border: 0;font-weight: 700;padding: 0 8px 0 35px;height: 100%;
+    .btn-navi {background-color: rgba(0, 0, 0, 0);display: flex;justify-content: center;align-items: center;position: relative;margin-left: 2px;border: 0;font-weight: 700;padding: 0 8px 0 35px;height: 100%;white-space: nowrap;
       &:before {content: "";display: block;position: absolute;top: 50%;left: 8px;min-width: 20px;height: 20px;transform: translateY(-50%);background-repeat: no-repeat;background-position: center;}
       &.popup.active, &:hover {background-color: #cdd7e4;border-radius: 4px;}
       &.mobile-all-menu{display: none;}
@@ -204,7 +204,7 @@ button {border: 0;}
       a {background-size: contain;background-repeat: no-repeat;background-position: center;}
     }
     .header-actions{height:48px}
-    .header-actions .btn-navi {margin-left: 8px;text-align: center;font-size: 15px;padding: 0;flex-direction: column;gap:8px;padding: 0 10px;
+    .header-actions .btn-navi {margin-left: 8px;text-align: center;font-size: 15px;padding: 0;flex-direction: column;gap:8px;padding: 0 5px;
       &:before {transform: translateX(0);position: static;}
     }
     .header-container .inner {height: 64px;}
@@ -265,7 +265,8 @@ button {border: 0;}
   #masthead .nuri-txt {font-size: 13px;padding-left: 25px;}
 
   #header {
-    .header-actions .btn-navi {margin-left: 0;padding: 0 7px;
+    .header-actions{padding-left: 3px;}
+    .header-actions .btn-navi {margin-left: 0;padding: 0 5px;
       &:before {width: 16px;height: 16px;}
     }
     .logo {width: 97px;}

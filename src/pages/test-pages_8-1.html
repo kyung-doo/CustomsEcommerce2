@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<style>
+   /** 공통 **/
+   .content-wrap .cont-body .cont-advice .accordion-btn{padding: 16px 20px;}
+   .search-box ul li .tit{font-size: 17px;}
+   .cont-area .search-box .compulsory{bottom: 9px;}
+   .search-box{padding: 20px 24px;}
+   .search-box .btn-area{margin-top: 20px !important;padding-top: 20px !important;}
+   .compulsory-txt{font-size: 17px;}
+   .compulsory{bottom: 9px;}
+   .table-wrap th{font-size: 17px;padding: 9px 16px;}
+   #header .logo a{background-image: url("../assets/icons/test-logo1.svg");background-position: left center;}
+   #header .logo{width:183px;}
+   .table-wrap th *:not(.tooltip-tit *){font-size: 17px;}
+   .table-wrap.mo .title{    font-size: 17px;}
+   .table-wrap td{    padding: 10px 16px;}
+</style>
+<body>
+   <div id="wrap" class="logout">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 신고내역 조회</h3>  
+            <h4 class="sr-only">빈텍스트</h4>          
+         </div>
+         <div class="cont-body">
+            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+               <div class="accordion-header">
+                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호란?</strong> <i class="icon btn-arrow-down medium"></i></a>
+               </div>
+               <div class="accordion-body d-none">
+                  <p class="txt">개인통관고유부호란?</p>                  
+               </div>
+            </div>                                                      
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="search-box">
+                  <form action="">
+                  <ul>
+                     <li class="col1">
+                        <strong class="tit">신고일자 <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">시작 달력보기</button>
+                              </div>
+                              <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_11">
+                              <label class="form-chip-outline" for="chk_chip_11">1주일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_12">
+                              <label class="form-chip-outline" for="chk_chip_12">1개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_13">
+                              <label class="form-chip-outline" for="chk_chip_13">3개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_14">
+                              <label class="form-chip-outline" for="chk_chip_14">6개월</label>
+                           </div>
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex2">운송장부호</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" id="ex2" placeholder="예) 12341234123" title="운송장부호를 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex00">담당세관</label>
+                        <div class="search-area">
+                           <div class="form-group medium mw-360">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex00" required="" title="담당세관 선택해주세요">
+                                 <option value="" selected="" disabled="" hidden="">선택</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                        </div>                        
+                     </li>
+                     <li class="col1">
+                        <strong class="tit">처리상태</strong>
+                        <div class="search-area check-area">
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio1">
+                              <label for="radio1">전체</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio2">
+                              <label for="radio2">신청</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio3">
+                              <label for="radio3">접수</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio4">
+                              <label for="radio4">완료</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio5">
+                              <label for="radio5">취소</label>
+                           </div>                          
+                        </div>                           
+                     </li>
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="submit" class="btn secondary medium">조회</button>                        
+                     </div>
+                  </div>
+                  </form>
+               </div>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+               </div>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap pc">
+                     <table class="tbl col check">
+                        <caption>개인통관고유부호 신고내역 조회에 대한 No,신고일자,담당세관,도용신고번호,피 도용 개인통관고유부호,운송장번호(H.B/L),처리상태,상세보기 표로 로 구성되어있다.</caption>
+                        <colgroup>
+                           <col style="width: 70px;">
+                           <col style="width: 160px;">
+                           <col style="width: 20.3125%;">
+                           <col style="width: 12.5%;">
+                           <col>
+                           <col style="width: 14.0625%;">
+                           <col style="width: 9.375%;">
+                           <col style="width: 120px;">
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">NO</th>
+                              <th scope="col"><span class="arr-ico">신고일자 <button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>
+                              <th scope="col">담당세관</th>
+                              <th scope="col">도용신고번호</th>
+                              <th scope="col">피 도용 개인통관고유부호</th>
+                              <th scope="col">운송장번호(H.B/L)</th>
+                              <th scope="col">처리상태</th>    
+                              <th scope="col">상세보기</th>                                                    
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>1</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>2</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>3</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>4</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>5</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>6</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>7</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>8</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>9</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>
+                           <tr>
+                              <td>10</td>
+                              <td>2025-12-05</td>
+                              <td>인천공항세관</td>
+                              <td>20250001</td>
+                              <td>P2400000000000</td>
+                              <td>1234123412</td>
+                              <td>신청</td>
+                              <td><button type="button" class="btn tertiary small">보기</button></td>                              
+                           </tr>                                                                                                         
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="table-wrap mo">                     
+                     <ul class="wrap-body">
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">신고일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">담당세관</strong>
+                                 <span class="txt">인천공항세관</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">도용신고번호</strong>
+                                 <span class="txt">20250001</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">피 도용 개인통관고유부호</strong>
+                                 <span class="txt">판매자명이들어갑니다</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">운송장번호(H.B/L)</strong>
+                                 <span class="txt">물품명이들어갑니다다</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">신청</span>
+                              </li>                              
+                              <li>
+                                 <button type="button" class="btn tertiary medium">보기</button>
+                              </li>                              
+                           </ul>
+                        </li>                                                                                  
+                        <li>
+                           <ul class="body">                              
+                              <li>
+                                 <strong class="title">NO</strong>
+                                 <span class="txt">999</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">신고일자</strong>
+                                 <span class="txt">2025-12-05</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">담당세관</strong>
+                                 <span class="txt">인천공항세관</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">도용신고번호</strong>
+                                 <span class="txt">20250001</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">피 도용 개인통관고유부호</strong>
+                                 <span class="txt">판매자명이들어갑니다</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">운송장번호(H.B/L)</strong>
+                                 <span class="txt">물품명이들어갑니다다</span>
+                              </li>                              
+                              <li>
+                                 <strong class="title">처리상태</strong>
+                                 <span class="txt">신청</span>
+                              </li>                              
+                              <li>
+                                 <button type="button" class="btn tertiary medium">보기</button>
+                              </li>                              
+                           </ul>
+                        </li>                                                                                  
+                     </ul>
+                  </div>
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

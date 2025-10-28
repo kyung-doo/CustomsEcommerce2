@@ -30,6 +30,7 @@ $(() => {
             $(this).parent().addClass('active');
             $('body').addClass('no-scroll')
             $(".main-allmenu").hide();
+            $('body').css({'overflow': 'auto'});
             $("#header .allmenu").removeClass('active');
             $(".mobile-dep-menu").removeClass('mobile-active');
             if($(window).width() >= 1023) {
@@ -51,6 +52,7 @@ $(() => {
             $('body').css({'overflow': ''});
             $("#header .allmenu").removeClass('active');
         }
+        enableScroll();
     });
     
     $("#wrap > .blind").on('click', function () {
