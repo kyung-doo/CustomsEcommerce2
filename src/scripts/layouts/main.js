@@ -36,7 +36,7 @@ $(() => {
     //리스트 슬라이드
     const swiper1 = new Swiper('#list-slide', {
         slidesPerView: 'auto',
-        spaceBetween: 14,      
+        spaceBetween: 14,              
         direction: 'vertical',
         autoHeight : true,               
         loop: true,             

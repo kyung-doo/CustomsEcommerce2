@@ -30,12 +30,14 @@
   }
 
   //국민비서 신청 안내
-  .population-txt-box {border-radius: 12px;background-color: #EFF5FF;padding: 45px 302px 45px 40px;position: relative;margin-bottom: 48px;
+  .population-txt-box {border-radius: 12px;background-color: #EFF5FF;padding: 45px 302px 45px 40px;position: relative;margin-bottom: 48px;    
     .txt {font-size: 25px;color: #16408D;}
     .main-txt {font-size: 19px;line-height: 150%;margin-top: 20px;
       span {font-weight: 700;color: #246BEB;}
     }
-    .img-box {position: absolute;top: 50%;right: 40px;transform: translateY(-50%);}
+    .img-box {position: absolute;top: 50%;right: 40px;transform: translateY(-50%);width: 313px;height: 280px;
+      img{width:100%;}
+    }
     .sub-txt {margin-top: 30px;display: flex;gap: 8px;
       span {font-size: 15px;color: #464C53;position: relative;line-height: 150%;}
       i {opacity: 0.4;margin-top: 3px;}
@@ -114,8 +116,8 @@
 
   //국민비서 신청 안내
   .modal-body .population-txt-box {padding: 24px;
-    .img-box {position: static;transform: translateY(0);text-align: center;
-      img {max-width: 100%;}
+    .img-box {position: static;transform: translateY(0);text-align: center;width:100%;
+      img {width: 280px;}
     }
     .main-txt br {display: none;}
   }
