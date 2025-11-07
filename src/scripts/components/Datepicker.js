@@ -60,9 +60,9 @@ class Datepicker {
             }
 
             if(!this.isValidDate(val)) {
-                alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
+                // alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
-                // ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(this.props.isMonth) {
