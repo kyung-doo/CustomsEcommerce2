@@ -1,4 +1,4 @@
-$(() => {
+$(() => {    
     //공지사항
     $(function(){
         var btn = $('.main .box2 .notice-box .area .tit');        
@@ -57,50 +57,38 @@ $(() => {
             nextEl: '.slide-area1 .swiper-button-next',
             prevEl: '.slide-area1 .swiper-button-prev',
         },
-        on: { 
-            swiperCreated: function() {
-                let offset = 0;
-                for (let i = 0; i < swiper1.activeIndex; i++) {
-                    offset += swiper1.slides[i].offsetHeight + 14;
-                }                  
-                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;
-            },                   
+        on: {             
             init: function () {
-                $(window).on('load resize', function() {
-                    let winWidth = $(window).width();            
-                    if (winWidth <= 1125) {
-                        //1125이하
-                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide .tab-cont').addClass('mo-cont');
-                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide.on a').addClass('open');
-                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide a.on').addClass('open');
-                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide.on a.open').closest('.swiper-slide').find('.mo-cont').show();                        
-                    } else {
-                        //1125이상
-                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide .tab-cont').removeClass('mo-cont');
-                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide a').removeClass('open');
+                //반응형
+                $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont').each(function(i){
+                    var tabId = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont').eq(i).attr('id');                    
+                    var dataNum = $('.main .wrap-slide-box .slide-area1 .swiper-slide').eq(i).attr('data-btn');                    
+                    var txt = $(`#${tabId}`).find('button .kr-tit').text();                         
+                    var tabClass = $(`#${tabId}`).attr('class').split(/\s+/);
+                    var target = tabClass.find(cls => cls.startsWith('illust-people')); 
+                    var txt1 = $('.main .box1 .cont-box .wrap-slide-box .slide-box a [class*=-txt]').eq(i).text();                  
+
+                    if(tabId === dataNum){                        
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box a').eq(i).addClass(target)
+
+                        function responsiveCheck() {
+                            let winWidth = $(window).width();
+
+                            if (winWidth <= 1120) {
+                                $('.main .box1 .cont-box .wrap-slide-box .slide-box a [class*=-txt]').eq(i).text(txt);
+                                $(`#${tabId}`).find('button .kr-tit').text(txt1)
+                            }else{
+                                $(`#${tabId}`).find('button .kr-tit').text(txt)
+                                $('.main .box1 .cont-box .wrap-slide-box .slide-box a [class*=-txt]').eq(i).text(txt1)
+                            }
+                        }
+                        // 처음 로드 시 실행
+                        $(document).ready(responsiveCheck);
+
+                        // 창 크기 변경 시마다 실행
+                        $(window).resize(responsiveCheck);
                     }
-                }); 
-
-                $(document).on('click', '.slide-area1 .swiper-slide a', function() {
-                    $(this).closest('.swiper-slide').find('.mo-cont').show();
-                    $(this).addClass('open');
-
-                    // $('.swiper-stop').addClass('on');
-                    // $('.swiper-stop').text('재생');                    
-                    // swiper1.autoplay.stop();     
-                    
                 });
-
-                $(document).on('click', '.slide-area1 .swiper-slide a.open', function() {
-                    $(this).closest('.swiper-slide').find('.mo-cont').hide();
-                    $('.slide-area1 .swiper-slide a').removeClass('open'); 
-
-                    // $('.swiper-stop').addClass('on');
-                    // $('.swiper-stop').text('재생');                    
-                    // swiper1.autoplay.stop();     
-                });
-
-                
 
                 //이미지슬라이드 개수가 적으면 정지버튼 삭제
                 if($('.slide-area1 .swiper-button-next').hasClass('swiper-button-lock')){                    
@@ -114,26 +102,26 @@ $(() => {
 
                 $('#'+tabBox).addClass('on')
                 $('.slide-area1 .swiper-slide-active').addClass('on');  
-                $('.slide-area1').attr('tabindex','0');       
-                   
+                $('.slide-area1').attr('tabindex','0');
+    
                 //리스트 클릭했을때
-                $(document).on('click', '.slide-area1 .swiper-slide a', function() {
-                    var slideIndex = $(this).closest('.swiper-slide').attr('data-swiper-slide-index');						
+                $('.slide-area1 .swiper-slide').click(function(){
+                    var slideIndex = $(this).attr('data-swiper-slide-index');						
                     var slideLoop = slideIndex++;		
                     var tabBtn = $(this).attr('data-btn');
-                    var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');  
+                    var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                                      
 
-                    $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide a').removeAttr('title')
-                    $(this).attr('title','선택됨');                    
+                    $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide').removeAttr('title')
+                    $(this).attr('title','선택됨');
 
-                    $('.slide-area1 .swiper-slide a').removeClass('on')
-                    $(this).addClass('on');                                                                                                                  
+                    $('.slide-area1 .swiper-slide').removeClass('on')
+                    $(this).addClass('on');
 
                     box.removeClass('on');
-                    $('#'+tabBtn).addClass('on');   
+                    $('#'+tabBtn).addClass('on');
                     
-                    swiper1.slideToLoop(slideLoop,0,true);                       
-                });
+                    swiper1.slideToLoop(slideLoop,0,true);
+                });                
                 
                 //슬라이드 mouseenter
                 $('.slide-area1').mouseenter(function(){
@@ -175,43 +163,44 @@ $(() => {
                 //swiper1.slideTo(0, 500);
             },         
             slideNextTransitionStart: function() {
-                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('data-btn');
+                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
                 var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                       
-                $('.swiper-slide').find('.mo-cont').hide();
-                $('.swiper-slide.swiper-slide-active').find('.mo-cont').show();
-                $('.swiper-slide.swiper-slide-active a').addClass('open');
                 
-                $('.slide-area1 .swiper-slide a').removeAttr('title');
-                $('.slide-area1 .swiper-slide a').removeClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active a').addClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('title','선택됨');                
+                $('.slide-area1 .swiper-slide').removeAttr('title');
+                $('.slide-area1 .swiper-slide').removeClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active').addClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active').attr('title','선택됨');
                 box.removeClass('on');
                 $('#'+tabBtn).addClass('on');     
                 
-                
-                let offset = 0;
-                for (let i = 0; i < swiper1.activeIndex; i++) {
-                    offset += swiper1.slides[i].offsetHeight + 13;
-                }                  
-                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;    
-            },
-            slidePrevTransitionEnd: function() {
-                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('data-btn');
-                var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                          
-                $('.swiper-slide').find('.mo-cont').hide();
-                $('.swiper-slide.swiper-slide-active').find('.mo-cont').show();
-                $('.swiper-slide.swiper-slide-active a').addClass('open');
+                const slides = swiper1.slides;
+                const positions = [0]; // 첫 슬라이드 위치
 
-                $('.slide-area1 .swiper-slide a').removeAttr('title');
-                $('.slide-area1 .swiper-slide a').removeClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active a').addClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('title','선택됨');
-                box.removeClass('on');                
-                $('#'+tabBtn).addClass('on');      
+                for (let i = 1; i < slides.length; i++) {
+                    const prevSlide = slides[i - 1];
+                    const style = window.getComputedStyle(prevSlide);
+                    const margin = parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+                    positions[i] = positions[i - 1] + prevSlide.offsetHeight + margin-0.5;
+                }
+
+                swiper1.wrapperEl.style.transform = `translate3d(0px, -${positions[swiper1.activeIndex]}px, 0px)`;
+     
+            },
+            slidePrevTransitionEnd: function() {  
+                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
+                var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                          
+                
+                $('.slide-area1 .swiper-slide').removeAttr('title');
+                $('.slide-area1 .swiper-slide').removeClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active').addClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active').attr('title','선택됨');
+                box.removeClass('on');
+                $('#'+tabBtn).addClass('on');                                                    
             },
             
         },        
-    });          
+    });     
+    
 
     $('.slide-area1 .swiper-stop').click(function(){                
         if(stopNum==0){
