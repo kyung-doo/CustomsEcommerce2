@@ -370,10 +370,21 @@ class Datepicker {
             }
         });
 
+        this.doubleClickDelay = false;
         this.calendar.find('.day-con .day button').on('click', ( e ) => {
-            const target = $(e.currentTarget).parent();
-            this.selectDate = dayjs(target.data('date')).toDate();
-            this.renderCalendar();
+            if(!this.doubleClickDelay) {
+                const target = $(e.currentTarget).parent();
+                this.selectDate = dayjs(target.data('date')).toDate();
+                this.renderCalendar();
+                this.doubleClickDelay = true;
+                this.doubleClickTimeout = setTimeout(() => {
+                    this.doubleClickDelay = false;
+                }, 500);
+            } else {
+                const target = $(e.currentTarget).parent();
+                this.selectDate = dayjs(target.data('date')).toDate();
+                this.calendar.find(".btn-enter").trigger('click');
+            }
         });
         this.renderYear();
         this.renderMonth();
