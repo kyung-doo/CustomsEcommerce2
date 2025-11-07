@@ -91,3 +91,9 @@ html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;}
 
 .w100per{width:100% !important}
 /** common css 끝 **/
+
+/** iframe **/
+.iframe-ecp-txt ul{list-style: disc;}
+.iframe-ecp-txt ol{list-style: auto;}
+.iframe-ecp-txt ul,
+.iframe-ecp-txt ol{list-style-position: inside;}

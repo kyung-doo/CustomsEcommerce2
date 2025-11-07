@@ -18,7 +18,7 @@ input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
     .current {color: #1D56BC;font-weight: 700;}
   }
   .upload-list {display: flex;flex-direction: column;gap: 16px;    
-    .file-name {padding-right: 20px;margin: 8px 0;}
+    .file-name {padding-right: 20px;margin: 8px 0;display: flex;align-items: center;}
     .file-info {border: 1px solid #D8D8D8;border-radius: 4px;padding: 8px 16px 8px 16px;position: relative;display: flex;justify-content: space-between;
       .btn-wrap{display: flex;align-items: center;}
       &.file-down{flex-wrap: wrap;justify-content: space-between;}
@@ -32,7 +32,7 @@ input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
       .file-info {padding: 0;border: 0;padding-bottom: 16px;}
     }
     .file-hint-invalid {display: flex;border-top: 1px solid #D8D8D8;padding-top: 12px;align-items: flex-start;;
-      .txt {font-size: 15px;color: #D50136;padding-left: 4px;}
+      .txt {color: #D50136;padding-left: 4px;}
       .danger{margin-top: 2px;}
     }   
     .file-down {      

@@ -6,8 +6,8 @@ button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align
   &.xlarge {padding: 0 24px;height: 64px;font-size: 19px;}
   &.large{padding: 0 20px;height: 56px;font-size: 19px;}
   &.medium{padding: 0 16px;height: 48px;}
-  &.small{padding: 0 12px;height: 40px;font-size: 15px;}
-  &.xsmall{padding: 0 10px;height: 32px;font-size: 15px;}  
+  &.small{padding: 0 12px;height: 40px;}
+  &.xsmall{padding: 0 10px;height: 32px;}  
   &.primary{background-color: #246BEB;border:1px solid #246BEB;color: #fff;
     &:hover{background-color: #1D56BC;border-color: #1D56BC;}
     &:active{background-color: #16408D;border-color: #16408D;}
@@ -25,7 +25,7 @@ button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align
     &.xlarge,&.large{height: 40px;font-size: 19px;}
     &.medium{height: 32px;}    
     &.small{height: 24px;}
-    &.xsmall{height: 20px;font-size: 15px;}        
+    &.xsmall{height: 20px;}        
     &:hover{background-color: #EDF1F5 !important;}
     &:active{background-color: #CDD7E4 !important;}    
     &:disabled{background-color: #fff;border-color: #fff;color: #8E8E8E;}

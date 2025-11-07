@@ -35,7 +35,7 @@
     }
     .calendar-content {position: relative;padding: 0 8px;
         .week-con {@include flex($direction: row);   
-            div {flex: 1;@include flex($direction: row);width:48px;height:40px;font-size: 15px;}
+            div {flex: 1;@include flex($direction: row);width:48px;height:40px;}
         }
         .day-con {@include flex($direction: row);flex-wrap: wrap;width: 100%;
             .day {display: flex;align-items: center;justify-content: center;width: calc(100% / 7);height: 48px;                              

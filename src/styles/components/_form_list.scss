@@ -11,8 +11,8 @@
     &:has(.step-area.type1):has(.form-btn-area){padding: 32px 130px 32px 239px;}
     
     > ul {display:flex;flex-direction:row;flex-wrap:wrap;margin-left:-40px;margin-top: -25px;
-      .tit {font-size:15px;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;word-break: break-all;font-weight: 700;
-        .title > strong{font-size:15px}
+      .tit {position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;word-break: break-all;font-weight: 700;
+        .title > strong{}
         + .form-group {display:flex;align-items:center;gap:8px;margin-top:9px;}
       }      
 
@@ -172,7 +172,7 @@
     .sub-form-box{width:100%;
       ul{display: flex;margin-left: -40px;}
       .sub-list-wrap{display: flex;gap:24px}
-      label{font-size:15px;}
+      //label{font-size:15px;}
       .sub-box{margin-top: 12px;display: flex;align-items: center;gap: 8px;}
       .sub-list-box{width:100%;min-width: 100px;}
       label{font-weight: 700;}      

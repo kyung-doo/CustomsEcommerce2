@@ -13,7 +13,7 @@
     }
     .accordion-header{      
       a{padding: 20px 24px;display: flex;justify-content: space-between;align-items: center;        
-        .data{display: block;font-size: 15px;color:#555;margin-top: 5px;}
+        .data{display: block;color:#555;margin-top: 5px;}
         i{font-size:0;}
       }
     }
@@ -25,7 +25,7 @@
             .form-group{margin-top: 12px;}
             .acc-tit{width:100%;text-align: left;}
           }
-          .acc-tit{font-size: 15px;width:150px;min-width:150px;}          
+          .acc-tit{width:150px;min-width:150px;}          
           .acc-txt{width:100%;}         
         }
       }
