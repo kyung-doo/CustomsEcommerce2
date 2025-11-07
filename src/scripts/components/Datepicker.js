@@ -5,6 +5,7 @@ class Datepicker {
         maxDate: new Date(),
         minInput: null,
         maxInput: null,
+        isMonth: false,
         target: '',
     }
 
@@ -42,7 +43,11 @@ class Datepicker {
 
         this.input.on('input', () => {
             let val = this.input.val();
-            val = val.replace(/[^0-9-]/g, '').replace(/(\d{4})(\d{2})(\d{2})/g, '$1-$2-$3');
+            if(!this.props.isMonth) {
+                val = val.replace(/[^0-9-]/g, '').replace(/(\d{4})(\d{2})(\d{2})/g, '$1-$2-$3');
+            } else {
+                val = val.replace(/[^0-9-]/g, '').replace(/(\d{4})(\d{2})/g, '$1-$2');
+            }
             this.input.val(val);
         });
 
@@ -55,33 +60,43 @@ class Datepicker {
             }
 
             if(!this.isValidDate(val)) {
-                //alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
+                alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
-                ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                // ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
                 this.selectDate = new Date(this.input.val());
-                if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
-                    //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
-                    //this.input.val('').focus(); 
-                    ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
-                    return;
-                }
-
-                if(this.props.minInput && $(this.props.minInput).val()) {
-                    this.minDate = new Date($(this.props.minInput).val());
-                    if(this.selectDate < this.minDate) {
-                        //alert('시작날짜는 종료날짜보다 클 수 없습니다.');
+                if(this.props.isMonth) {
+                    if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
+                        //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-                        ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                        ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                        return;
                     }
-                }
-
-                if(this.props.maxInput && $(this.props.maxInput).val()) {
-                    this.maxDate = new Date($(this.props.maxInput).val());
-                    if(this.selectDate > this.maxDate) {
-                        //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
+                } else {
+                    console.log(this.props.maxDate, new Date(val) > this.props.maxDate)
+                    if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
+                        //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-                        ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                        ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                        return;
+                    }
+
+                    if(this.props.minInput && $(this.props.minInput).val()) {
+                        this.minDate = new Date($(this.props.minInput).val());
+                        if(this.selectDate < this.minDate) {
+                            //alert('시작날짜는 종료날짜보다 클 수 없습니다.');
+                            //this.input.val('').focus(); 
+                            ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                        }
+                    }
+
+                    if(this.props.maxInput && $(this.props.maxInput).val()) {
+                        this.maxDate = new Date($(this.props.maxInput).val());
+                        if(this.selectDate > this.maxDate) {
+                            //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
+                            //this.input.val('').focus(); 
+                            ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                        }
                     }
                 }
             }
@@ -116,9 +131,14 @@ class Datepicker {
 
     isValidDate( dateStr ) {
         if(isNaN(Date.parse(dateStr))) return false;
-        const [year, month, day] = dateStr.split('-').map(Number);
-        const maxDays = [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-        return day <= maxDays[month - 1];
+        if(this.props.isMonth) {
+            const [year, month] = dateStr.split('-').map(Number);
+            return month >= 1 && month <= 12;
+        } else {
+            const [year, month, day] = dateStr.split('-').map(Number);
+            const maxDays = [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            return day <= maxDays[month - 1];
+        }
     }
 
 
@@ -135,20 +155,25 @@ class Datepicker {
                     <div class="calendar-header">
                         <button class="btn-prev" tabindex="0">이전</button>
                         <button class=btn-year></button>
-                        <button class=btn-month></button>
+                        ${!this.props.isMonth ? '<button class=btn-month></button>': ''}
                         <button class="btn-next">다음</button>
                     </div>
-                    <div class="calendar-content">
-                        <div class="week-con">
-                            <div>일</div>
-                            <div>월</div>
-                            <div>화</div>
-                            <div>수</div>
-                            <div>목</div>
-                            <div>금</div>
-                            <div>토</div>
-                        </div>
-                        <div class="day-con"></div>
+                    <div class="calendar-content" style="min-height: 288px;">
+                        ${!this.props.isMonth 
+                            ? 
+                                `<div class="week-con">
+                                <div>일</div>
+                                <div>월</div>
+                                <div>화</div>
+                                <div>수</div>
+                                <div>목</div>
+                                <div>금</div>
+                                <div>토</div>
+                                </div>
+                                <div class="day-con"></div>` 
+                            : 
+                                ''
+                        }
                         <div class="year-con d-none"></div>
                         <div class="month-con d-none"></div>
                     </div>
@@ -185,7 +210,11 @@ class Datepicker {
         });
         this.calendar.find(".btn-enter").on('click', () => {
             if(this.selectDate) {
-                this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
+                if(!this.props.isMonth) {
+                    this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
+                } else {
+                    this.input.val(dayjs(this.selectDate).format('YYYY-MM'));
+                }
             }
             this.hideCalendar();
             $('.calendar-blind').hide();
@@ -269,7 +298,6 @@ class Datepicker {
             this.currentYear = new Date().getFullYear();
             this.currentMonth = new Date().getMonth() + 1;
         }
-        
         this.renderCalendar();
     }
 
@@ -294,98 +322,116 @@ class Datepicker {
 
         const toDay = new Date();
 
+        if(!this.props.isMonth) {
+            this.calendar.find(".month-con").hide();
+        } else {
+            this.calendar.find(".month-con").show();
+        }
+
         this.calendar.find(".btn-year").text(year+'년');
         this.calendar.find(".btn-month").text(month < 10 ? '0'+month+'월' : month+'월');
 
         this.calendar.find(".btn-next").removeAttr('disabled');
         this.calendar.find(".btn-prev").removeAttr('disabled');
 
-        if(this.currentYear === this.props.maxDate.getFullYear()) {
-            if(this.currentMonth === toDay.getMonth()+1) {
+        if(!this.props.isMonth) {
+            if(this.currentYear === this.props.maxDate.getFullYear()) {
+                if(this.currentMonth === toDay.getMonth()+1) {
+                    this.calendar.find(".btn-next").attr('disabled', 'disabled');
+                }
+            }
+
+            if(this.currentYear === Datepicker.MINIMUM_DATE.getFullYear()) {
+                if(this.currentMonth === Datepicker.MINIMUM_DATE.getMonth()+1) {
+                    this.calendar.find(".btn-prev").attr('disabled', 'disabled');
+                }
+            }
+        } else {
+            if(this.currentYear === this.props.maxDate.getFullYear()) {
                 this.calendar.find(".btn-next").attr('disabled', 'disabled');
             }
-        }
 
-        if(this.currentYear === Datepicker.MINIMUM_DATE.getFullYear()) {
-            if(this.currentMonth === Datepicker.MINIMUM_DATE.getMonth()+1) {
+            if(this.currentYear === Datepicker.MINIMUM_DATE.getFullYear()) {
                 this.calendar.find(".btn-prev").attr('disabled', 'disabled');
             }
         }
-        
-        for(let i=0; i<TLDate; i++) {
-            if(year === toDay.getFullYear() && month === toDay.getMonth()+1  && i + 1 === toDay.getDate()){
-                thisDates.push({year:year, month: month, day: i+1, type: 'normal today'});
-            } else {
-                thisDates.push({year:year, month: month, day: i+1, type: 'normal'});
-            }
-        }
-        if (PLDay !== 6) {
-            for (let i = 0; i < PLDay + 1; i++) {
-                prevDates.unshift({year:month === 1 ? year-1 : year, month: month === 1 ? 12 : month, day: PLDate - i, type: 'prev'});
-            }
-        }
-        for (let i = 1; i < 7 - TLDay; i++) {
-            nextDates.push({year:month === 12 ? year+1 : year , month: month === 12 ? 1 : month+1, day: i, type: 'next'})
-        }
 
-        this.calendar.find('.day-con .day').off('click');
-        this.calendar.find('.day-con').empty();
-        dates = [...prevDates, ...thisDates, ...nextDates];
-        
-        dates.forEach((x, i) => {
-            if(this.selectDate) {
-                if(x.year === this.selectDate.getFullYear() && x.month === this.selectDate.getMonth()+1 && x.day === this.selectDate.getDate()) {
-                    x.type += ' active';
+        if(!this.props.isMonth) {
+            for(let i=0; i<TLDate; i++) {
+                if(year === toDay.getFullYear() && month === toDay.getMonth()+1  && i + 1 === toDay.getDate()){
+                    thisDates.push({year:year, month: month, day: i+1, type: 'normal today'});
+                } else {
+                    thisDates.push({year:year, month: month, day: i+1, type: 'normal'});
                 }
             }
-            if(this.props.maxDate && new Date(x.year+'-'+x.month+'-'+x.day) > this.props.maxDate) {
-                x.type += ' disabled';
+            if (PLDay !== 6) {
+                for (let i = 0; i < PLDay + 1; i++) {
+                    prevDates.unshift({year:month === 1 ? year-1 : year, month: month === 1 ? 12 : month, day: PLDate - i, type: 'prev'});
+                }
             }
-            if(this.props.maxInput && $(this.props.maxInput).val()) {
-                if(new Date(x.year+'-'+x.month+'-'+x.day) > new Date($(this.props.maxInput).val())) {
+            for (let i = 1; i < 7 - TLDay; i++) {
+                nextDates.push({year:month === 12 ? year+1 : year , month: month === 12 ? 1 : month+1, day: i, type: 'next'})
+            }
+
+            this.calendar.find('.day-con .day').off('click');
+            this.calendar.find('.day-con').empty();
+            dates = [...prevDates, ...thisDates, ...nextDates];
+            
+            dates.forEach((x, i) => {
+                if(this.selectDate) {
+                    if(x.year === this.selectDate.getFullYear() && x.month === this.selectDate.getMonth()+1 && x.day === this.selectDate.getDate()) {
+                        x.type += ' active';
+                    }
+                }
+                if(this.props.maxDate && new Date(x.year+'-'+x.month+'-'+x.day) > this.props.maxDate) {
                     x.type += ' disabled';
                 }
-            }
-            if(this.props.minInput && $(this.props.minInput).val()) {
-                const minDate = new Date($(this.props.minInput).val());
-                if(new Date(x.year+'-'+x.month+'-'+x.day) <= new Date($(this.props.minInput).val())) {
-                    if(!(x.year === minDate.getFullYear() && x.month === minDate.getMonth() +1 && x.day === minDate.getDate())) {
+                if(this.props.maxInput && $(this.props.maxInput).val()) {
+                    if(new Date(x.year+'-'+x.month+'-'+x.day) > new Date($(this.props.maxInput).val())) {
                         x.type += ' disabled';
                     }
                 }
-            }
-        });
-        
-        dates.forEach(x => {            
-            this.calendar.find('.day-con').append(
-                `<div class="day ${x.type}" data-date=${x.year+'-'+x.month+'-'+x.day}>
-                    <button class="btn text">${x.day}</button>
-                </div>`
-            );
-        });
+                if(this.props.minInput && $(this.props.minInput).val()) {
+                    const minDate = new Date($(this.props.minInput).val());
+                    if(new Date(x.year+'-'+x.month+'-'+x.day) <= new Date($(this.props.minInput).val())) {
+                        if(!(x.year === minDate.getFullYear() && x.month === minDate.getMonth() +1 && x.day === minDate.getDate())) {
+                            x.type += ' disabled';
+                        }
+                    }
+                }
+            });
+            
+            dates.forEach(x => {            
+                this.calendar.find('.day-con').append(
+                    `<div class="day ${x.type}" data-date=${x.year+'-'+x.month+'-'+x.day}>
+                        <button class="btn text">${x.day}</button>
+                    </div>`
+                );
+            });
 
-        this.calendar.find('.day-con .day').each(function () {
-            if($(this).hasClass('disabled')) {
-                $(this).find("button").attr('disabled', 'disabled');
-            }
-        });
+            this.calendar.find('.day-con .day').each(function () {
+                if($(this).hasClass('disabled')) {
+                    $(this).find("button").attr('disabled', 'disabled');
+                }
+            });
 
-        this.doubleClickDelay = false;
-        this.calendar.find('.day-con .day button').on('click', ( e ) => {
-            if(!this.doubleClickDelay) {
-                const target = $(e.currentTarget).parent();
-                this.selectDate = dayjs(target.data('date')).toDate();
-                this.renderCalendar();
-                this.doubleClickDelay = true;
-                this.doubleClickTimeout = setTimeout(() => {
-                    this.doubleClickDelay = false;
-                }, 500);
-            } else {
-                const target = $(e.currentTarget).parent();
-                this.selectDate = dayjs(target.data('date')).toDate();
-                this.calendar.find(".btn-enter").trigger('click');
-            }
-        });
+            this.doubleClickDelay = false;
+            this.calendar.find('.day-con .day button').on('click', ( e ) => {
+                if(!this.doubleClickDelay) {
+                    const target = $(e.currentTarget).parent();
+                    this.selectDate = dayjs(target.data('date')).toDate();
+                    this.renderCalendar();
+                    this.doubleClickDelay = true;
+                    this.doubleClickTimeout = setTimeout(() => {
+                        this.doubleClickDelay = false;
+                    }, 500);
+                } else {
+                    const target = $(e.currentTarget).parent();
+                    this.selectDate = dayjs(target.data('date')).toDate();
+                    this.calendar.find(".btn-enter").trigger('click');
+                }
+            });
+        }
         this.renderYear();
         this.renderMonth();
     }
@@ -412,6 +458,9 @@ class Datepicker {
                     $(this).find("button").attr('disabled', '');
                 }
             });
+            if(this.props.isMonth) {
+                this.currentMonth = null;
+            }
             this.renderCalendar();
             $('.btn-year').removeClass('on');
         });
@@ -433,36 +482,58 @@ class Datepicker {
                 }
             });
         }
+        
         this.calendar.find(".month-con button").on('click', (e) => {
-            this.currentMonth = $(e.currentTarget).data('month');
-            this.calendar.find(".month-con").hide();
-            this.calendar.find(".btn-prev").css({'pointer-events': ''});
-            this.calendar.find(".btn-next").css({'pointer-events': ''});
-            this.calendar.find('.day-con .day').each(function () {
-                if(!$(this).hasClass('disabled')) {
-                    $(this).find("button").attr('disabled', '');
+            if(!this.doubleClickDelay) {
+                this.doubleClickDelay = true;
+                this.currentMonth = $(e.currentTarget).data('month');
+                this.calendar.find(".month-con").hide();
+                this.calendar.find(".btn-prev").css({'pointer-events': ''});
+                this.calendar.find(".btn-next").css({'pointer-events': ''});
+                this.calendar.find('.day-con .day').each(function () {
+                    if(!$(this).hasClass('disabled')) {
+                        $(this).find("button").attr('disabled', '');
+                    }
+                });
+                this.renderCalendar();
+                $('.btn-month').removeClass('on');
+                if(this.props.isMonth) {
+                    this.selectDate = dayjs(`${this.currentYear}-${this.currentMonth}-01`).toDate();
                 }
-            });
-            this.renderCalendar();
-            $('.btn-month').removeClass('on');
+                this.doubleClickTimeout = setTimeout(() => {
+                    this.doubleClickDelay = false;
+                }, 500);
+            } else {
+                this.calendar.find(".btn-enter").trigger('click');
+            }
         });
     }
 
     nextCalendar () {
-        this.currentMonth++;
-        if(this.currentMonth === 13) {
+        if(!this.props.isMonth) {
+            this.currentMonth++;
+            if(this.currentMonth === 13) {
+                this.currentYear++;
+                this.currentMonth = 1;
+            }
+        } else {
             this.currentYear++;
-            this.currentMonth = 1;
+            this.currentMonth = null;
         }
         
         this.renderCalendar();   
     }
 
     prevCalendar () {
-        this.currentMonth--;
-        if(this.currentMonth === 0) {
+        if(!this.props.isMonth) {
+            this.currentMonth--;
+            if(this.currentMonth === 0) {
+                this.currentYear--;
+                this.currentMonth = 12;
+            }
+        } else {
             this.currentYear--;
-            this.currentMonth = 12;
+            this.currentMonth = null;
         }
         this.renderCalendar();
     }
