@@ -5897,6 +5897,22 @@
                   <button class="calendar-btn">종료 달력보기</button>
                </div>
             </div>
+            <br><br>
+            <p>월 지정 달력</p>
+            <div class="d-flex">
+               <div class="calendar">
+                  <div class="calendar-form" data-ui="datepicker" data-props="isMonth: true;">
+                     <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM" maxlength="7">
+                     <button class="calendar-btn">달력보기</button>
+                  </div>                        
+               </div>
+               <div class="calendar">
+                  <div class="calendar-form" data-ui="datepicker" data-props="isMonth: true;maxDate: null">
+                     <input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM" maxlength="7">
+                     <button class="calendar-btn">달력보기</button>
+                  </div>                        
+               </div>
+            </div>  
          </div>     
          <pre>
          <code class="html"> 
@@ -5904,6 +5920,7 @@
                - maxInput: 범위지정 시작 달력용 종료 인풋
                - minInput: 범위지정 종료 달력용 시작 인풋
                - maxDate: 최대 선택 날짜 지정 (default 오늘)
+               - isMonth: 월 달력 유무
                - target: 기본은 body에 생성되지만 다른 곳에 생성 되어야 하는 경우(ex: modal) 사용
               
             - 한개짜리 달력
@@ -5926,6 +5943,14 @@
                   &lt;button class="calendar-btn"&gt;종료 달력보기&lt;/button&gt;
                &lt;/div&gt;
             &lt;/div&gt;
+
+            - 월 지정 달력
+            &lt;div class="calendar"&gt;
+               &lt;div class="calendar-form" data-ui="datepicker" data-props="isMonth: true"&gt;
+                  &lt;input type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM" maxlength="7"&gt;
+                  &lt;button class="calendar-btn"&gt;시작 달력보기&lt;/button&gt;
+               &lt;/div&gt;                        
+            &lt;/div&gt;  
 
          </code>
          </pre>
