@@ -52,7 +52,7 @@ input {
     label:before {width: 16px;height: 16px;}
   }
   &.small {
-    label {padding: 12px 10px;font-size: 15px;line-height: 6px;}
+    label {padding: 12px 10px;line-height: 6px;}
     input {
       &[type=radio]:checked + label, &[type=checkbox]:checked + label {padding-left: 27px;}
       &[type=radio]:checked + label:before, &[type=checkbox]:checked + label:before {left: 12px;}

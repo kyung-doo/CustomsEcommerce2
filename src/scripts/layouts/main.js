@@ -11,7 +11,11 @@ $(() => {
             th.closest(box).addClass('on');            
             th.attr('title','선택됨');     
         })
-    });   
+    });  
+    
+    $(function(){    
+         
+    })
 
     //개인통관고유부호 복사
     $(function(){
@@ -62,6 +66,42 @@ $(() => {
                 swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;
             },                   
             init: function () {
+                $(window).on('load resize', function() {
+                    let winWidth = $(window).width();            
+                    if (winWidth <= 1125) {
+                        //1125이하
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide .tab-cont').addClass('mo-cont');
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide.on a').addClass('open');
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide a.on').addClass('open');
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide.on a.open').closest('.swiper-slide').find('.mo-cont').show();                        
+                    } else {
+                        //1125이상
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide .tab-cont').removeClass('mo-cont');
+                        $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-wrapper .swiper-slide a').removeClass('open');
+                    }
+                }); 
+
+                $(document).on('click', '.slide-area1 .swiper-slide a', function() {
+                    $(this).closest('.swiper-slide').find('.mo-cont').show();
+                    $(this).addClass('open');
+
+                    // $('.swiper-stop').addClass('on');
+                    // $('.swiper-stop').text('재생');                    
+                    // swiper1.autoplay.stop();     
+                    
+                });
+
+                $(document).on('click', '.slide-area1 .swiper-slide a.open', function() {
+                    $(this).closest('.swiper-slide').find('.mo-cont').hide();
+                    $('.slide-area1 .swiper-slide a').removeClass('open'); 
+
+                    // $('.swiper-stop').addClass('on');
+                    // $('.swiper-stop').text('재생');                    
+                    // swiper1.autoplay.stop();     
+                });
+
+                
+
                 //이미지슬라이드 개수가 적으면 정지버튼 삭제
                 if($('.slide-area1 .swiper-button-next').hasClass('swiper-button-lock')){                    
                     $('.swiper-stop').addClass('swiper-button-lock');                    
@@ -74,26 +114,26 @@ $(() => {
 
                 $('#'+tabBox).addClass('on')
                 $('.slide-area1 .swiper-slide-active').addClass('on');  
-                $('.slide-area1').attr('tabindex','0');
-    
+                $('.slide-area1').attr('tabindex','0');       
+                   
                 //리스트 클릭했을때
-                $('.slide-area1 .swiper-slide').click(function(){
-                    var slideIndex = $(this).attr('data-swiper-slide-index');						
+                $(document).on('click', '.slide-area1 .swiper-slide a', function() {
+                    var slideIndex = $(this).closest('.swiper-slide').attr('data-swiper-slide-index');						
                     var slideLoop = slideIndex++;		
                     var tabBtn = $(this).attr('data-btn');
-                    var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                                      
+                    var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');  
 
-                    $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide').removeAttr('title')
-                    $(this).attr('title','선택됨');
+                    $('.main .box1 .cont-box .wrap-slide-box .slide-box .swiper-slide a').removeAttr('title')
+                    $(this).attr('title','선택됨');                    
 
-                    $('.slide-area1 .swiper-slide').removeClass('on')
-                    $(this).addClass('on');
+                    $('.slide-area1 .swiper-slide a').removeClass('on')
+                    $(this).addClass('on');                                                                                                                  
 
                     box.removeClass('on');
-                    $('#'+tabBtn).addClass('on');
+                    $('#'+tabBtn).addClass('on');   
                     
-                    swiper1.slideToLoop(slideLoop,0,true);
-                });                
+                    swiper1.slideToLoop(slideLoop,0,true);                       
+                });
                 
                 //슬라이드 mouseenter
                 $('.slide-area1').mouseenter(function(){
@@ -135,36 +175,43 @@ $(() => {
                 //swiper1.slideTo(0, 500);
             },         
             slideNextTransitionStart: function() {
-                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
+                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('data-btn');
                 var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                       
+                $('.swiper-slide').find('.mo-cont').hide();
+                $('.swiper-slide.swiper-slide-active').find('.mo-cont').show();
+                $('.swiper-slide.swiper-slide-active a').addClass('open');
                 
-                $('.slide-area1 .swiper-slide').removeAttr('title');
-                $('.slide-area1 .swiper-slide').removeClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active').addClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active').attr('title','선택됨');
+                $('.slide-area1 .swiper-slide a').removeAttr('title');
+                $('.slide-area1 .swiper-slide a').removeClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active a').addClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('title','선택됨');                
                 box.removeClass('on');
                 $('#'+tabBtn).addClass('on');     
                 
+                
                 let offset = 0;
                 for (let i = 0; i < swiper1.activeIndex; i++) {
-                    offset += swiper1.slides[i].offsetHeight + 14;
+                    offset += swiper1.slides[i].offsetHeight + 13;
                 }                  
-                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;                
+                swiper1.wrapperEl.style.transform = `translate3d(0px, -${offset}px, 0px)`;    
             },
-            slidePrevTransitionEnd: function() {  
-                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
+            slidePrevTransitionEnd: function() {
+                var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('data-btn');
                 var box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');                                          
-                
-                $('.slide-area1 .swiper-slide').removeAttr('title');
-                $('.slide-area1 .swiper-slide').removeClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active').addClass('on')
-                $('.slide-area1 .swiper-slide.swiper-slide-active').attr('title','선택됨');
-                box.removeClass('on');
-                $('#'+tabBtn).addClass('on');                                                    
+                $('.swiper-slide').find('.mo-cont').hide();
+                $('.swiper-slide.swiper-slide-active').find('.mo-cont').show();
+                $('.swiper-slide.swiper-slide-active a').addClass('open');
+
+                $('.slide-area1 .swiper-slide a').removeAttr('title');
+                $('.slide-area1 .swiper-slide a').removeClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active a').addClass('on')
+                $('.slide-area1 .swiper-slide.swiper-slide-active a').attr('title','선택됨');
+                box.removeClass('on');                
+                $('#'+tabBtn).addClass('on');      
             },
             
         },        
-    });   
+    });          
 
     $('.slide-area1 .swiper-stop').click(function(){                
         if(stopNum==0){

@@ -5,7 +5,7 @@
   .reforwarding {display: flex;justify-content: space-between;align-items: center;      
     .txt-type{padding-right: 20px;margin-bottom: 0;}
   }
-  .effective-time {font-size: 15px;color: #E71825;width: 100%;text-align: center;display: block;margin-top: 11px;}
+  .effective-time {color: #E71825;width: 100%;text-align: center;display: block;margin-top: 11px;}
   .certification-number {display: flex;justify-content: center;  
     .number {display: flex;gap: 8px;
       input {width: 100%;min-width: 1px;max-width: 42px;height: 48px;border: 1px solid #C6C6C6;border-radius: 4px;text-align: center;}
@@ -18,7 +18,7 @@
     }    
   }
   .total-area{border-top:1px solid #717171;margin-top: 24px;padding-top: 24px;display: flex;    
-    p{font-size: 15px;}
+    p{}
   }     
 
   //국민비서 가입절차
@@ -39,7 +39,7 @@
       img{width:100%;}
     }
     .sub-txt {margin-top: 30px;display: flex;gap: 8px;
-      span {font-size: 15px;color: #464C53;position: relative;line-height: 150%;}
+      span {color: #464C53;position: relative;line-height: 150%;}
       i {opacity: 0.4;margin-top: 3px;}
     }
   }

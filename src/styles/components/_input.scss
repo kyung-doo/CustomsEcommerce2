@@ -3,7 +3,7 @@
 /** 공통 입력폼 css 시작 **/
 .form-group {
   input[type=text], input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;padding: 0px 16px;}    
-  .form-hint-invalid {font-size: 15px;color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
+  .form-hint-invalid {color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
   input[type=text],select,textarea, input[type=password]{width:100%;min-width: 10px;}
 
    &.form-tit-group {border: 1px solid #C6C6C6;display: flex;height: 46px;padding: 0 16px;align-items: center;position: relative;border-radius: 4px;
@@ -15,9 +15,9 @@
     .form-conts{height:100%;}
   }
   textarea {height: 144px;padding: 16px;border-radius: 4px;border: 1px solid #717171;resize: none;}
-  .form-tit-txt label {font-size: 15px;margin-bottom: 8px;display: block;}
+  .form-tit-txt label {margin-bottom: 8px;display: block;}
   .textarea-count {display: flex;justify-content: flex-end;margin-top: 9px;
-    span {font-size: 15px;color: #555;}
+    span {color: #555;}
     .count-now {color: #246BEB;}
   }
   .wrap-textarea-count {display: flex;justify-content: space-between;align-items: center;margin-top: 1px;}
@@ -49,7 +49,7 @@
     input[type=text], select, input[type=password] {height: 48px;}
   }
   &.small {
-    input[type=text], select, input[type=password] {height: 40px;font-size: 15px;}
+    input[type=text], select, input[type=password] {height: 40px;}
   }
 
   //비밀번호
@@ -59,7 +59,7 @@
     input[type=password]{font-size:16px}    
   }
 }
-.wrap-form-group .form-hint-invalid {font-size: 15px;color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
+.wrap-form-group .form-hint-invalid {color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
 .form-group .form-hint-invalid:before, .wrap-form-group .form-hint-invalid:before {content: "";display: block;position: absolute;top: 50%;left: 0;width: 20px;height: 20px;transform: translateY(-50%);background-image: url("../assets/icons/inp-title.svg");}
 .form-conts.is-success {
   textarea, select {outline: 2px solid #246BEB;border-color: #246BEB;}
@@ -68,7 +68,7 @@
 .form-group .form-hint-invalid.txt-error, .wrap-form-group .form-hint-invalid {color: #EB003B;}
 .form-select-sort {-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("../assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;border: 0;background-color: #fff;
   &.large {padding: 0 29px 0 5px;height: 27px;background-position: center right 3px;background-size: 18px;}
-  &.medium {font-size: 15px;padding: 0 17px 0 5px;height: 27px;background-position: center right 3px;background-size: 14px;}
+  &.medium {padding: 0 17px 0 5px;height: 27px;background-position: center right 3px;background-size: 14px;}
 }
 
 //disabled

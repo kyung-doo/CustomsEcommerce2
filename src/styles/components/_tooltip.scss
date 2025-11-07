@@ -34,10 +34,10 @@
 }
 .tooltip-action {padding: 24px;width: 360px;border: 1px solid #C6C6C6;position: relative;border-radius: 12px;background-color: #FFF;position: absolute;z-index: 1;
   &:before {content: "";display: block;position: absolute;width: 22px;height: 12px;background-image: url("../assets/icons/tooltip-arr.svg");}
-  .tooltip-title {font-size: 15px;}  
+  .tooltip-title {}  
   .tooltip-contents {margin-top: 22px;
-    p {font-size: 15px;line-height: 150%;}
-    .btn.link {font-size: 15px;position: relative;      
+    p {line-height: 150%;}
+    .btn.link {position: relative;      
       &:before {content: "";display: block;position: absolute;top: 50%;right: -20px;width: 16px;height: 16px;transform: translateY(-50%);background-image: url("../assets/icons/btn-arrow-right.svg");background-position: center;background-size: 16px;}
     }
   }

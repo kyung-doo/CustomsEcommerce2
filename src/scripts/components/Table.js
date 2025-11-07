@@ -538,7 +538,10 @@ class Table {
                                 </li>
                             `);
                             li.find('.upload-list').append(fileList);
-                            fileList.on('click', () => this.fileDown(file));
+
+                            /* 2025.11.04 첨부파일 다운로드 수정 */
+                            //fileList.on('click', () => this.fileDown(file));
+                            fileList.on('click', () => f_fileDwnl(file.id));
                         });
                     } else {
                         li.find('.faq-box').addClass('nofile');    

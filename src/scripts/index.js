@@ -14,6 +14,10 @@ $(() => {
         subtree: true
     });
 
+
+    //로딩 텍스트
+    $('.common-loading').append(`<p class="loading-txt">잠시만 기다려주세요</p>`);
+
 });
 
 // 컴포넌트 UI 생성
