@@ -1,6 +1,5 @@
 
-/** 공통 css **/
-
+/** 마진,패딩 **/
 @for $i from 0 to 100 {
     .mt-#{$i} {
         margin-top: #{$i}px !important;
@@ -27,7 +26,9 @@
         padding-right: #{$i}px !important;
     }
 }
+/** // 마진,패딩 **/
 
+/** 최대넓이,최대높이 **/
 @for $i from 1 to 3000 {
     .mw-#{$i} {
         max-width: #{$i}px !important;
@@ -39,7 +40,9 @@
         max-height: #{$i}px !important;
     }    
 }
+/** // 최대넓이,최대높이 **/
 
+/** 최소넓이,최소높이 **/
 @for $i from 1 to 3000 {
     .minw-#{$i} {
         min-width: #{$i}px !important;
@@ -47,7 +50,28 @@
 }
 
 @for $i from 1 to 3000 {
+    .minh-#{$i} {
+        min-height: #{$i}px !important;
+    }    
+}
+/** // 최소넓이,최소높이 **/
+
+/** 넓이,높이 **/
+@for $i from 1 to 3000 {
     .w-#{$i} {
         width: #{$i}px !important;
     }    
 }
+
+@for $i from 1 to 3000 {
+    .h-#{$i} {
+        height: #{$i}px !important;
+    }    
+}
+/** // 넓이,높이 **/
+
+/** 넓이,높이 auto **/
+.w-auto{width:auto !important}
+
+.h-auto{height:auto !important;}
+/** // 넓이,높이 auto **/

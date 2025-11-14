@@ -502,7 +502,7 @@ class Datepicker {
                 }
                 this.doubleClickTimeout = setTimeout(() => {
                     this.doubleClickDelay = false;
-                }, 500);
+                }, 200);
             } else {
                 this.calendar.find(".btn-enter").trigger('click');
             }

@@ -98,7 +98,7 @@
                   </div> 
                   <div class="name-box">
                      <p class="name"><strong>김관세</strong><span>님 환영합니다.</span></p>     
-                     <span class="inform">+999</span>             
+                     <a href="#none"><span class="inform">+999</span></a>          
                      <span class="time">38:12</span>             
                   </div>                  
                   <button type="button" class="btn-navi sch" data-modal-target="#in-search">통합검색</button>
@@ -136,9 +136,9 @@
                   <a href="javascript: void(0);" class="btn-navi loginout">로그인아웃</a> 
                   <div class="language-area">
                      <div class="form-toggle-switch language-switch">
-                        <input type="radio" id="kr" name="language" checked>
-                        <label for="kr" class="kr">한글</label>
-                        <input type="radio" id="en" name="language">
+                        <input type="radio" id="kr" name="languageSwitch" checked="checked">
+                        <label for="kr" class="kr">한글</label>                        
+                        <input type="radio" id="en" name="languageSwitch">
                         <label for="en" class="en">English</label>
                      </div>
                   </div>                             
@@ -146,7 +146,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div>      
       <!-- gnb -->
       <nav class="main-menu">
          <!-- 모바일 상단 정보 -->
@@ -167,7 +167,7 @@
             </div>                             
             <div class="name-box">
                <p class="name"><strong>김관세</strong><span>님 환영합니다.</span></p>     
-               <span class="inform">+999</span>             
+               <a href="#none"><span class="inform">+999</span></a>             
                <span class="time">38:12</span>             
             </div>                  
             <!-- 로그인 후 -->
@@ -338,35 +338,8 @@
                         </ul>
                      </div>                     
                   </div>                  
-               </li>   
+               </li>                 
                <li class="dep4">
-                  <button type="button" class="gnb-main-trigger">해외직구 현황</button>                  
-                  <div class="gnb-toggle-wrap">                     
-                     <div class="gnb-main-list">
-                        <div class="gnb-title">
-                           <div class="gnb-title-box">
-                              <strong class="left-title">해외직구 현황</strong>                           
-                           </div>                        
-                        </div>
-                        <ul class="gnb-list">
-                           <li class="w-auto">                                                         
-                              <div class="gnb-sub-list">
-                                 <div class="gnb-sub-content">
-                                    <strong class="sub-title">통계</strong>
-                                    <a href="javascript: void(0);"  class="sub-title mobile-dep-menu" title="메뉴열기">통계 <i class="icon btn-arrow-down small"></i></a>
-                                    <ul class="depth2">
-                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 전자상거래 물품 수입통관 현황</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">년도별 전자상거래 물품 수입통관 현황</i></a></li>                                    
-                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 통관 소요시간 현황</i></a></li>                                                                           
-                                    </ul>
-                                 </div>                              
-                              </div>                              
-                           </li>                                                                      
-                        </ul>
-                     </div>                     
-                  </div>                  
-               </li> 
-               <li class="dep5">
                   <button type="button" class="gnb-main-trigger">해외직구 정보제공</button>                  
                   <div class="gnb-toggle-wrap">                     
                      <div class="gnb-main-list">
@@ -375,10 +348,12 @@
                               <strong class="left-title">해외직구 정보제공</strong>                           
                            </div>                        
                         </div>
-                        <ul class="gnb-list">
+                        <ul class="gnb-list">                           
                            <li>                                                         
                               <div class="gnb-sub-list">
                                  <div class="gnb-sub-content">                                 
+                                    <strong class="sub-title">해외직구 정보</strong>
+                                    <a href="javascript: void(0);"  class="sub-title mobile-dep-menu" title="메뉴열기">해외직구 정보 <i class="icon btn-arrow-down small"></i></a>
                                     <ul class="depth2">
                                        <li><a href="javascript: void(0);"><i class="no-ico">주간 환율</i></a></li>                                    
                                        <li><a href="javascript: void(0);"><i class="no-ico">해외직구물품 예상세액 조회</i></a></li>                                    
@@ -387,12 +362,25 @@
                                     </ul>
                                  </div>                              
                               </div>                              
-                           </li>                                                                      
+                           </li>             
+                           <li>                                                         
+                              <div class="gnb-sub-list">
+                                 <div class="gnb-sub-content">
+                                    <strong class="sub-title">해외직구 통계</strong>
+                                    <a href="javascript: void(0);"  class="sub-title mobile-dep-menu" title="메뉴열기">해외직구 통계 <i class="icon btn-arrow-down small"></i></a>
+                                    <ul class="depth2">
+                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">년도별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                       <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 통관 소요시간 현황</i></a></li>                                                                           
+                                    </ul>
+                                 </div>                              
+                              </div>                              
+                           </li>                                                                                      
                         </ul>
                      </div>                     
                   </div>                  
                </li>
-               <li class="dep6">
+               <li class="dep5">
                   <button type="button" class="gnb-main-trigger">고객센터</button>                  
                   <div class="gnb-toggle-wrap">                     
                      <div class="gnb-main-list">
@@ -418,7 +406,7 @@
                      </div>                     
                   </div>                  
                </li>
-               <li class="dep7">
+               <li class="dep6">
                   <button type="button" class="gnb-main-trigger">마이페이지</button>                  
                   <div class="gnb-toggle-wrap">                     
                      <div class="gnb-main-list">
@@ -602,33 +590,8 @@
                      </ul>
                   </div>                  
                </div>               
-            </li>   
+            </li>               
             <li>                           
-               <div class="gnb-toggle-wrap">                  
-                  <div class="gnb-main-list">
-                     <div class="gnb-title">
-                        <div class="gnb-title-box">
-                           <strong class="left-title">해외직구 현황</strong>                           
-                        </div>                        
-                     </div>
-                     <ul class="gnb-list">
-                        <li>                                                      
-                           <div class="gnb-sub-list">
-                              <div class="gnb-sub-content">
-                                 <strong class="sub-title">통계</strong>                                 
-                                 <ul class="depth2">
-                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 전자상거래 물품 수입통관 현황</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">년도별 전자상거래 물품 수입통관 현황</i></a></li>                                    
-                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 통관 소요시간 현황</i></a></li>                                                                        
-                                 </ul>
-                              </div>                              
-                           </div>                           
-                        </li>                                                                      
-                     </ul>
-                  </div>                  
-               </div>               
-            </li> 
-            <li class="last-allmenu">                           
                <div class="gnb-toggle-wrap">                  
                   <div class="gnb-main-list">
                      <div class="gnb-title">
@@ -640,6 +603,7 @@
                         <li>                                                      
                            <div class="gnb-sub-list">
                               <div class="gnb-sub-content">                                 
+                                 <strong class="sub-title">해외직구 정보</strong>                                 
                                  <ul class="depth2">
                                     <li><a href="javascript: void(0);"><i class="no-ico">주간 환율</i></a></li>                                    
                                     <li><a href="javascript: void(0);"><i class="no-ico">해외직구물품 예상세액 조회</i></a></li>                                    
@@ -647,11 +611,25 @@
                                     <li><a href="javascript: void(0);"><i class="no-ico">업무 안내</i></a></li>                                                                        
                                  </ul>
                               </div>                              
+                           </div>                                                      
+                        </li>                        
+                        <li>
+                           <div class="gnb-sub-list">
+                              <div class="gnb-sub-content">
+                                 <strong class="sub-title">해외직구 통계</strong>                                 
+                                 <ul class="depth2">
+                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i class="no-ico">년도별 전자상거래 물품 수입통관 현황</i></a></li>                                    
+                                    <li><a href="javascript: void(0);"><i class="no-ico">세관별/발송국별 통관 소요시간 현황</i></a></li>                                                                        
+                                 </ul>
+                              </div>                              
                            </div>                           
-                        </li>                                                                      
+                        </li>                         
                      </ul>
                   </div>                  
-               </div>       
+               </div>                                  
+            </li>   
+            <li class="last-allmenu">                                          
                <div class="gnb-toggle-wrap">                  
                   <div class="gnb-main-list">
                      <div class="gnb-title">
@@ -697,7 +675,7 @@
                      </ul>
                   </div>                  
                </div>               
-            </li>         
+            </li>        
          </ul>
       </div>  
       <!-- 전체메뉴 -->
@@ -710,7 +688,7 @@
             <ol class="breadcrumb">
                <li class="home"><a href="javascript: void(0);" class="txt" title="홈으로 바로가기">홈</a></li>
                <li><span class="txt">개인통관고유부호</span></li>                     
-               <li><a href="javascript: void(0);" class="txt">개인통관고유부호 조회</a></li>                     
+               <li class="last-li"><a href="javascript: void(0);" class="txt">개인통관고유부호 조회</a></li>                     
                <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">개인통관고유부호 조회/정보변경</a></li>                  
             </ol>
          </nav>                  

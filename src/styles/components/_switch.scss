@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 스위치 css 시작 **/
+/** 스타일가이드 스위치 **/
 .form-toggle-switch {display: flex;position: relative;
   input[type=checkbox] {
     + label {position: relative;
@@ -38,15 +38,15 @@
     &:checked + label:after {left: 14px;}
   }
 
-  &.language-switch {width: 120px;height: 32px;padding: 0 4px;border-radius: 40px;background-color: #cdd7e4;
+  &.language-switch {width: 130px;height: 32px;padding: 0 4px;border-radius: 40px;background-color: #cdd7e4;
     input[type=radio] {
-      + label {position: absolute;top: 50%;transform: translateY(-50%);height: 24px;border-radius: 16px;text-align: center;padding: 0 7px;color: #58616a;display: flex;align-items: center;cursor: pointer;font-weight: 700;line-height: 150%;
+      
+      + label {position: absolute;top: 50%;transform: translateY(-50%);height: 24px;border-radius: 16px;text-align: center;padding: 0 7px;color: #58616a;display: flex;align-items: center;cursor: pointer;font-weight: 700;line-height: 150%;        
         &.kr {left: 4px;}
         &.en {right: 4px;}
-      }
-
-      &:checked + label {background-color: #fff;color: #003675;}
+      }      
+      &:checked + label {background-color: #fff;color: #003675;outline: 3px solid #000;}
     }
   }
 }
-/** 공통 스위치 css 끝 **/
+/** // 스타일가이드 스위치 **/

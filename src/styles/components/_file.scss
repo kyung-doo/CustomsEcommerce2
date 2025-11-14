@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 파일 css 시작 **/
+/** 스타일가이드 파일첨부 **/
 input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
     &:focus + label{outline: 2px solid #000;}
 }
@@ -79,4 +79,4 @@ input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
 @media screen and (max-width: 480px) {
   .file-upload.line{padding: 24px;}  
 }
-/** 공통 파일 css 끝 **/
+/** // 스타일가이드 파일첨부 **/

@@ -230,9 +230,9 @@ class Table {
                 }
 
                 if(head.sort) {
-                    tablePC.find('thead tr').append(`<th><span class="arr-ico">${head.name}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
+                    tablePC.find('thead tr').append(`<th scope="col"><span class="arr-ico">${head.name}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
                 } else {
-                    tablePC.find('thead tr').append(`<th>${head.name}</th>`);
+                    tablePC.find('thead tr').append(`<th scope="col">${head.name}</th>`);
                 }
                 if(head.tooltip) {
                     this.addToolTip(tablePC.find('thead tr th').eq(this.props.tableType === 'crud' ? i+1 : i), head.tooltip);
@@ -528,9 +528,9 @@ class Table {
                             const fileList = $(`
                                 <li>
                                     <div class="file-info m-column file-down">
-                                        <div class="file-name">${file.name} [${file.format}, ${file.size}]</div>
+                                        <div class="file-name"><a href="#none">${file.name} [${file.format}, ${file.size}]</a></div>
                                         <div class="btn-wrap">
-                                            <button type="button" class="btn text medium">
+                                            <button type="button" class="btn text medium" title="${file.name} 파일 다운로드" aria-label="${file.name} 파일 다운로드">
                                                 <i class="icon download medium"></i> 다운로드
                                             </button>                                 
                                         </div>
@@ -672,7 +672,7 @@ class Table {
     fileDown ( file ) {
         const element = document.createElement('a');
         element.setAttribute('href', file.url);
-        element.setAttribute('download', file.name+'.'+file.format);
+        element.setAttribute('download', file.name+'.'+file.format);        
         element.click();
         $(element).remove();
     }

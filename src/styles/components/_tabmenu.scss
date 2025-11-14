@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 tabmenu css 시작 **/
+/** 스타일가이드 tabmenu **/
 [class*="tabmenu-"] {position: relative;
   .tabmenu-wrap {display: flex;overflow-x: auto;overflow-y: hidden;
     &::-webkit-scrollbar {display: none;}
@@ -31,4 +31,4 @@
 .tabmenu-bg1 button {min-width: 48px;height: 56px;padding: 0 16px;border: 1px solid #B4C4D6;border-radius: 4px;margin-left: -1px;
   &.active {background-color: #003675;color: #fff;}
 }
-/** 공통 tabmenu css 끝 **/
+/** // 스타일가이드 tabmenu **/

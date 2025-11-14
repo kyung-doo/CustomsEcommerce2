@@ -169,7 +169,8 @@
                      // 체크된 목록 가져오기
                      $("#getUid").on('click', () => {
                         $("#table").table('getCheckData', (checkDatas) => {
-                           alert(checkDatas.map(x => x.uid));
+                           const result = checkDatas.map(x => [x.key1,x.key2,x.key3]);
+                           console.log(result[0])
                         });                        
                      });
                   });                  
@@ -183,7 +184,7 @@
                      <div class="left-box">
                         <strong class="tit top-txt">전체<strong></strong>개</strong>
                         <div class="top-txt">
-                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                           <select class="form-select-sort large" title="조회 목록 행 수를 선택하십시오"></select>
                         </div>                     
                      </div>  
                      <div class="right-box">

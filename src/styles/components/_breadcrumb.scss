@@ -1,6 +1,5 @@
 @use "../mixin" as *;
-
-/** 공통 breadcrumb css 시작 **/
+/** 스타일가이드 breadcrumb **/
 .breadcrumb {display: flex;
   li {position: relative;margin: 0 8px;display: flex;    
     * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;
@@ -39,4 +38,4 @@
     }
   }
 }
-/** 공통 breadcrumb css 끝 **/
+/** // 스타일가이드 breadcrumb **/

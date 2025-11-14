@@ -1,4 +1,4 @@
-/** 공통 리스트 css 시작 **/
+/** 스타일가이드 리스트 **/
 .wrap-form-area{
   .inp-form {border:1px solid #e4e4e4;border-radius:8px;padding:32px;position:relative;  
     // 버튼이있을때
@@ -142,9 +142,10 @@
   // 주소찾기 모바일
   &.type1{margin-top: 24px;
     .inp-form{padding: 24px !important;
+      &:has(strong.add-tit) .form-btn-area button{height: 20px;}
       li.txt-list{flex-direction: column;
         .inp-box{text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}
-        .add-tit{font-size:19px;display:flex;align-items:center;width:100%;padding-right: 75px;line-height: 150%;
+        .add-tit{font-size:19px;display:flex;align-items:center;width:100%;padding-right: 155px;line-height: 150%;
           .add-modify-btn{font-size:0;width:0;background-color: rgba(0,0,0,0.0);margin-left: 8px;}        
         }
         .add-txt{color:#555;line-height: 150%;}
@@ -386,4 +387,4 @@
   
   .nowrap-box{width:100%;}
 }
-/** 공통 리스트 css 끝 **/
+/** // 스타일가이드 리스트 **/
