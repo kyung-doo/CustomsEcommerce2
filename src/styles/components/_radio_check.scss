@@ -1,8 +1,8 @@
 @use "../mixin" as *;
 
-/** 공통 라디오박스,체크박스 css 시작 **/
+/** 스타일가이드 체크박스,라디오박스 **/
 input {
-  &[type=radio], &[type=checkbox] {width: 0;height: 0;position: absolute;overflow: hidden;opacity: 0;}
+  &[type=radio], &[type=checkbox] {position: absolute;opacity: 0;pointer-events: none;width: 1px;height: 1px;}
   &[type=radio]:focus + label,&[type=checkbox]:focus + label{outline:2px solid #000;}
 }
 .form-check {position: relative;  
@@ -96,4 +96,4 @@ input {
     &[type=checkbox]:checked + label:before {left: 10px;}
   }
 }
-/** 공통 라디오박스,체크박스 css 끝 **/
+/** // 스타일가이드 체크박스,라디오박스 **/

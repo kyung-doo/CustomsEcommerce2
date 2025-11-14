@@ -545,7 +545,7 @@ class Datepicker {
                 }
                 this.doubleClickTimeout = setTimeout(() => {
                     this.doubleClickDelay = false;
-                }, 500);
+                }, 200);
             } else {
                 if(dayjs(this.selectDate).format('YYYYMM') === dayjs(`${this.currentYear}-${$(e.currentTarget).data('month')}`).format('YYYYMM')) {
                     this.calendar.find(".btn-enter").trigger('click');

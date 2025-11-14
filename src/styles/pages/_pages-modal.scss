@@ -1,35 +1,39 @@
 
-/** 모달전용 페이지 css 시작 **/
-.modal-wrap:focus{outline: 4px solid #2f2f2f;}
 .modal-body{
+  /** 인증번호 재발송 **/
   .reforwarding {display: flex;justify-content: space-between;align-items: center;      
     .txt-type{padding-right: 20px;margin-bottom: 0;}
   }
+
+  /** 유효시간 **/
   .effective-time {color: #E71825;width: 100%;text-align: center;display: block;margin-top: 11px;}
+
+  /** 인증번호 입력 **/
   .certification-number {display: flex;justify-content: center;  
     .number {display: flex;gap: 8px;
-      input {width: 100%;min-width: 1px;max-width: 42px;height: 48px;border: 1px solid #C6C6C6;border-radius: 4px;text-align: center;}
+      input {width: 100%;min-width: 1px;max-width: 42px;height: 48px;border: 1px solid #C6C6C6;border-radius: 4px;text-align: center;font-weight: 700;}
     }
   }
+
   .wrap-form-area{margin: 24px 0;
     &:first-child{margin: 0;}
     li{
       p.txt.disabled{color:#8E8E8E;}
     }    
   }
-  .total-area{border-top:1px solid #717171;margin-top: 24px;padding-top: 24px;display: flex;    
-    p{}
-  }     
 
-  //국민비서 가입절차
+  /** 합계 **/
+  .total-area{border-top:1px solid #717171;margin-top: 24px;padding-top: 24px;display: flex;}     
+  
+  /** 국민비서 가입절차 **/
   .population-list{
     li:first-child .title-type3{margin-top: 0;}     
     img{width:100%;height:auto;}
     strong{color:#246BEB;}
     p{margin-top: 12px;display: flex;gap:13px;margin-bottom: 25px;}
   }
-
-  //국민비서 신청 안내
+  
+  /** 국민비서 신청 안내 **/
   .population-txt-box {border-radius: 12px;background-color: #EFF5FF;padding: 45px 302px 45px 40px;position: relative;margin-bottom: 48px;    
     .txt {font-size: 25px;color: #16408D;}
     .main-txt {font-size: 19px;line-height: 150%;margin-top: 20px;
@@ -43,10 +47,8 @@
       i {opacity: 0.4;margin-top: 3px;}
     }
   }
-
-
-
-  //주소검색 팝업
+  
+  /** 주소검색 팝업 **/
   &.wrap-add-modal{height:642px;
     .form-group{position: relative;
       input{padding-right: 80px;}
@@ -72,8 +74,7 @@
     }
   }
 
-
-  //간편인증
+  /** 간편인증 **/
   &.wrap-login{
     margin-top: 0;
     .certification-list{
@@ -84,7 +85,7 @@
   }  
 }
 
-//실명확인
+/** 실명확인 **/
 .modal-wrap.aut-pages{min-height: 0 !important;
   h5{font-size:25px;}
   .content-wrap,.wrap-login{padding: 0 !important;}
@@ -106,15 +107,14 @@
   .compulsory-txt{margin-bottom: 14px;}
 }
 
-@media screen and (max-width: 767px) {
-  //국민비서 가입절차
+@media screen and (max-width: 767px) {  
+  /** 국민비서 가입절차 **/  
   .population-box{
-    .modal-body{max-height: calc(100vh - 350px);}
-            
+    .modal-body{max-height: calc(100vh - 350px);}            
     .modal-footer button{width:100%;}
   }
 
-  //국민비서 신청 안내
+  /** 국민비서 신청 안내 **/
   .modal-body .population-txt-box {padding: 24px;
     .img-box {position: static;transform: translateY(0);text-align: center;width:100%;
       img {width: 280px;}
@@ -122,7 +122,7 @@
     .main-txt br {display: none;}
   }
 
-  //주소검색
+  /** 주소검색 **/
   .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li {
     .inp-box .box2 {flex-direction: column;}
     .tit {width: 90px;min-width: 90px;}
@@ -132,8 +132,8 @@
   }  
 }
 
-@media screen and (max-width: 550px) {
-  //간편인증
+@media screen and (max-width: 550px) {  
+  /** 간편인증 **/
   .modal-body{    
     &.wrap-login{      
       .certification-list{        
@@ -145,7 +145,10 @@
 
 @media screen and (max-width: 480px) {
   .modal-body{
-    .certification-number{padding: 22px 10px;}        
+    /** 인증번호 입력 **/
+    .certification-number{padding: 22px 10px;}  
+    
+    /** 인증번호 재발송 **/
     .reforwarding{flex-direction: column;
       button{width:100%;margin-top: 21px;}
     }    

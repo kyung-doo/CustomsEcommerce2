@@ -18,9 +18,9 @@ class Pagination {
 
     init () {
         this.ele.append(`
-            <button class="page-navi prev">이전</button>
+            <button class="page-navi prev" title="이전 게시물 목록 페이지로 이동" aria-label="이전 게시물 목록 페이지로 이동">이전</button>
             <div class="page-links"></div>
-            <button class="page-navi next">다음</button>
+            <button class="page-navi next" title="다음 게시물 목록 페이지로 이동" aria-label="다음 게시물 목록 페이지로 이동">다음</button>
         `);
         this.ele.find('.page-navi.prev').on('click', () => {
             if(this.page > 1) {
@@ -75,9 +75,9 @@ class Pagination {
         if(this.props.totalPages < this.viewCount) {
             for(let i = 1; i<=this.props.totalPages; i++) {
                 if(i === this.page) {
-                    this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);"><span class="sr-only">현재페이지 </span>${i}</a>`)
+                    this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);" title="현재페이지" aria-label="현재페이지"><span class="sr-only">현재페이지</span>${i}</a>`)
                 } else {
-                    this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);">${i}</a>`)
+                    this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);" title="${i} 페이지 목록 보기" aria-label="${i} 페이지 목록 보기">${i}</a>`)
                 }
             }
         } else {
@@ -85,36 +85,36 @@ class Pagination {
             if(this.page <= Math.ceil(count/2)) {
                 for(let i = 1; i<=count; i++) {
                     if(i === this.page) {
-                        this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);"><span class="sr-only">현재페이지 </span>${i}</a>`)
+                        this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);" title="현재페이지" aria-label="현재페이지"><span class="sr-only">현재페이지 </span>${i}</a>`)
                     } else {
-                        this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);">${i}</a>`)
+                        this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);" title="${i} 페이지 목록 보기" aria-label="${i} 페이지 목록 보기">${i}</a>`)
                     }
                 }
                 this.ele.find('.page-links').append(`<span class="page-link link-dot"></span>`);
-                this.ele.find('.page-links').append(`<a class="page-link" data-page="${this.props.totalPages}" href="javascript: void(0);">${this.props.totalPages}</a>`);
+                this.ele.find('.page-links').append(`<a class="page-link" data-page="${this.props.totalPages}" href="javascript: void(0);" title="${this.props.totalPages} 페이지 목록 보기" aria-label="${this.props.totalPages} 페이지 목록 보기">${this.props.totalPages}</a>`);
             } else if(this.page > this.props.totalPages - Math.ceil(count/2)) {
-                this.ele.find('.page-links').append(`<a class="page-link" data-page="1" href="javascript: void(0);">1</a>`);
+                this.ele.find('.page-links').append(`<a class="page-link" data-page="1" href="javascript: void(0);" title="1 페이지 목록 보기" aria-label="1 페이지 목록 보기">1</a>`);
                 this.ele.find('.page-links').append(`<span class="page-link link-dot"></span>`);
                 for(let i = this.props.totalPages - this.viewCount + 1; i<=this.props.totalPages; i++) {
                     if(i === this.page) {
-                        this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);"><span class="sr-only">현재페이지 </span>${i}</a>`)
+                        this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);" title="현재페이지" aria-label="현재페이지"><span class="sr-only">현재페이지 </span>${i}</a>`)
                     } else {
-                        this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);">${i}</a>`)
+                        this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);" title="${i} 페이지 목록 보기" aria-label="${i} 페이지 목록 보기">${i}</a>`)
                     }
                 }
             } else {
                 const minusNum = this.page - Math.ceil(count/2) + 1
-                this.ele.find('.page-links').append(`<a class="page-link" data-page="1" href="javascript: void(0);">1</a>`);
+                this.ele.find('.page-links').append(`<a class="page-link" data-page="1" href="javascript: void(0);" title="1 페이지 목록 보기" aria-label="1 페이지 목록 보기">1</a>`);
                 this.ele.find('.page-links').append(`<span class="page-link link-dot"></span>`);
                 for(let i = minusNum; i<count+minusNum; i++) {
                     if(i === this.page) {
-                        this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);"><span class="sr-only">현재페이지 </span>${i}</a>`)
+                        this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);" title="현재페이지" aria-label="현재페이지"><span class="sr-only">현재페이지 </span>${i}</a>`)
                     } else {
-                        this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);">${i}</a>`)
+                        this.ele.find('.page-links').append(`<a class="page-link" data-page="${i}" href="javascript: void(0);" title="${i} 페이지 목록 보기" aria-label="${i} 페이지 목록 보기">${i}</a>`)
                     }
                 }
                 this.ele.find('.page-links').append(`<span class="page-link link-dot"></span>`);
-                this.ele.find('.page-links').append(`<a class="page-link" data-page="${this.props.totalPages}" href="javascript: void(0);">${this.props.totalPages}</a>`);
+                this.ele.find('.page-links').append(`<a class="page-link" data-page="${this.props.totalPages}" href="javascript: void(0);" title="${this.props.totalPages} 페이지 목록 보기" aria-label="${this.props.totalPages} 페이지 목록 보기">${this.props.totalPages}</a>`);
             } 
         }
         const owner = this;

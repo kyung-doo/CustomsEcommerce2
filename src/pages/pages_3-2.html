@@ -70,7 +70,7 @@
                            <div class="inp-box">
                               <div class="form-group medium mw-298">                     
                                  <div class="form-conts">
-                                    <input type="text" class="input mw-298" id="ex1" title="배송지명을 입력해주세요" value="우리집">
+                                    <input type="text" class="input mw-298" id="ex1" title="배송지명을 입력해주세요">
                                  </div>                              
                               </div>
                            </div>   
@@ -80,13 +80,13 @@
                            <div class="inp-box">
                               <div class="form-group medium first-add mw-140">                     
                                  <div class="form-conts">
-                                    <input type="text" class="input" id="ex2" disabled title="우편번호를 확인해주세요" value="123456">
+                                    <input type="text" class="input" id="ex2" disabled title="우편번호를 확인해주세요">
                                  </div>                              
                               </div>
                               <button type="button" class="btn secondary medium ico">우편번호 검색 <i class="icon search-type1 medium"></i></button>
                               <div class="form-group medium last-add mw-695">                     
                                  <div class="form-conts">
-                                    <input type="text" class="input" disabled title="주소를 확인해주세요" value="대전시 서구 도안동123">
+                                    <input type="text" class="input" disabled title="주소를 확인해주세요">
                                  </div>                              
                               </div>
                            </div>  
@@ -96,7 +96,7 @@
                            <div class="inp-box">
                               <div class="form-group medium mw-1009">                     
                                  <div class="form-conts">
-                                    <input type="text" class="input" id="ex3" title="상세주소를 입력해주세요" value="123동 456호">
+                                    <input type="text" class="input" id="ex3" title="상세주소를 입력해주세요">
                                  </div>                             
                               </div>
                            </div>  
@@ -156,35 +156,37 @@
                   <div class="inp-form">
                      <ul>                                                         
                         <li class="col2 txt-list">
-                           <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
-                           <div class="inp-box">
-                              <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
-                              <p class="add-txt">가락마을 10단지, 1234-5678</p>
-                           </div>                        
+                           <strong class="add-tit">입력을 클릭해서 주소를 추가해 주세요</strong>
+                           <!-- <div class="inp-box">
+                              <p class="add-txt">기본주소</p>
+                              <p class="add-txt">상세주소</p>
+                           </div>                         -->
                         </li>
                      </ul>
-                     <div class="form-btn-area">                        
+                     <div class="form-btn-area">         
+                        <button class="btn text medium" data-modal-target="#modal1"><i class="icon btn-more medium"></i>입력</button>               
                         <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
                      </div>
                   </div>                  
                   <div class="inp-form">
                      <ul>                                                         
                         <li class="col2 txt-list">
-                           <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
+                           <strong class="add-tit">우리집(세종)</strong>
                            <div class="inp-box">
                               <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
                               <p class="add-txt">가락마을 10단지, 1234-5678</p>
                            </div>                        
                         </li>
                      </ul>
-                     <div class="form-btn-area">                        
+                     <div class="form-btn-area">                    
+                        <button class="btn text medium" data-modal-target="#modal1"><i class="icon refresh medium"></i>수정</button>      
                         <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
                      </div>
                   </div>                  
                   <div class="inp-form">
                      <ul>                                                         
                         <li class="col2 txt-list">
-                           <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
+                           <strong class="add-tit">우리집(세종)</strong>
                            <div class="inp-box">
                               <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
                               <p class="add-txt">가락마을 10단지, 1234-5678</p>
@@ -192,6 +194,7 @@
                         </li>
                      </ul>
                      <div class="form-btn-area">                        
+                        <button class="btn text medium" data-modal-target="#modal1"><i class="icon refresh medium"></i>수정</button>      
                         <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
                      </div>
                   </div>                  
@@ -206,8 +209,7 @@
                </div>
                <!-- 팝업 사용후 삭제해주세요 -->
                <div class="testtest">
-                  <!-- 주소 입력 -->
-                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">주소 입력</button>
+                  <!-- 주소 입력 -->                  
                   <div id="modal1" class="modal d-none" data-ui="modal">
                      <div class="modal-wrap mw-358">
                         <div class="modal-header">
@@ -268,7 +270,7 @@
                            </div>                           
                         </div>
                         <div class="modal-footer">
-                           <button type="button" class="btn tertiary medium">취소</button>
+                           <button type="button" class="btn tertiary medium modal-close">취소</button>
                            <button type="button" class="btn primary medium">저장</button>
                         </div>
                      </div>

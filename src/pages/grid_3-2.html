@@ -147,11 +147,11 @@
                            $(pcElement).addClass('line2');
                            $(pcElement).find('th').eq(0).attr('rowspan', 2);
                            const newHead = $(`<tr class="line2 tr-first"></tr>`);
-                           newHead.append($(pcElement).find('th').eq(0)).append(`<th colspan="4">본세</th>`);
+                           newHead.append($(pcElement).find('th').eq(0)).append(`<th scope="col" colspan="4">본세</th>`);
                            newHead.insertBefore($(pcElement));
                         },
                         rowCreated: ( pcElement, mobileElement, rowData, index) => {
-                           $(`<th>${table6titles[index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
+                           $(`<th scope="col">${table6titles[index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
                         },
                         created: (element, data, head, body) => {
                            $(element).find('table').removeClass('crud').addClass('cont');

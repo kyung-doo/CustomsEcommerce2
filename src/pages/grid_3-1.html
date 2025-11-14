@@ -113,8 +113,8 @@
                         },
                         rowCreated: ( pcElement, mobileElement, rowData, index) => {
                            $(pcElement).find('td').eq(3).addClass('bor-right');
-                           $(`<th>${['관세', '부가가치세', '개별소비세', '주세', '미신고가산세'][index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
-                           $(`<th>${['교통에너지환경세', '교육세', '농어촌특별세', '신고지연가산세', '합계'][index]}</th>`).insertBefore($(pcElement).find('td').eq(4));
+                           $(`<th scope="col">${['관세', '부가가치세', '개별소비세', '주세', '미신고가산세'][index]}</th>`).insertBefore($(pcElement).find('td').eq(0));
+                           $(`<th scope="col">${['교통에너지환경세', '교육세', '농어촌특별세', '신고지연가산세', '합계'][index]}</th>`).insertBefore($(pcElement).find('td').eq(4));
                         },
                         created: (element, data, head, body) => {
                            $(element).find('table').removeClass('crud').addClass('cont');

@@ -1,5 +1,5 @@
 @use "../mixin" as *;
-/** 공통 아이콘 css 시작 **/
+/** 스타일가이드 아이콘 **/
 .icon {
     display: inline-block;
     width: 20px;
@@ -273,4 +273,4 @@
         background-image: url('../assets/icons/decrease.svg'); 
     }     
 }
-/** 공통 아이콘 css 끝 **/
+/** // 스타일가이드 아이콘 **/

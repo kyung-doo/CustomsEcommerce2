@@ -1,6 +1,5 @@
 @use "../mixin" as *;
-
-/** 공통 버튼 css 시작 **/
+/** 스타일가이드 버튼 **/
 button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align-items: center;border-radius: 4px;justify-content: center;white-space: nowrap;
 
   &.xlarge {padding: 0 24px;height: 64px;font-size: 19px;}
@@ -44,4 +43,4 @@ button[class*=btn],label[class*=btn] {cursor: pointer;display: inline-flex;align
 [class*=btn-area-type]{    
     .align{flex-wrap: wrap;}  
 } 
-/** 공통 버튼 css 끝 **/
+/** // 스타일가이드 버튼 **/

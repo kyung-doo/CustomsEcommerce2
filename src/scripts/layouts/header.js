@@ -261,5 +261,12 @@ $(() => {
     });   
 
 
-
+    //언어 체크 checked => true
+    window.addEventListener('load', () => {
+        const kr = document.getElementById('kr');
+        if (kr && kr.getAttribute('checked') !== null) {        
+            kr.checked = true;
+            kr.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    });
 });

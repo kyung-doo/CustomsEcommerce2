@@ -15,11 +15,13 @@ class Accordion {
         this.ele.find('.accordion-header .accordion-btn').on('click', ( e ) => {            
             const target = $(e.currentTarget).closest('.accordion-wrap');                           
             if(!target.hasClass('active')) {
+                console.log(this.props.beforeClose)
                 if(this.props.beforeClose) {
-                    //다른 버튼 클릭하면 나머지 닫기
-                    target.siblings('*[data-ui="accordion"]').find('.accordion-body').slideUp(100);
-                    target.siblings('*[data-ui="accordion"]').removeClass('active');                    
+                    //다른 버튼 클릭하면 나머지 닫기                    
+                    $('[data-ui="accordion"]').find('.accordion-body').slideUp(100);
+                    $('[data-ui="accordion"]').removeClass('active');                    
                 }
+                console.log(2)
                 //열기
                 target.addClass('on'); 
                 target.find(".accordion-body").slideDown(100);

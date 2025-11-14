@@ -1,6 +1,6 @@
 @use "../mixin" as *;
 
-/** 공통 태그 css 시작 **/
+/** 스타일가이드 태그 **/
 .tag-wrap {
   [class*=btn-] {
     display: inline-flex;
@@ -61,4 +61,4 @@
     }
   }
 }
-/** 공통 태그 css 끝 **/
+/** // 스타일가이드 태그 **/
