@@ -60,26 +60,26 @@ class Datepicker {
             }
 
             if(!this.isValidDate(val)) {
-                alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
+                // alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
-                // ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(this.props.isMonth) {
                     this.selectMonth = parseInt(dayjs(this.selectDate).format('YYYYMM'));
                     if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
-                        alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
+                        // alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-                        // ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                        ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
                         return;
                     }
                     
                     if(this.props.minInput && $(this.props.minInput).val()) {
                         this.minMonth = parseInt(dayjs(new Date($(this.props.minInput).val())).format('YYYYMM'));
                         if(this.selectMonth < this.minMonth) {
-                            alert('시작월은 종료월보다 클 수 없습니다.');
+                            // alert('시작월은 종료월보다 클 수 없습니다.');
                             //this.input.val('').focus(); 
-                            // ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
                         }
                     }
 
@@ -87,9 +87,9 @@ class Datepicker {
                         this.maxMonth = parseInt(dayjs(new Date($(this.props.maxInput).val())).format('YYYYMM'));
                         console.log(this.input.val(), $(this.props.maxInput).val())
                         if(this.selectMonth > this.maxMonth) {
-                            alert('종료월은 시작월보다 작을 수 없습니다.');
+                            // alert('종료월은 시작월보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
-                            // ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                            ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
                         }
                     }
                 } else {
