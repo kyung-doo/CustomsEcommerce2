@@ -66,14 +66,34 @@ class Datepicker {
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(this.props.isMonth) {
+                    this.selectMonth = parseInt(dayjs(this.selectDate).format('YYYYMM'));
                     if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
-                        //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
+                        // alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
                         ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
                         return;
                     }
+                    
+                    if(this.props.minInput && $(this.props.minInput).val()) {
+                        this.minMonth = parseInt(dayjs(new Date($(this.props.minInput).val())).format('YYYYMM'));
+                        if(this.selectMonth < this.minMonth) {
+                            // alert('시작월은 종료월보다 클 수 없습니다.');
+                            //this.input.val('').focus(); 
+                            ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                        }
+                    }
+
+                    if(this.props.maxInput && $(this.props.maxInput).val()) {
+                        this.maxMonth = parseInt(dayjs(new Date($(this.props.maxInput).val())).format('YYYYMM'));
+                        console.log(this.input.val(), $(this.props.maxInput).val())
+                        if(this.selectMonth > this.maxMonth) {
+                            // alert('종료월은 시작월보다 작을 수 없습니다.');
+                            //this.input.val('').focus(); 
+                            ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                        }
+                    }
                 } else {
-                    console.log(this.props.maxDate, new Date(val) > this.props.maxDate)
+                    
                     if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
                         //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
@@ -417,8 +437,8 @@ class Datepicker {
 
             this.doubleClickDelay = false;
             this.calendar.find('.day-con .day button').on('click', ( e ) => {
+                const target = $(e.currentTarget).parent();
                 if(!this.doubleClickDelay) {
-                    const target = $(e.currentTarget).parent();
                     this.selectDate = dayjs(target.data('date')).toDate();
                     this.renderCalendar();
                     this.doubleClickDelay = true;
@@ -426,9 +446,14 @@ class Datepicker {
                         this.doubleClickDelay = false;
                     }, 500);
                 } else {
-                    const target = $(e.currentTarget).parent();
-                    this.selectDate = dayjs(target.data('date')).toDate();
-                    this.calendar.find(".btn-enter").trigger('click');
+                    if(dayjs(this.selectDate).format('YYYYMMDD') === dayjs(target.data('date')).format('YYYYMMDD')) {
+                        this.selectDate = dayjs(target.data('date')).toDate();
+                        this.calendar.find(".btn-enter").trigger('click');
+                    } else {
+                        this.doubleClickDelay = false;
+                        clearTimeout(this.doubleClickTimeout);
+                        $(e.currentTarget).trigger('click');
+                    }
                 }
             });
         }
@@ -467,6 +492,7 @@ class Datepicker {
     }
 
     renderMonth () {
+        var owner = this;
         this.calendar.find(".month-con").empty();
         for(let i = 1; i <= 12; i++) {
             if(this.currentMonth === i) {
@@ -481,6 +507,23 @@ class Datepicker {
                     $(this).attr('disabled', 'disabled');
                 }
             });
+        }
+
+        if(this.props.isMonth) {
+            if(this.props.maxInput && $(this.props.maxInput).val()) {
+                this.calendar.find(".month-con button").each(function () {
+                    if(parseInt(dayjs(new Date(owner.currentYear+'-'+$(this).data('month'))).format('YYYYMM')) > parseInt(dayjs(new Date($(owner.props.maxInput).val())).format('YYYYMM'))) {
+                        $(this).attr('disabled', 'disabled');
+                    }
+                });
+            }
+            if(this.props.minInput && $(owner.props.minInput).val()) {
+                this.calendar.find(".month-con button").each(function () {
+                    if(parseInt(dayjs(new Date(owner.currentYear+'-'+$(this).data('month'))).format('YYYYMM')) < parseInt(dayjs(new Date($(owner.props.minInput).val())).format('YYYYMM'))) {
+                        $(this).attr('disabled', 'disabled');
+                    }
+                });
+            }
         }
         
         this.calendar.find(".month-con button").on('click', (e) => {
@@ -504,7 +547,13 @@ class Datepicker {
                     this.doubleClickDelay = false;
                 }, 200);
             } else {
-                this.calendar.find(".btn-enter").trigger('click');
+                if(dayjs(this.selectDate).format('YYYYMM') === dayjs(`${this.currentYear}-${$(e.currentTarget).data('month')}`).format('YYYYMM')) {
+                    this.calendar.find(".btn-enter").trigger('click');
+                } else {
+                    this.doubleClickDelay = false;
+                    clearTimeout(this.doubleClickTimeout);
+                    $(e.currentTarget).trigger('click');
+                }
             }
         });
     }
