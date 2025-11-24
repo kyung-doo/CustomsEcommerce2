@@ -28,7 +28,7 @@ input {
   }
 }
 .form-chip {position: relative;
-  label {display: inline-block;border-radius: 4px;border: 1px solid #c6c6c6;background-color: #fff;display: inline-flex;align-items: center;gap: 6px;cursor: pointer}
+  label {display: inline-block;border-radius: 4px;border: 1px solid #c6c6c6;background-color: #fff;display: inline-flex;align-items: center;gap: 6px;cursor: pointer;    justify-content: center;}
   input {
     &[type=radio]:checked + label, &[type=checkbox]:checked + label {color: #1d56bc;border-color: #246beb;background-color: #eff5ff;}
     &[type=radio]:checked + label:before, &[type=checkbox]:checked + label:before {content: "";display: block;background-image: url("../assets/icons/chips.svg");background-size: cover;position: absolute;}

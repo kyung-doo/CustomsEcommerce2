@@ -57,6 +57,9 @@
       }
     }
   }
+  .auth-notice{max-width: 1280px;margin: 80px auto 20px;padding-left: 26px;color: #555;position: relative;
+    &::before{content: "";display: block;position: absolute;left: 0;width: 16px;height: 16px;background-image: url(../assets/icons/live-area.svg);}
+  }
   .gnb-menu {
     > li.active {
       .gnb-main-trigger {
@@ -121,8 +124,7 @@
         .sub-title {font-size: 18px;margin-bottom: 0;}
         .depth2 {padding-top: 0;}
         .depth2 a i {
-          &:after {display: none;}
-          font-size: 16px;
+          // &:after {position: static;background-repeat: no-repeat;display: inline-block;transform: translateY(0);margin-left: 10px;background-size: contain;}font-size: 16px;
         }
       }
 
@@ -331,3 +333,13 @@ html[lang=en] {
   }
 }
 /** // 레이아웃 navigation 영역 **/
+
+
+
+
+
+
+
+
+
+

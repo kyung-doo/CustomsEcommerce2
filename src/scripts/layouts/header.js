@@ -47,6 +47,13 @@ $(() => {
             $("#wrap > .blind").hide();
             $('body').css({'overflow': 'hidden'});
             $("#header .allmenu").addClass('active');
+            $(window).on('resize', () => {
+                if($("#header .allmenu").hasClass('active')){                    
+                    $('body').css({'overflow': 'hidden'});                    
+                }else{
+                    $('body').css({'overflow': 'auto'});
+                }
+            }); 
         } else {
             $(".main-allmenu").hide();
             $('body').css({'overflow': ''});
@@ -79,10 +86,15 @@ $(() => {
         $('.sub-title').removeClass('mobile-dep-menu');
         $('.sub-title').siblings('ul').hide();
         $('body,html').css({"overflow":"hidden"});
+
         $(window).on('resize',function(){
-            $('body,html').css({"overflow":"hidden"});
+            if($("#wrap").hasClass('mobile-open')){
+                $('body,html').css({"overflow":"hidden"});
+            }else{
+                $('body,html').css({"overflow":"auto"});
+            }
+            
         }) 
-        
     });
     $(".mobile-close").on('click', function (e) {
         gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
@@ -203,6 +215,8 @@ $(() => {
             })
             
         }
+
+        enableScroll();
     });    
 
     // 팝업

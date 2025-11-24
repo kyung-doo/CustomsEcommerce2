@@ -13,7 +13,7 @@ class Modal {
 
     init () {
         this.ele.find(".modal-wrap").append(
-            `<button type="button" class="btn-close">
+            `<button type="button" class="btn-close" id="popup-default-close">
                 <i class="icon close"></i>
                 <span class="sr-only">닫기</span>                     
             </button>`

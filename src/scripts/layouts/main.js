@@ -14,7 +14,27 @@ $(() => {
     });  
     
     $(function(){    
-         
+        var btn = $('.main .box1 .cont-box .wrap-mobile-list .more button');
+
+        btn.click(function(){
+            if($(this).hasClass('open')){
+                console.log('열기');
+                $(this).closest('.wrap-mobile-list').addClass('active');
+                $(this).attr('title','메뉴닫기');
+                $(this).attr('aria-label','메뉴닫기');
+                $(this).removeClass('open');
+                $(this).addClass('close');                
+                $(this).text('접기')
+            }else{
+                console.log('닫기');
+                $(this).closest('.wrap-mobile-list').removeClass('active');
+                $(this).attr('title','메뉴열기');
+                $(this).attr('aria-label','메뉴열기');
+                $(this).removeClass('close');
+                $(this).addClass('open');                
+                $(this).text('더보기')
+            }
+        })
     })
 
     //개인통관고유부호 복사
@@ -29,8 +49,8 @@ $(() => {
             $(this).after(html)
 
             setTimeout(function(){
-              $('.copy-txt').animate({"opacity":"0"},500)
-            },500)            
+              $('.copy-txt').remove()
+            },500)   
         })
     })
     
@@ -62,7 +82,7 @@ $(() => {
                 //반응형
                 $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont').each(function(i){
                     var tabId = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont').eq(i).attr('id');                    
-                    var dataNum = $('.main .wrap-slide-box .slide-area1 .swiper-slide').eq(i).attr('data-btn');                    
+                    var dataNum = $('.main .wrap-slide-box .slide-area1 .swiper-slide').eq(i).attr('data-btn');                                        
                     var txt = $(`#${tabId}`).find('button .kr-tit').text();                         
                     var tabClass = $(`#${tabId}`).attr('class').split(/\s+/);
                     var target = tabClass.find(cls => cls.startsWith('illust-people')); 
@@ -70,20 +90,29 @@ $(() => {
 
                     if(tabId === dataNum){                        
                         $('.main .box1 .cont-box .wrap-slide-box .slide-box a').eq(i).addClass(target)
+                        $('.main .box1 .cont-box .wrap-mobile-list ul li a').eq(i).addClass(target)                        
 
                         function responsiveCheck() {
                             let winWidth = $(window).width();
 
                             if (winWidth <= 1120) {
+                                var link = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont .btn').eq(i).attr('onclick');                                
                                 $('.main .box1 .cont-box .wrap-slide-box .slide-box a [class*=-txt]').eq(i).text(txt);
-                                $(`#${tabId}`).find('button .kr-tit').text(txt1)
+                                $('.main .box1 .cont-box .wrap-mobile-list ul li a').eq(i).text(txt)
+                                $(`#${tabId}`).find('button .kr-tit').text(txt1);                                   
+                                $('.main .box1 .cont-box .wrap-slide-box .slide-box a').eq(i).attr('onclick',link)                                        
+                                $('.main .box1 .mobile-list a').eq(i).attr('onclick',link)
+                                //console.log('1120 보다 작음')
                             }else{
-                                $(`#${tabId}`).find('button .kr-tit').text(txt)
-                                $('.main .box1 .cont-box .wrap-slide-box .slide-box a [class*=-txt]').eq(i).text(txt1)
+                                $(`#${tabId}`).find('button .kr-tit').text(txt);
+                                $('.main .box1 .cont-box .wrap-slide-box .slide-box a [class*=-txt]').eq(i).text(txt1);
+                                $('.main .box1 .cont-box .wrap-slide-box .slide-box a').removeAttr('onclick')
+                                //console.log('1120 보다 큼')                                
                             }
                         }
                         // 처음 로드 시 실행
                         $(document).ready(responsiveCheck);
+                        
 
                         // 창 크기 변경 시마다 실행
                         $(window).resize(responsiveCheck);

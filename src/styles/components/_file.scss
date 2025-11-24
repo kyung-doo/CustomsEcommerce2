@@ -19,7 +19,7 @@ input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
   }
   .upload-list {display: flex;flex-direction: column;gap: 16px;    
     .file-name {padding-right: 20px;margin: 8px 0;display: flex;align-items: center;}
-    .file-info {border: 1px solid #D8D8D8;border-radius: 4px;padding: 8px 16px 8px 16px;position: relative;display: flex;justify-content: space-between;
+    .file-info {border: 1px solid #D8D8D8;border-radius: 4px;padding: 0 16px 0 16px;position: relative;display: flex;justify-content: space-between;
       .btn-wrap{display: flex;align-items: center;}
       &.file-down{flex-wrap: wrap;justify-content: space-between;}
     }
@@ -37,7 +37,7 @@ input[type=file]{display:block;position:absolute;width:0;height:0;opacity: 0;
     }   
     .file-down {      
       button, a {display: flex;align-items: center;gap: 4px;padding: 0;}
-      .btn-wrap {gap: 16px;justify-content: flex-end;flex: 1;margin: 8px 0;}
+      .btn-wrap {gap: 16px;justify-content: flex-end;flex: 1;/*margin: 7px 0;*/}
     }
   }
   .upload-delete-btn {position: absolute;top: -4px;right: 0;

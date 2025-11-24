@@ -102,3 +102,106 @@ html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;}
 /** a태그 공통 **/
 a{text-decoration: none;}
 a[class*=cl-]{text-decoration: underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** 테스트 css **/
+.content-wrap .cont-head .head-tit {
+  padding: 40px 0 !important;
+}
+
+.search-box {
+  padding: 15px 20px !important;
+}
+
+.search-box ul {
+  gap: 15px 0 !important;
+}
+
+.cont-body .search-box + .compulsory-txt {
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+}
+
+.cont-body .search-box {
+  margin-top: 15px !important;
+}
+
+.cont-body .search-box + .tbl-top {
+  margin-top: 40px !important;
+}
+
+@media screen and (max-width: 767px) {
+  * {
+    font-size: 15px;
+  }
+  .form-group.medium input[type=text], .form-group.medium select, .form-group.medium input[type=password] {
+    height: 40px !important;
+  }
+  .form-chip.large label {
+    line-height: 15px !important;
+  }
+  .calendar .calendar-form {
+    height: 40px !important;
+  }
+  
+  .search-box ul {
+    gap: 10px 0 !important;
+  }
+  .content-wrap .cont-head .head-tit {
+    padding: 30px 0 !important;
+  }
+  .search-box .btn-area{
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+  }
+  .table-wrap.mo .body li{    
+    padding: 10px 8px;
+  }
+  button[class*=btn].large, label[class*=btn].large{
+    font-size: 17px !important;
+  }
+  button[class*=btn].medium, label[class*=btn].medium {
+    height: 40px !important;
+  }
+  button[class*=btn].large, label[class*=btn].large {
+    height: 45px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .content-wrap .cont-body .cont-advice .accordion-btn, .content-wrap .cont-body .cont-advice .accordion-body{
+        padding: 7px 15px !important;
+    }
+    .search-box li[class*=col] .search-area .calendar, .search-box li[class*=ratio] .search-area .calendar{
+      display: none !important;
+    }
+    .search-box .form-chip{
+      flex:1
+    }
+    .search-box ul li .search-area:has(.form-chip){
+      flex-wrap: nowrap;
+    }
+}

@@ -33,12 +33,12 @@
                         <strong class="tit">조회 기간선택</strong>
                         <div class="search-area">
                            <div class="calendar">
-                              <div class="calendar-form" data-ui="datepicker" data-props="isMonth: true">
+                              <div class="calendar-form" data-ui="datepicker" data-props="isMonth: true;maxInput: '#endDate';">
                                  <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM" maxlength="7">
                                  <button class="calendar-btn">시작 달력보기</button>
                               </div>
                               <i class="hy">~</i>
-                              <div class="calendar-form" data-ui="datepicker" data-props="isMonth: true">
+                              <div class="calendar-form" data-ui="datepicker" data-props="isMonth: true;minInput: '#startDate';">
                                  <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM" maxlength="7">
                                  <button class="calendar-btn">종료 달력보기</button>
                               </div>

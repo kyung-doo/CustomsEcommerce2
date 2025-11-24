@@ -142,7 +142,28 @@ class Datepicker {
             $('.calendar-blind').hide();
         });
 
-       
+
+        //1개월, 2개월 등등 체크하면 날짜 자동 입력
+        // $("input[name='range_period']").on("change", function () {
+        //     const id = $(this).attr("id");           period-6m
+        //     const raw = id.replace("period-", "");    6m
+        //     const num = parseInt(raw);                6
+        //     const unit = raw.replace(num, "");        m
+
+        //     let end = $("#endDate").val() ? dayjs($("#endDate").val()) : dayjs();
+        //     let start;
+
+        //     if (unit === "m") {
+        //         start = end.subtract(num, "month");
+        //     } else if (unit === "w") {
+        //         start = end.subtract(num * 7, "day");
+        //     } else {
+        //         return;
+        //     }
+
+        //     $("#endDate").val(end.format("YYYY-MM-DD")).trigger("change");
+        //     $("#startDate").val(start.format("YYYY-MM-DD")).trigger("change");
+        // });
     }
 
     isLeapYear(year) {
@@ -228,7 +249,7 @@ class Datepicker {
             this.hideCalendar();
             $('.calendar-blind').hide();
         });
-        this.calendar.find(".btn-enter").on('click', () => {
+        this.calendar.find(".btn-enter").on('click', () => {                        
             if(this.selectDate) {
                 if(!this.props.isMonth) {
                     this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));

@@ -238,7 +238,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
       .wrap-form-chip{display: flex;gap: 8px;}
     }    
   }
-  .btn-area {margin-top: 20px !important;padding-top: 20px;border-top: 1px solid #E6E8EA;}
+  .btn-area {margin-top: 15px !important;padding-top: 20px;border-top: 1px solid #E6E8EA;}
 }
 
 /** 하단버튼 반응형 **/
@@ -259,7 +259,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
     &::before{content:"";display: block;position: absolute;bottom:0;left: 0;width:100%;height: 2px;background-image:url(../assets/icons/dotted.svg)}
   }
 
-  .detail-file{padding-bottom: 32px;border-bottom:1px solid #E4E4E4;margin-bottom: 48px;
+  .detail-file{padding-bottom: 32px;border-bottom:1px solid #E4E4E4;margin-bottom: 32px;
     h5.title{margin-bottom: 16px;padding: 0;font-size: 17px;}
     .upload-list{gap:8px}
   }
@@ -267,18 +267,18 @@ body.common-loading,html.common-loading{overflow: hidden;}
   .wrap-pages-move{
     .pages-move{display: flex;
       li{width: calc(50% - 4px);
-        a{display: flex;width:100%;height:100%;border:1px solid #D8D8D8;align-items: center;padding: 25px 30px;border-radius: 4px;          
+        a,.txt{display: flex;width:100%;height:100%;border:1px solid #D8D8D8;align-items: center;padding: 15px 20px;border-radius: 4px;          
           strong{display: flex;gap:8px;align-items: center;}
-          p{font-size: 19px;position: relative;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+          p{position: relative;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
             &::before{content:"";display: block;position: absolute;top:2px;width:1px;height: 16px;background-color:#D8D8D8;}
           }          
-        }
+        }       
 
         &.prev{margin-right: 4px;
           strong{padding-right: 16px;}
           p{padding-left: 16px;
             &::before{left: 0;}
-          }
+          }          
         }
 
         &.next{margin-left: 4px;
@@ -287,6 +287,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
             &::before{right: 0;}
           }
           a{justify-content: flex-end;}
+          .txt{justify-content: flex-end;}
         }
       }
     }
@@ -349,7 +350,25 @@ body.common-loading,html.common-loading{overflow: hidden;}
         span{color:#2D2D2D;border:1px solid #555;padding: 0 8px;line-height: 1;border-radius: 20px;}
       }
     }
-    .circle-box{width:100%;height:351px;margin-top: 20px;border:1px solid #E4E4E4}
+    .circle-box{width:100%;height:351px;margin-top: 20px;position: relative;
+      #canvas1{position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);z-index: 1;}
+      .my-customs{position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);text-align: center;display: flex;flex-direction: column;gap: 10px;align-items: center;z-index: 2;;
+        .tit{font-size: 21px;}
+        .copy{color: #246BEB;font-size: 21px;font-weight: 700;padding: 0;background-color: rgba(0, 0, 0, 0.0);}
+        .state{display: inline-block;color: #246BEB;font-weight: 700;padding: 7px 8px;border-radius: 4px;background-color: #EFF5FF;}
+        
+        &.customs-type1{
+          .state{color: #FFB724;background-color: #FFF8E9;}
+        }
+        
+        &.customs-type2{
+          .copy:disabled{color: #C6C6C6;cursor: auto;
+            i{opacity: 0.4;}
+          }
+          .state{color: #EB003B;background-color: #FEECF0;}
+        }
+      }
+    }
     .txt-box{display: flex;flex-direction: column;align-items: center;gap: 12px;padding-bottom: 48px;margin-bottom: 24px;position: relative;
       &::before{bottom:0;content:"";display:block;position:absolute;left:0;width:100%;height:2px;background-image:url(../assets/icons/dotted.svg)}
       strong{display: flex;align-items: center;gap:6px;
@@ -645,7 +664,7 @@ body.common-loading,html.common-loading{overflow: hidden;}
     .wrap-pages-move{
       .pages-move{flex-direction: column;gap: 8px;
         li{margin:0 !important;width:100%;
-          a{padding: 25px 16px;}
+          // a{padding: 25px 16px;}
         }    
       }
     }     
@@ -653,11 +672,12 @@ body.common-loading,html.common-loading{overflow: hidden;}
 
   /*마이페이지*/ 
   .wrap-mypages{
-    .left-area{width:100%;border:0;padding: 0;min-width:100%;
+    .left-area{width:100%;border:0;padding: 0;min-width:100%;      
       .btn-area{
         .align{flex-direction: column;}
         button{width:100%;}
       }
+      .circle-box{width:100%;}
     }
   }
 
@@ -799,7 +819,8 @@ body.common-loading,html.common-loading{overflow: hidden;}
 
   /*상세페이지*/ 
   .wrap-detail{
-    h4.title{padding-bottom: 24px;font-size:21px}        
+    h4.title{padding-bottom: 24px;font-size:21px}    
+    h5.title{padding: 32px 0 32px 0;}    
   }
 
   /*그래프*/
