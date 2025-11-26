@@ -28,6 +28,9 @@ body.common-loading,html.common-loading{overflow: hidden;}
 /** 페이지 검색 필수입력  **/
 .cont-area .search-box .compulsory{margin-left: 5px;bottom: 9px;}
 
+/** 상단 검색영역 안에 필수 텍스트 **/
+.cont-area .search-box .compulsory-txt{margin: 0;padding-left: 16px;}
+
 /** 페이지 체크박스,라디오박스 검색 필수입력  **/
 .cont-area .search-box .form-check .tit .compulsory{margin-left: 5px;bottom: 5px;}
 
@@ -758,7 +761,10 @@ body.common-loading,html.common-loading{overflow: hidden;}
   }
   /*하단버튼*/ 
   .btn-area-type.pc{display: none !important;}
-  .btn-area-type.mo{display: flex !important;}    
+  .btn-area-type.mo{display: flex !important;}  
+  
+  /** 검색영역 필수 **/
+  .cont-area .search-box .compulsory-txt{margin-top: 16px;}
 }
 
 @media screen and (max-width: 480px) {  

@@ -3,7 +3,8 @@
 /** 스타일가이드 레이어팝업 **/
 .modal {position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 999;background-color: rgba(0, 0, 0, 0.5);transition: all .3s;}
 .modal-wrap {position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);border-radius: 8px;background-color: #fff;padding: 32px;width:95%;min-width: 100px;max-height:95%;}
-.modal-wrap:focus{outline: 4px solid #2f2f2f;}
+.modal-wrap:not(.in-sch-box):focus{outline: 4px solid #2f2f2f;}
+.modal-wrap.in-sch-box:focus{outline: 0;}
 .modal-header {display: flex;flex-direction: column;justify-content: center;align-items: flex-start;position: relative;box-sizing: border-box;margin-bottom: 25px;padding-right: 40px;
   h5 {margin-top: 15px;line-height: 150%;}
 }

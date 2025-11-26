@@ -36,13 +36,13 @@ blockquote:before, blockquote:after,
 q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 button, a {cursor: pointer;}
-html, body {overflow-y: auto;width: 100%;height: 100%;word-break: keep-all;word-wrap: break-word;-webkit-tap-highlight-color: transparent;scroll-behavior: smooth;}
-*{color:#1D1D1D;font-weight: 400;font-size:17px;}
+html, body {overflow-y: auto;width: 100%;height: 100%;-webkit-tap-highlight-color: transparent;scroll-behavior: smooth;}
+html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;color:#1D1D1D;font-weight: 400;font-size:17px;word-wrap: break-word;word-break: keep-all;}
 strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
 #wrap {position: relative;width: 100%;min-height:100%;background-color: #fff;display: flex;flex-direction: column;overflow: hidden;}
 .blind,.calendar-blind {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.7);z-index: 3;}
 .calendar-blind{z-index: 9;background-color: rgba(0, 0, 0, 0.0);}
-html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;}
+
 
 /** 개발 들어가면 삭제 **/
 .testtest{margin-top: 100px;}
@@ -68,6 +68,9 @@ html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;}
 .f-center{justify-content: center !important;}
 .f-no-wrap{flex-wrap: nowrap !important;}
 .f-aling-center{align-items: center !important;}
+
+/** display **/
+.d-block{display: block !important;}
 
 /** 선 **/
 .bor-right{border-right:1px solid #B1B8BE !important;}

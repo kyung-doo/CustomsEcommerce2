@@ -161,7 +161,7 @@
       }
       .mobile-close {position: absolute;top: 20px;right: 24px;font-size: 0;display: block;}
       .gnb-menu {max-width: 100%;width: 100%;flex-direction: column;display: block;}
-      .gnb-main-trigger {font-size: 15px;word-break: break-all;text-align: left;display: block;width: 120px;position: relative;color: #1D1D1D;font-weight: 700;padding: 13px 27px;
+      .gnb-main-trigger {font-size: 15px;text-align: left;display: block;width: 120px;position: relative;color: #1D1D1D;font-weight: 700;padding: 13px 27px;
         span, &:before {display: none;}
       }
       .gnb-toggle-wrap {display: none;left: auto;right: 0;width: calc(100% - 120px);overflow: auto;padding: 40px 24px;border-left: 1px solid #D8D8D8;border-top:0;}

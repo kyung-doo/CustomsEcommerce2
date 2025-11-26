@@ -38,7 +38,7 @@
 }
 
 // 테이블 
-.table-wrap {position: relative;min-width: 100%;width: 100%;word-break: break-all;overflow-x: auto;overflow-y: hidden;min-height: 125px;
+.table-wrap {position: relative;min-width: 100%;width: 100%;overflow-x: auto;overflow-y: hidden;min-height: 125px;
 
   //데이터없음
   .no-data{align-items: center !important;justify-content: center !important;}
@@ -53,7 +53,7 @@
     *:not(.tooltip-tit *) {font-weight: 700;}
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}
-      .contextual-help{bottom:2px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
+      .contextual-help{bottom:5px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
         .tooltip-ico{background-image: url(../assets/icons/tb-exclamation.svg);}
         .tooltip-popover{text-align: left;}
       }
@@ -111,7 +111,7 @@
       }
     }
 
-    .title {word-break: auto-phrase;line-height: 150%;position: relative;width:120px;min-width: 120px; 
+    .title {line-height: 150%;position: relative;width:120px;min-width: 120px; 
       *:not(.tooltip-ico) {
         .contextual-help{top:50%;transform: translateY(-50%);}
       }
@@ -175,7 +175,7 @@
               span{margin-right: 5px;}                            
             } 
           }
-          .title{width:100%;display: flex;justify-content: space-between;align-items: center;font-size: 19px;word-break: break-word;
+          .title{width:100%;display: flex;justify-content: space-between;align-items: center;font-size: 19px;
             &.dotted-line-bottom{margin-bottom: 0 !important;}
             *{font-size: 19px;font-weight: 700;}
             a{padding-right: 20px;}

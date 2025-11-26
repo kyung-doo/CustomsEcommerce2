@@ -72,7 +72,8 @@ $(() => {
     $('#header .main-menu .allmenu').on('focus',function(){
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        $('body').css({'overflow': ''});        
+        $('body').css({'overflow': ''});     
+        enableScroll();   
     });
 
 

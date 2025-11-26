@@ -59,10 +59,12 @@ class Datepicker {
                 return;
             }
 
+            var title = $('.head-tit').text();
+
             if(!this.isValidDate(val)) {
                 // alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
-                ecp_alert('',ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(this.props.isMonth) {
@@ -70,7 +72,7 @@ class Datepicker {
                     if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
                         // alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-                        ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                        ecp_alert(title,ECP_MSG.err_ecp_ko_00032,this.input.val(''));
                         return;
                     }
                     
@@ -79,7 +81,7 @@ class Datepicker {
                         if(this.selectMonth < this.minMonth) {
                             // alert('시작월은 종료월보다 클 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
                         }
                     }
 
@@ -89,7 +91,7 @@ class Datepicker {
                         if(this.selectMonth > this.maxMonth) {
                             // alert('종료월은 시작월보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                            ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
                         }
                     }
                 } else {
@@ -97,7 +99,7 @@ class Datepicker {
                     if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
                         //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-                        ecp_alert('',ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                        ecp_alert(title,ECP_MSG.err_ecp_ko_00032,this.input.val(''));
                         return;
                     }
 
@@ -106,7 +108,7 @@ class Datepicker {
                         if(this.selectDate < this.minDate) {
                             //alert('시작날짜는 종료날짜보다 클 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert('',ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
                         }
                     }
 
@@ -115,7 +117,7 @@ class Datepicker {
                         if(this.selectDate > this.maxDate) {
                             //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert('',ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                            ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
                         }
                     }
                 }

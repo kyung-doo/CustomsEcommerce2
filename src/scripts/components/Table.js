@@ -73,6 +73,7 @@ class Table {
             this.setHead();
             if(!this.sort.key) {
                 this.setBody();
+                console.log(33)
             }
         } catch(e) {}
     }
@@ -123,17 +124,21 @@ class Table {
         	boardTop.find('.tit strong').text(this.data.listLength)
         	//boardTop.find('select').val(this.limit);
             boardTop.find('select').val(this.data.limit);
+            console.log(this.data.limit)
 		}
 		if(this.ele.find('#faqTitle').length > 0) {
 			boardTop.find('#faqTitle').text(this.data.listLength)
+            console.log(1)
 		}	
 		//2025.09.11 일반게시판과 faq게시판 분리 end
 		
-       /* 2025.09.11 페이징 중복기능 삭제
+       /* 2025.09.11 페이징 중복기능 삭제 */
         boardTop.find('select').on('change.table', async () => {
             this.limit = boardTop.find('select').val();
             this.page = 1;
             this.sort = {key: '', sort: '', index: 0};
+
+            /*
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
             } else {
@@ -147,8 +152,8 @@ class Table {
                     this.setBody();
                 } catch( e ) {}
             }
-        });
-	  */
+            */
+        });	  
     }
 
     setPagination () {
@@ -162,6 +167,7 @@ class Table {
             this.page = page;
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
+                console.log(1)
             } else {
                 /* 2025.09.11 페이징오류 주석처리  
                 this.ele.find('.board-top select').val(this.limit); */
@@ -175,6 +181,7 @@ class Table {
                         this.setBody();
                     }
                 } catch( e ) {}
+                console.log(1)
             }
         });
     }
