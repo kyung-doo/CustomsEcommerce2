@@ -13,7 +13,7 @@ class Modal {
 
     init () {
         this.ele.find(".modal-wrap").append(
-            `<button type="button" class="btn-close" id="popup-default-close">
+            `<button type="button" class="btn-close" id="popup-default-close" title="레이어팝업 닫기">
                 <i class="icon close"></i>
                 <span class="sr-only">닫기</span>                     
             </button>`
@@ -50,10 +50,12 @@ class Modal {
         });        
 
         if(this.ele.attr('id') === 'homepage' || this.ele.attr('id') === 'customs'){
-            $("body").css({'overflow': 'auto'});            
+            $("body").css({'overflow': 'auto'});       
+            $('#homepage,#customs').hide();                                        
+            this.ele.show();            
         }else{
             $("body").css({'overflow': 'hidden'});            
-        }
+        }       
         
         this.ele.find(".btn-close").on("focusin", e => {
             $(document).on('keydown.modal', (e) => {

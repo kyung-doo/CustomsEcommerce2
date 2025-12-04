@@ -68,12 +68,11 @@ class Table {
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
-            this.scrollTop();
+            //this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             if(!this.sort.key) {
                 this.setBody();
-                console.log(33)
             }
         } catch(e) {}
     }
@@ -121,14 +120,14 @@ class Table {
 			this.data.limitList.forEach(limit => {
             boardTop.find('select').append(`<option value="${limit}">${limit}개씩 보기</option>`);
         	});
-        	boardTop.find('.tit strong').text(this.data.listLength)
+        	boardTop.find('.tit strong').text(Number(this.data.listLength).toLocaleString());
         	//boardTop.find('select').val(this.limit);
             boardTop.find('select').val(this.data.limit);
-            console.log(this.data.limit)
+            console.log(this.data.listLength)
 		}
 		if(this.ele.find('#faqTitle').length > 0) {
-			boardTop.find('#faqTitle').text(this.data.listLength)
-            console.log(1)
+			boardTop.find('#faqTitle').text(Number(this.data.listLength).toLocaleString());
+            console.log(this.data.listLength)
 		}	
 		//2025.09.11 일반게시판과 faq게시판 분리 end
 		
@@ -137,8 +136,6 @@ class Table {
             this.limit = boardTop.find('select').val();
             this.page = 1;
             this.sort = {key: '', sort: '', index: 0};
-
-            /*
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
             } else {
@@ -152,8 +149,8 @@ class Table {
                     this.setBody();
                 } catch( e ) {}
             }
-            */
-        });	  
+        });
+	  
     }
 
     setPagination () {
@@ -167,21 +164,19 @@ class Table {
             this.page = page;
             if(this.props.useHashParam) {
                 location.href = `${location.href.split('#')[0]}#page=${this.page}&limit=${this.limit}`;
-                console.log(1)
             } else {
                 /* 2025.09.11 페이징오류 주석처리  
                 this.ele.find('.board-top select').val(this.limit); */
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
-                    this.scrollTop();
+                    //this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     if(!this.sort.key) {
                         this.setBody();
                     }
                 } catch( e ) {}
-                console.log(1)
             }
         });
     }
@@ -401,14 +396,25 @@ class Table {
                     }
                 }
                 this.props.body.forEach((body, j) => {
-                    tr.append(`
-                         <td class="${body.align === 'left' ? 'text-left' : body.align === 'right' ? 'text-right' : ''}">
-                            ${body.fomatter ? body.fomatter((data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label], data, false) 
-							: (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}
-                        </td>
-                    `);
+                    if(data[body.label] === null || data[body.label] === undefined || data[body.label] === ""){
+                        tr.append(`
+                            <td class="text-center">-</td>
+                        `);
+                    }else{
+                        tr.append(`
+                            <td class="${body.align === 'left' ? 'text-left' : body.align === 'right' ? 'text-right' : ''}">
+                                ${body.fomatter ? body.fomatter((data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label], data, false) 
+                                : (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}
+                            </td>
+                        `);
+                    }
                     
                     if(tableM.length > 0) {
+                        if (this.props.head[j].mobileAllHidden === true) {
+                            return; 
+                        }
+
+
                         if(this.props.head[j].mobileHidden) {
                             li.find('ul').append(`
                                 <li>
@@ -425,7 +431,7 @@ class Table {
                                 </li> 
                             `);
                         }
-                    }
+                    }                                        
 
                     if(this.props.head[j].tooltip) {
                         this.addToolTip(li.find('ul li').eq(this.props.tableType === 'crud' ? j+1 : j).find('.title'), this.props.head[j].tooltip, 'top right');
@@ -571,7 +577,7 @@ class Table {
         }
     }
 
-    addToolTip ( target, data, arrow ) {
+    addToolTip ( target, data, arrow, shortcutLink ) {
         const text = target.text();
         target.text('');
         const tooltip = $(`
@@ -586,7 +592,7 @@ class Table {
                             <strong class="tooltip-title">${data.title}</strong>
                             <div class="tooltip-contents">
                                 <p>${data.content}</p>
-                                <div class="btn-wrap">
+                                <div class="btn-wrap" data-link="${shortcutLink ?? data.shortcutLink}">
                                     <a href="${data.link}" class="btn link">바로가기</a>
                                 </div>
                             </div>
@@ -602,7 +608,6 @@ class Table {
         `);
         tooltip.find('.contextual-help').tooltip();
         target.append(tooltip);
-        
     }
 
     sortData (sort, key, type) {

@@ -25,7 +25,7 @@
                         {
                            "uid": "id-1",
                            "key1": '001',                                                      
-                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890TELEVISION 1234567890 TELEVISION 1234567890TELEVISION 1234567890 TELEVISION 1234567890TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key2": "",
                            "key3": '434124231M',
                            "key4": '113,421',
                            "key5": '113,421',
@@ -155,8 +155,8 @@
                            }},
                            {label: 'key1'},
                            {label: 'key2', align: 'left', fomatter: ( value, rowData, isMobile ) => {                              
-                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}"><span  class="tb-title">${value}</span> <span class="new">새글</span></a>`;
-                              else           return `<a href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;                              
+                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}"><span  class="tb-title" title="${value}">${value}</span> <span class="new">새글</span></a>`;
+                              else           return `<a href="/pages/pages_7-2.html#${rowData.uid}" title="${value}">${value}</a>`;                              
                            }},
                            {label: 'key3', fomatter: ( value, rowData, isMobile ) => {
                               return `<strong class="cl-1">${value}</strong>`;
@@ -168,13 +168,37 @@
                               return `<strong>${value}</strong>`;
                            }},
                            {label: 'key6', fomatter: ( value, rowData, isMobile ) => {
-                              if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
-                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                              if(!isMobile)  return `<button type="button" class="btn ddddd tertiary small" data-modal-target="#modal1" data-ttt="${value}">${value}</button>`;
+                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;                              
                            }},
                         ]
                      });
-                  });
+                  });                  
                </script>
+
+
+
+
+
+           <div id="modal1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>모달 760</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           내용
+                        </div>
+                        <div class="modal-cont">
+                           내용
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn modal-enter primary medium">사용정지</button>
+                     </div>
+                  </div>
+               </div> 
 
                <!-- 그리드 -->
                <div id="table" class="table wrap-grid-tbl">                  

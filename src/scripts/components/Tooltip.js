@@ -15,8 +15,12 @@ class Tooltip {
         const owner = this;
         const tooltipAct = owner.ele.find(".tooltip-action");
         const startY = owner.ele.hasClass('top') ? 20 : -20;
+        const contArea = $('.cont-area');
         this.ele.find(".tooltip-btn-area button").on("click", function () {
             if(!tooltipAct.hasClass("active")) {
+                if(contArea.find('.tooltip-action').hasClass('active')){
+                    contArea.find('.tooltip-action').removeClass('active');
+                }
                 tooltipAct.addClass("active");
                 gsap.from(owner.ele.find(".tooltip-action"), 0.6, {y: startY, opacity: 0, ease: Cubic.easeOut})
             } else {

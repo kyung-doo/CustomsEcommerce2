@@ -24,7 +24,7 @@ $(() => {
 
     // 메인 네비
     $(".gnb-menu li").each(function () {
-        const btn = $(this).find("button");
+        const btn = $(this).find("button.gnb-main-trigger");
         btn.on('click', function (){            
             $(".gnb-menu li").removeClass('active');
             $(this).parent().addClass('active');
@@ -54,10 +54,13 @@ $(() => {
                     $('body').css({'overflow': 'auto'});
                 }
             }); 
+            $(this).attr('title','전체메뉴 닫기')
         } else {
             $(".main-allmenu").hide();
             $('body').css({'overflow': ''});
             $("#header .allmenu").removeClass('active');
+            $(this).attr('title','전체메뉴 열기')
+            
         }
         enableScroll();
     });

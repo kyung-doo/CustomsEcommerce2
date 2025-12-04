@@ -52,7 +52,40 @@ class Datepicker {
         });
 
         this.input.on('change', () => {
-            let val = this.input.val();
+            //let val = this.input.val();
+            let val = this.input.val().replace(/[^0-9]/g, ""); // 숫자만 남김
+
+            if (!this.props.isMonth) {
+                // YYYYMMDD (8자리)
+                if (val.length === 8) {
+                    val = val.replace(/(\d{4})(\d{2})(\d{2})/, "$1-$2-$3");
+                }
+                // YYYYMM  (6자리) → 기본일자 01 삽입
+                else if (val.length === 6) {
+                    val = val.replace(/(\d{4})(\d{2})/, "$1-$2-01");
+                }
+            } else {
+                // 월 선택 모드(YYYYMM → YYYY-MM)
+                if (val.length === 6) {
+                    val = val.replace(/(\d{4})(\d{2})/, "$1-$2");
+                }
+            }
+
+            // input에 반영
+            this.input.val(val);
+
+            if (val === '') {
+                this.selectDate = null;
+                return;
+            }
+
+            var title = $('.head-tit').text();
+
+            // 날짜 유효성 체크
+            if (!this.isValidDate(val)) {
+                alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
+                return;
+            }
 
             if(val === '') {
                 this.selectDate = null;
@@ -62,9 +95,10 @@ class Datepicker {
             var title = $('.head-tit').text();
 
             if(!this.isValidDate(val)) {
-                // alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
+                alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
-                ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                
+                //ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(this.props.isMonth) {

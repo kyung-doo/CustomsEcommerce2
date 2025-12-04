@@ -13,12 +13,12 @@ const data1 = Array.from({ length: listLength }, (_, i) => (
     { 
       uid: `id-${i+1}`,
       no : i+1,
-      date : getRandomDate(new Date("2020-01-01"), new Date("2023-12-31")),
-      key1 : '1234123412-123456789101'+i,
-      key2 : 'Abc123456789 외 1건'+i,
-      key3 : '판매자명이들어갑니다'+i,
-      key4 : '/pages/pages_7-2.html',
-      key5 : '조회'+i
+      date : 'ffdfsdfsdfs',
+      key1 : 'fsdfsdfdsfdsfs',
+      key2 : '',
+      key3 : '',
+      key4 : '',
+      key5 : ''
     }
 ));
 

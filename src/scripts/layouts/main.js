@@ -52,9 +52,8 @@ $(() => {
               $('.copy-txt').remove()
             },500)   
         })
-    })
+    })   
     
-    var stopNum = 0;      
     var slideSpeed = 3000;  
     
     //리스트 슬라이드
@@ -153,40 +152,42 @@ $(() => {
                 });                
                 
                 //슬라이드 mouseenter
-                $('.slide-area1').mouseenter(function(){
-                    $('.slide-area1 .swiper-stop').addClass('on');
-                    $('.slide-area1 .swiper-stop').text('재생');                    
-                    swiper1.autoplay.stop();     
-                });
+                // $('.slide-area1 .swiper').mouseenter(function(){
+                //     $('.slide-area1 .swiper-stop').addClass('on');
+                //     $('.slide-area1 .swiper-stop').text('재생');                    
+                //     swiper1.autoplay.stop();     
+                // });
 
                 //슬라이드 mouseleave
-                $('.slide-area1').mouseleave(function(){
-                    $('.slide-area1 .swiper-stop').removeClass('on');
-                    $('.slide-area1 .swiper-stop').text('정지');
-                    swiper1.autoplay.start();     
+                // $('.slide-area1 .swiper').mouseleave(function(){
+                //     $('.slide-area1 .swiper-stop').removeClass('on');
+                //     $('.slide-area1 .swiper-stop').text('정지');
+                //     swiper1.autoplay.start();     
+                // });
+
+                // Tab 키로 슬라이드 제어
+                $(document).on('keydown', function(e) {
+                    if (e.key === 'Tab') {
+                        // 현재 포커스가 slide-area1 내부 요소인지 확인
+                        if ($(':focus').closest('.slide-area1').length) {
+                            // 슬라이드 정지
+                            swiper1.autoplay.stop();
+                            $('.slide-area1 .swiper-stop').addClass('on').text('재생');
+                        } else {
+                            // slide-area1 벗어나면 재생
+                            swiper1.autoplay.start();
+                            $('.slide-area1 .swiper-stop').removeClass('on').text('정지');
+                        }
+                    }
                 });
 
-                //슬라이드 focus
-                $('.slide-area1').focus(function(){
-                    swiper1.slideToLoop(0);
-                    $('.slide-area1 .swiper-stop').addClass('on');
-                    $('.slide-area1 .swiper-stop').text('재생');                    
-                    swiper1.autoplay.stop();                             
-
-                    $('.slide-area1 .swiper-slide').focus(function(){
-                        var slideIndex = $(this).attr('data-swiper-slide-index');						
-                        var slideLoop = slideIndex++;                                      
-
-                        swiper1.slideToLoop(slideLoop,0,true);                                                                        
-                    }); 
-                });                
-
-                //슬라이드 focusout
-                $('.slide-area1 .swiper-stop').focusout(function(){
-                    $('.slide-area1 .swiper-stop').removeClass('on');
-                    $('.slide-area1 .swiper-stop').text('정지');
-                    swiper1.autoplay.start();     
-                });    
+                // 슬라이드 내부 슬라이드 항목 포커스 이동 시 해당 슬라이드로 이동
+                $('.slide-area1 .swiper-slide').on('focus', function() {
+                    if (window.event && window.event instanceof KeyboardEvent) { // 키보드 입력인지 체크
+                        var slideIndex = $(this).attr('data-swiper-slide-index');
+                        swiper1.slideToLoop(Number(slideIndex), 0, true);
+                    }
+                });  
             },   
             reachEnd: function() {
                 //swiper1.slideTo(0, 500);
@@ -229,21 +230,6 @@ $(() => {
             
         },        
     });     
-    
-
-    $('.slide-area1 .swiper-stop').click(function(){                
-        if(stopNum==0){
-            $(this).addClass('on');
-            $(this).text('재생');                    
-            swiper1.autoplay.stop();     
-            stopNum = 1;                                                                     
-        }else{
-            $(this).removeClass('on');
-            $(this).text('정지');
-            swiper1.autoplay.start();
-            stopNum = 0;
-        }
-    });   
 
     //이미지슬라이드
     const swiper2 = new Swiper('#images-slide', {
@@ -269,48 +255,88 @@ $(() => {
                 $('.slide-area2').attr('tabindex','0');                
 
                 //슬라이드 mouseenter
-                $('.slide-area2').mouseenter(function(){
-                    $('.slide-area2 .swiper-stop').addClass('on');
-                    $('.slide-area2 .swiper-stop').text('재생');                    
-                    swiper2.autoplay.stop();     
-                });
+                // $('.slide-area2').mouseenter(function(){
+                //     $('.slide-area2 .swiper-stop').addClass('on');
+                //     $('.slide-area2 .swiper-stop').text('재생');                    
+                //     swiper2.autoplay.stop();     
+                // });
 
                 //슬라이드 mouseleave
-                $('.slide-area2').mouseleave(function(){
-                    $('.slide-area2 .swiper-stop').removeClass('on');
-                    $('.slide-area2 .swiper-stop').text('정지');
-                    swiper2.autoplay.start();     
+                // $('.slide-area2').mouseleave(function(){
+                //     $('.slide-area2 .swiper-stop').removeClass('on');
+                //     $('.slide-area2 .swiper-stop').text('정지');
+                //     swiper2.autoplay.start();     
+                // });
+
+                // Tab 키로 slide-area2 제어
+                $(document).on('keydown', function(e) {
+                    if (e.key === 'Tab') {
+                        // 현재 포커스가 slide-area2 내부 요소인지 확인
+                        if ($(':focus').closest('.slide-area2').length) {
+                            // 슬라이드 정지
+                            swiper2.autoplay.stop();
+                            $('.slide-area2 .swiper-stop').addClass('on').text('재생');
+                        } else {
+                            // slide-area2 벗어나면 재생
+                            swiper2.autoplay.start();
+                            $('.slide-area2 .swiper-stop').removeClass('on').text('정지');
+                        }
+                    }
                 });
 
-                //슬라이드 focus
-                $('.slide-area2').focus(function(){
-                    swiper2.slideToLoop(0);
-                    $('.slide-area2 .swiper-stop').addClass('on');
-                    $('.slide-area2 .swiper-stop').text('재생');                    
-                    swiper2.autoplay.stop();                                                                 
-                });               
-
-                //슬라이드 focusout
-                $('.slide-area2 .swiper-stop').focusout(function(){
-                    $('.slide-area2 .swiper-stop').removeClass('on');
-                    $('.slide-area2 .swiper-stop').text('정지');
-                    swiper2.autoplay.start();     
+                // slide-area2 내부 슬라이드 항목 포커스 이동 시 해당 슬라이드로 이동
+                $('.slide-area2 .swiper-slide').on('focus', function() {
+                    if (window.event && window.event instanceof KeyboardEvent) { // 키보드 입력인지 확인
+                        var slideIndex = $(this).attr('data-swiper-slide-index');
+                        swiper2.slideToLoop(Number(slideIndex), 0, true);
+                    }
                 });
+
             },
         }        
     });    
-    
-    $('.slide-area2 .swiper-stop').click(function(){                
-        if(stopNum==0){
-            $(this).addClass('on');
-            $(this).text('재생');                    
-            swiper2.autoplay.stop();     
-            stopNum = 1;                                                                     
-        }else{
+
+
+
+    $('.slide-area1 .swiper-stop').click(function() {
+        if ($(this).hasClass('on')) {
+            // 현재 정지 상태 → 재생 시작
             $(this).removeClass('on');
-            $(this).text('정지');
-            swiper2.autoplay.start();
-            stopNum = 0;
+            $(this).text('정지');                     
+            $(this).attr('title', '슬라이드 정지'); // title 추가   
+            swiper1.autoplay.start();
+        } else {
+            // 현재 재생 상태 → 정지
+            $(this).addClass('on');
+            $(this).text('재생');
+            $(this).attr('title', '슬라이드 재생'); // title 추가                        
+            swiper1.autoplay.stop();
         }
+    });
+
+
+    $('.slide-area2 .swiper-stop').click(function() {
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+            $(this).text('정지');                    
+            $(this).attr('title', '슬라이드 정지'); // title 추가    
+            swiper2.autoplay.start();
+        } else {
+            $(this).addClass('on');
+            $(this).text('재생');
+            $(this).attr('title', '슬라이드 재생'); // title 추가                        
+            swiper2.autoplay.stop();
+        }
+    });
+
+    $('.swiper-stop').attr({
+        'title': '슬라이드 정지',        
     });    
+
+    $('.swiper-button-next').attr({
+        'title': '다음 슬라이드',        
+    });
+    $('.swiper-button-prev').attr({
+        'title': '이전 슬라이드',        
+    });
 });

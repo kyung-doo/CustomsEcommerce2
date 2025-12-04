@@ -20,13 +20,13 @@
                      "limitList": [10, 20, 30],
                      "listLength": 500,
                      "totalPages": 10,
-                     "pagingCount": 5,
+                     "pagingCount": 3, //1.... [3] ....00
                      "data": [
                         {
                            "uid": "id-1",
                            "no": 1,
                            "date": "2020-12-21",
-                           "key1": "1234123412-1234567891010",
+                           "key1": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
                            "key2": "Abc123456789 외 1건0",
                            "key3": "판매자명이들어갑니다0",
                            "key4": "/pages/pages_7-2.html",
@@ -192,17 +192,18 @@
                         head: [
                            {name: 'NO', width: '80px'},
                            {name: '신고일자', width: '131px', sort: true},
-                           {name: '운송장번호(H.B/L)', width: '22.7031%'},
-                           {name: '주문번호', width: '18.4062%', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},
-                           {name: '판매자명', width: '19.8437%'},
-                           {name: '물품명', width: '6.8437%'},
-                           {name: '처리상태', width: '12.5%', mobileHidden: true}
+                           {name: '운송장번호(H.B/L)', width: '22.7031%',  tooltip: {title: "이메일 주소1", content: "툴팁 내에 바로가기 버튼을 포함하도록 구현했습니다.", link: "/pages/pages_7-2.html", arrow: "bottom left"}}, //바로가기 버튼 o
+                           {name: '주문번호', width: '18.4062%', tooltip: {title: "이메일 주소2", content: "툴팁 내에 바로가기 버튼은 포함하지 않도록 구현했습니다.", link: "/pages/pages_7-2.html", arrow: "bottom left", shortcutLink:false}}, // shortcutLink:false를 추가하면 바로가기버튼 x
+                           {name: '판매자명', width: '19.8437%', mobileHidden: true},
+                           {name: '물품명', width: '6.8437%', mobileAllHidden: true},
+                           {name: '처리상태', width: '12.5%', mobileAllHidden: true}
                         ],
                         body: [
                            {label: 'no'},
                            {label: 'date'},
                            {label: 'key1', fomatter: (value, rowData, isMobile) => {
-                              return `<a class="cl-7" href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;
+                              if(!isMobile) return `pc`;
+                              else          return `mo`;   
                            }},
                            {label: 'key2'},
                            {label: 'key3', align: 'right'},
@@ -210,8 +211,8 @@
                               return `<a href="${value}"><i class="icon download large"></i></a>`;
                            }},
                            {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
-                              if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
-                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                              if(!isMobile)  return `pc`;
+                              else           return `mo`;
                            }},
                         ]
                      });
