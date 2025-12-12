@@ -1,92 +1,23 @@
-[class*=cont-acc-] {
-  border-top: 1px solid #1D1D1D;
-  margin-top: 20px;
-  padding-top: 8px;
-
-  .mo-cont-wrap li {
-    margin-top: 8px;
-    background-color: #F4F5F6;
-    border-radius: 8px;
-
-    &.accordion-wrap .accordion-body li {
-      padding-top: 10px;
-    }
-  }
-
-  .accordion-wrap {
-    &.active .accordion-header a i {
-      transition: all .3s;
-      transform: rotate(180deg);
-    }
-
-    .accordion-header a {
-      padding: 20px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .data {
-        display: block;
-        color: #555;
-        margin-top: 5px;
-      }
-
-      i {
-        font-size: 0;
-      }
-    }
-
-    .accordion-body {
-      padding: 0 24px 24px 24px;
-
-      ul {
-        border-top: 1px solid #D8D8D8;
-
-        li {
-          padding-top: 25px;
-          transition: all .3s;
-          display: flex;
-          justify-content: space-between;
-
-          .txt-area {
-            text-align: right;
-          }
-
-          &.form-list {
-            flex-direction: column;
-
-            .form-group {
-              margin-top: 12px;
-            }
-
-            .acc-tit {
-              width: 100%;
-              text-align: left;
-            }
-          }
-
-          .acc-tit {
-            width: 150px;
-            min-width: 150px;
-          }
-
-          .acc-txt {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
+/* ==================================================
+   Style Guide accordion
+   ================================================== */
+[class*=cont-acc-] {border-top: 1px solid #1D1D1D;margin-top: 20px;padding-top: 8px;}
+[class*=cont-acc-] .mo-cont-wrap li {margin-top: 8px;background-color: #F4F5F6;border-radius: 8px;}
+[class*=cont-acc-] .mo-cont-wrap li.accordion-wrap .accordion-body li {padding-top: 10px;}
+[class*=cont-acc-] .accordion-wrap.active .accordion-header a i {transition: all .3s;transform: rotate(180deg);}
+[class*=cont-acc-] .accordion-wrap .accordion-header a {padding: 20px 24px;display: flex;justify-content: space-between;align-items: center;}
+[class*=cont-acc-] .accordion-wrap .accordion-header a .data {display: block;color: #555;margin-top: 5px;}
+[class*=cont-acc-] .accordion-wrap .accordion-header a i {font-size: 0;}
+[class*=cont-acc-] .accordion-wrap .accordion-body {padding: 0 24px 24px 24px;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul {border-top: 1px solid #D8D8D8;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li {padding-top: 25px;transition: all .3s;display: flex;justify-content: space-between;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li .txt-area {text-align: right;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li.form-list {flex-direction: column;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li.form-list .form-group {margin-top: 12px;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li.form-list .acc-tit {width: 100%;text-align: left;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li .acc-tit {width: 150px;min-width: 150px;}
+[class*=cont-acc-] .accordion-wrap .accordion-body ul li .acc-txt {width: 100%;}
 @media screen and (max-width: 480px) {
-  [class*=cont-acc-] .accordion-wrap {
-    .accordion-header a {
-      padding: 15px;
-    }
-
-    .accordion-body {
-      padding: 0 15px 15px 15px;
-    }
-  }
+    [class*=cont-acc-] .accordion-wrap .accordion-header a {padding: 15px;}
+    [class*=cont-acc-] .accordion-wrap .accordion-body {padding: 0 15px 15px 15px;}
 }

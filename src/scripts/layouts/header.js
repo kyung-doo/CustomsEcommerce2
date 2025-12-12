@@ -22,7 +22,9 @@ $(() => {
         document.removeEventListener('touchmove', preventDefault, { passive: false });        
     }
 
-    // 메인 네비
+    /* ==================================================
+        메뉴
+        ================================================== */
     $(".gnb-menu li").each(function () {
         const btn = $(this).find("button.gnb-main-trigger");
         btn.on('click', function (){            
@@ -40,6 +42,9 @@ $(() => {
         });
     });
 
+    /* ==================================================
+        전체메뉴
+        ================================================== */
     $("#header .allmenu").on("click", function () {
         if(!$(".main-allmenu").is(":visible")) {
             $(".main-allmenu").show().scrollTop(0);
@@ -65,6 +70,9 @@ $(() => {
         enableScroll();
     });
     
+    /* ==================================================
+        검은색 배경 클릭하면 메뉴 닫기
+        ================================================== */
     $("#wrap > .blind").on('click', function () {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
@@ -72,6 +80,9 @@ $(() => {
         enableScroll();
     });
 
+    /* ==================================================
+        전체메뉴 포커스하면 메뉴닫기
+        ================================================== */
     $('#header .main-menu .allmenu').on('focus',function(){
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
@@ -80,7 +91,25 @@ $(() => {
     });
 
 
-    // 모바일 네비
+    /* ==================================================
+        전체메뉴, 내소식 클릭시 메뉴 닫기
+        ================================================== */
+    $('#header .main-menu .gnb-main-list .gnb-list .depth2 a, #header .header-actions .name-box a:has(.inform)').click(function(){
+        $(".gnb-menu li").removeClass('active');
+        $("#wrap > .blind").hide();
+        $('body').removeClass('no-scroll')       
+        enableScroll();
+        $('.main-menu.main-allmenu').hide();
+        $('.allmenu').removeClass('active');
+        $('#header .main-menu .allmenu').attr('title','전체메뉴 열기')
+
+        console.log(1)
+    })
+
+
+    /* ==================================================
+        모바일 메뉴
+        ================================================== */
     $(".mobile-all-menu").on('click', function (e) {
         $("#wrap").addClass('mobile-open');
         gsap.set($("#header .main-menu"), {x: 390});
@@ -126,7 +155,9 @@ $(() => {
     });   
     
 
-    // 스크롤 이벤트
+    /* ==================================================
+        스크롤
+        ================================================== */
     $("html, body").on("scroll", (e) => {
         const top = $('body').scrollTop();
         if(oldTop < top) {
@@ -172,7 +203,9 @@ $(() => {
             enableScroll()
         })
     }
-    // 리사이즈 이벤트        
+    /* ==================================================
+        반응형
+        ================================================== */    
     $(window).on('resize', () => {
         if($(window).width() < 1023) {
             if($(".gnb-menu li.active").length > 0) {
@@ -223,7 +256,9 @@ $(() => {
         enableScroll();
     });    
 
-    // 팝업
+    /* ==================================================
+        알림
+        ================================================== */
     $(function(){
         var btn = $('.popup-box .btn-navi.popup');        
         var closeBtn = $('.popup-box .close-btn');        

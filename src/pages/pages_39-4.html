@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">
+               <strong class="font-2 cl-5">디지털 정부 서비스 사용자 로그인</strong>
+               로그인 방식을 선택해주세요.
+            </h3>            
+            <h4 class="sr-only">빈텍스트</h4>
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="wrap-login">
+                  <div class="board-top no-wrap title-top">
+                     <div class="left-box">
+                        <h5 class="title-type">정부 통합 로그인</h5>      
+                        <div class="form-toggle-switch medium">
+                           <input type="checkbox" id="switch5">
+                           <label for="switch5"><span>미사용</span></label>
+                        </div>
+                     </div>                                     
+                  </div>                  
+               </div>
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

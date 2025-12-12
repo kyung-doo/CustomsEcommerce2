@@ -23,7 +23,7 @@
                <h2 class="sr-only">빈텍스트</h2>                          
                <div class="header-actions">
                   <div class="popup-box">                  
-                     <button type="button" class="btn-navi popup" title="팝업">알림</button>                                    
+                     <button type="button" class="btn-navi popup">알림</button>                                    
                      <div class="modal d-none">
                         <div class="modal-dialog">
                            <div class="modal-content">                        
@@ -150,14 +150,22 @@
                            <div class="popular-sch-box">
                               <strong class="tit">인기검색어</strong>
                               <ul>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1000</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num decrease"><i class="icon decrease x-small">하락</i>10</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num">-</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span><span class="popular-num decrease"><i class="icon decrease x-small">하락</i>100</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
-                                 <li><a href="javascript: void(0);"><span class="popular-txt"><em>10</em>개인통관고유부호 신청</span><span class="popular-num rise"><i class="icon rise x-small">증가</i>1</span></a></li>
+                                 <li>
+                                    <a href="javascript: void(0);"><span class="popular-txt"><em>1</em>개인통관고유부호 신청</span></a>
+                                    <span class="popular-num rise"><i class="icon rise x-small">증가</i>1000</span>
+                                 </li>
+                                 <li>
+                                    <a href="javascript: void(0);"><span class="popular-txt"><em>2</em>개인통관고유부호 신청</span></a>
+                                    <span class="popular-num decrease"><i class="icon decrease x-small">하락</i>1000</span>
+                                 </li>
+                                 <li>
+                                    <a href="javascript: void(0);"><span class="popular-txt"><em>3</em>개인통관고유부호 신청</span></a>
+                                    <span class="popular-num">-</span>
+                                 </li>
+                                 <li>
+                                    <a href="javascript: void(0);"><span class="popular-txt"><em>3</em>개인통관고유부호 신청</span></a>
+                                    <span class="new">NEW</span>
+                                 </li>                                 
                               </ul>
                            </div>                                
                         </div>                        
@@ -186,12 +194,6 @@
       <nav class="main-menu">
          <!-- 모바일 상단 정보 -->
          <div class="mobile-top-area header-actions">
-            <!-- 로그인 전 -->
-            <div class="login-work">
-               디자인 작업예정
-            </div>
-            <!-- 로그인 전 -->     
-            <!-- 로그인 후 -->
             <div class="language-area">
                <div class="form-toggle-switch language-switch">
                   <input type="radio" id="m-kr" name="language" checked>
@@ -200,11 +202,23 @@
                   <label for="m-en" class="en">English</label>
                </div>
             </div>                             
-            <div class="name-box">
-               <p class="name"><strong>김관세</strong><span>님 환영합니다.</span></p>     
-               <a href="#none"><span class="inform">+999</span></a>             
-               <span class="time">38:12</span>             
-            </div>                  
+            
+            <!-- 로그인 전 -->
+            <div class="mobile-top-login">               
+               <div class="login-box">
+                  <a href="javascript: void(0);" class="btn-navi login">로그인을 해주세요</a>
+               </div>
+            </div>
+            <!-- 로그인 전 -->     
+             
+            <!-- 로그인 후 -->
+            <div class="mobile-top-logout">               
+               <div class="name-box">
+                  <p class="name"><strong>김관세</strong><span>님 환영합니다.</span></p>     
+                  <a href="#none" title="알림"><span class="inform">+999</span></a>             
+                  <span class="time" title="시간">38:12</span>             
+               </div>                  
+            </div>
             <!-- 로그인 후 -->
          </div>
          <!-- 모바일 상단 정보 -->

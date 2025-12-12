@@ -3,6 +3,7 @@
 <head>
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
+<!-- common-loading 해당 클래스를 넣으면 로딩 디자인이 나옴 -->
 <body>
    <!-- 로그인전 - login / 로그인후 - logout -->
    <div id="wrap" class="main logout">
@@ -97,8 +98,8 @@
                         <div class="tit-box">
                            <strong class="kr-tit">1.본인인증 후 바로 개인통관고유부호 조회가 가능합니다 본인인증 후 바로 개인통관고유부호</strong>                         
                         </div>                        
-                        <button class="btn secondary">
-                           <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기1</strong>                                                      
+                        <button class="btn secondary" onclick="test1()">
+                           <strong class="kr-tit">개인통관고유부호 신규 발급</strong>                                                      
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>
@@ -106,7 +107,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">2.본인인증 후 바로 개인통관고유부호 조회가 가능합니다 본인인증 후 바로 개인통관고유부호</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test2()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기2</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -115,7 +116,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">3.본인인증 후 바로 개인통관고유부호 조회가 가능합니다 본인인증 후 바로 개인통관고유부호</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test3()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기3</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -124,7 +125,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">4.본인인증만 하면 <strong class="cl-7 kr-tit">바로 발급 가능</strong>합니다.</strong>                                                    
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test4()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기4</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -133,7 +134,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">5.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test5()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기5</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -142,7 +143,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">6.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test6()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기6</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -151,7 +152,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">7.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test7()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기7</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -160,7 +161,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">8.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test8()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기8</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -169,7 +170,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">9.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test9()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기9</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -178,7 +179,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">10.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test10()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기10</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -188,7 +189,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">11.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test11()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기11</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -197,7 +198,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">12.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test12()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기12</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -206,7 +207,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">13.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test13()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기13</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -215,7 +216,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">14.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test14()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기14</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -224,7 +225,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">15.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test15()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기15</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -233,7 +234,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">16.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test16()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기16</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -242,7 +243,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">17.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test17()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기17</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -251,7 +252,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">18.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test18()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기18</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -260,7 +261,7 @@
                         <div class="tit-box">
                            <strong class="kr-tit">19.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test19()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기19</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
@@ -269,55 +270,67 @@
                         <div class="tit-box">
                            <strong class="kr-tit">20.본인인증 후 바로 개인통관고유부호 조회가 가능합니다</strong>                           
                         </div>
-                        <button class="btn secondary">
+                        <button class="btn secondary" onclick="test20()">
                            <strong class="kr-tit">[버튼]간편 인증 하고 개인통관고유부호 발급 하기20</strong>                           
                            <i class="icon btn-arrow-right x-large"></i>
                         </button>
                      </div>
-                  </div>                 
+                  </div>                  
                </div>  
                <!-- pc -->
                 
                <!-- 모바일 -->
-               <ul class="mo-list">
-                  <li class="list1">
-                     <a href="#none">
-                        <p class="kr-txt">개인통관 고유부호 갱신이 필요합니다.</p>                                                         
-                     </a>
-                  </li>
-                  <li class="list2">
-                     <a href="#none">
-                        <p class="kr-txt">개인통관 고유부호를 잊으셨나요?</p>                                                         
-                     </a>
-                  </li>
-                  <li class="list3">
-                     <a href="#none">
-                        <p class="kr-txt">구매한 물건의 통관진행정보를 찾으세요?</p>                                                         
-                     </a>
-                  </li>
-                  <li class="list4">
-                     <a href="#none">
-                        <p class="kr-txt">직구용 인증문자를 모바일로 간편하게 받기</p>                                                         
-                     </a>
-                  </li>
-               </ul>
+               <div class="wrap-mobile-list">
+                  <ul class="mobile-list">
+                     <li><a href="#none" data-list="tab01" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다</a></li>                  
+                     <li><a href="#none" data-list="tab02" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab03" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다</a></li>                  
+                     <li><a href="#none" data-list="tab04" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab05" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다</a></li>                  
+                     <li><a href="#none" data-list="tab06" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이메뉴명이 들어갑니다메뉴메뉴명이 들어갑니다메뉴 들어갑니다</a></li>       
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                     <li><a href="#none" data-list="tab07" title="메뉴명이 들어갑니다">메뉴명이 들어갑니다메뉴명이 들어갑니다</a></li>                                                 
+                  </ul>
+                  <div class="more">
+                     <button type="button" class="open" title="메뉴 열기" aria-label="메뉴 열기">더보기</button>
+                  </div>
+               </div>
                <!-- 모바일 -->
+
                <!-- 로그인전 -->
                <div class="login-box login">
-                  <div class="tit-box">
-                     <strong class="tit">로그인</strong>                                          
-                     <a href="#none" class="mypages">회원가입 <i class="icon btn-arrow-right medium"></i></a>
+                  <div class="area1">
+                     <div class="txt-box">
+                        <strong class="txt">개인통관고유부호 신청<span>(회원가입)</span> 하기</strong>                     
+                     </div>                  
+                     <div class="btn-box">
+                        <button class="btn secondary login">개인통관고유부호 신청</button>                     
+                     </div>                  
                   </div>                  
-                  <div class="txt-box">
-                     <strong class="txt">로그인을 하시면<br> 보다 더 많은 정보와 서비스를<br> 이용하실 수 있습니다.</strong>                     
-                  </div>                  
-                  <div class="btn-box">
-                     <button class="btn primary login">로그인</button>                     
-                  </div>                  
+                  <div class="area2">
+                     <div class="txt-box">
+                        <strong class="txt"><span>로그인</span>하고 보다 더 많은 정보 확인하기</strong>                     
+                     </div>                  
+                     <div class="btn-box">
+                        <button class="btn primary login">로그인</button>                     
+                     </div>                  
+                  </div>                                    
                </div>
                <!-- 로그인전 -->               
 
-               <!-- 로그인후 danger-chtxt[위험] safety-chtxt[안전] 아무것도 없으면 기본 -->               
+               <!-- 로그인후 danger-chtxt[위험] safety-chtxt[안전] -->               
                <div class="login-box logout safety-chtxt">
                   <div class="tit-box">
                      <strong class="tit">김관세님</strong>                     
@@ -351,7 +364,8 @@
                   </div>                  
                   <div class="btn-box">                     
                      <button class="btn primary apply">개인통관고유부호 신청하기</button>
-                     <button class="btn plagiarism">도용신고</button>                   
+                     <button class="btn plagiarism">도용신고</button>
+                     <button class="btn primary detail">자세히</button>
                   </div>                  
                </div>               
                <!-- 로그인후 -->

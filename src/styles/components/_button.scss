@@ -1,167 +1,36 @@
-@use "../mixin" as *;
-
-button[class*=btn], label[class*=btn] {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 4px;
-  justify-content: center;
-  white-space: nowrap;
-}
-
-button[class*=btn].xlarge, label[class*=btn].xlarge {
-  padding: 0 24px;
-  height: 64px;
-}
-
-button[class*=btn].large, label[class*=btn].large {
-  padding: 0 20px;
-  height: 40px;
-}
-
-button[class*=btn].medium, label[class*=btn].medium {
-  padding: 0 16px;
-  height: 40px;
-}
-
-button[class*=btn].small, label[class*=btn].small {
-  padding: 0 12px;
-  height: 35px;
-}
-
-button[class*=btn].xsmall, label[class*=btn].xsmall {
-  padding: 0 10px;
-  height: 32px;
-}
-
-button[class*=btn].primary, label[class*=btn].primary {
-  background-color: #246BEB;
-  border: 1px solid #246BEB;
-  color: #fff;
-}
-
-button[class*=btn].primary:hover, label[class*=btn].primary:hover {
-  background-color: #1D56BC;
-  border-color: #1D56BC;
-}
-
-button[class*=btn].primary:active, label[class*=btn].primary:active {
-  background-color: #16408D;
-  border-color: #16408D;
-}
-
-button[class*=btn].primary:disabled, label[class*=btn].primary:disabled {
-  background-color: #D8D8D8;
-  border-color: #D8D8D8;
-  color: #717171;
-}
-
-button[class*=btn].secondary, label[class*=btn].secondary {
-  background-color: #EFF5FF;
-  border: 1px solid #246BEB;
-  color: #1D56BC;
-}
-
-button[class*=btn].secondary:hover, label[class*=btn].secondary:hover {
-  background-color: #D3E1FB;
-  border-color: #246BEB;
-  color: #1D56BC;
-}
-
-button[class*=btn].secondary:active, label[class*=btn].secondary:active {
-  background-color: #A7C4F7;
-  border-color: #246BEB;
-  color: #16408D;
-}
-
-button[class*=btn].tertiary, label[class*=btn].tertiary {
-  background-color: #FFFFFF;
-  border: 1px solid #1D1D1D;
-}
-
-button[class*=btn].tertiary:hover, label[class*=btn].tertiary:hover {
-  background-color: #F8F8F8;
-  border-color: #1D1D1D;
-}
-
-button[class*=btn].tertiary:active, label[class*=btn].tertiary:active {
-  background-color: #F0F0F0;
-  border-color: #1D1D1D;
-}
-
-button[class*=btn].text, label[class*=btn].text {
-  padding: 0;
-  background-color: #fff;
-}
-
-button[class*=btn].text {
-  &.xlarge, &.large {
-    height: 40px;
-  }
-}
-
-label[class*=btn].text {
-  &.xlarge, &.large {
-    height: 40px;
-  }
-}
-
-button[class*=btn].text.medium, label[class*=btn].text.medium {
-  height: 32px;
-}
-
-button[class*=btn].text.small, label[class*=btn].text.small {
-  height: 24px;
-}
-
-button[class*=btn].text.xsmall, label[class*=btn].text.xsmall {
-  height: 20px;
-}
-
-button[class*=btn].text:hover, label[class*=btn].text:hover {
-  background-color: #EDF1F5 !important;
-}
-
-button[class*=btn].text:active, label[class*=btn].text:active {
-  background-color: #CDD7E4 !important;
-}
-
-button[class*=btn].text:disabled, label[class*=btn].text:disabled {
-  background-color: #fff;
-  border-color: #fff;
-  color: #8E8E8E;
-}
-
-button[class*=btn]:disabled, label[class*=btn]:disabled {
-  cursor: default;
-  pointer-events: none;
-  background-color: #D8D8D8;
-  border-color: #D8D8D8;
-  color: #717171;
-}
-
-.btn-area {
-  display: flex;
-  gap: 8px;
-
-  &.btn-end {
-    justify-content: flex-end;
-  }
-
-  &.btn-center {
-    justify-content: center;
-  }
-
-  &.btn-between {
-    justify-content: space-between;
-  }
-
-  .align {
-    display: flex;
-    gap: 8px;
-  }
-}
-
-[class*=btn-area-type] .align {
-  flex-wrap: wrap;
-}
+/* ==================================================
+   Style Guide button
+   ================================================== */
+button{border: 0;}
+button[class*=btn], label[class*=btn] {cursor: pointer;display: inline-flex;align-items: center;border-radius: 4px;justify-content: center;white-space: nowrap;}
+button[class*=btn].xlarge, label[class*=btn].xlarge {padding: 0 24px;height: 64px;}
+button[class*=btn].large, label[class*=btn].large {padding: 0 20px;height: 40px;}
+button[class*=btn].medium, label[class*=btn].medium {padding: 0 16px;height: 40px;}
+button[class*=btn].small, label[class*=btn].small {padding: 0 12px;height: 35px;}
+button[class*=btn].xsmall, label[class*=btn].xsmall {padding: 0 10px;height: 32px;}
+button[class*=btn].primary, label[class*=btn].primary {background-color: #246BEB;border: 1px solid #246BEB;color: #fff;}
+button[class*=btn].primary:hover, label[class*=btn].primary:hover {background-color: #1D56BC;border-color: #1D56BC;}
+button[class*=btn].primary:active, label[class*=btn].primary:active {background-color: #16408D;border-color: #16408D;}
+button[class*=btn].primary:disabled, label[class*=btn].primary:disabled {background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;}
+button[class*=btn].secondary, label[class*=btn].secondary {background-color: #EFF5FF;border: 1px solid #246BEB;color: #1D56BC;}
+button[class*=btn].secondary:hover, label[class*=btn].secondary:hover {background-color: #D3E1FB;border-color: #246BEB;color: #1D56BC;}
+button[class*=btn].secondary:active, label[class*=btn].secondary:active {background-color: #A7C4F7;border-color: #246BEB;color: #16408D;}
+button[class*=btn].tertiary, label[class*=btn].tertiary {background-color: #FFFFFF;border: 1px solid #1D1D1D;}
+button[class*=btn].tertiary:hover, label[class*=btn].tertiary:hover {background-color: #F8F8F8;border-color: #1D1D1D;}
+button[class*=btn].tertiary:active, label[class*=btn].tertiary:active {background-color: #F0F0F0;border-color: #1D1D1D;}
+button[class*=btn].text, label[class*=btn].text {padding: 0;background-color: #fff;}
+button[class*=btn].text.xlarge, button[class*=btn].text.large,
+label[class*=btn].text.xlarge, label[class*=btn].text.large {height: 40px;}
+button[class*=btn].text.medium, label[class*=btn].text.medium {height: 32px;}
+button[class*=btn].text.small, label[class*=btn].text.small {height: 24px;}
+button[class*=btn].text.xsmall, label[class*=btn].text.xsmall {height: 20px;}
+button[class*=btn].text:hover, label[class*=btn].text:hover {background-color: #EDF1F5 !important;}
+button[class*=btn].text:active, label[class*=btn].text:active {background-color: #CDD7E4 !important;}
+button[class*=btn].text:disabled, label[class*=btn].text:disabled {background-color: #fff;border-color: #fff;color: #8E8E8E;}
+button[class*=btn]:disabled, label[class*=btn]:disabled {cursor: default;pointer-events: none;background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;}
+.btn-area {display: flex;gap: 8px;}
+.btn-area.btn-end {justify-content: flex-end;}
+.btn-area.btn-center {justify-content: center;}
+.btn-area.btn-between {justify-content: space-between;}
+.btn-area .align {display: flex;gap: 8px;}
+[class*=btn-area-type] .align {flex-wrap: wrap;}

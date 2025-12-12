@@ -1,333 +1,56 @@
-@use "../mixin" as *;
+/* ==================================================
+   Style Guide datepicker
+   ================================================== */
+.calendar {display: flex;align-items: center;position: relative;margin-right: 8px;gap: 8px;}
+.calendar:has(.calendar-btn:disabled) input {background-color: #D8D8D8 !important;opacity: 1 !important;border-color: #C6C6C6 !important;border: 1px solid red;}
+.calendar .calendar-form {display: flex;align-items: center;justify-content: space-between;position: relative;max-width: 174px;min-width: 10px;width: 100%;height: 48px;background-color: #FFF;border: 1px solid #717171;border-radius: 4px;overflow: hidden;}
+.calendar .calendar-form input {padding: 0 43px 0 16px;}
+.calendar .calendar-form.on {outline: 2px solid #246BEB;border-color: #246BEB;}
+.calendar input[type=text] {width: 100%;height: 100%;border: 0;}
+.calendar .calendar-btn {position: absolute;top: 50%;right: 12px;transform: translateY(-50%);min-width: 24px;height: 24px;padding: 0;font-size: 0;background: center no-repeat url("../assets/icons/calendar.svg");background-color: transparent;}
+.calendar .hr {min-width: 15px;display: flex;justify-content: center;}
 
-.calendar {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-right: 8px;
-    gap: 8px;
+.datepicker {width: 360px;position: fixed;left: 0;top: 0;z-index: 10;background-color: #FFF;border: 1px solid #CCC;}
+.datepicker .calendar-header {display: flex;align-items: center;justify-content: center;gap: 8px;padding: 10px 24px;background-color: #EDF1F5;}
+.datepicker .calendar-header [class*=btn-] {background-color: transparent;font-size: 19px;}
+.datepicker .calendar-header [class*=btn-].btn-prev, .datepicker .calendar-header [class*=btn-].btn-next {display: flex;width: 16px;height: 16px;padding: 0;font-size: 0;position: relative;background-image: url("../assets/icons/calendar-btn.svg");background-position: center;}
+.datepicker .calendar-header [class*=btn-].btn-prev:disabled, .datepicker .calendar-header [class*=btn-].btn-next:disabled {background-image: url("../assets/icons/calendar-btn-d.svg");}
+.datepicker .calendar-header [class*=btn-].btn-next {transform: rotate(180deg);}
+.datepicker .calendar-header [class*=btn-].btn-next:disabled {transform: rotate(360deg);}
+.datepicker .calendar-header [class*=btn-].btn-year, .datepicker .calendar-header [class*=btn-].btn-month {width: 112px;padding: 8px 8.8px;background-image: url("../assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 9px;background-size: 15px;}
+.datepicker .calendar-header [class*=btn-].btn-year.on, .datepicker .calendar-header [class*=btn-].btn-month.on {outline: 1px solid #99B0CB;}
+.datepicker .calendar-header [class*=btn-].btn-month {background-position: center right 21px;}
+.datepicker .calendar-content {position: relative;padding: 0 8px;}
+.datepicker .calendar-content .week-con {display: flex;flex-direction: row;justify-content: center;align-items: center;}
+.datepicker .calendar-content .week-con div {flex: 1;width: 48px;height: 40px;display: flex;flex-direction: row;justify-content: center;align-items: center;}
+.datepicker .calendar-content .day-con {display: flex;flex-direction: row;justify-content: center;align-items: center;flex-wrap: wrap;width: 100%;}
+.datepicker .calendar-content .day-con .day {display: flex;align-items: center;justify-content: center;width: 14.2857142857%;height: 48px;}
+.datepicker .calendar-content .day-con .day button {width: 40px;height: 40px;border-radius: 50%;}
+.datepicker .calendar-content .day-con .day.today button {color: #246BEB;border: 1px solid #246BEB;background-color: transparent;}
+.datepicker .calendar-content .day-con .day.today button:hover {background-color: #EDF1F5;}
+.datepicker .calendar-content .day-con .day.active:not(.prev) button {background-color: #246BEB !important;color: #FFF !important;}
+.datepicker .calendar-content .day-con .day.btn:hover:not(.today) {background-color: #EDF1F5;border-color: #EDF1F5;}
+.datepicker .calendar-content .day-con .day.next button, .datepicker .calendar-content .day-con .day.prev button, .datepicker .calendar-content .day-con .day.disabled button {pointer-events: none;opacity: 0.5;color: #717171;}
+.datepicker .calendar-content .year-con {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #FFF;padding: 8px 0;overflow-y: auto;text-align: center;}
+.datepicker .calendar-content .year-con .btn-year-select {position: relative;z-index: 1;display: block;width: 100%;height: 40px;background-color: #FFF;text-align: center;}
+.datepicker .calendar-content .year-con .btn-year-select.active {color: #FFF;}
+.datepicker .calendar-content .year-con .btn-year-select.btn-year-select:hover::before, .datepicker .calendar-content .year-con .btn-year-select.active::before {content: "";position: absolute;top: 0;left: 50%;transform: translateX(-50%);display: block;width: 140px;height: 100%;z-index: -1;border-radius: 4px;}
+.datepicker .calendar-content .year-con .btn-year-select.btn-year-select:hover::before {background-color: #EDF1F5;}
+.datepicker .calendar-content .year-con .btn-year-select.active::before, .datepicker .calendar-content .year-con .btn-year-select.active:hover::before {background-color: #246BEB;}
+.datepicker .calendar-content .month-con {position: absolute;left: 0;top: 0;display: flex;flex-direction: row;justify-content: center;align-items: center;flex-wrap: wrap;width: 100%;height: 100%;background-color: #FFF;padding: 8px 20px;gap: 8px;}
+.datepicker .calendar-content .month-con .btn-month-select {display: flex;flex-direction: column;justify-content: center;align-items: center;width: calc(33.3333333333% - 8px);height: 40px;background-color: #FFF;padding: 0;}
+.datepicker .calendar-content .month-con .btn-month-select.active, .datepicker .calendar-content .month-con .btn-month-select.active:hover {background-color: #246BEB;color: #FFF;}
+.datepicker .calendar-content .month-con .btn-month-select:hover {background-color: #EDF1F5;}
+.datepicker .calendar-content .month-con .btn-month-select:disabled {pointer-events: none;opacity: 0.5;color: #717171;}
+.datepicker .calendar-footer {display: flex;flex-direction: row;justify-content: flex-end;align-items: center;padding: 16px;border-top: 1px solid #E4E4E4;}
 
-    &:has(.calendar-btn:disabled) input {
-        background-color: #D8D8D8 !important;
-        opacity: 1 !important;
-        border-color: #C6C6C6 !important;
-        border: 1px solid red;
-    }
-
-    .calendar-form {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        max-width: 174px;
-        min-width: 10px;
-        width: 100%;
-        height: 48px;
-        background-color: #FFF;
-        border: 1px solid #717171;
-        border-radius: 4px;
-        overflow: hidden;
-
-        input {
-            padding: 0 43px 0 16px;
-        }
-    }
-
-    .calendar-form.on {
-        outline: 2px solid #246BEB;
-        border-color: #246BEB;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        height: 100%;
-        border: 0;
-    }
-
-    .calendar-btn {
-        position: absolute;
-        top: 50%;
-        right: 12px;
-        transform: translateY(-50%);
-        min-width: 24px;
-        height: 24px;
-        padding: 0;
-        font-size: 0;
-        background: center no-repeat url("../assets/icons/calendar.svg");
-        background-color: transparent;
-    }
-
-    .hr {
-        min-width: 15px;
-        display: flex;
-        justify-content: center;
-    }
+@media screen and (max-width: 767px) {
+  .datepicker {left: 0 !important;top: 0 !important;width: 100%;height: 100%;z-index: 999;background-color: rgba(0, 0, 0, 0.5);}
+  .datepicker .calendar-wrap {position: absolute;left: 50%;top: 50%;width: 360px;background-color: #FFF;transform: translate(-50%, -50%);}
 }
-
-.datepicker {
-    width: 360px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    background-color: #FFF;
-    border: 1px solid #CCC;
-
-    @include tablet {
-        left: 0 !important;
-        top: 0 !important;
-        width: 100%;
-        height: 100%;
-        z-index: 999;
-        background-color: rgba(0, 0, 0, 0.5);
-
-        .calendar-wrap {
-            @include absolute($left: 50%, $top: 50%);
-            width: 360px;
-            background-color: #FFF;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    @include mobile {
-        .calendar-wrap {
-            width: calc(100% - 40px);
-        }
-    }
-
-    .calendar-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 24px;
-        background-color: #EDF1F5;
-
-        [class*=btn-] {
-            background-color: transparent;
-            font-size: 19px;
-
-            &.btn-prev,
-            &.btn-next {
-                display: flex;
-                width: 16px;
-                height: 16px;
-                padding: 0;
-                font-size: 0;
-                position: relative;
-                background-image: url('../assets/icons/calendar-btn.svg');
-                background-position: center;
-
-                &:disabled {
-                    background-image: url('../assets/icons/calendar-btn-d.svg');
-                }
-            }
-
-            &.btn-next {
-                transform: rotate(180deg);
-
-                &:disabled {
-                    transform: rotate(360deg);
-                }
-            }
-
-            &.btn-year,
-            &.btn-month {
-                width: 112px;
-                padding: 8px 8.8px;
-                background-image: url('../assets/icons/btn-arrow-down.svg');
-                background-repeat: no-repeat;
-                background-position: center right 9px;
-                background-size: 15px;
-
-                &.on {
-                    outline: 1px solid #99B0CB;
-                }
-            }
-
-            &.btn-month {
-                background-position: center right 21px;
-            }
-        }
-    }
-
-    .calendar-content {
-        position: relative;
-        padding: 0 8px;
-
-        .week-con {
-            @include flex($direction: row);
-
-            div {
-                flex: 1;
-                width: 48px;
-                height: 40px;
-                @include flex($direction: row);
-            }
-        }
-
-        .day-con {
-            @include flex($direction: row);
-            flex-wrap: wrap;
-            width: 100%;
-
-            .day {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: calc(100% / 7);
-                height: 48px;
-
-                button {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                }
-                
-                &.today button {
-                    color: #246BEB;
-                    border: 1px solid #246BEB;
-                    background-color: transparent;
-                }
-
-                &.today button:hover {
-                    background-color: #EDF1F5;
-                }
-                
-                &.active:not(.prev) button {
-                    background-color: #246BEB !important;
-                    color: #FFF !important;
-                }
-                
-                &.btn:hover:not(.today) {
-                    background-color: #EDF1F5;
-                    border-color: #EDF1F5;
-                }
-
-                &.next button,
-                &.prev button,
-                &.disabled button {
-                    pointer-events: none;
-                    opacity: 0.5;
-                    color: #717171;
-                }
-            }
-        }
-
-        .year-con {
-            @include absolute();
-            width: 100%;
-            height: 100%;
-            background-color: #FFF;
-            padding: 8px 0;
-            overflow-y: auto;
-            text-align: center;
-
-            .btn-year-select {
-                position: relative;
-                z-index: 1;
-                display: block;
-                width: 100%;
-                height: 40px;
-                background-color: #FFF;
-                text-align: center;
-
-                &.active {
-                    color: #FFF;
-                }
-
-                &.btn-year-select:hover::before,
-                &.active::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    display: block;
-                    width: 140px;
-                    height: 100%;
-                    z-index: -1;
-                    border-radius: 4px;
-                }
-
-                &.btn-year-select:hover::before {
-                    background-color: #EDF1F5;
-                }
-
-                &.active::before,
-                &.active:hover::before {
-                    background-color: #246BEB;
-                }
-            }
-        }
-
-        .month-con {
-            @include absolute();
-            @include flex($direction: row);
-            flex-wrap: wrap;
-            width: 100%;
-            height: 100%;
-            background-color: #FFF;
-            padding: 8px 20px;
-            gap: 8px;
-
-            .btn-month-select {
-                @include flex();
-                width: calc(100% / 3 - 8px);
-                height: 40px;
-                background-color: #FFF;
-                padding: 0;
-
-                &.active,
-                &.active:hover {
-                    background-color: #246BEB;
-                    color: #FFF;
-                }
-
-                &:hover {
-                    background-color: #EDF1F5;
-                }
-
-                &:disabled {
-                    pointer-events: none;
-                    opacity: 0.5;
-                    color: #717171;
-                }
-            }
-        }
-    }
-
-    .calendar-footer {
-        @include flex($direction: row, $justifyContents: flex-end);
-        padding: 16px;
-        border-top: 1px solid #E4E4E4;
-    }
-}
-
 @media screen and (max-width: 480px) {
-    .search-box .calendar {
-        flex-wrap: wrap;
-        margin-right: 0 !important;
-        gap: 8px;
-
-        .calendar-form {
-            max-width: calc(100% - 19px) !important;
-        }
-    }
-
-    .wrap-form-area {
-        .calendar-form {
-            max-width: 100% !important;
-        }
-
-        .calendar {
-            margin-right: 0;
-        }
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .calendar .calendar-form {
-        height: 40px;
-    }
+  .datepicker .calendar-wrap {width: calc(100% - 40px);}
+  .search-box .calendar {flex-wrap: wrap;margin-right: 0 !important;gap: 8px;}
+  .search-box .calendar .calendar-form {max-width: calc(100% - 19px) !important;}  
+  .calendar .calendar-form {height: 40px;}
 }

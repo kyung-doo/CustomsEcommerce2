@@ -1,323 +1,69 @@
-@use "../mixin" as *;
+/* ==================================================
+   Style Guide input
+   ================================================== */
+.form-group input[type=text], .form-group input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #C6C6C6;padding: 0px 16px;}
+.form-group .form-hint-invalid {color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
+.form-group input[type=text], .form-group select, .form-group textarea, .form-group input[type=password] {width: 100%;min-width: 10px;}
+.form-group.form-tit-group {border: 1px solid #C6C6C6;display: flex;height: 46px;padding: 0 16px;align-items: center;position: relative;border-radius: 4px;}
+.form-group.form-tit-group input[type=text], .form-group.form-tit-group input[type=password] {border: 0;background-color: rgba(0, 0, 0, 0);padding: 0;height: 100%;padding-left: 15px;width: 100%;}
+.form-group.form-tit-group label {position: relative;color: #8E8E8E;}
+.form-group.form-tit-group label:before {content: "";display: block;position: absolute;top: 50%;right: -8px;width: 1px;height: 16px;background-color: #C6C6C6;transform: translateY(-50%);}
+.form-group.form-tit-group .form-hint-invalid {margin-top: 0;}
+.form-group.form-tit-group .form-conts {height: 100%;}
+.form-group textarea {height: 144px;padding: 16px;border-radius: 4px;border: 1px solid #717171;resize: none;}
+.form-group .form-tit-txt label {margin-bottom: 8px;display: block;}
+.form-group .textarea-count {display: flex;justify-content: flex-end;margin-top: 9px;}
+.form-group .textarea-count span {color: #555;}
+.form-group .textarea-count .count-now {color: #246BEB;}
+.form-group .wrap-textarea-count {display: flex;justify-content: space-between;align-items: center;margin-top: 1px;}
+.form-group select {border-color: #C6C6C6;-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("../assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 14px;background-color: #fff;padding: 0px 35px 0 16px;border-radius: 4px;border: 1px solid #717171;text-overflow: ellipsis;white-space: nowrap;}
+.form-group select:invalid {color: #8E8E8E;}
+.form-group .form-conts.is-success input[type=text], .form-group .form-conts.is-success input[type=password] {outline: 2px solid #246BEB;border-color: #246BEB;}
+.form-group.form-tit-group.is-success {outline: 2px solid #246BEB;border-color: #246BEB;}
+.form-group .textarea-count .count-now.is-error {color: #D50136;}
+.form-group .wrap-textarea-count .form-hint-invalid.txt-error {margin-top: 0;}
+.form-group .form-hint-invalid.txt-error:before {background-image: url("../assets/icons/danger.svg");}
+.form-group .form-conts.is-error input[type=text], .form-group .form-conts.is-error textarea, .form-group .form-conts.is-error select, .form-group .form-conts.is-error input[type=password] {outline: 2px solid #EB003B;border-color: #EB003B;}
+.form-group.form-tit-group.is-error {outline: 2px solid #EB003B;border-color: #EB003B;}
+.form-group textarea::placeholder {color: #8E8E8E;}
+.form-group input[type=text]::placeholder, .form-group input[type=password]::placeholder {color: #8E8E8E;}
+.form-group.form-tit-group input[type=text]::placeholder, .form-group.form-tit-group input[type=password]::placeholder {color: #8E8E8E;}
+.form-group.large input[type=text], .form-group.large select, .form-group.large input[type=password] {height: 56px;font-size: 19px;}
+.form-group.medium input[type=text], .form-group.medium select, .form-group.medium input[type=password] {height: 48px;}
+.form-group.small input[type=text], .form-group.small select, .form-group.small input[type=password] {height: 40px;}
+.form-group .password-area {position: relative;padding: 0;}
+.form-group .password-area input[type=password] {overflow: hidden;white-space: nowrap;width: 100%;height: 48px;display: flex;align-items: center;padding-top: 6px;position: absolute;top: 0;left: 0;background-color: rgba(0, 0, 0, 0);width: 100%;height: 100%;color: transparent;border: 0;padding: 0 16px;border: 0;font-size: 16px;}
 
-.form-group {
-  input {
-    &[type=text], &[type=password] {
-      border-radius: 4px;
-      background-color: #fff;
-      border-width: 0;
-      border-style: none;
-      border: 1px solid #C6C6C6;
-      padding: 0px 16px;
-    }
-  }
+.wrap-form-group .form-hint-invalid {color: #555;position: relative;margin-top: 12px;padding-left: 24px;}
 
-  .form-hint-invalid {
-    color: #555;
-    position: relative;
-    margin-top: 12px;
-    padding-left: 24px;
-  }
+.form-group .form-hint-invalid:before, 
+.wrap-form-group .form-hint-invalid:before {content: "";display: block;position: absolute;top: 50%;left: 0;width: 20px;height: 20px;transform: translateY(-50%);background-image: url("../assets/icons/inp-title.svg");}
 
-  input[type=text], select, textarea, input[type=password] {
-    width: 100%;
-    min-width: 10px;
-  }
+.form-conts.is-success textarea, 
+.form-conts.is-success select {outline: 2px solid #246BEB;border-color: #246BEB;}
 
-  &.form-tit-group {
-    border: 1px solid #C6C6C6;
-    display: flex;
-    height: 46px;
-    padding: 0 16px;
-    align-items: center;
-    position: relative;
-    border-radius: 4px;
+.wrap-form-group .form-hint-invalid:before {background-image: url("../assets/icons/danger.svg");}
 
-    input {
-      &[type=text], &[type=password] {
-        border: 0;
-        background-color: rgba(0, 0, 0, 0);
-        padding: 0;
-        height: 100%;
-        padding-left: 15px;
-        width: 100%;
-      }
-    }
+.form-group .form-hint-invalid.txt-error, 
+.wrap-form-group .form-hint-invalid {color: #EB003B;}
 
-    label {
-      position: relative;
-      color: #8E8E8E;
+.form-select-sort {-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("../assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;border: 0;background-color: #fff;}
+.form-select-sort.large {padding: 0 29px 0 5px;height: 27px;background-position: center right 3px;background-size: 18px;}
+.form-select-sort.medium {padding: 0 17px 0 5px;height: 27px;background-position: center right 3px;background-size: 14px;}
 
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: -8px;
-        width: 1px;
-        height: 16px;
-        background-color: #C6C6C6;
-        transform: translateY(-50%);
-      }
-    }
+input[type=text]:disabled, 
+textarea:disabled {background-color: #D8D8D8 !important;opacity: 1 !important;border-color: #C6C6C6 !important;}
+select:disabled {background-color: #D8D8D8 !important;opacity: 1 !important;border-color: #C6C6C6 !important;}
+select:disabled option {background-color: #D8D8D8 !important;opacity: 1 !important;border-color: #C6C6C6 !important;}
 
-    .form-hint-invalid {
-      margin-top: 0;
-    }
+.password-input:disabled + input[type=password], 
+.form-tit-group:has(input:disabled) {background-color: #D8D8D8 !important;opacity: 1 !important;border-color: #C6C6C6 !important;}
 
-    .form-conts {
-      height: 100%;
-    }
-  }
-
-  textarea {
-    height: 144px;
-    padding: 16px;
-    border-radius: 4px;
-    border: 1px solid #717171;
-    resize: none;
-  }
-
-  .form-tit-txt label {
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .textarea-count {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 9px;
-
-    span {
-      color: #555;
-    }
-
-    .count-now {
-      color: #246BEB;
-    }
-  }
-
-  .wrap-textarea-count {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1px;
-  }
-
-  select {
-    border-color: #C6C6C6;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("../assets/icons/btn-arrow-down.svg");
-    background-repeat: no-repeat;
-    background-position: center right 14px;
-    background-color: #fff;
-    padding: 0px 35px 0 16px;
-    border-radius: 4px;
-    border: 1px solid #717171;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    &:invalid {
-      color: #8E8E8E;
-    }
-  }
-
-  .form-conts.is-success input {
-    &[type=text], &[type=password] {
-      outline: 2px solid #246BEB;
-      border-color: #246BEB;
-    }
-  }
-
-  &.form-tit-group.is-success {
-    outline: 2px solid #246BEB;
-    border-color: #246BEB;
-  }
-
-  .textarea-count .count-now.is-error {
-    color: #D50136;
-  }
-
-  .wrap-textarea-count .form-hint-invalid.txt-error {
-    margin-top: 0;
-  }
-
-  .form-hint-invalid.txt-error:before {
-    background-image: url("../assets/icons/danger.svg");
-  }
-
-  .form-conts.is-error {
-    input[type=text], textarea, select, input[type=password] {
-      outline: 2px solid #EB003B;
-      border-color: #EB003B;
-    }
-  }
-
-  &.form-tit-group.is-error {
-    outline: 2px solid #EB003B;
-    border-color: #EB003B;
-  }
-
-  textarea::placeholder {
-    color: #8E8E8E;
-  }
-
-  input {
-    &[type=text]::placeholder, &[type=password]::placeholder {
-      color: #8E8E8E;
-    }
-  }
-
-  &.form-tit-group input {
-    &[type=text]::placeholder, &[type=password]::placeholder {
-      color: #8E8E8E;
-    }
-  }
-
-  &.large {
-    input[type=text], select, input[type=password] {
-      height: 56px;
-      font-size: 19px;
-    }
-  }
-
-  &.medium {
-    input[type=text], select, input[type=password] {
-      height: 48px;
-    }
-  }
-
-  &.small {
-    input[type=text], select, input[type=password] {
-      height: 40px;
-    }
-  }
-
-  .password-area {
-    position: relative;
-    padding: 0;
-
-    input[type=password] {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      padding-top: 6px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0);
-      width: 100%;
-      height: 100%;
-      color: transparent;
-      border: 0;
-      padding: 0 16px;
-      border: 0;
-      font-size: 16px;
-    }
-  }
-}
-
-.wrap-form-group .form-hint-invalid {
-  color: #555;
-  position: relative;
-  margin-top: 12px;
-  padding-left: 24px;
-}
-
-.form-group .form-hint-invalid:before, .wrap-form-group .form-hint-invalid:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  transform: translateY(-50%);
-  background-image: url("../assets/icons/inp-title.svg");
-}
-
-.form-conts.is-success {
-  textarea, select {
-    outline: 2px solid #246BEB;
-    border-color: #246BEB;
-  }
-}
-
-.wrap-form-group .form-hint-invalid:before {
-  background-image: url("../assets/icons/danger.svg");
-}
-
-.form-group .form-hint-invalid.txt-error, .wrap-form-group .form-hint-invalid {
-  color: #EB003B;
-}
-
-.form-select-sort {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url("../assets/icons/btn-arrow-down.svg");
-  background-repeat: no-repeat;
-  border: 0;
-  background-color: #fff;
-
-  &.large {
-    padding: 0 29px 0 5px;
-    height: 27px;
-    background-position: center right 3px;
-    background-size: 18px;
-  }
-
-  &.medium {
-    padding: 0 17px 0 5px;
-    height: 27px;
-    background-position: center right 3px;
-    background-size: 14px;
-  }
-}
-
-input[type=text]:disabled, textarea:disabled {
-  background-color: #D8D8D8 !important;
-  opacity: 1 !important;
-  border-color: #C6C6C6 !important;
-}
-
-select:disabled {
-  background-color: #D8D8D8 !important;
-  opacity: 1 !important;
-  border-color: #C6C6C6 !important;
-
-  option {
-    background-color: #D8D8D8 !important;
-    opacity: 1 !important;
-    border-color: #C6C6C6 !important;
-  }
-}
-
-.password-input:disabled + input[type=password], .form-tit-group:has(input:disabled) {
-  background-color: #D8D8D8 !important;
-  opacity: 1 !important;
-  border-color: #C6C6C6 !important;
-}
-
-input[data-ui=hidden-input] {
-  line-height: 48px;
-}
+input[data-ui=hidden-input] {line-height: 48px;}
 
 @media screen and (max-width: 480px) {
-  .form-group {
-    &.medium {
-      input[type=text], select, input[type=password] {
-        height: 40px;
-      }
-    }
-
-    &.form-tit-group {
-      height: 40px;
-    }
-  }
+.form-group.medium input[type=text], 
+.form-group.medium select, 
+.form-group.medium input[type=password],
+.form-group.form-tit-group {height: 40px;}
 }

@@ -14,6 +14,71 @@ $(() => {
         subtree: true
     });
 
+    //마우스 올렸을떄 툴팁(title 적용) 
+    $('.copy').each(function() {    
+        let buttonText = $(this).text().trim();    
+        $(this).attr('title', `${buttonText} 복사하기`);
+    });
+
+    $('.tooltip-tit').each(function() {
+        let $tooltipBtn = $(this).find('.tooltip-ico');
+
+        if ($tooltipBtn.length === 0) return; // 버튼 없으면 패스
+
+        // strong 값이 있으면 strong 사용
+        let strongTitle = $(this).find('.title > strong').text().trim();
+        
+        // h5 값이 있으면 h5 사용 (예: title-type3 구조)
+        let h5Title = $(this).closest('.title-type3').find('h5').text().trim();
+
+        // 조건에 따라 버튼 title 설정
+        if (h5Title) {
+            $tooltipBtn.attr('title', `${h5Title} 툴팁이 열립니다`);
+        } else if (strongTitle) {
+            $tooltipBtn.attr('title', `${strongTitle} 툴팁이 열립니다`);
+        }
+    });
+
+    $('i.icon.copy.small').removeAttr('title');
+
+    // 초기 title 설정
+    // $('.accordion-wrap.cont-advice').each(function() {
+    //     let $btn = $(this).find('.accordion-header .accordion-btn');
+    //     let titleText = $btn.find('strong').text().trim();
+
+    //     if (titleText) {
+    //         $btn.attr('title', $(this).hasClass('active') 
+    //             ? `${titleText} 도움말 닫기`
+    //             : `${titleText} 도움말 열기`);
+    //     }
+    // });
+
+    // 클릭 시 title 업데이트
+    // $('.accordion-wrap.cont-advice .accordion-btn').on('click', function() {
+    //     let $wrap = $(this).closest('.accordion-wrap');
+    //     let $btn = $(this);
+    //     let titleText = $btn.find('strong').text().trim();
+        
+    //     setTimeout(function() {
+    //         $btn.attr('title', $wrap.hasClass('active') 
+    //             ? `${titleText} 도움말 닫기`
+    //             : `${titleText} 도움말 열기`);
+    //     }, 0);
+    // });
+
+    function setTitles(context) {
+        $(context).find('button.sch-delete').attr('title', '검색어 삭제하기');
+        $(context).find('button.pages-sch, button.sach').attr('title', '검색');
+    }
+
+    // 초기 적용
+    setTitles(document);
+
+    // 동적 추가 버튼 처리
+    new MutationObserver(muts => muts.forEach(m => m.addedNodes.forEach(n => n.nodeType===1 && setTitles(n))))
+    .observe(document.body, { childList:true, subtree:true });   
+
+
 
     //로딩 텍스트
     //$('.common-loading').append(`<p class="loading-txt">잠시만 기다려주세요</p>`);
@@ -36,6 +101,107 @@ $(() => {
             updateWidth();
         });        
     });    
+
+
+
+    function createHorizontalGuides(options = {}) {
+        const lineCount = options.count || 2;
+        const color = options.color || 'rgba(255,0,0,0.7)';
+        const thickness = options.thickness || 2;
+        const spacing = options.spacing || 50;
+
+        const lines = [];
+        let activeLine = null; // 키보드 이동용 현재 선택된 가이드
+
+        for (let i = 0; i < lineCount; i++) {
+            const $line = $('<div class="guide-line horizontal"></div>');
+            $('body').append($line);
+
+            $line.css({
+                position: 'absolute',
+                width: '100%',
+                height: thickness + 'px',
+                top: (50 + i * spacing) + 'px',
+                left: 0,
+                background: color,
+                zIndex: 9999,
+                cursor: 'move',
+                outline: 'none'
+            });
+
+            // 포커스 가능하게 tabindex 추가
+            $line.attr('tabindex', 0);
+
+            // --------------------------
+            // 마우스 드래그 이동
+            // --------------------------
+            let isDragging = false;
+            let startMouse = 0;
+            let startTop = 0;
+
+            $line.on('mousedown', function (e) {
+                isDragging = true;
+                activeLine = $line; // 현재 선택된 라인
+                startMouse = e.pageY;
+                startTop = parseInt($line.css('top'));
+                e.preventDefault();
+                $line.focus(); // 키보드 이동을 위해 포커스
+            });
+
+            $(document).on('mousemove', function (e) {
+                if (!isDragging) return;
+                const delta = e.pageY - startMouse;
+                $line.css('top', startTop + delta + 'px');
+            });
+
+            $(document).on('mouseup', function () {
+                isDragging = false;
+            });
+
+            // --------------------------
+            // 키보드 이동 (↑ ↓)
+            // --------------------------
+            $line.on('keydown', function (e) {
+                const step = e.shiftKey ? 10 : 1; // shift 누르면 10px 이동
+                let currentTop = parseInt($line.css('top'));
+
+                switch (e.key) {
+                    case "ArrowUp":
+                        $line.css('top', currentTop - step + 'px');
+                        break;
+                    case "ArrowDown":
+                        $line.css('top', currentTop + step + 'px');
+                        break;
+                }
+            });
+
+            // --------------------------
+            // 더블클릭 → 화면 중앙 정렬
+            // --------------------------
+            $line.on('dblclick', function () {
+                $line.css('top', '50%');
+            });
+
+            lines.push($line);
+        }
+
+        return lines;
+    }
+
+
+    // 사용 예시
+    $(function() {
+        const horizontalLines = createHorizontalGuides({
+            count: 2,       
+            color: 'rgba(255,0,0,0.5)',
+            thickness: 30,
+            spacing: 40     
+        });        
+    });
+
+
+
+    
 });
 
 // 컴포넌트 UI 생성

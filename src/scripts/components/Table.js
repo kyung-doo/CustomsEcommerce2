@@ -232,7 +232,7 @@ class Table {
                 }
 
                 if(head.sort) {
-                    tablePC.find('thead tr').append(`<th scope="col"><span class="arr-ico">${head.name}<button class="th-turn"><i class="sr-only">내림차순</i></button></span></th>`);
+                    tablePC.find('thead tr').append(`<th scope="col"><span class="arr-ico">${head.name}<button class="th-turn" title="내림차순"><i class="sr-only">내림차순</i></button></span></th>`);
                 } else {
                     tablePC.find('thead tr').append(`<th scope="col">${head.name}</th>`);
                 }
@@ -262,6 +262,7 @@ class Table {
                             const idx = tablePC.find('.th-turn').eq(j).parent().parent().index();
                             if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
                                 tablePC.find('.th-turn').eq(j).addClass('active');
+                                tablePC.find('.th-turn').attr('title','오름차순')                                
                                 if(owner.props.tableType === 'crud') {
                                     owner.sort = { key: owner.props.body[idx-1].label, sort: 'desc', index: idx-1 };
                                     owner.sortData('desc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
@@ -271,6 +272,7 @@ class Table {
                                 }
                             } else {
                                 tablePC.find('.th-turn').eq(j).removeClass('active');
+                                tablePC.find('.th-turn').attr('title','내림차순')
                                 if(owner.props.tableType === 'crud') {
                                     owner.sort = { key: owner.props.body[idx-1].label, sort: 'asc', index: idx-1 };
                                     owner.sortData('asc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
@@ -586,7 +588,7 @@ class Table {
                     <span>${text}</span>
                     <div class="contextual-help ${arrow ?? data.arrow}">
                         <div class="tooltip-btn-area">                                 
-                            <button class="tooltip-ico">도움말</button>
+                            <button class="tooltip-ico" title="${text} 툴팁이 열렵니다">${text} 툴팁이 열립니다</button>
                             <div class="tooltip-action">                  
                             <div class="tooltip-popover">
                             <strong class="tooltip-title">${data.title}</strong>

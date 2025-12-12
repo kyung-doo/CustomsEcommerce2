@@ -1,304 +1,58 @@
-@use "../mixin" as *;
+/* ==================================================
+   Style Guide file
+   ================================================== */
+input[type=file] {display: block;position: absolute;width: 0;height: 0;opacity: 0;}
 
-input[type=file] {
-  display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0;
+.file-upload.line {padding: 32px 24PX;border: 1px solid #E4E4E4;border-radius: 8px;}
+.file-upload.line.list {border: 0;padding: 0;}
+.file-upload.line .file-head .tit {font-size: 25px;}
+.file-upload.line .file-head p {color: #555;margin-top: 28px;}
+.file-upload.line .file-upload {display: flex;border: 1px dashed #C6C6C6;background-color: #F0F0F0;align-items: center;justify-content: center;gap: 40px;padding: 24px 32px;border-radius: 8px;}
+.file-upload.line .file-upload .txt {font-size: 19px;}
+.file-upload.line .file-list {position: relative;line-height: 150%;}
+.file-upload.line .file-list .total {margin-bottom: 15px;font-weight: 700;}
+.file-upload.line .file-list .current {color: #1D56BC;font-weight: 700;}
+.file-upload.line .upload-list {display: flex;flex-direction: column;}
+.file-upload.line .upload-list li {position: relative;}
+.file-upload.line .upload-list li.is-error::before {display: none;}
+.file-upload.line .upload-list li::before, .file-upload.line .upload-list li.is-error .file-name::before {content: "";display: block;position: absolute;top: 13px;left: 0;width: 5px;height: 5px;background-color: #555;border-radius: 50%;}
+.file-upload.line .upload-list .file-name {padding-right: 20px;display: flex;align-items: center;width: 80%;display: block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-height: 32px;}
+.file-upload.line .upload-list .file-info {border-radius: 4px;padding: 0 0 0 12px;position: relative;display: flex;justify-content: space-between;}
+.file-upload.line .upload-list .file-info .btn-wrap {display: flex;align-items: center;}
+.file-upload.line .upload-list .btn-wrap button {display: flex;background-color: rgba(0, 0, 0, 0);align-items: center;}
+.file-upload.line .upload-list .spinner {display: block;width: 20px;height: 20px;background-image: url("../assets/icons/spinner.svg");animation: spin 1s infinite linear;}
+.file-upload.line .upload-list .complete {display: block;width: 20px;height: 20px;background-image: url("../assets/icons/check-circle.svg");}
+.file-upload.line .upload-list .is-error {padding: 16px;border: 2px solid #EB003B;border-radius: 4px;background-color: #FDF2F3;flex-direction: column;}
+.file-upload.line .upload-list .is-error .file-info {padding: 0;border: 0;padding-bottom: 16px;}
+.file-upload.line .upload-list .is-error .file-name {padding-left: 12px;}
+.file-upload.line .upload-list .file-hint-invalid {display: flex;border-top: 1px solid #D8D8D8;padding-top: 12px;align-items: flex-start;}
+.file-upload.line .upload-list .file-hint-invalid .txt {color: #D50136;padding-left: 4px;}
+.file-upload.line .upload-list .file-hint-invalid .danger {margin-top: 2px;}
+.file-upload.line .upload-list .file-down button, .file-upload.line .upload-list .file-down a {align-items: center;gap: 4px;padding: 0;display: flex;}
+.file-upload.line .upload-list .file-down .btn-wrap {gap: 16px;justify-content: flex-end;flex: 1;}
+.file-upload.line .upload-delete-btn {position: absolute;top: -4px;right: 0;}
+.file-upload.line .upload-delete-btn button {background-color: rgba(0, 0, 0, 0);display: flex;align-items: center;gap: 4px;border: 0;}
 
-//   &:focus + label {
-//     outline: 2px solid #000; 
-//   }
-}
-
-.file-upload.line {
-  padding: 32px;
-  border: 1px solid #E4E4E4;
-  border-radius: 8px;
-
-  &.list {
-    border: 0;
-    padding: 0;
-  }
-
-  .file-head {
-    .tit {
-      font-size: 25px;
-    }
-
-    p {
-      color: #555;
-      margin-top: 28px;
-    }
-  }
-
-  .file-upload {
-    display: flex;
-    border: 1px dashed #C6C6C6;
-    background-color: #F0F0F0;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 24px 32px;
-    margin: 24px 0;
-    border-radius: 8px;
-
-    .txt {
-      font-size: 19px;
-    }
-  }
-
-  .file-list {
-    position: relative;
-    line-height: 150%;
-
-    .total {
-      margin-bottom: 24px;
-      font-weight: 700;
-    }
-
-    .current {
-      color: #1D56BC;
-      font-weight: 700;
-    }
-  }
-
-  .upload-list {
-    display: flex;
-    flex-direction: column;
-
-    li {
-      position: relative;
-
-      &.is-error::before {
-        display: none;
-      }
-
-      &::before, &.is-error .file-name::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 13px;
-        left: 0;
-        width: 5px;
-        height: 5px;
-        background-color: #555;
-        border-radius: 50%;
-      }
-    }
-
-    .file-name {
-      padding-right: 20px;
-      display: flex;
-      align-items: center;
-      width: 80%;
-      display: block;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      line-height: 32px;
-    }
-
-    .file-info {
-      border-radius: 4px;
-      padding: 0 0 0 12px;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-
-      .btn-wrap {
-        display: flex;
-        align-items: center;
-      }
-    }
-
-    .btn-wrap button {
-      display: flex;
-      background-color: rgba(0, 0, 0, 0);
-      align-items: center;
-    }
-
-    .spinner {
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url("../assets/icons/spinner.svg");
-      animation: spin 1s infinite linear;
-    }
-
-    .complete {
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url("../assets/icons/check-circle.svg");
-    }
-
-    .is-error {
-      padding: 16px;
-      border: 2px solid #EB003B;
-      border-radius: 4px;
-      background-color: #FDF2F3;
-      flex-direction: column;
-
-      .file-info {
-        padding: 0;
-        border: 0;
-        padding-bottom: 16px;
-      }
-
-      .file-name {
-        padding-left: 12px;
-      }
-    }
-
-    .file-hint-invalid {
-      display: flex;
-      border-top: 1px solid #D8D8D8;
-      padding-top: 12px;
-      align-items: flex-start;
-
-      .txt {
-        color: #D50136;
-        padding-left: 4px;
-      }
-
-      .danger {
-        margin-top: 2px;
-      }
-    }
-
-    .file-down {
-      button, a {
-        align-items: center;
-        gap: 4px;
-        padding: 0;
-        display: flex;
-      }
-
-      .btn-wrap {
-        gap: 16px;
-        justify-content: flex-end;
-        flex: 1;
-      }
-    }
-  }
-
-  .upload-delete-btn {
-    position: absolute;
-    top: -4px;
-    right: 0;
-
-    button {
-      background-color: rgba(0, 0, 0, 0);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      border: 0;
-    }
-  }
-}
-
-.file-upload-mobile {
-  padding: 24px;
-  border: 1px solid #E4E4E4;
-  border-radius: 8px;
-
-  .btn-area {
-    margin-top: 0 !important;
-
-    .align {
-      width: 100%;
-
-      button {
-        width: 100%;
-      }
-    }
-  }
-
-  .file-list {
-    margin-top: 24px;
-    padding-top: 24px;
-    position: relative;
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -8px;
-      margin-top: -8px;
-
-      li {
-        width: calc(33.3333% - 8px);
-        margin-left: 8px;
-        margin-top: 8px;
-        position: relative;
-
-        a {
-          display: block;
-          width: 100%;
-          height: 100%;
-          padding-top: 100%;
-          border: 1px solid red;
-          position: relative;
-
-          img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-color: #717171;
-          }
-        }
-
-        button {
-          position: absolute;
-          top: 0;
-          right: 0;
-          z-index: 1;
-          font-size: 0;
-          background-color: rgba(0, 0, 0, 0);
-        }
-      }
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-image: url(../assets/icons/dotted.svg);
-    }
-  }
-}
+.file-upload-mobile {padding: 24px;border: 1px solid #E4E4E4;border-radius: 8px;}
+.file-upload-mobile .btn-area {margin-top: 0 !important;}
+.file-upload-mobile .btn-area .align {width: 100%;}
+.file-upload-mobile .btn-area .align button {width: 100%;}
+.file-upload-mobile .file-list {margin-top: 24px;padding-top: 24px;position: relative;}
+.file-upload-mobile .file-list ul {display: flex;flex-wrap: wrap;margin-left: -8px;margin-top: -8px;}
+.file-upload-mobile .file-list ul li {width: calc(33.3333% - 8px);margin-left: 8px;margin-top: 8px;position: relative;}
+.file-upload-mobile .file-list ul li a {display: block;width: 100%;height: 100%;padding-top: 100%;border: 1px solid red;position: relative;}
+.file-upload-mobile .file-list ul li a img {position: absolute;top: 0;left: 0;display: block;width: 100%;height: 100%;background-color: #717171;}
+.file-upload-mobile .file-list ul li button {position: absolute;top: 0;right: 0;z-index: 1;font-size: 0;background-color: rgba(0, 0, 0, 0);}
+.file-upload-mobile .file-list::before {content: "";display: block;position: absolute;top: 0;left: 0;width: 100%;height: 1px;background-image: url(../assets/icons/dotted.svg);}
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
 }
-
 @media screen and (max-width: 767px) {
-  .file-upload.line .file-upload {
-    flex-direction: column;
-    gap: 24px;
-
-    .txt {
-      line-height: 150%;
-    }
-  }
+  .file-upload.line .file-upload {flex-direction: column;gap: 24px;}
+  .file-upload.line .file-upload .txt {line-height: 150%;}
 }
-
 @media screen and (max-width: 480px) {
-  .file-upload.line {
-    padding: 24px;
-  }
+  .file-upload.line {padding: 24px;}
 }

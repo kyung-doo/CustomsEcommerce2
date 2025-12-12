@@ -150,20 +150,6 @@ $(() => {
                     
                     swiper1.slideToLoop(slideLoop,0,true);
                 });                
-                
-                //슬라이드 mouseenter
-                // $('.slide-area1 .swiper').mouseenter(function(){
-                //     $('.slide-area1 .swiper-stop').addClass('on');
-                //     $('.slide-area1 .swiper-stop').text('재생');                    
-                //     swiper1.autoplay.stop();     
-                // });
-
-                //슬라이드 mouseleave
-                // $('.slide-area1 .swiper').mouseleave(function(){
-                //     $('.slide-area1 .swiper-stop').removeClass('on');
-                //     $('.slide-area1 .swiper-stop').text('정지');
-                //     swiper1.autoplay.start();     
-                // });
 
                 // Tab 키로 슬라이드 제어
                 $(document).on('keydown', function(e) {
@@ -252,21 +238,7 @@ $(() => {
         },
         on: {
             init: function () {
-                $('.slide-area2').attr('tabindex','0');                
-
-                //슬라이드 mouseenter
-                // $('.slide-area2').mouseenter(function(){
-                //     $('.slide-area2 .swiper-stop').addClass('on');
-                //     $('.slide-area2 .swiper-stop').text('재생');                    
-                //     swiper2.autoplay.stop();     
-                // });
-
-                //슬라이드 mouseleave
-                // $('.slide-area2').mouseleave(function(){
-                //     $('.slide-area2 .swiper-stop').removeClass('on');
-                //     $('.slide-area2 .swiper-stop').text('정지');
-                //     swiper2.autoplay.start();     
-                // });
+                $('.slide-area2').attr('tabindex','0');                               
 
                 // Tab 키로 slide-area2 제어
                 $(document).on('keydown', function(e) {
@@ -291,43 +263,30 @@ $(() => {
                         swiper2.slideToLoop(Number(slideIndex), 0, true);
                     }
                 });
-
             },
         }        
-    });    
+    });   
 
+    // 공통 play/pause 처리
+    $('.swiper-stop').click(function() {
+        const $btn = $(this);
+        const targetSwiper = $btn.closest('.slide-area1').length ? swiper1 : swiper2;
 
-
-    $('.slide-area1 .swiper-stop').click(function() {
-        if ($(this).hasClass('on')) {
+        if ($btn.hasClass('on')) {
             // 현재 정지 상태 → 재생 시작
-            $(this).removeClass('on');
-            $(this).text('정지');                     
-            $(this).attr('title', '슬라이드 정지'); // title 추가   
-            swiper1.autoplay.start();
+            $btn.removeClass('on')
+                .text('정지')
+                .attr('title', '슬라이드 정지');
+            targetSwiper.autoplay.start();
         } else {
             // 현재 재생 상태 → 정지
-            $(this).addClass('on');
-            $(this).text('재생');
-            $(this).attr('title', '슬라이드 재생'); // title 추가                        
-            swiper1.autoplay.stop();
+            $btn.addClass('on')
+                .text('재생')
+                .attr('title', '슬라이드 재생');
+            targetSwiper.autoplay.stop();
         }
     });
 
-
-    $('.slide-area2 .swiper-stop').click(function() {
-        if ($(this).hasClass('on')) {
-            $(this).removeClass('on');
-            $(this).text('정지');                    
-            $(this).attr('title', '슬라이드 정지'); // title 추가    
-            swiper2.autoplay.start();
-        } else {
-            $(this).addClass('on');
-            $(this).text('재생');
-            $(this).attr('title', '슬라이드 재생'); // title 추가                        
-            swiper2.autoplay.stop();
-        }
-    });
 
     $('.swiper-stop').attr({
         'title': '슬라이드 정지',        

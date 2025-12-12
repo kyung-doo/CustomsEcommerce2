@@ -16,6 +16,7 @@ class Tooltip {
         const tooltipAct = owner.ele.find(".tooltip-action");
         const startY = owner.ele.hasClass('top') ? 20 : -20;
         const contArea = $('.cont-area');
+        
         this.ele.find(".tooltip-btn-area button").on("click", function () {
             if(!tooltipAct.hasClass("active")) {
                 if(contArea.find('.tooltip-action').hasClass('active')){
@@ -29,7 +30,7 @@ class Tooltip {
         });
         this.ele.find(".tooltip-close").on("click", function () {
             tooltipAct.removeClass("active");
-        });
+        });        
     }
 }
 

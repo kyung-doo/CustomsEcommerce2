@@ -1,61 +1,14 @@
-@use "../mixin" as *;
-
-.tag-wrap {
-  [class*=btn-] {
-    display: inline-flex;
-    border-radius: 100px;
-    border: 1px solid #C6C6C6;
-    align-items: center;
-    padding: 8px 12px;
-  }
-
-  .btn-tag .btn-delete {
-    background-image: url("../assets/icons/delete.svg");
-  }
-
-  .btn-delete {
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-  }
-
-  &.large .btn-tag {
-    min-width: 72px;
-    height: 36px;
-
-    .btn-delete {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  &.small .btn-tag {
-    min-width: 64px;
-    height: 32px;
-
-    .btn-delete {
-      width: 8px;
-      height: 8px;
-    }
-  }
-
-  .btn-tag {
-    &:hover {
-      background-color: #EDF1F5;
-    }
-
-    &:active {
-      background-color: #CDD7E4;
-    }
-
-    &.disabled {
-      background-color: #D8D8D8;
-      border-color: #C6C6C6;
-      color: #717171;
-
-      .btn-delete {
-        pointer-events: none;
-      }
-    }
-  }
-}
+/* ==================================================
+   Style Guide tag
+   ================================================== */
+.tag-wrap [class*=btn-] {display: inline-flex;border-radius: 100px;border: 1px solid #C6C6C6;align-items: center;padding: 8px 12px;}
+.tag-wrap .btn-tag .btn-delete {background-image: url("../assets/icons/delete.svg");}
+.tag-wrap .btn-delete {background-position: center;background-color: rgba(0, 0, 0, 0);border: 0;}
+.tag-wrap.large .btn-tag {min-width: 72px;height: 36px;}
+.tag-wrap.large .btn-tag .btn-delete {width: 16px;height: 16px;}
+.tag-wrap.small .btn-tag {min-width: 64px;height: 32px;}
+.tag-wrap.small .btn-tag .btn-delete {width: 8px;height: 8px;}
+.tag-wrap .btn-tag:hover {background-color: #EDF1F5;}
+.tag-wrap .btn-tag:active {background-color: #CDD7E4;}
+.tag-wrap .btn-tag.disabled {background-color: #D8D8D8;border-color: #C6C6C6;color: #717171;}
+.tag-wrap .btn-tag.disabled .btn-delete {pointer-events: none;}
