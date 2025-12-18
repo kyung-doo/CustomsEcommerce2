@@ -3,10 +3,10 @@
    ================================================== */
 .pagination {display: flex;gap: 8px;align-items: center;justify-content: center;padding-bottom: 2px;}
 .pagination * {background-repeat: no-repeat;}
-.pagination .page-navi {display: flex;min-width: 62px;height: 40px;align-items: center;position: relative;color: #555;padding: 6px 8px 6px 4px;border-radius: 4px;}
-.pagination .prev {justify-content: flex-end;padding-right: 2px;}
-.pagination .page-navi:before {content: "";display: block;position: absolute;top: 50%;transform: translateY(-50%);width: 20px;height: 20px;background-position: center;}
-.pagination .prev:before {background-image: url("../assets/icons/btn-arrow-left.svg");left: 5px;}
+.pagination .page-navi {display: flex;min-width: 62px;height: 40px;align-items: center;position: relative;color: #555;padding: 6px 8px;border-radius: 4px;}
+.pagination .prev {justify-content: flex-end;}
+.pagination .page-navi:before {content: "";display: block;position: absolute;top: 10px;width: 20px;height: 20px;background-position: center;}
+.pagination .prev:before {background-image: url("../assets/icons/btn-arrow-left.svg");left: 2px;}
 .pagination .next:before {background-image: url("../assets/icons/btn-arrow-right.svg");right: 2px;}
 .pagination .page-links {display: flex;gap: 8px;}
 .pagination .page-link {width: 40px;height: 40px;display: flex;justify-content: center;align-items: center;color: #555;background-color: #fff;border-radius: 4px;}

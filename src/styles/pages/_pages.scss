@@ -6,24 +6,27 @@
 body.common-loading, html.common-loading {overflow: hidden;}
 .common-loading {position: relative;}
 .common-loading::before, .common-loading::after {content: "";display: block;}
-.common-loading::before {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #fff;opacity: 0.8;z-index: 8888;}
+.common-loading::before {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: #fff;opacity: 0.8;z-index: 8888;}
 .common-loading.nobg::before {opacity: 0;}
-.common-loading::after {position: absolute;top: 50%;left: 50%;width: 48px;height: 48px;background-image: url("../assets/icons/com-loading.svg");z-index: 8888;animation: spin 1s infinite linear;margin-left: -24px;margin-top: -24px;}
-.common-loading .loading-txt {position: absolute;top: 50%;left: 50%;font-size: 25px;font-weight: 700;z-index: 9999;transform: translate(-50%, -50%);margin-top: 60px;}
+.common-loading::after {position: fixed;top: 50%;left: 50%;width: 48px;height: 48px;background-image: url("../assets/icons/com-loading.svg");z-index: 8888;animation: spin 1s infinite linear;margin-left: -24px;margin-top: -24px;}
+.common-loading .loading-txt {position: fixed;top: 50%;left: 50%;font-size: 25px;font-weight: 700;z-index: 9999;transform: translate(-50%, -50%);margin-top: 60px;}
 
 /* 그리드 로딩 */
-.table-content.common-loading::before, .table-content.common-loading::after {z-index: 2;}
-.common-loading .table-wrap thead, .common-loading .wrap-faq .header {position: relative;z-index: 2;}
+.table-content.common-loading::before, 
+.table-content.common-loading::after {z-index: 2;position: absolute;}
+.common-loading .table-wrap thead, 
+.common-loading .wrap-faq .header {position: relative;z-index: 2;}
 
 /* 필수 입력 스타일 공통 */
 .compulsory-txt {position: relative;display: flex;line-height: 150%;align-items: flex-start;padding-left: 12px;}
 .compulsory {position: absolute;bottom: 8px;font-size: 0;list-style: none;display: inline-block;background-image: url(../assets/icons/compulsory.svg);width: 8px;height: 8px;background-repeat: no-repeat;}
+
+.compulsory-txt .compulsory {left: 0;}
 .modal-body .search-box .compulsory {margin-left: 5px;}
+.modal-body .wrap-form-area .tit .compulsory {right: 0;bottom: 8px;}
 .cont-area .search-box .compulsory {margin-left: 5px;bottom: 9px;}
 .cont-area .search-box .compulsory-txt {margin: 0;padding-left: 16px;}
 .cont-area .search-box .form-check .tit .compulsory {margin-left: 5px;bottom: 5px;}
-.compulsory-txt .compulsory {left: 0;}
-.modal-body .wrap-form-area .tit .compulsory {right: 0;bottom: 8px;}
 .cont-area .wrap-form-area .tit .compulsory {right: 0;bottom: 4px;}
 .cont-area .wrap-form-area .form-check > label:has(.compulsory) {padding-right: 15px;}
 .cont-area .wrap-form-area .form-check > label:has(.compulsory) .compulsory {bottom: 7px;}
@@ -68,7 +71,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 
 /* 툴팁 스타일 */
 .tooltip-ico {width: 16px;height: 16px;background-image: url("../assets/icons/exclamation.svg");background-size: contain;font-size: 0;background-color: rgba(0, 0, 0, 0);font-size: 0 !important;}
-.contextual-help {display: inline-block;height: 16px;line-height: 0;position: absolute;bottom: 4px;margin-left: 5px;}
+.contextual-help {display: inline-block;height: 16px;line-height: 0;position: absolute;bottom: 5px;margin-left: 5px;}
 .tooltip-tit .title {display: inline !important;}
 
 /* 제목 스타일 */

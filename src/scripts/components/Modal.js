@@ -49,7 +49,7 @@ class Modal {
             this.hide();
         });        
 
-        if(this.ele.attr('id') === 'homepage' || this.ele.attr('id') === 'customs'){
+        if(this.ele.attr('id') === 'homepage' || this.ele.attr('id') === 'customs' || this.ele.attr('id') === 'in-search'){
             $("body").css({'overflow': 'auto'});       
             $('#homepage,#customs').hide();                                        
             this.ele.show();            
@@ -68,8 +68,10 @@ class Modal {
         this.ele.find(".modal-wrap").on("focusin", e => {
             $(document).on('keydown.modal', (e) => {
                 if(e.key === 'Tab' && e.shiftKey) {
-                    this.ele.find(".btn-close").focus();
-                    e.preventDefault();
+                    if ($(document.activeElement).is(this.ele.find(".modal-wrap"))) {
+                        this.ele.find(".btn-close").focus();
+                        e.preventDefault();
+                    }
                 }
             });
         });

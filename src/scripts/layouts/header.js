@@ -28,6 +28,7 @@ $(() => {
     $(".gnb-menu li").each(function () {
         const btn = $(this).find("button.gnb-main-trigger");
         btn.on('click', function (){            
+            var menuH = $('#header .main-menu .gnb-menu').height();
             $(".gnb-menu li").removeClass('active');
             $(this).parent().addClass('active');
             $('body').addClass('no-scroll')
@@ -35,6 +36,16 @@ $(() => {
             $('body').css({'overflow': 'auto'});
             $("#header .allmenu").removeClass('active');
             $(".mobile-dep-menu").removeClass('mobile-active');
+            function setGnbPosition() {
+                if ($(window).width() >= 1023) {
+                    $('#header .main-menu .gnb-toggle-wrap').css('top', menuH);
+                } else {
+                    $('#header .main-menu .gnb-toggle-wrap').css('top', '');
+                }
+            }
+
+            setGnbPosition();
+            $(window).on('resize', setGnbPosition);
             if($(window).width() >= 1023) {
                 $("#wrap > .blind").show();
                 disableScroll();
@@ -92,19 +103,28 @@ $(() => {
 
 
     /* ==================================================
-        전체메뉴, 내소식 클릭시 메뉴 닫기
+        전체메뉴, 내소식 클릭 시 메뉴 닫기
+        (1023px 이하 추가 처리 포함)
         ================================================== */
-    $('#header .main-menu .gnb-main-list .gnb-list .depth2 a, #header .header-actions .name-box a:has(.inform)').click(function(){
+    $('#header .main-menu .gnb-main-list .gnb-list .depth2 a, #header .header-actions .name-box a:has(.inform),.btn-navi.login,.btn-navi.sch').click(function () {
+
+        // 공통 처리
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        $('body').removeClass('no-scroll')       
+        $('body').removeClass('no-scroll');
         enableScroll();
         $('.main-menu.main-allmenu').hide();
         $('.allmenu').removeClass('active');
-        $('#header .main-menu .allmenu').attr('title','전체메뉴 열기')
+        $('#header .main-menu .allmenu').attr('title', '전체메뉴 열기');
+        $('body').css({ "overflow-y": "auto" });
 
-        console.log(1)
-    })
+        // 1023px 이하일 때만
+        if (window.innerWidth <= 1023) {
+            $('#wrap').removeClass('mobile-open');
+        }
+    });
+
+
 
 
     /* ==================================================

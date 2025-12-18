@@ -190,14 +190,14 @@ $(() => {
 
 
     // 사용 예시
-    $(function() {
-        const horizontalLines = createHorizontalGuides({
-            count: 2,       
-            color: 'rgba(255,0,0,0.5)',
-            thickness: 30,
-            spacing: 40     
-        });        
-    });
+    // $(function() {
+    //     const horizontalLines = createHorizontalGuides({
+    //         count: 2,       
+    //         color: 'rgba(255,0,0,0.5)',
+    //         thickness: 30,
+    //         spacing: 40     
+    //     });        
+    // });
 
 
 

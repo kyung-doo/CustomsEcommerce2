@@ -18,7 +18,7 @@
 .tabmenu,
 .wrap-detail,
 .wrap-detail .detail-file,
-.wrap-faq,
+.wrap-faq:not(td .wrap-faq),
 .wrap-customs-info,
 .wrap-search-pages,
 .wrap-search-area,

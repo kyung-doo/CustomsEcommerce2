@@ -172,8 +172,8 @@
   .wrap-form-area .form-group.medium input[type=text],
   .wrap-form-area .form-group.medium select,
   .wrap-form-area .form-group.medium input[type=password],
-  .wrap-form-area button[class*=btn]:not(.xsmall),
-  .wrap-form-area label[class*=btn]:not(.xsmall),
+  .wrap-form-area button[class*=btn]:not(.xsmall,.tooltip-close),
+  .wrap-form-area label[class*=btn]:not(.xsmall,.tooltip-close),
   .wrap-form-area .calendar .calendar-form,
   .wrap-form-area .file-form [class*=col] .file-upload .txt-box {height: 40px !important;}
 }

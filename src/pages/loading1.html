@@ -4,7 +4,7 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <!-- common-loading 해당 클래스를 넣으면 로딩 디자인이 나옴 -->
-<body>
+<body class="common-loading">
    <!-- 로그인전 - login / 로그인후 - logout -->
    <div id="wrap" class="main login">
       <!-- header -->

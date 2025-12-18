@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->            
+         </div>
+         <div class="cont-body">            
+            <!-- 내용 -->
+            <div class="cont-area">
+               <script>
+                  const data = {
+                     "page": 1,
+                     "limit": 10,
+                     "limitList": [10, 20, 30],
+                     "listLength": 500,
+                     "totalPages": 10,
+                     "pagingCount": 5,
+                     "data": [
+                        {
+                           "uid": "id-1",
+                           "key1": '001',                                                      
+                           "key2": "",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '0'
+                        },
+                        {
+                           "uid": "id-2",
+                           "key1": '002',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '2'
+                        },
+                        {
+                           "uid": "id-3",
+                           "key1": '003',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '3'
+                        },
+                        {
+                           "uid": "id-4",
+                           "key1": '004',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '4'
+                        },
+                        {
+                           "uid": "id-5",
+                           "key1": '005',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '5'
+                        },
+                        {
+                           "uid": "id-6",
+                           "key1": '006',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '6'
+                        },
+                        {
+                           "uid": "id-7",
+                           "key1": '007',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '7'
+                        },
+                        {
+                           "uid": "id-8",
+                           "key1": '008',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '8'
+                        },
+                        {
+                           "uid": "id-9",
+                           "key1": '009',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '9'
+                        },
+                        {
+                           "uid": "id-10",
+                           "key1": '010',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '10'
+                        }                                           
+                     ]
+                  }
+
+
+                  $(() => {
+                     $("#table").table({
+                        //apiPath: '/api/board2',
+                        //apiType: 'get',
+                        data: data,
+                        tableType: 'default',
+                        useHashParam: false,
+                        noLimit: false,
+                        useResize: true,
+                        scrollTop: true,
+                        caption: '테이블제목 에 대한 표로 th1,th2,th3 구성되어있다.',
+                        nodata: true,
+                        nodataMsg: '데이터없음',
+                        head: [
+                           {name: '선택', width: '80px', mobileHidden: true},
+                           {name: '란번호', width: '105px', sort: 'number'},
+                           {name: '품명', width: 'auto', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},                           
+                           {name: '관세', width: '9.375%'},
+                           {name: '부가 세등', width: '9.375%'},
+                           {name: '환급신청 수량', width: '10%'},
+                           {name: '버튼', width: '80px', mobileHidden: true},
+                           
+                        ],
+                        body: [
+                           {label: 'uid', fomatter: (value, rowData, isMobile) => {
+                              if(!isMobile) {
+                                 return `<div class="form-check medium">
+                                          <input type="checkbox" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
+                                          <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
+                                       </div>`;
+                              } else {
+                                 return `<div class="form-check medium">
+                                          <input type="checkbox" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
+                                          <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
+                                       </div>`;
+                              }
+                           }},
+                           {label: 'key1'},
+                           {label: 'key2', align: 'left', fomatter: ( value, rowData, isMobile ) => {                              
+                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}"><span  class="tb-title" title="${value}">${value}</span> <span class="new">새글</span></a>`;
+                              else           return `<a href="/pages/pages_7-2.html#${rowData.uid}" title="${value}">${value}</a>`;                              
+                           }},
+                           {label: 'key3', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-1">${value}</strong>`;
+                           }},
+                           {label: 'key4', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-2">${value}</strong>`;
+                           }},
+                           {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong>${value}</strong>`;
+                           }},
+                           {label: 'key6', fomatter: ( value, rowData, isMobile ) => {
+                              if(!isMobile)  return `<button type="button" class="btn ddddd tertiary small" data-modal-target="#modal1" data-ttt="${value}">${value}</button>`;
+                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;                              
+                           }},
+                        ]
+                     });
+                  });                  
+               </script>
+
+
+
+
+
+           <div id="modal1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>모달 760</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           내용
+                        </div>
+                        <div class="modal-cont">
+                           내용
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn modal-enter primary medium">사용정지</button>
+                     </div>
+                  </div>
+               </div> 
+
+               <!-- 그리드 -->
+               <div id="table" class="table wrap-grid-tbl">                  
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-check-tbl common-loading nobg">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+               <!-- //그리드 -->
+
+               
+
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <strong>js</strong>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           const data = {
+                     "page": 1,
+                     "limit": 10,
+                     "limitList": [10, 20, 30],
+                     "listLength": 500,
+                     "totalPages": 10,
+                     "pagingCount": 5,
+                     "data": [
+                        {
+                           "uid": "id-1",
+                           "key1": '001',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '0'
+                        },
+                        {
+                           "uid": "id-2",
+                           "key1": '002',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '2'
+                        },
+                        {
+                           "uid": "id-3",
+                           "key1": '003',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '3'
+                        },
+                        {
+                           "uid": "id-4",
+                           "key1": '004',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '4'
+                        },
+                        {
+                           "uid": "id-5",
+                           "key1": '005',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '5'
+                        },
+                        {
+                           "uid": "id-6",
+                           "key1": '006',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '6'
+                        },
+                        {
+                           "uid": "id-7",
+                           "key1": '007',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '7'
+                        },
+                        {
+                           "uid": "id-8",
+                           "key1": '008',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '8'
+                        },
+                        {
+                           "uid": "id-9",
+                           "key1": '009',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '9'
+                        },
+                        {
+                           "uid": "id-10",
+                           "key1": '010',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '10'
+                        }                                           
+                     ]
+                  }
+
+
+                  $(() => {
+                     $("#table").table({
+                        //apiPath: '/api/board2',
+                        //apiType: 'get',
+                        data: data,
+                        tableType: 'default',
+                        useHashParam: false,
+                        noLimit: false,
+                        useResize: true,
+                        scrollTop: true,
+                        caption: '테이블제목 에 대한 표로 th1,th2,th3 구성되어있다.',
+                        nodata: true,
+                        nodataMsg: '데이터없음',
+                        head: [
+                           {name: '선택', width: '60px', mobileHidden: true},
+                           {name: '란번호', width: '180px', sort: true},
+                           {name: '품명', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},                           
+                           {name: '관세', width: '9.375%'},
+                           {name: '부가세등', width: '9.375%'},
+                           {name: '환급신청수량', width: '9.375%'},
+                           {name: '버튼', width: '80px', mobileHidden: true},
+                           
+                        ],
+                        body: [
+                           {label: 'uid', fomatter: (value, rowData, isMobile) => {
+                              if(!isMobile) {
+                                 return `<div class="form-check medium">
+                                          <input type="checkbox" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
+                                          <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
+                                       </div>`;
+                              } else {
+                                 return `<div class="form-check medium">
+                                          <input type="checkbox" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
+                                          <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
+                                       </div>`;
+                              }
+                           }},
+                           {label: 'key1'},
+                           {label: 'key2', align: 'left', fomatter: ( value, rowData, isMobile ) => {                              
+                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}" class="tb-title">${value}</a>`;
+                              else           return `<a href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;                              
+                           }},
+                           {label: 'key3', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-1">${value}</strong>`;
+                           }},
+                           {label: 'key4', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-2">${value}</strong>`;
+                           }},
+                           {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong>${value}</strong>`;
+                           }},
+                           {label: 'key6', fomatter: ( value, rowData, isMobile ) => {
+                              if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                           }},
+                        ]
+                     });
+                  });
+                        </textarea>  
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="form-tit-txt">
+                     <strong>html</strong>
+                  </div>
+                  <div class="form-conts">
+                     <div class="textarea-wrap">
+                        <textarea class="input">
+                           <div id="table" class="table wrap-grid-tbl">                  
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+                        </textarea>
+                     </div>
+                  </div>
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>

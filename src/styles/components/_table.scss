@@ -73,7 +73,7 @@
 .table-wrap.mo .txt {padding-left: 20px;line-height: 150%;width: calc(100% - 120px);text-align: left !important;}
 .table-wrap.mo .number {color: #555;}
 .table-wrap.mo .header .form-check label {padding-left: 28px;}
-.table-wrap .form-check {width: 20px;height: 15px;display: inline-block;}
+// .table-wrap .form-check {width: 20px;height: 15px;display: inline-block;}
 .table-wrap .form-check input[type=checkbox] + label, .table-wrap .form-check input[type=radio] + label {padding: 0;}
 
 .wrap-cont-tbl {position: relative;}
@@ -165,12 +165,12 @@
   .wrap-faq .body .accordion-header {border-bottom: 0;padding: 24px;}
   .wrap-faq .body .accordion-header ul {flex-wrap: wrap;}
   .wrap-faq .body .accordion-header ul li {min-width: auto !important;display: block;}
-  .wrap-faq .body .accordion-header ul li .txt:not(.accordion-btn) {padding: 0 8px;margin-bottom: 23px;display: block;}
+  .wrap-faq .body .accordion-header ul li .txt:not(.accordion-btn) {padding: 0 8px;margin-bottom: 23px;height:auto}
   .wrap-faq .body .accordion-header ul li.number .txt {padding-left: 0;position: relative;}
-  .wrap-faq .body .accordion-header ul li.number .txt::before {content: "";display: block;position: absolute;top: 0;right: 0;width: 1px;height: 12px;background-color: #D8D8D8;}
+  .wrap-faq .body .accordion-header ul li.number .txt::before {content: "";display: block;position: absolute;top: 2px;right: 0;width: 1px;height: 13px;background-color: #D8D8D8;}
   .wrap-faq .body .accordion-header ul li:has(.accordion-btn) {width: 100%;}
-  .wrap-faq .body .accordion-header ul li .accordion-btn {font-size: 19px;white-space: normal;line-height: 150%;padding: 0 10% 0 0;width: 100%;font-weight: 700;text-decoration: underline;}
-  .wrap-faq .body .accordion-header ul li .btn-arrow-down {width: 20px;right: 0;}
+  .wrap-faq .body .accordion-header ul li .accordion-btn {font-size: 18px;white-space: normal;line-height: 150%;padding: 0 10% 0 0;width: 100%;font-weight: 700;text-decoration: underline;}
+  .wrap-faq .body .accordion-header ul li .btn-arrow-down {width: 20px;top: 4px;right: 0;height: auto;}
   .wrap-faq .body .accordion-body {padding: 32px 24px;border-bottom: 0;}
   .wrap-faq .body .accordion-body .number {position: static;}
   .wrap-faq .body .accordion-body .faq-box {margin-top: 7px;}
@@ -178,9 +178,9 @@
   .wrap-faq.type1 .header {display: inline-block;background-color: rgba(0, 0, 0, 0);border-bottom: 0;padding: 17px 0 27px 0;}
   .wrap-faq.type1 .body .accordion-header {position: relative;}
   .wrap-faq.type1 .body .accordion-header ul li.number .txt::before {display: none;}
-  .wrap-faq.type1 .body .accordion-header ul li .txt:not(.accordion-btn) {height: 22px;line-height: 20px;}
+  .wrap-faq.type1 .body .accordion-header ul li .txt:not(.accordion-btn) {height: 22px;line-height: 20px;width:100%;}
   .wrap-faq.type1 .body .accordion-header ul li.num .txt::before {content: "NO.";margin-right: 4px;font-weight: 700;}
-  .wrap-faq.type1 .body .accordion-header ul li.num .txt::after {content: "";display: block;position: absolute;top: 4px;right: 0;width: 1px;height: 12px;background-color: #D8D8D8;}
+  .wrap-faq.type1 .body .accordion-header ul li.num .txt::after {content: "";display: block;position: absolute;top: 5px;right: 0;width: 1px;height: 13px;background-color: #D8D8D8;}
   .wrap-faq.type1 .body .accordion-header ul li.data {position: absolute;left: 0;bottom: 0;width: 100%;display: none;}
   .wrap-faq.type1 .body .accordion-header ul li.data .txt {padding: 0;text-align: left;padding-left: 24px;}
   .wrap-faq.type1 .body .accordion-header ul li .wrap-accordion-btn {position: relative;}

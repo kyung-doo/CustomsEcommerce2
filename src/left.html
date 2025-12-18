@@ -25,13 +25,13 @@ ul{padding:20px;background:#fff}
 li{position:relative;padding:10px 3px;line-height:28px;letter-spacing:-0.5px;border-top:1px dotted #ccc;color:#333; list-style-type : none}
 li:first-child{border-top-width:0}
 li:before{display:inline-block;position:absolute;top:0;left:0}
-li a{position:relative;display:block;padding-right:60px;line-height:23px;font-size:14px;color:#333;font-weight:bold;text-decoration: none;}
+li a{position:relative;display:block;line-height:23px;font-size:14px;color:#333;font-weight:bold;text-decoration: none;}
 li a:hover, a:focus, a:active {text-decoration:underline;}
 /*새창버튼 추가*/
 li a.a_blank{display:inline-block;position:absolute;right:0;top:3px;padding:2px 15px 2px 15px;background:#f60;font-size:12px;color:#fff !important;line-height:20px;text-decoration: none;}
 li a.a_blank:hover, .a_blank:focus, .a_blank:active, .a_blank:visited {color:#fff !important}
 li a span{position:relative;right:0;top:0;height:100%; height:20px;}
-li span{position:absolute;top:50%;right:0;display:inline-block;min-width:55px;height:30px;padding:2px 7px 2px 5px;line-height:150%;color:#fff;font-weight:bold;box-sizing:border-box;transform:translateY(-50%)}
+li span{position:absolute;top:50%;right:0;display:inline-block;min-width:55px;height:30px;padding:2px 7px 2px 5px;line-height:150%;color:#fff;font-weight:bold;box-sizing:border-box;transform:translateY(-50%);display: none;}
 li span:before{content:'';display:block;position:relative;top:50%;color:#fff;font-size:11px;font-weight:500;text-align:center;transform:translateY(-50%)}
 li span.state_01{background:#b30000}
 li span.state_02{background:#666}
@@ -116,15 +116,15 @@ a{color:#000}
 	<ul>
 		<li><a href="pages/1.layout.html" target="contentframe">1.레이아웃 로그인전</a><span class="state_03"></span></li>						
 		<li><a href="pages/2.layout.html" target="contentframe">2.레이아웃 로그인후</a><span class="state_03"></span></li>						
-		<!-- <li><a href="pages/en-1.layout.html" target="contentframe">1.레이아웃 로그인전<i class="en-txt">[영문]</i></a><span class="state_03"></span></li>						
-		<li><a href="pages/en-2.layout.html" target="contentframe">2.레이아웃 로그인후<i class="en-txt">[영문]</i></a><span class="state_03"></span></li>						  -->
+		<li><a href="pages/en-1.layout.html" target="contentframe">1.레이아웃 로그인전<i class="en-txt">[영문]</i></a><span class="state_03"></span></li>						
+		<li><a href="pages/en-2.layout.html" target="contentframe">2.레이아웃 로그인후<i class="en-txt">[영문]</i></a><span class="state_03"></span></li>						  
 	</ul>
 	
 	<h2>그리드</h2> 
 	<ul>
 		<li><a href="pages/board2.html" target="contentframe">그리드 수정 샘플</a><span class="state_03"></span></li>				
 		<li><a href="pages/grid_1-1.html" target="contentframe">1-1.CRUD형</a><span class="state_03"></span></li>		
-		<li><a href="pages/grid_2-1.html" target="contentframe">2-1.조회형 - 일반형<i class="en-txt">[새글추가]</i></a><span class="state_03"></span></li>		 
+		<li><a href="pages/grid_2-1.html" target="contentframe">2-1.조회형 - 일반형</a><span class="state_03"></span></li>		 
 		<li><a href="pages/grid_2-2.html" target="contentframe">2-2.조회형 - 배송주소 타입</a><span class="state_03"></span></li>		
 		<li><a href="pages/grid_2-3.html" target="contentframe">2-3.조회형 - header두줄 타입</a><span class="state_03"></span></li>		
 		<li><a href="pages/grid_2-4.html" target="contentframe">2-4.조회형 - 카드 타입</a><span class="state_03"></span></li>		
@@ -133,6 +133,13 @@ a{color:#000}
 		<li><a href="pages/grid_3-2.html" target="contentframe">3-2.단순형 - 아코디언 타입</a><span class="state_03"></span></li>				
 		<li><a href="pages/grid_4-1.html" target="contentframe">4-1.FAQ</a><span class="state_03"></span></li>				
 		<li><a href="pages/grid_5-1.html" target="contentframe">5-1.메시지조회</a><span class="state_03"></span></li>										
+	</ul>
+
+	<h2>로딩</h2> 
+	<ul>
+		<li><a href="pages/loading1.html" target="contentframe">전체 로딩</a><span class="state_03"></span></li>				
+		<li><a href="pages/loading2.html" target="contentframe">특정 영역의 로딩</a><span class="state_03"></span></li>				
+		<li><a href="pages/loading3.html" target="contentframe">로딩 배경 없음</a><span class="state_03"></span></li>				
 	</ul>
 
 	<h2>개인통관고유부호</h2>
@@ -148,7 +155,7 @@ a{color:#000}
 						<li><a href="pages/pages_1-3.html" target="contentframe">3.개인통관고유부호 정보변경 2단계</a><span class="state_03"></span></li>
 						<li><a href="pages/pages_1-4.html" target="contentframe">4.개인통관고유부호 정보변경 3단계</a><span class="state_03"></span></li>
 						<li><a href="pages/pages_1-5.html" target="contentframe">5.개인통관고유부호 정보변경 4단계</a><span class="state_03"></span></li>
-						<li><a href="pages/en-pages_1-1.html" target="contentframe">1.개인통관고유부호 조회<i class="en-txt">[영문]</i></a><span class="state_03"></span></li>
+						<!-- <li><a href="pages/en-pages_1-1.html" target="contentframe">1.개인통관고유부호 조회<i class="en-txt">[영문]</i></a><span class="state_03"></span></li> -->
 						<!-- <li><a href="pages/en-pages_1-2.html" target="contentframe">2.개인통관고유부호 정보변경 1단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
 						<li><a href="pages/en-pages_1-3.html" target="contentframe">3.개인통관고유부호 정보변경 2단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
 						<li><a href="pages/en-pages_1-4.html" target="contentframe">4.개인통관고유부호 정보변경 3단계<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
@@ -213,8 +220,8 @@ a{color:#000}
 					<ul>
 						<li><a href="pages/pages_7-1.html" target="contentframe">1.개인통관고유부호 도용신고</a><span class="state_03"></span></li>
 						<li><a href="pages/pages_7-2.html" target="contentframe">2.개인통관고유부호 도용신고 상세</a><span class="state_03"></span></li>
-						<li><a href="pages/en-pages_7-1.html" target="contentframe">1.개인통관고유부호 도용신고<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
-						<li><a href="pages/en-pages_7-2.html" target="contentframe">2.개인통관고유부호 도용신고 상세<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<!-- <li><a href="pages/en-pages_7-1.html" target="contentframe">1.개인통관고유부호 도용신고<i class="en-txt">[영문]</i></a><span class="state_02"></span></li>
+						<li><a href="pages/en-pages_7-2.html" target="contentframe">2.개인통관고유부호 도용신고 상세<i class="en-txt">[영문]</i></a><span class="state_02"></span></li> -->
 					</ul>					
 				</li>
 				<li class="3depth1">

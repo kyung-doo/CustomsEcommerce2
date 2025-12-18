@@ -4,174 +4,178 @@ class Tabmenu {
         vote: false
     }
 
-    constructor(ele, props) {
+    constructor( ele, props ) {
         this.ele = ele;
         this.props = props;
+        this.scrollFlag;
         this.scrollSpeed = 10;
         this.timer = null;
-        this.scrollFlag = false;
-
         this.init();
     }
 
-    init() {
-        const owner = this;
-
-        // 이미 tabmenu-wrap이 있으면 새로 만들지 않음
-        if (this.ele.find('.tabmenu-wrap').length === 0) {
-            this.ele.append(`<div class="tabmenu-wrap"></div>`);
-        }
-        const wrap = this.ele.find('.tabmenu-wrap');
-
-        // 탭 이동
-        this.ele.find('.tab-menu').each(function (i) {
-            $(this).off('click').on('click', () => {
-                owner.ele.find('.tab-menu').removeClass('active').removeAttr('title');
-                $(this).addClass('active').attr('title','선택됨');
-                owner.showTabContent($(this).data('tab'));
-                owner.ele.trigger('change', [i]);
+    init () {
+        var owner = this;
+        this.ele.append(`<div class="tabmenu-wrap"></div>`);
+        this.ele.find('.tab-menu').each(function ( i ) {
+            $(this).on('click', () => {
+                if(!owner.props.vote) {
+                    owner.ele.find('.tab-menu').removeClass('active');
+                    owner.ele.find('.tab-menu').removeAttr('title');
+                    $(this).addClass('active');
+                    $(this).attr('title','선택됨')
+                    owner.ele.trigger('change', [i]);
+                } else {
+                    owner.clickVote(i);
+                }
             });
-
-            if (!$.contains(wrap[0], this)) {
-                wrap.append(this);
-            }
+            owner.ele.find('.tabmenu-wrap').append($(this));
         });
 
-        // 버튼 생성 (한 번만)
-        if (!this.ele.find('.btn-prev').length) {
-            this.ele.append(`
-                <a href="javascript:void(0);" class="btn-prev">
-                    <i class="icon btn-arrow-left small"></i>
-                </a>
-                <a href="javascript:void(0);" class="btn-next">
-                    <i class="icon btn-arrow-right small"></i>
-                </a>
-            `);
-        }
+        this.ele.append(`
+            <a href="javascript: void(0);" class="btn-prev">
+                <i class="icon btn-arrow-left small"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn-next">
+                <i class="icon btn-arrow-right small"></i>
+            </a>
+        `);
 
-        this.ele.find('.btn-next, .btn-prev').hide();
-        this.bindScrollButtons();
+        this.ele.find('.btn-next').hide();
+        this.ele.find('.btn-prev').hide();
 
-        // 초기 스크롤 위치 세팅
-        const activeTab = this.ele.find('.tab-menu.active').position();
-        if (activeTab) wrap.scrollLeft(activeTab.left - 15);
+        this.ele.find('.btn-prev').on('touchstart', ( e ) => {
+            this.timer = setInterval(() => {
+                this.moveScroll(-this.scrollSpeed);
+            }, 1000 / 60);
+            e.preventDefault();
+        });
+        this.ele.find('.btn-prev').on('touchend', ( e ) => {
+            clearInterval(this.timer);
+            e.preventDefault();
+        });
 
-        // 초기 탭 콘텐츠 숨기고 active만 보여주기
-        this.hideAllTabContents();
-        const firstActive = this.ele.find('.tab-menu.active').data("tab");
-        if (firstActive) this.showTabContent(firstActive);
+        this.ele.find('.btn-next').on('touchstart', ( e ) => {
+            this.timer = setInterval(() => {
+                this.moveScroll(this.scrollSpeed);
+            }, 1000 / 60);
+            e.preventDefault();
+        });
+        this.ele.find('.btn-next').on('touchend', ( e ) => {
+            clearInterval(this.timer);
+            e.preventDefault();
+        });
 
-        // 리사이즈 이벤트
-        $(window).off('resize.tabmenu').on('resize.tabmenu', () => this.onResize());
-        // 모바일 렌더링 오차 대비
-        setTimeout(() => this.onResize(), 50);
+        this.ele.find('.btn-prev').hide().on('mousedown', ( e ) => {
+            this.timer = setInterval(() => {
+                this.moveScroll(-this.scrollSpeed);
+            }, 1000 / 60);
+            e.preventDefault();
+            $(window).one('mouseup', ( e ) => {
+                clearInterval(this.timer);
+                e.preventDefault();
+            });
+        });
+
+        this.ele.find('.btn-next').hide().on('mousedown', ( e ) => {
+            this.timer = setInterval(() => {
+                this.moveScroll(this.scrollSpeed);
+            }, 1000 / 60);
+            e.preventDefault();
+            $(window).one('mouseup', ( e ) => {
+                clearInterval(this.timer);
+                e.preventDefault();
+            });
+        });
+        
+
+        this.scrollFlag = this.getWrapWidth() === this.getScrollWidth();
+        owner.ele.find('.tabmenu-wrap').scrollLeft(this.ele.find('.tab-menu.active').position().left - 15);
+        $(window).on('resize.tabmenu', () => this.onResize());
         this.onResize();
     }
 
-    bindScrollButtons() {
-        const startScroll = (val) => { this.timer = setInterval(() => this.moveScroll(val), 1000 / 60); };
-        const endScroll = () => clearInterval(this.timer);
-
-        this.ele.find('.btn-prev').off('mousedown touchstart').on('mousedown touchstart', e => {
-            startScroll(-this.scrollSpeed);
-            e.preventDefault();
-        });
-        this.ele.find('.btn-next').off('mousedown touchstart').on('mousedown touchstart', e => {
-            startScroll(this.scrollSpeed);
-            e.preventDefault();
-        });
-
-        $(window).off('mouseup touchend').on('mouseup touchend', endScroll);
-    }
-
-    hideAllTabContents() {
-        this.ele.find('.tab-menu').each(function () {
-            const tabName = $(this).data("tab");
-            $(`.${tabName}`).hide();
-        });
-    }
-
-    showTabContent(tabName) {
-        this.hideAllTabContents();
-        $(`.${tabName}`).show();
-    }
-
-    onResize() {
-        const wrapW = this.getWrapWidth();
-        const scrollW = this.getScrollWidth();
-        const isScrollable = scrollW > wrapW + 2;
-
-        if (!isScrollable) {
-            this.ele.find('.btn-prev, .btn-next').hide();
-            this.ele.find('.tabmenu-wrap').off('scroll');
+    onResize () {
+        if(this.getWrapWidth() === this.getScrollWidth()) {
+            if(this.scrollFlag) {
+                this.ele.find('.tabmenu-wrap').off('scroll');
+                this.ele.find('.btn-next').hide();
+                this.ele.find('.btn-prev').hide();
+            }
             this.scrollFlag = false;
-            return;
-        }
-
-        if (!this.scrollFlag) {
-            this.ele.find('.tabmenu-wrap').on('scroll', () => this.onScroll());
-        }
-
-        this.onScroll();
-        this.scrollFlag = true;
-    }
-
-    onScroll() {
-        const wrap = this.ele.find('.tabmenu-wrap');
-        const left = wrap.scrollLeft();
-        const max = this.getScrollWidth() - this.getWrapWidth();
-
-        if (left <= 2) {
-            this.ele.find('.btn-prev').hide();
-            this.ele.find('.btn-next').show();
-        } else if (left >= max - 2) {
-            this.ele.find('.btn-next').hide();
-            this.ele.find('.btn-prev').show();
         } else {
-            this.ele.find('.btn-prev, .btn-next').show();
+            if(!this.scrollFlag) {
+                if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) <= 2) {
+                    this.ele.find('.btn-next').show();
+                } else if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) >= parseInt(this.getScrollWidth() - this.ele.width()) - 2) {
+                    this.ele.find('.btn-prev').show();
+                } else {
+                    this.ele.find('.btn-next').show();
+                    this.ele.find('.btn-prev').show();
+                }
+                this.ele.find('.tabmenu-wrap').on('scroll', () => this.onScroll());
+            }
+            this.scrollFlag = true;
         }
     }
 
-    moveScroll(val) {
-        const wrap = this.ele.find('.tabmenu-wrap');
-        wrap.scrollLeft(wrap.scrollLeft() + val);
+    onScroll () {
+        if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) <= 2) {
+            this.ele.find('.btn-prev').hide();
+        } else if(parseInt(this.ele.find('.tabmenu-wrap').scrollLeft()) >= parseInt(this.getScrollWidth() - this.ele.width()) - 2) {
+            this.ele.find('.btn-next').hide();
+        } else {
+            this.ele.find('.btn-next').show();
+            this.ele.find('.btn-prev').show();
+        }
     }
 
-    getScrollWidth() {
+    moveScroll ( val ) {
+        let left = this.ele.find('.tabmenu-wrap').scrollLeft();
+        this.ele.find('.tabmenu-wrap').scrollLeft(left + val);
+    }
+
+    getScrollWidth () {
+        let owner = this;
         let width = 0;
-        this.ele.find('.tab-menu').each((i, el) => { width += el.offsetWidth; });
-        return width;
+        this.ele.find('.tab-menu').each(function () {
+            if(owner.ele.hasClass('tabmenu-bg1')) {
+                width += $(this)[0].getBoundingClientRect().width-1;
+            } else {
+                width += $(this)[0].getBoundingClientRect().width;
+            }
+        })
+        return Math.round(width);
     }
 
-    getWrapWidth() {
-        return this.ele.find('.tabmenu-wrap')[0].offsetWidth;
+    getWrapWidth () {
+        return Math.round(this.ele.find('.tabmenu-wrap')[0].getBoundingClientRect().width);
     }
 
-    clickVote(idx) {
-        this.ele.find('.tab-menu').removeClass('active').each(function(i){
-            if(i<=idx) $(this).addClass('active');
+    clickVote ( idx ) {
+        this.ele.find('.tab-menu').removeClass('active').each(function ( i ) {
+            if(i <= idx) {
+                $(this).addClass('active');
+            }
         });
     }
-
-    destroy() {
+    
+    destroy () {
         this.ele.find('.tab-menu').off('click');
-        this.ele.find('.btn-prev, .btn-next').off();
+        this.ele.find('.btn-prev').off('mousedown touchstart mouseup touchend');
+        this.ele.find('.btn-next').off('mousedown touchstart mouseup touchend');
         this.ele.find('.tabmenu-wrap').off('scroll');
-        $(window).off('resize.tabmenu');
+        $(window).on('resize.tabmenu');
     }
+
 }
 
-$.fn.tabmenu = function(option, params) {
+$.fn.tabmenu = function (option, params) {
     return this.each(function () {
         var $this = $(this);
-        var instance = $this.data('tabmenu');
-        var options = $.extend({}, Tabmenu.DEFAULT_PROPS, typeof option === "object" && option);
-
-        if (!instance || typeof instance === 'string') {
-            $this.data('tabmenu', (instance = new Tabmenu($this, options)));
-        }
-
-        if (typeof option === 'string') instance[option](params);
+        var data = $this.data('tabmenu');
+        var options =  $.extend({}, Tabmenu.DEFAULT_PROPS, typeof option == "object"  && option);
+        if(!data || typeof data == 'string') $this.data('tabmenu', (data = new Tabmenu($this, options)));
+        if(typeof option == 'string') data[option](params);
     });
 };
 $.fn.tabmenu.Constructor = Tabmenu;
