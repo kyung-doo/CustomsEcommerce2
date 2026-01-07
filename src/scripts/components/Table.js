@@ -68,7 +68,7 @@ class Table {
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
-            //this.scrollTop();
+            this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             if(!this.sort.key) {
@@ -170,7 +170,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
-                    //this.scrollTop();
+                    this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     if(!this.sort.key) {
@@ -181,7 +181,7 @@ class Table {
         });
     }
 
-    setHead () {
+    setHead () {       
         
         const table = this.ele.find(this.props.tableType !== 'faq' ? '.table-content' : '.wrap-faq');
         if(this.props.tableType !== 'faq') {
@@ -214,7 +214,7 @@ class Table {
                         </div>
                     </th>
                 `);
-            }
+            }            
 
             const len = this.colwidths.length;
 
@@ -360,7 +360,7 @@ class Table {
         }
     }
 
-    setBody () {
+    setBody () {        
         
         const table = this.ele.find(this.props.tableType !== 'faq' ? '.table-content' : '.wrap-faq');
         if(this.props.tableType !== 'faq') {
@@ -429,21 +429,20 @@ class Table {
                                 <li>
                                     <strong class="title">${this.props.head[j].name}</strong>
                                     <span class="txt">${body.fomatter ? body.fomatter((data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label], data, true) 
-									: (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}</span>
+                                    : (data[body.label] === null || data[body.label] === undefined) ? "" : data[body.label]}</span>
                                 </li> 
-                            `);
-                        }
-                    }                                        
+                            `);                              
+                        }                         
+                    }                       
 
                     if(this.props.head[j].tooltip) {
                         this.addToolTip(li.find('ul li').eq(this.props.tableType === 'crud' ? j+1 : j).find('.title'), this.props.head[j].tooltip, 'top right');
-                    }
+                    }                    
                 });
 
                 if(this.props.rowCreated) {
                     this.props.rowCreated(tr, tableM.length > 0 ? li : null, data, i);
-                }
-
+                }                
             });
 
             if(this.props.created) {

@@ -3,7 +3,7 @@
    ================================================== */
 .breadcrumb {display: flex;}
 .breadcrumb li {position: relative;margin: 0 8px;display: flex;}
-.breadcrumb li * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;}
+.breadcrumb li * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;line-height: 12px;}
 .breadcrumb li *:not(span) {text-decoration: underline;line-height: 150%;}
 .breadcrumb li *:not(span):hover {background-color: #EDF1F5;border-radius: 4px;}
 .breadcrumb li *:not(span):active {background-color: #CDD7E4;border-radius: 4px;}

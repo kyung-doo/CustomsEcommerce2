@@ -17,22 +17,25 @@ $(() => {
         var btn = $('.main .box1 .cont-box .wrap-mobile-list .more button');
 
         btn.click(function(){
-            if($(this).hasClass('open')){
-                console.log('열기');
-                $(this).closest('.wrap-mobile-list').addClass('active');
-                $(this).attr('title','메뉴닫기');
-                $(this).attr('aria-label','메뉴닫기');
-                $(this).removeClass('open');
-                $(this).addClass('close');                
-                $(this).text('접기')
-            }else{
-                console.log('닫기');
-                $(this).closest('.wrap-mobile-list').removeClass('active');
+            if($(this).hasClass('close')){
+                
+
+                      console.log('닫기');
+                      $(this).closest('.wrap-mobile-list').addClass('active');
+                
                 $(this).attr('title','메뉴열기');
                 $(this).attr('aria-label','메뉴열기');
                 $(this).removeClass('close');
                 $(this).addClass('open');                
                 $(this).text('더보기')
+            }else{
+                console.log('열기');
+                $(this).closest('.wrap-mobile-list').removeClass('active');
+                $(this).attr('title','메뉴닫기');
+                $(this).attr('aria-label','메뉴닫기');
+                $(this).removeClass('open');
+                $(this).addClass('close');                
+                $(this).text('접기')
             }
         })
     })
@@ -285,9 +288,9 @@ $(() => {
     //화면 최초 로드 시 자동 슬라이드
     setTimeout(function(){
         swiper1.update();
-        swiper1.autoplay.atart();
+        swiper1.autoplay.start();
         swiper2.update();
-        swiper2.autoplay.atart();
+        swiper2.autoplay.start();
     },300)
 
     // 공통 play/pause 처리

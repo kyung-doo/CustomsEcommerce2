@@ -27,7 +27,7 @@
 .wrap-pagination .pagination-btn-area .page-num {display: flex;align-items: center;color: #555;padding: 0 8px;margin-right: 16px;}
 
 @media screen and (max-width: 767px) {
-  .pagination {min-width: 100px;position: relative;padding: 60px 0 2px 0;}
+  .pagination {min-width: 100px;position: relative;padding: 50px 0 0 0;}
   .pagination .mobile-dot {display: flex;}
   .pagination a.page-link:not(.mobile-link) {display: none;}
   .pagination .page-navi {position: absolute;top: 0;}

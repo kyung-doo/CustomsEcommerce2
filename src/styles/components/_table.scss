@@ -23,13 +23,14 @@
 .add-title .number, .tb-tit .number {display: inline-block;color: #1D56BC;font-style: normal;margin-left: 6px;}
 .add-title .max-num, .tb-tit .max-num {margin: 8px 0 8px 6px;}
 
-.table-wrap {position: relative;min-width: 100%;width: 100%;overflow-x: auto;overflow-y: hidden;min-height: 125px;}
+.table-wrap {position: relative;min-width: 100%;width: 100%;overflow-x: auto;overflow-y: hidden;/*min-height: 125px;*/}
 .table-wrap .tooltip-btn-area .btn-wrap {display: block;}
 .table-wrap .tooltip-btn-area .btn-wrap[data-link=false] {display: none;}
 .table-wrap .no-data {align-items: center !important;justify-content: center !important;}
 .table-wrap .new {font-size: 0;min-width: 16px;height: 16px;background-image: url("../assets/icons/Badge-number.svg");background-size: contain;margin-left: 8px;display: inline-block;}
 .table-wrap td:has(.new) a {display: flex;align-items: center;}
 .table-wrap table {table-layout: fixed;width: 100%;border-spacing: 0;}
+.table-wrap .tax-amount{color:#E71825;display: block;}
 .table-wrap th {border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 9px 16px;font-weight: 700;}
 .table-wrap th *:not(.tooltip-tit *) {font-weight: 700;}
 .table-wrap th .tooltip-tit {display: flex;justify-content: center;}
@@ -65,14 +66,17 @@
 .table-wrap.mo .header {padding: 0 0 10px 0;border-bottom: 1px solid #58616A;}
 .table-wrap.mo .header .form-check {display: inline-flex;}
 .table-wrap.mo .body {display: flex;flex-direction: column;padding: 5px 0;border-bottom: 1px solid #E4E4E4;}
-.table-wrap.mo .body li {display: flex;align-items: flex-start;padding: 3px;justify-content: space-between;gap: 8px;}
+.table-wrap.mo .body li {display: flex;/*align-items: center;*/padding: 3px;justify-content: space-between;gap: 8px;}
 .table-wrap.mo .body li.dotted-line-bottom {padding-bottom: 17px !important;margin-bottom: 12px !important;}
 .table-wrap.mo .body li a {text-decoration: underline;}
 .table-wrap.mo .title {line-height: 150%;position: relative;width: 120px;min-width: 120px;}
 .table-wrap.mo .title > span {font-weight: 700;}
 .table-wrap.mo .txt {padding-left: 20px;line-height: 150%;width: calc(100% - 120px);text-align: left !important;}
+.table-wrap:not(.wrap-faq).mo .txt{display: flex;flex-wrap: nowrap;flex-direction: column;justify-content: center;}
+
 .table-wrap.mo .number {color: #555;}
 .table-wrap.mo .header .form-check label {padding-left: 28px;}
+.table-wrap.mo .tax-amount{display: inline-block;}
 // .table-wrap .form-check {width: 20px;height: 15px;display: inline-block;}
 .table-wrap .form-check input[type=checkbox] + label, .table-wrap .form-check input[type=radio] + label {padding: 0;}
 
@@ -84,7 +88,6 @@
 .wrap-cont-tbl td {text-align: right;}
 .wrap-cont-tbl tbody th {text-align: left !important;}
 .wrap-cont-tbl .table-wrap.mo .modal-tit {display: block;}
-.wrap-cont-tbl .table-wrap.mo .modal-tit:first-child {margin-top: 26px;}
 .wrap-cont-tbl .acc-tit span, .wrap-cont-tbl .accordion-btn span {color: #555 !important;}
 
 .wrap-check-tbl .mo .wrap-body {border-top: 1px solid #58616A;}
@@ -149,13 +152,14 @@
   .board-top > .right-box button {width: auto;}
   .table-wrap.pc {display: block;overflow-x: auto;}
   .table-wrap.mo {display: block;overflow: visible;}
-  .tbl.check, .tbl.cont {width: 1110px;}
+  .tbl.check, .tbl.cont {width: 767px;}
   .add-title {flex-direction: column;align-items: flex-start;}
   .add-title .txt {width: 100%;margin-left: 0;background-color: #f4f5f6;padding: 13px 24px;border-radius: 8px;}
   .tb-tit {font-size: 19px;}
   .tb-tit .txt {margin-top: 12px;}
   .board-top.tbl-top.faq {position: relative;margin-bottom: 0;}
   .board-top.tbl-top.faq button {position: absolute;bottom: -48px;right: 0;z-index: 1;}
+  .board-top div.top-txt{display: none;}
 
   .wrap-faq .header {display: none;}
   .wrap-faq .body {border-bottom: 0 !important;padding: 0 !important;}

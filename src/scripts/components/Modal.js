@@ -52,7 +52,9 @@ class Modal {
         if(this.ele.attr('id') === 'homepage' || this.ele.attr('id') === 'customs' || this.ele.attr('id') === 'in-search'){
             $("body").css({'overflow': 'auto'});       
             $('#homepage,#customs').hide();                                        
-            this.ele.show();            
+            //this.ele.show();            
+            this.ele.removeClass('d-none');
+            this.ele.removeAttr('style');
         }else{
             $("body").css({'overflow': 'hidden'});            
         }       

@@ -10,7 +10,7 @@
       <!-- //header -->
       <!-- content-wrap -->
             <h3 class="head-tit">
-               <strong class="font-2 cl-5">디지털 정부 서비스 사용자 로그인</strong>
+               <!-- <strong class="font-2 cl-5">디지털 정부 서비스 사용자 로그인</strong> -->
                로그인 방식을 선택해주세요.
             </h3>            
             <h4 class="sr-only">빈텍스트</h4>
@@ -21,13 +21,13 @@
                <div class="wrap-login">
                   <div class="board-top no-wrap title-top">
                      <div class="left-box">
-                        <h5 class="title-type">정부 통합 로그인</h5>      
+                        <h5 class="title-type change-title">Any –ID 로그인</h5>      
                         <div class="form-toggle-switch medium">
-                           <input type="checkbox" id="switch5">
-                           <label for="switch5"><span>미사용</span></label>
+                           <input type="checkbox" id="myCheckbox" checked>
+                           <label for="myCheckbox"><span>미사용</span></label>
                         </div>
                      </div>   
-                     <div class="right-box">
+                     <div class="right-box">                        
                         <div class="user-box">
                            <strong>아직 정부 통합인증(Any –ID) 사용자가 아니신가요?</strong>
                            <button class="user-btn">사용자 등록 <i class="icon btn-arrow-right x-small"></i></button>
@@ -69,17 +69,25 @@
                         </div>                        
                      </div>               
                   </div>                  
-                  <ul class="certification-list">
+
+                  <!-- any-box -->
+                  <ul class="certification-list any-box">
+                     <li>
+                        <a href="#none" class="list0">
+                           <strong class="tit">모바일 신분증</strong>
+                           <p class="txt">스마트폰의 모바일 신분증으로 로그인</p>
+                        </a>
+                     </li>
                      <li>
                         <a href="#none" class="list1">
                            <strong class="tit">간편인증</strong>
-                           <p class="txt">네이버, 카카오, 금융기관 등의 민간 전자서명 사업자가 제공하는 전자서명으로 로그인하기</p>
+                           <p class="txt">네이버, 카카오, 금융기관 등의 전자서명으로 로그인</p>
                         </a>
                      </li>
                      <li>
                         <a href="#none" class="list2">
                            <strong class="tit">공동 인증서</strong>
-                           <p class="txt">공동인증서(구 공인인증서)는 개인용 컴퓨터 또는 USB, 스마트폰에 보관되어 있는 인증서를 이용하여 로그인하기</p>
+                           <p class="txt">개인 컴퓨터, USB 등에 보관되어 있는 인증서로 로그인</p>
                         </a>
                      </li>
                      <li>
@@ -88,21 +96,32 @@
                            <p class="txt">은행 앱 또는 인터넷뱅킹 사이트에서 발급한 금융결제원의 인증서로 로그인하기</p>
                         </a>
                      </li>
-                  </ul>
-                  <div class="board-top no-wrap title-top">
-                     <div class="left-box">
-                        <h5 class="title-type">관세청 로그인</h5>                              
-                     </div>                                     
-                  </div>
-                  <ul class="certification-list">
+                  </ul>   
+                  <!-- //any-box -->               
+
+                  <!-- Unipass-box -->
+                  <ul class="certification-list unipass-box">                     
                      <li>
-                        <a href="#none" class="list4">
-                           <strong class="tit">휴대폰 인증</strong>
-                           <p class="txt">성명, 주민등록번호, 휴대폰 번호를 이용하여 로그인하기</p>
+                        <a href="#none" class="list1">
+                           <strong class="tit">간편인증</strong>
+                           <p class="txt">네이버, 카카오, 금융기관 등의 전자서명으로 로그인</p>
                         </a>
-                     </li>                    
-                  </ul>
-               </div>
+                     </li>
+                     <li>
+                        <a href="#none" class="list2">
+                           <strong class="tit">공동 인증서</strong>
+                           <p class="txt">개인 컴퓨터, USB 등에 보관되어 있는 인증서로 로그인</p>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#none" class="list3">
+                           <strong class="tit">금융 인증서</strong>
+                           <p class="txt">은행 앱 또는 인터넷뱅킹 사이트에서 발급한 금융결제원의 인증서로 로그인하기</p>
+                        </a>
+                     </li>
+                  </ul>   
+                  <!-- //Unipass-box -->               
+               </div> 
             </div>
             <!--// 내용 -->
          </div>

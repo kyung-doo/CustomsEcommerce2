@@ -106,7 +106,7 @@ $(() => {
         전체메뉴, 내소식 클릭 시 메뉴 닫기
         (1023px 이하 추가 처리 포함)
         ================================================== */
-    $('#header .main-menu .gnb-main-list .gnb-list .depth2 a, #header .header-actions .name-box a:has(.inform),.btn-navi.login,.btn-navi.sch').click(function () {
+    $('#header .header-actions .name-box a:has(.inform),.btn-navi.login,.btn-navi.sch').click(function () {
 
         // 공통 처리
         $(".gnb-menu li").removeClass('active');
@@ -120,8 +120,9 @@ $(() => {
 
         // 1023px 이하일 때만
         if (window.innerWidth <= 1023) {
-            $('#wrap').removeClass('mobile-open');
+            $('#wrap').removeClass('mobile-open');            
         }
+        //$('.sub-title').removeClass('mobile-dep-menu');
     });
 
 
@@ -149,7 +150,7 @@ $(() => {
             
         }) 
     });
-    $(".mobile-close").on('click', function (e) {
+    $(".mobile-close,#header .main-menu .gnb-main-list .gnb-list .depth2 a").on('click', function (e) {
         gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
             $("#wrap").removeClass('mobile-open');
             $('.sub-title').removeClass('mobile-active');

@@ -1,7 +1,9 @@
 @use "./font";
 @use "./utils";
 
-/** 전체 공통 **/
+/* ==========================================================================
+   공통
+   ========================================================================== */
 @media print {
 	* {-webkit-print-color-adjust: exact;print-color-adjust:exact;}
     body, html {height: auto !important;overflow: visible !important;margin: 0;}
@@ -43,9 +45,6 @@ strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
 .blind,.calendar-blind {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.7);z-index: 3;}
 .calendar-blind{z-index: 9;background-color: rgba(0, 0, 0, 0.0);}
 
-/** 개발 들어가면 삭제 **/
-.testtest{margin-top: 100px;}
-
 .d-none{display: none;}
 .sr-only,caption{width: 1px;height: 1px;position: absolute;left: -5000px !important;top: -5000px !important;overflow: hidden;}
 
@@ -67,6 +66,7 @@ strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
 .f-center{justify-content: center !important;}
 .f-no-wrap{flex-wrap: nowrap !important;}
 .f-aling-center{align-items: center !important;}
+.f-jus-cont{justify-content: space-between !important;}
 
 /** display **/
 .d-block{display: block !important;}

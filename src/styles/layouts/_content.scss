@@ -2,11 +2,9 @@
    LAYOUT: Content   
    ========================================================================== */
 
-/* 여백 25 */
+/* 여백 15 */
 .accordion-wrap.accordion.cont-advice,
-.wrap-check-tbl table,
-.wrap-crud-tbl table,
-.wrap-cont-tbl table,
+.table-wrap,
 .wrap-form-area,
 .search-box,
 [class*=txt-box-type].type1,
@@ -26,12 +24,10 @@
 .modal-cont [class*=-type],
 .wrap-check-tbl.mo .wrap-body,
 .wrap-crud-tbl.mo .wrap-body,
-.wrap-cont-tbl.mo .table-wrap,
 .wrap-cont-tbl .table-wrap.mo .cont-acc-tbl,
 .wrap-check-tbl .table-wrap.mo .wrap-body,
-.cont-area .pagination {margin-bottom: 25px;}
-
-/* 여백 10 */
+.cont-area .pagination,
+.content-wrap .cont-head .step-area,
 [class*=title-type],
 .add-title,
 .board-top.tbl-top,
@@ -40,24 +36,33 @@
 .agree-title,
 .title-top,
 .btn-area,
-.cont-area > .advice-txt, .search-box ul {margin-bottom: 10px;}
+.cont-area > .advice-txt, 
+// .search-box ul,
+.wrap-graph,
+.wrap-cont-tbl .table-wrap.mo .modal-tit:first-child,
+.wrap-cont-tbl .table-wrap.mo .modal-tit {margin-top: 15px;}
 
-/* 예외 여백 0 */
-.title-top .title-type,
-.cont-area > *:last-child,
-.cont-area > * > *:last-child,
-.modal-cont:last-child,
-.modal-cont button i {margin-bottom: 0 !important;}
+.testtest,
+.inp-box .file-upload,
+.modal-body .reforwarding .txt-type,
+.modal-body .modal-cont .txt-box-type .txt-type,
+#header .header-actions .popup-box .modal .popup-btn-area .madal-btn-area .btn-area{margin: 0 !important;}
+
+.txt-box-type.type1.mb-24{margin-bottom: 0 !important;}
+
+.board-top.no-wrap.title-top [class*=title-type],
+.wrap-graph .title-type4.font-2,
+.wrap-form-area .inp-form .add-btn .search-type1{margin-top: 0 !important;}
 
 .main .content-wrap {padding: 0 10px;}
 
 /* cont-head */
 .content-wrap {max-width: 1312px;margin: 0 auto;position: relative;width: 100%;flex: 1;height: 100%;padding: 0 16px;}
-.content-wrap .cont-head .head-util {display: flex;justify-content: space-between;margin-top: 24px;align-items: center;}
+.content-wrap .cont-head .head-util {display: flex;justify-content: space-between;margin-top: 20px;align-items: center;}
 .content-wrap .cont-head .head-util .breadcrumb-wrap {padding-left: 10px;}
-.content-wrap .cont-head .head-tit {font-size: 32px;padding: 17px 0 30px 0;line-height: 150%;display: flex;flex-direction: column;}
+.content-wrap .cont-head .head-tit {font-size: 32px;padding: 8px 0 5px 0;line-height: 150%;display: flex;flex-direction: column;}
 .content-wrap .cont-head .head-tit .txt {font-size: 19px;color: #555;line-height: 150%;margin-top: 19px;}
-.content-wrap .cont-head .step-area {display: flex;justify-content: space-between;margin-bottom: 45px;}
+.content-wrap .cont-head .step-area {display: flex;justify-content: space-between;margin-bottom: 30px;}
 .content-wrap .cont-head .step-area .tit-box {display: flex;flex-direction: column;}
 .content-wrap .cont-head .step-area .tit-box .tit-step i {margin: 0 7px 0 4px;}
 .content-wrap .cont-head .step-area .tit-box .tit-step span {color: #1D56BC;font-weight: 700;}
@@ -94,51 +99,51 @@
   .content-wrap .cont-head .step-area li:last-child:before {display: block;}
   .content-wrap .cont-head .step-area li:first-child::before {display: none;}
   .content-wrap .cont-head .step-area li:after {left: auto;right: 0;}
-  .content-wrap .cont-head .head-util {margin-top: 16px;}
+  // .content-wrap .cont-head .head-util {margin-top: 16px;}
   
   .fpc, .pc {display: none !important;}
   .mo {display: block !important;}
   .fmo {display: flex !important;}
 
   /* 여백 20 */
-  .accordion-wrap.accordion.cont-advice,
-  .wrap-check-tbl table,
-  .wrap-crud-tbl table,
-  .wrap-cont-tbl table,
-  .wrap-form-area,
-  .search-box,
-  [class*=txt-box-type].type1,
-  [class*=txt-box-type],
-  .acc-area,
-  .file-upload,
-  .file-upload-mobile,
-  .cont-area > .form-group,
-  .tabmenu,
-  .wrap-detail,
-  .wrap-detail .detail-file,
-  .wrap-faq,
-  .wrap-customs-info,
-  .wrap-search-pages,
-  .wrap-search-area,
-  .modal-cont,
-  .modal-cont [class*=-type],
-  .wrap-check-tbl.mo .wrap-body,
-  .wrap-crud-tbl.mo .wrap-body,
-  .wrap-cont-tbl.mo .table-wrap,
-  .wrap-cont-tbl .table-wrap.mo .cont-acc-tbl,
-  .wrap-check-tbl .table-wrap.mo .wrap-body,
-  .cont-area .pagination {margin-bottom: 20px;}
+  // .accordion-wrap.accordion.cont-advice,
+  // .wrap-check-tbl table,
+  // .wrap-crud-tbl table,
+  // .wrap-cont-tbl table,
+  // .wrap-form-area,
+  // .search-box,
+  // [class*=txt-box-type].type1,
+  // [class*=txt-box-type],
+  // .acc-area,
+  // .file-upload,
+  // .file-upload-mobile,
+  // .cont-area > .form-group,
+  // .tabmenu,
+  // .wrap-detail,
+  // .wrap-detail .detail-file,
+  // .wrap-faq,
+  // .wrap-customs-info,
+  // .wrap-search-pages,
+  // .wrap-search-area,
+  // .modal-cont,
+  // .modal-cont [class*=-type],
+  // .wrap-check-tbl.mo .wrap-body,
+  // .wrap-crud-tbl.mo .wrap-body,
+  // .wrap-cont-tbl.mo .table-wrap,
+  // .wrap-cont-tbl .table-wrap.mo .cont-acc-tbl,
+  // .wrap-check-tbl .table-wrap.mo .wrap-body,
+  // .cont-area .pagination {margin-top: 20px;}
 
   /* 여백 15 */
-  [class*=title-type],
-  .add-title,
-  .board-top.tbl-top,
-  .compulsory-txt,
-  .inp-form,
-  .agree-title,
-  .title-top,
-  .btn-area,
-  .cont-area > .advice-txt, .search-box ul {margin-bottom: 15px;}
+  // [class*=title-type],
+  // .add-title,
+  // .board-top.tbl-top,
+  // .compulsory-txt,
+  // .inp-form,
+  // .agree-title,
+  // .title-top,
+  // .btn-area,
+  // .cont-area > .advice-txt, .search-box ul {margin-top: 15px;}
 }
 @media screen and (max-width: 480px) {  
   .head-tit .txt {font-size: 17px;font-weight: 400;}

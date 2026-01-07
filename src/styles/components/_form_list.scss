@@ -1,11 +1,12 @@
 /* ==================================================
    Style Guide list
    ================================================== */
-.wrap-form-area .inp-form {border: 1px solid #e4e4e4;border-radius: 8px;padding: 32px 24px;position: relative;}
+.wrap-form-area .inp-form {border: 1px solid #e4e4e4;border-radius: 8px;padding: 24px;position: relative;}
+.wrap-form-area #copyMsg{height: 13px;position: absolute;}
 .wrap-form-area .inp-form button[class*=btn]:not(.text).medium, .wrap-form-area .inp-form label[class*=btn]:not(.text).medium {height: 48px;}
-.wrap-form-area .inp-form:has(.form-btn-area) {padding: 32px 130px 32px 32px;}
-.wrap-form-area .inp-form:has(.step-area.type1) {padding: 32px 32px 32px 239px;}
-.wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 32px 130px 32px 239px;}
+.wrap-form-area .inp-form:has(.form-btn-area) {padding: 24px 130px 24px 24px;}
+.wrap-form-area .inp-form:has(.step-area.type1) {padding: 24px 24px 24px 239px;}
+.wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 24px 130px 24px 239px;}
 .wrap-form-area .inp-form > ul {display: flex;flex-direction: row;flex-wrap: wrap;margin-left: -40px;margin-top: -25px;}
 .wrap-form-area .inp-form > ul .tit {position: relative;display: inline-flex;align-items: center;gap: 4px;padding-right: 12px;font-weight: 700;}
 .wrap-form-area .inp-form > ul .tit + .form-group {display: flex;align-items: center;gap: 8px;margin-top: 9px;}
@@ -34,8 +35,8 @@
 }
 
 /* 텍스트 유형 리스트 */
-.wrap-form-area .inp-form .txt-list {display: flex;margin-left: 40px;align-items: flex-start;}
-.wrap-form-area .inp-form .txt-list .tit {width: 160px;min-width: 160px;line-height: 150%;padding-right: 0;}
+.wrap-form-area .inp-form .txt-list {display: flex;margin-left: 40px;align-items: center;}
+.wrap-form-area .inp-form .txt-list .tit {width: 160px;min-width: 160px;line-height: 150%;padding-right: 0;height: 100%;align-items: flex-start;}
 .wrap-form-area .inp-form .txt-list .title {display: flex;position: relative;}
 .wrap-form-area .inp-form .txt-list .inp-box {display: block;padding-left: 30px;flex: 1;margin-top: 0;width: calc(100% - 160px);}
 .wrap-form-area .inp-form .txt-list .inp-box .txt {line-height: 150%;display: block;}
@@ -44,7 +45,7 @@
 .wrap-form-area.type1 .inp-form li.txt-list {flex-direction: column;}
 .wrap-form-area.type1 .inp-form li.txt-list .inp-box {text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}
 .wrap-form-area.type1 .inp-form li.txt-list .add-tit {font-size: 19px;display: flex;align-items: center;width: 100%;padding-right: 155px;line-height: 150%;}
-.wrap-form-area.type1 .inp-form li.txt-list .add-tit .add-modify-btn {font-size: 0;width: 0;background-color: rgba(0, 0, 0, 0);margin-left: 8px;}
+.wrap-form-area.type1 .inp-form li.txt-list .add-tit .add-modify-btn {font-size: 0;width: 0;background-color: rgba(0, 0, 0, 0);margin-left: 8px;height:20px !important}
 .wrap-form-area.type1 .inp-form li.txt-list .add-txt {color: #555;line-height: 150%;}
 
 /* 입력 유형 리스트 */
@@ -58,16 +59,16 @@
 .wrap-form-area .inp-form .inp-box .area-group {display: flex;align-items: center;gap: 8px;width: 100%;min-width: 100px;}
 .wrap-form-area .inp-form .inp-box .check-list-box {display: flex;gap: 24px;flex-wrap: wrap;margin-top: 10px;width: 100%;}
 .wrap-form-area .inp-form .form-group, .wrap-form-area .inp-form .wrap-form-group {width: 100%;}
-.wrap-form-area .inp-form .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 20px;}
-.wrap-form-area .inp-form .form-btn-area button.text {background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;}
+.wrap-form-area .inp-form .form-btn-area {position: absolute;top: 24px;right: 24px;display: flex;gap: 20px;}
+.wrap-form-area .inp-form .form-btn-area button.text {background-color: rgba(0, 0, 0, 0);gap: 5px;padding-right: 0;height:20px !important;}
 .wrap-form-area .inp-form .form-btn-area button.text:disabled i.refresh {background-image: url("../assets/icons/refresh-d.svg");}
 .wrap-form-area .inp-form .form-btn-area button.text:disabled i.close {background-image: url("../assets/icons/close-d.svg");}
 .wrap-form-area .inp-form:has(> .form-check) {padding-left: 76px;padding-right: 76px;}
-.wrap-form-area .inp-form:has(> .form-check) > .form-check {position: absolute;top: 32px;left: 32px;}
+.wrap-form-area .inp-form:has(> .form-check) > .form-check {position: absolute;top: 24px;left: 24px;}
 .wrap-form-area .inp-form:has(> .form-check) > .form-check label {padding: 0;padding-left: 0 !important;width: 20px;}
 .wrap-form-area .inp-form.type1 .cont-acc-list.type1 .accordion-body {border-top: 0;margin-top: 0;}
 .wrap-form-area .inp-form .cont-acc-list.type1 {margin: 0;border-top: 0;padding: 0;}
-.wrap-form-area .inp-form .cont-acc-list.type1 .accordion-header {position: absolute;top: 32px;right: 24px;padding: 0 !important;}
+.wrap-form-area .inp-form .cont-acc-list.type1 .accordion-header {position: absolute;top: 24px;right: 24px;padding: 0 !important;}
 .wrap-form-area .inp-form .cont-acc-list.type1 .accordion-header a {padding: 0;}
 .wrap-form-area .inp-form .cont-acc-list.type1 .accordion-body {margin-top: 24px;padding: 0;padding-top: 24px;border-top: 1px solid #D8D8D8;}
 .wrap-form-area .inp-form .cont-acc-list.type1 .accordion-body .inp-form {border: 0;border-radius: 0;padding: 0;}
@@ -78,7 +79,7 @@
 .wrap-form-area .inp-form .cont-acc-list.type1 .accordion-body .inp-form ul li label {width: auto;padding-right: 12px;}
 .wrap-form-area .inp-form .cont-acc-list.type1 .accordion-body .inp-form ul li .compulsory-txt {margin-top: 2px;margin-bottom: 0;}
 .wrap-form-area .inp-form .cont-acc-list.type1 .accordion-body .inp-form ul li .return-btn {width: 121px;}
-.wrap-form-area .inp-form .acc-btn {position: absolute;top: 34px;right: 34px;}
+.wrap-form-area .inp-form .acc-btn {position: absolute;top: 24px;right: 24px;}
 .wrap-form-area .inp-form .acc-btn.active i {transform: rotate(180deg);transition: all 0.3s;}
 .wrap-form-area .inp-form .cont-acc-list.type2 {margin: 0;padding: 0;border-top: 0;margin-top: 11px;}
 .wrap-form-area .inp-form .cont-acc-list.type2 .accordion-wrap {width: 100%;}
@@ -100,8 +101,8 @@
 .wrap-form-area .total-area strong span {margin-left: 4px;}
 .wrap-form-area.type1 {margin-top: 24px;}
 .wrap-form-area.type1 .inp-form {padding: 24px !important;}
-.wrap-form-area.type1 .inp-form:has(strong.add-tit) .form-btn-area button {height: 20px;}
-.wrap-form-area.type1 .form-btn-area {top: 29px !important;}
+.wrap-form-area.type1 .inp-form:has(strong.add-tit) .form-btn-area button {height: 20px !important;}
+.wrap-form-area.type1 .form-btn-area {top: 29px}
 .wrap-form-area .batch-list {width: 100%;display: flex;align-items: center;justify-content: flex-end;gap: 24px;}
 .wrap-form-area .batch-list .txt {line-height: 150%;}
 .wrap-form-area .nowrap-box {display: flex;gap: 8px;}
@@ -122,13 +123,13 @@
 .wrap-form-area .sub-form .sub-tit {position: relative;}
 
 @media screen and (max-width: 1312px) {
-  .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 24px 34px 24px;}
-  .wrap-form-area .inp-form .file-form + .form-btn-area {top: 32px;}
-  .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 34px 130px 34px 239px;}
+  .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 24px 24px 24px;}
+  .wrap-form-area .inp-form .file-form + .form-btn-area {top: 24px;}
+  .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 24px 130px 24px 239px;}
 }
 @media screen and (max-width: 1023px) {
-  .wrap-form-area .inp-form:has(.step-area.type1) {padding: 140px 24px 32px 24px;}
-  .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 140px 130px 32px 24px;}
+  .wrap-form-area .inp-form:has(.step-area.type1) {padding: 140px 24px 24px 24px;}
+  .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 140px 130px 24px 24px;}
   .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) .form-btn-area {top: 140px;}
   .wrap-form-area .inp-form .step-area.type1 {width: 100%;height: auto;padding-bottom: 0;padding: 32px 24px 0 24px;}
   .wrap-form-area .inp-form .step-area.type1.dotted-line-right::before {bottom: 0;width: calc(100% - 48px);height: 2px;background-image: url(../assets/icons/dotted.svg);left: 24px;}
@@ -159,13 +160,13 @@
   .wrap-form-area .inp-form li.line-break {flex-direction: column;}
   .wrap-form-area .inp-form li.line-break .inp-box {padding-left: 0 !important;margin-top: 16px;width: 100%;}
   .wrap-form-area .inp-form li.line-break .inp-box .txt {text-align: left !important;}
-  .wrap-form-area .inp-form .form-btn-area {right: 24px;}
+  // .wrap-form-area .inp-form .form-btn-area {right: 24px;}
   .wrap-form-area .inp-form:has(> .form-check) {padding: 76px 24px 34px 24px;}
-  .wrap-form-area .inp-form:has(> .form-check) > .form-check {left: 24px;}
-  .wrap-form-area .inp-form .form-btn-area {top: 24px;}
+  // .wrap-form-area .inp-form:has(> .form-check) > .form-check {left: 24px;}
+  // .wrap-form-area .inp-form .form-btn-area {top: 24px;}
   .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 140px 24px 32px 24px;}
   .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) .form-btn-area {position: static;margin-top: 17px;justify-content: center;}
-  .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) .form-btn-area button {height: 48px;width: 100%;}
+  .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) .form-btn-area button {height: 40px;width: 100%;}
   .wrap-form-area .sub-form .sub-form-box ul {flex-direction: column;}
   .wrap-form-area .sub-form .sub-form-box li {width: calc(100% - 40px) !important;}
   .wrap-form-area .acc-btn {right: 24px;}
@@ -176,12 +177,13 @@
   .wrap-form-area label[class*=btn]:not(.xsmall,.tooltip-close),
   .wrap-form-area .calendar .calendar-form,
   .wrap-form-area .file-form [class*=col] .file-upload .txt-box {height: 40px !important;}
+  .wrap-form-area.type1 .form-btn-area{top:23px;}
 }
 @media screen and (max-width: 480px) {
-  .wrap-form-area.type1 .inp-form {padding: 15px !important;}
-  .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 15px 15px 15px;}
-  .wrap-form-area.type1 .form-btn-area {top: 15px !important;}
-  .wrap-form-area .inp-form {border-radius: 5px;padding: 18px 15px 15px 15px;}
+  // .wrap-form-area.type1 .inp-form {padding: 15px !important;}
+  // .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 15px 15px 15px;}
+  // .wrap-form-area.type1 .form-btn-area {top: 15px !important;}
+  .wrap-form-area .inp-form {border-radius: 5px;/*padding: 18px 15px 15px 15px;*/}
   .wrap-form-area .inp-form ul .inp-box {gap: 12px 8px;}
   .wrap-form-area .inp-form ul .inp-box:has(.hy) {gap: 12px 2px;}
   .wrap-form-area .inp-form ul button:not(.ico):not(.tooltip-close):not(.calendar-btn):not(.tooltip-ico):not(.add-modify-btn):not(.inquiry) {width: 100%;}
