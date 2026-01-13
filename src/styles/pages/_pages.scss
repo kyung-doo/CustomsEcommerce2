@@ -25,7 +25,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .modal-body .search-box .compulsory {margin-left: 5px;}
 .modal-body .wrap-form-area .tit .compulsory {right: 0;bottom: 8px;}
 .cont-area .search-box .compulsory {margin-left: 5px;bottom: 9px;}
-.cont-area .search-box .compulsory-txt {margin: 0;padding-left: 16px;}
+.search-box .compulsory-txt {margin: 0;padding-left: 16px;}
 .cont-area .search-box .form-check .tit .compulsory {margin-left: 5px;bottom: 5px;}
 .cont-area .wrap-form-area .tit .compulsory {right: 0;bottom: 4px;}
 .cont-area .wrap-form-area .form-check > label:has(.compulsory) {padding-right: 15px;}
@@ -163,32 +163,30 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .search-box .bottom-action-area:has(.compulsory-txt) .btn-end{text-align: right;width:auto}
 .search-box .bottom-action-area .btn-end{text-align: right;width:100%}
 
-   /* 검색유형 1 */
-  //  .search-box .area-type1{flex-direction: row;flex-wrap: nowrap !important;}
-  //  .search-box .area-type1 .wrap-area{display: flex;gap:8px}
-  //  .search-box button:has(.search-type1){}
+  /* 공통 pc 모바일 모두 한줄로 처리 기본 최소 350 */
+  .search-box .state-keeper{flex: 1;display: flex;gap: 8px;width: 100%;min-width: 300px;}  
 
-/* 검색영역 전체 타이틀 넓이 변경 */
-@for $i from 1 through 100 {
-   .search-box.wrap-#{$i} .tit {
-      width: #{120 + $i}px;
-      min-width: #{120 + $i}px;
-   }
-}
+  /* 검색영역 전체 타이틀 넓이 변경 */
+  @for $i from 1 through 100 {
+    .search-box.wrap-#{$i} .tit {
+        width: #{120 + $i}px;
+        min-width: #{120 + $i}px;
+    }
+  }
 
-/* 검색영역 넓이 */
-@for $i from 1 through 12 {
-   .search-box ul li.col#{$i} {
-      width: #{100% / $i};
-   }
-}
+  /* 검색영역 넓이 */
+  @for $i from 1 through 12 {
+    .search-box ul li.col#{$i} {
+        width: #{100% / $i};
+    }
+  }
 
-/* 검색영역 넓이 비율 */
-@for $i from 1 through 10 {
-   .search-box ul li.ratio#{$i} {
-      width: #{10% * $i};
-   }
-}
+  /* 검색영역 넓이 비율 */
+  @for $i from 1 through 10 {
+    .search-box ul li.ratio#{$i} {
+        width: #{10% * $i};
+    }
+  }
 
 .btn-area-type.pc {display: flex !important;}
 .btn-area-type.mo {display: none !important;}
@@ -236,8 +234,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .wrap-detail .wrap-reply .detail-list li {margin: 0;}
 
 /* 그래프 */
-.wrap-graph {padding: 24px;border: 1px solid #E4E4E4;border-radius: 8px;}
-// .wrap-graph .graph-box {margin-top: 32px;}
+.wrap-graph {padding: 24px;border: 1px solid #E4E4E4;border-radius: 8px;overflow-y: auto;}
 .wrap-graph .title-top {margin: 0}
 .wrap-graph .wrap-cont-tbl .table-wrap {overflow-x: auto;display: block;}
 

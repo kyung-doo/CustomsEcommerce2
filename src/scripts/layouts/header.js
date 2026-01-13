@@ -151,10 +151,12 @@ $(() => {
         }) 
     });
     $(".mobile-close,#header .main-menu .gnb-main-list .gnb-list .depth2 a").on('click', function (e) {
-        gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
-            $("#wrap").removeClass('mobile-open');
-            $('.sub-title').removeClass('mobile-active');
-        }});
+        // gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
+        //     $("#wrap").removeClass('mobile-open');
+        //     $('.sub-title').removeClass('mobile-active');
+        // }});
+        $("#wrap").removeClass('mobile-open');
+        $('.sub-title').removeClass('mobile-active');
         $('body,html').css({"overflow":"auto"});        
         $(window).on('resize',function(){
             $('body,html').css({"overflow":"auto"});

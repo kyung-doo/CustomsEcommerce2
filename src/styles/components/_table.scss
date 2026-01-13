@@ -65,8 +65,8 @@
 
 .table-wrap.mo .header {padding: 0 0 10px 0;border-bottom: 1px solid #58616A;}
 .table-wrap.mo .header .form-check {display: inline-flex;}
-.table-wrap.mo .body {display: flex;flex-direction: column;padding: 5px 0;border-bottom: 1px solid #E4E4E4;}
-.table-wrap.mo .body li {display: flex;/*align-items: center;*/padding: 3px;justify-content: space-between;gap: 8px;}
+.table-wrap.mo .wrap-body:not(.box-line) .body {display: flex;flex-direction: column;padding: 5px 0;border-bottom: 1px solid #E4E4E4;}
+.table-wrap.mo .body li {display: flex;align-items: center;padding: 3px;justify-content: space-between;gap: 8px;}
 .table-wrap.mo .body li.dotted-line-bottom {padding-bottom: 17px !important;margin-bottom: 12px !important;}
 .table-wrap.mo .body li a {text-decoration: underline;}
 .table-wrap.mo .title {line-height: 150%;position: relative;width: 120px;min-width: 120px;}
@@ -93,7 +93,7 @@
 .wrap-check-tbl .mo .wrap-body {border-top: 1px solid #58616A;}
 .wrap-check-tbl .mo .wrap-body.box-line {display: flex;gap: 8px 0;flex-direction: column;border-top: 0;}
 .wrap-check-tbl .mo .wrap-body.box-line .body {border: 0;padding: 0;}
-.wrap-check-tbl .mo .wrap-body.box-line .body li {padding: 0;flex-direction: column;gap: 14px 0;border: 1px solid #E4E4E4;border-radius: 8px;padding: 24px;}
+.wrap-check-tbl .mo .wrap-body.box-line .body li {padding: 0;flex-direction: column;gap: 14px 0;border: 1px solid #E4E4E4;border-radius: 8px;padding: 24px;align-items: flex-start;}
 .wrap-check-tbl .mo .wrap-body.box-line .body li .number.type1 span {margin-right: 5px;}
 .wrap-check-tbl .mo .wrap-body.box-line .body li .title {width: 100%;display: flex;justify-content: space-between;align-items: center;font-size: 19px;}
 .wrap-check-tbl .mo .wrap-body.box-line .body li .title.dotted-line-bottom {margin-bottom: 0 !important;}
@@ -179,7 +179,7 @@
   .wrap-faq .body .accordion-body .number {position: static;}
   .wrap-faq .body .accordion-body .faq-box {margin-top: 7px;}
 
-  .wrap-faq.type1 .header {display: inline-block;background-color: rgba(0, 0, 0, 0);border-bottom: 0;padding: 17px 0 27px 0;}
+  .wrap-faq.type1 .header {display: inline-block;background-color: rgba(0, 0, 0, 0);border-bottom: 0;padding: 17px 0 0 0;}
   .wrap-faq.type1 .body .accordion-header {position: relative;}
   .wrap-faq.type1 .body .accordion-header ul li.number .txt::before {display: none;}
   .wrap-faq.type1 .body .accordion-header ul li .txt:not(.accordion-btn) {height: 22px;line-height: 20px;width:100%;}

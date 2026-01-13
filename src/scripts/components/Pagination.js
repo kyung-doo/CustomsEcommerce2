@@ -72,7 +72,7 @@ class Pagination {
                 this.ele.find('.page-navi.next').removeAttr('disabled');
             }
         }
-        if(this.props.totalPages < this.viewCount) {
+        if(this.props.totalPages <= this.viewCount) {
             for(let i = 1; i<=this.props.totalPages; i++) {
                 if(i === this.page) {
                     this.ele.find('.page-links').append(`<a class="page-link active" data-page="${i}" href="javascript: void(0);" title="현재페이지" aria-label="현재페이지"><span class="sr-only">현재페이지</span>${i}</a>`)

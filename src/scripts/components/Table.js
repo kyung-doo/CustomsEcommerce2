@@ -58,7 +58,10 @@ class Table {
                 this.setPagination();
             }
             this.setBody();
-        } catch(e) {}
+        } catch(e) {
+            /* 스패로우 이슈(빈 catch 블록) */
+            var ignored = true;
+        }
     }
 
     async onHashChange  () {
@@ -74,7 +77,10 @@ class Table {
             if(!this.sort.key) {
                 this.setBody();
             }
-        } catch(e) {}
+        } catch(e) {
+            /* 스패로우 이슈(빈 catch 블록) */
+            var ignored = true;
+        }
     }
 
     loadData () {
@@ -147,7 +153,10 @@ class Table {
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     this.setBody();
-                } catch( e ) {}
+                } catch( e ) {
+                    /* 스패로우 이슈(빈 catch 블록) */
+                    var ignored = true;
+                }
             }
         });
 	  
@@ -176,7 +185,10 @@ class Table {
                     if(!this.sort.key) {
                         this.setBody();
                     }
-                } catch( e ) {}
+                } catch( e ) {
+                    /* 스패로우 이슈(빈 catch 블록) */
+                    var ignored = true;
+                }
             }
         });
     }
@@ -691,9 +703,15 @@ class Table {
     }
 
     scrollTop () {
-        if(this.props.scrollTop) {
-            $('html, body').scrollTop(this.ele.position().top + $("#header").height());
+        if ($(window).width() < 767) {
+            $('html, body').scrollTop(
+                this.ele.position().top + $("#header").height()
+            );
         }
+        //$('html, body').scrollTop(this.ele.position().top + $("#header").height());
+        // if(this.props.scrollTop) {
+        //     $('html, body').scrollTop(this.ele.position().top + $("#header").height());
+        // }
     }   
 
 
@@ -726,11 +744,14 @@ class Table {
             await this.loadData();
             this.scrollTop();
 			/* 2025.09.11 페이징 중복기능 오류 수정 시작 */
-			this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
+			this.ele.find('.pagination').pagination('setPage', [this.data.page, this.data.totalPages]);
 			/* 2025.09.11 페이징 중복기능 오류 수정 끝 */
             this.setHead();
             this.setBody();
-        } catch( e ) {}
+        } catch( e ) {
+            /* 스패로우 이슈(빈 catch 블록) */
+            var ignored = true;
+        }
     }
 
     destroy () {

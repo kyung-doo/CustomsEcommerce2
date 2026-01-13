@@ -22,7 +22,7 @@ input[type=radio]:active + label, input[type=checkbox]:active + label {outline: 
 .form-check.medium label:after {width: 10px;height: 10px;left: 5px;}
 
 .form-chip {position: relative;}
-.form-chip label {display: inline-block;border-radius: 4px;border: 1px solid #c6c6c6;background-color: #fff;display: inline-flex;align-items: center;gap: 6px;cursor: pointer;justify-content: center;}
+.form-chip label {display: inline-block;border-radius: 4px;border: 1px solid #717171;background-color: #fff;display: inline-flex;align-items: center;gap: 6px;cursor: pointer;justify-content: center;}
 .form-chip input[type=radio]:checked + label, .form-chip input[type=checkbox]:checked + label {color: #1d56bc;border-color: #246beb;background-color: #eff5ff;}
 .form-chip input[type=radio]:checked + label:before, .form-chip input[type=checkbox]:checked + label:before {content: "";display: block;background-image: url("../assets/icons/chips.svg");background-size: cover;position: absolute;}
 .form-chip input[type=radio]:disabled + label, .form-chip input[type=checkbox]:disabled + label {border-color: #c6c6c6;background-color: #d8d8d8;color: #717171;}

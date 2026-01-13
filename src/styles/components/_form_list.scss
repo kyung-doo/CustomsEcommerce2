@@ -2,7 +2,6 @@
    Style Guide list
    ================================================== */
 .wrap-form-area .inp-form {border: 1px solid #e4e4e4;border-radius: 8px;padding: 24px;position: relative;}
-.wrap-form-area #copyMsg{height: 13px;position: absolute;}
 .wrap-form-area .inp-form button[class*=btn]:not(.text).medium, .wrap-form-area .inp-form label[class*=btn]:not(.text).medium {height: 48px;}
 .wrap-form-area .inp-form:has(.form-btn-area) {padding: 24px 130px 24px 24px;}
 .wrap-form-area .inp-form:has(.step-area.type1) {padding: 24px 24px 24px 239px;}
@@ -36,7 +35,7 @@
 
 /* 텍스트 유형 리스트 */
 .wrap-form-area .inp-form .txt-list {display: flex;margin-left: 40px;align-items: center;}
-.wrap-form-area .inp-form .txt-list .tit {width: 160px;min-width: 160px;line-height: 150%;padding-right: 0;height: 100%;align-items: flex-start;}
+.wrap-form-area .inp-form .txt-list .tit {width: 160px;min-width: 160px;line-height: 150%;padding-right: 0;height: 100%;}
 .wrap-form-area .inp-form .txt-list .title {display: flex;position: relative;}
 .wrap-form-area .inp-form .txt-list .inp-box {display: block;padding-left: 30px;flex: 1;margin-top: 0;width: calc(100% - 160px);}
 .wrap-form-area .inp-form .txt-list .inp-box .txt {line-height: 150%;display: block;}
@@ -47,6 +46,7 @@
 .wrap-form-area.type1 .inp-form li.txt-list .add-tit {font-size: 19px;display: flex;align-items: center;width: 100%;padding-right: 155px;line-height: 150%;}
 .wrap-form-area.type1 .inp-form li.txt-list .add-tit .add-modify-btn {font-size: 0;width: 0;background-color: rgba(0, 0, 0, 0);margin-left: 8px;height:20px !important}
 .wrap-form-area.type1 .inp-form li.txt-list .add-txt {color: #555;line-height: 150%;}
+.wrap-form-area.type1 .inp-form li.txt-list #copyMsg{height:13px;position: absolute;}
 
 /* 입력 유형 리스트 */
 .wrap-form-area .inp-form .file-form {margin-left: -16px;}
@@ -91,7 +91,7 @@
 .wrap-form-area .inp-form .step-area.type1 {position: absolute;top: 0;left: 0;height: 100%;padding: 32px 40px 32px 32px;}
 .wrap-form-area .inp-form .step-area.type1::before {height: calc(100% - 64px);}
 .wrap-form-area .inp-form .step-area.type1 .step-wrap {flex-direction: column;}
-.wrap-form-area .inp-form .step-area.type1 .step-wrap li {padding: 0 0 32px 0;width: 127px;}
+.wrap-form-area .inp-form .step-area.type1 .step-wrap li {padding: 0 0 32px 0;width: 127px;min-width: 10px;}
 .wrap-form-area .inp-form .step-area.type1 .step-wrap li::before {width: 1px;height: 100%;left: 8.5px;}
 .wrap-form-area .inp-form .step-area.type1 .step-wrap li .step-tit {padding-left: 32px;padding-top: 1px;}
 .wrap-form-area .inp-form .hy {min-width: 15px;display: flex;justify-content: center;}
@@ -108,15 +108,15 @@
 .wrap-form-area .nowrap-box {display: flex;gap: 8px;}
 .wrap-form-area .nowrap-area {display: flex;align-items: center;}
 .wrap-form-area .vc-list .inp-box {align-items: flex-start;}
-.wrap-form-area .address-list button {gap: 4px;margin-right: 8px;}
+.wrap-form-area .address-list button {gap: 4px;/*margin-right: 8px;*/}
 .wrap-form-area.no-bor-form .inp-form {padding: 0;border: 0;}
+.wrap-form-area .dotted-line-bottom {margin-bottom: 0 !important;}
 
 /* 서브 리스트 */
-.wrap-form-area .sub-form.dotted-line-bottom {margin-bottom: 0 !important;}
 .wrap-form-area .sub-form .calendar {margin-right: 0;}
 .wrap-form-area .sub-form .sub-form-box {width: 100%;}
 .wrap-form-area .sub-form .sub-form-box ul {display: flex;margin-left: -40px;}
-.wrap-form-area .sub-form .sub-form-box .sub-list-wrap {display: flex;gap: 24px;}
+.wrap-form-area .sub-form .sub-form-box .sub-list-wrap {display: flex;gap: 24px;align-items: flex-end;}
 .wrap-form-area .sub-form .sub-form-box .sub-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;}
 .wrap-form-area .sub-form .sub-form-box .sub-list-box {width: 100%;min-width: 100px;}
 .wrap-form-area .sub-form .sub-form-box label {font-weight: 700;}
@@ -134,7 +134,7 @@
   .wrap-form-area .inp-form .step-area.type1 {width: 100%;height: auto;padding-bottom: 0;padding: 32px 24px 0 24px;}
   .wrap-form-area .inp-form .step-area.type1.dotted-line-right::before {bottom: 0;width: calc(100% - 48px);height: 2px;background-image: url(../assets/icons/dotted.svg);left: 24px;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap {flex-direction: row;flex-direction: row-reverse;justify-content: center;align-items: flex-start;}
-  .wrap-form-area .inp-form .step-area.type1 .step-wrap li {width: auto;min-width: auto;flex: 1;display: flex;justify-content: center;}
+  .wrap-form-area .inp-form .step-area.type1 .step-wrap li {/*width: auto;min-width: auto;flex: 1;*/display: flex;justify-content: center;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li::before {top: 10px;left: 50%;width: 100%;height: 1px;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li:first-child::before {display: none;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li:last-child::before {display: block;}
@@ -213,4 +213,6 @@
   .wrap-form-area .calendar-form {max-width: 100% !important;}
   .wrap-form-area .calendar {margin-right: 0;}
   .wrap-form-area .nowrap-box {width: 100%;}
+  .wrap-form-area .inp-form .step-area.type1 .step-wrap li .step-tit{font-size:15px;}
+  .wrap-form-area .inp-form .step-area.type1{padding: 32px 16px 0 16px;}
 }

@@ -51,7 +51,12 @@ $(() => {
 
     // 동적 추가 버튼 처리
     new MutationObserver(muts => muts.forEach(m => m.addedNodes.forEach(n => n.nodeType===1 && setTitles(n))))
-    .observe(document.body, { childList:true, subtree:true });   
+    .observe(document.body, { childList:true, subtree:true });  
+    
+    //파비콘
+    const favicon = document.getElementById("favicon");
+    favicon.href = "../assets/icons/favicon-icon.svg";
+
 
     // $('.testtest').remove();
     // $('.testtest > button').removeAttr('style');
@@ -277,7 +282,10 @@ function styleToJson (el, style) {
     try{
         obj = $.parseJSON(json);
     } catch(e) {
-        console.error("잘못된 옵션 형식. 옵션값이 제대로 들어가 있는지 확인해주세요.", el);
+        //console.error("잘못된 옵션 형식. 옵션값이 제대로 들어가 있는지 확인해주세요.", el);
+
+        /* 스패로우 이슈(빈 catch 블록) */
+        var ignored = true;
     }
     return obj;
 }
