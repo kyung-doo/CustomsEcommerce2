@@ -152,7 +152,20 @@ class Datepicker {
             }
         });    
 
-        $("#wrap").append('<div class="calendar-blind d-none"></div>');
+        // 달력 외 영역 클릭 시 닫기
+        this.outsideClickHandler = (e) => {
+            // 달력 내부 클릭
+            if ($(e.target).closest('.datepicker').length) return;
+
+            // 달력 버튼(input + calendar-btn) 클릭
+            if ($(e.target).closest(this.ele).length) return;
+
+            // 그 외 영역 클릭 → 닫기
+            this.hideCalendar();
+            $('.calendar-blind').hide();
+        };
+
+        $(document).on('mousedown.datepickerOutside', this.outsideClickHandler);
 
         this.btn.on('click', (e) => {            
             if(!this.isShow) {                
@@ -164,36 +177,6 @@ class Datepicker {
             
             $('.calendar-blind').show();
         });    
-        
-        $(".calendar-blind").on('click', function () {
-            $('.datepicker').hide();
-            $('.calendar-form').removeClass('on')
-            $('.calendar-form input').removeAttr('disabled')
-            $('.calendar-blind').hide();
-        });
-
-
-        //1개월, 2개월 등등 체크하면 날짜 자동 입력
-        // $("input[name='range_period']").on("change", function () {
-        //     const id = $(this).attr("id");           period-6m
-        //     const raw = id.replace("period-", "");    6m
-        //     const num = parseInt(raw);                6
-        //     const unit = raw.replace(num, "");        m
-
-        //     let end = $("#endDate").val() ? dayjs($("#endDate").val()) : dayjs();
-        //     let start;
-
-        //     if (unit === "m") {
-        //         start = end.subtract(num, "month");
-        //     } else if (unit === "w") {
-        //         start = end.subtract(num * 7, "day");
-        //     } else {
-        //         return;
-        //     }
-
-        //     $("#endDate").val(end.format("YYYY-MM-DD")).trigger("change");
-        //     $("#startDate").val(start.format("YYYY-MM-DD")).trigger("change");
-        // });
     }
 
     isLeapYear(year) {
@@ -249,8 +232,8 @@ class Datepicker {
                         <div class="month-con d-none"></div>
                     </div>
                     <div class="calendar-footer">
-                        <button type="button" class="btn tertiary small btn-cancel mr-8">취소</button>
-                        <button type="button" class="btn primary small btn-enter">확인</button>
+                        <button type="button" class="btn tertiary medium btn-cancel mr-8">취소</button>
+                        <button type="button" class="btn primary medium btn-enter">확인</button>
                     </div>
                 </div>
             </div>

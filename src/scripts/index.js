@@ -52,10 +52,78 @@ $(() => {
     // 동적 추가 버튼 처리
     new MutationObserver(muts => muts.forEach(m => m.addedNodes.forEach(n => n.nodeType===1 && setTitles(n))))
     .observe(document.body, { childList:true, subtree:true });  
+
+    // document.querySelectorAll(".purchased-item").forEach(wrapper => {
+    //     const button = wrapper.querySelector(".purchased-btn button");
+    //     const area = wrapper.querySelector(".purchased-area");
+    //     const links = wrapper.querySelectorAll(".purchased-list li a");
+
+    //     function openDropdown() {
+    //     wrapper.classList.add("open");
+
+    //     // 위치 초기화
+    //     wrapper.classList.remove("up", "down");
+
+    //     // 버튼 위치 정보
+    //     const buttonRect = button.getBoundingClientRect();
+    //     const areaHeight = area.offsetHeight;
+    //     const viewportHeight = window.innerHeight;
+
+    //     const spaceBelow = viewportHeight - buttonRect.bottom;
+    //     const spaceAbove = buttonRect.top;
+
+    //     if (spaceBelow < areaHeight && spaceAbove > areaHeight) {
+    //         wrapper.classList.add("up");
+    //     } else {
+    //         wrapper.classList.add("down");
+    //     }
+    //     }
+
+    //     // 버튼 클릭
+    //     button.addEventListener("click", e => {
+    //     e.stopPropagation();
+
+    //     if (wrapper.classList.contains("open")) {
+    //         wrapper.classList.remove("open", "up", "down");
+    //     } else {
+    //         // 다른 드롭다운 닫기
+    //         document.querySelectorAll(".purchased-item.open").forEach(item => {
+    //         item.classList.remove("open", "up", "down");
+    //         });
+    //         openDropdown();
+    //     }
+    //     });
+
+    //     // 내부 클릭 방지
+    //     area.addEventListener("click", e => e.stopPropagation());
+
+    //     // 리스트 클릭 시 닫기
+    //     // links.forEach(link => {
+    //     //     link.addEventListener("click", () => {
+    //     //         wrapper.classList.remove("open", "up", "down");
+    //     //     });
+    //     // });
+    // });
+
+    // 배경 클릭 시 닫기
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".purchased-item.open").forEach(item => {
+        item.classList.remove("open", "up", "down");
+        });
+    });
+
+    // 배경(html, body) 클릭 → 닫기
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".purchased-item.open").forEach(item => {
+        item.classList.remove("open");
+        });
+    });
+    
+    
     
     //파비콘
-    const favicon = document.getElementById("favicon");
-    favicon.href = "../assets/icons/favicon-icon.svg";
+    // const favicon = document.getElementById("favicon");
+    // favicon.href = "../assets/icons/favicon-icon.svg";
 
 
     // $('.testtest').remove();

@@ -14,7 +14,6 @@
 .file-upload-mobile,
 .cont-area > .form-group,
 .tabmenu,
-.wrap-detail,
 .wrap-detail .detail-file,
 .wrap-faq:not(td .wrap-faq),
 .wrap-customs-info,
@@ -63,7 +62,7 @@
 .content-wrap {max-width: 1312px;margin: 0 auto;position: relative;width: 100%;flex: 1;height: 100%;padding: 0 16px;}
 .content-wrap .cont-head .head-util {display: flex;justify-content: space-between;margin-top: 20px;align-items: center;}
 .content-wrap .cont-head .head-util .breadcrumb-wrap {padding-left: 10px;}
-.content-wrap .cont-head .head-tit {font-size: 32px;padding: 8px 0 5px 0;line-height: 150%;display: flex;flex-direction: column;}
+.content-wrap .cont-head .head-tit {font-size: 30px;padding: 8px 0 5px 0;line-height: 150%;display: flex;flex-direction: column;}
 .content-wrap .cont-head .head-tit .txt {font-size: 19px;color: #555;line-height: 150%;margin-top: 19px;}
 .content-wrap .cont-head .step-area {display: flex;justify-content: space-between;margin-bottom: 30px;}
 .content-wrap .cont-head .step-area .tit-box {display: flex;flex-direction: column;}
@@ -104,9 +103,10 @@
   .content-wrap .cont-head .step-area li:after {left: auto;right: 0;}
   // .content-wrap .cont-head .head-util {margin-top: 16px;}
   
-  .fpc, .pc {display: none !important;}
+  .pc {display: none !important;}
   .mo {display: block !important;}
   .fmo {display: flex !important;}
+  .fpc{display: none !important;}
 
   /* 여백 20 */
   // .accordion-wrap.accordion.cont-advice,
@@ -152,5 +152,5 @@
   .head-tit .txt {font-size: 17px;font-weight: 400;}
   .content-wrap .cont-head .step-area {margin-bottom: 20px;}
   .content-wrap .cont-head .step-area .tit-box .tit {font-size: 21px;line-height: 150%;margin-top: 15px;}
-  .content-wrap .cont-body .cont-advice .accordion-btn, .content-wrap .cont-body .cont-advice .accordion-body {padding: 15px 20px;}  
+  .content-wrap .cont-body .cont-advice .accordion-btn, .content-wrap .cont-body .cont-advice .accordion-body {padding: 15px 20px;}    
 }

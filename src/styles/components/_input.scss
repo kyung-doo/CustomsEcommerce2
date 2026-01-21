@@ -25,9 +25,9 @@
 .form-group .form-hint-invalid.txt-error:before {background-image: url("../assets/icons/danger.svg");}
 .form-group .form-conts.is-error input[type=text], .form-group .form-conts.is-error textarea, .form-group .form-conts.is-error select, .form-group .form-conts.is-error input[type=password] {outline: 2px solid #EB003B;border-color: #EB003B;}
 .form-group.form-tit-group.is-error {outline: 2px solid #EB003B;border-color: #EB003B;}
-.form-group textarea::placeholder {color: #8E8E8E;}
-.form-group input[type=text]::placeholder, .form-group input[type=password]::placeholder {color: #8E8E8E;}
-.form-group.form-tit-group input[type=text]::placeholder, .form-group.form-tit-group input[type=password]::placeholder {color: #8E8E8E;}
+// .form-group textarea::placeholder {color: #8E8E8E;}
+// .form-group input[type=text]::placeholder, .form-group input[type=password]::placeholder {color: #8E8E8E;}
+// .form-group.form-tit-group input[type=text]::placeholder, .form-group.form-tit-group input[type=password]::placeholder {color: #8E8E8E;}
 .form-group.large input[type=text], .form-group.large select, .form-group.large input[type=password] {height: 56px;font-size: 19px;}
 .form-group.medium input[type=text], .form-group.medium select, .form-group.medium input[type=password] {height: 48px;}
 .form-group.small input[type=text], .form-group.small select, .form-group.small input[type=password] {height: 40px;}

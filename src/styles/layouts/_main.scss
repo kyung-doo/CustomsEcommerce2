@@ -234,7 +234,7 @@
   .main .box2 {padding: 48px 0 64px 0;gap: 48px;}
 
   /* 메인 슬라이드 공통 버튼 */
-  .main .slide-box .wrap-swiper-btn {margin-top: 16px;justify-content: center;position: static;margin-left: 0;justify-content: center;}
+  .main .slide-box .wrap-swiper-btn {margin-top: 16px;justify-content: center;position: relative;margin-left: 0;justify-content: center;z-index: 1;right: 0;bottom: 0;}
   .main .slide-box .wrap-swiper-btn button {background-color: #FFF;border: 1px solid #C6C6C6;}
   .main .slide-box .wrap-swiper-btn .swiper-pagination-fraction {background-color: #FFF;border: 1px solid #C6C6C6;color: #1D1D1D;}
   .main .slide-box .wrap-swiper-btn .swiper-pagination-fraction .swiper-pagination-current, .main .slide-box .wrap-swiper-btn .swiper-pagination-fraction .swiper-pagination-total {color: #1D1D1D;}
@@ -274,7 +274,7 @@
   .main .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a img {border-radius: 12px;}
 
   /* 슬라이드 버튼 공통 */
-  .main .slide-box .wrap-swiper-btn {margin-top: 16px;justify-content: center;position: static;}
+  .main .slide-box .wrap-swiper-btn {justify-content: center;position: relative;z-index: 1;left:0;bottom:0;}
   .main .slide-box .wrap-swiper-btn button {background-color: #FFF;border: 1px solid #C6C6C6;}
   .main .slide-box .wrap-swiper-btn .swiper-pagination-fraction {background-color: #FFF;border: 1px solid #C6C6C6;color: #1D1D1D;}
   .main .slide-box .wrap-swiper-btn .swiper-pagination-fraction .swiper-pagination-current, .main .slide-box .wrap-swiper-btn .swiper-pagination-fraction .swiper-pagination-total {color: #1D1D1D;}

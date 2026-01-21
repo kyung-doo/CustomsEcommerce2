@@ -101,7 +101,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .agree-title .contextual-help {bottom: 5px;}
 
 /* 텍스트 박스 스타일 */
-[class*=txt-box-type] {background-color: #f4f5f6;padding: 22px 24px;border-radius: 8px;display: flex;justify-content: space-between;align-items: center;}
+[class*=txt-box-type] {background-color: #f4f5f6;padding: 24px;border-radius: 8px;display: flex;justify-content: space-between;align-items: center;}
 [class*=txt-box-type]:has(.title-type.medium) {align-items: flex-start;flex-direction: column;}
 [class*=txt-box-type]:has(.title-type.medium) .title-type.medium {width: 100%;padding-bottom: 17px;}
 [class*=txt-box-type]:has(.title-type.medium) ul {margin-top: 10px;}
@@ -110,16 +110,18 @@ body.common-loading, html.common-loading {overflow: hidden;}
 [class*=txt-box-type].type2 ul {margin-top: -10px !important;}
 [class*=txt-box-type].type2 ul li {margin-top: 10px;padding-left: 12px;position: relative;line-height: 150%;}
 [class*=txt-box-type].type2 ul li::before {content: "";position: absolute;top: 8px;left: 0;width: 6px;height: 6px;background-color: #060606;border-radius: 100%;}
+[class*=txt-box-type].type2 .title-type.font-2.dotted-line-bottom{padding-bottom: 15px !important;margin-bottom: 15px !important;margin-top: 0;}
 [class*=txt-box-type].type3 p {padding-right: 20px;}
-[class*=txt-box-type].type3 strong {font-size: 19px;padding-right: 12px;}
-[class*=txt-box-type].type3 span {font-size: 19px;padding-left: 12px;position: relative;}
-[class*=txt-box-type].type3 span::before {content: "";display: block;position: absolute;top: 5px;left: 0;width: 1px;height: 13px;background-color: #D8D8D8;}
+[class*=txt-box-type].type3 strong {font-size: 19px;padding-right: 8px;}
+[class*=txt-box-type].type3 span {font-size: 19px;padding-left: 8px;position: relative;}
+[class*=txt-box-type].type3 span::before {content: "";display: block;position: absolute;top: 5px;left: -2px;width: 1px;height: 13px;background-color: #D8D8D8;}
 [class*=txt-box-type].type1 {align-items: center;}
 [class*=txt-box-type].type1 p {font-size: 19px;padding-right: 10px;}
 [class*=txt-box-type].type1 strong {margin: 8px 0 8px 6px;}
 [class*=txt-box-type].type1 strong i {margin: 0 5px;}
 [class*=txt-box-type].type1 p {line-height: 150%;}
 [class*=txt-box-type].type3 p {line-height: 150%;}
+
 
 /* 도움말 */
 .advice-txt {position: relative;line-height: 150%;padding-left: 10px;}
@@ -192,7 +194,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .btn-area-type.mo {display: none !important;}
 
 /* 게시판 상세보기 */
-.wrap-detail h5.title {font-size: 25px;padding: 13px 0 25px 0;line-height: 150%;}
+.wrap-detail h5.title {font-size: 20px;padding: 15px 0;line-height: 150%;}
 .wrap-detail .detail-list {border-top: 1px solid #58616A;border-bottom: 1px solid #E4E4E4;padding: 15px 0;display: flex;flex-wrap: wrap;overflow: hidden;}
 .wrap-detail .detail-list li {padding: 0 32px 0 0;position: relative;margin: 7px 0;}
 .wrap-detail .detail-list li::before {content: "";display: block;position: absolute;top: 3px;left: -17px;width: 1px;height: 12px;background-color: #D8D8D8;}
@@ -714,10 +716,12 @@ body.common-loading, html.common-loading {overflow: hidden;}
   .search-box .btn-area::before {display: none;}
   .search-box .btn-area::before .search-area {margin-top: 8px !important;}
   .search-box .advice-txt {display: block;width: 100%;}
-  .search-box .form-chip {width: calc(50% - 4px);}
-  .search-box .form-chip .form-chip-outline {width: 100%;display: flex;padding-left: 0 !important;padding-right: 0 !important;}
-  .search-box .form-chip input[type=radio]:checked + label:before, 
-  .search-box .form-chip input[type=checkbox]:checked + label:before{top: 50%;left: 27%;transform: translate(-50%, -50%);}
+  .search-box .form-chip {width: calc(25% - 4px);}
+  .search-box .form-chip .form-chip-outline {width: 100%;display: flex;font-size: 15px;}
+  // .search-box .form-chip input[type=radio]:checked + label:before, 
+  // .search-box .form-chip input[type=checkbox]:checked + label:before{transform: translate(-50%, -50%);width:13px;height:13px;}  
+  .search-box ul li .search-area{gap: 5px;}
+  .search-box .form-chip.large label:before{min-width:13px;min-height:13px;}
 
   /* 텍스트 박스 스타일 */
   [class*=txt-box-type] {padding: 15px 20px;}
@@ -729,7 +733,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
   [class*=txt-box-type].type1, 
   [class*=txt-box-type].type3 {display: flex;flex-direction: column;border-radius: 5px;}
   [class*=txt-box-type].type1 button, 
-  [class*=txt-box-type].type3 button {margin-top: 19px;width: 100%;}
+  [class*=txt-box-type].type3 button {margin-top: 10px;width: 100%;}
   [class*=txt-box-type].type1 p, 
   [class*=txt-box-type].type3 p {width: 100%;display: flex;flex-direction: column;padding-right: 0;font-size: 17px;}
   [class*=txt-box-type].type1 p strong, 
@@ -789,6 +793,14 @@ body.common-loading, html.common-loading {overflow: hidden;}
   .privacy .li_w20 > li {width: 50%;}
   .privacy .box_link_list ul li {width: 100%;}
   .privacy .box_link_list ul li a {margin: 5px 0;}
+}
+
+@media screen and (max-width: 400px) {
+    .search-box .form-chip{width: calc(50% - 3px);}
+    
+    // .search-box .form-chip .form-chip-outline{padding-left: 0 !important;padding-right: 0;}
+//     .search-box .form-chip input[type=radio]:checked + label:before, 
+//   .search-box .form-chip input[type=checkbox]:checked + label:before{left: 30%;}
 }
 
 @media screen and (max-width: 380px) {

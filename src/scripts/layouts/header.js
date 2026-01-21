@@ -38,7 +38,7 @@ $(() => {
             $(".mobile-dep-menu").removeClass('mobile-active');
             function setGnbPosition() {
                 if ($(window).width() >= 1023) {
-                    $('#header .main-menu .gnb-toggle-wrap').css('top', menuH);
+                    $('#header .main-menu .gnb-toggle-wrap').css('top', menuH-1);
                 } else {
                     $('#header .main-menu .gnb-toggle-wrap').css('top', '');
                 }

@@ -10,6 +10,7 @@
 .wrap-form-area .inp-form > ul .tit {position: relative;display: inline-flex;align-items: center;gap: 4px;padding-right: 12px;font-weight: 700;}
 .wrap-form-area .inp-form > ul .tit + .form-group {display: flex;align-items: center;gap: 8px;margin-top: 9px;}
 .wrap-form-area .inp-form > ul li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;}
+.wrap-form-area #copyMsg{height:13px;position: absolute;}
 
 /* 타이틀 전체 넓이 조절 */
 @for $i from 1 through 100 {
@@ -46,7 +47,6 @@
 .wrap-form-area.type1 .inp-form li.txt-list .add-tit {font-size: 19px;display: flex;align-items: center;width: 100%;padding-right: 155px;line-height: 150%;}
 .wrap-form-area.type1 .inp-form li.txt-list .add-tit .add-modify-btn {font-size: 0;width: 0;background-color: rgba(0, 0, 0, 0);margin-left: 8px;height:20px !important}
 .wrap-form-area.type1 .inp-form li.txt-list .add-txt {color: #555;line-height: 150%;}
-.wrap-form-area.type1 .inp-form li.txt-list #copyMsg{height:13px;position: absolute;}
 
 /* 입력 유형 리스트 */
 .wrap-form-area .inp-form .file-form {margin-left: -16px;}
@@ -95,6 +95,7 @@
 .wrap-form-area .inp-form .step-area.type1 .step-wrap li::before {width: 1px;height: 100%;left: 8.5px;}
 .wrap-form-area .inp-form .step-area.type1 .step-wrap li .step-tit {padding-left: 32px;padding-top: 1px;}
 .wrap-form-area .inp-form .hy {min-width: 15px;display: flex;justify-content: center;}
+.wrap-form-area .inp-form .state-keeper{display: flex;gap:8px;min-width:300px;}
 .wrap-form-area .total-area {display: flex;justify-content: flex-end;align-items: center;margin-top: 25px;padding: 25px 0 0 0;border-top: 1px solid #717171;}
 .wrap-form-area .total-area p {font-size: 19px;}
 .wrap-form-area .total-area strong {margin-left: 24px;font-size: 25px;}
@@ -121,6 +122,20 @@
 .wrap-form-area .sub-form .sub-form-box .sub-list-box {width: 100%;min-width: 100px;}
 .wrap-form-area .sub-form .sub-form-box label {font-weight: 700;}
 .wrap-form-area .sub-form .sub-tit {position: relative;}
+
+/* 예상세액 조회 구입물품 */
+.purchased-item{width: 100%;min-width: 10px;}
+.purchased-item .purchased-btn{position:relative;}
+.purchased-item .purchased-btn button{display:flex;align-items: center;border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #717171;padding: 0px 16px;height: 48px;justify-content: space-between;width: 100%;}
+.purchased-item .purchased-area{position:absolute;left:0;background-color:#fff;z-index: 4;padding:10px;border:1px solid #717171;border-radius: 4px;display:none;}
+.purchased-item.open .purchased-area{display:block;}
+.purchased-item .purchased-area .purchased-list{height: 300px;overflow-y: auto;margin-top:10px;margin-bottom:10px;}
+.purchased-item .purchased-area .purchased-list li{padding:0;margin:0;}
+.purchased-item .purchased-area .purchased-list li a{padding:10px 16px;display:block;}
+.purchased-item .purchased-area .purchased-list li a:hover{text-decoration:underline}
+// .purchased-item.open .btn-arrow-down {transform: rotate(180deg);}
+.purchased-item.open.down .purchased-area {top: 101px;margin-top: 5px;}
+.purchased-item.open.up .purchased-area {bottom: 72px;margin-bottom: 5px;}
 
 @media screen and (max-width: 1312px) {
   .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 24px 24px 24px;}
@@ -178,6 +193,13 @@
   .wrap-form-area .calendar .calendar-form,
   .wrap-form-area .file-form [class*=col] .file-upload .txt-box {height: 40px !important;}
   .wrap-form-area.type1 .form-btn-area{top:23px;}
+  .wrap-form-area .inp-form .email-inp-box{flex-wrap: wrap;}
+  .wrap-form-area .inp-form .state-keeper{flex:1}
+  .wrap-form-area .inp-form .email-id{width: calc(100% - 23px);}
+  .wrap-form-area .inp-form li.txt-list.dotted-line-top.line-break .tit{width:100% !important}
+}
+@media screen and (max-width: 550px) {  
+  .wrap-form-area .inp-form .email-inp-box button{width:100%;}
 }
 @media screen and (max-width: 480px) {
   // .wrap-form-area.type1 .inp-form {padding: 15px !important;}
@@ -199,7 +221,7 @@
   .wrap-form-area .inp-form ul .vc-list .form-group input[type=text] {width: 140px;}
   .wrap-form-area .sub-box:not(.nowrap-list):not([class*=nowrap-list-type]), .wrap-form-area .sub-list-wrap {flex-direction: column;}
   .wrap-form-area .sub-list-box .calendar {width: 100%;}
-  .wrap-form-area .inp-box:not(.nowrap-list):not([class*=nowrap-list-type]) {flex-direction: column;}
+  .wrap-form-area .inp-box:not(.nowrap-list):not([class*=nowrap-list-type]) {flex-direction: column;}  
   .wrap-form-area .inp-box[class*=nowrap-list-]:not(.nowrap-list-type1) {display: flex;flex-wrap: wrap;}
   .wrap-form-area .sub-box[class*=nowrap-list-] {display: flex;flex-wrap: wrap;}
   .wrap-form-area .inp-box[class*=nowrap-list-]:not(.nowrap-list-type1) .form-group:first-child, .wrap-form-area .sub-box[class*=nowrap-list-] .form-group:first-child {width: calc(100% - 23px);}
@@ -215,4 +237,11 @@
   .wrap-form-area .nowrap-box {width: 100%;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li .step-tit{font-size:15px;}
   .wrap-form-area .inp-form .step-area.type1{padding: 32px 16px 0 16px;}
+
+  /* 예상세액 조회 구입물품 */
+  .purchased-item .purchased-area{width:100%;}
+}
+
+@media screen and (max-width: 390px) {
+  .wrap-form-area .inp-form .state-keeper{    min-width: 100%;}
 }

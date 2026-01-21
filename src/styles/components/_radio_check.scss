@@ -24,12 +24,12 @@ input[type=radio]:active + label, input[type=checkbox]:active + label {outline: 
 .form-chip {position: relative;}
 .form-chip label {display: inline-block;border-radius: 4px;border: 1px solid #717171;background-color: #fff;display: inline-flex;align-items: center;gap: 6px;cursor: pointer;justify-content: center;}
 .form-chip input[type=radio]:checked + label, .form-chip input[type=checkbox]:checked + label {color: #1d56bc;border-color: #246beb;background-color: #eff5ff;}
-.form-chip input[type=radio]:checked + label:before, .form-chip input[type=checkbox]:checked + label:before {content: "";display: block;background-image: url("../assets/icons/chips.svg");background-size: cover;position: absolute;}
+.form-chip input[type=radio]:checked + label:before, .form-chip input[type=checkbox]:checked + label:before {content: "";display: block;background-image: url("../assets/icons/chips.svg");background-size: cover;/*position: absolute;*/}
 .form-chip input[type=radio]:disabled + label, .form-chip input[type=checkbox]:disabled + label {border-color: #c6c6c6;background-color: #d8d8d8;color: #717171;}
 .form-chip.large label {padding: 12px 16px;line-height: 22px;}
-.form-chip.large input[type=radio]:checked + label, .form-chip.large input[type=checkbox]:checked + label {padding-left: 36px;}
-.form-chip.large input[type=radio]:checked + label:before, .form-chip.large input[type=checkbox]:checked + label:before {left: 18px;}
-.form-chip.large label:before {width: 16px;height: 16px;}
+// .form-chip.large input[type=radio]:checked + label, .form-chip.large input[type=checkbox]:checked + label {padding-left: 36px;}
+// .form-chip.large input[type=radio]:checked + label:before, .form-chip.large input[type=checkbox]:checked + label:before {left: 18px;}
+.form-chip.large label:before {min-width: 16px;min-height: 16px;}
 .form-chip.medium label {padding: 12px;line-height: 14px;}
 .form-chip.medium input[type=radio]:checked + label, .form-chip.medium input[type=checkbox]:checked + label {padding-left: 32px;}
 .form-chip.medium input[type=radio]:checked + label:before, .form-chip.medium input[type=checkbox]:checked + label:before {left: 14px;}

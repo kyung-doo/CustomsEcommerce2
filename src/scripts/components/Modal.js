@@ -26,6 +26,16 @@ class Modal {
     show () {
         this.ele.empty().append(this.copyHtml);        
         this.ele.removeClass('d-none');
+
+        const modalWidth = this.ele.find('.modal-wrap').outerWidth();
+
+        if (modalWidth <= 766) {
+            // 767 미만
+            this.ele.find('.board-top div.top-txt').hide();            
+        } else {
+            // 767 이상
+            this.ele.find('.board-top div.top-txt').show();
+        }
         
         // gsap.set(this.ele.find(".modal-wrap"), {scale: 0.9, opacity: 0});
         // gsap.to(this.ele.find(".modal-wrap"), 0.4, {delay:0.1, scale: 1, opacity: 1, ease: Back.easeOut, onComplete: () => {

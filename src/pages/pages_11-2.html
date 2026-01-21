@@ -409,12 +409,13 @@
                   <!-- 예상체납액 조회 -->
                   <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">예상체납액 조회</button>   
                   <div id="modal1" class="modal d-none" data-ui="modal">
-                     <div class="modal-wrap mw-1280">
+                     <div class="modal-wrap mw-766">
                         <div class="modal-header">
                            <h5>예상체납액 조회</h5>                     
                         </div>
                         <div class="modal-body" tabindex="0">
                            <div class="modal-cont">
+
                               <div class="search-box">
                                  <ul>
                                     <li class="col1">
@@ -458,197 +459,199 @@
                                  </div>
                               </div>
                               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                              <script>
+                                                            const data = {
+                     "page": 1,
+                     "limit": 10,
+                     "limitList": [10, 20, 30],
+                     "listLength": 500,
+                     "totalPages": 10,
+                     "pagingCount": 5,
+                     "data": [
+                        {
+                           "uid": "id-1",
+                           "key1": '001',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '0'
+                        },
+                        {
+                           "uid": "id-2",
+                           "key1": '002',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '2'
+                        },
+                        {
+                           "uid": "id-3",
+                           "key1": '003',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '3'
+                        },
+                        {
+                           "uid": "id-4",
+                           "key1": '004',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '4'
+                        },
+                        {
+                           "uid": "id-5",
+                           "key1": '005',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '5'
+                        },
+                        {
+                           "uid": "id-6",
+                           "key1": '006',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '6'
+                        },
+                        {
+                           "uid": "id-7",
+                           "key1": '007',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '7'
+                        },
+                        {
+                           "uid": "id-8",
+                           "key1": '008',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '8'
+                        },
+                        {
+                           "uid": "id-9",
+                           "key1": '009',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '9'
+                        },
+                        {
+                           "uid": "id-10",
+                           "key1": '010',                                                      
+                           "key2": "TELEVISION 1234567890 TELEVISION 1234567890",
+                           "key3": '434124231M',
+                           "key4": '113,421',
+                           "key5": '113,421',
+                           "key6": '10'
+                        }                                           
+                     ]
+                  }
+
+
+                  $(() => {
+                     $("#table").table({
+                        //apiPath: '/api/board2',
+                        //apiType: 'get',
+                        data: data,
+                        tableType: 'default',
+                        useHashParam: false,
+                        noLimit: false,
+                        useResize: true,
+                        scrollTop: true,
+                        caption: '테이블제목 에 대한 표로 th1,th2,th3 구성되어있다.',
+                        nodata: true,
+                        nodataMsg: '데이터없음',
+                        head: [
+                           {name: '선택', width: '60px', mobileHidden: true},
+                           {name: '란번호', width: '180px', sort: true},
+                           {name: '품명', tooltip: {title: "이메일 주소", content: "hong123@naver.com", link: "/pages/pages_7-2.html", arrow: "bottom left"}},                           
+                           {name: '관세', width: '9.375%'},
+                           {name: '부가세등', width: '9.375%'},
+                           {name: '환급신청수량', width: '9.375%'},
+                           {name: '버튼', width: '80px', mobileHidden: true},
+                           
+                        ],
+                        body: [
+                           {label: 'uid', fomatter: (value, rowData, isMobile) => {
+                              if(!isMobile) {
+                                 return `<div class="form-check medium">
+                                          <input type="checkbox" id="table2Radio${value}" name="table2Radio" onclick="alert('${value}')">
+                                          <label for="table2Radio${value}"><span class="sr-only">선택</span></label>
+                                       </div>`;
+                              } else {
+                                 return `<div class="form-check medium">
+                                          <input type="checkbox" id="table2RadioM${value}" name="table2RadioM" onclick="alert('${value}')">
+                                          <label for="table2RadioM${value}"><span class="sr-only">선택</span></label>
+                                       </div>`;
+                              }
+                           }},
+                           {label: 'key1'},
+                           {label: 'key2', align: 'left', fomatter: ( value, rowData, isMobile ) => {                              
+                              if(!isMobile)  return `<a href="/pages/pages_7-2.html#${rowData.uid}" class="tb-title">${value}</a>`;
+                              else           return `<a href="/pages/pages_7-2.html#${rowData.uid}">${value}</a>`;                              
+                           }},
+                           {label: 'key3', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-1">${value}</strong>`;
+                           }},
+                           {label: 'key4', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong class="cl-2">${value}</strong>`;
+                           }},
+                           {label: 'key5', fomatter: ( value, rowData, isMobile ) => {
+                              return `<strong>${value}</strong>`;
+                           }},
+                           {label: 'key6', fomatter: ( value, rowData, isMobile ) => {
+                              if(!isMobile)  return `<button type="button" class="btn tertiary small" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                              else           return `<button type="button" class="btn tertiary medium" onclick="location.href='/pages/pages_7-2.html#${rowData.uid}'">${value}</button>`;
+                           }},
+                        ]
+                     });
+                  });
+                        
+                              </script>
                               <h5 class="title-type3">납부상세내역</h5>
-                              <div class="wrap-cont-tbl pc">
-                                 <div class="table-wrap scorll">
-                                    <table class="tbl col cont">
-                                       <caption>세액정보에 대한 표로 세액구분,본세,가산세,가산금,계,관세,부가가치세,개별소비세,주세,미신고가산세,교통에너지환경세,교육세,농어촌특별세,신고지연가산세,합계, 구성되어있다.</caption>
-                                       <colgroup>
-                                          <col style="width:11%;">       
-                                          <col>                     
-                                          <col>                     
-                                          <col>                     
-                                          <col>                     
-                                          <col style="width: 11%;">                     
-                                          <col>                     
-                                          <col>                     
-                                          <col>                     
-                                          <col>                     
-                                       </colgroup>
-                                       <thead>                                          
-                                          <tr class="line2 tr-first">                                                
-                                             <th scope="col" class="text-left">세액구분</th>                                                                     
-                                             <th scope="col">본세</th>                                                                     
-                                             <th scope="col">가산세</th>                                                                     
-                                             <th scope="col">가산금</th>                                                                     
-                                             <th scope="col">계</th>                                                                     
-                                             <th scope="col" class="text-left">세액구분</th>                                                                     
-                                             <th scope="col">본세</th>                                                                     
-                                             <th scope="col">가산세</th>                                                                     
-                                             <th scope="col">가산금</th>                                                                     
-                                             <th scope="col" class="bor-right-no">계</th>                                                                     
-                                          </tr>                           
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <th scope="col">관세</th>
-                                             <td class="bor-left-no">1,000,000</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">1,000,000</td>
-                                             <th scope="col">교통에너지환경세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>                                                                                                               
-                                          <tr>
-                                             <th scope="col">부가가치세</th>
-                                             <td class="bor-left-no">100,000</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">100,000</td>
-                                             <th scope="col">교육세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>                                                                                                               
-                                          <tr>
-                                             <th scope="col">개별소비세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">0</td>
-                                             <th scope="col">농어촌특별세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>                                                                                                               
-                                          <tr>
-                                             <th scope="col">주세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">0</td>
-                                             <th scope="col">신고지연가산세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>                                                                                                               
-                                          <tr>
-                                             <th scope="col">미신고가산세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">0</td>
-                                             <th scope="col">합계</th>
-                                             <td class="bor-left-no">1,100,000</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>1,100,000</td>
-                                          </tr>                                                                                                               
-                                       </tbody>
-                                    </table>
-                                 </div>
-                              </div>
-                              <div class="wrap-cont-tbl mo">
-                                 <div class="table-wrap scorll">
-                                    <table class="tbl col cont">
-                                       <caption>세액정보에 대한 표로 세액구분,본세,가산세,가산금,계,관세,부가가치세,개별소비세,주세,미신고가산세,교통에너지환경세,교육세,농어촌특별세,신고지연가산세,합계, 구성되어있다.</caption>
-                                       <colgroup>
-                                          <col style="width:140px;">       
-                                          <col>                     
-                                          <col>                     
-                                          <col>                     
-                                          <col>                                                
-                                       </colgroup>
-                                       <thead>                                          
-                                          <tr class="line2 tr-first">                                                
-                                             <th scope="col" class="text-left">세액구분</th>                                                                     
-                                             <th scope="col">본세</th>                                                                     
-                                             <th scope="col">가산세</th>                                                                     
-                                             <th scope="col">가산금</th>                                                                     
-                                             <th scope="col" class="bor-right-no">계</th>                                                                                                   
-                                          </tr>                           
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <th scope="col">관세</th>
-                                             <td class="bor-left-no">1,000,000</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">1,000,000</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">교통에너지환경세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">부가가치세</th>
-                                             <td class="bor-left-no">100,000</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">100,000</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">교육세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">개별소비세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">0</td>
-                                          </tr>
-                                          <tr> 
-                                             <th scope="col">농어촌특별세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">주세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">0</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">신고지연가산세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">미신고가산세</th>
-                                             <td class="bor-left-no">0</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td class="bor-right">0</td>
-                                          </tr>
-                                          <tr>
-                                             <th scope="col">합계</th>
-                                             <td class="bor-left-no">1,100,000</td>
-                                             <td>0</td>
-                                             <td>0</td>
-                                             <td>1,100,000</td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </div>
-                              </div>
+                                                         <div id="table" class="table wrap-grid-tbl">                  
+
+                  <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
+                  <div class="board-top tbl-top mt-50">
+                     <div class="left-box">
+                        <strong class="tit top-txt">전체<strong></strong>개</strong>
+                        <div class="top-txt">
+                           <select class="form-select-sort large" title="정보 구분 선택"></select>
+                        </div>                     
+                     </div>                  
+                  </div>
+                  <!-- //전체 목록 개수 및 목록 보기 개수 -->
+
+                  <!-- 게시판 -->
+                  <div class="table-content wrap-check-tbl">                  
+                     <div class="table-wrap pc"></div>
+                     <div class="table-wrap mo"></div>
+                  </div>
+                  <!-- //게시판 -->
+
+                  <!-- 페이지네이션 (안쓰는 경우 삭제) -->
+                  <div class="pagination pagination-type1"></div>
+                  <!-- //페이지네이션 -->
+
+               </div>
+                        
+                              
+                              
+                              
                               <p class="advice-txt">본세100만원 이상인 경우 납부지연가산세 변동 내역을 확인하실 수 있습니다.</p>
                            </div>                           
                         </div>

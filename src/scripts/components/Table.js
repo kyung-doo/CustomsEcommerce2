@@ -742,7 +742,7 @@ class Table {
         }
         try {
             await this.loadData();
-            this.scrollTop();
+            //this.scrollTop();
 			/* 2025.09.11 페이징 중복기능 오류 수정 시작 */
 			this.ele.find('.pagination').pagination('setPage', [this.data.page, this.data.totalPages]);
 			/* 2025.09.11 페이징 중복기능 오류 수정 끝 */

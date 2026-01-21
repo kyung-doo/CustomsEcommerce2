@@ -67,6 +67,8 @@ strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
 .f-no-wrap{flex-wrap: nowrap !important;}
 .f-aling-center{align-items: center !important;}
 .f-jus-cont{justify-content: space-between !important;}
+.f-jus-end{justify-content: flex-end !important;}
+.f-jus-start{justify-content: flex-start !important;}
 
 /** display **/
 .d-block{display: block !important;}
@@ -118,3 +120,21 @@ a[class*=cl-]{text-decoration: underline;}
 *:focus-visible + label {
   outline: 3px solid #373737;   /* 키보드 포커스일 때만 표시 */
 }
+
+/** placeholder 텍스트 색상 **/
+input::placeholder,
+textarea::placeholder{color:#bdbdbd}
+
+/** disabled 텍스트 색상 **/
+input:disabled
+textarea:disabled{color:#1D1D1D}
+
+/** autofill 배경색상 **/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active{-webkit-box-shadow: 0 0 0 1000px white inset !important;box-shadow: 0 0 0 1000px white inset !important;-webkit-text-fill-color: #000;}
