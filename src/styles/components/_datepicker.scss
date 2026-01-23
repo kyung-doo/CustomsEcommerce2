@@ -14,7 +14,8 @@
 .datepicker .calendar-header {display: flex;align-items: center;justify-content: center;gap: 8px;padding: 10px 24px;background-color: #EDF1F5;}
 .datepicker .calendar-header [class*=btn-] {background-color: transparent;font-size: 19px;}
 .datepicker .calendar-header [class*=btn-].btn-prev, .datepicker .calendar-header [class*=btn-].btn-next {display: flex;width: 16px;height: 16px;padding: 0;font-size: 0;position: relative;background-image: url("../assets/icons/calendar-btn.svg");background-position: center;}
-.datepicker .calendar-header [class*=btn-].btn-prev:disabled, .datepicker .calendar-header [class*=btn-].btn-next:disabled {background-image: url("../assets/icons/calendar-btn-d.svg");}
+.datepicker .calendar-header [class*=btn-].btn-prev:disabled {background-image: url("../assets/icons/calendar-btn-d.svg");transform: rotate(180deg);} 
+.datepicker .calendar-header [class*=btn-].btn-next:disabled {background-image: url("../assets/icons/calendar-btn-d.svg");}
 .datepicker .calendar-header [class*=btn-].btn-next {transform: rotate(180deg);}
 .datepicker .calendar-header [class*=btn-].btn-next:disabled {transform: rotate(360deg);}
 .datepicker .calendar-header [class*=btn-].btn-year, .datepicker .calendar-header [class*=btn-].btn-month {width: 112px;padding: 8px 8.8px;background-image: url("../assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 9px;background-size: 15px;}

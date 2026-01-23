@@ -3,6 +3,7 @@ class Datepicker {
 
     static DEFAULT_PROPS = {
         maxDate: new Date(),
+        minDate: null,
         minInput: null,
         maxInput: null,
         isMonth: false,
@@ -25,8 +26,17 @@ class Datepicker {
         this.isShow = false;
         this.currentYear = null;
         this.currentMonth = null;
-        if(!this.props.maxDate) this.props.maxDate = Datepicker.MAXIMUM_DATE;
-        else                    this.props.maxDate = new Date(this.props.maxDate);
+
+        if(!this.props.maxDate)                     this.props.maxDate = Datepicker.MAXIMUM_DATE;
+        else if(this.props.maxDate === 'today')     this.props.maxDate = new Date();
+        else                                        this.props.maxDate = new Date(this.props.maxDate);
+        
+        if(!this.props.minDate) this.props.minDate = Datepicker.MINIMUM_DATE;
+        else if(this.props.minDate === 'today')     this.props.minDate = new Date();
+        else                    this.props.minDate = new Date(this.props.minDate);
+
+        console.log(dayjs(this.props.minDate).format('YYYYMMDD'))
+
         this.init();
     }
 
@@ -124,12 +134,21 @@ class Datepicker {
                     }
                 } else {
                     
-                    if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
-                        //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
-                        //this.input.val('').focus(); 
-                        ecp_alert(title,ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                    if (dayjs(this.props.maxDate).isSame(dayjs(this.today), 'day') && dayjs(val).isAfter(dayjs(this.props.maxDate), 'day')
+                    ) {
+                        // alert('오늘 날짜보다 큰 날짜를 입력할 수 없습니다.');
+                        // this.input.val('').focus();
+                        ecp_alert(title, ECP_MSG.err_ecp_ko_00032, this.input.val(''));
                         return;
                     }
+
+                    if (dayjs(this.props.minDate).isSame(dayjs(this.today), 'day') && dayjs(val).isBefore(dayjs(this.props.minDate), 'day')) {
+                        alert('오늘 날짜보다 작은 날짜를 입력할 수 없습니다.');
+                        this.input.val('').focus();
+                        // ecp_alert(title, ECP_MSG.err_ecp_ko_00035, this.input.val(''));
+                        return;
+                    }
+
 
                     if(this.props.minInput && $(this.props.minInput).val()) {
                         this.minDate = new Date($(this.props.minInput).val());
@@ -395,6 +414,12 @@ class Datepicker {
                 }
             }
 
+            if(this.currentYear === this.props.minDate.getFullYear()) {
+                if(this.currentMonth === toDay.getMonth()+1) {
+                    this.calendar.find(".btn-prev").attr('disabled', 'disabled');
+                }
+            }
+
             if(this.currentYear === Datepicker.MINIMUM_DATE.getFullYear()) {
                 if(this.currentMonth === Datepicker.MINIMUM_DATE.getMonth()+1) {
                     this.calendar.find(".btn-prev").attr('disabled', 'disabled');
@@ -403,6 +428,10 @@ class Datepicker {
         } else {
             if(this.currentYear === this.props.maxDate.getFullYear()) {
                 this.calendar.find(".btn-next").attr('disabled', 'disabled');
+            }
+
+            if(this.currentYear === this.props.minDate.getFullYear()) {
+                this.calendar.find(".btn-prev").attr('disabled', 'disabled');
             }
 
             if(this.currentYear === Datepicker.MINIMUM_DATE.getFullYear()) {
@@ -437,9 +466,15 @@ class Datepicker {
                         x.type += ' active';
                     }
                 }
-                if(this.props.maxDate && new Date(x.year+'-'+x.month+'-'+x.day) > this.props.maxDate) {
+
+                if (this.props.maxDate && dayjs(`${x.year}-${x.month}-${x.day}`).isAfter(dayjs(this.props.maxDate), 'day')) {
                     x.type += ' disabled';
                 }
+
+                if (this.props.minDate && dayjs(`${x.year}-${x.month}-${x.day}`).isBefore(dayjs(this.props.minDate), 'day')) {
+                    x.type += ' disabled';
+                }
+
                 if(this.props.maxInput && $(this.props.maxInput).val()) {
                     if(new Date(x.year+'-'+x.month+'-'+x.day) > new Date($(this.props.maxInput).val())) {
                         x.type += ' disabled';
