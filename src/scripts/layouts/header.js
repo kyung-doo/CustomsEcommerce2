@@ -161,6 +161,8 @@ $(() => {
         $(window).on('resize',function(){
             $('body,html').css({"overflow":"auto"});
         }) 
+        $('.main-menu.main-allmenu').hide();
+        $('.allmenu').removeClass('active')        
     });
     $(".mobile-dep-menu").on('click', function () {
         if(!$(this).parent().find('.depth2').is(':visible')) {

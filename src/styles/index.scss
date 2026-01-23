@@ -123,7 +123,8 @@ a[class*=cl-]{text-decoration: underline;}
 
 /** placeholder 텍스트 색상 **/
 input::placeholder,
-textarea::placeholder{color:#bdbdbd}
+textarea::placeholder,
+.form-group select:invalid {color:#bdbdbd}
 
 /** disabled 텍스트 색상 **/
 input:disabled

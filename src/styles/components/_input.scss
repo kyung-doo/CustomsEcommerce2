@@ -17,7 +17,7 @@
 .form-group .textarea-count .count-now {color: #246BEB;}
 .form-group .wrap-textarea-count {display: flex;justify-content: space-between;align-items: center;margin-top: 1px;}
 .form-group select {/*border-color: #C6C6C6;*/-webkit-appearance: none;-moz-appearance: none;appearance: none;background-image: url("../assets/icons/btn-arrow-down.svg");background-repeat: no-repeat;background-position: center right 14px;background-color: #fff;padding: 0px 35px 0 16px;border-radius: 4px;border: 1px solid #717171;text-overflow: ellipsis;white-space: nowrap;}
-.form-group select:invalid {color: #8E8E8E;}
+// .form-group select:invalid {color: #8E8E8E;}
 .form-group .form-conts.is-success input[type=text], .form-group .form-conts.is-success input[type=password] {outline: 2px solid #246BEB;border-color: #246BEB;}
 .form-group.form-tit-group.is-success {outline: 2px solid #246BEB;border-color: #246BEB;}
 .form-group .textarea-count .count-now.is-error {color: #D50136;}

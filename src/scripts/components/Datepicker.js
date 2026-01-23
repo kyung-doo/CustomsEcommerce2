@@ -150,22 +150,7 @@ class Datepicker {
                     }
                 }
             }
-        });    
-
-        // 달력 외 영역 클릭 시 닫기
-        this.outsideClickHandler = (e) => {
-            // 달력 내부 클릭
-            if ($(e.target).closest('.datepicker').length) return;
-
-            // 달력 버튼(input + calendar-btn) 클릭
-            if ($(e.target).closest(this.ele).length) return;
-
-            // 그 외 영역 클릭 → 닫기
-            this.hideCalendar();
-            $('.calendar-blind').hide();
-        };
-
-        $(document).on('mousedown.datepickerOutside', this.outsideClickHandler);
+        });            
 
         this.btn.on('click', (e) => {            
             if(!this.isShow) {                
@@ -353,6 +338,21 @@ class Datepicker {
             this.currentMonth = new Date().getMonth() + 1;
         }
         this.renderCalendar();
+
+        // 달력 외 영역 클릭 시 닫기
+        this.outsideClickHandler = (e) => {
+            // 달력 내부 클릭
+            if ($(e.target).closest('.datepicker').length) return;
+
+            // 달력 버튼(input + calendar-btn) 클릭
+            if ($(e.target).closest(this.ele).length) return;
+
+            // 그 외 영역 클릭 → 닫기
+            this.hideCalendar();
+            $('.calendar-blind').hide();
+        };
+
+        $(document).on('mousedown.datepickerOutside', this.outsideClickHandler);
     }
 
     renderCalendar () {
@@ -622,7 +622,8 @@ class Datepicker {
     }
 
     hideCalendar () {
-        $("html, body").off('scroll.datepicker');
+        $(document).on('mousedown.datepickerOutside', this.outsideClickHandler);
+        //$("html, body").off('scroll.datepicker');
         $(window).off('resize.datepicker');
         this.input.removeAttr('disabled');        
         $('.calendar-form').removeClass('on');   
@@ -644,8 +645,8 @@ class Datepicker {
         this.btn.focus();
         this.isShow = false;
         this.selectDate = null;
-
         
+        this.input.trigger('change')
     }
 }
 

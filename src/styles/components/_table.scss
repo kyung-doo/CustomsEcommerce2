@@ -31,7 +31,7 @@
 .table-wrap td:has(.new) a {display: flex;align-items: center;}
 .table-wrap table {table-layout: fixed;width: 100%;border-spacing: 0;}
 .table-wrap .tax-amount{color:#E71825;display: block;}
-.table-wrap th {border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 9px 16px;font-weight: 700;}
+.table-wrap th {border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 10px 16px;font-weight: 700;height:50px;}
 .table-wrap th *:not(.tooltip-tit *) {font-weight: 700;}
 .table-wrap th .tooltip-tit {display: flex;justify-content: center;}
 .table-wrap th .tooltip-tit .title {padding-right: 20px;position: relative;}
@@ -50,7 +50,7 @@
 /* 그리드 클릭되는 태그 밑줄 */
 .table-wrap a:hover, .wrap-faq a:hover {text-decoration: underline;}
 
-.table-wrap td {border-bottom: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 10px 16px;}
+.table-wrap td {border-bottom: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 10px 16px;height:50px;}
 .table-wrap table.cont td {border: 1px solid #E4E4E4;border-top: none;border-right: none;}
 .table-wrap table.cont.type1 tr td {border-right: 0;text-align: center;border-left: 0;}
 .table-wrap table.cont.type1 tr.last-tr td, .table-wrap table.cont.type1 tr td.number {border-bottom: 1px solid #C6C6C6;}
