@@ -446,13 +446,13 @@ class Datepicker {
 
         if(!this.props.isMonth) {
             if(this.currentYear === this.props.maxDate.getFullYear()) {
-                if(this.currentMonth === toDay.getMonth()+1) {
+                if(this.currentMonth === this.props.maxDate.getMonth()+1) {
                     this.calendar.find(".btn-next").attr('disabled', 'disabled');
                 }
             }
 
             if(this.currentYear === this.props.minDate.getFullYear()) {
-                if(this.currentMonth === toDay.getMonth()+1) {
+                if(this.currentMonth === this.props.minDate.getMonth()+1) {
                     this.calendar.find(".btn-prev").attr('disabled', 'disabled');
                 }
             }
