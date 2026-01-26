@@ -124,18 +124,18 @@
 .wrap-form-area .sub-form .sub-tit {position: relative;}
 
 /* 예상세액 조회 구입물품 */
-.purchased-item{width: 100%;min-width: 10px;}
+.purchased-item{width: 100%;min-width: 10px;position: relative;}
 .purchased-item .purchased-btn{position:relative;}
 .purchased-item .purchased-btn button{display:flex;align-items: center;border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #717171;padding: 0px 16px;height: 48px;justify-content: space-between;width: 100%;}
-.purchased-item .purchased-area{position:absolute;left:0;background-color:#fff;z-index: 4;padding:10px;border:1px solid #717171;border-radius: 4px;display:none;}
+.purchased-item .purchased-area{width: 100%;position:absolute;top: 48px;left: 0;background-color:#fff;z-index: 4;padding:10px;border:1px solid #717171;border-radius: 4px;display:none;margin-top: 5px;}
 .purchased-item.open .purchased-area{display:block;}
 .purchased-item .purchased-area .purchased-list{height: 300px;overflow-y: auto;margin-top:10px;margin-bottom:10px;}
 .purchased-item .purchased-area .purchased-list li{padding:0;margin:0;}
 .purchased-item .purchased-area .purchased-list li a{padding:10px 16px;display:block;}
 .purchased-item .purchased-area .purchased-list li a:hover{text-decoration:underline}
 // .purchased-item.open .btn-arrow-down {transform: rotate(180deg);}
-.purchased-item.open.down .purchased-area {top: 101px;margin-top: 5px;}
-.purchased-item.open.up .purchased-area {bottom: 72px;margin-bottom: 5px;}
+// .purchased-item.open.down .purchased-area {top: 101px;margin-top: 5px;}
+// .purchased-item.open.up .purchased-area {bottom: 72px;margin-bottom: 5px;}
 
 @media screen and (max-width: 1312px) {
   .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 24px 24px 24px;}

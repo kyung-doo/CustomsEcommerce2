@@ -33,9 +33,7 @@ class Datepicker {
         
         if(!this.props.minDate) this.props.minDate = Datepicker.MINIMUM_DATE;
         else if(this.props.minDate === 'today')     this.props.minDate = new Date();
-        else                    this.props.minDate = new Date(this.props.minDate);
-
-        console.log(dayjs(this.props.minDate).format('YYYYMMDD'))
+        else                    this.props.minDate = new Date(this.props.minDate);        
 
         this.init();
     }
@@ -124,8 +122,7 @@ class Datepicker {
                     }
 
                     if(this.props.maxInput && $(this.props.maxInput).val()) {
-                        this.maxMonth = parseInt(dayjs(new Date($(this.props.maxInput).val())).format('YYYYMM'));
-                        console.log(this.input.val(), $(this.props.maxInput).val())
+                        this.maxMonth = parseInt(dayjs(new Date($(this.props.maxInput).val())).format('YYYYMM'));                        
                         if(this.selectMonth > this.maxMonth) {
                             // alert('종료월은 시작월보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
@@ -201,7 +198,7 @@ class Datepicker {
 
 
 
-    showCalendar () {
+    showCalendar () {       
         
         $('*[data-ui="datepicker"]').each(function () {
             $(this).datepicker('hideCalendar');
@@ -257,9 +254,46 @@ class Datepicker {
         $("html, body").on('scroll.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
-        $(window).on('resize.datepicker', () => {
-            this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
-        });
+        // $(window).on('resize.datepicker', () => {
+        //     this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});            
+        // });        
+
+        this.setCalendarPosition = () => {
+            const offset = this.ele.offset();
+            const calendarWidth = this.calendar.outerWidth();
+            const calendarHeight = this.calendar.outerHeight();
+            const windowWidth = $(window).width();
+            const windowHeight = $(window).height();
+            const scrollTop = $(window).scrollTop();
+            const scrollLeft = $(window).scrollLeft();
+
+            let left = offset.left;
+            let top = offset.top + this.ele.outerHeight(); // 버튼 밑으로 기본 위치
+
+            // 오른쪽 화면 밖으로 나가지 않게
+            if (left + calendarWidth > windowWidth + scrollLeft) {
+                left = windowWidth + scrollLeft - calendarWidth - 10; // 10px 여유
+            }
+            if (left < scrollLeft) left = scrollLeft + 10;
+
+            // 아래 화면 밖으로 나가지 않게
+            if (top + calendarHeight > windowHeight + scrollTop) {
+                top = offset.top - calendarHeight; // 버튼 위로 위치
+            }
+            if (top < scrollTop) top = scrollTop + 10;
+
+            this.calendar.css({left: left, top: top});
+        };
+
+        // 달력 처음 열 때
+        this.setCalendarPosition();
+
+        // 리사이즈 시
+        $(window).on('resize.datepicker', this.setCalendarPosition);
+        $("html, body").on('scroll.datepicker', this.setCalendarPosition);
+
+
+        
         $("html, body").trigger('scroll.datepicker');                        
 
         this.calendar.find(".btn-cancel").on('click', () => {
@@ -277,6 +311,9 @@ class Datepicker {
             this.hideCalendar();
             $('.calendar-blind').hide();
         });
+
+       
+
         this.calendar.find(".btn-prev").css({'pointer-events': ''}).on('click', () => {
             this.prevCalendar();
         });
@@ -657,10 +694,15 @@ class Datepicker {
     }
 
     hideCalendar () {
-        $(document).on('mousedown.datepickerOutside', this.outsideClickHandler);
+        //$(document).on('mousedown.datepickerOutside', this.outsideClickHandler);
         //$("html, body").off('scroll.datepicker');
         $(window).off('resize.datepicker');
-        this.input.removeAttr('disabled');        
+
+        // input 활성화 조건: 달력 버튼이 disabled가 아니면
+        if (!this.btn.is(':disabled')) {
+            this.input.removeAttr('disabled');
+        }        
+        
         $('.calendar-form').removeClass('on');   
         $(document).off('keydown.datepicker');     
         if(this.calendar) {                        
@@ -682,8 +724,10 @@ class Datepicker {
         this.selectDate = null;
         
         this.input.trigger('change')
-    }
+    }    
 }
+
+
 
 $.fn.datepicker = function (option, params) {
     return this.each(function () {

@@ -38,12 +38,7 @@
                               <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
                                  <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
                                  <button class="calendar-btn">종료 달력보기</button>
-                              </div>
-                              전체선택
-                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null">
-                                 <input id="endDate1" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
-                                 <button class="calendar-btn">종료 달력보기</button>
-                              </div>
+                              </div>                                                            
                            </div>
                            <div class="form-chip large">
                               <input type="radio" class="radio" name="range_period" id="period-1w">
@@ -71,6 +66,17 @@
                                  <input type="text" id="ex00" class="input" placeholder="예) 12341234123" title="운송장부호를 입력해주세요">
                               </div>                              
                            </div> 
+                        </div>                        
+                     </li>
+                     <li class="col1">
+                        <label class="tit" for="ex00">현재+미래만 선택가능 달력</label>
+                        <div class="search-area">
+                           <div class="calendar">                              
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                 <input id="endDate1" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div>
+                           </div>
                         </div>                        
                      </li>                     
                   </ul>

@@ -23,6 +23,80 @@
             </div>                                                      
             <!-- 내용 -->
             <div class="cont-area">
+               <div class="search-box">
+                  <form action="">
+                  <ul>
+                     <li class="col1">
+                        <strong class="tit">신고일자1 <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="calendar">                              
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate4'">
+                                 <input id="startDate4" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn" type="button">시작 달력보기</button>
+                              </div>
+                              <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate4'">
+                                 <input id="endDate4" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn" type="button">종료 달력보기</button>
+                              </div>                                                            
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="range_period" id="period-1w">
+                              <label class="form-chip-outline" for="period-1w">1주일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="range_period" id="period-1m">
+                              <label class="form-chip-outline" for="period-1m">1개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="range_period" id="period-3m">
+                              <label class="form-chip-outline" for="period-3m">3개월</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="range_period" id="period-12m">
+                              <label class="form-chip-outline" for="period-12m">12개월</label>
+                           </div>
+                        </div>                        
+                     </li>
+                     <li class="col1">
+                        <label class="tit" for="ex00">운송장부호</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" id="ex00" class="input" placeholder="예) 12341234123" title="운송장부호를 입력해주세요">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>
+                     <li class="col1">
+                        <label class="tit" for="ex00">현재+미래만 선택가능 달력</label>
+                        <div class="search-area">
+                           <div class="calendar">                              
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                 <input id="endDate11" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn" type="button">종료 달력보기</button>
+                              </div>
+                           </div>
+                        </div>                        
+                     </li>                     
+                  </ul>
+                  <!-- 조회버튼 영역 -->
+                  <div class="bottom-action-area">
+                     <!-- 수정된 위치 -->
+                     
+                     <!-- // 수정된 위치 -->
+                     <!-- 버튼 영역 -->
+                     <div class="btn-end">
+                        <div class="align">
+                           <button type="button" class="btn tertiary medium">초기화</button>
+                           <button type="button" class="btn secondary medium">조회</button>                        
+                        </div>
+                     </div>
+                     <!-- // 버튼 영역 -->
+                  </div>                  
+                  <!-- // 조회버튼 영역 -->
+                  </form>
+               </div>
                <h5 class="title-type3">조회정보</h5>   
                <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>     
                <div class="wrap-form-area">
@@ -103,11 +177,11 @@
                                        <div class="sub-list-box">
                                           <strong class="tit">여권만료일</strong>
                                           <div class="sub-box">
-                                             <div class="calendar w100per">
-                                                <div class="calendar-form mw-172" data-ui="datepicker">
-                                                   <input type="text" title="여권만료일을 입력해주세요" disabled="" placeholder="YYYY-MM-DD" maxlength="10">
-                                                   <button class="calendar-btn" disabled="">여권만료일 달력보기</button>
-                                                </div>                        
+                                             <div class="calendar">                              
+                                                <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                                   <input id="endDate1" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10" >
+                                                   <button class="calendar-btn" >종료 달력보기</button>
+                                                </div>
                                              </div>
                                           </div>
                                        </div>
@@ -115,7 +189,19 @@
                                  </li>
                               </ul>    
                            </div>                       
-                        </li>                        
+                        </li>    
+                        <li class="col1">
+                           <label for="ex3" class="tit">달력 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="calendar">                              
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                 <input id="endDate2" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10" disabled>
+                                 <button class="calendar-btn" disabled>종료 달력보기</button>
+                              </div>
+                           </div>
+                           </div>  
+                           <p class="advice-txt">특수문자를 포함하여 8자리 이상</p>
+                        </li>                    
                         <li class="col1">
                            <label for="ex3" class="tit">사전신청 비밀번호 <i class="compulsory">필수</i></label>
                            <div class="inp-box">
