@@ -150,114 +150,114 @@ $(() => {
     
 
     //화면 넓이
-    // $(document).ready(function() {        
-    //     function updateWidth() {                      
-    //         var width = $(window).width();
-    //         $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
-    //     }
-    //     updateWidth();
+    $(document).ready(function() {        
+        function updateWidth() {                      
+            var width = $(window).width();
+            $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
+        }
+        updateWidth();
 
-    //     $(window).resize(function() {
-    //         updateWidth();
-    //     });        
-    // });    
+        $(window).resize(function() {
+            updateWidth();
+        });        
+    });    
 
 
 
-    // function createHorizontalGuides(options = {}) {
-    //     const lineCount = options.count || 2;
-    //     const color = options.color || 'rgba(255,0,0,0.7)';
-    //     const thickness = options.thickness || 2;
-    //     const spacing = options.spacing || 50;
+    function createHorizontalGuides(options = {}) {
+        const lineCount = options.count || 2;
+        const color = options.color || 'rgba(255,0,0,0.7)';
+        const thickness = options.thickness || 2;
+        const spacing = options.spacing || 50;
 
-    //     const lines = [];
-    //     let activeLine = null; // 키보드 이동용 현재 선택된 가이드
+        const lines = [];
+        let activeLine = null; // 키보드 이동용 현재 선택된 가이드
 
-    //     for (let i = 0; i < lineCount; i++) {
-    //         const $line = $('<div class="guide-line horizontal"></div>');
-    //         $('body').append($line);
+        for (let i = 0; i < lineCount; i++) {
+            const $line = $('<div class="guide-line horizontal"></div>');
+            $('body').append($line);
 
-    //         $line.css({
-    //             position: 'absolute',
-    //             width: '100%',
-    //             height: thickness + 'px',
-    //             top: (50 + i * spacing) + 'px',
-    //             left: 0,
-    //             background: color,
-    //             zIndex: 9999,
-    //             cursor: 'move',
-    //             outline: 'none'
-    //         });
+            $line.css({
+                position: 'absolute',
+                width: '100%',
+                height: thickness + 'px',
+                top: (50 + i * spacing) + 'px',
+                left: 0,
+                background: color,
+                zIndex: 9999,
+                cursor: 'move',
+                outline: 'none'
+            });
 
-    //         // 포커스 가능하게 tabindex 추가
-    //         $line.attr('tabindex', 0);
+            // 포커스 가능하게 tabindex 추가
+            $line.attr('tabindex', 0);
 
-    //         // --------------------------
-    //         // 마우스 드래그 이동
-    //         // --------------------------
-    //         let isDragging = false;
-    //         let startMouse = 0;
-    //         let startTop = 0;
+            // --------------------------
+            // 마우스 드래그 이동
+            // --------------------------
+            let isDragging = false;
+            let startMouse = 0;
+            let startTop = 0;
 
-    //         $line.on('mousedown', function (e) {
-    //             isDragging = true;
-    //             activeLine = $line; // 현재 선택된 라인
-    //             startMouse = e.pageY;
-    //             startTop = parseInt($line.css('top'));
-    //             e.preventDefault();
-    //             $line.focus(); // 키보드 이동을 위해 포커스
-    //         });
+            $line.on('mousedown', function (e) {
+                isDragging = true;
+                activeLine = $line; // 현재 선택된 라인
+                startMouse = e.pageY;
+                startTop = parseInt($line.css('top'));
+                e.preventDefault();
+                $line.focus(); // 키보드 이동을 위해 포커스
+            });
 
-    //         $(document).on('mousemove', function (e) {
-    //             if (!isDragging) return;
-    //             const delta = e.pageY - startMouse;
-    //             $line.css('top', startTop + delta + 'px');
-    //         });
+            $(document).on('mousemove', function (e) {
+                if (!isDragging) return;
+                const delta = e.pageY - startMouse;
+                $line.css('top', startTop + delta + 'px');
+            });
 
-    //         $(document).on('mouseup', function () {
-    //             isDragging = false;
-    //         });
+            $(document).on('mouseup', function () {
+                isDragging = false;
+            });
 
-    //         // --------------------------
-    //         // 키보드 이동 (↑ ↓)
-    //         // --------------------------
-    //         $line.on('keydown', function (e) {
-    //             const step = e.shiftKey ? 10 : 1; // shift 누르면 10px 이동
-    //             let currentTop = parseInt($line.css('top'));
+            // --------------------------
+            // 키보드 이동 (↑ ↓)
+            // --------------------------
+            $line.on('keydown', function (e) {
+                const step = e.shiftKey ? 10 : 1; // shift 누르면 10px 이동
+                let currentTop = parseInt($line.css('top'));
 
-    //             switch (e.key) {
-    //                 case "ArrowUp":
-    //                     $line.css('top', currentTop - step + 'px');
-    //                     break;
-    //                 case "ArrowDown":
-    //                     $line.css('top', currentTop + step + 'px');
-    //                     break;
-    //             }
-    //         });
+                switch (e.key) {
+                    case "ArrowUp":
+                        $line.css('top', currentTop - step + 'px');
+                        break;
+                    case "ArrowDown":
+                        $line.css('top', currentTop + step + 'px');
+                        break;
+                }
+            });
 
-    //         // --------------------------
-    //         // 더블클릭 → 화면 중앙 정렬
-    //         // --------------------------
-    //         $line.on('dblclick', function () {
-    //             $line.css('top', '50%');
-    //         });
+            // --------------------------
+            // 더블클릭 → 화면 중앙 정렬
+            // --------------------------
+            $line.on('dblclick', function () {
+                $line.css('top', '50%');
+            });
 
-    //         lines.push($line);
-    //     }
+            lines.push($line);
+        }
 
-    //     return lines;
-    // }
+        return lines;
+    }
 
 
     // 사용 예시
-    // $(function() {
-    //     // const horizontalLines = createHorizontalGuides({
-    //     //     count: 2,       
-    //     //     color: 'rgba(255,0,0,0.5)',
-    //     //     thickness: 30,
-    //     //     spacing: 40     
-    //     // });        
-    // });
+    $(function() {
+        const horizontalLines = createHorizontalGuides({
+            count: 2,       
+            color: 'rgba(255,0,0,0.5)',
+            thickness: 30,
+            spacing: 40     
+        });        
+    });
 
 
 

@@ -136,17 +136,19 @@ body.common-loading, html.common-loading {overflow: hidden;}
 /* 개인정보 수집 */
 .acc-area {border: 1px solid #E4E4E4;padding: 0 24px;border-radius: 8px;}
 .acc-area .tit {display: flex;justify-content: space-between;padding: 24px 0;position: relative;}
-.acc-area .tit:before {content: "";display: block;position: absolute;bottom: 0;left: 0;width: 100%;height: 2px;background-image: url("../assets/icons/dotted.svg");}
 .acc-area .tit p {padding-right: 40px;line-height: 150%;}
-.acc-area .tit .box {display: flex;gap: 24px;justify-content: flex-end;flex: 1;}
-.acc-area .txt {padding: 24px 0;}
-.acc-area .txt p {color: #EB003B;display: flex;line-height: 150%;}
-.acc-area .txt p i {margin-right: 6px;}
+.acc-area .tit .box {display: flex;gap: 24px;justify-content: flex-end;flex: 1;align-items: center;}
+.acc-area .txt {padding: 24px 0;position: relative;}
+.acc-area .txt:before {content: "";display: block;position: absolute;top: 0;left: 0;width: 100%;height: 2px;background-image: url("../assets/icons/dotted.svg");}
+.acc-area .txt p {color: #EB003B;display: flex;line-height: 150%;position: relative;padding-left: 25px;}
+.acc-area .txt p i {margin-right: 6px;position: absolute;top: 3px;left: 0;}
+.acc-area .txt.select p{color:#0E2B5E;}
 .acc-area.type1 {padding: 0;}
 .acc-area.type1 .tit {flex-direction: column;gap: 24px;padding: 24px;}
 .acc-area.type1 .tit::before {display: none;}
 .acc-area.type1 .txt {padding: 24px;border-top: 1px solid #E4E4E4;}
 .acc-area.type1 .txt .box {display: flex;justify-content: flex-end;gap: 24px;}
+
 
 /* 검색영역 */
 .search-box {padding: 10px 15px;border-radius: 5px;background-color: #F4F5F6;}
@@ -800,8 +802,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 
   /* 개인정보 수집 */
   .acc-area {padding: 0 15px;border-radius: 5px;}
-  .acc-area .txt {padding: 15px 0;}
-  .acc-area .txt p i {margin-top: 10px;}
+  .acc-area .txt {padding: 15px 0;}  
   .acc-area .tit {padding: 15px 0;}
 
   /* 점선 스타일 */
