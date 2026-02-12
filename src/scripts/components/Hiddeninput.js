@@ -25,7 +25,7 @@ class Hiddeninput {
             this.onInput();
         });
         if (this.props.toggleBtn) {
-            this.toggleBtn = $(`<button type="button" title="비밀번호 표시" class="visibility"><i class="icon visibility medium"></i></button>`);
+            this.toggleBtn = $(`<button type="button" title="비밀번호 표시" class="visibility-btn"><i class="icon visibility medium"></i></button>`);
             this.ele.after(this.toggleBtn);
 
             this.toggleBtn.on('click', () => {
