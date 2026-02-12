@@ -67,7 +67,17 @@ class Modal {
             this.ele.removeAttr('style');
         }else{
             $("body").css({'overflow': 'hidden'});            
-        }       
+        }     
+        
+        //관련누리집, 세관 바로가기 클릭하면 닫기
+        $('.footer-quick-pop a').click(function(){
+            $("body").css({'overflow': 'auto'});       
+            $('#homepage,#customs').hide();                                        
+            //this.ele.show();            
+            this.ele.removeClass('d-none');
+            this.ele.removeAttr('style');
+        })
+
         
         this.ele.find(".btn-close").on("focusin", e => {
             $(document).on('keydown.modal', (e) => {

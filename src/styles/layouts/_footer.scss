@@ -45,6 +45,11 @@
 #footer .f-box .f-btm .f-menu a.point {color: #003675;font-weight: 700;}
 #footer .f-box .f-copy {font-size: 15px;color: #555;}
 
+#footer .chatbot {position:fixed;top:616px;right: 40px;width:96px;height:116px;z-index: 3;}
+#footer .chatbot .chatbot-area{display:block;width:96px;height:96px;border-radius:50%;background-color:#5089EF;position:relative;background-image: url("../assets/icons/chatbot.svg");background-position: center 10px;background-repeat:no-repeat;background-size: 79%;box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.16);}
+#footer .chatbot .chatbot-area span{width:83px;height:32px;background-color:#fff;display:flex;position:absolute;bottom: -20px;left:50%;border:1px solid #C6C6C6;border-radius: 8px;align-items: center;justify-content: center;font-weight: 700;transform:translateX(-50%);box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.16);}
+#footer .chatbot .close{position: absolute;top: -15px;right: -15px;font-size: 0;width: 24px;height: 24px;border-radius: 12px;opacity: 0.8;background-color: #000;background-image: url(../assets/icons/close-d.svg);background-repeat: no-repeat;background-position: center;background-size: 55%;}
+
 @media screen and (max-width: 1200px) {
   .footer-quick-pop .col6 {width: calc(33.3333% - 16px);}
 }
@@ -59,6 +64,8 @@
   #footer .f-box .f-copy {font-size: 14px;}
   #footer .foot-quick button {font-size: 16px;}
   .footer-quick-pop {bottom: 312px !important;}
+
+  #footer .chatbot{top:auto;bottom:50px;}
 }
 @media screen and (max-width: 820px) {
   .footer-quick-pop {bottom: 333px !important;}

@@ -2,6 +2,7 @@
    Style Guide list
    ================================================== */
 .wrap-form-area .inp-form {border: 1px solid #e4e4e4;border-radius: 8px;padding: 24px;position: relative;}
+.wrap-form-area .inp-form:first-child{margin-top:0;}
 .wrap-form-area .inp-form button[class*=btn]:not(.text).medium, .wrap-form-area .inp-form label[class*=btn]:not(.text).medium {height: 48px;}
 .wrap-form-area .inp-form:has(.form-btn-area) {padding: 24px 130px 24px 24px;}
 .wrap-form-area .inp-form:has(.step-area.type1) {padding: 24px 24px 24px 239px;}
@@ -117,9 +118,10 @@
 .wrap-form-area .sub-form .calendar {margin-right: 0;}
 .wrap-form-area .sub-form .sub-form-box {width: 100%;}
 .wrap-form-area .sub-form .sub-form-box ul {display: flex;margin-left: -40px;}
-.wrap-form-area .sub-form .sub-form-box .sub-list-wrap {display: flex;gap: 24px;align-items: flex-end;}
+.wrap-form-area .sub-form .sub-form-box .sub-list-wrap {display: flex;gap: 8px;align-items: flex-end;}
 .wrap-form-area .sub-form .sub-form-box .sub-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;}
-.wrap-form-area .sub-form .sub-form-box .sub-list-box {width: 100%;min-width: 100px;}
+.wrap-form-area .sub-form .sub-form-box .sub-list-box {width: 100%;min-width: 80px;}
+.wrap-form-area .sub-form .sub-form-box .sub-list-box .calendar .calendar-form{max-width:100%;min-width:100%;}
 .wrap-form-area .sub-form .sub-form-box label {font-weight: 700;}
 .wrap-form-area .sub-form .sub-tit {position: relative;}
 

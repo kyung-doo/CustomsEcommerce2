@@ -21,10 +21,10 @@
 .wrap-search-area,
 .modal-cont,
 .modal-cont [class*=-type],
-.wrap-check-tbl.mo .wrap-body,
-.wrap-crud-tbl.mo .wrap-body,
+// .wrap-check-tbl.mo .wrap-body,
+// .wrap-crud-tbl.mo .wrap-body,
 .wrap-cont-tbl .table-wrap.mo .cont-acc-tbl,
-.wrap-check-tbl .table-wrap.mo .wrap-body,
+// .wrap-check-tbl .table-wrap.mo .wrap-body,
 .cont-area .pagination,
 .content-wrap .cont-head .step-area,
 [class*=title-type],
@@ -54,7 +54,8 @@
 
 .board-top.no-wrap.title-top [class*=title-type],
 .wrap-graph .title-type4.font-2,
-.wrap-form-area .inp-form .add-btn .search-type1{margin-top: 0 !important;}
+.wrap-form-area .inp-form .add-btn .search-type1,
+.modal-body > .modal-cont:first-child{margin-top: 0 !important;}
 
 .main .content-wrap {padding: 0 10px;}
 

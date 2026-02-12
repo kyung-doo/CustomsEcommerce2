@@ -77,6 +77,12 @@
                                     <select class="form-select" id="ex1" required title="국적을 선택해주세요">
                                        <option value="" disabled hidden selected>대한민국</option>
                                        <option value="대한민국">대한민국</option>                                 
+                                       <option value="대한민국">대한민국</option>                                 
+                                       <option value="대한민국">대한민국</option>                                 
+                                       <option value="대한민국">대한민국</option>                                 
+                                       <option value="대한민국">대한민국</option>                                 
+                                       <option value="대한민국">대한민국</option>                                 
+                                       <option value="대한민국">대한민국</option>                                 
                                     </select>
                                  </div>                           
                               </div>
@@ -143,14 +149,20 @@
                         <li class="col2">
                            <label for="ex3" class="tit">전화번호</label>
                            <div class="inp-box nowrap-list-type1">
+                              <!-- 전화번호 수정 html -->
                               <div class="form-group medium mw-147">                  
                                  <div class="form-conts">
-                                    <select class="form-select" id="ex3" required title="첫번쨰 번호를 선택해주세요">
-                                    <option value="" disabled hidden selected>없음</option>
-                                    <option value="02">02</option>
+                                    <select class="form-select phone-select" id="ex3" required title="첫번쨰 번호를 선택해주세요">
+                                       <option value="" disabled hidden selected>없음</option>
+                                       <option value="direct">직접 입력</option>                                       
+                                       <option value="02">02</option>
+                                       <option value="02">02</option>
+                                       <option value="02">02</option>
                                     </select>
+                                    <input type="text" class="phone-input d-none" placeholder="전화번호 입력" title="전화번호 입력">
                                  </div>                           
                               </div>
+                              <!-- //전화번호 수정 html -->
                               <i class="hy">-</i>
                               <div class="form-group medium mw-147">                     
                                  <div class="form-conts">
@@ -164,32 +176,7 @@
                                  </div>                           
                               </div>     
                            </div>
-                        </li>
-                        <li class="col2">
-                           <label for="ex4" class="tit">휴대전화번호</label>
-                           <div class="inp-box nowrap-list-type1">
-                              <div class="form-group medium mw-147">                  
-                                 <div class="form-conts">
-                                    <select class="form-select" id="ex4" required disabled title="첫번쨰 번호를 확인해주세요">
-                                       <option value="" disabled hidden selected>없음</option>
-                                       <option value="010">010</option>                                 
-                                    </select>
-                                 </div>                           
-                              </div>
-                              <i class="hy">-</i>
-                              <div class="form-group medium mw-147">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" value="1234" title="두번째 번호를 확인해주세요" disabled>
-                                 </div>                           
-                              </div>     
-                              <i class="hy">-</i>
-                              <div class="form-group medium mw-147">                     
-                                 <div class="form-conts">
-                                 <input type="text" class="input" value="1234" title="세번째 번호를 확인해주세요" disabled>
-                                 </div>                          
-                              </div>   
-                           </div>                            
-                        </li>
+                        </li>                                                         
                         <li class="col1">
                            <label for="ex5" class="tit">이메일 주소 <i class="compulsory">필수</i></label>
                            <div class="inp-box nowrap-list-type2">

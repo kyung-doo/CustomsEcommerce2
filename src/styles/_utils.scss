@@ -3,6 +3,9 @@
    마진,패딩
    ================================================== */
 @for $i from 0 to 100 {
+    .ma-#{$i} {
+        margin: #{$i}px !important;
+    }
     .mt-#{$i} {
         margin-top: #{$i}px !important;
     }
@@ -14,6 +17,9 @@
     }
     .mr-#{$i} {
         margin-right: #{$i}px !important;
+    }
+    .pa-#{$i} {
+        padding: #{$i}px !important;
     }
     .pt-#{$i} {
         padding-top: #{$i}px !important;

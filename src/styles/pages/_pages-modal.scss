@@ -68,6 +68,10 @@
 .modal-wrap:has(.address-list) .inp-form .form-btn-area {right: 0;}
 .modal-wrap:has(.address-list) .compulsory-txt {margin-bottom: 14px;}
 
+/** 모달 체크박스 footer **/
+.modal-wrap .modal-footer.chk-footer{justify-content: space-between;}
+
+
 @media screen and (max-width: 767px) {
   /* 레이어팝업 국민비서 */
   .population-box .modal-body {max-height: calc(100vh - 350px);}
@@ -93,4 +97,8 @@
   .modal-body .reforwarding button {width: 100%;margin-top: 21px;}
   
   .modal-wrap.aut-pages .modal-body.content-wrap {padding: 0 24px 0 0 !important;}
+
+  .modal-wrap .modal-footer.chk-footer{justify-content: space-between;margin-bottom: 0;}
+  .modal-wrap .modal-footer.chk-footer .form-check{margin: 0;justify-content: flex-start;}
+  .modal-wrap .modal-footer.chk-footer .btn-box{display: flex;justify-content: flex-end;width: 100%;gap: 8px;}
 }

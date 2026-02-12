@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>   
+   <!-- 내용 -->
+   <div class="cont-area">
+
+
+      <!-- 개인통관고유부호 신규 발급 -->
+      <button type="button" class="btn primary large" data-modal-target="#modal1">개인통관고유부호 신규 발급</button>
+      <div id="modal1" class="modal d-none" data-ui="modal">
+         <div class="modal-wrap mw-760">
+            <div class="modal-header">
+               <h5>개인통관고유부호 신규 발급</h5>                     
+            </div>
+            <div class="modal-body" tabindex="0">
+               <div class="acc-area bor-radius-3 bor-radius-4">
+                  <div class="tit">
+                     <strong class="font-2">개인통관고유부호 사용유의사항 안내입니다.</strong>
+                  </div>                  
+                  <div class="txt">
+                     <strong class="lin-h1">1. 전자상거래 플랫폼에서 물품 구매 시 6자리 인증번호 제출</strong>
+                     <div class="mt-10">
+                        <p class="advice-txt cl-6">개인통관고유부호를 발급 후 전자상거래 물품을 주문할 때 관세청이 발송한 6자리 인증번호를 제출하여야 통관 진행이 가능합니다.</p>
+                        <p class="advice-txt cl-6">단, 관세청이 지정한 협력인정업체에서 구매 시 6자리 인증번호 제출을 생략할 수 있습니다.</p>
+                     </div>
+                  </div>
+                  <div class="txt pt-0">
+                     <strong class="lin-h1">2. 개인통관고유부호 유효기간</strong>
+                     <div class="mt-10">
+                        <p class="advice-txt cl-6">신규로 발급받은 경우 : 신규 발급일로 부터 1년</p>
+                        <p class="advice-txt cl-6">정보를 변경한 경우 : 변경 승인일로부터 1년</p>
+                        <p class="advice-txt cl-6">갱신한 경우 : 기존 유효기간 만료일부터 1년</p>
+                        <p class="advice-txt cl-6">재발급한 경우 : 재발급일로부터 1년</p>
+                        <p class="advice-txt cl-6">사용정지한 경우 : 기존 유효기간 만료일까지</p>
+                     </div>
+                  </div>
+                  <div class="txt pt-0">
+                     <strong class="lin-h1">3. 개인통관고유부호 유효기간 갱신</strong>
+                     <div class="mt-10">
+                        <p class="advice-txt cl-6">갱신은 유효기간 만료일 전후 30일 이내만 가능하며, 유효기간이 만료되면 유효기간이 갱신만 가능하며 정보변경, 부호변경, 사용정지/해제, 해지 신청이 불가합니다.</p>                        
+                        <p class="advice-txt cl-6">유효기간이 만료일 이후 30일 이내 전자상거래 물품 통관은 가능합니다. 다만 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                        <p class="advice-txt cl-6">유효기간 만료 30일 이후 부호는 자동으로 해지처리 됩니다. 이 경우 다시 신규발급을 받아야 전자상거래 물품 통관이 가능합니다.</p>                        
+                     </div>
+                  </div>
+                  <div class="txt pt-0">
+                     <strong class="lin-h1">4. 개인통관고유부호 직권 정지</strong>
+                     <div class="mt-10">
+                        <p class="advice-txt cl-6">명의 도용 · 대여 등 거짓이나 부정한 방법으로 개인통관고유부호를 발급받거나 사용사실을 인지한 경우 직권을 사용정지 될 수 있습니다.</p>                                                
+                     </div>
+                  </div>
+                  <p class="pb-24">위 안내 사항을 확인하시어 전자상거래 물품 통관에 착오가 없으시길 바랍니다,</p>
+               </div>
+               <div class="txt-box-type mt-0 bor-radius-1 bor-radius-2 bor-color-1">
+                  <p class="lin-h1">안내 사항에 대해 확인 하였습니다.</p>
+                  <div class="form-check">
+                     <input type="checkbox" name="chk1" id="chk1">
+                     <label for="chk1">확인</label>
+                  </div>
+               </div>
+            </div>            
+            <div class="modal-footer">
+               <button type="button" class="btn tertiary medium">닫기</button>
+               <button type="button" class="btn primary medium">신규발급</button>
+            </div>                        
+         </div>
+      </div>
+      <!-- 개인통관고유부호 신규 발급 -->
+
+
+
+
+
+
+      <!-- 개인통관고유부호 재발급 -->
+      <button type="button" class="btn primary large" data-modal-target="#modal2">개인통관고유부호 재발급</button>
+      <div id="modal2" class="modal d-none" data-ui="modal">
+         <div class="modal-wrap mw-760">
+            <div class="modal-header">
+               <h5>개인통관고유부호 재발급</h5>                     
+            </div>
+            <div class="modal-body" tabindex="0">
+               <div class="acc-area bor-radius-3 bor-radius-4">
+                  <div class="tit">
+                     <strong class="font-2">개인통관고유부호 재발급 안내입니다.</strong>
+                  </div>                  
+                  <div class="txt">                                          
+                     <p class="cl-5">1. 개인통관고유부호를 재발급하면 기존 개인통관고유부호로 통관 불가합니다.</p>       
+                     <p class="cl-5">2. 부호 재발급으로 인해 기존 개인통관고유부호로 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                     <p class="cl-5">3. 재발급 신청과 해지 후 신규발급 신청 횟수는 합산하여 연간 총 5회로 제한 합니다.</p>                                                              
+                  </div>                  
+               </div>
+               <div class="txt-box-type mt-0 bor-radius-1 bor-radius-2 bor-color-1">
+                  <p class="lin-h1">안내 사항에 대해 확인 하였습니다.</p>
+                  <div class="form-check">
+                     <input type="checkbox" name="chk1" id="chk1">
+                     <label for="chk1">확인</label>
+                  </div>
+               </div>
+            </div>            
+            <div class="modal-footer">
+               <button type="button" class="btn tertiary medium">닫기</button>
+               <button type="button" class="btn primary medium">재발급</button>
+            </div>                        
+         </div>
+      </div>
+      <!-- 개인통관고유부호 재발급 -->
+
+
+
+
+      <!-- 개인통관고유부호 해지 -->
+      <button type="button" class="btn primary large" data-modal-target="#modal3">개인통관고유부호 해지</button>
+      <div id="modal3" class="modal d-none" data-ui="modal">
+         <div class="modal-wrap mw-760">
+            <div class="modal-header">
+               <h5>개인통관고유부호 해지</h5>                     
+            </div>
+            <div class="modal-body" tabindex="0">
+               <div class="acc-area bor-radius-3 bor-radius-4">
+                  <div class="tit">
+                     <strong class="font-2">개인통관고유부호 해지 안내입니다.</strong>
+                  </div>                  
+                  <div class="txt">                                          
+                     <p class="cl-5">1. 개인통관고유부호를 해지하면 현재 개인통관고유부호로 통관이 불가합니다.</p>       
+                     <p class="cl-5">2. 부호 해지로 인해 기존 개인통관고유부호로 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                     <p class="cl-5">3. 해지 후 신규발급 신청횟수는 합산하여 연간 총 5회로 제한합니다.</p>                                                              
+                  </div>                  
+               </div>
+               <div class="txt-box-type mt-0 bor-radius-1 bor-radius-2 bor-color-1">
+                  <p class="lin-h1">안내 사항에 대해 확인 하였습니다.</p>
+                  <div class="form-check">
+                     <input type="checkbox" name="chk1" id="chk1">
+                     <label for="chk1">확인</label>
+                  </div>
+               </div>
+            </div>            
+            <div class="modal-footer">
+               <button type="button" class="btn tertiary medium">닫기</button>
+               <button type="button" class="btn primary medium">해지</button>
+            </div>                        
+         </div>
+      </div>
+      <!-- 개인통관고유부호 해지 -->
+
+
+
+      <!-- 개인통관고유부호 사용정지 -->
+      <button type="button" class="btn primary large" data-modal-target="#modal4">개인통관고유부호 사용정지</button>
+      <div id="modal4" class="modal d-none" data-ui="modal">
+         <div class="modal-wrap mw-760">
+            <div class="modal-header">
+               <h5>개인통관고유부호 사용정지</h5>                     
+            </div>
+            <div class="modal-body" tabindex="0">
+               <div class="acc-area bor-radius-3 bor-radius-4">
+                  <div class="tit">
+                     <strong class="font-2">개인통관고유부호 사용정지 안내입니다.</strong>
+                  </div>                  
+                  <div class="txt">                                          
+                     <p class="cl-5">1. 개인통관고유부호를 사용정지하면 현재 개인통관고유부호로 사용 및 통관이 불가합니다.</p>       
+                     <p class="cl-5">2. 부호 사용정지로 인해 기존 개인통관고유부호로 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                     <p class="cl-5">3. 사용정지 후 다시 해제하면 현재 부호를 사용하여 통관이 가능합니다.</p>                                                              
+                     <p class="cl-5">4. 사용정지한 부호의 유효기간은 기존 유효기간 만료일과 동일합니다.</p>                                                              
+                  </div>                  
+               </div>
+               <div class="txt-box-type mt-0 bor-radius-1 bor-radius-2 bor-color-1">
+                  <p class="lin-h1">안내 사항에 대해 확인 하였습니다.</p>
+                  <div class="form-check">
+                     <input type="checkbox" name="chk1" id="chk1">
+                     <label for="chk1">확인</label>
+                  </div>
+               </div>
+            </div>            
+            <div class="modal-footer">
+               <button type="button" class="btn tertiary medium">닫기</button>
+               <button type="button" class="btn primary medium">사용정지</button>
+            </div>                        
+         </div>
+      </div>
+      <!-- 개인통관고유부호 사용정지 -->
+      
+   </div>
+   <!--// 내용 -->
+</body>
+</html>

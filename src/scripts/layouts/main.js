@@ -124,14 +124,20 @@ $(() => {
         box.removeClass('on');
         $('#'+tabBtn).addClass('on');
         
-        swiper1.slideToLoop(slideLoop,0,true);
-
-        $('.slide-area1 .swiper-slide').on('mouseleave', function() {
-            setTimeout(function(){
-                swiper1.autoplay.start();
-            },1)
-        });
+        swiper1.slideToLoop(slideLoop,0,true);                
+        swiper1.autoplay.stop();  
+        $('.slide-area1 .swiper-stop').addClass('on')
     });        
+
+    $('.slide-area1 .swiper').on('mouseenter', function () {        
+        
+    });
+
+    // $('.slide-area1 .swiper').on('mouseleave', function() {
+    //     console.log('마우스 벗어남');
+    //     swiper1.autoplay.start();        
+    //     $('.slide-area1 .swiper-stop').removeClass('on')
+    // });
 
 
     // Tab 키로 슬라이드 제어
@@ -294,7 +300,7 @@ $(() => {
     },300)
 
     // 공통 play/pause 처리
-    $('.swiper-stop').click(function() {
+    $('.swiper-stop').click(function() {        
         const $btn = $(this);
         const targetSwiper = $btn.closest('.slide-area1').length ? swiper1 : swiper2;
 
@@ -303,7 +309,7 @@ $(() => {
             $btn.removeClass('on')
                 .text('정지')
                 .attr('title', '슬라이드 정지');
-            targetSwiper.autoplay.start();
+            targetSwiper.autoplay.start();            
         } else {
             // 현재 재생 상태 → 정지
             $btn.addClass('on')

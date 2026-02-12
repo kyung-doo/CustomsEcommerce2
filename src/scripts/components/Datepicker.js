@@ -277,10 +277,10 @@ class Datepicker {
             if (left < scrollLeft) left = scrollLeft + 10;
 
             // 아래 화면 밖으로 나가지 않게
-            if (top + calendarHeight > windowHeight + scrollTop) {
-                top = offset.top - calendarHeight; // 버튼 위로 위치
-            }
-            if (top < scrollTop) top = scrollTop + 10;
+            // if (top + calendarHeight > windowHeight + scrollTop) {
+            //     top = offset.top - calendarHeight; // 버튼 위로 위치
+            // }
+            // if (top < scrollTop) top = scrollTop + 10;
 
             this.calendar.css({left: left, top: top});
         };
@@ -723,7 +723,7 @@ class Datepicker {
         this.isShow = false;
         this.selectDate = null;
         
-        this.input.trigger('change')
+        //this.input.trigger('change')
     }    
 }
 

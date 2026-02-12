@@ -199,6 +199,7 @@ class Table {
         if(this.props.tableType !== 'faq') {
             const tablePC = table.find('.table-wrap').eq(0);
             const tableM = table.find('.table-wrap').eq(1);
+            const tableNoData = table.find('.table-wrap.no-data-hide');
 
             const htmlPC = `
                 <table class="tbl col crud">
@@ -378,6 +379,7 @@ class Table {
         if(this.props.tableType !== 'faq') {
             const tablePC = table.find('.table-wrap').eq(0);
             const tableM = table.find('.table-wrap').eq(1);
+            const tableMno = table.find('.table-wrap.no-data-hide')
 
             tablePC.find('tbody').empty();
             if(tableM.length > 0)   tableM.find('.wrap-body').empty();
@@ -466,8 +468,10 @@ class Table {
 			/* 2025.09.11 데이터없음 수정 끝 */
                 tablePC.find('tbody').html(`<tr><td colspan="${tablePC.find('colgroup col').length}">${this.data.nodataMsg}</td></tr>`);
                 if(tableM.length > 0) {
-                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.data.nodataMsg}</li></ul></li>`);
+                    tableM.find('.wrap-body').html(`<li><ul class="body"><li class="no-data">${this.data.nodataMsg}</li></ul></li>`);                    
+                    tableMno.removeClass('mo').hide();
                 }
+                
             }
             
 

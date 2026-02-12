@@ -9,6 +9,7 @@
 .modal-header h5 {margin-top: 15px;line-height: 150%;font-size: 19px;}
 
 /* body */
+.modal-body > *:first-child{margin-top: 0 !important;}
 .modal-body {box-sizing: border-box;overflow-y: auto;overflow-x: hidden;max-height: calc(100vh - 300px);padding-right: 32px;}
 .modal-body [class*=-type] {width: 100%;line-height: 150%;}
 .modal-body h5[class*=-type] {font-size: 18px;}

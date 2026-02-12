@@ -29,11 +29,25 @@ class Tooltip {
                 tooltipAct.addClass("active");
                 tooltipIco.addClass("active");   
                 
+                if($(window).width() <= 480){
+                    var tb = tooltipIco.closest('.tooltip-tit').find('.title > span').width()
+                    var list = tooltipIco.closest('.tooltip-tit').find('.title > strong').width()
+                    
+                    tooltipAct.css({"left":-tb})
+                    tooltipAct.css({"left":-list})
+                }
+                
 
                 // 툴팁 윈도우 너비에 따라 left 위치 변경
                 if(tooltipAct.offset().left + tooltipAct.outerWidth() >= $(window).width()){
                     const IsOverflow = tooltipAct.offset().left + tooltipAct.outerWidth() - $(window).outerWidth() + 100                   
                     tooltipAct.css({"left":-IsOverflow})
+
+                    if($(window).width() >= 481){
+                        if(IsOverflow >= -326){
+                            tooltipAct.css({"left":-326})
+                        }                                       
+                    }
                 }
 
             } else {
@@ -68,7 +82,7 @@ class Tooltip {
                 tooltipAct.removeClass('active');
                 tooltipIco.removeClass("active");                                             
             }
-        });
+        })
     }
 }
 

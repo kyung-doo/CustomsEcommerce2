@@ -76,8 +76,19 @@ strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
 /** 선 **/
 .bor-right{border-right:1px solid #B1B8BE !important;}
 .bor-left-no{border-left:none !important;}
+.bor-top-no{border-top:0 !important;}
 .bor-right-no{border-right:none !important;}
 .bor-col-sep{border-collapse: separate !important;}
+
+/** 선 radius 삭제 **/
+.bor-radius-0{border-radius: 0 !important;}
+.bor-radius-1{border-top-left-radius: 0 !important;}
+.bor-radius-2{border-top-right-radius: 0 !important;}
+.bor-radius-3{border-bottom-right-radius: 0 !important;}
+.bor-radius-4{border-bottom-left-radius: 0 !important;}
+
+/** 선 color **/
+.bor-color-1{border:1px solid #E6E8EA !important}
 
 /** color **/
 .cl-1{color:#2768FF !important;}
