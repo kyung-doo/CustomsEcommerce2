@@ -27,7 +27,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .cont-area .search-box .compulsory {margin-left: 5px;bottom: 9px;}
 .search-box .compulsory-txt {margin: 0;padding-left: 16px;}
 .cont-area .search-box .form-check .tit .compulsory {margin-left: 5px;bottom: 5px;}
-.cont-area .wrap-form-area .tit .compulsory {right: 0;bottom: 4px;}
+.cont-area .wrap-form-area .tit .compulsory {right: 0;bottom: 5px;}
 .cont-area .wrap-form-area .form-check > label:has(.compulsory) {padding-right: 15px;}
 .cont-area .wrap-form-area .form-check > label:has(.compulsory) .compulsory {bottom: 7px;}
 .cont-area .wrap-form-area .sub-form .sub-tit .compulsory {right: -12px;bottom: 7px;}
@@ -151,7 +151,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 
 
 /* 검색영역 */
-.search-box {padding: 10px 15px;border-radius: 5px;background-color: #F4F5F6;}
+.search-box {padding: 10px 24px;border-radius: 5px;background-color: #F4F5F6;}
 .search-box .bottom-action-area {display: flex;margin-top: 10px;padding-top: 10px;border-top: 1px solid #E6E8EA;justify-content: space-between;align-items: center;}
 .search-box ul {display: flex;margin-left: -40px;flex-wrap: wrap;gap: 15px 0;}
 .search-box ul li {display: flex;align-items: center;padding-left: 40px;}
