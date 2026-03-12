@@ -180,3 +180,14 @@
   // html[lang=en] #wrap.login #header .main-menu .gnb-toggle-wrap {top: 108px;}
   // html[lang=en] #wrap.logout #header .main-menu .gnb-toggle-wrap {top: 153px;}  
 }
+
+@media screen and (max-width: 480px) {
+  #header .main-menu .gnb-main-trigger{width:128px}
+  #header .main-menu:before{width:128px}
+  #header .main-menu .gnb-toggle-wrap{width: calc(100% - 128px);}
+  #header .main-menu .gnb-menu > li.dep2, #header .main-menu .gnb-menu > li.dep3{height: 60px;}
+  #header .main-menu .gnb-main-trigger{padding: 8px;}
+  #header .main-menu .gnb-menu > li.dep1, #header .main-menu .gnb-menu > li.dep6, #header .main-menu .gnb-menu > li.dep5, #header .main-menu .gnb-menu > li.dep4{height: 45px;}
+  #header .main-menu .gnb-toggle-wrap{padding: 16px;}
+  #header .main-menu .gnb-main-list .gnb-list > li{padding: 10px 0 10px 8px;}
+}

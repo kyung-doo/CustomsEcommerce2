@@ -129,11 +129,11 @@ class Table {
         	boardTop.find('.tit strong').text(Number(this.data.listLength).toLocaleString());
         	//boardTop.find('select').val(this.limit);
             boardTop.find('select').val(this.data.limit);
-            console.log(this.data.listLength)
+            // console.log(this.data.listLength)
 		}
 		if(this.ele.find('#faqTitle').length > 0) {
 			boardTop.find('#faqTitle').text(Number(this.data.listLength).toLocaleString());
-            console.log(this.data.listLength)
+            // console.log(this.data.listLength)
 		}	
 		//2025.09.11 일반게시판과 faq게시판 분리 end
 		

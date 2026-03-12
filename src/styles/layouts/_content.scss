@@ -71,6 +71,7 @@
 .content-wrap .cont-head .step-area .tit-box .tit-step span {color: #1D56BC;font-weight: 700;}
 .content-wrap .cont-head .step-area .tit-box .tit {font-size: 25px;margin-top: 20px;padding-right: 20px;}
 .content-wrap .cont-head .step-area .step-tit {margin-top: 12px;}
+.content-wrap .cont-head:not(:has(.breadcrumb-wrap)) .head-tit{padding-top: 20px;}
 
 /* cont-body */
 .content-wrap .cont-body .cont-advice {position: relative;background-color: #EDF1F5;border-radius: 8px;}

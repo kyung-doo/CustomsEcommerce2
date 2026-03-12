@@ -19,18 +19,27 @@ body.common-loading, html.common-loading {overflow: hidden;}
 
 /* 필수 입력 스타일 공통 */
 .compulsory-txt {position: relative;display: flex;line-height: 150%;align-items: flex-start;padding-left: 12px;}
-.compulsory {position: absolute;bottom: 8px;font-size: 0;list-style: none;display: inline-block;background-image: url(../assets/icons/compulsory.svg);width: 8px;height: 8px;background-repeat: no-repeat;}
+.compulsory {position: absolute;bottom: 9px;font-size: 0;list-style: none;display: inline-block;background-image: url(../assets/icons/compulsory.svg);width: 8px;height: 8px;background-repeat: no-repeat;}
 
-.compulsory-txt .compulsory {left: 0;}
-.modal-body .search-box .compulsory {margin-left: 5px;}
-.modal-body .wrap-form-area .tit .compulsory {right: 0;bottom: 4px;}
-.cont-area .search-box .compulsory {margin-left: 5px;bottom: 9px;}
-.search-box .compulsory-txt {margin: 0;padding-left: 16px;}
-.cont-area .search-box .form-check .tit .compulsory {margin-left: 5px;bottom: 5px;}
-.cont-area .wrap-form-area .tit .compulsory {right: 0;bottom: 5px;}
-.cont-area .wrap-form-area .form-check > label:has(.compulsory) {padding-right: 15px;}
-.cont-area .wrap-form-area .form-check > label:has(.compulsory) .compulsory {bottom: 7px;}
-.cont-area .wrap-form-area .sub-form .sub-tit .compulsory {right: -12px;bottom: 7px;}
+.cont-area .wrap-form-area .tit .compulsory {bottom: 5px;margin-left: 5px;}
+.cont-area .wrap-login .wrap-form-area .tit .compulsory {bottom: 6px;margin-left: 5px;}
+.compulsory-txt .compulsory{left:0;}
+.contextual-help{bottom: 1px;}
+.search-box ul li .tit .compulsory{margin-left: 5px;}
+.search-box .compulsory-txt{margin-top: 0;}
+.wrap-form-area .sub-form .sub-tit .compulsory{bottom: 6px;margin-left: 5px;}
+.wrap-form-area .sub-form .sub-form-box .form-check label{white-space: normal;height: auto;display: inline-block;}
+.modal-wrap .wrap-form-area .inp-form > ul .tit .compulsory{bottom: 6px;margin-left: 5px;}
+
+// .compulsory-txt .compulsory {left: 0;}
+// .modal-body .search-box .compulsory {margin-left: 5px;}
+// .modal-body .wrap-form-area .tit .compulsory {right: 0;top: 4px;}
+// .cont-area .search-box .compulsory {margin-left: 5px;top: 9px;}
+// .search-box .compulsory-txt {margin: 0;padding-left: 16px;}
+// .cont-area .search-box .form-check .tit .compulsory {margin-left: 5px;top: 5px;}
+// .cont-area .wrap-form-area .form-check > label:has(.compulsory) {padding-right: 15px;}
+// .cont-area .wrap-form-area .form-check > label:has(.compulsory) .compulsory {top: 7px;}
+// .cont-area .wrap-form-area .sub-form .sub-tit .compulsory {right: -12px;top: 7px;}
 
 /* 점선 스타일 */
 [class*=dotted-line-] {position: relative;}
@@ -71,7 +80,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 
 /* 툴팁 스타일 */
 .tooltip-ico {width: 16px;height: 16px;background-image: url("../assets/icons/exclamation.svg");background-size: contain;font-size: 0;background-color: rgba(0, 0, 0, 0);}
-.contextual-help {display: inline-block;height: 16px;line-height: 0;position: absolute;bottom: 5px;margin-left: 5px;}
+.contextual-help {display: inline-block;height: 16px;line-height: 0;position: absolute;margin-left: 5px;}
 .tooltip-tit .title {display: inline !important;}
 
 /* 제목 스타일 */
@@ -172,7 +181,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .search-box .bottom-action-area .btn-end{text-align: right;width:100%}
 
   /* 공통 pc 모바일 모두 한줄로 처리 기본 최소 350 */
-  .search-box .state-keeper{flex: 1;display: flex;gap: 8px;width: 100%;min-width: 300px;}  
+  .search-box .state-keeper{flex: 1;display: flex;gap: 8px;width: 100%;min-width: 200px;}  
 
   /* 검색영역 전체 타이틀 넓이 변경 */
   @for $i from 1 through 100 {
@@ -507,6 +516,10 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .privacy .privacy-tit {font-size: 22px;display: flex;align-items: center;margin-bottom: 10px;}
 .privacy.subCntBody p {line-height: 1.4;font-size: 15px;}
 
+/** 개인정보 활용 **/
+.acc-area.type1.privacy-policy .txt:before{display:none}
+
+
 @media screen and (max-width: 1630px) {  
   .privacy .scroll_tbl {width: 100%;overflow-x: auto;background-repeat: no-repeat;background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);background-position: right 5px;background-size: 30px 100%;z-index: 1;}
 }
@@ -667,6 +680,9 @@ body.common-loading, html.common-loading {overflow: hidden;}
   .privacy .p_menu ul {width: 100%;}
   .privacy .p_menu li {height: auto;}
   .privacy .p_list li {margin: 0 0 10px 0;}
+
+  /** 개인정보활용 **/
+  .acc-area.type1.privacy-policy .box{margin-top: 0;}
 }
 
 @media screen and (max-width: 600px) {

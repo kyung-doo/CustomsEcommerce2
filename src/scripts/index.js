@@ -140,7 +140,7 @@ $(() => {
     // favicon.href = "../assets/icons/favicon-icon.svg";
 
 
-    // $('.testtest').remove();
+    //$('.testtest').remove();
     // $('.testtest > button').removeAttr('style');
 
     // 표시는 필수 입력 사항입니다.    
@@ -150,17 +150,17 @@ $(() => {
     
 
     //화면 넓이
-    $(document).ready(function() {        
-        function updateWidth() {                      
-            var width = $(window).width();
-            $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
-        }
-        updateWidth();
+    // $(document).ready(function() {        
+    //     function updateWidth() {                      
+    //         var width = $(window).width();
+    //         $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
+    //     }
+    //     updateWidth();
 
-        $(window).resize(function() {
-            updateWidth();
-        });        
-    });    
+    //     $(window).resize(function() {
+    //         updateWidth();
+    //     });        
+    // });    
 
 
 
@@ -251,12 +251,12 @@ $(() => {
 
     // 사용 예시
     $(function() {
-        const horizontalLines = createHorizontalGuides({
-            count: 2,       
-            color: 'rgba(255,0,0,0.5)',
-            thickness: 30,
-            spacing: 40     
-        });        
+        // const horizontalLines = createHorizontalGuides({
+        //     count: 2,       
+        //     color: 'rgba(255,0,0,0.5)',
+        //     thickness: 30,
+        //     spacing: 40     
+        // });        
     });
 
 

@@ -50,7 +50,13 @@
 .table-wrap.pc{border-bottom: 1px solid #E4E4E4;}
 
 /* 그리드 클릭되는 태그 밑줄 */
-.table-wrap a:hover, .wrap-faq a:hover {text-decoration: underline;}
+.table-wrap a,
+.table-wrap a *,
+.wrap-faq .body .accordion-header li a.txt{color:#1D1D1D !important;font-weight: 700;text-decoration: underline !important;}
+
+.table-wrap a:hover,
+.table-wrap a:hover *,
+.wrap-faq .body .accordion-header li a.txt:hover{color: #246BEB !important;}
 
 .table-wrap td {border-top: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 9px 16px;height:50px;}
 .table-wrap table.cont td {border: 1px solid #E4E4E4;border-top: none;border-right: none;}

@@ -321,7 +321,7 @@ $(() => {
             
             if($(this).val() !== ""){            
                 deleteBtn.show(); 
-                console.log()           
+                // console.log()           
             }else{
                 deleteBtn.hide();            
             }        

@@ -16,20 +16,22 @@ $(() => {
     $(function(){    
         var btn = $('.main .box1 .cont-box .wrap-mobile-list .more button');
 
+        if($('.main .box1 .cont-box .wrap-mobile-list ul li').length <= 6){
+            $('.main .box1 .cont-box .wrap-mobile-list .more').hide()
+        }else{
+            $('.main .box1 .cont-box .wrap-mobile-list .more').show()
+        }
+
         btn.click(function(){
             if($(this).hasClass('close')){
-                
-
-                      console.log('닫기');
-                      $(this).closest('.wrap-mobile-list').addClass('active');
-                
+                $(this).closest('.wrap-mobile-list').addClass('active');                
                 $(this).attr('title','메뉴열기');
                 $(this).attr('aria-label','메뉴열기');
                 $(this).removeClass('close');
                 $(this).addClass('open');                
                 $(this).text('더보기')
             }else{
-                console.log('열기');
+                // console.log('열기');
                 $(this).closest('.wrap-mobile-list').removeClass('active');
                 $(this).attr('title','메뉴닫기');
                 $(this).attr('aria-label','메뉴닫기');
@@ -108,8 +110,9 @@ $(() => {
     $('.slide-area1 .swiper-slide-active').addClass('on');  
     $('.slide-area1').attr('tabindex','0');   
     
+    
 
-    $('.slide-area1 .swiper-slide').on('click focus', function () {
+    $(document).on('click focus', '.slide-area1 .swiper-slide', function () {
         var slideIndex = $(this).attr('data-swiper-slide-index');						
         var slideLoop = slideIndex++;		
         var tabBtn = $(this).attr('data-btn');
@@ -155,6 +158,26 @@ $(() => {
             }
         }
     });
+
+    const $wrapper = $('#list-slide .swiper-wrapper');
+    const $slides = $wrapper.children('.swiper-slide');
+    const originalCount = $slides.length;
+
+    // 슬라이드가 5개 이하일 때만 2배로 복제
+    if (originalCount > 0 && originalCount < 10) {
+
+        for (let i = 0; i < originalCount; i++) {
+            $wrapper.append($slides.eq(i).clone());
+        }
+    }  
+
+    $('.swiper-wrapper > .swiper-slide').removeClass('on')
+    $('.swiper-wrapper > .swiper-slide').removeAttr('title')
+
+    setTimeout(function(){
+        $('.swiper-wrapper > .swiper-slide-active').addClass('on')
+        $('.swiper-wrapper > .swiper-slide-active').attr('title','선택됨')
+    },1);    
     
     //액션 슬라이드
     const swiper1 = new Swiper('#list-slide', {
@@ -166,6 +189,7 @@ $(() => {
         observer: true,
         observeParents: true,
         watchSlidesProgress: true,
+        loopedSlides: originalCount * 2,
         resizeObserver: true,       
         autoplay: {
             delay: slideSpeed,
@@ -203,7 +227,6 @@ $(() => {
                 }
 
                 swiper1.wrapperEl.style.transform = `translate3d(0px, -${positions[swiper1.activeIndex]}px, 0px)`;
-     
             },
             slidePrevTransitionEnd: function() {  
                 var tabBtn = $('.slide-area1 .swiper-slide.swiper-slide-active').attr('data-btn');
@@ -233,6 +256,11 @@ $(() => {
                 swiper1.autoplay.start();
             }
         }, 1);
+    });
+
+    $(window).on('load', function () {
+        $('.swiper-wrapper > .swiper-slide.swiper-slide-active').addClass('on')
+        $('.swiper-wrapper > .swiper-slide.swiper-slide-active').attr('title','선택됨')    
     });
 
 

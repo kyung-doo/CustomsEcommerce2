@@ -199,6 +199,8 @@ class Datepicker {
 
 
     showCalendar () {       
+
+         
         
         $('*[data-ui="datepicker"]').each(function () {
             $(this).datepicker('hideCalendar');
@@ -300,7 +302,26 @@ class Datepicker {
             this.hideCalendar();
             $('.calendar-blind').hide();
         });
-        this.calendar.find(".btn-enter").on('click', () => {                        
+
+        this.calendar.find(".calendar-header > button").on('click', () => {
+            $('.day.normal').removeClass('active');
+            this.selectDate = null;
+        });
+
+        this.calendar.find(".btn-enter").on('click', () => {      
+            
+            
+             if(!this.selectDate){
+
+                alert('날짜를 선택해주세요')
+                this.input.val('');        
+                this.hideCalendar();
+                $('.calendar-blind').hide();
+                return
+             }
+
+
+            
             if(this.selectDate) {
                 if(!this.props.isMonth) {
                     this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));

@@ -8,10 +8,11 @@
 .wrap-form-area .inp-form:has(.step-area.type1) {padding: 24px 24px 24px 239px;}
 .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 24px 130px 24px 239px;}
 .wrap-form-area .inp-form > ul {display: flex;flex-direction: row;flex-wrap: wrap;margin-left: -40px;margin-top: -25px;}
-.wrap-form-area .inp-form > ul .tit {position: relative;display: inline-flex;align-items: center;gap: 4px;padding-right: 12px;font-weight: 700;}
+.wrap-form-area .inp-form > ul .tit {position: relative;align-items: center;gap: 4px;padding-right: 12px;font-weight: 700;}
 .wrap-form-area .inp-form > ul .tit + .form-group {display: flex;align-items: center;gap: 8px;margin-top: 9px;}
 .wrap-form-area .inp-form > ul li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;}
 .wrap-form-area #copyMsg{height:13px;position: absolute;}
+.wrap-form-area .copy-box{display: flex;align-items: center;gap: 5px;}
 
 /* 타이틀 전체 넓이 조절 */
 @for $i from 1 through 100 {
@@ -200,6 +201,7 @@
   .wrap-form-area .inp-form .state-keeper{flex:1}
   .wrap-form-area .inp-form .email-id{width: calc(100% - 23px);}
   .wrap-form-area .inp-form li.txt-list.dotted-line-top.line-break .tit{width:100% !important}
+  .wrap-form-area .inp-form .txt-list .tb-title-2{overflow: visible;white-space: normal;text-overflow: clip;display: block;}
 }
 @media screen and (max-width: 550px) {  
   .wrap-form-area .inp-form .email-inp-box button{width:100%;}
@@ -239,7 +241,7 @@
   .wrap-form-area .calendar {margin-right: 0;}
   .wrap-form-area .nowrap-box {width: 100%;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li .step-tit{font-size:15px;}
-  .wrap-form-area .inp-form .step-area.type1{padding: 32px 16px 0 16px;}
+  .wrap-form-area .inp-form .step-area.type1{padding: 32px 16px 0 16px;}  
 
   /* 예상세액 조회 구입물품 */
   .purchased-item .purchased-area{width:100%;}

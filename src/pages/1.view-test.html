@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+</head>
+<body>
+   <div id="wrap" class="login">
+      <!-- header -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
+      <!-- //header -->
+      <!-- content-wrap -->
+            <h3 class="head-tit">개인통관고유부호 조회</h3>
+            <div class="step-area">
+               <div class="tit-box">
+                  <strong class="tit-step"><span>Step 1</span><i>/</i>Step 4</strong>
+                  <h4 class="tit">기본 정보 입력</h4>
+               </div>
+               <div class="step-box">
+                  <ol class="step-wrap step-type2">
+                     <li class="active">
+                        <span>
+                              <em class="sr-only">현재단계</em>
+                              <i class="step">Step 1</i>
+                              <span class="step-tit">기본정보 입력</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 2</i>
+                              <span class="step-tit">배송지 주소 등록</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>
+                              <i class="step">Step 3</i>
+                              <span class="step-tit">알림 동의</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span>                     
+                              <i class="step">Step 4</i>
+                              <span class="step-tit">확인 및 등록</span>
+                        </span>
+                     </li>               
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="cont-body">
+            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+               <div class="accordion-header">
+                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호 정보변경 방법</strong> <i class="icon btn-arrow-down medium"></i></a>
+               </div>
+               <div class="accordion-body d-none">
+                  <p class="txt">개인통관고유부호 정보변경 방법</p>                  
+               </div>
+            </div>
+            <!-- 내용 -->
+            <div class="cont-area">
+               <div class="form-group medium">                     
+                  <div class="form-conts">
+                     <input type="text" id="pass1" class="input" placeholder="내용을 입력해주세요" title="정보를 입력해주세요" data-ui="hidden-input" data-props="toggleBtn: true">
+                  </div>               
+               </div>
+
+               <div class="agree-title">
+                  <strong class="title-type font-2"><strong class="info-txt cl-3">[필수]</strong>일회용 인증번호발급 알림</strong>
+                  <div class="contextual-help top right" data-ui="tooltip">                              
+                     <div class="tooltip-btn-area">                                 
+                        <button class="tooltip-ico">일회용 인증번호발급 알림</button>
+                        <div class="tooltip-action" style="left: -60px;">                  
+                           <div class="tooltip-popover">
+                           <strong class="tooltip-title">일회용 인증번호발급 알림</strong>
+                           <div class="tooltip-contents">
+                              <p>일회용 인증번호발급 알림</p>
+                              <div class="btn-wrap">
+                                 <a href="#;" class="btn link">바로가기</a>
+                              </div>
+                           </div>
+                           <button type="button" class="btn tooltip-close">
+                              <span class="sr-only">닫기</span>                        
+                           </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="acc-area">
+                  <div class="tit">
+                     <p>해외직구 주문 시 발급된 일회용 인증번호 발급 내역을 사용자의 이메일을 통해 알림 전송하는 것을 동의합니다.</p>
+                     <div class="box">
+                        <div class="form-check medium">
+                           <input type="radio" name="chk-agree" id="agree1">
+                           <label for="agree1">동의하지 않음</label>
+                        </div>
+                        <div class="form-check medium">
+                           <input type="radio" name="chk-agree" id="agree2">
+                           <label for="agree2">동의함</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="txt">
+                     <p><i class="icon danger medium"></i>일회용 인증부호 발급 내역을 알림 받지 않을 경우 해외직구통관이 정상적으로 진행되지 않을 수 있습니다.</p>
+                  </div>
+               </div>
+
+               <div class="agree-title">
+                  <strong class="title-type font-2"><strong class="info-txt cl-1">[선택]</strong>해외직구통관 알림</strong>                  
+                  <div class="contextual-help top right" data-ui="tooltip">                              
+                     <div class="tooltip-btn-area">                                 
+                        <button class="tooltip-ico">해외직구통관 알림</button>
+                        <div class="tooltip-action" style="left: -60px;">                  
+                           <div class="tooltip-popover">
+                           <strong class="tooltip-title">해외직구통관 알림</strong>
+                           <div class="tooltip-contents">
+                              <p>해외직구통관 알림</p>
+                              <div class="btn-wrap">
+                                 <a href="#;" class="btn link">바로가기</a>
+                              </div>
+                           </div>
+                           <button type="button" class="btn tooltip-close">
+                              <span class="sr-only">닫기</span>                        
+                           </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="acc-area">
+                  <div class="tit">
+                     <p>해외직구 통관 결과 정보를 사용자의 이메일을 통해 알림을 전송하는 것을 동의 합니다.</p>
+                     <div class="box">
+                         <div class="form-check">
+                           <input type="checkbox" id="chk_1">
+                           <label for="chk_1">동의함</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="txt select">
+                     <p><i class="icon info-fill medium"></i>동의하지 않는 경우 해외직구 통관 결과 알림을 받을 수 없습니다.</p>
+                  </div>
+               </div>
+
+               <!-- 휴대폰번호 중복 목록 -->
+               <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">휴대폰번호 중복 목록</button>   
+               <div id="modal1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-1280">
+                     <div class="modal-header">
+                        <h5>휴대폰번호 중복 목록</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>    
+                                    <li class="col1">
+                                       <label for="ex1" class="tit">법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 법정 대리인 성명 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">
+                                                <input type="text" id="ex1" class="input" title="법정 대리인 성명 입력해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>                             
+                                    </li>
+                                    <li class="col1">
+                                       <label for="ex2" class="tit">djfklsdjfklsdjfl slkdfj sldkjf sldkjf lsdkj flskdj flskdjf slkdjlksdkdlkjsdfjs sgfjlfldkjlfdsldkfjlsdfs sldkjfgh sldfgh slfdkh djfklsdjfklsdjfl slkdfj sldkjf sldkjf lsdkj flskdj flskdjf slkdjlksdkdlkjsdfjs sgfjlfldkjlfdsldkfjlsdfs sldkjfgh sldfgh slfdkh <i class="compulsory">필수</i></label>
+                                       <div class="inp-box nowrap-list">
+                                          <div class="nowrap-area mw-386">
+                                             <div class="form-group medium mw-186">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" id="ex2" title="법정대리인 주민등록번호 앞자리를 입력해주세요">
+                                                </div>                           
+                                             </div>   
+                                             <i class="hy">-</i>
+                                             <div class="form-group medium mw-186">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" title="법정대리인 주민등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">                                    
+                                                </div>                           
+                                             </div> 
+                                          </div>
+                                          <button type="button" class="btn secondary medium w-91">실명인증</button>  
+                                       </div>                           
+                                    </li>
+                                    <li class="col1">
+                                       <label for="ex3" class="tit">법정대리인 전화번호 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box nowrap-list-type1">
+                                          <div class="form-group medium mw-147">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" id="ex3" required="" title="첫번쨰 번호를 선택해주세요">
+                                                <option value="" disabled="" hidden="">없음</option>
+                                                <option value="02" selected="">02</option>                              
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                          <i class="hy">-</i>
+                                          <div class="form-group medium mw-147">                     
+                                             <div class="form-conts">
+                                                <input type="text" class="input" value="1234" title="두번쨰 번호를 입력해주세요">
+                                             </div>                           
+                                          </div>     
+                                          <i class="hy">-</i>
+                                          <div class="form-group medium mw-147">                     
+                                             <div class="form-conts">
+                                                <input type="text" class="input" value="1234" title="마지막 번호를 입력해주세요">
+                                             </div>                           
+                                          </div>     
+                                       </div>
+                                    </li>
+                                    <li class="col1">
+                                       <label for="ex4" class="tit">신청자와의 관계 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <div class="form-group medium mw-390">                  
+                                             <div class="form-conts">                              
+                                                <select class="form-select" id="ex4" required="" title="신청자와의 관계를 선택해주세요">
+                                                   <option value="" disabled="" hidden="">관계</option>
+                                                   <option value="관계">관계</option>                              
+                                                   <option value="관계" selected="">관계</option>                              
+                                                </select>
+                                             </div>                           
+                                          </div>                              
+                                       </div>  
+                                    </li>
+                                    <li class="col1">
+                                       <label for="ex5" class="tit">이메일 주소 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box nowrap-list-type2">
+                                          <div class="form-group medium mw-283">                     
+                                             <div class="form-conts">
+                                                <input type="text" id="ex5" class="input" title="아이디를 입력해주세요">
+                                             </div>                           
+                                          </div>
+                                          <i class="hy">@</i>
+                                          <div class="form-group medium mw-283">                     
+                                             <div class="form-conts">
+                                                <input type="text" class="input" title="이메일을 입력해주세요">
+                                             </div>                           
+                                          </div>
+                                          <div class="form-group medium mw-283">                  
+                                             <div class="form-conts">
+                                                <select class="form-select" required="" title="이메일을 선택해주세요">
+                                                   <option value="" disabled="" hidden="">조건을선택해주세요</option>                                 
+                                                   <option value="직접입력" selected="">직접입력</option>
+                                                </select>
+                                             </div>                           
+                                          </div>
+                                          <button type="button" class="btn secondary medium">이메일 인증</button>                                 
+                                       </div>                             
+                                    </li>
+                                 </ul>                  
+                              </div>   
+                           </div>
+
+                           <div class="wrap-crud-tbl">                  
+                              <div class="table-wrap pc">
+                                 <table class="tbl col crud">
+                                    <caption>휴대폰번호 중복 목록에 대한 표로 No,휴대폰번호,개인통관고유부호,성명,주소 으로 구성되어있다.</caption>
+                                    <colgroup>                                          
+                                       <col style="width: 52px;">                                          
+                                       <col style="width: 80px;">                                          
+                                       <col span="4">                                                                                 
+                                    </colgroup>
+                                    <thead>
+                                          <tr>
+                                             <th scope="col">
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="all-chk1">
+                                                   <label for="all-chk1"><span class="sr-only">전체선택</span></label>
+                                                </div>
+                                             </th>                                             
+                                             <th scope="col">NO</th>
+                                             <th scope="col">휴대폰번호</th>
+                                             <th scope="col">개인통관고유부호</th>
+                                             <th scope="col">성명</th>
+                                             <th scope="col">주소</th>                                             
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-1">
+                                                   <label for="chk-1"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>1</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-2">
+                                                   <label for="chk-2"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>2</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-3">
+                                                   <label for="chk-3"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>3</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-4">
+                                                   <label for="chk-4"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>4</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-5">
+                                                   <label for="chk-5"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>5</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-6">
+                                                   <label for="chk-6"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>6</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-7">
+                                                   <label for="chk-7"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>7</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-8">
+                                                   <label for="chk-8"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>8</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-9">
+                                                   <label for="chk-9"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>9</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                          <tr>
+                                             <td>
+                                                <div class="form-check medium">
+                                                   <input type="checkbox" id="chk-10">
+                                                   <label for="chk-10"><span class="sr-only">행선택</span></label>
+                                                </div>
+                                             </td>                                             
+                                             <td>10</td>                                             
+                                             <td class="text-left">010-1234-1234</td>                                             
+                                             <td class="text-left">P123*********</td>                                             
+                                             <td class="text-left">김*원</td>                                             
+                                             <td class="text-left">경기도 용인시</td>                                             
+                                          </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                              <div class="table-wrap mo">
+                                 <div class="header">
+                                    <div class="form-check medium">
+                                          <input type="checkbox" id="all_chk_11">
+                                          <label for="all_chk_11">전체선택</label>
+                                    </div>
+                                 </div>
+                                 <ul class="wrap-body">
+                                    <li>
+                                       <ul class="body">
+                                          <li>
+                                             <div class="title">
+                                                   <div class="form-check medium">
+                                                      <input type="checkbox" id="chk_4">
+                                                      <label for="chk_4"><span class="sr-only">행선택</span></label>
+                                                   </div>
+                                             </div>                                             
+                                          </li>
+                                          <li>
+                                             <strong class="title">NO</strong>
+                                             <span class="txt">3</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">휴대폰번호</strong>
+                                             <span class="txt">010-1234-1234</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">개인통관고유부호</strong>
+                                             <span class="txt">P123*********</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">성명</strong>
+                                             <span class="txt">김*원</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">주소</strong>
+                                             <span class="txt">경기도 용인시</span>
+                                          </li>                                          
+                                       </ul>
+                                    </li>                                                                       
+                                    <li>
+                                       <ul class="body">
+                                          <li>
+                                             <div class="title">
+                                                   <div class="form-check medium">
+                                                      <input type="checkbox" id="chk_5">
+                                                      <label for="chk_5"><span class="sr-only">행선택</span></label>
+                                                   </div>
+                                             </div>                                             
+                                          </li>
+                                          <li>
+                                             <strong class="title">NO</strong>
+                                             <span class="txt">3</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">휴대폰번호</strong>
+                                             <span class="txt">010-1234-1234</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">개인통관고유부호</strong>
+                                             <span class="txt">P123*********</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">성명</strong>
+                                             <span class="txt">김*원</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">주소</strong>
+                                             <span class="txt">경기도 용인시</span>
+                                          </li>                                          
+                                       </ul>
+                                    </li>    
+                                    <li>
+                                       <ul class="body">
+                                          <li>
+                                             <div class="title">
+                                                   <div class="form-check medium">
+                                                      <input type="checkbox" id="chk_6">
+                                                      <label for="chk_6"><span class="sr-only">행선택</span></label>
+                                                   </div>
+                                             </div>                                             
+                                          </li>
+                                          <li>
+                                             <strong class="title">NO</strong>
+                                             <span class="txt">3</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">휴대폰번호</strong>
+                                             <span class="txt">010-1234-1234</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">개인통관고유부호</strong>
+                                             <span class="txt">P123*********</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">성명</strong>
+                                             <span class="txt">김*원</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">주소</strong>
+                                             <span class="txt">경기도 용인시</span>
+                                          </li>                                          
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="body">
+                                          <li>
+                                             <div class="title">
+                                                   <div class="form-check medium">
+                                                      <input type="checkbox" id="chk_7">
+                                                      <label for="chk_7"><span class="sr-only">행선택</span></label>
+                                                   </div>
+                                             </div>                                             
+                                          </li>
+                                          <li>
+                                             <strong class="title">NO</strong>
+                                             <span class="txt">3</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">휴대폰번호</strong>
+                                             <span class="txt">010-1234-1234</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">개인통관고유부호</strong>
+                                             <span class="txt">P123*********</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">성명</strong>
+                                             <span class="txt">김*원</span>
+                                          </li>                                          
+                                          <li>
+                                             <strong class="title">주소</strong>
+                                             <span class="txt">경기도 용인시</span>
+                                          </li>                                          
+                                       </ul>
+                                    </li>                                                                   
+                                 </ul>
+                              </div>
+                           </div>
+                           <p class="txt-type mt-24">귀하가 입력하신 휴대전화번호와 연결된 개인통관고유부호가 위와 같이 존재합니다.<br> 해당 내용의 삭제를 원하시거나 문의가 있는 경우 관세청 고객지원센터를 이용해 주세요.</p>
+                        </div>                        
+                     </div>
+                     <div class="modal-footer chk-footer">
+                        <div class="form-check">
+                           <input type="checkbox" name="chk_1" id="chk_8">
+                           <label for="chk_8">하루에 한번만 표시</label>
+                        </div>
+                        <div class="btn-box">
+                           <button type="button" class="btn tertiary medium">건너뛰기</button>
+                           <button type="button" class="btn primary medium">삭제</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- // 휴대폰번호 중복 목록 -->
+
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col2 txt-list">
+                           <strong class="tit">개인통관고유부호</strong>   
+                           <div class="inp-box">
+                              <p class="txt"><a href="#none" title="P2400000000000 복사하기" class="copy-box">P2400000000000 <i class="icon copy small"></i></a></p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">fsdlkjjfdklsj fjksjflksdj fsldj flsd jfsldkfj lsdkjf lsdkjf lsdkjf lsdkjflsjfk</strong>
+                           <div class="inp-box">
+                              <p class="txt">2025-01-01 ~ 2026-01-01</p>
+                           </div>                        
+                        </li>                                             
+                        <li class="col2 txt-list">
+                           <!-- 타이틀 툴팁 -->
+                           <div class="tooltip-tit tit">
+                              <div class="title">
+                                 <strong>재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수 재발급 횟수</strong>
+                                 <div class="contextual-help top right" data-ui="tooltip">                              
+                                    <div class="tooltip-btn-area">                                 
+                                       <button class="tooltip-ico" title="재발급 횟수 툴팁이 열립니다">재발급 횟수 도움말</button>
+                                       <div class="tooltip-action" style="left: -60px;">                  
+                                          <div class="tooltip-popover">
+                                          <strong class="tooltip-title">재발급 횟수</strong>
+                                          <div class="tooltip-contents">
+                                             <p>재발급 횟수</p>
+                                             <div class="btn-wrap">
+                                                <a href="#;" class="btn link">바로가기</a>
+                                             </div>
+                                          </div>
+                                          <button type="button" class="btn tooltip-close">
+                                             <span class="sr-only">닫기</span>                        
+                                          </button>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- 타이틀 툴팁 -->
+                           <div class="inp-box">
+                              <p class="txt">재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급 재발급</p>
+                           </div>                         
+                        </li>
+                        <li class="col2 txt-list">
+                           <!-- 타이틀 툴팁 -->
+                           <div class="tooltip-tit tit">
+                              <div class="title">
+                                 <strong>fdk;lfksd;lfkdsl fsdkflskdfl;skdlf; jkdhfjksd hsjkdfh skdjhf skdjhf ksdjfh ksdjhf jksd</strong>
+                                 <div class="contextual-help top right" data-ui="tooltip">                              
+                                    <div class="tooltip-btn-area">                                 
+                                       <button class="tooltip-ico" title="재발급 횟수 툴팁이 열립니다">재발급 횟수 도움말</button>
+                                       <div class="tooltip-action" style="left: -60px;">                  
+                                          <div class="tooltip-popover">
+                                          <strong class="tooltip-title">재발급 횟수</strong>
+                                          <div class="tooltip-contents">
+                                             <p>재발급 횟수</p>
+                                             <div class="btn-wrap">
+                                                <a href="#;" class="btn link">바로가기</a>
+                                             </div>
+                                          </div>
+                                          <button type="button" class="btn tooltip-close">
+                                             <span class="sr-only">닫기</span>                        
+                                          </button>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- 타이틀 툴팁 -->
+                           <div class="inp-box">
+                              <p class="txt">fdgfdgfdgfgfdgdfgdfgdfgdfg fd;hkgflhgdjglkghfjghlkf hjlkfgjhlflkgh f gl fjglkh jlg jlgkhjflkhjlfgh lkghkfghlk</p>
+                           </div>                         
+                        </li>
+                     </ul>                  
+                  </div>
+               </div>
+
+               <div class="search-box wrap-50">
+
+                  <!-- 검색영역 리스트 -->
+                  <ul>
+                     <li class="col1">
+                        <strong class="tit">발급기간<br> 발급기간dff 발급기간 <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: 'null'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn" type="button">시작 달력보기</button>
+                              </div>
+                              <!-- <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div> -->
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1">
+                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                              <label class="form-chip-outline" for="chk_chip_2">1년</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                              <label class="form-chip-outline" for="chk_chip_3">2년</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
+                              <label class="form-chip-outline" for="chk_chip_4">3년</label>
+                           </div>
+                        </div>                        
+                     </li>   
+                     <li class="col1">
+                        <strong class="tit">발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 발급기간 <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: 'null'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn" type="button">시작 달력보기</button>
+                              </div>
+                              <!-- <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div> -->
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1">
+                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                              <label class="form-chip-outline" for="chk_chip_2">1년</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                              <label class="form-chip-outline" for="chk_chip_3">2년</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
+                              <label class="form-chip-outline" for="chk_chip_4">3년</label>
+                           </div>
+                        </div>                        
+                     </li>    
+                     <li class="col1">
+                        <strong class="tit">dsfksdfksd;lfksdf;l sldfk;sdlf ksdl;d f;slfl;s dfl;skdf;sk d pf sodf;lfqeipjfijfkldsfjskld fjksd fjlskdjf lsdkjf sldkfj sldfjkls <i class="compulsory">필수</i></strong>
+                        <div class="search-area">
+                           <div class="calendar">
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: 'null'">
+                                 <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn" type="button">시작 달력보기</button>
+                              </div>
+                              <!-- <i class="hy">~</i>
+                              <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                 <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                 <button class="calendar-btn">종료 달력보기</button>
+                              </div> -->
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_1">
+                              <label class="form-chip-outline" for="chk_chip_1">당일</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                              <label class="form-chip-outline" for="chk_chip_2">1년</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                              <label class="form-chip-outline" for="chk_chip_3">2년</label>
+                           </div>
+                           <div class="form-chip large">
+                              <input type="radio" class="radio" name="chk_1" id="chk_chip_4">
+                              <label class="form-chip-outline" for="chk_chip_4">3년</label>
+                           </div>
+                        </div>                        
+                     </li>                   
+                  </ul>
+                  <!-- // 검색영역 리스트 -->
+
+                  <!-- 조회버튼 영역 -->
+                  <div class="bottom-action-area">
+                     <!-- 수정된 위치 -->
+                     <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                     <!-- // 수정된 위치 -->
+                     <!-- 버튼 영역 -->
+                     <div class="btn-end">
+                        <div class="align">
+                           <button type="button" class="btn tertiary medium">초기화</button>
+                           <button type="button" class="btn secondary medium">조회</button>                        
+                        </div>
+                     </div>
+                     <!-- // 버튼 영역 -->
+                  </div>                  
+                  <!-- // 조회버튼 영역 -->
+
+               </div>
+
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>    
+                        <li class="col1">
+                           <label for="ex5" class="tit">신고인 이메일<br> 신고인 이메일 신고인 이메일 <i class="compulsory">필수</i></label>
+                           <div class="inp-box nowrap-list-type2 email-inp-box">
+                              <div class="form-group medium mw-283 email-id">                     
+                                 <div class="form-conts">
+                                    <input type="text" id="ex5" class="input" value="hongGilDong" title="아이디를 입력해주세요">
+                                 </div>                           
+                              </div>
+                              <i class="hy">@</i>
+                              <div class="state-keeper">
+                                 <div class="form-group medium mw-283">                     
+                                    <div class="form-conts">
+                                       <input type="text" class="input" value="naver.com" title="이메일을 입력해주세요">
+                                    </div>                           
+                                 </div>
+                                 <div class="form-group medium mw-283">                  
+                                    <div class="form-conts">
+                                       <select class="form-select" required="" title="이메일을 선택해주세요">
+                                          <option value="" disabled="" hidden="">조건을선택해주세요</option>                                 
+                                          <option value="직접입력" selected="">직접입력</option>
+                                       </select>
+                                    </div>                           
+                                 </div>
+                              </div>
+                              <button type="button" class="btn secondary medium">이메일 인증</button>                                 
+                           </div>  
+                           <p class="advice-txt">입력하신 신고인 정보는 도용 신고 처리 결과를 안내하기 위한 용도로만 사용되며, 개인통관고유부호 개인정보에는 반영되지 않습니다.</p>                      
+                        </li>
+                        <li class="col1">
+                           <label for="ex1" class="tit">국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 국적 </label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-390">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex1" required="" title="국적을 선택해주세요">
+                                       <option value="" disabled="" hidden="">대한민국</option>
+                                       <option value="대한민국" selected="">대한민국</option>                                 
+                                    </select>
+                                 </div>                           
+                              </div>
+                           </div>  
+                        </li>                                       
+                        <li class="col1">
+                           <strong class="tit">영문성명영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명 영문성명  <i class="compulsory">필수</i></strong>
+                           <div class="inp-box">
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit3" class="form-title">Last</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit3" class="input" value="GilDong" title="마지막 이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>                              
+                              <div class="wrap-form-group mw-232">
+                                 <div class="form-group form-tit-group">  
+                                    <label for="tit5" class="form-title">First</label>                   
+                                    <div class="form-conts">
+                                       <input type="text" id="tit5" class="input" value="Hong" title="첫번쨰 이름을 입력해주세요">
+                                    </div>                     
+                                 </div>                  
+                              </div>
+                           </div>
+                        </li>
+                        <li class="col1 sub-form dotted-line-top dotted-line-bottom">
+                           <strong class="sub-tit">개인식별번호 <i class="compulsory">필수</i></strong>
+                           <div class="sub-form-box">
+                              <ul>
+                                 <li class="col2">
+                                    <div class="form-check medium tit">
+                                       <input type="radio" name="rdo_11" id="radio5">
+                                       <label for="radio5">외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 외국인 등록번호 <i class="compulsory">필수</i></label>
+                                    </div>
+                                    <div class="sub-box nowrap-list">
+                                       <div class="form-group medium mw-186">                     
+                                          <div class="form-conts">
+                                             <input type="text" class="input" title="외국인 등록번호 앞자리를 입력해주세요">
+                                          </div>                           
+                                       </div>
+                                       <i class="hy">-</i>
+                                       <div class="form-group medium mw-186">                     
+                                          <div class="form-conts">                                    
+                                             <input type="text" class="input" title="외국인 등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">  
+                                          </div>                           
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li class="col2">      
+                                    <div class="sub-list-wrap">
+                                       <div class="sub-list-box mw-274">
+                                          <div class="form-check medium tit">
+                                             <input type="radio" name="rdo_11" id="radio6">
+                                             <label for="radio6">여권번호여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호 여권번호  </label>
+                                          </div>
+                                          <div class="sub-box">
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" disabled="" title="여권번호를 입력해주세요">
+                                                </div>                           
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="sub-list-box">
+                                          <strong class="tit">jfhsdkj skjdfh skjd hfksdh fksjdh fksjdhf ksdjfh ksdhfjk dkdf kjsfdkjfkjf sjhkjsfksdfksdfjskj <i class="compulsory">필수</i></strong>
+                                          <div class="sub-box">
+                                             <div class="calendar">                              
+                                                <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                                   <input id="endDate1" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                                   <button class="calendar-btn" type="button">종료 달력보기</button>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>                           
+                                 </li>
+                              </ul>    
+                           </div>                       
+                        </li>    
+                        <li class="col1 sub-form dotted-line-top dotted-line-bottom">
+                           <strong class="sub-tit">개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 개인식별번호 <i class="compulsory">필수</i></strong>
+                           <div class="sub-form-box">
+                              <ul>
+                                 <li class="col2">
+                                    <div class="form-check medium tit">
+                                       <input type="radio" name="rdo_11" id="radio5">
+                                       <label for="radio5">외국인 등록번호</label>
+                                    </div>
+                                    <div class="sub-box nowrap-list">
+                                       <div class="form-group medium mw-186">                     
+                                          <div class="form-conts">
+                                             <input type="text" class="input" title="외국인 등록번호 앞자리를 입력해주세요">
+                                          </div>                           
+                                       </div>
+                                       <i class="hy">-</i>
+                                       <div class="form-group medium mw-186">                     
+                                          <div class="form-conts">                                    
+                                             <input type="text" class="input" title="외국인 등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" data-props="showNum: 1;numberOnly: true">  
+                                          </div>                           
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li class="col2">      
+                                    <div class="sub-list-wrap">
+                                       <div class="sub-list-box mw-274">
+                                          <div class="form-check medium tit">
+                                             <input type="radio" name="rdo_11" id="radio6">
+                                             <label for="radio6">여권번호</label>
+                                          </div>
+                                          <div class="sub-box">
+                                             <div class="form-group medium">                     
+                                                <div class="form-conts">
+                                                   <input type="text" class="input" disabled="" title="여권번호를 입력해주세요">
+                                                </div>                           
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="sub-list-box">
+                                          <strong class="tit">여권만료일</strong>
+                                          <div class="sub-box">
+                                             <div class="calendar">                              
+                                                <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                                   <input id="endDate1" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                                   <button class="calendar-btn" type="button">종료 달력보기</button>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>                           
+                                 </li>
+                              </ul>    
+                           </div>                       
+                        </li>   
+                        <li class="col1">
+                           <label for="ex3" class="tit">달력 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="calendar">                              
+                              <div class="calendar-form" data-ui="datepicker" data-props="maxDate: null;minDate: 'today'">
+                                 <input id="endDate2" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10" disabled="">
+                                 <button class="calendar-btn" disabled="" type="button">종료 달력보기</button>
+                              </div>
+                           </div>
+                           </div>  
+                           <p class="advice-txt">특수문자를 포함하여 8자리 이상</p>
+                        </li>                    
+                        <li class="col1">
+                           <label for="ex3" class="tit">sdflksdfjsldk slfdj sldk fjsldkfj lsdkjf sldkjf lsdjf lsdkjf lsdkjf lskdjflsdjfsldkfjs <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-390">                  
+                                 <div class="form-conts">
+                                    <input type="text" id="ex3" class="input" value="1234567" title="사전신청 비밀번호를 입력해주세요" data-ui="hidden-input">
+                                 </div>                           
+                              </div>
+                           </div>  
+                           <p class="advice-txt">특수문자를 포함하여 8자리 이상</p>
+                        </li>
+                        <li class="col1 vc-list">
+                           <label for="ex5" class="tit">인증번호 입력 <i class="compulsory">필수</i></label>
+                           <div class="inp-box">
+                              <div class="form-group medium mw-158">                     
+                                 <div class="form-conts">
+                                    <input type="text" id="ex5" class="input" value="12345" title="인증번호를 입력해주세요">
+                                 </div>                  
+                                 <p class="advice-txt info-txt cl-4"><i class="icon check-circle small mr-5"></i>확인되었습니다</p>         
+                              </div>                                                            
+                              <button type="button" class="btn secondary medium" disabled="">등록 이메일로 인증번호 발송</button>                                 
+                           </div>                                                   
+                        </li> 
+                     </ul>                  
+                  </div>   
+               </div>
+
+               <!-- 개인통관고유부호 신규 발급 -->
+               <button type="button" class="btn primary large" data-modal-target="#modal1-1">개인통관고유부호 신규 발급</button>
+               <div id="modal1-1" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 신규 발급</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="acc-area customs-guide">                  
+                           <div class="txt">
+                              <strong>1. 전자상거래 플랫폼에서 물품 구매 시 6자리 인증번호 제출</strong>
+                              <div>
+                                 <p class="advice-txt">개인통관고유부호를 발급 후 전자상거래 물품을 주문할 때 관세청이 발송한 6자리 인증번호를 제출하여야 통관 진행이 가능합니다.</p>
+                                 <p class="advice-txt">단, 관세청이 지정한 협력인정업체에서 구매 시 6자리 인증번호 제출을 생략할 수 있습니다.</p>
+                              </div>
+                           </div>
+                           <div class="txt">
+                              <strong>2. 개인통관고유부호 유효기간</strong>
+                              <div>
+                                 <p class="advice-txt">신규로 발급받은 경우 : 신규 발급일로 부터 1년</p>
+                                 <p class="advice-txt">정보를 변경한 경우 : 변경 승인일로부터 1년</p>
+                                 <p class="advice-txt">갱신한 경우 : 기존 유효기간 만료일부터 1년</p>
+                                 <p class="advice-txt">재발급한 경우 : 재발급일로부터 1년</p>
+                                 <p class="advice-txt">사용정지한 경우 : 기존 유효기간 만료일까지</p>
+                              </div>
+                           </div>
+                           <div class="txt">
+                              <strong>3. 개인통관고유부호 유효기간 갱신</strong>
+                              <div>
+                                 <p class="advice-txt">갱신은 유효기간 만료일 전후 30일 이내만 가능하며, 유효기간이 만료되면 유효기간이 갱신만 가능하며 정보변경, 부호변경, 사용정지/해제, 해지 신청이 불가합니다.</p>                        
+                                 <p class="advice-txt">유효기간이 만료일 이후 30일 이내 전자상거래 물품 통관은 가능합니다. 다만 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                                 <p class="advice-txt">유효기간 만료 30일 이후 부호는 자동으로 해지처리 됩니다. 이 경우 다시 신규발급을 받아야 전자상거래 물품 통관이 가능합니다.</p>                        
+                              </div>
+                           </div>
+                           <div class="txt">
+                              <strong>4. 개인통관고유부호 직권 정지</strong>
+                              <div>
+                                 <p class="advice-txt">명의 도용 · 대여 등 거짓이나 부정한 방법으로 개인통관고유부호를 발급받거나 사용사실을 인지한 경우 직권을 사용정지 될 수 있습니다.</p>                                                
+                              </div>
+                           </div>
+                           <p class="pb-24">위 안내 사항을 확인하시어 전자상거래 물품 통관에 착오가 없으시길 바랍니다,</p>
+                        </div>
+                        <div class="txt-box-type">
+                           <p>안내 사항에 대해 확인 하였습니다.</p>
+                           <div class="form-check">
+                              <input type="checkbox" name="chk1" id="chk1">
+                              <label for="chk1">확인</label>
+                           </div>
+                        </div>
+                     </div>            
+                     <div class="modal-footer">
+                        <button type="button" class="btn tertiary modal-close medium">닫기</button>
+                        <button type="button" class="btn primary medium">신규발급</button>
+                     </div>                        
+                  </div>
+               </div>
+               <!-- 개인통관고유부호 신규 발급 -->
+
+               <!-- 개인통관고유부호 재발급 -->
+               <button type="button" class="btn primary large" data-modal-target="#modal2">개인통관고유부호 재발급</button>
+               <div id="modal2" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 재발급</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="acc-area customs-guide">                  
+                           <div class="txt">                                          
+                              <p><span class="num">1.</span>개인통관고유부호를 재발급하면 기존 개인통관고유부호로 통관 불가합니다.</p>       
+                              <p><span class="num">2.</span>부호 재발급으로 인해 기존 개인통관고유부호로 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                              <p><span class="num">3.</span>재발급 신청과 해지 후 신규발급 신청 횟수는 합산하여 연간 총 5회로 제한 합니다.</p>                                                              
+                           </div>                  
+                        </div>
+                        <div class="txt-box-type">
+                           <p>안내 사항에 대해 확인 하였습니다.</p>
+                           <div class="form-check">
+                              <input type="checkbox" name="chk1" id="chk1">
+                              <label for="chk1">확인</label>
+                           </div>
+                        </div>
+                     </div>            
+                     <div class="modal-footer">
+                        <button type="button" class="btn tertiary modal-close medium">닫기</button>
+                        <button type="button" class="btn primary medium">재발급</button>
+                     </div>                        
+                  </div>
+               </div>
+               <!-- 개인통관고유부호 재발급 -->
+
+               <!-- 개인통관고유부호 해지 -->
+               <button type="button" class="btn primary large" data-modal-target="#modal3">개인통관고유부호 해지</button>
+               <div id="modal3" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 해지</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="acc-area customs-guide">                  
+                           <div class="txt">                                          
+                              <p><span class="num">1.</span>개인통관고유부호를 해지하면 현재 개인통관고유부호로 통관이 불가합니다.</p>       
+                              <p><span class="num">2.</span>부호 해지로 인해 기존 개인통관고유부호로 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                              <p><span class="num">3.</span>해지 후 신규발급 신청횟수는 합산하여 연간 총 5회로 제한합니다.</p>                                                              
+                           </div>                  
+                        </div>
+                        <div class="txt-box-type">
+                           <p>안내 사항에 대해 확인 하였습니다.</p>
+                           <div class="form-check">
+                              <input type="checkbox" name="chk1" id="chk1">
+                              <label for="chk1">확인</label>
+                           </div>
+                        </div>
+                     </div>            
+                     <div class="modal-footer">
+                        <button type="button" class="btn tertiary modal-close medium">닫기</button>
+                        <button type="button" class="btn primary medium">해지</button>
+                     </div>                        
+                  </div>
+               </div>
+               <!-- 개인통관고유부호 해지 -->
+
+               <!-- 개인통관고유부호 사용정지 -->
+               <button type="button" class="btn primary large" data-modal-target="#modal4">개인통관고유부호 사용정지</button>
+               <div id="modal4" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 사용정지</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="acc-area customs-guide">                  
+                           <div class="txt">                                          
+                              <p><span class="num">1.</span>개인통관고유부호를 사용정지하면 현재 개인통관고유부호로 사용 및 통관이 불가합니다.</p>       
+                              <p><span class="num">2.</span>부호 사용정지로 인해 기존 개인통관고유부호로 전자상거래 물품 주문이 어려울 수 있습니다.</p>                        
+                              <p><span class="num">3.</span>사용정지 후 다시 해제하면 현재 부호를 사용하여 통관이 가능합니다.</p>                                                              
+                              <p><span class="num">4.</span>사용정지한 부호의 유효기간은 기존 유효기간 만료일과 동일합니다.</p>                                                              
+                           </div>                  
+                        </div>
+                        <div class="txt-box-type">
+                           <p>안내 사항에 대해 확인 하였습니다.</p>
+                           <div class="form-check">
+                              <input type="checkbox" name="chk1" id="chk1">
+                              <label for="chk1">확인</label>
+                           </div>
+                        </div>
+                     </div>            
+                     <div class="modal-footer">
+                        <button type="button" class="btn tertiary modal-close medium">닫기</button>
+                        <button type="button" class="btn primary medium">사용정지</button>
+                     </div>                        
+                  </div>
+               </div>
+               <!-- 개인통관고유부호 사용정지 -->
+
+               <!-- 개인통관고유부호 갱신 -->
+               <button type="button" class="btn primary large" data-modal-target="#modal5">개인통관고유부호 갱신</button>
+               <div id="modal5" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-760">
+                     <div class="modal-header">
+                        <h5>개인통관고유부호 갱신</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="acc-area customs-guide">                  
+                           <div class="txt">                                          
+                              <p><span class="num">1.</span>개인통관고유부호를 갱신하면 유효기간이 기존 유효기간 만료일로부터 1년 연장 됩니다.</p>       
+                              <p><span class="num">2.</span>유효기간 갱신은 유효기간 만료일 전후 30일 이내만 가능하며 유효기간이 종료되면 정보변경, 부호변경, 사용정지/해제 신청이 불가합니다.</p>                        
+                              <p><span class="num">3.</span>유효기간이 만료일 이후 30일 이내 전자상거래 물품 통관은 가능합니다. 다만 전자상거래 물품 주문이 어려울 수 있습니다.</p>                                                              
+                              <p><span class="num">4.</span>유효기간 만료 30일 이후 부호는 자동으로 해지처리 됩니다. 이 경우 다시 신규발급을 받아야 전자상거래 물품 통관이 가능합니다.</p>                                                              
+                           </div>                  
+                        </div>
+                        <div class="txt-box-type">
+                           <p>안내 사항에 대해 확인 하였습니다.</p>
+                           <div class="form-check">
+                              <input type="checkbox" name="chk1" id="chk1">
+                              <label for="chk1">확인</label>
+                           </div>
+                        </div>
+                     </div>            
+                     <div class="modal-footer">
+                        <button type="button" class="btn tertiary modal-close medium">닫기</button>
+                        <button type="button" class="btn primary medium">사용정지</button>
+                     </div>                        
+                  </div>
+               </div>
+               <!-- 개인통관고유부호 갱신 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--// 내용 -->
+         </div>
+      </div>
+      <!-- //content-wrap -->
+      <!-- footer -->
+      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
+      <!-- //footer -->
+   </div>
+</body>
+</html>
