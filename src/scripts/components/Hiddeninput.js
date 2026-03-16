@@ -17,6 +17,8 @@ class Hiddeninput {
         this.init();
     }
 
+    //
+
     init() {
         this.actualValue = this.ele.val();
         this.onInput();
