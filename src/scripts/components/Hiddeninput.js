@@ -12,18 +12,31 @@ class Hiddeninput {
         this.actualValue = '';
         this.regex = this.props.numberOnly ? /^[0-9]+$/ : /^[^\u3131-\u314E가-힣\s]+$/;
         this.toggleBtn = null;
-        this.isVisible = false; // ← 표시 상태 관리 플래그
+        this.isVisible = false;
+        this.isComposing = false;
         this.init();
     }
 
     init() {
         this.actualValue = this.ele.val();
         this.onInput();
+        this.ele.on('compositionstart', () => {
+            this.isComposing = true;
+        });
+        // 조합 종료 (엔터를 치거나 다른 글자로 넘어갈 때)
+        this.ele.on('compositionend', (e) => {
+            this.isComposing = false;
+            // 조합이 끝난 최종 텍스트를 actualValue에 반영
+            this.onInput(); 
+        });
         this.ele.on('beforeinput', (e) => {
+            if (this.isComposing) return;
             this.onBeforeInput(e);
         });
         this.ele.on('input', () => {
-            this.onInput();
+            if (!this.isComposing) {
+                this.onInput();
+            }
         });
         if (this.props.toggleBtn) {
             this.toggleBtn = $(`<button type="button" title="비밀번호 표시" class="visibility-btn"><i class="icon visibility medium"></i></button>`);
@@ -59,13 +72,15 @@ class Hiddeninput {
 
         let newValue = this.actualValue;
 
-        if (inputType === 'insertText' || inputType === 'insertCompositionText') {
+        if (inputType === 'insertText') {
             newValue = this.actualValue.slice(0, selectionStart) + data + this.actualValue.slice(selectionEnd);
             if (maxLength >= 0 && newValue.length > maxLength) {
                 e.preventDefault();
                 return;
             }
             this.actualValue = newValue;
+        } else if(inputType === 'insertCompositionText') {
+            return;
         } else if (inputType === 'deleteContentBackward') {
             if (selectionStart !== selectionEnd) {
                 this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionEnd);
@@ -93,8 +108,6 @@ class Hiddeninput {
     onInput() {
         const input = this.ele[0];
         this.ele.data('value', this.actualValue);
-
-        console.log(this.actualValue);
 
         if (this.isVisible) {
             input.value = this.actualValue;
