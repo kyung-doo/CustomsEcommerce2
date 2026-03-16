@@ -36,3 +36,8 @@
 //   .tooltip-action{left:-20px !important}
 }
 
+@media screen and (max-width: 390px) { 
+   .tooltip-action{width: 250px;}
+   .contextual-help .tooltip-action.active{left:-100px !important}
+}
+

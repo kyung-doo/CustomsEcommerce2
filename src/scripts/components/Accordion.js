@@ -60,13 +60,13 @@ $(() => {
         })
     })    
 
-    $(window).resize(function() {
-        if($(window).width() <= 480) {
-            $('.accordion-wrap').removeClass('active');
-            $('.accordion-body').removeAttr('style');                
-            $('.accordion-header .accordion-btn').attr('title','열기')
-        }
-    });
+    // $(window).resize(function() {
+    //     if($(window).width() <= 480) {
+    //         $('.accordion-wrap').removeClass('active');
+    //         $('.accordion-body').removeAttr('style');                
+    //         $('.accordion-header .accordion-btn').attr('title','열기')
+    //     }
+    // });
 });
 
 

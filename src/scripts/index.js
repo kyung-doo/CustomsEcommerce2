@@ -1,16 +1,20 @@
 
 $(() => {
 
+
+//     $('.testr').on('input', function () {
+//     console.log($(this).data().value);
+// });
   
-    $('.phone-select').on('change', function () {
-        if ($(this).val() === 'direct') {
-            $(this).closest('.form-group').find('.phone-input').show().focus();
-            $(this).hide();
-        } else {
-            $(this).closest('.form-group').find('.phone-input').hide();
-            $(this).show();
-        }
-    });
+    // $('.phone-select').on('change', function () {
+    //     if ($(this).val() === 'direct') {
+    //         $(this).closest('.form-group').find('.phone-input').show().focus();
+    //         $(this).hide();
+    //     } else {
+    //         $(this).closest('.form-group').find('.phone-input').hide();
+    //         $(this).show();
+    //     }
+    // });
 
   
 
@@ -29,36 +33,36 @@ $(() => {
     });
 
     //마우스 올렸을떄 툴팁(title 적용) 
-    $('.copy').each(function() {    
-        let buttonText = $(this).text().trim();    
-        $(this).attr('title', `${buttonText} 복사하기`);
-    });
+    // $('.copy').each(function() { 1   
+    //     let buttonText = $(this).text().trim();    
+    //     $(this).attr('title', `${buttonText} 복사하기`);
+    // });
 
-    $('.tooltip-tit').each(function() {
-        let $tooltipBtn = $(this).find('.tooltip-ico');
+    // $('.tooltip-tit').each(function() {
+    //     let $tooltipBtn = $(this).find('.tooltip-ico');
 
-        if ($tooltipBtn.length === 0) return; // 버튼 없으면 패스
+    //     if ($tooltipBtn.length === 0) return; // 버튼 없으면 패스
 
-        // strong 값이 있으면 strong 사용
-        let strongTitle = $(this).find('.title > strong').text().trim();
+    //     // strong 값이 있으면 strong 사용
+    //     let strongTitle = $(this).find('.title > strong').text().trim();
         
-        // h5 값이 있으면 h5 사용 (예: title-type3 구조)
-        let h5Title = $(this).closest('.title-type3').find('h5').text().trim();
+    //     // h5 값이 있으면 h5 사용 (예: title-type3 구조)
+    //     let h5Title = $(this).closest('.title-type3').find('h5').text().trim();
 
-        // 조건에 따라 버튼 title 설정
-        if (h5Title) {
-            $tooltipBtn.attr('title', `${h5Title} 툴팁이 열립니다`);
-        } else if (strongTitle) {
-            $tooltipBtn.attr('title', `${strongTitle} 툴팁이 열립니다`);
-        }
-    });
+    //     // 조건에 따라 버튼 title 설정
+    //     if (h5Title) {
+    //         $tooltipBtn.attr('title', `${h5Title} 툴팁이 열립니다`);
+    //     } else if (strongTitle) {
+    //         $tooltipBtn.attr('title', `${strongTitle} 툴팁이 열립니다`);
+    //     }
+    // });
 
-    $('i.icon.copy.small').removeAttr('title');
+    // $('i.icon.copy.small').removeAttr('title');
 
-    function setTitles(context) {
-        $(context).find('button.sch-delete').attr('title', '검색어 삭제하기');
-        $(context).find('button.pages-sch, button.sach').attr('title', '검색');
-    }
+    // function setTitles(context) {
+    //     $(context).find('button.sch-delete').attr('title', '검색어 삭제하기');
+    //     $(context).find('button.pages-sch, button.sach').attr('title', '검색');
+    // }
 
     // 초기 적용
     setTitles(document);
@@ -120,18 +124,18 @@ $(() => {
     // });
 
     // 배경 클릭 시 닫기
-    document.addEventListener("click", () => {
-        document.querySelectorAll(".purchased-item.open").forEach(item => {
-        item.classList.remove("open", "up", "down");
-        });
-    });
+    // document.addEventListener("click", () => {
+    //     document.querySelectorAll(".purchased-item.open").forEach(item => {
+    //     item.classList.remove("open", "up", "down");
+    //     });
+    // });
 
     // 배경(html, body) 클릭 → 닫기
-    document.addEventListener("click", () => {
-        document.querySelectorAll(".purchased-item.open").forEach(item => {
-        item.classList.remove("open");
-        });
-    });
+    // document.addEventListener("click", () => {
+    //     document.querySelectorAll(".purchased-item.open").forEach(item => {
+    //     item.classList.remove("open");
+    //     });
+    // });
     
     
     
@@ -164,100 +168,100 @@ $(() => {
 
 
 
-    function createHorizontalGuides(options = {}) {
-        const lineCount = options.count || 2;
-        const color = options.color || 'rgba(255,0,0,0.7)';
-        const thickness = options.thickness || 2;
-        const spacing = options.spacing || 50;
+    // function createHorizontalGuides(options = {}) {
+    //     const lineCount = options.count || 2;
+    //     const color = options.color || 'rgba(255,0,0,0.7)';
+    //     const thickness = options.thickness || 2;
+    //     const spacing = options.spacing || 50;
 
-        const lines = [];
-        let activeLine = null; // 키보드 이동용 현재 선택된 가이드
+    //     const lines = [];
+    //     let activeLine = null; // 키보드 이동용 현재 선택된 가이드
 
-        for (let i = 0; i < lineCount; i++) {
-            const $line = $('<div class="guide-line horizontal"></div>');
-            $('body').append($line);
+    //     for (let i = 0; i < lineCount; i++) {
+    //         const $line = $('<div class="guide-line horizontal"></div>');
+    //         $('body').append($line);
 
-            $line.css({
-                position: 'absolute',
-                width: '100%',
-                height: thickness + 'px',
-                top: (50 + i * spacing) + 'px',
-                left: 0,
-                background: color,
-                zIndex: 9999,
-                cursor: 'move',
-                outline: 'none'
-            });
+    //         $line.css({
+    //             position: 'absolute',
+    //             width: '100%',
+    //             height: thickness + 'px',
+    //             top: (50 + i * spacing) + 'px',
+    //             left: 0,
+    //             background: color,
+    //             zIndex: 9999,
+    //             cursor: 'move',
+    //             outline: 'none'
+    //         });
 
-            // 포커스 가능하게 tabindex 추가
-            $line.attr('tabindex', 0);
+    //         // 포커스 가능하게 tabindex 추가
+    //         $line.attr('tabindex', 0);
 
-            // --------------------------
-            // 마우스 드래그 이동
-            // --------------------------
-            let isDragging = false;
-            let startMouse = 0;
-            let startTop = 0;
+    //         // --------------------------
+    //         // 마우스 드래그 이동
+    //         // --------------------------
+    //         let isDragging = false;
+    //         let startMouse = 0;
+    //         let startTop = 0;
 
-            $line.on('mousedown', function (e) {
-                isDragging = true;
-                activeLine = $line; // 현재 선택된 라인
-                startMouse = e.pageY;
-                startTop = parseInt($line.css('top'));
-                e.preventDefault();
-                $line.focus(); // 키보드 이동을 위해 포커스
-            });
+    //         $line.on('mousedown', function (e) {
+    //             isDragging = true;
+    //             activeLine = $line; // 현재 선택된 라인
+    //             startMouse = e.pageY;
+    //             startTop = parseInt($line.css('top'));
+    //             e.preventDefault();
+    //             $line.focus(); // 키보드 이동을 위해 포커스
+    //         });
 
-            $(document).on('mousemove', function (e) {
-                if (!isDragging) return;
-                const delta = e.pageY - startMouse;
-                $line.css('top', startTop + delta + 'px');
-            });
+    //         $(document).on('mousemove', function (e) {
+    //             if (!isDragging) return;
+    //             const delta = e.pageY - startMouse;
+    //             $line.css('top', startTop + delta + 'px');
+    //         });
 
-            $(document).on('mouseup', function () {
-                isDragging = false;
-            });
+    //         $(document).on('mouseup', function () {
+    //             isDragging = false;
+    //         });
 
-            // --------------------------
-            // 키보드 이동 (↑ ↓)
-            // --------------------------
-            $line.on('keydown', function (e) {
-                const step = e.shiftKey ? 10 : 1; // shift 누르면 10px 이동
-                let currentTop = parseInt($line.css('top'));
+    //         // --------------------------
+    //         // 키보드 이동 (↑ ↓)
+    //         // --------------------------
+    //         $line.on('keydown', function (e) {
+    //             const step = e.shiftKey ? 10 : 1; // shift 누르면 10px 이동
+    //             let currentTop = parseInt($line.css('top'));
 
-                switch (e.key) {
-                    case "ArrowUp":
-                        $line.css('top', currentTop - step + 'px');
-                        break;
-                    case "ArrowDown":
-                        $line.css('top', currentTop + step + 'px');
-                        break;
-                }
-            });
+    //             switch (e.key) {
+    //                 case "ArrowUp":
+    //                     $line.css('top', currentTop - step + 'px');
+    //                     break;
+    //                 case "ArrowDown":
+    //                     $line.css('top', currentTop + step + 'px');
+    //                     break;
+    //             }
+    //         });
 
-            // --------------------------
-            // 더블클릭 → 화면 중앙 정렬
-            // --------------------------
-            $line.on('dblclick', function () {
-                $line.css('top', '50%');
-            });
+    //         // --------------------------
+    //         // 더블클릭 → 화면 중앙 정렬
+    //         // --------------------------
+    //         $line.on('dblclick', function () {
+    //             $line.css('top', '50%');
+    //         });
 
-            lines.push($line);
-        }
+    //         lines.push($line);
+    //     }
 
-        return lines;
-    }
+    //     return lines;
+    // }
 
 
     // 사용 예시
-    $(function() {
-        // const horizontalLines = createHorizontalGuides({
-        //     count: 2,       
-        //     color: 'rgba(255,0,0,0.5)',
-        //     thickness: 30,
-        //     spacing: 40     
-        // });        
-    });
+    // $(function() {
+    //     // const horizontalLines = createHorizontalGuides({
+    //     //     count: 2,       
+    //     //     color: 'rgba(255,0,0,0.5)',
+    //     //     thickness: 30,
+    //     //     spacing: 40     
+    //     // });        
+    // });
 
 
 

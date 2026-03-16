@@ -156,3 +156,14 @@
   .content-wrap .cont-head .step-area .tit-box .tit {font-size: 21px;line-height: 150%;margin-top: 15px;}
   .content-wrap .cont-body .cont-advice .accordion-btn, .content-wrap .cont-body .cont-advice .accordion-body {padding: 15px 20px;}    
 }
+
+@media screen and (max-width: 390px) {  
+  .content-wrap .cont-head .step-area{display: block;}
+  .content-wrap .cont-head .step-area .step-wrap{margin-left: -34px;}
+  .content-wrap .cont-head .step-area .step-box{margin-top: 15px;}
+  .content-wrap .cont-head .step-area .tit-box .tit{margin-top: 10px;}
+  .content-wrap .cont-body .cont-advice .accordion-btn{padding: 16px;}
+  
+  
+}
+

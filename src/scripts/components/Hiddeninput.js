@@ -3,6 +3,7 @@ class Hiddeninput {
         showNum: 0,
         numberOnly: false,
         toggleBtn: false,
+        maskLast: 0
     }
 
     constructor(ele, props) {
@@ -93,12 +94,27 @@ class Hiddeninput {
         const input = this.ele[0];
         this.ele.data('value', this.actualValue);
 
+        console.log(this.actualValue);
+
         if (this.isVisible) {
             input.value = this.actualValue;
         } else {
-            const visiblePart = this.actualValue.slice(0, this.props.showNum);
-            const maskedPart = '*'.repeat(Math.max(0, this.actualValue.length - this.props.showNum));
-            input.value = visiblePart + maskedPart;
+
+            // maskLast가 설정된 경우 → 뒤에서 마스킹
+            if (this.props.maskLast > 0) {
+                const maskCount = Math.min(this.props.maskLast, this.actualValue.length);
+                const visiblePart = this.actualValue.slice(0, this.actualValue.length - maskCount);
+                const maskedPart = '*'.repeat(maskCount);
+
+                input.value = visiblePart + maskedPart;
+
+            } else {
+                // 기존 로직 유지
+                const visiblePart = this.actualValue.slice(0, this.props.showNum);
+                const maskedPart = '*'.repeat(Math.max(0, this.actualValue.length - this.props.showNum));
+
+                input.value = visiblePart + maskedPart;
+            }
         }
     }
 

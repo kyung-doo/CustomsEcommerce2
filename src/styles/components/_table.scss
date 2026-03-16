@@ -212,3 +212,8 @@
 @media screen and (max-width: 480px) {
   .wrap-check-tbl .mo .wrap-body.box-line .body li {padding: 15px;border-radius: 5px;gap: 10px 0;}
 }
+
+@media screen and (max-width: 390px) {
+  .table-wrap.mo .title{width:90px;min-width: 90px;}
+  .table-wrap.mo .txt{width: calc(100% - 90px);}
+}

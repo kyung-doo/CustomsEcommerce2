@@ -242,11 +242,20 @@
   .wrap-form-area .nowrap-box {width: 100%;}
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li .step-tit{font-size:15px;}
   .wrap-form-area .inp-form .step-area.type1{padding: 32px 16px 0 16px;}  
+  .wrap-form-area .inp-form .inp-box .check-list-box{gap: 16px;}
 
   /* 예상세액 조회 구입물품 */
   .purchased-item .purchased-area{width:100%;}
 }
 
 @media screen and (max-width: 390px) {
-  .wrap-form-area .inp-form .state-keeper{    min-width: 100%;}
+  .wrap-form-area .inp-form .state-keeper{min-width: 100%;}
+  .wrap-form-area .inp-form li.txt-list .tit {width: 90px !important;min-width: 90px !important;}  
+  .wrap-form-area .inp-form{padding: 16px;}
+  .wrap-form-area .copy-box{word-break: break-word;}
+  .wrap-form-area .inp-form .inp-box.nowrap-list-type1{display: flex;flex-direction: column;gap: 0 !important;}
+  .wrap-form-area .inp-form .inp-box.nowrap-list-type1 .form-group{width:100%;min-width:100%;}
+  .wrap-form-area .inp-form:has(.form-btn-area){padding: 72px 16px 16px 16px;}
+  .wrap-form-area .inp-form ul .vc-list .form-group{display: flex;flex-direction: column;}
+  .wrap-form-area .inp-form ul .vc-list .form-group input[type=text]{width:100%;}
 }

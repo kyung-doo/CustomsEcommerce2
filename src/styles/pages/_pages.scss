@@ -840,7 +840,13 @@ body.common-loading, html.common-loading {overflow: hidden;}
 //   .search-box .form-chip input[type=checkbox]:checked + label:before{left: 30%;}
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
   /* 개인정보처리방침 */
   .privacy .li_w20 > li {width: 100%;}
+
+  [class*="txt-box-type"],
+  .search-box,
+  .add-title .txt{padding: 16px;}
+
+  .acc-area .tit .box{gap: 16px;}      
 }
