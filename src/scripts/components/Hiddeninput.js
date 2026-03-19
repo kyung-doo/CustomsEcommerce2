@@ -14,6 +14,8 @@ class Hiddeninput {
         this.toggleBtn = null;
         this.isVisible = false;
         this.isComposing = false;
+        this.isMobile = 'ontouchstart' in window;
+        console.log(this.isMobile)
         this.init();
     }
 
@@ -32,12 +34,20 @@ class Hiddeninput {
             this.onInput(); 
         });
         this.ele.on('beforeinput', (e) => {
-            if (this.isComposing) return;
-            this.onBeforeInput(e);
+            if(this.isMobile) {
+                this.onBeforeInput(e);    
+            } else {
+                if (this.isComposing) return;
+                this.onBeforeInput(e);
+            }
         });
         this.ele.on('input', () => {
-            if (!this.isComposing) {
+            if(this.isMobile) {
                 this.onInput();
+            } else {
+                if (!this.isComposing) {
+                    this.onInput();
+                }
             }
         });
         if (this.props.toggleBtn) {
@@ -82,7 +92,16 @@ class Hiddeninput {
             }
             this.actualValue = newValue;
         } else if(inputType === 'insertCompositionText') {
-            return;
+            if(this.isMobile) {
+                newValue = this.actualValue.slice(0, selectionStart) + data + this.actualValue.slice(selectionEnd);
+                if (maxLength >= 0 && newValue.length > maxLength) {
+                    e.preventDefault();
+                    return;
+                }
+                this.actualValue = newValue;
+            } else {
+                return;
+            }
         } else if (inputType === 'deleteContentBackward') {
             if (selectionStart !== selectionEnd) {
                 this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionEnd);
