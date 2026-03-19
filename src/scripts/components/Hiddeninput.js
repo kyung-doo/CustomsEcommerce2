@@ -10,7 +10,7 @@ class Hiddeninput {
         this.ele = ele;
         this.props = props;
         this.actualValue = '';
-        this.regex = this.props.numberOnly ? /^[0-9]+$/ : /^[^\u3131-\u314E가-힣\s]+$/;
+        this.regex = this.props.numberOnly ? /^[0-9]+$/ : /^[^\u3131-\u318E\u1100-\u11FF가-힣\u00B7\u2022\s]+$/;
         this.toggleBtn = null;
         this.isVisible = false;
         this.isComposing = false;
