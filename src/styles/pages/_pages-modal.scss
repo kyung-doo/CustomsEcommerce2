@@ -85,6 +85,15 @@
 .customs-guide + .txt-box-type{border:1px solid #E6E8EA;border-top-right-radius: 0;border-top-left-radius: 0;margin-top: 0;}
 .customs-guide + .txt-box-type p{line-height: 150%;}
 
+/** 실명인증 **/
+.modal.auth-new .wrap-form-area .inp-form {border:0;padding:0;}
+.modal.auth-new .wrap-form-area .inp-form > ul li{margin-left:0;}
+.modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box{display:flex;flex-direction: column;align-items: flex-start;gap: 8px;}
+.modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box .box1{display:flex;align-items: center;gap: 8px;}
+.modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box .box1 .captcha-box{display:flex;}
+.modal.auth-new .wrap-form-area .inp-form > ul{margin-left:0;}
+.modal.auth-new .txt-box-type.type2 li{padding-top:0;}
+
 
 @media screen and (max-width: 767px) {
   /* 레이어팝업 국민비서 */
@@ -115,4 +124,12 @@
   .modal-wrap .modal-footer.chk-footer{justify-content: space-between;margin-bottom: 0;}
   .modal-wrap .modal-footer.chk-footer .form-check{margin: 0;justify-content: flex-start;}
   .modal-wrap .modal-footer.chk-footer .btn-box{justify-content: flex-end;width: 100%;}
+}
+
+@media screen and (max-width: 390px) {
+  .modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box .box1{display: flex;flex-direction: row;width: 100%;align-items: flex-start;flex-wrap: wrap;}
+  .modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box .box1 .captcha-box,
+  .modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box .box1 .captcha-box img{width:100%}
+  .modal.auth-new .wrap-form-area .inp-form > ul li.list3 .inp-box .box1 button{width:auto !important;}
+
 }

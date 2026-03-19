@@ -56,7 +56,79 @@
                </div>
             </div>
             <!-- 내용 -->
-            <div class="cont-area">
+            <div class="cont-area">               
+               <button type="button" class="btn secondary medium" data-modal-target="#modal20260318">산규인증 레이어팝업</button>
+               <div id="modal20260318" class="modal d-none auth-new" data-ui="modal">
+                  <div class="modal-wrap mw-400">
+                     <div class="modal-header">
+                        <h5>신규인증</h5>                     
+                     </div>
+                     <div class="modal-body" tabindex="0">
+                        <div class="modal-cont">
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>
+                                    <li class="col1 list1">
+                                       <label for="ex11" class="tit">이름 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <div class="form-group medium">                     
+                                             <div class="form-conts">
+                                                <input type="text" id="ex11" class="input" value="홍길동" title="이름을 입력해주세요">
+                                             </div>                           
+                                          </div>
+                                       </div>  
+                                    </li>  
+                                    <li class="col1 list2">
+                                       <label for="ex22" class="tit">주민등록번호 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box nowrap-list">
+                                          <div class="form-group medium">                     
+                                             <div class="form-conts">
+                                                <input type="text" class="input" id="ex22" value="991231" title="주민등록번호 앞자리를 입력해주세요">
+                                             </div>                           
+                                          </div>   
+                                          <i class="hy">-</i>
+                                          <div class="form-group medium">                     
+                                             <div class="form-conts">                                    
+                                                <input type="text" class="input" title="주민등록번호 뒷자리를 입력해주세요" data-ui="hidden-input" value="1234567" data-props="showNum: 1;numberOnly: true">
+                                             </div>                           
+                                          </div>   
+                                       </div>                                                
+                                       <div class="txt-box-type type2">                              
+                                          <ul class="top-list-box"> 
+                                             <li>외국인의 경우 외국인등록번호를 입력해주세요.</li>                     
+                                             <li>관세법시행령 제289조에 따라 주민등록번호 수집이 가능합니다.</li>
+                                          </ul>
+                                       </div>
+                                    </li>                                         
+                                    <li class="col1 list3">
+                                       <label for="ex211" class="tit">자동입력방지코드 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <div class="box1">
+                                             <div class="captcha-box">                
+                                                <img id="captchaImg" alt="자동입력방지코드" src="../assets/image/captchaImg.png">
+                                             </div>          
+                                             <button type="button" class="btn text medium">초기화 <i class="icon refresh medium"></i></button>
+                                             <button type="button" class="btn text medium">음성 <i class="icon voice medium"></i></button>                                                           
+                                          </div>
+                                          <div class="form-group medium">                     
+                                             <div class="form-conts">
+                                                <input type="text" class="input" value="123456" title="자동입력방지코드를 입력해주세요" placeholder="자동입력방지코드">
+                                             </div>                                          
+                                          </div>                                 
+                                       </div>
+                                    </li>                   
+                                 </ul>    
+                              </div>
+                           </div>                           
+                        </div>                        
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn modal-enter primary medium">실명인증</button>
+                     </div>
+                  </div>
+               </div> 
+
                <div class="form-group medium">                     
                   <div class="form-conts">
                      <input type="text" id="pass1" class="input" placeholder="내용을 입력해주세요" title="정보를 입력해주세요" data-ui="hidden-input" data-props="toggleBtn: true">
@@ -776,7 +848,7 @@
                            <div class="inp-box nowrap-list-type2 email-inp-box">
                               <div class="form-group medium mw-283 email-id">                     
                                  <div class="form-conts">
-                                    <input type="text" id="ex5" class="input" value="hongGilDong" title="아이디를 입력해주세요">
+                                    <input type="text" id="ex5" class="input" value="hongGilDong" title="아이디를 입력해주세요" readonly>
                                  </div>                           
                               </div>
                               <i class="hy">@</i>
