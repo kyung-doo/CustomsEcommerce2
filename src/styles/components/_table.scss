@@ -21,6 +21,9 @@
 .add-title .txt, .tb-tit .txt {margin-left: 6px;display: flex;flex-wrap: wrap;align-items: center;}
 .add-title .num-area, .tb-tit .num-area {display: flex;align-items: center;line-height: 1;}
 .add-title .number, .tb-tit .number {display: inline-block;color: #1D56BC;font-style: normal;margin-left: 6px;}
+.add-title .number{margin-left: 0;}
+.add-title .txt{gap:8px}
+.add-title .max-num{margin: 0 0 0 6px !important;}
 .add-title .max-num, .tb-tit .max-num {margin: 8px 0 8px 6px;}
 
 .table-wrap {position: relative;min-width: 100%;width: 100%;/*min-height: 125px;*/}

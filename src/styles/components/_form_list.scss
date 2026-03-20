@@ -38,7 +38,7 @@
 
 /* 텍스트 유형 리스트 */
 .wrap-form-area .inp-form .txt-list {display: flex;margin-left: 40px;align-items: center;}
-.wrap-form-area .inp-form .txt-list .tit {width: 160px;min-width: 160px;line-height: 150%;padding-right: 0;height: 100%;}
+.wrap-form-area .inp-form .txt-list .tit {width: 160px;min-width: 160px;line-height: 150%;padding-right: 0;/*height: 100%;*/}
 .wrap-form-area .inp-form .txt-list .title {display: flex;position: relative;}
 .wrap-form-area .inp-form .txt-list .inp-box {display: block;padding-left: 30px;flex: 1;margin-top: 0;width: calc(100% - 160px);}
 .wrap-form-area .inp-form .txt-list .inp-box .txt {line-height: 150%;display: block;}

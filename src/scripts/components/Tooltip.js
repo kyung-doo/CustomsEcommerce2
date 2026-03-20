@@ -35,6 +35,7 @@ class Tooltip {
                     
                     tooltipAct.css({"left":-tb})
                     tooltipAct.css({"left":-list})
+                    
                 }
                 
 
@@ -83,6 +84,8 @@ class Tooltip {
                 tooltipIco.removeClass("active");                                             
             }
         })
+
+        
     }
 }
 

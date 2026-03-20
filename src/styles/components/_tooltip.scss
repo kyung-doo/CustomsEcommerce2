@@ -37,7 +37,12 @@
 }
 
 @media screen and (max-width: 390px) { 
-   .tooltip-action{width: 250px;}
-   .contextual-help .tooltip-action.active{left:-100px !important}
+   // .tooltip-action{width: 250px;}
+   .wrap-form-area .inp-form .contextual-help .tooltip-action.active{left: -17px !important;width: 91vw;}
+   .wrap-form-area .inp-form .contextual-help{margin-left: 0;}
+   .wrap-form-area .inp-form .contextual-help,
+   .wrap-form-area .inp-form .contextual-help .tooltip-btn-area{position: static !important;}
+   .wrap-form-area .inp-form .tooltip-ico:before{display: none !important;}
+   .wrap-form-area .inp-form .tooltip-ico{height: 29px;background-repeat: no-repeat;}   
 }
 
