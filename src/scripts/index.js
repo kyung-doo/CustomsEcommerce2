@@ -154,17 +154,17 @@ $(() => {
     
 
     //화면 넓이
-    // $(document).ready(function() {        
-    //     function updateWidth() {                      
-    //         var width = $(window).width();
-    //         $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
-    //     }
-    //     updateWidth();
+    $(document).ready(function() {        
+        function updateWidth() {                      
+            var width = $(window).width();
+            $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
+        }
+        updateWidth();
 
-    //     $(window).resize(function() {
-    //         updateWidth();
-    //     });        
-    // });    
+        $(window).resize(function() {
+            updateWidth();
+        });        
+    });    
 
 
 

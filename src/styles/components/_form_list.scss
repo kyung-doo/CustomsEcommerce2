@@ -46,7 +46,7 @@
 .wrap-form-area .inp-form .compulsory-title {margin-top: 10px;}
 .wrap-form-area.type1 .inp-form li.txt-list {flex-direction: column;}
 .wrap-form-area.type1 .inp-form li.txt-list .inp-box {text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}
-.wrap-form-area.type1 .inp-form li.txt-list .add-tit {font-size: 19px;display: flex;align-items: center;width: 100%;padding-right: 155px;line-height: 150%;}
+.wrap-form-area.type1 .inp-form li.txt-list .add-tit {font-size: 19px;display: flex;align-items: center;width: 100%;/*padding-right: 155px;*/line-height: 150%;}
 .wrap-form-area.type1 .inp-form li.txt-list .add-tit .add-modify-btn {font-size: 0;width: 0;background-color: rgba(0, 0, 0, 0);margin-left: 8px;height:20px !important}
 .wrap-form-area.type1 .inp-form li.txt-list .add-txt {color: #555;line-height: 150%;}
 
@@ -197,6 +197,9 @@
   .wrap-form-area .calendar .calendar-form,
   .wrap-form-area .file-form [class*=col] .file-upload .txt-box {height: 40px !important;}
   .wrap-form-area.type1 .form-btn-area{top:23px;}
+
+  .wrap-form-area.type1:has(.add-tit) .inp-form{padding: 70px 24px 24px 24px !important;}  
+
   .wrap-form-area .inp-form .email-inp-box{flex-wrap: wrap;}
   .wrap-form-area .inp-form .state-keeper{flex:1}
   .wrap-form-area .inp-form .email-id{width: calc(100% - 23px);}
