@@ -14,8 +14,8 @@ class Hiddeninput {
         this.toggleBtn = null;
         this.isVisible = false;
         this.isComposing = false;
+        this.backspaceHandled = false;
         this.isMobile = 'ontouchstart' in window;
-        console.log(this.isMobile)
         this.init();
     }
 
@@ -24,16 +24,24 @@ class Hiddeninput {
     init() {
         this.actualValue = this.ele.val();
         this.onInput();
+
+        this.ele.on('keydown', () => {
+            this.backspaceHandled = false;
+        });
+
         this.ele.on('compositionstart', () => {
             this.isComposing = true;
         });
-        // 조합 종료 (엔터를 치거나 다른 글자로 넘어갈 때)
+
         this.ele.on('compositionend', (e) => {
             this.isComposing = false;
-            // 조합이 끝난 최종 텍스트를 actualValue에 반영
             this.onInput(); 
         });
+
         this.ele.on('beforeinput', (e) => {
+            if (e.originalEvent.inputType === 'deleteContentBackward') {
+                this.backspaceHandled = true;
+            }
             if(this.isMobile) {
                 this.onBeforeInput(e);    
             } else {
@@ -41,15 +49,44 @@ class Hiddeninput {
                 this.onBeforeInput(e);
             }
         });
-        this.ele.on('input', () => {
+        this.ele.on('input keyup', (e) => {
             if(this.isMobile) {
                 this.onInput();
             } else {
+                const hangulRegex = /[\u3131-\u318E\u1100-\u11FF가-힣]/g;
+                const currentVal = this.ele.val();
+                if (hangulRegex.test(currentVal)) {
+                    setTimeout(() => {
+                        this.isComposing = false;
+                        this.onInput();
+                    }, 300);
+                    return;
+                }
                 if (!this.isComposing) {
                     this.onInput();
                 }
             }
         });
+
+        this.ele.on('keyup', (e) => {
+            if (e.key === 'Backspace' || e.keyCode === 8) {
+                
+                if (!this.backspaceHandled) {
+                    const input = this.ele[0];
+                    const { selectionStart, selectionEnd } = input;
+                    
+                    if (selectionStart !== selectionEnd) {
+                        this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionEnd);
+                    } else if (selectionStart > 0) {
+                        this.actualValue = this.actualValue.slice(0, selectionStart - 1) + this.actualValue.slice(selectionEnd);
+                    }
+                    
+                    this.isComposing = false;
+                    this.onInput();
+                }
+            }
+        });
+
         if (this.props.toggleBtn) {
             this.toggleBtn = $(`<button type="button" title="비밀번호 표시" class="visibility-btn"><i class="icon visibility medium"></i></button>`);
             this.ele.after(this.toggleBtn);
