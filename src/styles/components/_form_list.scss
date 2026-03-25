@@ -12,7 +12,8 @@
 .wrap-form-area .inp-form > ul .tit + .form-group {display: flex;align-items: center;gap: 8px;margin-top: 9px;}
 .wrap-form-area .inp-form > ul li {margin-left: 40px;padding-top: 25px;min-width: 100px;align-items: flex-start;}
 .wrap-form-area #copyMsg{height:13px;position: absolute;}
-.wrap-form-area .copy-box{display: flex;align-items: center;gap: 5px;}
+.wrap-form-area .copy-box{}
+.wrap-form-area .copy-box i{background-position: 0px 1px;}
 
 /* 타이틀 전체 넓이 조절 */
 @for $i from 1 through 100 {
@@ -198,7 +199,7 @@
   .wrap-form-area .file-form [class*=col] .file-upload .txt-box {height: 40px !important;}
   .wrap-form-area.type1 .form-btn-area{top:23px;}
 
-  .wrap-form-area.type1:has(.add-tit) .inp-form{padding: 70px 24px 24px 24px !important;}  
+  .wrap-form-area.type1:has(.add-tit) .inp-form{padding: 55px 24px 24px 24px !important;}  
 
   .wrap-form-area .inp-form .email-inp-box{flex-wrap: wrap;}
   .wrap-form-area .inp-form .state-keeper{flex:1}
@@ -253,7 +254,7 @@
 
 @media screen and (max-width: 390px) {
   .wrap-form-area .inp-form .state-keeper{min-width: 100%;}
-  .wrap-form-area .inp-form li.txt-list .tit {width: 90px !important;min-width: 90px !important;}  
+  // .wrap-form-area .inp-form li.txt-list .tit {width: 90px !important;min-width: 90px !important;}  
   .wrap-form-area .inp-form{padding: 16px;}
   .wrap-form-area .copy-box{word-break: break-word;}
   .wrap-form-area .inp-form .inp-box.nowrap-list-type1{display: flex;flex-direction: column;gap: 0 !important;}

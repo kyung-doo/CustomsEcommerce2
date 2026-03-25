@@ -16,13 +16,13 @@
 
 /* 레이어팝업 국민비서 */
 .modal-body .population-list img {width: 100%;height: auto;}
-.modal-body .population-list strong {color: #246BEB;}
+.modal-body .population-list strong {color: #246BEB;min-width: 22px;}
 .modal-body .population-list p {margin-top: 12px;display: flex;gap: 13px;}
 .modal-body .population-txt-box {border-radius: 12px;background-color: #EFF5FF;padding: 45px 302px 45px 40px;position: relative;margin-bottom: 20px;}
 .modal-body .population-txt-box .txt {font-size: 25px;color: #16408D;}
 .modal-body .population-txt-box .main-txt {font-size: 19px;line-height: 150%;margin-top: 20px;}
 .modal-body .population-txt-box .main-txt span {font-weight: 700;color: #246BEB;}
-.modal-body .population-txt-box .img-box {position: absolute;top: 50%;right: 40px;transform: translateY(-50%);width: 313px;height: 280px;}
+.modal-body .population-txt-box .img-box {position: absolute;top: 50%;right: 40px;transform: translateY(-50%);width: 313px;/*height: 280px;*/}
 .modal-body .population-txt-box .img-box img {width: 100%;}
 .modal-body .population-txt-box .sub-txt {margin-top: 30px;display: flex;gap: 8px;}
 .modal-body .population-txt-box .sub-txt span {color: #464C53;position: relative;line-height: 150%;}
@@ -101,7 +101,7 @@
   .population-box .modal-footer button {width: 100%;}  
   .modal-body .population-txt-box {padding: 24px;}
   .modal-body .population-txt-box .img-box {position: static;transform: translateY(0);text-align: center;width: 100%;}
-  .modal-body .population-txt-box .img-box img {width: 280px;}
+  .modal-body .population-txt-box .img-box img {max-width: 280px;}
   .modal-body .population-txt-box .main-txt br {display: none;}
 
   /* 레이어팝업 주소검색 */

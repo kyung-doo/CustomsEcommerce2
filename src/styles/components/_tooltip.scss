@@ -38,11 +38,11 @@
 
 @media screen and (max-width: 390px) { 
    // .tooltip-action{width: 250px;}
-   .wrap-form-area .inp-form .contextual-help .tooltip-action.active{left: -17px !important;width: 91vw;}
-   .wrap-form-area .inp-form .contextual-help{margin-left: 0;}
-   .wrap-form-area .inp-form .contextual-help,
-   .wrap-form-area .inp-form .contextual-help .tooltip-btn-area{position: static !important;}
-   .wrap-form-area .inp-form .tooltip-ico:before{display: none !important;}
-   .wrap-form-area .inp-form .tooltip-ico{height: 29px;background-repeat: no-repeat;}   
+   .contextual-help .tooltip-action.active{left: -17px !important;width: 91vw;}
+   .contextual-help{margin-left: 0 !important;}
+   .contextual-help,
+   .contextual-help .tooltip-btn-area{position: static !important;}
+   .tooltip-ico:before{display: none !important;}
+   .tooltip-ico{height: 29px !important;background-repeat: no-repeat;}   
 }
 

@@ -15,8 +15,8 @@ input[type=file] {display: block;position: absolute;width: 0;height: 0;opacity: 
 .file-upload.line .upload-list {display: flex;flex-direction: column;}
 .file-upload.line .upload-list li {position: relative;}
 .file-upload.line .upload-list li.is-error::before {display: none;}
-.file-upload.line .upload-list li::before, .file-upload.line .upload-list li.is-error .file-name::before {content: "";display: block;position: absolute;top: 14px;left: 0;width: 5px;height: 5px;background-color: #555;border-radius: 50%;}
-.file-upload.line .upload-list .file-name {padding-right: 20px;display: flex;align-items: center;width: 80%;display: block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-height: 32px;}
+.file-upload.line .upload-list li::before, .file-upload.line .upload-list li.is-error .file-name::before {content: "";display: block;position: absolute;top: 13px;left: 0;width: 5px;height: 5px;background-color: #555;border-radius: 50%;}
+.file-upload.line .upload-list .file-name {padding-right: 20px;display: flex;align-items: center;width: 100%;display: block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-height: 32px;}
 .file-upload.line .upload-list .file-info {border-radius: 4px;padding: 0 0 0 12px;position: relative;display: flex;justify-content: space-between;}
 .file-upload.line .upload-list .file-info .btn-wrap {display: flex;align-items: center;}
 .file-upload.line .upload-list .btn-wrap button {display: flex;background-color: rgba(0, 0, 0, 0);align-items: center;}
@@ -28,7 +28,7 @@ input[type=file] {display: block;position: absolute;width: 0;height: 0;opacity: 
 .file-upload.line .upload-list .file-hint-invalid {display: flex;border-top: 1px solid #D8D8D8;padding-top: 12px;align-items: flex-start;}
 .file-upload.line .upload-list .file-hint-invalid .txt {color: #D50136;padding-left: 4px;}
 .file-upload.line .upload-list .file-hint-invalid .danger {margin-top: 2px;}
-.file-upload.line .upload-list .file-down button, .file-upload.line .upload-list .file-down a {align-items: center;gap: 4px;padding: 0;display: inline-flex;}
+.file-upload.line .upload-list .file-down button, .file-upload.line .upload-list .file-down a {align-items: center;gap: 4px;padding: 0;}
 .file-upload.line .upload-list .file-down .btn-wrap {gap: 16px;justify-content: flex-end;flex: 1;}
 .file-upload.line .upload-delete-btn {position: absolute;top: -4px;right: 0;}
 .file-upload.line .upload-delete-btn button {background-color: rgba(0, 0, 0, 0);display: flex;align-items: center;gap: 4px;border: 0;}

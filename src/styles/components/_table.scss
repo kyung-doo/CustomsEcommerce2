@@ -151,6 +151,7 @@
 .wrap-faq .body .accordion-body .txt {line-height: 150%;margin-top: 21px;}
 .wrap-faq .body .accordion-body .title-type3 {margin-top: 0;line-height: 1;}
 .wrap-faq .body .accordion-body .upload-list {gap: 8px;}
+.wrap-faq .file-info.m-column.file-down a{display: inline !important;}
 
 .wrap-faq.type1 .wrap-accordion-btn {position: relative;}
 .wrap-faq.type1 .accordion-wrap .accordion-btn {padding: 0 50px 0 0;}
@@ -217,6 +218,6 @@
 }
 
 @media screen and (max-width: 390px) {
-  .table-wrap.mo .title{width:90px;min-width: 90px;}
-  .table-wrap.mo .txt{width: calc(100% - 90px);}
+  // .table-wrap.mo .title{width:90px;min-width: 90px;}
+  // .table-wrap.mo .txt{width: calc(100% - 90px);}
 }

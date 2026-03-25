@@ -68,6 +68,13 @@ class Modal {
         }else{
             $("body").css({'overflow': 'hidden'});            
         }     
+
+        if(this.ele.attr('id') === 'in-search'){
+            $("body").css({'overflow': 'hidden'});       
+            $(window).resize(function(){
+                $("body").css({'overflow': 'hidden'});       
+            })
+        }
         
         //관련누리집, 세관 바로가기 클릭하면 닫기
         $('.footer-quick-pop a').click(function(){

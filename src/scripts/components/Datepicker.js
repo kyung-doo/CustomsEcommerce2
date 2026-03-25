@@ -740,7 +740,7 @@ class Datepicker {
             this.calendar.find(".btn-prev").off("focusin focusout");
             this.calendar.remove();            
         }
-        this.btn.focus();
+        // this.btn.focus();
         this.isShow = false;
         this.selectDate = null;
         

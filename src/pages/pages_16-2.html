@@ -13,7 +13,7 @@
             <h4 class="sr-only">빈텍스트</h4>         
          </div>
          <div class="cont-body">
-            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
+            <div class="accordion-wrap accordion cont-advice no-print" data-ui="accordion">
                <div class="accordion-header">
                   <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호란?</strong> <i class="icon btn-arrow-down medium"></i></a>
                </div>
@@ -23,7 +23,7 @@
             </div>                                                      
             <!-- 내용 -->
             <div class="cont-area">
-               <div class="search-box">
+               <div class="search-box no-print">
                   <ul>                                   
                      <li class="col1">
                         <div class="form-check medium tit">
@@ -77,19 +77,19 @@
                      </div>
                   </div>
                </div>
-               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <p class="compulsory-txt no-print"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
                <div class="board-top no-wrap title-top">
                   <div class="left-box">
                      <h5 class="title-type">통관정보 상세정보</h5>      
                   </div>   
-                  <div class="right-box">
-                     <button type="button" class="btn tertiary medium">인쇄</button>
+                  <div class="right-box no-print">
+                     <button type="button" class="btn tertiary medium" onclick="window.print();">인쇄</button>
                      <button type="button" class="btn tertiary medium">엑셀 다운로드</button>
                   </div>               
                </div>
                <div class="wrap-form-area">
                   <div class="inp-form">
-                     <div class="step-area type1 dotted-line-right">                        
+                     <div class="step-area type1 dotted-line-right no-print">                        
                         <div class="step-box">
                            <ol class="step-wrap step-type2">
                               <li>
@@ -436,7 +436,7 @@
                      </table>                     
                   </div>                  
                </div>
-               <div class="pagination pagination-type1 fpc">               
+               <!-- <div class="pagination pagination-type1 fpc no-print">               
                   <button class="page-navi prev" disabled="">이전</button>
                   <div class="page-links">
                      <a class="page-link mobile-link" href="#">1</a>
@@ -453,14 +453,14 @@
                      <a class="page-link mobile-link" href="#">120</a>
                   </div>
                   <button class="page-navi next">다음</button>
-               </div>
-               <div class="btn-area">
+               </div> -->
+               <div class="btn-area no-print">
                   <div class="align">                            
                      <button type="button" class="btn tertiary large">목록</button>                 
                   </div>
                </div>
             <!-- 팝업 사용후 삭제해주세요 -->
-            <div class="testtest">
+            <div class="testtest no-print">
                <!-- 수입화물 진행정보 상세조회 -->
                <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">수입화물 진행정보 상세조회</button>   
                <div id="modal1" class="modal d-none" data-ui="modal">

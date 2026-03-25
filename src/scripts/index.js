@@ -2,9 +2,6 @@
 $(() => {
 
 
-//     $('.testr').on('input', function () {
-//     console.log($(this).data().value);
-// });
   
     // $('.phone-select').on('change', function () {
     //     if ($(this).val() === 'direct') {
@@ -65,11 +62,11 @@ $(() => {
     // }
 
     // 초기 적용
-    setTitles(document);
+    // setTitles(document);
 
     // 동적 추가 버튼 처리
-    new MutationObserver(muts => muts.forEach(m => m.addedNodes.forEach(n => n.nodeType===1 && setTitles(n))))
-    .observe(document.body, { childList:true, subtree:true });  
+    // new MutationObserver(muts => muts.forEach(m => m.addedNodes.forEach(n => n.nodeType===1 && setTitles(n))))
+    // .observe(document.body, { childList:true, subtree:true });  
 
     // document.querySelectorAll(".purchased-item").forEach(wrapper => {
     //     const button = wrapper.querySelector(".purchased-btn button");
@@ -137,34 +134,32 @@ $(() => {
     //     });
     // });
     
-    
-    
     //파비콘
     // const favicon = document.getElementById("favicon");
     // favicon.href = "../assets/icons/favicon-icon.svg";
 
 
-    //$('.testtest').remove();
+    // $('.testtest').remove();
     // $('.testtest > button').removeAttr('style');
 
-    // 표시는 필수 입력 사항입니다.    
+    //표시는 필수 입력 사항입니다.    
     // $('.compulsory-txt .compulsory').remove();
     // $('.compulsory-txt').text('');
     // $('.compulsory-txt').append(`<i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.`)
     
 
     //화면 넓이
-    $(document).ready(function() {        
-        function updateWidth() {                      
-            var width = $(window).width();
-            $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
-        }
-        updateWidth();
+    // $(document).ready(function() {        
+    //     function updateWidth() {                      
+    //         var width = $(window).width();
+    //         $('#wrap').append(`<div id="width-display" style="position: fixed;top: 0px;right: 0px;background: #333;color: #fff;padding: 5px 10px;border-radius: 5px;z-index:9999">${width}</div>`)
+    //     }
+    //     updateWidth();
 
-        $(window).resize(function() {
-            updateWidth();
-        });        
-    });    
+    //     $(window).resize(function() {
+    //         updateWidth();
+    //     });        
+    // });    
 
 
 
@@ -255,12 +250,12 @@ $(() => {
 
     // 사용 예시
     // $(function() {
-    //     // const horizontalLines = createHorizontalGuides({
-    //     //     count: 2,       
-    //     //     color: 'rgba(255,0,0,0.5)',
-    //     //     thickness: 30,
-    //     //     spacing: 40     
-    //     // });        
+    //     const horizontalLines = createHorizontalGuides({
+    //         count: 2,       
+    //         color: 'rgba(255,0,0,0.5)',
+    //         thickness: 32,
+    //         spacing: 40     
+    //     });        
     // });
 
 
