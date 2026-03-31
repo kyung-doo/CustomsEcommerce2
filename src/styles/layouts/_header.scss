@@ -64,7 +64,7 @@
 
 /* 알림 팝업 */
 #header .header-actions .popup-box {position: relative;height: 100%;}
-#header .header-actions .popup-box .btn-navi.popup.active::after {content: "";display: block;position: absolute;top: calc(100% + 10px);left: 40%;width: 12px;height: 12px;border: 1px solid #e4e4e4;border-right: 0;border-top: 0;transform: rotate(135deg);background-color: #fff;z-index: 9999;}
+#header .header-actions .popup-box .btn-navi.popup.active::after {content: "";display: block;position: absolute;top: calc(100% + 10px);left: 40%;width: 12px;height: 12px;border: 1px solid #e4e4e4;border-right: 0;border-top: 0;transform: rotate(135deg);background-color: #fff;z-index: 5;}
 #header .header-actions .popup-box .btn-navi.popup.active + .modal {display: block !important;}
 #header .header-actions .popup-box .modal {position: absolute;top: calc(100% + 16px);z-index: 1;width: 859px;border-radius: 11px;background-color: rgba(0, 0, 0, 0);}
 #header .header-actions .popup-box .modal .modal-dialog {overflow: hidden;border-radius: 11px;border: 1px solid #e4e4e4;background-color: #fff;box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.08);}
@@ -219,7 +219,7 @@
   #header .header-actions .popup-box .modal .modal-dialog .modal-header::before{content: "";position: absolute;bottom: 0;left: 50%;width: 97%;height: 1px;transform: translateX(-50%);background-color: #E4E4E4;}
   #header .header-actions .popup-box .modal .close-modal{top:9px}
   #header .header-actions .popup-box .modal .menu-list{margin-left: -16px;padding-left: 33px;padding-right: 0;}
-  #header .header-actions .popup-box .modal .contents{height: 332px;}
+  #header .header-actions .popup-box .modal .contents{height: 250px;}
   #header .header-actions .popup-box .modal .popup-btn-area .madal-btn-area {padding: 0 16px 16px 16px;}
   #header .header-actions .popup-box .modal .popup-btn-area .form-check{}
 

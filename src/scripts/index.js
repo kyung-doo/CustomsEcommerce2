@@ -1,21 +1,6 @@
 
 $(() => {
-
-
-  
-    // $('.phone-select').on('change', function () {
-    //     if ($(this).val() === 'direct') {
-    //         $(this).closest('.form-group').find('.phone-input').show().focus();
-    //         $(this).hide();
-    //     } else {
-    //         $(this).closest('.form-group').find('.phone-input').hide();
-    //         $(this).show();
-    //     }
-    // });
-
-  
-
-    
+        
     createUI();        
 
     // dom 변경 시 UI 다시 생성

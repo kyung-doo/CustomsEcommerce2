@@ -216,6 +216,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 .wrap-detail .detail-list li:last-child {padding-right: 0;}
 .wrap-detail .detail-list span {padding-left: 16px;}
 .wrap-detail .detail-txt {line-height: 150%;color: #2D2D2D;position: relative;padding: 24px 0;}
+.wrap-detail .detail-txt.iframe-ecp-txt{line-height: normal;}
 .wrap-detail .detail-txt .txt-area{min-height: 200px;}
 // .wrap-detail .detail-txt:has(.wrap-reply){min-height: 400px;}
 .wrap-detail .detail-txt::before {content: "";display: block;position: absolute;bottom: 0;left: 0;width: 100%;height: 2px;background-image: url(../assets/icons/dotted.svg);}
@@ -754,7 +755,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
   .search-box .btn-area::before .search-area {margin-top: 8px !important;}
   .search-box .advice-txt {display: block;width: 100%;}
   .search-box .form-chip {width: calc(25% - 4px);}
-  .search-box .form-chip .form-chip-outline {width: 100%;display: flex;font-size: 15px;}
+  .search-box .form-chip .form-chip-outline {width: 100%;display: flex;font-size: 15px;white-space: nowrap;gap: 2px;}
   // .search-box .form-chip input[type=radio]:checked + label:before, 
   // .search-box .form-chip input[type=checkbox]:checked + label:before{transform: translate(-50%, -50%);width:13px;height:13px;}  
   .search-box ul li .search-area{gap: 5px;}
@@ -835,6 +836,7 @@ body.common-loading, html.common-loading {overflow: hidden;}
 
 @media screen and (max-width: 400px) {
     .search-box .form-chip{width: calc(50% - 3px);}
+    // .search-box .form-chip .form-chip-outline{padding: 10px;}
     
     // .search-box .form-chip .form-chip-outline{padding-left: 0 !important;padding-right: 0;}
 //     .search-box .form-chip input[type=radio]:checked + label:before, 

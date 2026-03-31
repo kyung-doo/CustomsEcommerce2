@@ -44,6 +44,8 @@
 .wrap-form-area .inp-form .txt-list .inp-box {display: block;padding-left: 30px;flex: 1;margin-top: 0;width: calc(100% - 160px);}
 .wrap-form-area .inp-form .txt-list .inp-box .txt {line-height: 150%;display: block;}
 .wrap-form-area .inp-form .txt-list .inp-box .txt button {margin-left: 15px;}
+.wrap-form-area .inp-form .txt-list .inp-box.email-auth-title span{position: relative;}
+.wrap-form-area .inp-form .txt-list .inp-box.email-auth-title i{position: absolute;bottom: 1px;right: -20px;}
 .wrap-form-area .inp-form .compulsory-title {margin-top: 10px;}
 .wrap-form-area.type1 .inp-form li.txt-list {flex-direction: column;}
 .wrap-form-area.type1 .inp-form li.txt-list .inp-box {text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}

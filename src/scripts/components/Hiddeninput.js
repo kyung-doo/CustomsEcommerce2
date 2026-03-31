@@ -86,25 +86,6 @@ class Hiddeninput {
                 }
             }
         });
-
-        if (this.props.toggleBtn) {
-            this.toggleBtn = $(`<button type="button" title="비밀번호 표시" class="visibility-btn"><i class="icon visibility medium"></i></button>`);
-            this.ele.after(this.toggleBtn);
-
-            this.toggleBtn.on('click', () => {
-                const icon = this.toggleBtn.find('i');
-                this.isVisible = !this.isVisible;
-
-                if (this.isVisible) {
-                    icon.removeClass('visibility').addClass('visibility-off');
-                    this.toggleBtn.attr('title', '비밀번호 숨김');
-                } else {
-                    icon.removeClass('visibility-off').addClass('visibility');
-                    this.toggleBtn.attr('title', '비밀번호 표시');
-                }
-                this.onInput();
-            });
-        }
     }
 
     onBeforeInput(e) {
@@ -192,7 +173,30 @@ class Hiddeninput {
     destroy() {
         this.ele.off('beforeinput input');
     }
+    
 }
+
+//비밀번호 보이고 안보이고
+$(function(){
+    $('.visibility-btn').on('click', function() {
+    const $btn = $(this);
+    const $icon = $btn.find('i');
+    const $input = $btn.siblings('input');
+    
+    if ($icon.hasClass('visibility')) {
+        // 현재: 숨김 상태 → 보이기
+        $icon.removeClass('visibility').addClass('visibility-off');
+        $btn.attr('title', '비밀번호 숨김');
+        $input.attr('type', 'text');
+
+    } else if ($icon.hasClass('visibility-off')) {
+        // 현재: 보이는 상태 → 숨기기
+        $icon.removeClass('visibility-off').addClass('visibility');
+        $btn.attr('title', '비밀번호 표시');
+        $input.attr('type', 'password');
+    }
+});
+})
 
 $.fn.hiddeninput = function(option, params) {
     return this.each(function() {

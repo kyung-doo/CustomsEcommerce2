@@ -10,7 +10,7 @@
 .calendar .calendar-btn {position: absolute;top: 50%;right: 12px;transform: translateY(-50%);min-width: 24px;height: 24px;padding: 0;font-size: 0;background: center no-repeat url("../assets/icons/calendar.svg");background-color: transparent;}
 .calendar .hr {min-width: 15px;display: flex;justify-content: center;}
 
-.datepicker {width: 360px;position: fixed;left: 0;top: 0;z-index: 10;background-color: #FFF;border: 1px solid #CCC;}
+.datepicker {width: 360px;position: absolute;left: 0;top: 0;z-index: 10;background-color: #FFF;border: 1px solid #CCC;}
 .datepicker .calendar-header {display: flex;align-items: center;justify-content: center;gap: 8px;padding: 10px 24px;background-color: #EDF1F5;}
 .datepicker .calendar-header [class*=btn-] {background-color: transparent;font-size: 19px;}
 .datepicker .calendar-header [class*=btn-].btn-prev, .datepicker .calendar-header [class*=btn-].btn-next {display: flex;width: 16px;height: 16px;padding: 0;font-size: 0;position: relative;background-image: url("../assets/icons/calendar-btn.svg");background-position: center;}
@@ -46,7 +46,7 @@
 .datepicker .calendar-footer {display: flex;flex-direction: row;justify-content: flex-end;align-items: center;padding: 16px;border-top: 1px solid #E4E4E4;}
 
 @media screen and (max-width: 767px) {
-  .datepicker {left: 0 !important;top: 0 !important;width: 100%;height: 100%;z-index: 999;background-color: rgba(0, 0, 0, 0.5);}
+  .datepicker {left: 0 !important;top: 0 !important;width: 100%;height: 100%;z-index: 999;background-color: rgba(0, 0, 0, 0.5);position: fixed;}
   .datepicker .calendar-wrap {position: absolute;left: 50%;top: 50%;width: 360px;background-color: #FFF;transform: translate(-50%, -50%);}
 }
 @media screen and (max-width: 480px) {

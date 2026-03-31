@@ -107,10 +107,11 @@
 }
 @media screen and (max-width: 1023px) {
   /* 메뉴 */
-  #header:before {content: "";position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.8);z-index: 1;}
-  #header .main-menu {background: #fff;position: fixed;top: 0;right: 0;width: 390px;height: 100%;z-index: 9999;padding: 0 0 58px 0;}
+  #header:before {content: "";position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);z-index: 10;}
+  #header .main-menu {background: #fff;position: fixed;top: 0;right: 0;width: 100%;height: 100%;z-index: 9999;padding: 0 0 58px 0;}
   #header .main-menu:before {content: "";display: block;position: absolute;top: 108px;left: 0;width: 150px;height: 100%;background-color: #EDF1F5;}
   #header .main-menu .info-area {display: block;position: fixed;bottom: 0;border-top: 1px solid #D8D8D8;z-index: 999;width: 390px;background-color: #fff;padding: 23px 47px;font-size: 15px;color: #555;}
+  #wrap.login #header .main-menu .info-area{top: 57px;bottom: auto;border: 0;}
   #header .main-menu .info-area:before {content: "";display: block;position: absolute;top: 49%;left: 24px;width: 16px;height: 16px;transform: translateY(-50%);background-image: url("../assets/icons/live-area.svg");}
   #header .main-menu .mobile-close {position: absolute;top: 20px;right: 24px;font-size: 0;display: block;}
   #header .main-menu .gnb-menu {max-width: 100%;width: 100%;flex-direction: column;display: block;}
@@ -133,6 +134,7 @@
   #header .main-menu .gnb-main-list .gnb-list strong.sub-title {display: none;}
   #header .main-menu .gnb-main-list .gnb-list > li.last-menu {margin-top: 0;}
   #header .main-menu .gnb-main-list .gnb-list > li.last-menu.right-menu {margin-left: 0;margin-bottom: 65px;}
+  #wrap.login #header .main-menu .gnb-main-list .gnb-list > li.last-menu.right-menu{margin-bottom: 0;}
   #header .main-menu .gnb-main-list .gnb-list > li.w-auto {width: 100%;}
   #header .main-menu .gnb-main-list .gnb-list .depth2 a {padding: 8px 20px 8px 20px;}
   #header .main-menu .gnb-main-list .gnb-list .depth2 a i {display: inline-block;font-size: 15px;}

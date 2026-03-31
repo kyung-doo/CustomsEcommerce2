@@ -90,6 +90,10 @@
 .mopc {display: block !important;}
 .fmo {display: none !important;}
 
+@media screen and (max-width: 1023px) {
+  .main .content-wrap {background: #EBF5FF;}
+}
+
 @media screen and (max-width: 767px) {
   /* cont-head */
   .content-wrap .cont-head .head-util {flex-wrap: wrap;gap: 10px;}

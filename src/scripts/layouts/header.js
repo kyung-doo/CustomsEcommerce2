@@ -133,8 +133,8 @@ $(() => {
         ================================================== */
     $(".mobile-all-menu").on('click', function (e) {
         $("#wrap").addClass('mobile-open');
-        gsap.set($("#header .main-menu"), {x: 390});
-        gsap.to($("#header .main-menu"), 0.6, {x: 0, ease: Expo.easeInOut}); 
+        // gsap.set($("#header .main-menu"), {x: 390});
+        // gsap.to($("#header .main-menu"), 0.6, {x: 0, ease: Expo.easeInOut}); 
         $('.gnb-menu > li').removeClass('active')
         $('.dep1').addClass('active');        
         $('.sub-title').removeClass('mobile-dep-menu');

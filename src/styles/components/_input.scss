@@ -2,6 +2,7 @@
    Style Guide input
    ================================================== */
 .form-group input[type=text], .form-group input[type=password] {border-radius: 4px;background-color: #fff;border-width: 0;border-style: none;border: 1px solid #717171;padding: 0px 16px;}
+.form-group input[type=password]{}
 .form-group:has(.visibility-btn) {position:relative}
 .form-group:has(.visibility-btn) .input{padding-right:50px}
 .form-group:has(.visibility-btn) .visibility-btn{position:absolute;top:50%;right: 5px;transform:translateY(-50%);background-color: rgba(0,0,0,0);margin: 0;}
