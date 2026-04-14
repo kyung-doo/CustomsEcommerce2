@@ -102,7 +102,7 @@ class Datepicker {
                 
                 ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
             } else {
-                this.selectDate = new Date(this.input.val());
+                this.selectDate = new Date(dayjs(this.input.val()).toDate());
                 if(this.props.isMonth) {
                     this.selectMonth = parseInt(dayjs(this.selectDate).format('YYYYMM'));
                     if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
