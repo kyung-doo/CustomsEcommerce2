@@ -124,13 +124,10 @@ class Datepicker {
                         return;
                     }
 
-
                     if (this.props.minInput && $(this.props.minInput).val()) {
                         this.minDate = dayjs($(this.props.minInput).val()).toDate();
                         if (this.selectDate < this.minDate) {
-                            alert('시작날짜는 종료날짜보다 클 수 없습니다. 111');
-                            //this.input.val('').focus(); 
-                            //ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            ecp_alert(title, ECP_MSG.err_ecp_ko_00033, this.input.val(''));
                         }
                     }
 
@@ -604,7 +601,7 @@ class Datepicker {
                 this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}월</button>`)
             }
         }
-        if(dayjs(this.props.maxDate).format('YYYY/MM/DD') === dayjs(this.today).format('YYYY/MM/DD') && this.currentYear === new Date().getFullYear()) {
+        if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && this.currentYear === new Date().getFullYear()) {
             this.calendar.find(".month-con button").each(function () {
                 if($(this).data('month') > new Date().getMonth() +1) {
                     $(this).attr('disabled', 'disabled');
