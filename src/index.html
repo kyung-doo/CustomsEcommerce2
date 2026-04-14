@@ -10,23 +10,24 @@
 	body {border: 2px solid red;}
 </style>
 </head>
-<frameset rows="0.5%,200px,*,0.5%">
+<frameset cols="500px,*">
     
-    <!-- 상단 여백 -->
-    <frame name="blankframe1" src="blank.html" scrolling="no" frameborder="0" />
-
-    <!-- 🔥 여기: 메뉴를 '상단'으로 -->
+    <!-- 🔥 왼쪽 메뉴 -->
     <frame name="menuframe" src="left.html" scrolling="yes" frameborder="0" />
 
-    <!-- 🔥 콘텐츠 영역 -->
-    <frameset cols="10px,*,15px">
-        <frame name="blankframe2" src="blank.html" scrolling="no" frameborder="0" />
-        <frame name="contentframe" src="../pages/1.layout.html" scrolling="yes" frameborder="0" />
-        <frame name="blankframe3" src="blank.html" scrolling="no" frameborder="0" />
-    </frameset>
+    <!-- 🔥 오른쪽 영역 -->
+    <frameset rows="0.5%,*,0.5%">
+        
+        <!-- 상단 여백 -->
+        <frame name="blankframe1" src="blank.html" scrolling="no" frameborder="0" />
 
-    <!-- 하단 여백 -->
-    <frame name="blankframe4" src="blank.html" scrolling="no" frameborder="0" />
+        <!-- 콘텐츠 -->
+        <frame name="contentframe" src="../pages/1.layout.html" scrolling="yes" frameborder="0" />
+
+        <!-- 하단 여백 -->
+        <frame name="blankframe4" src="blank.html" scrolling="no" frameborder="0" />
+
+    </frameset>
 
 </frameset>
 

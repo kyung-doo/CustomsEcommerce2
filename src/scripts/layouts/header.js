@@ -139,13 +139,13 @@ $(() => {
         $('.dep1').addClass('active');        
         $('.sub-title').removeClass('mobile-dep-menu');
         $('.sub-title').siblings('ul').hide();
-        $('body,html').css({"overflow":"hidden"});
+        $('body').css({"overflow":"hidden"});
 
         $(window).on('resize',function(){
             if($("#wrap").hasClass('mobile-open')){
-                $('body,html').css({"overflow":"hidden"});
+                $('body').css({"overflow":"hidden"});
             }else{
-                $('body,html').css({"overflow":"auto"});
+                $('body').css({"overflow":"auto"});
             }
             
         }) 
@@ -157,9 +157,9 @@ $(() => {
         // }});
         $("#wrap").removeClass('mobile-open');
         $('.sub-title').removeClass('mobile-active');
-        $('body,html').css({"overflow":"auto"});        
+        $('body').css({"overflow":"auto"});        
         $(window).on('resize',function(){
-            $('body,html').css({"overflow":"auto"});
+            $('body').css({"overflow":"auto"});
         }) 
         $('.main-menu.main-allmenu').hide();
         $('.allmenu').removeClass('active')        

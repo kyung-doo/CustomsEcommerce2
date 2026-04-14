@@ -139,7 +139,7 @@
   #header .header-actions .btn-navi.mobile-all-menu {display: flex;}
 
   /* 모바일 메뉴 상단 */
-  #header .mobile-top-area {display: block;padding: 20px;border: 1px solid #fff;align-items: flex-end;border-bottom: 1px solid #D8D8D8;position: relative;}
+  #header .mobile-top-area {display: block;padding: 20px;border: 1px solid #fff;align-items: flex-end;border-bottom: 1px solid #D8D8D8;position: relative;flex-direction: column;align-items: flex-start;}
   #header .mobile-top-area .login {margin-left: 0;padding: 10px 0 10px 32px;width: auto;height: auto;line-height: 1;text-align: left;margin-top: 32px;}
   #header .mobile-top-area .login::before {top: 8px !important;}
   #header .mobile-top-area .btn-navi:before {left: 5px;top: 0;transform: translateX(0);}
@@ -154,7 +154,8 @@
   #header .mobile-top-area .name-box .time {margin-left: 15px;}
   #header .header-actions .language-area {display: none;}
   #header .mobile-top-area .language-area {display: block;}
-  #header .mobile-top-area {flex-direction: column;align-items: flex-start;}
+  #header .mobile-top-area {}
+  #header .header-actions.mobile-top-area{background-color: #fff;}
 
   /* 로그인전 */
   #wrap.login .mobile-top-area {height: 125px;display: flex;}

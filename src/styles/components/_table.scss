@@ -160,27 +160,9 @@
 
 .wrap-faq .no-data {width: 100%;height: 62px;display: flex;justify-content: center;align-items: center;border-bottom: 1px solid #E4E4E4;border-top: 1px solid #E4E4E4;}
 
-@media screen and (max-width: 900px) {
-  .table-wrap table.check th, .table-wrap table.check td {padding: 16px 10px;}
-}
-@media screen and (max-width: 767px) {
-  .board-top {flex-direction: column;}
-  .board-top .choice {display: none;}
-  .board-top button {width: calc(50% - 4px);}
-  .board-top > div {flex-wrap: wrap;}
-  .board-top > .right-box {justify-content: space-between;flex-wrap: nowrap;margin-top: 11px;}
-  .board-top > .right-box .compulsory-title {padding-right: 10px;}
-  .board-top > .right-box button {width: auto;}
-  .table-wrap.pc {display: block;overflow-x: auto;}
-  .table-wrap.mo {display: block;overflow: visible;}
-  .tbl.check, .tbl.cont {width: 767px;}
-  .add-title {flex-direction: column;align-items: flex-start;}
-  .add-title .txt {width: 100%;margin-left: 0;background-color: #f4f5f6;padding: 13px 24px;border-radius: 8px;}
-  .tb-tit {font-size: 19px;}
-  .tb-tit .txt {margin-top: 12px;}
-  .board-top.tbl-top.faq {position: relative;margin-bottom: 0;}
-  .board-top.tbl-top.faq button {position: absolute;bottom: -48px;right: 0;z-index: 1;}
-  .board-top div.top-txt{display: none;}
+@media screen and (max-width: 1023px) {
+  .table-wrap.pc {display: none !important;}
+  .table-wrap.mo {display: block !important;}
 
   .wrap-faq .header {display: none;}
   .wrap-faq .body {border-bottom: 0 !important;padding: 0 !important;}
@@ -212,6 +194,30 @@
   .wrap-faq.type1 .body .accordion-header ul li .wrap-accordion-btn .data {text-align: left;margin-top: 18px;}
   .wrap-faq.type1 .body .accordion-body {padding: 24px 0 0 0;margin-top: 24px;}
   .wrap-faq.type1 .body .accordion-body::before {top: 0;content: "";display: block;position: absolute;left: 0;width: 100%;height: 2px;background-image: url(../assets/icons/dotted.svg);}
+
+  .board-top.tbl-top.faq {position: relative;margin-bottom: 0;}
+  .board-top.tbl-top.faq button {position: absolute;bottom: -48px;right: 0;z-index: 1;}
+  .tbl.check, .tbl.cont {width: 1023px;}
+}
+
+@media screen and (max-width: 900px) {
+  .table-wrap table.check th, .table-wrap table.check td {padding: 16px 10px;}
+}
+@media screen and (max-width: 767px) {
+  .board-top {flex-direction: column;}
+  .board-top .choice {display: none;}
+  .board-top button {width: calc(50% - 4px);}
+  .board-top > div {flex-wrap: wrap;}
+  .board-top > .right-box {justify-content: space-between;flex-wrap: nowrap;margin-top: 11px;}
+  .board-top > .right-box .compulsory-title {padding-right: 10px;}
+  .board-top > .right-box button {width: auto;}    
+  .add-title {flex-direction: column;align-items: flex-start;}
+  .add-title .txt {width: 100%;margin-left: 0;background-color: #f4f5f6;padding: 13px 24px;border-radius: 8px;}
+  .tb-tit {font-size: 19px;}
+  .tb-tit .txt {margin-top: 12px;}  
+  .board-top div.top-txt{display: none;}
+
+  
 }
 @media screen and (max-width: 480px) {
   .wrap-check-tbl .mo .wrap-body.box-line .body li {padding: 15px;border-radius: 5px;gap: 10px 0;}

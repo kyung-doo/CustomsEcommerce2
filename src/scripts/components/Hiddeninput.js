@@ -178,10 +178,12 @@ class Hiddeninput {
 
 //비밀번호 보이고 안보이고
 $(function(){
-    $('.visibility-btn').on('click', function() {
+    // $('.visibility-btn').on('click', function() {
+    $(document).on('click','.visibility-btn',function(){
     const $btn = $(this);
     const $icon = $btn.find('i');
     const $input = $btn.siblings('input');
+    $input.focus();
     
     if ($icon.hasClass('visibility')) {
         // 현재: 숨김 상태 → 보이기
