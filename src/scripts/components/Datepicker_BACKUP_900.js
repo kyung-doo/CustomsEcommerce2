@@ -124,13 +124,20 @@ class Datepicker {
                         return;
                     }
 
+<<<<<<< HEAD
 
-                    if (this.props.minInput && $(this.props.minInput).val()) {
-                        this.minDate = dayjs($(this.props.minInput).val()).toDate();
-                        if (this.selectDate < this.minDate) {
+                    if(this.props.minInput && $(this.props.minInput).val()) {
+                        this.minDate = new Date($(this.props.minInput).val());
+                        if(this.selectDate < this.minDate) {
                             alert('시작날짜는 종료날짜보다 클 수 없습니다. 111');
                             //this.input.val('').focus(); 
                             //ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+=======
+                    if (this.props.minInput && $(this.props.minInput).val()) {
+                        this.minDate = dayjs($(this.props.minInput).val()).toDate();
+                        if (this.selectDate < this.minDate) {
+                            ecp_alert(title, ECP_MSG.err_ecp_ko_00033, this.input.val(''));
+>>>>>>> 7daa6c277a7aace56f970742a17d5b64d4c596fe
                         }
                     }
 
