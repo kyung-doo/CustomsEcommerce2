@@ -1,4 +1,6 @@
 $(() => {    
+    var isEn = document.documentElement.lang === 'en';
+
     //공지사항
     $(function(){
         var btn = $('.main .box2 .notice-box .area .tit');        
@@ -24,20 +26,34 @@ $(() => {
 
         btn.click(function(){
             if($(this).hasClass('close')){
-                $(this).closest('.wrap-mobile-list').addClass('active');                
-                $(this).attr('title','메뉴열기');
-                $(this).attr('aria-label','메뉴열기');
+                $(this).closest('.wrap-mobile-list').addClass('active');                                
                 $(this).removeClass('close');
-                $(this).addClass('open');                
-                $(this).text('더보기')
+                $(this).addClass('open');   
+
+                if(isEn === true){
+                    $(this).attr('title','Open Menu');
+                    $(this).attr('aria-label','Open Menu');
+                    $(this).text('Show More')                
+                }else{
+                    $(this).attr('title','메뉴열기');
+                    $(this).attr('aria-label','메뉴열기');
+                    $(this).text('더보기')                
+                }                
             }else{
                 // console.log('열기');
-                $(this).closest('.wrap-mobile-list').removeClass('active');
-                $(this).attr('title','메뉴닫기');
-                $(this).attr('aria-label','메뉴닫기');
+                $(this).closest('.wrap-mobile-list').removeClass('active');                
                 $(this).removeClass('open');
-                $(this).addClass('close');                
-                $(this).text('접기')
+                $(this).addClass('close');            
+
+                if(isEn === true){
+                    $(this).attr('title','Close Menu');
+                    $(this).attr('aria-label','Close Menu');
+                    $(this).text('Show Less')
+                }else{
+                    $(this).attr('title','메뉴닫기');
+                    $(this).attr('aria-label','메뉴닫기');
+                    $(this).text('접기')
+                }                
             }
         })
     })
@@ -188,6 +204,7 @@ $(() => {
         loop: true,      
         observer: true,
         observeParents: true,
+        loopAdditionalSlides:2,
         watchSlidesProgress: true,
         loopedSlides: originalCount * 2,
         resizeObserver: true,       

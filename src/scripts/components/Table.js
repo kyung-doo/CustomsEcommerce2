@@ -17,7 +17,7 @@ class Table {
         headCreaed: null,
         rowCreated: null,
         created: null,
-        scrollTop: false,
+        // scrollTop: false,
         nodata: false,
         nodataMsg: '데이터없음'
     }
@@ -71,7 +71,7 @@ class Table {
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
-            this.scrollTop();
+            // this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             if(!this.sort.key) {
@@ -120,11 +120,12 @@ class Table {
 
     setBoardTop () {
         const boardTop = this.ele.find('.board-top');
+        const isEn = document.documentElement.lang === 'en';
 		
 		//2025.09.11 일반게시판과 faq게시판 분리 start
 		if(this.ele.find('.tit').length > 0) {
 			this.data.limitList.forEach(limit => {
-            boardTop.find('select').append(`<option value="${limit}">${limit}개씩 보기</option>`);
+            boardTop.find('select').append(`<option value="${limit}">${limit} ${isEn ? 'per page' : '개씩 보기'}</option>`);
         	});
         	boardTop.find('.tit strong').text(Number(this.data.listLength).toLocaleString());
         	//boardTop.find('select').val(this.limit);
@@ -149,7 +150,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
-                    this.scrollTop();
+                    // this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     this.setBody();
@@ -179,7 +180,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
-                    this.scrollTop();
+                    this.tbScrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     if(!this.sort.key) {
@@ -194,7 +195,7 @@ class Table {
     }
 
     setHead () {       
-        
+        const isEn = document.documentElement.lang === 'en';
         const table = this.ele.find(this.props.tableType !== 'faq' ? '.table-content' : '.wrap-faq');
         if(this.props.tableType !== 'faq') {
             const tablePC = table.find('.table-wrap').eq(0);
@@ -223,7 +224,7 @@ class Table {
                     <th scope="col">
                         <div class="form-check medium">
                             <input type="checkbox" id="all-chk">
-                            <label for="all-chk"><span class="sr-only">전체선택</span></label>
+                            <label for="all-chk"><span class="sr-only">${isEn ? 'Select All' : '전체선택'}</span></label>
                         </div>
                     </th>
                 `);
@@ -306,7 +307,7 @@ class Table {
                         <div class="header">
                             <div class="form-check medium">
                                 <input type="checkbox" id="m-all-chk">
-                                <label for="m-all-chk">전체선택</label>
+                                <label for="m-all-chk">${isEn ? 'Select All' : '전체선택'}</label>
                             </div>
                         </div>
                         <ul class="wrap-body"></ul>
@@ -321,7 +322,7 @@ class Table {
                                 <div class="header">
                                     <div class="form-check medium">
                                         <input type="checkbox" id="m-all-chk">
-                                        <label for="m-all-chk">전체선택</label>
+                                        <label for="m-all-chk">${isEn ? 'Select All' : '전체선택'}</label>
                                     </div>
                                 </div>
                                 <div class="wrap-body"></div>
@@ -558,7 +559,7 @@ class Table {
                             const fileList = $(`
                                 <li>
                                     <div class="file-info m-column file-down">
-                                        <div class="file-name"><a href="#none">${file.name} [${file.format}, ${file.size}]</a></div>
+                                        <div class="file-name"><a href="javascript:void(0)">${file.name} [${file.format}, ${file.size}]</a></div>
                                         <div class="btn-wrap">
                                             <button type="button" class="btn text medium" title="${file.name} 파일 다운로드" aria-label="${file.name} 파일 다운로드">
                                                 <i class="icon download medium"></i> 다운로드
@@ -706,8 +707,8 @@ class Table {
         $(element).remove();
     }
 
-    scrollTop () {
-        if ($(window).width() < 767) {
+    tbScrollTop () {
+        if ($(window).width() <= 1344) {
             $('html, body').scrollTop(
                 this.ele.position().top + $("#header").height()
             );

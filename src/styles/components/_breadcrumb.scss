@@ -2,12 +2,18 @@
    Style Guide breadcrumb
    ================================================== */
 .breadcrumb {display: flex;}
+// html[lang="en"] .breadcrumb {flex-wrap: wrap;}
 .breadcrumb li {position: relative;margin: 0 8px;display: flex;}
+html[lang=en] .breadcrumb li{min-width: 55px;}
 .breadcrumb li * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;line-height: 12px;}
 .breadcrumb li *:not(span) {text-decoration: underline;line-height: 150%;}
 .breadcrumb li *:not(span):hover {background-color: #EDF1F5;border-radius: 4px;}
 .breadcrumb li *:not(span):active {background-color: #CDD7E4;border-radius: 4px;}
 .breadcrumb li:before, .breadcrumb li:after {content: "";display: block;background-repeat: no-repeat;background-position: center;background-size: 120%;position: absolute;top: 48%;left: -15px;transform: translateY(-50%);}
+
+html[lang=en] .breadcrumb li:before, html[lang=en] .breadcrumb li:after{top: 50%;}
+
+
 .breadcrumb li.home:before {background-image: url("../assets/icons/home.svg");width: 12px;height: 12px;background-size: 100%;}
 .breadcrumb li.home:after {background-image: url("../assets/icons/btn-arrow-right.svg");width: 12px;height: 12px;}
 .breadcrumb li.last-li:before,
@@ -20,4 +26,6 @@
     // .breadcrumb li:last-child a:after {content: "";display: block;width: 12px;height: 2px;background-image: url("../assets/icons/breadcrumb.svg");position: absolute;top: 50%;left: -40px;transform: translateY(-50%);}
     .breadcrumb li.home:after {left: 27px;}
     .breadcrumb li.last-li:before {display: none;}
+    html[lang=en] .breadcrumb li.home:after{left: 52px;}
+    // html[lang=en] .breadcrumb{flex-wrap: nowrap;}
 }

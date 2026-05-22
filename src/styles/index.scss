@@ -60,13 +60,31 @@ button, a {cursor: pointer;}
 html, body {width: 100%;height: 100%;-webkit-tap-highlight-color: transparent;/*scroll-behavior: smooth;overflow-y: auto;*/}
 
 /** 일반 텍스트는 글자로 줄바꿈 **/
-html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;color:#1D1D1D;font-weight: 400;font-size:17px;word-wrap: break-word;word-break: break-all;}
-.table-wrap.mo .title,
-.table-wrap.mo .title > span,
-.wrap-form-area .inp-form .txt-list .tit,
-.table-wrap.mo [class*=cont-acc-] .accordion-wrap .accordion-body ul li .acc-tit,
-.table-wrap th,
-.wrap-form-area .inp-form .txt-list .title > strong{word-break: keep-all;}
+html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;color:#1D1D1D;font-weight: 400;font-size:17px;/*word-wrap: break-word;word-break: break-all;*/word-break: keep-all;overflow-wrap:anywhere;}
+
+/** 단어 줄바꿈 **/
+// .main *,
+// #footer *,
+// #header *,
+// .wrap-form-area .inp-form .txt-list .tit,
+// .table-wrap.mo .title,
+// .wrap-form-area .inp-form .txt-list .title > strong,
+// .search-box ul li .tit,
+// .table-wrap.mo .title > span,
+// .table-wrap.mo [class*=cont-acc-] .accordion-wrap .accordion-body ul li .acc-tit,
+// .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .tit,                                                                  
+// .footer-quick-pop a.title,
+// .content-wrap .cont-head .step-area .step-tit,
+// .content-wrap .cont-head .head-tit{word-break: keep-all !important;overflow-wrap: break-word !important;}
+
+// .table-wrap.mo .title,
+// .table-wrap.mo .title > span,
+// .wrap-form-area .inp-form .txt-list .tit,
+// .table-wrap.mo [class*=cont-acc-] .accordion-wrap .accordion-body ul li .acc-tit,
+// .table-wrap th,
+// .wrap-form-area .inp-form .txt-list .title > strong{word-break: keep-all;}
+
+
 
 
 strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
@@ -92,6 +110,7 @@ strong,h1,h2,h3,h4,h5,h6{font-weight: 700;}
 
 /** flex **/
 .d-flex {display: flex !important;}
+.f-wrap{flex-wrap: wrap !important;}    
 .f-center{justify-content: center !important;}
 .f-no-wrap{flex-wrap: nowrap !important;}
 .f-aling-center{align-items: center !important;}
@@ -180,3 +199,4 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active{-webkit-box-shadow: 0 0 0 1000px white inset !important;box-shadow: 0 0 0 1000px white inset !important;-webkit-text-fill-color: #000;}
+

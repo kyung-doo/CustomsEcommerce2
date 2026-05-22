@@ -62,6 +62,7 @@ class Datepicker {
         this.input.on('blur', () => {
             //let val = this.input.val();
             let val = this.input.val().replace(/[^0-9]/g, ""); // 숫자만 남김
+            const isEn = document.documentElement.lang === 'en'; //영문
 
             if (!this.props.isMonth) {
                 // YYYYMMDD (8자리)
@@ -100,7 +101,12 @@ class Datepicker {
                 //alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
                 
-                ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                if(isEn === true){
+                    ecp_alert(title,ECP_MSG.err_ecp_en_00031,this.input.val(''));
+                }else{
+                    ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                }
+                
             } else {
                 this.selectDate = new Date(dayjs(this.input.val()).toDate());
                 if(this.props.isMonth) {
@@ -108,7 +114,12 @@ class Datepicker {
                     if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
                         //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-                        ecp_alert(title,ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+
+                        if(isEn === true){
+                            ecp_alert(title,ECP_MSG.err_ecp_en_00032,this.input.val(''));
+                        }else{
+                            ecp_alert(title,ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                        }                        
                         return;
                     }
                     
@@ -117,7 +128,11 @@ class Datepicker {
                         if(this.selectMonth < this.minMonth) {
                             //alert('시작월은 종료월보다 클 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            if(isEn === true){
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00033,this.input.val(''));
+                            }else{
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            }                            
                         }
                     }
 
@@ -126,7 +141,11 @@ class Datepicker {
                         if(this.selectMonth > this.maxMonth) {
                             //alert('종료월은 시작월보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                            if(isEn === true){
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00034,this.input.val(''));
+                            }else{
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                            }                            
                         }
                     }
                 } else {
@@ -135,14 +154,24 @@ class Datepicker {
                     ) {
                         //alert('오늘 날짜보다 큰 날짜를 입력할 수 없습니다.11');
                         // this.input.val('').focus();
-                        ecp_alert(title, ECP_MSG.err_ecp_ko_00032, this.input.val(''));
+
+                        if(isEn === true){
+                            ecp_alert(title, ECP_MSG.err_ecp_en_00032, this.input.val(''));
+                        }else{
+                            ecp_alert(title, ECP_MSG.err_ecp_ko_00032, this.input.val(''));
+                        }                        
                         return;
                     }
 
                     if (dayjs(this.props.minDate).isSame(dayjs(this.today), 'day') && dayjs(val).isBefore(dayjs(this.props.minDate), 'day')) {
                         //alert('오늘 날짜보다 작은 날짜를 입력할 수 없습니다.');
                         this.input.val('').focus();
-                        ecp_alert(title, ECP_MSG.err_ecp_ko_00035, this.input.val(''));
+
+                        if(isEn === true){
+                            ecp_alert(title, ECP_MSG.err_ecp_en_00318, this.input.val(''));
+                        }else{
+                            ecp_alert(title, ECP_MSG.err_ecp_ko_00318, this.input.val(''));
+                        }                        
                         return;
                     }
 
@@ -153,7 +182,12 @@ class Datepicker {
                             //alert('시작날짜는 종료날짜보다 클 수 없습니다.11');
                             
                             //this.input.val('').focus(); 
-                            ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+
+                            if(isEn === true){
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00033,this.input.val(''));
+                            }else{
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                            }                            
                         }
                     }
 
@@ -162,7 +196,12 @@ class Datepicker {
                         if(this.selectDate > this.maxDate) {
                             //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
-                            ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+
+                            if(isEn === true){
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00034,this.input.val(''));
+                            }else{
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                            }                            
                         }
                     }
                 }
@@ -199,9 +238,9 @@ class Datepicker {
 
 
 
-    showCalendar () {       
-
-         
+    showCalendar () {  
+        
+        const isEn = document.documentElement.lang === 'en';         
         
         $('*[data-ui="datepicker"]').each(function () {
             $(this).datepicker('hideCalendar');
@@ -211,33 +250,50 @@ class Datepicker {
             <div class="datepicker">
                 <div class="calendar-wrap">
                     <div class="calendar-header">
-                        <button class="btn-prev" tabindex="0">이전</button>
-                        <button class=btn-year></button>
-                        ${!this.props.isMonth ? '<button class=btn-month></button>': ''}
-                        <button class="btn-next">다음</button>
+                        <button class="btn-prev" tabindex="0">
+                            ${isEn ? 'Prev' : '이전'}
+                        </button>
+
+                        <button class="btn-year"></button>
+
+                        ${!this.props.isMonth ? '<button class="btn-month"></button>' : ''}
+
+                        <button class="btn-next">
+                            ${isEn ? 'Next' : '다음'}
+                        </button>
                     </div>
+
                     <div class="calendar-content" style="min-height: 288px;">
-                        ${!this.props.isMonth 
-                            ? 
-                                `<div class="week-con">
-                                <div>일</div>
-                                <div>월</div>
-                                <div>화</div>
-                                <div>수</div>
-                                <div>목</div>
-                                <div>금</div>
-                                <div>토</div>
+                        ${
+                            !this.props.isMonth
+                            ? `
+                                <div class="week-con">
+                                    ${
+                                        (isEn
+                                            ? ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+                                            : ['일','월','화','수','목','금','토']
+                                        )
+                                        .map(v => `<div>${v}</div>`)
+                                        .join('')
+                                    }
                                 </div>
-                                <div class="day-con"></div>` 
-                            : 
-                                ''
+                                <div class="day-con"></div>
+                            `
+                            : ''
                         }
+
                         <div class="year-con d-none"></div>
                         <div class="month-con d-none"></div>
                     </div>
+
                     <div class="calendar-footer">
-                        <button type="button" class="btn tertiary medium btn-cancel mr-8">취소</button>
-                        <button type="button" class="btn primary medium btn-enter">확인</button>
+                        <button type="button" class="btn tertiary medium btn-cancel mr-8">
+                            ${isEn ? 'Cancel' : '취소'}
+                        </button>
+
+                        <button type="button" class="btn primary medium btn-enter">
+                            ${isEn ? 'OK' : '확인'}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -267,7 +323,7 @@ class Datepicker {
             const calendarHeight = this.calendar.outerHeight();
             const windowWidth = $(window).width();
             const windowHeight = $(window).height();
-            const scrollTop = $(window).scrollTop();
+            // const scrollTop = $(window).scrollTop();
             const scrollLeft = $(window).scrollLeft();
 
             let left = offset.left;
@@ -314,7 +370,14 @@ class Datepicker {
             
              if(!this.selectDate){
 
-                alert('날짜를 선택해주세요')
+                // alert('날짜를 선택해주세요')
+
+                if(isEn === true){
+                    ecp_alert("ECOS", ECP_MSG.err_ecp_en_00321);
+                }else{
+                    ecp_alert("전자상거래 통관포털", ECP_MSG.err_ecp_ko_00321);
+                }
+
                 this.input.val('');        
                 this.hideCalendar();
                 $('.calendar-blind').hide();
@@ -366,7 +429,7 @@ class Datepicker {
             this.calendar.find(".btn-next").css({'pointer-events': 'none'});
             this.calendar.find(".day-con button").attr('disabled', 'disabled');
             const top = parseInt(this.calendar.find(".year-con button").eq(0).css('height')) * this.calendar.find(".year-con button.active").index();
-            this.calendar.find(".year-con").scrollTop(top);
+            // this.calendar.find(".year-con").scrollTop(top);
             $('.btn-month').removeClass('on');            
             $('.btn-year').addClass('on'); 
             this.calendar.find(".year-con button.active").focus();
@@ -454,14 +517,22 @@ class Datepicker {
 
         const toDay = new Date();
 
+        const isEn = document.documentElement.lang === 'en';
+
         if(!this.props.isMonth) {
             this.calendar.find(".month-con").hide();
         } else {
             this.calendar.find(".month-con").show();
         }
 
-        this.calendar.find(".btn-year").text(year+'년');
-        this.calendar.find(".btn-month").text(month < 10 ? '0'+month+'월' : month+'월');
+        if(isEn){
+            this.calendar.find(".btn-year").text(year);
+            this.calendar.find(".btn-month").text(month < 10 ? '0'+month : month);
+        }else{
+            this.calendar.find(".btn-year").text(year+'년');
+            this.calendar.find(".btn-month").text(month < 10 ? '0'+month+'월' : month+'월');
+        }
+        
 
         this.calendar.find(".btn-next").removeAttr('disabled');
         this.calendar.find(".btn-prev").removeAttr('disabled');
@@ -620,13 +691,27 @@ class Datepicker {
     }
 
     renderMonth () {
+        const isEn = document.documentElement.lang === 'en';  
+        const monthEnShort = [
+            "Jan", "Feb", "Mar", "Apr",
+            "May", "Jun", "Jul", "Aug",
+            "Sep", "Oct", "Nov", "Dec"
+        ];
         var owner = this;
         this.calendar.find(".month-con").empty();
-        for(let i = 1; i <= 12; i++) {
+        for(let i = 1; i <= 12; i++) {            
             if(this.currentMonth === i) {
-                this.calendar.find(".month-con").append(`<button class="btn-month-select active" data-month="${i}">${i}월</button>`)
+                if(isEn === true){
+                    this.calendar.find(".month-con").append(`<button class="btn-month-select active" data-month="${i}">${monthEnShort[i - 1]}</button>`)
+                }else{
+                    this.calendar.find(".month-con").append(`<button class="btn-month-select active" data-month="${i}">${i}월</button>`)
+                }                
             } else {
-                this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}월</button>`)
+                if(isEn === true){
+                    this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${monthEnShort[i - 1]}</button>`)
+                }else{
+                    this.calendar.find(".month-con").append(`<button class="btn-month-select" data-month="${i}">${i}월</button>`)   
+                }                
             }
         }
         if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && this.currentYear === new Date().getFullYear()) {

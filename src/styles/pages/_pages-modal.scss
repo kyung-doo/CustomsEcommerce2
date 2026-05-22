@@ -29,7 +29,7 @@
 .modal-body .population-txt-box .sub-txt i {opacity: 0.4;margin-top: 3px;}
 
 /* 레이어팝업 주소검색 */
-.modal-body.wrap-add-modal {height: 642px;}
+// .modal-body.wrap-add-modal {height: 642px;}
 .modal-body.wrap-add-modal .form-group {position: relative;}
 .modal-body.wrap-add-modal .form-group input {padding-right: 80px;}
 .modal-body.wrap-add-modal .form-group button.sach, .modal-body.wrap-add-modal .form-group button.sch-delete {position: absolute;top: 0;right: 16px;width: 24px;height: 100%;background-color: rgba(0, 0, 0, 0);padding: 0;}
@@ -40,12 +40,13 @@
 .modal-body.wrap-add-modal .wrap-form-area .inp-form {border: 0;padding: 0;border-radius: 0;}
 .modal-body.wrap-add-modal .wrap-form-area .inp-form ul {margin: 0;}
 .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li {margin: 0;padding: 0;display: flex;}
-.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .tit {min-width: 97px;width: 97px;padding: 5px 16px;background-color: #E6E8EA;height: 100%;border-bottom: 1px solid #CDD1D5;}
-.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box {width: calc(100% - 97px);padding: 16px 16px;flex-direction: column;align-items: flex-start;margin: 0;height: 100%;border-bottom: 1px solid #E4E4E4;}
+.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .tit {min-width: 110px;width: 110px;padding: 5px 16px;background-color: #E6E8EA;height: 100%;border-bottom: 1px solid #CDD1D5;}
+.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box {width: calc(100% - 110px);padding: 16px 16px;flex-direction: column;align-items: flex-start;margin: 0;height: 100%;border-bottom: 1px solid #E4E4E4;}
 .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box input {padding-right: 16px;}
-.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box [class*=box] {display: flex;width: 100%;}
+.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box [class*=box] {display: flex;width: 100%;flex-wrap: wrap;}
 .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box .box1 {gap: 24px;}
 .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box .box2 {gap: 8px;margin: 15px 0 4px 0;}
+.modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box .form-check label{white-space: normal;height:auto;}
 
 /* 레이어팝업 인증 */
 .modal-body.wrap-login {margin-top: 0;}
@@ -94,10 +95,26 @@
 .modal.auth-new .wrap-form-area .inp-form > ul{margin-left:0;}
 .modal.auth-new .txt-box-type.type2 li{padding-top:0;}
 
+/** 도용신고 관련 팝업 **/
+.report-modal .report{display:flex;align-items: center;justify-content: space-between;flex-wrap: wrap;}
+.report-modal .textarea-count{margin-top:5px;flex: 1;}
+.report-modal .advice-txt.type1{margin-top:5px}
+
+.report-modal ul.txt-ul{display:flex;flex-direction: column;gap: 5px;}
+.report-modal ul.txt-ul li{display:flex;gap:5px;}
+.report-modal ul.txt-ul li:before{content:"";display:block;}
+
+.report-modal ul.txt-ul li.lst1:before{content:"1";}
+.report-modal ul.txt-ul li.lst2:before{content:"2";}
+.report-modal ul.txt-ul li.lst3:before{content:"3";}
+.report-modal ul.txt-ul li.lst4:before{content:"4";}
+.report-modal ul.txt-ul li.lst5:before{content:"5";}
+.report-modal .advice-txt{margin-top:25px;}
+
 
 @media screen and (max-width: 767px) {
   /* 레이어팝업 국민비서 */
-  .population-box .modal-body {max-height: calc(100vh - 350px);}
+  .population-box .modal-body {/*max-height: calc(100vh - 350px);*/}
   .population-box .modal-footer button {width: 100%;}  
   .modal-body .population-txt-box {padding: 24px;}
   .modal-body .population-txt-box .img-box {position: static;transform: translateY(0);text-align: center;width: 100%;}
@@ -106,8 +123,8 @@
 
   /* 레이어팝업 주소검색 */
   .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box .box2 {flex-direction: column;}
-  .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .tit {width: 90px;min-width: 90px;}
-  .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box {width: calc(100% - 90px);}
+  // .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .tit {width: 90px;min-width: 90px;}
+  // .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box {width: calc(100% - 90px);}
   .modal-body.wrap-add-modal .wrap-form-area .inp-form ul li .inp-box .box1 {gap: 8px;}
 }
 @media screen and (max-width: 550px) {  

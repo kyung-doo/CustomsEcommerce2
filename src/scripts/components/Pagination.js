@@ -17,10 +17,12 @@ class Pagination {
     }
 
     init () {
+        const isEn = document.documentElement.lang === 'en';
+
         this.ele.append(`
-            <button class="page-navi prev" title="이전 게시물 목록 페이지로 이동" aria-label="이전 게시물 목록 페이지로 이동">이전</button>
+            <button class="page-navi prev" title="이전 게시물 목록 페이지로 이동" aria-label="이전 게시물 목록 페이지로 이동">${isEn ? 'Prev' : '이전'}</button>
             <div class="page-links"></div>
-            <button class="page-navi next" title="다음 게시물 목록 페이지로 이동" aria-label="다음 게시물 목록 페이지로 이동">다음</button>
+            <button class="page-navi next" title="다음 게시물 목록 페이지로 이동" aria-label="다음 게시물 목록 페이지로 이동">${isEn ? 'Next' : '다음'}</button>
         `);
         this.ele.find('.page-navi.prev').on('click', () => {
             if(this.page > 1) {

@@ -8,16 +8,25 @@ button[class*=btn].large, label[class*=btn].large {padding: 0 20px;height: 40px;
 button[class*=btn].medium, label[class*=btn].medium {padding: 0 16px;height: 40px;}
 button[class*=btn].small, label[class*=btn].small {padding: 0 12px;height: 35px;}
 button[class*=btn].xsmall, label[class*=btn].xsmall {padding: 0 10px;height: 32px;}
+
 button[class*=btn].primary, label[class*=btn].primary {background-color: #246BEB;border: 1px solid #246BEB;color: #fff;}
 button[class*=btn].primary:hover, label[class*=btn].primary:hover {background-color: #1D56BC;border-color: #1D56BC;}
 button[class*=btn].primary:active, label[class*=btn].primary:active {background-color: #16408D;border-color: #16408D;}
 button[class*=btn].primary:disabled, label[class*=btn].primary:disabled {background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;}
+
+button[class*=btn].cancel, label[class*=btn].cancel {background-color: #E71825;border: 1px solid #E71825;color: #fff;}
+button[class*=btn].cancel:hover, label[class*=btn].cancel:hover {background-color: #cd1723;border-color: #cd1723;}
+button[class*=btn].cancel:active, label[class*=btn].cancel:active {background-color: #a7121c;border-color: #a7121c;}
+button[class*=btn].cancel:disabled, label[class*=btn].cancel:disabled {background-color: #D8D8D8;border-color: #D8D8D8;color: #717171;}
+
 button[class*=btn].secondary, label[class*=btn].secondary {background-color: #EFF5FF;border: 1px solid #246BEB;color: #1D56BC;}
 button[class*=btn].secondary:hover, label[class*=btn].secondary:hover {background-color: #D3E1FB;border-color: #246BEB;color: #1D56BC;}
 button[class*=btn].secondary:active, label[class*=btn].secondary:active {background-color: #A7C4F7;border-color: #246BEB;color: #16408D;}
+
 button[class*=btn].tertiary, label[class*=btn].tertiary {background-color: #FFFFFF;border: 1px solid #1D1D1D;}
 button[class*=btn].tertiary:hover, label[class*=btn].tertiary:hover {background-color: #F8F8F8;border-color: #1D1D1D;}
 button[class*=btn].tertiary:active, label[class*=btn].tertiary:active {background-color: #F0F0F0;border-color: #1D1D1D;}
+
 button[class*=btn].text, label[class*=btn].text {padding: 0;background-color: #fff;}
 button[class*=btn].text.xlarge, button[class*=btn].text.large,
 label[class*=btn].text.xlarge, label[class*=btn].text.large {height: 40px;}
@@ -34,3 +43,11 @@ button[class*=btn]:disabled, label[class*=btn]:disabled {cursor: default;pointer
 .btn-area.btn-between {justify-content: space-between;}
 .btn-area .align {display: flex;gap: 8px;}
 [class*=btn-area-type] .align {flex-wrap: wrap;}
+
+@media screen and (max-width: 400px) { 
+   html[lang=en] .btn-area,.btn-area .align,   
+   html[lang=en] .btn-area button[class*=btn], 
+   html[lang=en] .btn-area label,
+   html[lang=en] .btn-area[class*=btn-area-type] .align .full-btn[class*=btn]{flex-wrap: wrap;}
+   html[lang=en] .btn-area button[class*=btn], .btn-area label{height: auto;padding: 10px 20px;white-space: normal;}
+}

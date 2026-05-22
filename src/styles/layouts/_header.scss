@@ -9,9 +9,10 @@
 #skip-link a:focus {display: flex;align-items: center;justify-content: center;top: 0;height: 34px;padding: 6px 0;text-align: center;color: #fff;font-size: 14px;background: #272d34;}
 
 /* 이 누리집은 관세청 누리집입니다. */
-#masthead {position: relative;background-color: #EDF1F5;z-index: 8;padding: 0 16px;}
-#masthead .toggle-wrap {max-width: 1280px;height: 32px;display: flex;align-items: center;margin: 0 auto;}
-#masthead .nuri-txt {font-size: 15px;position: relative;padding-left: 29px;background-image: url("../assets/icons/medium.svg");background-repeat: no-repeat;background-size: contain;}
+#masthead {position: relative;background-color: #EDF1F5;z-index: 8;padding: 8px 16px;}
+#masthead .toggle-wrap {max-width: 1280px;/*height: 32px;*/display: flex;align-items: center;margin: 0 auto;}
+#masthead .nuri-txt {font-size: 15px;position: relative;gap: 7px;display: flex;align-items: center;}
+#masthead .nuri-txt::before{content:"";display: block;background-image: url("../assets/icons/medium.svg");background-repeat: no-repeat;background-size: contain;min-width: 16px;min-height: 16px;}
 
 /* header */
 #header {position: sticky;top: 0;z-index: 11;width: 100%;background-color: #fff;transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);}
@@ -132,7 +133,7 @@
   #header .logo a {background-size: contain;background-repeat: no-repeat;background-position: center;}
   #header .header-actions {height: 48px;}
   #header .header-actions .popup-box {display: flex;align-items: center;}
-  #header .header-actions .btn-navi {margin-left: 8px;text-align: center;font-size: 15px;padding: 5px;flex-direction: column;gap: 8px;}
+  #header .header-actions .btn-navi {/*margin-left: 8px;*/text-align: center;font-size: 15px;padding: 5px;flex-direction: column;gap: 8px;}
   #header .header-actions .btn-navi:before {transform: translateX(0);position: static;}
   #header .header-container .inner {height: 64px;}
   #header .header-actions .btn-navi.join {display: none;}
@@ -201,13 +202,14 @@
   .wrap-in-sch .btn-close {top: -50px;}
 }
 @media screen and (max-width: 480px) {  
-  #masthead .nuri-txt {font-size: 13px;padding-left: 25px;}
+  #masthead .nuri-txt {font-size: 13px;}
 
   /* header */
   #header .header-actions:not(.mobile-top-area) {padding-left: 3px;}
   #header .header-actions .btn-navi {margin-left: 0;}
   #header .header-actions .btn-navi:before {width: 16px;height: 16px;}
-  #header .logo {width: 97px;}
+  #header .header-actions .btn-navi{padding: 3px;}
+  // #header .logo {width: 97px;}
 
   /* 알림팝업 */
   #header .header-actions .popup-box #popUpAttc > div {width: 100%;}
@@ -238,4 +240,5 @@
 }
 @media screen and (max-width: 390px) {  
   #header .main-menu {width: 100% !important;}
+  // #header .header-actions .btn-navi{padding: 5px 0 5px 5px;}
 }

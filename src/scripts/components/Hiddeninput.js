@@ -180,24 +180,54 @@ class Hiddeninput {
 $(function(){
     // $('.visibility-btn').on('click', function() {
     $(document).on('click','.visibility-btn',function(){
-    const $btn = $(this);
-    const $icon = $btn.find('i');
-    const $input = $btn.siblings('input');
-    $input.focus();
-    
-    if ($icon.hasClass('visibility')) {
-        // 현재: 숨김 상태 → 보이기
-        $icon.removeClass('visibility').addClass('visibility-off');
-        $btn.attr('title', '비밀번호 숨김');
-        $input.attr('type', 'text');
+        const $btn = $(this);
+        const $icon = $btn.find('i');
+        const $input = $btn.siblings('input');
+        $input.focus();
+        
+        if ($icon.hasClass('visibility')) {
+            // 현재: 숨김 상태 → 보이기
+            $icon.removeClass('visibility').addClass('visibility-off');
+            $btn.attr('title', '비밀번호 숨김');
+            $input.attr('type', 'text');
 
-    } else if ($icon.hasClass('visibility-off')) {
-        // 현재: 보이는 상태 → 숨기기
-        $icon.removeClass('visibility-off').addClass('visibility');
-        $btn.attr('title', '비밀번호 표시');
-        $input.attr('type', 'password');
+        } else if ($icon.hasClass('visibility-off')) {
+            // 현재: 보이는 상태 → 숨기기
+            $icon.removeClass('visibility-off').addClass('visibility');
+            $btn.attr('title', '비밀번호 표시');
+            $input.attr('type', 'password');
+        }
+    });
+
+
+    const rrn1 = document.getElementById('rrn1');
+    const rrn2 = document.getElementById('rrn2');
+
+    // 숫자만 입력
+    function onlyNumber(el) {
+    el.value = el.value.replace(/\D/g, '');
     }
-});
+
+    // 앞 → 뒤 이동
+    rrn1.addEventListener('input', () => {
+    onlyNumber(rrn1);
+
+    if (rrn1.value.length === 6) {
+        rrn2.focus();
+    }
+    });
+
+    // 뒤 입력 정리
+    rrn2.addEventListener('input', () => {
+    onlyNumber(rrn2);
+    });
+
+    // 뒤에서 백스페이스 → 앞으로 이동
+    rrn2.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && rrn2.value.length === 0) {
+        rrn1.focus();
+    }
+    });
 })
 
 $.fn.hiddeninput = function(option, params) {

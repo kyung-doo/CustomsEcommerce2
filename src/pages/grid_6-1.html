@@ -132,10 +132,13 @@
                            {label: 'key6'},
                            {label: 'key7'},
                            {label: 'key8'},
-                           {label: 'key9'},
+                           {label: 'key9', fomatter: ( value, rowData, isMobile ) => {
+                              if(!isMobile)  return `<button type="button" class="btn primary small" data-modal-target="#modal20261">도용신고</button>`;
+                              else           return `<button type="button" class="btn primary medium" data-modal-target="#modal20261">도용신고</button>`;                              
+                           }},
                            {label: 'key10', fomatter: ( value, rowData, isMobile ) => {
-                              if(!isMobile)  return `<button type="button" class="btn tertiary small btn-row-delete" data-ttt="${value}">${value}</button>`;
-                              else           return `<button type="button" class="btn tertiary medium btn-row-delete" data-ttt="${value}">${value}</button>`;                              
+                              if(!isMobile)  return `<button type="button" class="btn cancel small" data-modal-target="#modal20262">신고취소</button>`;
+                              else           return `<button type="button" class="btn cancel medium" data-modal-target="#modal20262">신고취소</button>`;                           
                            }}
                         ],
                         created: (element, data, head, body) => {                          
@@ -261,11 +264,173 @@
                   
 
                </script>       
+               
+               <!-- <button type="button" class="btn primary small" data-modal-target="#modal20263">도용신고 안내 확인</button>
+               <div id="modal20263" class="modal d-none type1" data-ui="modal">
+                  <div class="modal-wrap mw-800">
+                     <div class="modal-header">
+                        <h5>도용신고 안내 확인</h5>                     
+                     </div>
+                     <div class="modal-body report-modal" tabindex="0">
+                        <div class="modal-cont">                                    
+                           <ul class="txt-ul">
+                              <li class="lst1">도용 신고 시 수입통관이 보류될 수 있습니다.</li>
+                              <li class="lst2">도용 신고 전 수입신고된 건은 통관될 수 없습니다.</li>
+                              <li class="lst3">신고 후 취소 시 신고취소 버튼을 클릭하여 취소할 수 있습니다</li>
+                              <li class="lst4">신고가 취소되더라도 이미 통관보류된 건은 통관되지 않을 수 있으니 운송업체/관세사에게 문의하세요.</li>
+                              <li class="lst5">통관보류된 건은 E-Mail을 통해 알려드립니다. 다만 물품이 국내에 반입되지 않은 경우 별도 통보는 없습니다.</li>
+                           </ul>
+                           <p class="advice-txt">위 내용에 대해 확인하였습니다.</p>                                                           
+                        </div>                          
+                     </div>
+                     <div class="modal-footer">                   
+                        <button type="button" class="btn primary medium">예</button>
+                        <button type="button" class="btn modal-close tertiary medium">아니요</button>                             
+                     </div>
+                  </div>
+               </div>
+
+               <button type="button" class="btn primary small" data-modal-target="#modal20264">도용신고</button> -->
+               
+               <!-- 도용신고 -->
+               <div id="modal20261" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-900">
+                     <div class="modal-header">
+                        <h5>도용신고</h5>                     
+                     </div>
+                     <div class="modal-body report-modal" tabindex="0">                        
+                        <div class="modal-cont">
+                           <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>                                                         
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">피 도용 개인통관고유부호</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">P240000000000</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">인증번호</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">352286</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">발급일시</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">2026-03-04 09:57:10</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">주문업체명</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">나이버</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">주문자명</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">이OO</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col1 dotted-line-top">
+                                       <label for="ex1" class="tit">신고정보 입력 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <div class="form-group">                              
+                                             <div class="form-conts">
+                                                <div class="textarea-wrap">
+                                                   <textarea class="input" placeholder="신고내용을 입력합니다." id="ex1" title="상세신고내용을 입력해주세요"></textarea>
+                                                   <div class="report">
+                                                      <p class="advice-txt type1">신고한 물품이 이미 통관진행 중일 수 있습니다</p> 
+                                                      <p class="textarea-count"><span class="count-now">0</span><span class="count-total">/1,000</span></p>
+                                                   </div>                                                   
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>                                        
+                                    </li>                                      
+                                 </ul>                                 
+                              </div>                              
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn primary medium">신고</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- // 도용신고 -->
+
+               <!-- 도용신고 취소 -->
+               <div id="modal20262" class="modal d-none" data-ui="modal">
+                  <div class="modal-wrap mw-900">
+                     <div class="modal-header">
+                        <h5>도용신고 취소</h5>                     
+                     </div>
+                     <div class="modal-body report-modal" tabindex="0">                        
+                        <div class="modal-cont">
+                           <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+                           <div class="wrap-form-area">
+                              <div class="inp-form">
+                                 <ul>                                                         
+                                    <li class="col1 txt-list">
+                                       <strong class="tit">피 도용 개인통관고유부호</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">P240000000000</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">인증번호</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">352286</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">발급일시</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">2026-03-04 09:57:10</p>
+                                       </div>                        
+                                    </li>
+                                    <li class="col2 txt-list">
+                                       <strong class="tit">주문업체명</strong>
+                                       <div class="inp-box">
+                                          <p class="txt">나이버</p>
+                                       </div>                        
+                                    </li>                                   
+                                    <li class="col1 dotted-line-top">
+                                       <label for="ex2" class="tit">취소 사유 <i class="compulsory">필수</i></label>
+                                       <div class="inp-box">
+                                          <div class="form-group">                              
+                                             <div class="form-conts">
+                                                <div class="textarea-wrap">
+                                                   <textarea class="input" placeholder="신고내용을 입력합니다." id="ex2" title="상세신고내용을 입력해주세요"></textarea>
+                                                   <div class="report">
+                                                      <p class="advice-txt type1">신고 취소하려는 물품이 이미 통관보류 중일 수 있습니다</p> 
+                                                      <p class="textarea-count"><span class="count-now">0</span><span class="count-total">/1,000</span></p>
+                                                   </div>                                                   
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>                                        
+                                    </li>                                      
+                                 </ul>                                 
+                              </div>                              
+                           </div>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                           <button type="button" class="btn modal-close tertiary medium">닫기</button>
+                           <button type="button" class="btn primary medium">신고취소</button>
+                     </div>
+                  </div>
+               </div> 
+               <!-- // 도용신고 취소 -->
 
                <!-- 그리드 -->
-               <div id="table" class="table wrap-grid-tbl">    
+               <div id="table" class="table wrap-grid-tbl">                     
                   
-                  <button type="button" class="btn primary medium btn-row-add">입력한 예상세액(조회)추가</button>
 
                   <!-- 전체 목록 개수 및 목록 보기 개수 (안쓰는 경우 삭제) -->
                   <div class="board-top tbl-top">

@@ -136,7 +136,7 @@
 .wrap-faq .body .accordion-header {border-bottom: 1px solid #E4E4E4;}
 .wrap-faq .body .accordion-header ul {display: flex;text-align: center;}
 .wrap-faq .body .accordion-header li {position: relative;}
-.wrap-faq .body .accordion-header li .txt {padding: 16px 16px;display: block;height: 50px;}
+.wrap-faq .body .accordion-header li .txt {padding: 16px 16px;display: block;/*height: 50px;*/}
 .wrap-faq .body .accordion-header li .txt .form-check label {padding: 10px;}
 .wrap-faq .body .accordion-header li .txt:not(.accordion-btn) {height: 100%;display: flex;align-items: center;justify-content: center;}
 .wrap-faq .body .accordion-header li a.txt {padding-right: 50px;text-align: left;}
@@ -160,9 +160,15 @@
 
 .wrap-faq .no-data {width: 100%;height: 62px;display: flex;justify-content: center;align-items: center;border-bottom: 1px solid #E4E4E4;border-top: 1px solid #E4E4E4;}
 
-@media screen and (max-width: 1023px) {
+
+
+@media screen and (max-width: 1344px) {
   .table-wrap.pc {display: none !important;}
   .table-wrap.mo {display: block !important;}
+
+  .board-top.tbl-top.faq {position: relative;margin-bottom: 0;}
+  .board-top.tbl-top.faq button {position: absolute;bottom: -48px;right: 0;z-index: 1;}
+  .tbl.check, .tbl.cont {width: 1344px;}
 
   .wrap-faq .header {display: none;}
   .wrap-faq .body {border-bottom: 0 !important;padding: 0 !important;}
@@ -176,7 +182,7 @@
   .wrap-faq .body .accordion-header ul li.number .txt {padding-left: 0;position: relative;}
   .wrap-faq .body .accordion-header ul li.number .txt::before {content: "";display: block;position: absolute;top: 2px;right: 0;width: 1px;height: 13px;background-color: #D8D8D8;}
   .wrap-faq .body .accordion-header ul li:has(.accordion-btn) {width: 100%;}
-  .wrap-faq .body .accordion-header ul li .accordion-btn {font-size: 18px;white-space: normal;line-height: 150%;padding: 0 10% 0 0;width: 100%;font-weight: 700;text-decoration: underline;}
+  .wrap-faq .body .accordion-header ul li .accordion-btn {font-size: 18px;white-space: normal;line-height: 150%;padding: 0 10% 0 0;width: 100%;font-weight: 700;text-decoration: underline;height:auto}
   .wrap-faq .body .accordion-header ul li .btn-arrow-down {width: 20px;top: 4px;right: 0;height: auto;}
   .wrap-faq .body .accordion-body {padding: 32px 24px;border-bottom: 0;}
   .wrap-faq .body .accordion-body .number {position: static;}
@@ -194,10 +200,10 @@
   .wrap-faq.type1 .body .accordion-header ul li .wrap-accordion-btn .data {text-align: left;margin-top: 18px;}
   .wrap-faq.type1 .body .accordion-body {padding: 24px 0 0 0;margin-top: 24px;}
   .wrap-faq.type1 .body .accordion-body::before {top: 0;content: "";display: block;position: absolute;left: 0;width: 100%;height: 2px;background-image: url(../assets/icons/dotted.svg);}
+}
 
-  .board-top.tbl-top.faq {position: relative;margin-bottom: 0;}
-  .board-top.tbl-top.faq button {position: absolute;bottom: -48px;right: 0;z-index: 1;}
-  .tbl.check, .tbl.cont {width: 1023px;}
+@media screen and (max-width: 1023px) {
+  
 }
 
 @media screen and (max-width: 900px) {

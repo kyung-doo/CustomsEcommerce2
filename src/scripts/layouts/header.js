@@ -2,6 +2,7 @@
 $(() => {
     let moveArrow = '';
     let oldTop = 0;
+    var isEn = document.documentElement.lang === 'en';
           
 
     $("#wrap").append('<div class="blind d-none"></div>');    
@@ -37,7 +38,7 @@ $(() => {
             $("#header .allmenu").removeClass('active');
             $(".mobile-dep-menu").removeClass('mobile-active');
             function setGnbPosition() {
-                if ($(window).width() >= 1023) {
+                if ($(window).width() >= 1000) {
                     $('#header .main-menu .gnb-toggle-wrap').css('top', menuH-1);
                 } else {
                     $('#header .main-menu .gnb-toggle-wrap').css('top', '');
@@ -46,7 +47,7 @@ $(() => {
 
             setGnbPosition();
             $(window).on('resize', setGnbPosition);
-            if($(window).width() >= 1023) {
+            if($(window).width() >= 1000) {
                 $("#wrap > .blind").show();
                 disableScroll();
             }              
@@ -70,12 +71,21 @@ $(() => {
                     $('body').css({'overflow': 'auto'});
                 }
             }); 
-            $(this).attr('title','전체메뉴 닫기')
+            if(isEn === true){
+                $(this).attr('title','Close All Menus')
+            }else{
+                $(this).attr('title','전체메뉴 닫기')
+            }            
+
         } else {
             $(".main-allmenu").hide();
             $('body').css({'overflow': ''});
             $("#header .allmenu").removeClass('active');
-            $(this).attr('title','전체메뉴 열기')
+            if(isEn === true){
+                $(this).attr('title','Open All Menus')
+            }else{
+                $(this).attr('title','전체메뉴 열기')    
+            }
             
         }
         enableScroll();
@@ -97,7 +107,7 @@ $(() => {
     $('#header .main-menu .allmenu').on('focus',function(){
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        $('body').css({'overflow': ''});     
+        //$('body').css({'overflow': ''});     
         enableScroll();   
     });
 
@@ -299,7 +309,7 @@ $(() => {
             box.hide();
             th.closest('.popup-box').find('.btn-navi.popup').removeClass('active');            
         })
-    });
+    });   
 
 
     $(function(){        

@@ -27,6 +27,8 @@ class Modal {
         this.ele.empty().append(this.copyHtml);        
         this.ele.removeClass('d-none');
 
+        $("body,html").css({'overflow': 'hidden'});           
+
         const modalWidth = this.ele.find('.modal-wrap').outerWidth();
 
         if (modalWidth <= 766) {
@@ -54,6 +56,8 @@ class Modal {
 
         this.ele.find(".btn-close").on("click", () => {
             this.hide();
+            //아이디 modalAlert가 있을경우 실행되는 이벤트
+            $('#modalAlert').remove();
         });
         this.ele.find(".modal-close").on("click", () => {
             this.hide();
@@ -65,9 +69,8 @@ class Modal {
             //this.ele.show();            
             this.ele.removeClass('d-none');
             this.ele.removeAttr('style');
-        }else{
-            $("body").css({'overflow': 'hidden'});            
-        }     
+        }          
+        
 
         if(this.ele.attr('id') === 'in-search'){
             $("body").css({'overflow': 'hidden'});       
@@ -123,7 +126,7 @@ class Modal {
         $("body").css({'overflow': ''});
         $(document).off('keydown.modal');
         this.ele.empty();
-        $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();
+        $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();        
     }
 
 }
