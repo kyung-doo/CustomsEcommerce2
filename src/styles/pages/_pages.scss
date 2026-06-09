@@ -111,7 +111,7 @@ html[lang=en] .compulsory-txt .compulsory{position: static;}
 /* 동의 관련 제목 스타일 */
 .agree-title {display: inline-block;align-items: center;position: relative;}
 .agree-title .title-type{display: flex;align-items: flex-start;}
-.agree-title .title-type > strong {}
+.agree-title .info-txt{white-space: nowrap;}
 .agree-title .contextual-help {bottom: 5px;}
 
 
@@ -741,7 +741,7 @@ html[lang=en] .compulsory-txt .compulsory{position: static;}
 
   /** 검색 **/
   .search-box .bottom-action-area .btn-end {width: 100%;}
-  .search-box .bottom-action-area .btn-end .align {display: flex;gap: 0 10px;}
+  .search-box .bottom-action-area .btn-end .align {display: flex;gap: 0 10px;flex-wrap: nowrap;}
   .search-box .bottom-action-area .btn-end button {width: 100%;}
   .search-box .bottom-action-area {flex-direction: column;gap: 10px 0;align-items: flex-start;}
   .search-box .bottom-action-area:has(.compulsory-txt) .btn-end{width: 100%;text-align: right;}

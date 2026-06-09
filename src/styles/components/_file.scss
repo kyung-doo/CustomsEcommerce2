@@ -45,6 +45,13 @@ input[type=file] {display: block;position: absolute;width: 0;height: 0;opacity: 
 .file-upload-mobile .file-list ul li button {position: absolute;top: 0;right: 0;z-index: 1;font-size: 0;background-color: rgba(0, 0, 0, 0);}
 .file-upload-mobile .file-list::before {content: "";display: block;position: absolute;top: 0;left: 0;width: 100%;height: 1px;background-image: url(../assets/icons/dotted.svg);}
 
+
+/** 도용신고 파일첨부 css **/
+.ECP0203002S_attachFileList .wrap-attachFileList{display: flex;justify-content: space-between;flex-wrap:wrap;}
+.ECP0203002S_attachFileList .wrap-attachFileList .left-box{display: flex;align-items: center;}
+.ECP0203002S_attachFileList .wrap-attachFileList .title-type{margin-top: 0;}
+.ECP0203002S_attachFileList .wrap-attachFileList label{height: 40px !important;}
+
 @keyframes spin {
   from {transform: rotate(0deg);}
   to {transform: rotate(359deg);}
@@ -52,6 +59,12 @@ input[type=file] {display: block;position: absolute;width: 0;height: 0;opacity: 
 @media screen and (max-width: 767px) {
   .file-upload.line .file-upload {flex-direction: column;gap: 24px;}
   .file-upload.line .file-upload .txt {line-height: 150%;}
+
+  /** 도용신고 파일첨부 css **/
+  .ECP0203002S_attachFileList .wrap-attachFileList .left-box{flex-direction: column;align-items: flex-start;gap: 5px;}
+  .ECP0203002S_attachFileList .wrap-attachFileList .right-box{margin-top: 5px;}
+  .ECP0203002S_attachFileList .wrap-attachFileList .right-box,
+  .ECP0203002S_attachFileList .wrap-attachFileList .right-box label{width:100%;}
 }
 @media screen and (max-width: 480px) {
   .file-upload.line {padding: 24px;}

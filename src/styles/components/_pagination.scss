@@ -11,7 +11,7 @@
 html:lang(en) .pagination .prev:before {left: -2px;}
 html:lang(en) .pagination .next:before {right: -2px;}
 .pagination .page-links {display: flex;gap: 8px;}
-.pagination .page-link {width: 40px;height: 40px;display: flex;justify-content: center;align-items: center;color: #555;background-color: #fff;border-radius: 4px;}
+.pagination .page-link {width: auto;padding: 0 15.5px;height: 40px;display: flex;justify-content: center;align-items: center;color: #555;background-color: #fff;border-radius: 4px;white-space:nowrap;}
 .pagination a.page-link:hover, .pagination .page-navi:hover {background-color: #EDF1F5;}
 .pagination a.page-link:active {background-color: #CDD7E4;}
 .pagination .page-navi {background-color: #fff;}

@@ -125,7 +125,8 @@ class Table {
 		//2025.09.11 일반게시판과 faq게시판 분리 start
 		if(this.ele.find('.tit').length > 0) {
 			this.data.limitList.forEach(limit => {
-            boardTop.find('select').append(`<option value="${limit}">${limit} ${isEn ? 'per page' : '개씩 보기'}</option>`);
+            // boardTop.find('select').append(`<option value="${limit}">${limit} ${isEn ? 'per page' : '개씩 보기'}</option>`);
+            boardTop.find('select').append(`<option value="${limit}">${isEn ? `Show ${limit} per page` : `${limit} 개씩 보기`}</option>`);
         	});
         	boardTop.find('.tit strong').text(Number(this.data.listLength).toLocaleString());
         	//boardTop.find('select').val(this.limit);

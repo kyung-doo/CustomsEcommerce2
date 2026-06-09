@@ -9,18 +9,33 @@ $(() => {
 
 
     //스크롤 막기
-    function preventDefault(e) {
+    // function preventDefault(e) {
+    //     e.preventDefault();
+    // }    
+
+    // function disableScroll() {
+    //     document.addEventListener('wheel', preventDefault, { passive: false });
+    //     document.addEventListener('touchmove', preventDefault, { passive: false });        
+    // }
+
+    // function enableScroll() {
+    //     document.removeEventListener('wheel', preventDefault, { passive: false });
+    //     document.removeEventListener('touchmove', preventDefault, { passive: false });        
+    // }
+
+
+    function stopScroll(e) {
         e.preventDefault();
     }    
 
     function disableScroll() {
-        document.addEventListener('wheel', preventDefault, { passive: false });
-        document.addEventListener('touchmove', preventDefault, { passive: false });        
+        document.addEventListener('wheel', stopScroll, { passive: false });
+        document.addEventListener('touchmove', stopScroll, { passive: false });        
     }
 
     function enableScroll() {
-        document.removeEventListener('wheel', preventDefault, { passive: false });
-        document.removeEventListener('touchmove', preventDefault, { passive: false });        
+        document.removeEventListener('wheel', stopScroll, { passive: false });
+        document.removeEventListener('touchmove', stopScroll, { passive: false });        
     }
 
     /* ==================================================
