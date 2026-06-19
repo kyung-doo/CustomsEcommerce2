@@ -63,15 +63,18 @@ $(() => {
         var btn = $('.main .box1 .cont-box .login-box.logout[class*=-chtxt] .txt-box .txt-area a');
 
         btn.click(function(){
-            var html = `
-                <p class="copy-txt">개인통관고유부호가 복사되었습니다</p>
-            `
+            if(lang == 'kr'){
+                var html = `<p class="copy-txt">개인통관고유부호가 복사되었습니다</p>`
+            }else{
+                var html = `<p class="copy-txt">PCCC has been copied</p>`
+            }
+            
 
             $(this).after(html)
 
             setTimeout(function(){
               $('.copy-txt').remove()
-            },500)   
+            },3000)   
         })
     })   
     

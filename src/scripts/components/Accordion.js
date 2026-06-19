@@ -1,4 +1,3 @@
-
 class Accordion {
 
     static DEFAULT_PROPS = {

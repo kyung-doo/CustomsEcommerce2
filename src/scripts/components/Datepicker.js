@@ -1,3 +1,5 @@
+//조회기간 
+var enterChk = "true"
 
 class Datepicker {
 
@@ -36,6 +38,45 @@ class Datepicker {
         else                    this.props.minDate = new Date(this.props.minDate);        
 
         this.init();
+    }
+
+    checkDateRangeLimit() {
+        
+        const limitYear = Number(
+            this.ele.closest('.calendar').data('limit-year')
+        );
+        
+        if (!limitYear) return true;
+        
+        const startVal = $('#startDate').val();
+        const endVal = $('#endDate').val();
+
+        var calendarStartId = this.ele.closest('.calendar').find('.calendar-start input').attr('id');
+        var calendarEndId = this.ele.closest('.calendar').find('.calendar-end input').attr('id');
+        
+        if (!startVal || !endVal) return true;
+        
+        const startDate = dayjs(startVal);
+        const endDate = dayjs(endVal);
+        
+        const diffYear2 = endDate.diff(startDate, 'year', true);
+        const diffYear = Math.abs(diffYear2)
+        
+        if (diffYear >= limitYear) {
+            
+            const title = $('.head-tit').text();
+            const isEn = document.documentElement.lang === 'en'
+            
+            if(isEn){
+                ecp_alert(title,ECP_MSG.err_ecp_en_00337+limitYear+ECP_MSG.err_ecp_en_00338)
+            }else{
+                ecp_alert(title,ECP_MSG.err_ecp_ko_00337+limitYear+ECP_MSG.err_ecp_ko_00338)
+            }
+            enterChk = "false";
+            return false;
+        }
+        
+        return true;
     }
 
     init () {
@@ -100,7 +141,7 @@ class Datepicker {
             if(!this.isValidDate(val)) {
                 //alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
-                
+                enterChk = "false";
                 if(isEn === true){
                     ecp_alert(title,ECP_MSG.err_ecp_en_00031,this.input.val(''));
                 }else{
@@ -114,7 +155,7 @@ class Datepicker {
                     if(parseInt(dayjs(this.props.maxDate).format('YYYYMM')) < parseInt(dayjs(new Date(val)).format('YYYYMM'))) {
                         //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
-
+                        enterChk = "false";
                         if(isEn === true){
                             ecp_alert(title,ECP_MSG.err_ecp_en_00032,this.input.val(''));
                         }else{
@@ -128,6 +169,7 @@ class Datepicker {
                         if(this.selectMonth < this.minMonth) {
                             //alert('시작월은 종료월보다 클 수 없습니다.');
                             //this.input.val('').focus(); 
+                            enterChk = "false";
                             if(isEn === true){
                                 ecp_alert(title,ECP_MSG.err_ecp_en_00033,this.input.val(''));
                             }else{
@@ -141,6 +183,7 @@ class Datepicker {
                         if(this.selectMonth > this.maxMonth) {
                             //alert('종료월은 시작월보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
+                            enterChk = "false";
                             if(isEn === true){
                                 ecp_alert(title,ECP_MSG.err_ecp_en_00034,this.input.val(''));
                             }else{
@@ -154,7 +197,7 @@ class Datepicker {
                     ) {
                         //alert('오늘 날짜보다 큰 날짜를 입력할 수 없습니다.11');
                         // this.input.val('').focus();
-
+                        enterChk = "false";
                         if(isEn === true){
                             ecp_alert(title, ECP_MSG.err_ecp_en_00032, this.input.val(''));
                         }else{
@@ -166,7 +209,7 @@ class Datepicker {
                     if (dayjs(this.props.minDate).isSame(dayjs(this.today), 'day') && dayjs(val).isBefore(dayjs(this.props.minDate), 'day')) {
                         //alert('오늘 날짜보다 작은 날짜를 입력할 수 없습니다.');
                         this.input.val('').focus();
-
+                        enterChk = "false";
                         if(isEn === true){
                             ecp_alert(title, ECP_MSG.err_ecp_en_00318, this.input.val(''));
                         }else{
@@ -179,10 +222,9 @@ class Datepicker {
                     if(this.props.minInput && $(this.props.minInput).val()) {
                         this.minDate = new Date($(this.props.minInput).val());
                         if(this.selectDate < this.minDate) {
-                            //alert('시작날짜는 종료날짜보다 클 수 없습니다.11');
-                            
+                            //alert('시작날짜는 종료날짜보다 클 수 없습니다.11');                            
                             //this.input.val('').focus(); 
-
+                            enterChk = "false";
                             if(isEn === true){
                                 ecp_alert(title,ECP_MSG.err_ecp_en_00033,this.input.val(''));
                             }else{
@@ -196,7 +238,7 @@ class Datepicker {
                         if(this.selectDate > this.maxDate) {
                             //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
-
+                            enterChk = "false";
                             if(isEn === true){
                                 ecp_alert(title,ECP_MSG.err_ecp_en_00034,this.input.val(''));
                             }else{
@@ -204,7 +246,17 @@ class Datepicker {
                             }                            
                         }
                     }
+
+                    if (!this.checkDateRangeLimit()) {
+                        this.input.val('');
+                        return;
+                    }
                 }
+            }
+
+            if (!this.checkDateRangeLimit()) {
+                this.input.val('');
+                return;
             }
         });            
 
@@ -369,9 +421,8 @@ class Datepicker {
             
             
              if(!this.selectDate){
-
                 // alert('날짜를 선택해주세요')
-
+                enterChk = "false";
                 if(isEn === true){
                     ecp_alert("ECOS", ECP_MSG.err_ecp_en_00321);
                 }else{
@@ -393,6 +444,12 @@ class Datepicker {
                     this.input.val(dayjs(this.selectDate).format('YYYY-MM'));
                 }
             }
+
+            if (!this.checkDateRangeLimit()) {
+                this.input.val('');
+                return;
+            }
+
             this.hideCalendar();
             $('.calendar-blind').hide();
         });
