@@ -221,6 +221,7 @@ class Datepicker {
 
                     if(this.props.minInput && $(this.props.minInput).val()) {
                         this.minDate = new Date($(this.props.minInput).val());
+                        this.minDate.setHours(0,0,0,0)
                         if(this.selectDate < this.minDate) {
                             //alert('시작날짜는 종료날짜보다 클 수 없습니다.11');                            
                             //this.input.val('').focus(); 
