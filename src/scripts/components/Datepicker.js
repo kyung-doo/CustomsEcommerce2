@@ -41,41 +41,49 @@ class Datepicker {
     }
 
     checkDateRangeLimit() {
-        
-        const limitYear = Number(
-            this.ele.closest('.calendar').data('limit-year')
-        );
-        
-        if (!limitYear) return true;
-        
-        const startVal = $('#startDate').val();
-        const endVal = $('#endDate').val();
+        const calendar = this.ele.closest('.calendar');
+        const limitYear = Number(calendar.data('limit-year'));
+        const limitDay = Number(calendar.data('limit-day'));
 
-        var calendarStartId = this.ele.closest('.calendar').find('.calendar-start input').attr('id');
-        var calendarEndId = this.ele.closest('.calendar').find('.calendar-end input').attr('id');
-        
-        if (!startVal || !endVal) return true;
-        
+        if (!limitYear && !limitDay) return true;
+
+        const inputs = calendar.find('.calendar-form input');
+        const startInput = inputs.eq(0);
+        const endInput = inputs.eq(1);
+        const startVal = startInput.val();
+        const endVal = endInput.val();
+
+        if (inputs.length < 2 || !startVal || !endVal) return true;
+
         const startDate = dayjs(startVal);
         const endDate = dayjs(endVal);
-        
-        const diffYear2 = endDate.diff(startDate, 'year', true);
-        const diffYear = Math.abs(diffYear2)
-        
-        if (diffYear >= limitYear) {
-            
+
+        if (!startDate.isValid() || !endDate.isValid()) return true;
+
+        const diffDay = Math.abs(endDate.diff(startDate, 'day'));
+        const limitYearDay = limitYear * 365;
+        const isOverLimitDay = limitDay && diffDay > limitDay;
+        const isOverLimitYear = limitYear && diffDay > limitYearDay;
+
+        if (isOverLimitYear || isOverLimitDay) {
+            endInput.val('');
+            enterChk = "false";
+
+            this.hideCalendar();
+            $('.calendar-blind').hide();
+
             const title = $('.head-tit').text();
             const isEn = document.documentElement.lang === 'en'
-            
+            const limit = isOverLimitDay ? limitDay : limitYear;
+
             if(isEn){
-                ecp_alert(title,ECP_MSG.err_ecp_en_00337+limitYear+ECP_MSG.err_ecp_en_00338)
+                ecp_alert(title,ECP_MSG.err_ecp_en_00337+limit+ECP_MSG.err_ecp_en_00338)
             }else{
-                ecp_alert(title,ECP_MSG.err_ecp_ko_00337+limitYear+ECP_MSG.err_ecp_ko_00338)
+                ecp_alert(title,ECP_MSG.err_ecp_ko_00337+limit+ECP_MSG.err_ecp_ko_00338)
             }
-            enterChk = "false";
             return false;
         }
-        
+
         return true;
     }
 
@@ -430,7 +438,7 @@ class Datepicker {
                     ecp_alert("전자상거래 통관포털", ECP_MSG.err_ecp_ko_00321);
                 }
 
-                this.input.val('');        
+                this.input.val('');
                 this.hideCalendar();
                 $('.calendar-blind').hide();
                 return
@@ -447,7 +455,6 @@ class Datepicker {
             }
 
             if (!this.checkDateRangeLimit()) {
-                this.input.val('');
                 return;
             }
 
