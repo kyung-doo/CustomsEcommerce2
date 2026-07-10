@@ -549,6 +549,19 @@ html[lang=en] .compulsory-txt .compulsory{position: static;}
 .certificate-box .box1 a::before{background-image: url("../assets/icons/certificate1.svg")}
 .certificate-box .box2 a::before{background-image: url("../assets/icons/certificate2.svg")}
 .certificate-title{display: flex;align-items: center;gap: 5px;}
+/** 2026.07.10 추가 **/
+/** 공동인증서 페이지 스타일 수정 **/
+.certificate-box [class*=box] .certificate-btn {width:100%;border:1px solid #c6c6c6c6;display:flex;border-radius:10px;justify-content: center;align-items: center;flex-direction: column;gap:16px;padding: 17px 0 35px 0;background-color:#fff;}
+.certificate-box [class*=box] .certificate-btn span{font-size: 20px;display: flex;gap: 7px;align-items: center;font-weight: 500;}
+.certificate-box [class*=box] .certificate-btn:before{content:"";display: block;width:80px;height:80px;background-image: url("../assets/image/certificate-btn.png");background-repeat:no-repeat;background-size:cover;}
+/** 공동인증서 모달 스타일 수정 **/
+.certificate-modal .modal-cont [class*=box] button {width:100%;height:134px;border-radius:6px;margin:5px auto;}
+.certificate-modal .modal-cont [class*=box] button a span {color:#fff;}
+.certificate-modal .modal-cont [class*=box] a:before{content:"";display: block;width:48px;height:48px;}
+.certificate-modal .modal-cont .export_certificate a::before{background-image: url("../assets/image/export_certificate.png");background-repeat: no-repeat;background-size:cover;}
+.certificate-modal .modal-cont .import_certificate a::before{background-image: url("../assets/image/import_certificate.png")}
+.certificate-modal button[class*=btn].tertiary, label[class*=btn].tertiary {width:100%;}
+
 
 @media screen and (max-width: 1630px) {  
   .privacy .scroll_tbl {width: 100%;overflow-x: auto;background-repeat: no-repeat;background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);background-position: right 5px;background-size: 30px 100%;z-index: 1;}
