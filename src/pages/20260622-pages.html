@@ -1,53 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
+   <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8' ))({}) %>
 </head>
+
 <body>
    <div id="wrap" class="login">
       <!-- header -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
-      <!-- //header -->
-      <!-- content-wrap -->
-            <h3 class="head-tit">공동인증서 관리</h3>            
+      <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8' ))({}) %>
+         <!-- //header -->
+         <!-- content-wrap -->
+         <h3 class="head-tit">공동인증서 관리</h3>
+   </div>
+   <div class="cont-body">
+      <!-- 내용 -->
+      <div class="cont-area">
+         <div class="txt-box-type type2">
+            <strong class="title-type font-2 dotted-line-bottom certificate-title"><i class="icon info-fill large"></i>
+               안내 및 유의사항</strong>
+            <ul class="top-list-box">
+               <li>기기간 인증서 이동/복사는 내보내기 및 가져오기 기능으로 모바일 및 타 브라우저, 타 PC인증서 이동/복사가 가능합니다.</li>
+               <li>브라우저 인증서(HTML5)를 사용하는 경우에만 이용이 가능합니다.</li>
+               <li>8자리 승인코드를 이용하여 손쉽고 간단하게 이동/복사를 수정할 수 있습니다.</li>
+               <li>기기간 인증서 가져오기 기능은 ‘브라우저’ 또는 ‘하드디스크’ 저장매체에 인증서를 저장할 수 있습니다.</li>
+            </ul>
          </div>
-         <div class="cont-body">            
-            <!-- 내용 -->
-            <div class="cont-area">
-               <div class="txt-box-type type2">
-                  <strong class="title-type font-2 dotted-line-bottom certificate-title"><i class="icon info-fill large"></i> 안내 및 유의사항</strong>
-                  <ul class="top-list-box"> 
-                     <li>기기간 인증서 이동/복사는 내보내기 및 가져오기 기능으로 모바일 및 타 브라우저, 타 PC인증서 이동/복사가 가능합니다.</li>
-                     <li>브라우저 인증서(HTML5)를 사용하는 경우에만 이용이 가능합니다.</li>
-                     <li>8자리 승인코드를 이용하여 손쉽고 간단하게 이동/복사를 수정할 수 있습니다.</li>
-                     <li>기기간 인증서 가져오기 기능은 ‘브라우저’ 또는 ‘하드디스크’ 저장매체에 인증서를 저장할 수 있습니다.</li>
-                  </ul>
+         <div class="certificate-box">
+            <div class="box1">
+               <button type="button" class="btn certificate-btn" data-modal-target="#modal3">
+                  <span>인증서 내보내기/가져오기 <i class="icon btn-arrow-right large"></i></span>
+               </button>
+            </div>
+         </div>
+         <div class="btn-area btn-end">
+            <div class="align">
+               <button type="button" class="btn primary large">공동인증서 로그인</button>
+            </div>
+         </div>
+         <!--인증서 내보내기/가져오기 모달-->
+         <div id="modal3" class="modal d-none certificate-modal" data-ui="modal">
+            <div class="modal-wrap mw-400">
+               <div class="modal-header">
+                  <h5 class="font-5">인증서<br>내보내기/가져오기</h5>
                </div>
-               <div class="certificate-box">
-                  <div class="box1">
-                     <a href="#none">
-                        <span>인증서 내보내기 <i class="icon btn-arrow-right large"></i></span>
-                     </a>
+               <div class="modal-body" tabindex="0">
+                  <div class="modal-cont">
+                     <div class="box1">
+                        <button type="button" class="btn primary xlarge export_certificate">
+                           <a href="#none">
+                              <span>내보내기</span>
+                           </a>
+                        </button>
+                        <button type="button" class="btn primary xlarge import_certificate">
+                           <a href="#none">
+                              <span>가져오기</span>
+                           </a>
+                        </button>
+                     </div>
                   </div>
-                  <div class="box2">
-                     <a href="#none">
-                        <span>인증서 가져오기 <i class="icon btn-arrow-right large"></i></span>
-                     </a>
+                  <div class="modal-cont">
+                     <div class="box2">
+                        
+                     </div>
                   </div>
                </div>
-               <div class="btn-area btn-end">
-                  <div class="align">                            
-                     <button type="button" class="btn primary large">공동인증서 로그인</button>                 
-                  </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn modal-close tertiary medium">취소</button>
+                  <!-- <button type="button" class="btn modal-enter primary medium">사용정지</button> -->
                </div>
             </div>
-            <!--// 내용 -->
          </div>
       </div>
-      <!-- //content-wrap -->
-      <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
-      <!-- //footer -->
+      <!--// 내용 -->
    </div>
+   </div>
+   <!-- //content-wrap -->
+   <!-- footer -->
+   <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8' ))({}) %>
+      <!-- //footer -->
+      </div>
 </body>
+
 </html>
