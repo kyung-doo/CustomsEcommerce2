@@ -143,7 +143,7 @@ html[lang=en] .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont{pa
 .main .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a img {width: 100%;height: 100%;display: block;}
 
 /* 메인 이미지 슬라이드(no image) */
-.main .box2 .slide-box.slide-area2.main-no-image {
+.main .box2 .wrap-slide-area.main-no-image {
   background: url("../assets/image/slide-img2-1.png") no-repeat;
   background-size: cover;
 }
