@@ -1256,7 +1256,7 @@ input[type=radio]:active + label, input[type=checkbox]:active + label {
 }
 
 .form-toggle-switch input[type=checkbox]:checked + label:before {
-  background-color: #246beb;
+  background-color: #c6c6c6;
 }
 
 .form-toggle-switch input[type=checkbox]:disabled + label:before {
