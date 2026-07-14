@@ -148,7 +148,7 @@
 .wrap-faq .body .accordion-body .faq-box.nofile::before {display: none;}
 .wrap-faq .body .accordion-body .number {position: absolute;top: 42px;left: 29px;color: #246BEB;letter-spacing: 4px;}
 .wrap-faq .body .accordion-body .title {font-size: 19px;line-height: 150%;}
-.wrap-faq .body .accordion-body .txt {line-height: 150%;margin-top: 21px;}
+.wrap-faq .body .accordion-body .txt {line-height: 150% !important; margin-top: 21px !important;}
 .wrap-faq .body .accordion-body .title-type3 {margin-top: 0;line-height: 1;}
 .wrap-faq .body .accordion-body .upload-list {gap: 8px;}
 .wrap-faq .file-info.m-column.file-down a{display: inline !important;}

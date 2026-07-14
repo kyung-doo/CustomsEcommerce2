@@ -148,14 +148,13 @@ html[lang=en] .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont{pa
   background-size: cover;
 }
 
-/** empty image 공통 **/
-.empty-image {
-  width: 100%;
+/** no image 공통 **/
+.no-image {
   aspect-ratio: 1256 / 653;
-  background: url("../assets/image/empty-image.png") no-repeat center / cover;
+  background: url("../assets/image/empty-image.png") no-repeat center / cover !important;
 }
 
-.empty-image > img {
+.no-image > img {
   display: none;
 }
 
