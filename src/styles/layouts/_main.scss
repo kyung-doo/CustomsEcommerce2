@@ -148,10 +148,15 @@ html[lang=en] .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont{pa
   background-size: cover;
 }
 
+/* 메인 이미지 슬라이드(no image) 이미지 미등록일 때 span 가리기 */
+.main .box2 .wrap-slide-area.main-no-image > span {
+  display: none;
+}
+
 /** no image 공통 **/
 .no-image {
   aspect-ratio: 1256 / 653;
-  background: url("../assets/image/empty-image.png") no-repeat center / cover !important;
+  background: url("../assets/image/no-image.png") no-repeat center / cover !important;
 }
 
 .no-image > img {
