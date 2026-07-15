@@ -166,7 +166,11 @@ html[lang=en] .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont{pa
 /** no image 공통 **/
 .no-image {
   aspect-ratio: 1256 / 653;
-  background: url("../assets/image/no-image.png") no-repeat center / cover !important;
+  background-color: #eee;
+  background-image: url("../assets/image/no-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain !important;
 }
 
 .no-image > img {
