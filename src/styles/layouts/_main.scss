@@ -149,6 +149,11 @@ html[lang=en] .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont{pa
   background: url("../assets/image/no-image.png") no-repeat center / contain;
 }
 
+/* 노이미지 상태에서는 기존 슬라이드와 컨트롤이 여백을 만들지 않도록 숨김 */
+.main .box2 .wrap-slide-area.main-no-image .slide-box {
+  display: none;
+}
+
 /* 메인 이미지 슬라이드(no image) 이미지 미등록일 때 span 가리기 */
 .main .box2 .wrap-slide-area.main-no-image > span {
   position: absolute;
@@ -278,6 +283,7 @@ html[lang=en] .main .box2 .wrap-notice .notice-box .area .more .plus{margin-top:
   .main .box2 .wrap-notice {width: 100%;}    
   .main .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a {background-color: #fff;}  
   .main .box2 {padding: 48px 0 64px 0;gap: 96px;}
+  .main .box2:has(> .wrap-slide-area.main-no-image) {padding-top: 24px;gap: 24px;}
   .main .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a,
   .main .box1 .cont-box .login-box.login,
   .main .box2 .wrap-notice .notice-box{padding: 24px;}
@@ -332,6 +338,7 @@ html[lang=en] .main .box2 .wrap-notice .notice-box .area .more .plus{margin-top:
   
   
   .main .box2 {padding: 24px 0;gap: 72px;}
+  .main .box2:has(> .wrap-slide-area.main-no-image) {gap: 24px;}
 
   /* 메인 공지사항 */
   .main .box2 .wrap-notice .notice-box {height: 380px;padding: 24px;}

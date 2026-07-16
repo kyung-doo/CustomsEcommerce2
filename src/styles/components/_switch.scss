@@ -8,7 +8,7 @@
 .form-toggle-switch input[type=checkbox] + label:before {left: 0;top: 50%;padding: 2px;background-color: #b4c4d6;border-radius: 40px;}
 .form-toggle-switch input[type=checkbox] + label:after {top: 50%;left: 2px;background-color: #fff;border-radius: 50%;transition: all 0.3s;}
 .form-toggle-switch input[type=checkbox]:checked + label:after {left: 18px;}
-.form-toggle-switch input[type=checkbox]:checked + label:before {background-color: #246beb;}
+.form-toggle-switch input[type=checkbox]:checked + label:before {background-color: #c6c6c6;}
 .form-toggle-switch input[type=checkbox]:disabled + label:before {background-color: #e4e4e4;}
 .form-toggle-switch input[type=checkbox]:disabled + label:after {background-color: #c6c6c6;}
 .form-toggle-switch.large input[type=checkbox] + label {font-size: 19px;padding-left: 48px;}
