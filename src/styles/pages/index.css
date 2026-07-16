@@ -27,7 +27,7 @@ body.common-loading, html.common-loading {
 }
 
 .common-loading.nobg::before {
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .common-loading::after {
