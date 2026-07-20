@@ -2705,8 +2705,8 @@ input[data-ui=hidden-input] {
 }
 
 .wrap-faq .body .accordion-body .txt {
-  line-height: 150%;
-  margin-top: 21px;
+  line-height: 150% !important;
+  margin-top: 21px !important;
 }
 
 .wrap-faq .body .accordion-body .title-type3 {
