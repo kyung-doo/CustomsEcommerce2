@@ -40,6 +40,25 @@ class Datepicker {
         this.init();
     }
 
+    resetInvalidDateState(clearCurrentInput = true) {
+        const calendar = this.ele.closest('.calendar');
+
+        if (clearCurrentInput) {
+            this.input.val('');
+        }
+
+        if (this.isShow) {
+            this.hideCalendar();
+        } else {
+            this.input.removeAttr('disabled');
+            this.ele.removeClass('on');
+        }
+
+        calendar.find('.calendar-form input').removeAttr('disabled');
+        calendar.find('.calendar-form').removeClass('on');
+        $('.calendar-blind').hide();
+    }
+
     checkDateRangeLimit() {
         const calendar = this.ele.closest('.calendar');
         const limitYear = Number(calendar.data('limit-year'));
@@ -69,8 +88,7 @@ class Datepicker {
             endInput.val('');
             enterChk = "false";
 
-            this.hideCalendar();
-            $('.calendar-blind').hide();
+            this.resetInvalidDateState(false);
 
             const title = $('.head-tit').text();
             const isEn = document.documentElement.lang === 'en'
@@ -150,10 +168,11 @@ class Datepicker {
                 //alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
                 //this.input.val('').focus();
                 enterChk = "false";
+                this.resetInvalidDateState();
                 if(isEn === true){
-                    ecp_alert(title,ECP_MSG.err_ecp_en_00031,this.input.val(''));
+                    ecp_alert(title,ECP_MSG.err_ecp_en_00031);
                 }else{
-                    ecp_alert(title,ECP_MSG.err_ecp_ko_00031,this.input.val(''));
+                    ecp_alert(title,ECP_MSG.err_ecp_ko_00031);
                 }
                 
             } else {
@@ -164,10 +183,11 @@ class Datepicker {
                         //alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
                         //this.input.val('').focus(); 
                         enterChk = "false";
+                        this.resetInvalidDateState();
                         if(isEn === true){
-                            ecp_alert(title,ECP_MSG.err_ecp_en_00032,this.input.val(''));
+                            ecp_alert(title,ECP_MSG.err_ecp_en_00032);
                         }else{
-                            ecp_alert(title,ECP_MSG.err_ecp_ko_00032,this.input.val(''));
+                            ecp_alert(title,ECP_MSG.err_ecp_ko_00032);
                         }                        
                         return;
                     }
@@ -178,11 +198,13 @@ class Datepicker {
                             //alert('시작월은 종료월보다 클 수 없습니다.');
                             //this.input.val('').focus(); 
                             enterChk = "false";
+                            this.resetInvalidDateState();
                             if(isEn === true){
-                                ecp_alert(title,ECP_MSG.err_ecp_en_00033,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00033);
                             }else{
-                                ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00033);
                             }                            
+                            return;
                         }
                     }
 
@@ -192,11 +214,13 @@ class Datepicker {
                             //alert('종료월은 시작월보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
                             enterChk = "false";
+                            this.resetInvalidDateState();
                             if(isEn === true){
-                                ecp_alert(title,ECP_MSG.err_ecp_en_00034,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00034);
                             }else{
-                                ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00034);
                             }                            
+                            return;
                         }
                     }
                 } else {
@@ -206,22 +230,23 @@ class Datepicker {
                         //alert('오늘 날짜보다 큰 날짜를 입력할 수 없습니다.11');
                         // this.input.val('').focus();
                         enterChk = "false";
+                        this.resetInvalidDateState();
                         if(isEn === true){
-                            ecp_alert(title, ECP_MSG.err_ecp_en_00032, this.input.val(''));
+                            ecp_alert(title, ECP_MSG.err_ecp_en_00032);
                         }else{
-                            ecp_alert(title, ECP_MSG.err_ecp_ko_00032, this.input.val(''));
+                            ecp_alert(title, ECP_MSG.err_ecp_ko_00032);
                         }                        
                         return;
                     }
 
                     if (dayjs(this.props.minDate).isSame(dayjs(this.today), 'day') && dayjs(val).isBefore(dayjs(this.props.minDate), 'day')) {
                         //alert('오늘 날짜보다 작은 날짜를 입력할 수 없습니다.');
-                        this.input.val('').focus();
                         enterChk = "false";
+                        this.resetInvalidDateState();
                         if(isEn === true){
-                            ecp_alert(title, ECP_MSG.err_ecp_en_00318, this.input.val(''));
+                            ecp_alert(title, ECP_MSG.err_ecp_en_00318);
                         }else{
-                            ecp_alert(title, ECP_MSG.err_ecp_ko_00318, this.input.val(''));
+                            ecp_alert(title, ECP_MSG.err_ecp_ko_00318);
                         }                        
                         return;
                     }
@@ -234,11 +259,13 @@ class Datepicker {
                             //alert('시작날짜는 종료날짜보다 클 수 없습니다.11');                            
                             //this.input.val('').focus(); 
                             enterChk = "false";
+                            this.resetInvalidDateState();
                             if(isEn === true){
-                                ecp_alert(title,ECP_MSG.err_ecp_en_00033,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00033);
                             }else{
-                                ecp_alert(title,ECP_MSG.err_ecp_ko_00033,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00033);
                             }                            
+                            return;
                         }
                     }
 
@@ -248,11 +275,13 @@ class Datepicker {
                             //alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
                             //this.input.val('').focus(); 
                             enterChk = "false";
+                            this.resetInvalidDateState();
                             if(isEn === true){
-                                ecp_alert(title,ECP_MSG.err_ecp_en_00034,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_en_00034);
                             }else{
-                                ecp_alert(title,ECP_MSG.err_ecp_ko_00034,this.input.val(''));
+                                ecp_alert(title,ECP_MSG.err_ecp_ko_00034);
                             }                            
+                            return;
                         }
                     }
 

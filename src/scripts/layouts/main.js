@@ -82,6 +82,42 @@ $(() => {
     const hasListSlide = document.querySelector('#list-slide') !== null;
     let swiper1 = null;
 
+    // Swiper 제어 전에 DOM 연결 상태를 확인해 콘솔 오류를 방지
+    function canUseSwiper(swiper) {
+        if (!swiper || swiper.destroyed || !swiper.el) return false;
+        if (!swiper.el.isConnected) return false;
+        if (typeof swiper.el.querySelectorAll !== 'function') return false;
+
+        return true;
+    }
+
+    function canUpdateSwiper(swiper) {
+        if (!canUseSwiper(swiper)) return false;
+
+        const lazyImages = swiper.el.querySelectorAll('[loading="lazy"]');
+        if (typeof Symbol === 'undefined' || !lazyImages[Symbol.iterator]) return false;
+
+        return true;
+    }
+
+    function updateSwiper(swiper) {
+        if (!canUpdateSwiper(swiper)) return;
+
+        swiper.update();
+    }
+
+    function startSwiperAutoplay(swiper) {
+        if (!canUseSwiper(swiper) || !swiper.autoplay) return;
+
+        swiper.autoplay.start();
+    }
+
+    function stopSwiperAutoplay(swiper) {
+        if (!canUseSwiper(swiper) || !swiper.autoplay) return;
+
+        swiper.autoplay.stop();
+    }
+
     //화면 리사이즈 했을때 액션 슬라이드 꼬임 방지
     function syncToActiveSlide() {
         if (!swiper1 || swiper1.destroyed) return;
@@ -106,8 +142,10 @@ $(() => {
         const box = $('.main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont');
 
         // Swiper 위치 동기화
-        swiper1.slideToLoop(index, 0, true);
-        swiper1.update();
+        if (canUseSwiper(swiper1)) {
+            swiper1.slideToLoop(index, 0, true);
+            updateSwiper(swiper1);
+        }
 
         // UI 정리
         $slides.removeClass('on').removeAttr('title');
@@ -149,8 +187,10 @@ $(() => {
         box.removeClass('on');
         $('#'+tabBtn).addClass('on');
         
-        swiper1.slideToLoop(slideLoop,0,true);                
-        swiper1.autoplay.stop();  
+        if (canUseSwiper(swiper1)) {
+            swiper1.slideToLoop(slideLoop,0,true);
+        }
+        stopSwiperAutoplay(swiper1);
         $('.slide-area1 .swiper-stop').addClass('on')
     });        
 
@@ -171,11 +211,11 @@ $(() => {
             // 현재 포커스가 slide-area1 내부 요소인지 확인
             if ($(':focus').closest('.slide-area1').length) {
                 // 슬라이드 정지
-                swiper1.autoplay.stop();
+                stopSwiperAutoplay(swiper1);
                 $('.slide-area1 .swiper-stop').addClass('on').text('재생');
             } else {
                 // slide-area1 벗어나면 재생
-                swiper1.autoplay.start();
+                startSwiperAutoplay(swiper1);
                 $('.slide-area1 .swiper-stop').removeClass('on').text('정지');
             }
         }
@@ -275,9 +315,7 @@ $(() => {
             syncToActiveSlide();
 
             // 리사이즈 끝나면 다시 자동재생
-            if (swiper1.autoplay) {
-                swiper1.autoplay.start();
-            }
+            startSwiperAutoplay(swiper1);
         }, 1);
     });
 
@@ -327,11 +365,11 @@ $(() => {
                             // 현재 포커스가 slide-area2 내부 요소인지 확인
                             if ($(':focus').closest('.slide-area2').length) {
                                 // 슬라이드 정지
-                                swiper2.autoplay.stop();
+                                stopSwiperAutoplay(swiper2);
                                 $('.slide-area2 .swiper-stop').addClass('on').text('재생');
                             } else {
                                 // slide-area2 벗어나면 재생
-                                swiper2.autoplay.start();
+                                startSwiperAutoplay(swiper2);
                                 $('.slide-area2 .swiper-stop').removeClass('on').text('정지');
                             }
                         }
@@ -341,7 +379,9 @@ $(() => {
                     $('.slide-area2 .swiper-slide').on('focus', function() {
                         if (window.event && window.event instanceof KeyboardEvent) { // 키보드 입력인지 확인
                             var slideIndex = $(this).attr('data-swiper-slide-index');
-                            swiper2.slideToLoop(Number(slideIndex), 0, true);
+                            if (canUseSwiper(swiper2)) {
+                                swiper2.slideToLoop(Number(slideIndex), 0, true);
+                            }
                         }
                     });
                 },
@@ -351,14 +391,10 @@ $(() => {
 
     //화면 최초 로드 시 자동 슬라이드
     setTimeout(function(){
-        if (swiper1 && !swiper1.destroyed) {
-            swiper1.update();
-            swiper1.autoplay.start();
-        }
-        if (swiper2 && !swiper2.destroyed) {
-            swiper2.update();
-            swiper2.autoplay.start();
-        }
+        updateSwiper(swiper1);
+        startSwiperAutoplay(swiper1);
+        updateSwiper(swiper2);
+        startSwiperAutoplay(swiper2);
     },300)
 
     // 공통 play/pause 처리
@@ -373,13 +409,13 @@ $(() => {
             $btn.removeClass('on')
                 .text('정지')
                 .attr('title', '슬라이드 정지');
-            targetSwiper.autoplay.start();            
+            startSwiperAutoplay(targetSwiper);
         } else {
             // 현재 재생 상태 → 정지
             $btn.addClass('on')
                 .text('재생')
                 .attr('title', '슬라이드 재생');
-            targetSwiper.autoplay.stop();
+            stopSwiperAutoplay(targetSwiper);
         }
     });
 
