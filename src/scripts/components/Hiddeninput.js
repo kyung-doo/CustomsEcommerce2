@@ -182,7 +182,7 @@ $(function(){
     $(document).on('click','.visibility-btn',function(){
         const $btn = $(this);
         const $icon = $btn.find('i');
-        const $input = $btn.siblings('input');
+        const $input = $btn.siblings('input:not([name^="nProtectRegex_"])');
         $input.focus();
         
         if ($icon.hasClass('visibility')) {
