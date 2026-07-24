@@ -144,7 +144,7 @@
 .wrap-faq .body .accordion-body {padding: 32px 24px 32px 104px;background-color: #F4F5F6;border-bottom: 1px solid #E4E4E4;position: relative;}
 .wrap-faq .body .accordion-body .faq-box {padding-bottom: 32px;margin-bottom: 32px;position: relative;}
 .wrap-faq .body .accordion-body .faq-box::before {content: "";display: block;width: 100%;height: 2px;background-image: url(../assets/icons/dotted.svg);position: absolute;bottom: 0;left: 0;}
-.wrap-faq .body .accordion-body .faq-box.nofile {margin-bottom: 0;}
+.wrap-faq .body .accordion-body .faq-box.nofile {margin-bottom: 0;line-height: 150%;}
 .wrap-faq .body .accordion-body .faq-box.nofile::before {display: none;}
 .wrap-faq .body .accordion-body .number {position: absolute;top: 42px;left: 29px;color: #246BEB;letter-spacing: 4px;}
 .wrap-faq .body .accordion-body .title {font-size: 19px;line-height: 150%;}
