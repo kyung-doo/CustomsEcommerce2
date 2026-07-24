@@ -2685,7 +2685,6 @@ input[data-ui=hidden-input] {
 
 .wrap-faq .body .accordion-body .faq-box.nofile {
   margin-bottom: 0;
-  line-height: 150%;
 }
 
 .wrap-faq .body .accordion-body .faq-box.nofile::before {
