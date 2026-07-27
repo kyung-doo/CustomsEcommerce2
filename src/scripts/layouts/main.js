@@ -118,6 +118,57 @@ $(() => {
         swiper.autoplay.stop();
     }
 
+    function ensureLoopSlides($wrapper, minimumCount) {
+        const $slides = $wrapper.children('.swiper-slide');
+        const originalCount = $slides.length;
+
+        if (originalCount === 0) return 0;
+
+        let totalCount = originalCount;
+
+        while (totalCount < minimumCount) {
+            for (let i = 0; i < originalCount && totalCount < minimumCount; i++) {
+                $wrapper.append($slides.eq(i).clone());
+                totalCount++;
+            }
+        }
+
+        return originalCount;
+    }
+
+    function renderOriginalFraction(originalCount) {
+        return function (swiper) {
+            if (originalCount === 0) return '';
+
+            const current = (swiper.realIndex % originalCount) + 1;
+
+            return '<span class="swiper-pagination-current">' + current + '</span> / ' +
+                '<span class="swiper-pagination-total">' + originalCount + '</span>';
+        };
+    }
+
+    function syncImageSlideA11y(swiper, originalCount) {
+        if (!canUseSwiper(swiper) || originalCount === 0) return;
+
+        swiper.slides.forEach(function(slide) {
+            const slideIndex = Number(slide.getAttribute('data-swiper-slide-index')) || 0;
+            const realIndex = slideIndex % originalCount;
+            const isActive = slide.classList.contains('swiper-slide-active');
+
+            slide.setAttribute('role', 'group');
+            slide.setAttribute('aria-label', (realIndex + 1) + ' / ' + originalCount);
+            slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+
+            slide.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach(function(focusEl) {
+                if (isActive) {
+                    focusEl.removeAttribute('tabindex');
+                } else {
+                    focusEl.setAttribute('tabindex', '-1');
+                }
+            });
+        });
+    }
+
     //화면 리사이즈 했을때 액션 슬라이드 꼬임 방지
     function syncToActiveSlide() {
         if (!swiper1 || swiper1.destroyed) return;
@@ -221,17 +272,9 @@ $(() => {
         }
     });
 
+    // loop 경고가 나지 않도록 초기 슬라이드를 필요한 만큼 복제
     const $wrapper = $('#list-slide .swiper-wrapper');
-    const $slides = $wrapper.children('.swiper-slide');
-    const originalCount = $slides.length;
-
-    // 슬라이드가 5개 이하일 때만 2배로 복제
-    if (originalCount > 0 && originalCount < 10) {
-
-        for (let i = 0; i < originalCount; i++) {
-            $wrapper.append($slides.eq(i).clone());
-        }
-    }  
+    const originalCount = ensureLoopSlides($wrapper, 20);
 
     $('.swiper-wrapper > .swiper-slide').removeClass('on')
     $('.swiper-wrapper > .swiper-slide').removeAttr('title')
@@ -247,7 +290,7 @@ $(() => {
         spaceBetween: 14,              
         direction: 'vertical',
         autoHeight : true,               
-        loop: true,      
+        loop: originalCount > 0,
         observer: true,
         observeParents: true,
         loopAdditionalSlides:2,
@@ -337,27 +380,33 @@ $(() => {
     let swiper2 = null;
 
     if (hasImageSlide) {
-        swiper2 = new Swiper('#images-slide', {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            loop: true,
-            a11y: true,
-            autoplay: {
-                delay: slideSpeed,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.slide-area2 .swiper-pagination',
-                clickable: true,
-                type: 'fraction',
-            },
-            navigation: {
-                nextEl: '.slide-area2 .swiper-button-next',
-                prevEl: '.slide-area2 .swiper-button-prev',
-            },
-            on: {
-                init: function () {
-                    $('.slide-area2').attr('tabindex','0');
+        const imageOriginalCount = ensureLoopSlides($('#images-slide .swiper-wrapper'), 20);
+
+        if (imageOriginalCount > 0) {
+            swiper2 = new Swiper('#images-slide', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                a11y: true,
+                loopAdditionalSlides: 2,
+                autoplay: {
+                    delay: slideSpeed,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.slide-area2 .swiper-pagination',
+                    clickable: true,
+                    type: 'custom',
+                    renderCustom: renderOriginalFraction(imageOriginalCount),
+                },
+                navigation: {
+                    nextEl: '.slide-area2 .swiper-button-next',
+                    prevEl: '.slide-area2 .swiper-button-prev',
+                },
+                on: {
+                    init: function () {
+                        $('.slide-area2').attr('tabindex','0');
+                        syncImageSlideA11y(this, imageOriginalCount);
 
                     // Tab 키로 slide-area2 제어
                     $(document).on('keydown', function(e) {
@@ -384,9 +433,19 @@ $(() => {
                             }
                         }
                     });
-                },
-            }
-        });
+                    },
+                    slideChange: function () {
+                        syncImageSlideA11y(this, imageOriginalCount);
+                    },
+                    transitionEnd: function () {
+                        syncImageSlideA11y(this, imageOriginalCount);
+                    },
+                    resize: function () {
+                        syncImageSlideA11y(this, imageOriginalCount);
+                    },
+                }
+            });
+        }
     }
 
     //화면 최초 로드 시 자동 슬라이드
