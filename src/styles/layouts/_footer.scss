@@ -48,7 +48,8 @@
 // #footer .consult-wrap li{height: 90px;}
 #footer .consult-wrap li a{display: flex;align-items: center;position: relative;justify-content: center;flex-direction: column;}
 #footer .consult-wrap li a:before{content: "";display: block;width: 25px;height: 25px;background-position: center;background-repeat: no-repeat;background-size: cover;}
-#footer .consult-wrap li.consult1 a:before{background-image: url("../assets/icons/consult1.svg");}
+#footer .consult-wrap li.consult1 a:before{background-image: url("../assets/icons/b02.png"); background-size: 140%; background-position: center;}
+// #footer .consult-wrap li.consult1 a:before{background-image: url("../assets/icons/consult1.svg");}
 #footer .consult-wrap li.consult2 a:before{background-image: url("../assets/icons/consult2.svg");}
 #footer .consult-wrap li.consult3 a:before{background-image: url("../assets/icons/consult3.svg");}
 #footer .consult-wrap li a span{display: inline-flex;width:100%;font-size:15px;justify-content: center;white-space: nowrap;margin-top: 15px;}
