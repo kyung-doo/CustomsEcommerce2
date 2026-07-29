@@ -143,43 +143,8 @@ html[lang=en] .main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont{pa
 .main .box2 .slide-box .swiper .swiper-wrapper .swiper-slide a img {width: 100%;height: 100%;display: block;}
 
 /* 메인 이미지 슬라이드(no image) */
-.main .box2 .wrap-slide-area .main-no-image {
-  aspect-ratio: 1256 / 653;
-  height: auto;
-  background: url("../assets/image/no-image.png") no-repeat center / contain;
-}
-
-/* 노이미지 상태에서는 기존 슬라이드와 컨트롤이 여백을 만들지 않도록 숨김 */
-.main .box2 .wrap-slide-area .main-no-image .slide-box {
-  display: none;
-}
-
-/* 메인 이미지 슬라이드(no image) 이미지 미등록일 때 span 가리기 */
-.main .box2 .wrap-slide-area .main-no-image > span {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-/** no image 공통 **/
-.no-image {
-  aspect-ratio: 1256 / 653;
-  background-color: #eee;
-  background-image: url("../assets/image/no-image.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain !important;
-}
-
-.no-image > img {
-  display: none;
+.main .box2 .wrap-slide-area.no-image {
+  background: url("../assets/image/no-image.png") no-repeat center / cover;
 }
 
 /* 메인 공지사항 */

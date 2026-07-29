@@ -155,7 +155,7 @@ class Hiddeninput {
             // maskLast가 설정된 경우 → 뒤에서 마스킹
             if (this.props.maskLast > 0) {
                 const maskCount = Math.min(this.props.maskLast, this.actualValue.length);
-                const visiblePart = this.actualValue.slice(0, this.actualValue.length - maskCount);
+                const visiblePart = this.actualValue.toUpperCase().slice(0, this.actualValue.length - maskCount);
                 const maskedPart = '*'.repeat(maskCount);
 
                 input.value = visiblePart + maskedPart;
