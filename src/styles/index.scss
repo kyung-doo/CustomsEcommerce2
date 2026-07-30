@@ -180,11 +180,11 @@ a[class*=cl-]{text-decoration: underline;}
 }
 
 *:focus-visible {
-  outline: 3px solid #373737;   /* 키보드 포커스일 때만 표시 */
+  outline: 3px solid #246BEB;   /* 키보드 포커스일 때만 표시 */
 }
 
 *:focus-visible + label {
-  outline: 3px solid #373737;   /* 키보드 포커스일 때만 표시 */
+  outline: 3px solid #246BEB;   /* 키보드 포커스일 때만 표시 */
 }
 
 /** placeholder 텍스트 색상 **/
