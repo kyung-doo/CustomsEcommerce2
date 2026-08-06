@@ -5,7 +5,7 @@
 .form-toggle-switch {display: flex;position: relative;}
 .form-toggle-switch input[type=checkbox] + label {position: relative;}
 .form-toggle-switch input[type=checkbox] + label:before, .form-toggle-switch input[type=checkbox] + label:after {content: "";display: block;position: absolute;transform: translateY(-50%);}
-.form-toggle-switch input[type=checkbox] + label:before {left: 0;top: 50%;padding: 2px;background-color: #b4c4d6;border-radius: 40px;}
+.form-toggle-switch input[type=checkbox] + label:before {left: 0;top: 50%;padding: 2px;background-color: #003675;border-radius: 40px;}
 .form-toggle-switch input[type=checkbox] + label:after {top: 50%;left: 2px;background-color: #fff;border-radius: 50%;transition: all 0.3s;}
 .form-toggle-switch input[type=checkbox]:checked + label:after {left: 18px;}
 .form-toggle-switch input[type=checkbox]:checked + label:before {background-color: #c6c6c6;}

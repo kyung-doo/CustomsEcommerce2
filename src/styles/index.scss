@@ -19,7 +19,7 @@
   #header,
   .cont-head,
   .cont-body > .accordion-wrap,
-  #masthead,
+	#masthead,
   .chatbot,
   #footer,
   #helpInfo {display: none !important;}   
@@ -181,10 +181,12 @@ a[class*=cl-]{text-decoration: underline;}
 
 *:focus-visible {
   outline: 3px solid #246BEB;   /* 키보드 포커스일 때만 표시 */
+	outline-offset: -3px;
 }
 
 *:focus-visible + label {
   outline: 3px solid #246BEB;   /* 키보드 포커스일 때만 표시 */
+	outline-offset: -3px;
 }
 
 /** placeholder 텍스트 색상 **/
