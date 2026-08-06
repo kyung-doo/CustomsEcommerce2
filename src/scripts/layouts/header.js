@@ -2,10 +2,23 @@
 $(() => {
     let moveArrow = '';
     let oldTop = 0;
+    let scrollbarCompensation = 0;
     var isEn = document.documentElement.lang === 'en';
+    const $scrollCompensationTargets = $('#masthead, #header, #header .header-in');
           
 
-    $("#wrap").append('<div class="blind d-none"></div>');    
+    $("#wrap").append('<div class="blind d-none"></div>');
+
+    function getScrollBarWidth() {
+        return window.innerWidth - document.documentElement.clientWidth;
+    }
+
+    function syncHeaderScrollbarCompensation() {
+        const shouldCompensate = $(window).width() >= 1023 && $('#header .allmenu').hasClass('active');
+        const compensationValue = shouldCompensate && scrollbarCompensation > 0 ? `${scrollbarCompensation}px` : '';
+
+        $scrollCompensationTargets.css('margin-right', compensationValue);
+    }
 
 
     //스크롤 막기
@@ -74,17 +87,20 @@ $(() => {
         ================================================== */
     $("#header .allmenu").on("click", function () {
         if(!$(".main-allmenu").is(":visible")) {
+            scrollbarCompensation = getScrollBarWidth();
             $(".main-allmenu").show().scrollTop(0);
             $(".gnb-menu li").removeClass('active');
             $("#wrap > .blind").hide();
             $('body').css({'overflow': 'hidden'});
             $("#header .allmenu").addClass('active');
+            syncHeaderScrollbarCompensation();
             $(window).on('resize', () => {
                 if($("#header .allmenu").hasClass('active')){                    
                     $('body').css({'overflow': 'hidden'});                    
                 }else{
                     $('body').css({'overflow': 'auto'});
                 }
+                syncHeaderScrollbarCompensation();
             }); 
             if(isEn === true){
                 $(this).attr('title','Close All Menus')
@@ -96,6 +112,8 @@ $(() => {
             $(".main-allmenu").hide();
             $('body').css({'overflow': ''});
             $("#header .allmenu").removeClass('active');
+            scrollbarCompensation = 0;
+            syncHeaderScrollbarCompensation();
             if(isEn === true){
                 $(this).attr('title','Open All Menus')
             }else{
@@ -103,6 +121,7 @@ $(() => {
             }
             
         }
+        syncHeaderScrollbarCompensation();
         enableScroll();
     });
     
@@ -112,7 +131,9 @@ $(() => {
     $("#wrap > .blind").on('click', function () {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        $('body').removeClass('no-scroll')       
+        $('body').removeClass('no-scroll')
+        scrollbarCompensation = 0;
+        syncHeaderScrollbarCompensation();
         enableScroll();
     });
 
@@ -122,7 +143,9 @@ $(() => {
     $('#header .main-menu .allmenu').on('focus',function(){
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
-        //$('body').css({'overflow': ''});     
+        //$('body').css({'overflow': ''});
+        scrollbarCompensation = 0;
+        syncHeaderScrollbarCompensation();
         enableScroll();   
     });
 
@@ -140,6 +163,7 @@ $(() => {
         enableScroll();
         $('.main-menu.main-allmenu').hide();
         $('.allmenu').removeClass('active');
+        scrollbarCompensation = 0;
         $('#header .main-menu .allmenu').attr('title', '전체메뉴 열기');
         $('body').css({ "overflow-y": "auto" });
 
@@ -303,6 +327,7 @@ $(() => {
             
         }
 
+        syncHeaderScrollbarCompensation();
         enableScroll();
     });    
 
