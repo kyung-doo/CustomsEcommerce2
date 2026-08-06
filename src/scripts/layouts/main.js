@@ -78,6 +78,22 @@ $(() => {
     });
 
     var slideSpeed = 3000;
+    const listSlideEl = document.querySelector("#list-slide");
+    const imageSlideEl = document.querySelector("#images-slide");
+    let swiper1 = null;
+    let swiper2 = null;
+    let originalCount = 0;
+    let shouldCloneSlides = false;
+    let canUseLoop = false;
+    let smallListActiveIndex = 0;
+    let smallListAutoplayTimer = null;
+    let $wrapper = null;
+    let $slides = null;
+
+    function isSlideAreaVisible() {
+        const $slideArea = $('.main .box1 .cont-box .wrap-slide-box');
+        return $slideArea.length > 0 && $slideArea.is(':visible');
+    }
 
     //화면 리사이즈 했을때 액션 슬라이드 꼬임 방지
     function syncToActiveSlide() {
@@ -167,18 +183,18 @@ $(() => {
         }
     });
 
-    const $wrapper = $("#list-slide .swiper-wrapper");
-    const $slides = $wrapper.children(".swiper-slide");
-    const originalCount = $slides.length;
-    const shouldCloneSlides = originalCount > 3 && originalCount <= 7;
-    const canUseLoop = originalCount > 3;
-    let smallListActiveIndex = 0;
-    let smallListAutoplayTimer = null;
+    if (listSlideEl) {
+        $wrapper = $(listSlideEl).find(".swiper-wrapper");
+        $slides = $wrapper.children(".swiper-slide");
+        originalCount = $slides.length;
+        shouldCloneSlides = originalCount > 3 && originalCount <= 7;
+        canUseLoop = originalCount > 3 && isSlideAreaVisible();
 
-    // 4~7개일 때만 한 번 복제해 loop에 필요한 개수를 확보
-    if (shouldCloneSlides) {
-        for (let i = 0; i < originalCount; i++) {
-            $wrapper.append($slides.eq(i).clone());
+        // 4~7개일 때만 한 번 복제해 loop에 필요한 개수를 확보
+        if (shouldCloneSlides) {
+            for (let i = 0; i < originalCount; i++) {
+                $wrapper.append($slides.eq(i).clone());
+            }
         }
     }
 
@@ -200,6 +216,8 @@ $(() => {
 
     // 3개 이하는 위치를 움직이지 않고 활성 항목만 일정 시간마다 변경
     function startSwiper1Autoplay() {
+        if (!swiper1 || swiper1.destroyed || !isSlideAreaVisible()) return;
+
         if (canUseLoop) {
             swiper1.autoplay.start();
             return;
@@ -213,6 +231,14 @@ $(() => {
     }
 
     function stopSwiper1Autoplay() {
+        if (!swiper1 || swiper1.destroyed) return;
+
+        if (!isSlideAreaVisible()) {
+            window.clearInterval(smallListAutoplayTimer);
+            smallListAutoplayTimer = null;
+            return;
+        }
+
         if (canUseLoop) {
             swiper1.autoplay.stop();
             return;
@@ -236,69 +262,73 @@ $(() => {
     }, 1);
 
     //액션 슬라이드
-    const swiper1 = new Swiper("#list-slide", {
-        slidesPerView: "auto",
-        spaceBetween: 14,
-        direction: "vertical",
-        autoHeight: true,
-        loop: canUseLoop,
-        observer: true,
-        observeParents: true,
-        watchOverflow: false,
-        loopAdditionalSlides: 1,
-        watchSlidesProgress: true,
-        // loopedSlides: originalCount * 2,
-        resizeObserver: true,
-        autoplay: {
-            delay: slideSpeed,
-            disableOnInteraction: false
-        },
-        pagination: {
-            el: ".slide-area1 .swiper-pagination",
-            clickable: false,
-            type: "bullets"
-        },
-        navigation: {
-            nextEl: ".slide-area1 .swiper-button-next",
-            prevEl: ".slide-area1 .swiper-button-prev"
-        },
-        on: {
-            slideNextTransitionStart: function () {
-                var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
-                var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
-
-                $(".slide-area1 .swiper-slide").removeAttr("title");
-                $(".slide-area1 .swiper-slide").removeClass("on");
-                $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
-                $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
-                box.removeClass("on");
-                $("#" + tabBtn).addClass("on");
-
-                const slides = swiper1.slides;
-                const positions = [0]; // 첫 슬라이드 위치
-
-                for (let i = 1; i < slides.length; i++) {
-                    const prevSlide = slides[i - 1];
-                    const style = window.getComputedStyle(prevSlide);
-                    const margin = parseFloat(style.marginTop) + parseFloat(style.marginBottom);
-                    positions[i] = positions[i - 1] + prevSlide.offsetHeight + margin - 0.5;
-                }
-
-                swiper1.wrapperEl.style.transform = `translate3d(0px, -${positions[swiper1.activeIndex]}px, 0px)`;
+    if (listSlideEl) {
+        swiper1 = new Swiper(listSlideEl, {
+            slidesPerView: "auto",
+            spaceBetween: 14,
+            direction: "vertical",
+            autoHeight: true,
+            loop: canUseLoop,
+            observer: true,
+            observeParents: true,
+            watchOverflow: false,
+            loopAdditionalSlides: 1,
+            watchSlidesProgress: true,
+            // loopedSlides: originalCount * 2,
+            resizeObserver: true,
+            autoplay: isSlideAreaVisible()
+                ? {
+                      delay: slideSpeed,
+                      disableOnInteraction: false
+                  }
+                : false,
+            pagination: {
+                el: ".slide-area1 .swiper-pagination",
+                clickable: false,
+                type: "bullets"
             },
-            slidePrevTransitionEnd: function () {
-                var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
-                var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
+            navigation: {
+                nextEl: ".slide-area1 .swiper-button-next",
+                prevEl: ".slide-area1 .swiper-button-prev"
+            },
+            on: {
+                slideNextTransitionStart: function () {
+                    var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
+                    var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
 
-                $(".slide-area1 .swiper-slide").removeAttr("title");
-                $(".slide-area1 .swiper-slide").removeClass("on");
-                $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
-                $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
-                box.removeClass("on");
-                $("#" + tabBtn).addClass("on");
+                    $(".slide-area1 .swiper-slide").removeAttr("title");
+                    $(".slide-area1 .swiper-slide").removeClass("on");
+                    $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
+                    $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
+                    box.removeClass("on");
+                    $("#" + tabBtn).addClass("on");
+
+                    const slides = swiper1.slides;
+                    const positions = [0]; // 첫 슬라이드 위치
+
+                    for (let i = 1; i < slides.length; i++) {
+                        const prevSlide = slides[i - 1];
+                        const style = window.getComputedStyle(prevSlide);
+                        const margin = parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+                        positions[i] = positions[i - 1] + prevSlide.offsetHeight + margin - 0.5;
+                    }
+
+                    swiper1.wrapperEl.style.transform = `translate3d(0px, -${positions[swiper1.activeIndex]}px, 0px)`;
+                },
+                slidePrevTransitionEnd: function () {
+                    var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
+                    var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
+
+                    $(".slide-area1 .swiper-slide").removeAttr("title");
+                    $(".slide-area1 .swiper-slide").removeClass("on");
+                    $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
+                    $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
+                    box.removeClass("on");
+                    $("#" + tabBtn).addClass("on");
+                }
             }
-        }
-    });
+        });
+    }
 
     let resizeTimer = null;
 
@@ -318,16 +348,17 @@ $(() => {
         $(".swiper-wrapper > .swiper-slide.swiper-slide-active").attr("title", "선택됨");
     });
 
-    swiper1.on("init", function () {
-        syncToActiveSlide();
-    });
+    if (swiper1) {
+        swiper1.on("init", function () {
+            syncToActiveSlide();
+        });
+    }
 
     //이미지슬라이드
-    const imageSlideEl = document.querySelector("#images-slide");
-    const imageSlideCount = imageSlideEl.querySelectorAll(".swiper-slide").length;
-		let swiper2 = null;
+    let imageSlideCount = 0;
 
     if (imageSlideEl) {
+        imageSlideCount = imageSlideEl.querySelectorAll(".swiper-slide").length;
         swiper2 = new Swiper(imageSlideEl, {
             slidesPerView: 1,
             spaceBetween: 0,
@@ -390,8 +421,10 @@ $(() => {
 
     // 화면 최초 로드 시 자동 슬라이드
     setTimeout(function(){
-        swiper1.update();
-        startSwiper1Autoplay();
+        if (swiper1) {
+            swiper1.update();
+            startSwiper1Autoplay();
+        }
     },300)
 
     // 공통 play/pause 처리
@@ -399,6 +432,8 @@ $(() => {
         const $btn = $(this);
         const isFirstSlide = $btn.closest(".slide-area1").length > 0;
         const targetSwiper = isFirstSlide ? swiper1 : swiper2;
+
+        if (!isFirstSlide && !targetSwiper) return;
 
         if ($btn.hasClass("on")) {
             // 현재 정지 상태 → 재생 시작
