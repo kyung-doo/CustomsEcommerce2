@@ -249,6 +249,18 @@ $(() => {
         smallListAutoplayTimer = null;
     }
 
+    function startSwiper2Autoplay() {
+        if (!swiper2 || swiper2.destroyed || !swiper2.autoplay) return;
+
+        swiper2.autoplay.start();
+    }
+
+    function stopSwiper2Autoplay() {
+        if (!swiper2 || swiper2.destroyed || !swiper2.autoplay) return;
+
+        swiper2.autoplay.stop();
+    }
+
     $(document).on("click", ".slide-area1 .swiper-button-next", function () {
         moveSmallListActiveSlide(1);
     });
@@ -404,11 +416,11 @@ $(() => {
                             // 현재 포커스가 slide-area2 내부 요소인지 확인
                             if ($(":focus").closest(".slide-area2").length) {
                                 // 슬라이드 정지
-                                this.autoplay.stop();
+                                stopSwiper2Autoplay();
                                 $(".slide-area2 .swiper-stop").addClass("on").text("재생");
                             } else {
                                 // slide-area2 벗어나면 재생
-                                this.autoplay.start();
+                                startSwiper2Autoplay();
                                 $(".slide-area2 .swiper-stop").removeClass("on").text("정지");
                             }
                         }
@@ -419,7 +431,7 @@ $(() => {
                         if (window.event && window.event instanceof KeyboardEvent) {
                             // 키보드 입력인지 확인
                             var slideIndex = $(this).attr("data-swiper-slide-index");
-                            this.slideToLoop(Number(slideIndex), 0, true);
+                            swiper2.slideToLoop(Number(slideIndex), 0, true);
                         }
                     });
                 }
@@ -449,7 +461,7 @@ $(() => {
             if (isFirstSlide) {
                 startSwiper1Autoplay();
             } else {
-                targetSwiper.autoplay.start();
+                startSwiper2Autoplay();
             }
         } else {
             // 현재 재생 상태 → 정지
@@ -457,7 +469,7 @@ $(() => {
             if (isFirstSlide) {
                 stopSwiper1Autoplay();
             } else {
-                targetSwiper.autoplay.stop();
+                stopSwiper2Autoplay();
             }
         }
     });

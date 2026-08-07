@@ -23,11 +23,33 @@ class Modal {
         this.ele.empty();
     }
 
+    lockBodyScroll () {
+        const $body = $("body");
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        const bodyPaddingRight = parseFloat($body.css("padding-right")) || 0;
+
+        $body.data("modal-padding-right", $body.css("padding-right"));
+        $("body,html").css({'overflow': 'hidden'});
+
+        if (scrollbarWidth > 0) {
+            $body.css("padding-right", bodyPaddingRight + scrollbarWidth);
+        }
+    }
+
+    unlockBodyScroll () {
+        const $body = $("body");
+        const bodyPaddingRight = $body.data("modal-padding-right");
+
+        $("body,html").css({'overflow': ''});
+        $body.css("padding-right", bodyPaddingRight || "");
+        $body.removeData("modal-padding-right");
+    }
+
     show () {
         this.ele.empty().append(this.copyHtml);        
         this.ele.removeClass('d-none');
 
-        $("body,html").css({'overflow': 'hidden'});           
+        this.lockBodyScroll();
 
         const modalWidth = this.ele.find('.modal-wrap').outerWidth();
 
@@ -123,7 +145,7 @@ class Modal {
         this.ele.find(".btn-close").off("click");
         this.ele.find(".modal-close").off("click");
         $("#wrap, .guide-wrap").removeAttr('inert');
-        $("body").css({'overflow': ''});
+        this.unlockBodyScroll();
         $(document).off('keydown.modal');
         this.ele.empty();
         $(`*[data-modal-target="#${this.ele.attr('id')}"]`).focus();        
