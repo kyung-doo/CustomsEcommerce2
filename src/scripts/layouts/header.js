@@ -210,8 +210,10 @@ $(() => {
         $(window).on('resize',function(){
             $('body').css({"overflow":"auto"});
         }) 
-        $('.main-menu.main-allmenu').hide();
-        $('.allmenu').removeClass('active')        
+        setTimeout(function () {
+            $('.main-menu.main-allmenu').hide();
+            $('.allmenu').removeClass('active')
+        }, $(this).closest('.main-allmenu').length ? 300 : 0);
     });
     $(".mobile-dep-menu").on('click', function () {
         if(!$(this).parent().find('.depth2').is(':visible')) {

@@ -85,6 +85,7 @@ $(() => {
     let originalCount = 0;
     let shouldCloneSlides = false;
     let canUseLoop = false;
+    let canUseImageLoop = false;
     let smallListActiveIndex = 0;
     let smallListAutoplayTimer = null;
     let $wrapper = null;
@@ -359,23 +360,30 @@ $(() => {
 
     if (imageSlideEl) {
         imageSlideCount = imageSlideEl.querySelectorAll(".swiper-slide").length;
+        const $imageSlideArea = $(imageSlideEl).closest(".wrap-slide-area");
+        canUseImageLoop =
+            imageSlideCount > 1 &&
+            !$imageSlideArea.hasClass("no-image") &&
+            !$imageSlideArea.hasClass("main-no-image") &&
+            $imageSlideArea.is(":visible");
+
         swiper2 = new Swiper(imageSlideEl, {
             slidesPerView: 1,
             spaceBetween: 0,
-            loop: imageSlideCount > 1,
+            loop: canUseImageLoop,
             a11y: true,
-            obserber: true,
+            observer: true,
             observeParents: true,
             watchOverflow: false,
             autoplay:
-                imageSlideCount > 1
+                canUseImageLoop
                     ? {
                           delay: slideSpeed,
                           disableOnInteraction: false
                       }
                     : false,
             pagination:
-                imageSlideCount > 1
+                canUseImageLoop
                     ? {
                           el: ".slide-area2 .swiper-pagination",
                           clickable: true,
