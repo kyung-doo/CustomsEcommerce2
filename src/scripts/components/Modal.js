@@ -25,24 +25,38 @@ class Modal {
 
     lockBodyScroll () {
         const $body = $("body");
+        const $scrollCompensationTargets = $('#masthead, #header, #header .header-in');
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         const bodyPaddingRight = parseFloat($body.css("padding-right")) || 0;
 
         $body.data("modal-padding-right", $body.css("padding-right"));
+        $scrollCompensationTargets.each(function () {
+            const $target = $(this);
+            $target.data("modal-margin-right", $target.css("margin-right"));
+        });
         $("body,html").css({'overflow': 'hidden'});
 
         if (scrollbarWidth > 0) {
             $body.css("padding-right", bodyPaddingRight + scrollbarWidth);
+            $scrollCompensationTargets.css("margin-right", scrollbarWidth);
         }
     }
 
     unlockBodyScroll () {
         const $body = $("body");
+        const $scrollCompensationTargets = $('#masthead, #header, #header .header-in');
         const bodyPaddingRight = $body.data("modal-padding-right");
 
         $("body,html").css({'overflow': ''});
         $body.css("padding-right", bodyPaddingRight || "");
         $body.removeData("modal-padding-right");
+        $scrollCompensationTargets.each(function () {
+            const $target = $(this);
+            const targetMarginRight = $target.data("modal-margin-right");
+
+            $target.css("margin-right", targetMarginRight || "");
+            $target.removeData("modal-margin-right");
+        });
     }
 
     show () {

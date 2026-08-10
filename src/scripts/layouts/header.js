@@ -20,6 +20,11 @@ $(() => {
         $scrollCompensationTargets.css('margin-right', compensationValue);
     }
 
+    function resetHeaderScrollbarCompensation() {
+        scrollbarCompensation = 0;
+        syncHeaderScrollbarCompensation();
+    }
+
 
     //스크롤 막기
     // function preventDefault(e) {
@@ -112,8 +117,7 @@ $(() => {
             $(".main-allmenu").hide();
             $('body').css({'overflow': ''});
             $("#header .allmenu").removeClass('active');
-            scrollbarCompensation = 0;
-            syncHeaderScrollbarCompensation();
+            resetHeaderScrollbarCompensation();
             if(isEn === true){
                 $(this).attr('title','Open All Menus')
             }else{
@@ -132,8 +136,7 @@ $(() => {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
         $('body').removeClass('no-scroll')
-        scrollbarCompensation = 0;
-        syncHeaderScrollbarCompensation();
+        resetHeaderScrollbarCompensation();
         enableScroll();
     });
 
@@ -144,8 +147,7 @@ $(() => {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
         //$('body').css({'overflow': ''});
-        scrollbarCompensation = 0;
-        syncHeaderScrollbarCompensation();
+        resetHeaderScrollbarCompensation();
         enableScroll();   
     });
 
@@ -212,7 +214,8 @@ $(() => {
         }) 
         setTimeout(function () {
             $('.main-menu.main-allmenu').hide();
-            $('.allmenu').removeClass('active')
+            $('.allmenu').removeClass('active');
+            resetHeaderScrollbarCompensation();
         }, $(this).closest('.main-allmenu').length ? 500 : 0);
     });
     $(".mobile-dep-menu").on('click', function () {
