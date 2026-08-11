@@ -15,13 +15,53 @@ $(() => {
 
     function syncHeaderScrollbarCompensation() {
         const shouldCompensate = $(window).width() >= 1023 && $('#header .allmenu').hasClass('active');
-        const compensationValue = shouldCompensate && scrollbarCompensation > 0 ? `${scrollbarCompensation}px` : '';
+        const compensationValue = shouldCompensate ? scrollbarCompensation : 0;
 
-        $scrollCompensationTargets.css('margin-right', compensationValue);
+        $scrollCompensationTargets.each(function () {
+            const $target = $(this);
+
+            if (compensationValue > 0) {
+                if (!$target.data('scroll-padding-right')) {
+                    $target.data('scroll-padding-right', $target.css('padding-right'));
+                }
+
+                const targetPaddingRight = parseFloat($target.data('scroll-padding-right')) || 0;
+                $target.css('padding-right', targetPaddingRight + compensationValue);
+            } else {
+                const targetPaddingRight = $target.data('scroll-padding-right');
+
+                if (targetPaddingRight !== undefined) {
+                    $target.css('padding-right', targetPaddingRight || '');
+                    $target.removeData('scroll-padding-right');
+                }
+            }
+        });
+    }
+
+    function syncBodyScrollbarCompensation() {
+        const shouldCompensate = $(window).width() >= 1023 && $('#header .allmenu').hasClass('active') && scrollbarCompensation > 0;
+        const $body = $('body');
+
+        if (shouldCompensate) {
+            if (!$body.data('scroll-padding-right')) {
+                $body.data('scroll-padding-right', $body.css('padding-right'));
+            }
+
+            const bodyPaddingRight = parseFloat($body.data('scroll-padding-right')) || 0;
+            $body.css('padding-right', bodyPaddingRight + scrollbarCompensation);
+        } else {
+            const bodyPaddingRight = $body.data('scroll-padding-right');
+
+            if (bodyPaddingRight !== undefined) {
+                $body.css('padding-right', bodyPaddingRight || '');
+                $body.removeData('scroll-padding-right');
+            }
+        }
     }
 
     function resetHeaderScrollbarCompensation() {
         scrollbarCompensation = 0;
+        syncBodyScrollbarCompensation();
         syncHeaderScrollbarCompensation();
     }
 
@@ -98,6 +138,7 @@ $(() => {
             $("#wrap > .blind").hide();
             $('body').css({'overflow': 'hidden'});
             $("#header .allmenu").addClass('active');
+            syncBodyScrollbarCompensation();
             syncHeaderScrollbarCompensation();
             $(window).on('resize', () => {
                 if($("#header .allmenu").hasClass('active')){                    
@@ -105,6 +146,7 @@ $(() => {
                 }else{
                     $('body').css({'overflow': 'auto'});
                 }
+                syncBodyScrollbarCompensation();
                 syncHeaderScrollbarCompensation();
             }); 
             if(isEn === true){
@@ -165,7 +207,7 @@ $(() => {
         enableScroll();
         $('.main-menu.main-allmenu').hide();
         $('.allmenu').removeClass('active');
-        scrollbarCompensation = 0;
+        resetHeaderScrollbarCompensation();
         $('#header .main-menu .allmenu').attr('title', '전체메뉴 열기');
         $('body').css({ "overflow-y": "auto" });
 

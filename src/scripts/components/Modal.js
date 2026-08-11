@@ -32,13 +32,18 @@ class Modal {
         $body.data("modal-padding-right", $body.css("padding-right"));
         $scrollCompensationTargets.each(function () {
             const $target = $(this);
-            $target.data("modal-margin-right", $target.css("margin-right"));
+            $target.data("modal-padding-right", $target.css("padding-right"));
         });
         $("body,html").css({'overflow': 'hidden'});
 
         if (scrollbarWidth > 0) {
             $body.css("padding-right", bodyPaddingRight + scrollbarWidth);
-            $scrollCompensationTargets.css("margin-right", scrollbarWidth);
+            $scrollCompensationTargets.each(function () {
+                const $target = $(this);
+                const targetPaddingRight = parseFloat($target.data("modal-padding-right")) || 0;
+
+                $target.css("padding-right", targetPaddingRight + scrollbarWidth);
+            });
         }
     }
 
@@ -52,10 +57,10 @@ class Modal {
         $body.removeData("modal-padding-right");
         $scrollCompensationTargets.each(function () {
             const $target = $(this);
-            const targetMarginRight = $target.data("modal-margin-right");
+            const targetPaddingRight = $target.data("modal-padding-right");
 
-            $target.css("margin-right", targetMarginRight || "");
-            $target.removeData("modal-margin-right");
+            $target.css("padding-right", targetPaddingRight || "");
+            $target.removeData("modal-padding-right");
         });
     }
 
