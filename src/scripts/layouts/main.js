@@ -217,9 +217,12 @@ $(() => {
 
     // 3개 이하는 위치를 움직이지 않고 활성 항목만 일정 시간마다 변경
     function startSwiper1Autoplay() {
-        if (!swiper1 || swiper1.destroyed || !isSlideAreaVisible()) return;
+        if (!swiper1 || swiper1.destroyed) return;
 
-        if (canUseLoop) {
+        // 4개 이상은 loop 사용 가능 여부와 상관없이 Swiper 자체 autoplay로 넘긴다.
+        // (canUseLoop는 isSlideAreaVisible()이 초기화 시점에 false였으면 항상 false가 되는데,
+        //  그 경우에도 자동재생은 정상 동작해야 하므로 loop 여부와 분리한다.)
+        if (originalCount > 3) {
             swiper1.autoplay.start();
             return;
         }
@@ -234,13 +237,7 @@ $(() => {
     function stopSwiper1Autoplay() {
         if (!swiper1 || swiper1.destroyed) return;
 
-        if (!isSlideAreaVisible()) {
-            window.clearInterval(smallListAutoplayTimer);
-            smallListAutoplayTimer = null;
-            return;
-        }
-
-        if (canUseLoop) {
+        if (originalCount > 3) {
             swiper1.autoplay.stop();
             return;
         }
@@ -341,6 +338,7 @@ $(() => {
                 }
             }
         });
+
     }
 
     let resizeTimer = null;
@@ -378,6 +376,7 @@ $(() => {
             !$imageSlideArea.hasClass("no-image") &&
             !$imageSlideArea.hasClass("main-no-image") &&
             $imageSlideArea.is(":visible");
+
 
         swiper2 = new Swiper(imageSlideEl, {
             slidesPerView: 1,
@@ -444,6 +443,10 @@ $(() => {
         if (swiper1) {
             swiper1.update();
             startSwiper1Autoplay();
+        }
+        if (swiper2) {
+            swiper2.update();
+            startSwiper2Autoplay();
         }
     },300)
 
