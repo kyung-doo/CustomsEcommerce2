@@ -92,8 +92,8 @@ $(() => {
     let $slides = null;
 
     function isSlideAreaVisible() {
-        const $slideArea = $('.main .box1 .cont-box .wrap-slide-box');
-        return $slideArea.length > 0 && $slideArea.is(':visible');
+        const $slideArea = $(".main .box1 .cont-box .wrap-slide-box");
+        return $slideArea.length > 0 && $slideArea.is(":visible");
     }
 
     //화면 리사이즈 했을때 액션 슬라이드 꼬임 방지
@@ -135,9 +135,9 @@ $(() => {
     //액션 슬라이드 리스트 클릭
     var tabBox = $(".slide-area1 .swiper-slide-active").attr("data-btn");
 
-    $("#" + tabBox).addClass("on");
-    $(".slide-area1 .swiper-slide-active").addClass("on");
-    $(".slide-area1").attr("tabindex", "0");
+    // $("#" + tabBox).addClass("on");
+    // $(".slide-area1 .swiper-slide-active").addClass("on");
+    // $(".slide-area1").attr("tabindex", "0");
 
     $(document).on("click focus", ".slide-area1 .swiper-slide", function () {
         var slideIndex = $(this).attr("data-swiper-slide-index");
@@ -159,8 +159,6 @@ $(() => {
         stopSwiper1Autoplay();
         $(".slide-area1 .swiper-stop").addClass("on");
     });
-
-    $(".slide-area1 .swiper").on("mouseenter", function () {});
 
     // $('.slide-area1 .swiper').on('mouseleave', function() {
     //     console.log('마우스 벗어남');
@@ -184,21 +182,6 @@ $(() => {
         }
     });
 
-    if (listSlideEl) {
-        $wrapper = $(listSlideEl).find(".swiper-wrapper");
-        $slides = $wrapper.children(".swiper-slide");
-        originalCount = $slides.length;
-        shouldCloneSlides = originalCount > 3 && originalCount <= 7;
-        canUseLoop = originalCount > 3 && isSlideAreaVisible();
-
-        // 4~7개일 때만 한 번 복제해 loop에 필요한 개수를 확보
-        if (shouldCloneSlides) {
-            for (let i = 0; i < originalCount; i++) {
-                $wrapper.append($slides.eq(i).clone());
-            }
-        }
-    }
-
     // 모든 항목이 화면에 보이는 경우 위치는 고정하고 활성 항목만 순환
     function moveSmallListActiveSlide(step = 1) {
         if (originalCount <= 1 || originalCount > 3) return;
@@ -219,9 +202,6 @@ $(() => {
     function startSwiper1Autoplay() {
         if (!swiper1 || swiper1.destroyed) return;
 
-        // 4개 이상은 loop 사용 가능 여부와 상관없이 Swiper 자체 autoplay로 넘긴다.
-        // (canUseLoop는 isSlideAreaVisible()이 초기화 시점에 false였으면 항상 false가 되는데,
-        //  그 경우에도 자동재생은 정상 동작해야 하므로 loop 여부와 분리한다.)
         if (originalCount > 3) {
             swiper1.autoplay.start();
             return;
@@ -266,80 +246,102 @@ $(() => {
         moveSmallListActiveSlide(-1);
     });
 
-    setTimeout(function () {
+    $(document).ready(() => {
+        // $('.slide-area1').css('visibility', 'hidden')
         $(".swiper-wrapper > .swiper-slide-active").addClass("on");
         $(".swiper-wrapper > .swiper-slide-active").attr("title", "선택됨");
-    }, 1);
+        //액션 슬라이드
 
-    //액션 슬라이드
-    if (listSlideEl) {
-        swiper1 = new Swiper(listSlideEl, {
-            slidesPerView: "auto",
-            spaceBetween: 14,
-            direction: "vertical",
-            autoHeight: true,
-            loop: canUseLoop,
-            observer: true,
-            observeParents: true,
-            watchOverflow: false,
-            loopAdditionalSlides: 1,
-            watchSlidesProgress: true,
-            // loopedSlides: originalCount * 2,
-            resizeObserver: true,
-            autoplay: isSlideAreaVisible()
-                ? {
-                      delay: slideSpeed,
-                      disableOnInteraction: false
-                  }
-                : false,
-            pagination: {
-                el: ".slide-area1 .swiper-pagination",
-                clickable: false,
-                type: "bullets"
-            },
-            navigation: {
-                nextEl: ".slide-area1 .swiper-button-next",
-                prevEl: ".slide-area1 .swiper-button-prev"
-            },
-            on: {
-                slideNextTransitionStart: function () {
-                    var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
-                    var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    $wrapper = $(listSlideEl).find(".swiper-wrapper");
+                    $slides = $wrapper.children(".swiper-slide");
+                    originalCount = $slides.length;
+                    shouldCloneSlides = originalCount > 3 && originalCount <= 7;
+                    canUseLoop = originalCount > 3 && isSlideAreaVisible();
 
-                    $(".slide-area1 .swiper-slide").removeAttr("title");
-                    $(".slide-area1 .swiper-slide").removeClass("on");
-                    $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
-                    $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
-                    box.removeClass("on");
-                    $("#" + tabBtn).addClass("on");
-
-                    const slides = swiper1.slides;
-                    const positions = [0]; // 첫 슬라이드 위치
-
-                    for (let i = 1; i < slides.length; i++) {
-                        const prevSlide = slides[i - 1];
-                        const style = window.getComputedStyle(prevSlide);
-                        const margin = parseFloat(style.marginTop) + parseFloat(style.marginBottom);
-                        positions[i] = positions[i - 1] + prevSlide.offsetHeight + margin - 0.5;
+                    //4~7개일 때만 한 번 복제해 loop에 필요한 개수를 확보
+                    if (shouldCloneSlides) {
+                        for (let i = 0; i < originalCount; i++) {
+                            $wrapper.append($slides.eq(i).clone());
+                        }
                     }
 
-                    swiper1.wrapperEl.style.transform = `translate3d(0px, -${positions[swiper1.activeIndex]}px, 0px)`;
-                },
-                slidePrevTransitionEnd: function () {
-                    var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
-                    var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
+                    swiper1 = new Swiper(listSlideEl, {
+                        slidesPerView: "auto",
+                        loop: true,
+                        spaceBetween: 14,
+                        direction: "vertical",
+                        autoHeight: true,
+                        autoplay: true,
+                        // observer: true,
+                        // observeParents: true,
+                        // watchOverflow: false,
+                        // loopAdditionalSlides: 1,
+                        // watchSlidesProgress: true,
+                        // resizeObserver: true,
+                        // loopedSlides: originalCount * 2,
+                        // autoplay: isSlideAreaVisible()P
+                        //     ? {
+                        //         delay: slideSpeed,
+                        //         disableOnInteraction: false
+                        //     }
+                        //     : false,
+                        pagination: {
+                            el: ".slide-area1 .swiper-pagination",
+                            clickable: false,
+                            type: "bullets"
+                        },
+                        navigation: {
+                            nextEl: ".slide-area1 .swiper-button-next",
+                            prevEl: ".slide-area1 .swiper-button-prev"
+                        },
+                        on: {
+                            slideNextTransitionStart: function () {
+                                var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
+                                var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
 
-                    $(".slide-area1 .swiper-slide").removeAttr("title");
-                    $(".slide-area1 .swiper-slide").removeClass("on");
-                    $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
-                    $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
-                    box.removeClass("on");
-                    $("#" + tabBtn).addClass("on");
+                                $(".slide-area1 .swiper-slide").removeAttr("title");
+                                $(".slide-area1 .swiper-slide").removeClass("on");
+                                $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
+                                $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
+                                box.removeClass("on");
+                                $("#" + tabBtn).addClass("on");
+
+                                const slides = this.slides;
+                                const positions = [0]; // 첫 슬라이드 위치
+
+                                for (let i = 1; i < slides.length; i++) {
+                                    const prevSlide = slides[i - 1];
+                                    const style = window.getComputedStyle(prevSlide);
+                                    const margin = parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+                                    positions[i] = positions[i - 1] + prevSlide.offsetHeight + margin - 0.5;
+                                }
+
+                                this.wrapperEl.style.transform = `translate3d(0px, -${positions[this.activeIndex]}px, 0px)`;
+                            },
+
+                            slidePrevTransitionEnd: function (abc) {
+                                var tabBtn = $(".slide-area1 .swiper-slide.swiper-slide-active").attr("data-btn");
+                                var box = $(".main .box1 .cont-box .wrap-slide-box .slide-show-box .tab-cont");
+
+                                $(".slide-area1 .swiper-slide").removeAttr("title");
+                                $(".slide-area1 .swiper-slide").removeClass("on");
+                                $(".slide-area1 .swiper-slide.swiper-slide-active").addClass("on");
+                                $(".slide-area1 .swiper-slide.swiper-slide-active").attr("title", "선택됨");
+                                box.removeClass("on");
+                                $("#" + tabBtn).addClass("on");
+                            }
+                        }
+                    });
+                    $(".slide-area1").css("visibility", "visible");
+                    observer.disconnect();
                 }
-            }
+            });
         });
-
-    }
+        observer.observe(document.querySelector("#favorite-list-left"));
+    });
 
     let resizeTimer = null;
 
@@ -354,16 +356,16 @@ $(() => {
         }, 1);
     });
 
-    $(window).on("load", function () {
-        $(".swiper-wrapper > .swiper-slide.swiper-slide-active").addClass("on");
-        $(".swiper-wrapper > .swiper-slide.swiper-slide-active").attr("title", "선택됨");
-    });
+    // $(window).on("load", function () {
+    //     $(".swiper-wrapper > .swiper-slide.swiper-slide-active").addClass("on");
+    //     $(".swiper-wrapper > .swiper-slide.swiper-slide-active").attr("title", "선택됨");
+    // });
 
-    if (swiper1) {
-        swiper1.on("init", function () {
-            syncToActiveSlide();
-        });
-    }
+    // if (swiper1) {
+    //     swiper1.on("init", function () {
+    //         syncToActiveSlide();
+    //     });
+    // }
 
     //이미지슬라이드
     let imageSlideCount = 0;
@@ -377,7 +379,6 @@ $(() => {
             !$imageSlideArea.hasClass("main-no-image") &&
             $imageSlideArea.is(":visible");
 
-
         swiper2 = new Swiper(imageSlideEl, {
             slidesPerView: 1,
             spaceBetween: 0,
@@ -386,21 +387,19 @@ $(() => {
             observer: true,
             observeParents: true,
             watchOverflow: false,
-            autoplay:
-                canUseImageLoop
-                    ? {
-                          delay: slideSpeed,
-                          disableOnInteraction: false
-                      }
-                    : false,
-            pagination:
-                canUseImageLoop
-                    ? {
-                          el: ".slide-area2 .swiper-pagination",
-                          clickable: true,
-                          type: "fraction"
-                      }
-                    : false,
+            autoplay: canUseImageLoop
+                ? {
+                      delay: slideSpeed,
+                      disableOnInteraction: false
+                  }
+                : false,
+            pagination: canUseImageLoop
+                ? {
+                      el: ".slide-area2 .swiper-pagination",
+                      clickable: true,
+                      type: "fraction"
+                  }
+                : false,
             navigation: {
                 nextEl: ".slide-area2 .swiper-button-next",
                 prevEl: ".slide-area2 .swiper-button-prev"
@@ -439,16 +438,19 @@ $(() => {
     }
 
     // 화면 최초 로드 시 자동 슬라이드
-    setTimeout(function(){
+    setTimeout(function () {
+        //즐겨찾기 자동재생
         if (swiper1) {
             swiper1.update();
             startSwiper1Autoplay();
         }
+
+        //배너 즐겨찾기
         if (swiper2) {
             swiper2.update();
             startSwiper2Autoplay();
         }
-    },300)
+    }, 300);
 
     // 공통 play/pause 처리
     $(".swiper-stop").click(function () {
