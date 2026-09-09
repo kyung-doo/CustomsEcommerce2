@@ -54,6 +54,25 @@
 #footer .consult-wrap li.consult3 a:before{background-image: url("../assets/icons/consult3.svg");}
 #footer .consult-wrap li a span{display: inline-flex;width:100%;font-size:15px;justify-content: center;white-space: nowrap;margin-top: 15px;}
 
+#footer .consult-floating {position: fixed;right: 32px;bottom: 32px;z-index: 1000;display: flex;flex-direction: column;align-items: flex-end;gap: 12px;}
+#footer .consult-floating-toggle {position: absolute;width: 1px;height: 1px;margin: -1px;padding: 0;border: 0;overflow: hidden;clip: rect(0, 0, 0, 0);}
+#footer .consult-floating-list {display: none;flex-direction: column;align-items: flex-end;gap: 12px;}
+#footer .consult-floating-list li {display: flex;}
+#footer .consult-floating-list li a {display: flex;align-items: center;justify-content: flex-end; gap: 8px;min-width: 174px;height: 60px;color: #fff;font-size: 15px;font-weight: 700;}
+#footer .consult-floating-list li a:after {content: "";display: block;width: 62px;height: 62px;flex: 0 0 62px;border: 1px solid #C6C6C6;border-radius: 50%;background-color: #fff;background-repeat: no-repeat;background-position: center;box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.24);}
+#footer .consult-floating-list li.consult1 a:after {background-image: url("../assets/icons/b02.png");background-size: 58px auto;}
+#footer .consult-floating-list li.consult2 a:after {background-image: url("../assets/icons/consult2.svg");background-size: 32px auto;}
+#footer .consult-floating-list li.consult3 a:after {background-image: url("../assets/icons/consult3.svg");background-size: 36px auto;}
+#footer .consult-floating-list li a span {display: inline-flex;align-items: center;height: 28px;padding: 0 12px;border-radius: 14px;background-color: rgba(0, 0, 0, 0.72);font-size: 14px;color:#fff;line-height: 1;white-space: nowrap;}
+#footer .consult-floating-open {display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-width: 182px;height: 64px;padding: 0 12px 0 24px;border-radius: 32px;background-color: #246BEB;color: #fff;font-size: 19px !important;font-weight: 700 !important;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);cursor: pointer;}
+#footer .consult-floating-open span {font-size: 19px;color:#fff;font-weight: 700;}
+#footer .consult-floating-open:after {content: "";display: block;width: 26px;height: 26px;background-color: #fff;mask: url("../assets/icons/plus.svg") no-repeat center / contain;-webkit-mask: url("../assets/icons/plus.svg") no-repeat center / contain;}
+#footer .consult-floating-close {display: none;width: 64px;height: 64px;border-radius: 50%;background-color: #16408D;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);cursor: pointer;position: relative;}
+#footer .consult-floating-close:before {content: "";position: absolute;top: 50%;left: 50%;width: 32px;height: 32px;background-color: #fff;transform: translate(-50%, -50%);mask: url("../assets/icons/close.svg") no-repeat center / contain;-webkit-mask: url("../assets/icons/close.svg") no-repeat center / contain;}
+#footer .consult-floating-toggle:checked ~ .consult-floating-list {display: flex;}
+#footer .consult-floating-toggle:checked ~ .consult-floating-open {display: none;}
+#footer .consult-floating-toggle:checked ~ .consult-floating-close {display: block;}
+
 @media screen and (max-width: 1200px) {
   // .footer-quick-pop .col6 {width: calc(33.3333% - 16px);}
 }
@@ -115,5 +134,18 @@
   #footer .f-box .link-go a, #footer .f-box .f-btm .f-menu a {font-size: 15px;}   
   #footer .consult-wrap{justify-content: flex-start;} 
   .footer-quick-pop .dep1 > li {width: 100%;}
-  
+  #footer .consult-floating {right: 16px;bottom: 24px;gap: 10px;}
+  #footer .consult-floating-list {gap: 8px;}
+  #footer .consult-floating-list li a {min-width: 132px;height: 48px;gap: 8px;font-size: 13px;}
+  #footer .consult-floating-list li a:after {width: 48px;height: 48px;flex-basis: 48px;}
+  #footer .consult-floating-list li.consult1 a:after {background-size: 40px auto;}
+  #footer .consult-floating-list li.consult2 a:after,
+  #footer .consult-floating-list li.consult3 a:after {background-size: 26px auto;}
+  #footer .consult-floating-list li a span {height: 28px;padding: 0 10px;font-size: 13px;}
+  #footer .consult-floating-open {min-width: 162px;height: 48px;padding: 0 4px 0 22px;gap: 12px;font-size: 17px;border: 2px solid #246BEB;background-color: #EFF5FF;color: #246BEB;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);position:relative;}
+  #footer .consult-floating-open span {font-size: 17px;color: #246BEB;font-weight: 700;}
+  #footer .consult-floating-open:before {content:"";width: 40px;height: 40px;border-radius: 50%;background-color: #246BEB;position:absolute;right:4px;}
+  #footer .consult-floating-open:after {width: 40px;height: 40px;border-radius: 50%;background-color: #fff;mask-size: 24px 24px;-webkit-mask-size: 24px 24px;}
+  #footer .consult-floating-close {width: 48px;height: 48px;}
+  #footer .consult-floating-close:before {width: 28px;height: 28px;}
 }
