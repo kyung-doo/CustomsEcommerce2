@@ -333,7 +333,9 @@ html[lang=en] .compulsory-txt .compulsory{position: static;}
 .wrap-login .title-top:not(.sign-up) .left-box {gap: 10px;flex: 1;}
 .wrap-login .title-top:not(.sign-up) .left-box .title-type {font-size: 19px;white-space: nowrap;font-weight: 700;}
 .wrap-login .title-top:not(.sign-up) .left-box .form-toggle-switch label {padding-left: 32px;display: flex;align-items: center;}
+.wrap-login .title-top:not(.sign-up) .left-box .form-toggle-switch label.form-toggle-switch-label {margin-left: 120px;}
 .wrap-login .title-top:not(.sign-up) .left-box .form-toggle-switch label span {margin-left: 10px;}
+.wrap-login .title-top:not(.sign-up) .left-box .form-toggle-switch label span.form-toggle-switch-label-left {margin-left: 0px; position: absolute; left: -120px;}
 .wrap-login .title-top:not(.sign-up) .right-box {gap: 24px !important;flex-wrap: wrap;}
 .wrap-login .title-top:not(.sign-up) .right-box .user-box {display: flex;align-items: center;gap: 12px;flex-wrap: wrap;}
 .wrap-login .title-top:not(.sign-up) .right-box .user-box strong{line-height: 150%;}
@@ -361,6 +363,13 @@ html[lang=en] .compulsory-txt .compulsory{position: static;}
 .wrap-login .certification-list li a:hover .txt {text-decoration: underline;}
 .wrap-login .certification-list li a .tit {font-size: 21px;padding-left: 54px;height: 32px;display: flex;align-items: center;}
 .wrap-login .certification-list li a .txt {color: #555;line-height: 150%;margin-top: 19px;}
+
+// 모바일 로그인에서 아직 정부 ~ 아니신가요 영역 폰트사이즈가 달라서 수정 함.
+@media screen and (max-width: 767px) {
+	.wrap-login .certify-sel-wrap.mobile:not(.active) .join-member-bn-wrap-column {padding: 20px 0 10px 0;}
+	.wrap-login .certify-sel-wrap.mobile:not(.active) .txt-desc,
+	.wrap-login .certify-sel-wrap.mobile:not(.active) .btn-wrap a {font-size: 17px !important;}
+}
 
 /* 휴대폰 인증 */
 .aut-pages .content-wrap {padding: 64px 16px;margin: 0;max-width: 100%;background-color: #F4F5F6;display: flex;justify-content: center;align-items: center;}
