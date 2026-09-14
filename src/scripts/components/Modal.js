@@ -1,3 +1,18 @@
+var scW = 0;
+
+sessionStorage.setItem("scw", window.innerWidth - document.body.getBoundingClientRect().width);
+
+function getScrollBarWidth() {
+    const hasScw = Number(sessionStorage.getItem("scw"));
+    if (hasScw) {
+        return hasScw;
+    } else {
+        const nowScw = window.innerWidth - document.body.getBoundingClientRect().width;
+
+        sessionStorage.setItem("scw", nowScw);
+        return nowScw;
+    }
+}
 class Modal {
     static DEFAULT_PROPS = {};
 

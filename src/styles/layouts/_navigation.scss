@@ -14,7 +14,7 @@
 #header .main-menu .gnb-main-trigger:hover::before {width: 100%;left: 0;}
 #header .main-menu .gnb-main-trigger span {display: flex;font-size: 13px;color: #555;margin-top: -1px;justify-content: center;}
 #header .main-menu .allmenu {background-color: rgba(0, 0, 0, 0);background-image: url("../assets/icons/menu.svg");background-repeat: no-repeat;background-position: right;width: 20px;height: 20px;}
-#header .main-menu .gnb-toggle-wrap {display: none;position: absolute;/*top: 65px;*/left: 0;width: 100%;background-color: #fff;z-index: 100;border-top: 1px solid #d8d8d8;min-height: 200px;}
+#header .main-menu .gnb-toggle-wrap {display: none;position: absolute;/*top: 65px;*/left: 0;width: 100vw;background-color: #fff;z-index: 100;border-top: 1px solid #d8d8d8;min-height: 200px;}
 #header .main-menu .gnb-main-list {max-width: 1280px;margin: 0 auto;display: flex;}
 #header .main-menu .gnb-main-list .gnb-title {background-color: #f4f5f6;position: relative;min-width: 281px;min-height: 200px;}
 #header .main-menu .gnb-main-list .gnb-title:before {content: "";display: block;position: absolute;top: 0;left: -1000px;width: 1000px;height: 100%;background-color: #f4f5f6;}

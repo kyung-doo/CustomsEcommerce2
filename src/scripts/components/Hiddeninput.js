@@ -4,18 +4,18 @@ class Hiddeninput {
         numberOnly: false,
         toggleBtn: false,
         maskLast: 0
-    }
+    };
 
     constructor(ele, props) {
         this.ele = ele;
         this.props = props;
-        this.actualValue = '';
+        this.actualValue = "";
         this.regex = this.props.numberOnly ? /^[0-9]+$/ : /^[^\u3131-\u318E\u1100-\u11FF가-힣\u00B7\u2022\s]+$/;
         this.toggleBtn = null;
         this.isVisible = false;
         this.isComposing = false;
         this.backspaceHandled = false;
-        this.isMobile = 'ontouchstart' in window;
+        this.isMobile = "ontouchstart" in window;
         this.init();
     }
 
@@ -25,32 +25,32 @@ class Hiddeninput {
         this.actualValue = this.ele.val();
         this.onInput();
 
-        this.ele.on('keydown', () => {
+        this.ele.on("keydown", () => {
             this.backspaceHandled = false;
         });
 
-        this.ele.on('compositionstart', () => {
+        this.ele.on("compositionstart", () => {
             this.isComposing = true;
         });
 
-        this.ele.on('compositionend', (e) => {
+        this.ele.on("compositionend", (e) => {
             this.isComposing = false;
-            this.onInput(); 
+            this.onInput();
         });
 
-        this.ele.on('beforeinput', (e) => {
-            if (e.originalEvent.inputType === 'deleteContentBackward') {
+        this.ele.on("beforeinput", (e) => {
+            if (e.originalEvent.inputType === "deleteContentBackward") {
                 this.backspaceHandled = true;
             }
-            if(this.isMobile) {
-                this.onBeforeInput(e);    
+            if (this.isMobile) {
+                this.onBeforeInput(e);
             } else {
                 if (this.isComposing) return;
                 this.onBeforeInput(e);
             }
         });
-        this.ele.on('input keyup', (e) => {
-            if(this.isMobile) {
+        this.ele.on("input keyup", (e) => {
+            if (this.isMobile) {
                 this.onInput();
             } else {
                 const hangulRegex = /[\u3131-\u318E\u1100-\u11FF가-힣]/g;
@@ -68,19 +68,18 @@ class Hiddeninput {
             }
         });
 
-        this.ele.on('keyup', (e) => {
-            if (e.key === 'Backspace' || e.keyCode === 8) {
-                
+        this.ele.on("keyup", (e) => {
+            if (e.key === "Backspace" || e.keyCode === 8) {
                 if (!this.backspaceHandled) {
                     const input = this.ele[0];
                     const { selectionStart, selectionEnd } = input;
-                    
+
                     if (selectionStart !== selectionEnd) {
                         this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionEnd);
                     } else if (selectionStart > 0) {
                         this.actualValue = this.actualValue.slice(0, selectionStart - 1) + this.actualValue.slice(selectionEnd);
                     }
-                    
+
                     this.isComposing = false;
                     this.onInput();
                 }
@@ -102,15 +101,15 @@ class Hiddeninput {
 
         let newValue = this.actualValue;
 
-        if (inputType === 'insertText') {
+        if (inputType === "insertText") {
             newValue = this.actualValue.slice(0, selectionStart) + data + this.actualValue.slice(selectionEnd);
             if (maxLength >= 0 && newValue.length > maxLength) {
                 e.preventDefault();
                 return;
             }
             this.actualValue = newValue;
-        } else if(inputType === 'insertCompositionText') {
-            if(this.isMobile) {
+        } else if (inputType === "insertCompositionText") {
+            if (this.isMobile) {
                 newValue = this.actualValue.slice(0, selectionStart) + data + this.actualValue.slice(selectionEnd);
                 if (maxLength >= 0 && newValue.length > maxLength) {
                     e.preventDefault();
@@ -120,21 +119,21 @@ class Hiddeninput {
             } else {
                 return;
             }
-        } else if (inputType === 'deleteContentBackward') {
+        } else if (inputType === "deleteContentBackward") {
             if (selectionStart !== selectionEnd) {
                 this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionEnd);
             } else if (selectionStart > 0) {
                 this.actualValue = this.actualValue.slice(0, selectionStart - 1) + this.actualValue.slice(selectionEnd);
             }
-        } else if (inputType === 'deleteContentForward') {
+        } else if (inputType === "deleteContentForward") {
             if (selectionStart !== selectionEnd) {
                 this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionEnd);
             } else if (selectionStart < this.actualValue.length) {
                 this.actualValue = this.actualValue.slice(0, selectionStart) + this.actualValue.slice(selectionStart + 1);
             }
-        } else if (inputType === 'insertFromPaste') {
-            navigator.clipboard.readText().then(pastedText => {
-                const filtered = [...pastedText].filter(ch => this.regex.test(ch)).join('');
+        } else if (inputType === "insertFromPaste") {
+            navigator.clipboard.readText().then((pastedText) => {
+                const filtered = [...pastedText].filter((ch) => this.regex.test(ch)).join("");
                 const pastedValue = this.actualValue.slice(0, selectionStart) + filtered + this.actualValue.slice(selectionEnd);
                 if (maxLength >= 0 && pastedValue.length > maxLength) return;
                 this.actualValue = pastedValue;
@@ -146,24 +145,22 @@ class Hiddeninput {
 
     onInput() {
         const input = this.ele[0];
-        this.ele.data('value', this.actualValue);
+        this.ele.data("value", this.actualValue);
 
         if (this.isVisible) {
             input.value = this.actualValue;
         } else {
-
             // maskLast가 설정된 경우 → 뒤에서 마스킹
             if (this.props.maskLast > 0) {
                 const maskCount = Math.min(this.props.maskLast, this.actualValue.length);
                 const visiblePart = this.actualValue.toUpperCase().slice(0, this.actualValue.length - maskCount);
-                const maskedPart = '*'.repeat(maskCount);
+                const maskedPart = "*".repeat(maskCount);
 
                 input.value = visiblePart + maskedPart;
-
             } else {
                 // 기존 로직 유지
                 const visiblePart = this.actualValue.slice(0, this.props.showNum);
-                const maskedPart = '*'.repeat(Math.max(0, this.actualValue.length - this.props.showNum));
+                const maskedPart = "*".repeat(Math.max(0, this.actualValue.length - this.props.showNum));
 
                 input.value = visiblePart + maskedPart;
             }
@@ -171,73 +168,99 @@ class Hiddeninput {
     }
 
     destroy() {
-        this.ele.off('beforeinput input');
+        this.ele.off("beforeinput input");
     }
-    
 }
 
 //비밀번호 보이고 안보이고
-$(function(){
+$(function () {
     // $('.visibility-btn').on('click', function() {
-    $(document).on('click','.visibility-btn',function(){
+    $(document).on("click", ".visibility-btn", function () {
         const $btn = $(this);
-        const $icon = $btn.find('i');
+        const $icon = $btn.find("i");
         const $input = $btn.siblings('input:not([name^="nProtectRegex_"])');
         $input.focus();
-        
-        if ($icon.hasClass('visibility')) {
-            // 현재: 숨김 상태 → 보이기
-            $icon.removeClass('visibility').addClass('visibility-off');
-            $btn.attr('title', '비밀번호 숨김');
-            $input.attr('type', 'text');
 
-        } else if ($icon.hasClass('visibility-off')) {
+        if ($icon.hasClass("visibility")) {
+            // 현재: 숨김 상태 → 보이기
+            $icon.removeClass("visibility").addClass("visibility-off");
+            $btn.attr("title", "비밀번호 숨김");
+            $input.attr("type", "text");
+        } else if ($icon.hasClass("visibility-off")) {
             // 현재: 보이는 상태 → 숨기기
-            $icon.removeClass('visibility-off').addClass('visibility');
-            $btn.attr('title', '비밀번호 표시');
-            $input.attr('type', 'password');
+            $icon.removeClass("visibility-off").addClass("visibility");
+            $btn.attr("title", "비밀번호 표시");
+            $input.attr("type", "password");
         }
     });
 
-
-    const rrn1 = document.getElementById('rrn1');
-    const rrn2 = document.getElementById('rrn2');
+    const rrn1 = document.getElementById("rrn1");
+    const rrn2 = document.getElementById("rrn2");
 
     // 숫자만 입력
     function onlyNumber(el) {
-    el.value = el.value.replace(/\D/g, '');
+        el.value = el.value.replace(/\D/g, "");
     }
 
     // 앞 → 뒤 이동
-    rrn1.addEventListener('input', () => {
-    onlyNumber(rrn1);
+    rrn1.addEventListener("input", () => {
+        onlyNumber(rrn1);
 
-    if (rrn1.value.length === 6) {
-        rrn2.focus();
-    }
+        if (rrn1.value.length === 6) {
+            rrn2.focus();
+        }
     });
 
     // 뒤 입력 정리
-    rrn2.addEventListener('input', () => {
-    onlyNumber(rrn2);
+    rrn2.addEventListener("input", () => {
+        onlyNumber(rrn2);
     });
 
     // 뒤에서 백스페이스 → 앞으로 이동
-    rrn2.addEventListener('keydown', (e) => {
-    if (e.key === 'Backspace' && rrn2.value.length === 0) {
-        rrn1.focus();
-    }
+    rrn2.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && rrn2.value.length === 0) {
+            rrn1.focus();
+        }
     });
-})
+});
 
-$.fn.hiddeninput = function(option, params) {
-    return this.each(function() {
+$.fn.hiddeninput = function (option, params) {
+    return this.each(function () {
         var $this = $(this);
-        var data = $this.data('hiddeninput');
+        var data = $this.data("hiddeninput");
         var options = $.extend({}, Hiddeninput.DEFAULT_PROPS, typeof option === "object" && option);
-        if (!data || typeof data === 'string') $this.data('hiddeninput', (data = new Hiddeninput($this, options)));
-        if (typeof option === 'string') data[option](params);
+        if (!data || typeof data === "string") $this.data("hiddeninput", (data = new Hiddeninput($this, options)));
+        if (typeof option === "string") data[option](params);
     });
 };
 
-$.fn.hiddeninput.Constructor = Hiddeninput
+$.fn.hiddeninput.Constructor = Hiddeninput;
+
+// function getScrollBarWidth() {
+//     return window.innerWidth - document.documentElement.clientWidth;
+// }
+
+function syncHeaderScrollbarCompensation() {
+    const shouldCompensate = $(window).width() >= 1023 && $("#header .allmenu").hasClass("active");
+    const compensationValue = shouldCompensate ? getScrollBarWidth() : 0;
+
+    $scrollCompensationTargets.each(function () {
+        const $target = $(this);
+
+        if (compensationValue > 0) {
+            if (!$target.data("scroll-padding-right")) {
+                $target.data("scroll-padding-right", $target.css("padding-right"));
+            }
+
+            const targetPaddingRight = parseFloat($target.data("scroll-padding-right")) || 0;
+            $target.css("padding-right", targetPaddingRight + compensationValue);
+        } else {
+            const targetPaddingRight = $target.data("scroll-padding-right");
+
+            if (targetPaddingRight !== undefined) {
+                $target.css("padding-right", targetPaddingRight || "");
+                $target.removeData("scroll-padding-right");
+            }
+        }
+    });
+}

@@ -45,7 +45,8 @@
 .wrap-form-area .inp-form .txt-list .inp-box .txt {line-height: 150%;display: block;}
 .wrap-form-area .inp-form .txt-list .inp-box .txt button {margin-left: 15px;}
 .wrap-form-area .inp-form .txt-list .inp-box.email-auth-title span{position: relative;}
-.wrap-form-area .inp-form .txt-list .inp-box.email-auth-title i{position: absolute;bottom: 1px;right: -20px;}
+.wrap-form-area .inp-form .txt-list .inp-box.email-auth-title i{vertical-align: middle;}
+// .wrap-form-area .inp-form .txt-list .inp-box.email-auth-title i{position: absolute;bottom: 1px;right: -20px;}
 .wrap-form-area .inp-form .compulsory-title {margin-top: 10px;}
 .wrap-form-area.type1 .inp-form li.txt-list {flex-direction: column;}
 .wrap-form-area.type1 .inp-form li.txt-list .inp-box {text-align: left;padding-left: 0 !important;margin-top: 14px;width: 100%;}
@@ -148,6 +149,9 @@
   .wrap-form-area .inp-form:has(.form-btn-area) {padding: 72px 24px 24px 24px;}
   .wrap-form-area .inp-form .file-form + .form-btn-area {top: 24px;}
   .wrap-form-area .inp-form:has(.step-area.type1):has(.form-btn-area) {padding: 24px 130px 24px 239px;}
+	.wrap-form-area.pc {display: none !important;}
+  .wrap-form-area.mo {display: block !important;}
+  .wrap-form-area.type1{margin-top: 0;}
 }
 @media screen and (max-width: 1023px) {
   .wrap-form-area .inp-form:has(.step-area.type1) {padding: 24px;}
@@ -164,8 +168,6 @@
   .wrap-form-area .inp-form .step-area.type1 .step-wrap li:after {left: 50%;transform: translateX(-50%);z-index: 1;}
   .wrap-form-area .inp-form [class*=col] {width: 100% !important;padding-top: 20px;}
   .wrap-form-area .inp-form [class*=mw] {max-width: 100% !important;}
-  .wrap-form-area.pc{display: none !important;}
-  .wrap-form-area.mo{display: block !important;}
   .wrap-form-area .inp-form .email-inp-box{flex-wrap: wrap;}
   .wrap-form-area .inp-form .state-keeper{flex:1}
   .wrap-form-area .inp-form .email-id{width: calc(100% - 23px);}
