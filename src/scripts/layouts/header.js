@@ -160,7 +160,8 @@ $(() => {
         전체메뉴
         ================================================== */
 
-    $("#header .allmenu").on("click", function () {
+    // $("#header .allmenu").on("click", function () {
+		$(document).on("click", "#header .allmenu", function () {
         if (!scW) scW = getScrollBarWidth();
 
         if ($(this).hasClass("active")) {
@@ -210,7 +211,8 @@ $(() => {
     /* ==================================================
         검은색 배경 클릭하면 메뉴 닫기
         ================================================== */
-    $("#wrap > .blind").on('click', function () {
+    // $("#wrap > .blind").on('click', function () {
+		$(document).on('click', '#wrap > .blind', function () {
         $(".gnb-menu li").removeClass('active');
         $("#wrap > .blind").hide();
         $('body').removeClass('no-scroll')
@@ -234,7 +236,8 @@ $(() => {
         전체메뉴, 내소식 클릭 시 메뉴 닫기
         (1023px 이하 추가 처리 포함)
         ================================================== */
-    $('#header .header-actions .name-box a:has(.inform),.btn-navi.login,.btn-navi.sch').click(function () {
+    // $('#header .header-actions .name-box a:has(.inform),.btn-navi.login,.btn-navi.sch').click(function () {
+		$(document).on('click', '#header .header-actions .name-box a:has(.inform),.btn-navi.login,.btn-navi.sch', function () {
 
         // 공통 처리
         $(".gnb-menu li").removeClass('active');
@@ -260,7 +263,8 @@ $(() => {
     /* ==================================================
         모바일 메뉴
         ================================================== */
-    $(".mobile-all-menu").on('click', function (e) {
+    // $(".mobile-all-menu").on('click', function (e) {
+		$(document).on('click', '.mobile-all-menu', function (e) {
         $("#wrap").addClass('mobile-open');
         // gsap.set($("#header .main-menu"), {x: 390});
         // gsap.to($("#header .main-menu"), 0.6, {x: 0, ease: Expo.easeInOut}); 
@@ -279,7 +283,8 @@ $(() => {
 
         // })
     });
-    $("#header .main-menu .gnb-main-list .gnb-list .depth2 a").on('click', function (e) {
+    // $("#header .main-menu .gnb-main-list .gnb-list .depth2 a").on('click', function (e) {
+		$(document).on('click', '#header .main-menu .gnb-main-list .gnb-list .depth2 a', function (e) {
         // gsap.to($("#header .main-menu"), 0.6, {x: 390, ease: Expo.easeOut, onComplete: () => {
         //     $("#wrap").removeClass('mobile-open');
         //     $('.sub-title').removeClass('mobile-active');
@@ -303,7 +308,8 @@ $(() => {
 
     });
 
-    $(".mobile-close").on('click', function () {
+    // $(".mobile-close").on('click', function () {
+		$(document).on('click', '.mobile-close', function () {
         $("#wrap").removeClass('mobile-open');
         $('.sub-title').removeClass('mobile-active');
         $('body').css({ "overflow": "auto" });
@@ -311,7 +317,8 @@ $(() => {
     })
 
 
-    $(".mobile-dep-menu").on('click', function () {
+    // $(".mobile-dep-menu").on('click', function () {
+		$(document).on('click', '.mobole-dep-menu', function () {
 
         if (!$(this).parent().find('.depth2').is(':visible')) {
             $('.gnb-list:has(strong.sub-title)').find('.depth2').slideUp(300);
